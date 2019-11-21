@@ -17,7 +17,14 @@
 		F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* HomeViewController.swift */; };
 		F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
 		F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
-		F4B3F3092386717000657CDF /* hj.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F3082386717000657CDF /* hj.storyboard */; };
+		F4B3F3112386EE1300657CDF /* CrashlyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F30E2386EE1300657CDF /* CrashlyticsEvent.swift */; };
+		F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3102386EE1300657CDF /* CrashlyticsEventRecord.swift */; };
+		F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
+		F4B3F31D2386F53400657CDF /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3162386F53400657CDF /* SecureStoreError.swift */; };
+		F4B3F31E2386F53400657CDF /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3172386F53400657CDF /* SecureStore.swift */; };
+		F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3182386F53400657CDF /* InternetProtocol.swift */; };
+		F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
+		F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */; };
 		F4C01BF63A920D50EE83D2A4 /* Pods_KKdayPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +67,14 @@
 		F4B3F3002386386900657CDF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F4B3F302238638A400657CDF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F4B3F3062386608B00657CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F4B3F3082386717000657CDF /* hj.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = hj.storyboard; sourceTree = "<group>"; };
+		F4B3F30E2386EE1300657CDF /* CrashlyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsEvent.swift; sourceTree = "<group>"; };
+		F4B3F3102386EE1300657CDF /* CrashlyticsEventRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsEventRecord.swift; sourceTree = "<group>"; };
+		F4B3F3132386EE9100657CDF /* NetStatusManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetStatusManager.swift; sourceTree = "<group>"; };
+		F4B3F3162386F53400657CDF /* SecureStoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
+		F4B3F3172386F53400657CDF /* SecureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
+		F4B3F3182386F53400657CDF /* InternetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetProtocol.swift; sourceTree = "<group>"; };
+		F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetAuthenticationType.swift; sourceTree = "<group>"; };
+		F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +149,8 @@
 		F4B3F2CC23862B3000657CDF /* KKdayPortal */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3F30C2386EE1300657CDF /* EventRecord */,
+				F4B3F30B2386EDFA00657CDF /* Manager */,
 				F4B3F2FD238636F700657CDF /* Pages */,
 				F4B3F2CD23862B3000657CDF /* AppDelegate.swift */,
 				F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */,
@@ -193,9 +209,54 @@
 			isa = PBXGroup;
 			children = (
 				F4B3F3062386608B00657CDF /* LoginViewController.swift */,
-				F4B3F3082386717000657CDF /* hj.storyboard */,
 			);
 			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		F4B3F30B2386EDFA00657CDF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3152386F53400657CDF /* SecureStore */,
+				F4B3F3132386EE9100657CDF /* NetStatusManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F4B3F30C2386EE1300657CDF /* EventRecord */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F30D2386EE1300657CDF /* Protocol */,
+				F4B3F30F2386EE1300657CDF /* Struct */,
+			);
+			path = EventRecord;
+			sourceTree = "<group>";
+		};
+		F4B3F30D2386EE1300657CDF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F30E2386EE1300657CDF /* CrashlyticsEvent.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F4B3F30F2386EE1300657CDF /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3102386EE1300657CDF /* CrashlyticsEventRecord.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		F4B3F3152386F53400657CDF /* SecureStore */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3162386F53400657CDF /* SecureStoreError.swift */,
+				F4B3F3172386F53400657CDF /* SecureStore.swift */,
+				F4B3F3182386F53400657CDF /* InternetProtocol.swift */,
+				F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */,
+				F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */,
+			);
+			path = SecureStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +368,6 @@
 			files = (
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
-				F4B3F3092386717000657CDF /* hj.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,11 +456,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */,
+				F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
+				F4B3F3112386EE1300657CDF /* CrashlyticsEvent.swift in Sources */,
 				F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */,
+				F4B3F31E2386F53400657CDF /* SecureStore.swift in Sources */,
+				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */,
+				F4B3F31D2386F53400657CDF /* SecureStoreError.swift in Sources */,
+				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
+				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
