@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBFB8029590BFE0D8DF7EC49 /* Pods_KKdayPortalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D223862B3000657CDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2D123862B3000657CDF /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
 		F4B3F2E523862B3100657CDF /* KKdayPortalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2E423862B3100657CDF /* KKdayPortalTests.swift */; };
 		F4B3F2F023862B3100657CDF /* KKdayPortalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2EF23862B3100657CDF /* KKdayPortalUITests.swift */; };
+		F4C01BF63A920D50EE83D2A4 /* Pods_KKdayPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalTests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalTests/Pods-KKdayPortalTests.release.xcconfig"; sourceTree = "<group>"; };
+		8266A742D809525944D92DD1 /* Pods-KKdayPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal.debug.xcconfig"; sourceTree = "<group>"; };
+		A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal.release.xcconfig"; sourceTree = "<group>"; };
+		AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalTests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortalTests/Pods-KKdayPortalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C01BF63A920D50EE83D2A4 /* Pods_KKdayPortal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFB8029590BFE0D8DF7EC49 /* Pods_KKdayPortalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +86,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D7EAA3CFA3FD11945DE76EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */,
+				43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FCD06F76BBA93E310024506 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8266A742D809525944D92DD1 /* Pods-KKdayPortal.debug.xcconfig */,
+				A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */,
+				B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */,
+				52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F4B3F2C123862B3000657CDF = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +114,8 @@
 				F4B3F2E323862B3100657CDF /* KKdayPortalTests */,
 				F4B3F2EE23862B3100657CDF /* KKdayPortalUITests */,
 				F4B3F2CB23862B3000657CDF /* Products */,
+				9FCD06F76BBA93E310024506 /* Pods */,
+				8D7EAA3CFA3FD11945DE76EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4B3F2F423862B3100657CDF /* Build configuration list for PBXNativeTarget "KKdayPortal" */;
 			buildPhases = (
+				7B715A6943CD46A915930AD2 /* [CP] Check Pods Manifest.lock */,
 				F4B3F2C623862B3000657CDF /* Sources */,
 				F4B3F2C723862B3000657CDF /* Frameworks */,
 				F4B3F2C823862B3000657CDF /* Resources */,
+				03734F26BE43D4B7AE7C06BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4B3F2F723862B3100657CDF /* Build configuration list for PBXNativeTarget "KKdayPortalTests" */;
 			buildPhases = (
+				7EEF68B45133DBBDC6AC9F6C /* [CP] Check Pods Manifest.lock */,
 				F4B3F2DC23862B3100657CDF /* Sources */,
 				F4B3F2DD23862B3100657CDF /* Frameworks */,
 				F4B3F2DE23862B3100657CDF /* Resources */,
@@ -253,6 +289,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03734F26BE43D4B7AE7C06BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B715A6943CD46A915930AD2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKdayPortal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EEF68B45133DBBDC6AC9F6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKdayPortalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4B3F2C623862B3000657CDF /* Sources */ = {
@@ -432,6 +532,7 @@
 		};
 		F4B3F2F523862B3100657CDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8266A742D809525944D92DD1 /* Pods-KKdayPortal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +551,7 @@
 		};
 		F4B3F2F623862B3100657CDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +570,7 @@
 		};
 		F4B3F2F823862B3100657CDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +593,7 @@
 		};
 		F4B3F2F923862B3100657CDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

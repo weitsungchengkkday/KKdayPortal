@@ -1,0 +1,6 @@
+framework module Pods_KKdayPortalTests {
+  umbrella header "Pods-KKdayPortalTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
