@@ -3,19 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		DBFB8029590BFE0D8DF7EC49 /* Pods_KKdayPortalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
-		F4B3F2D223862B3000657CDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2D123862B3000657CDF /* ViewController.swift */; };
-		F4B3F2D523862B3000657CDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D323862B3000657CDF /* Main.storyboard */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
 		F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
 		F4B3F2E523862B3100657CDF /* KKdayPortalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2E423862B3100657CDF /* KKdayPortalTests.swift */; };
 		F4B3F2F023862B3100657CDF /* KKdayPortalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2EF23862B3100657CDF /* KKdayPortalUITests.swift */; };
+		F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* HomeViewController.swift */; };
+		F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
+		F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		F4B3F3092386717000657CDF /* hj.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F3082386717000657CDF /* hj.storyboard */; };
 		F4C01BF63A920D50EE83D2A4 /* Pods_KKdayPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +48,6 @@
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F4B3F2D123862B3000657CDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4B3F2D423862B3000657CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4B3F2D623862B3100657CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4B3F2D923862B3100657CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4B3F2DB23862B3100657CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +57,10 @@
 		F4B3F2EB23862B3100657CDF /* KKdayPortalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKdayPortalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2EF23862B3100657CDF /* KKdayPortalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayPortalUITests.swift; sourceTree = "<group>"; };
 		F4B3F2F123862B3100657CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4B3F3002386386900657CDF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F4B3F302238638A400657CDF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F4B3F3062386608B00657CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F4B3F3082386717000657CDF /* hj.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = hj.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,6 @@
 				B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */,
 				52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -132,10 +135,9 @@
 		F4B3F2CC23862B3000657CDF /* KKdayPortal */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3F2FD238636F700657CDF /* Pages */,
 				F4B3F2CD23862B3000657CDF /* AppDelegate.swift */,
 				F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */,
-				F4B3F2D123862B3000657CDF /* ViewController.swift */,
-				F4B3F2D323862B3000657CDF /* Main.storyboard */,
 				F4B3F2D623862B3100657CDF /* Assets.xcassets */,
 				F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */,
 				F4B3F2DB23862B3100657CDF /* Info.plist */,
@@ -159,6 +161,41 @@
 				F4B3F2F123862B3100657CDF /* Info.plist */,
 			);
 			path = KKdayPortalUITests;
+			sourceTree = "<group>";
+		};
+		F4B3F2FD238636F700657CDF /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F2FE2386371100657CDF /* HomePage */,
+				F4B3F2FF2386372400657CDF /* SettingPage */,
+				F4B3F30423863C9100657CDF /* LoginPage */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		F4B3F2FE2386371100657CDF /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3002386386900657CDF /* HomeViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		F4B3F2FF2386372400657CDF /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F302238638A400657CDF /* SettingViewController.swift */,
+			);
+			path = SettingPage;
+			sourceTree = "<group>";
+		};
+		F4B3F30423863C9100657CDF /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3062386608B00657CDF /* LoginViewController.swift */,
+				F4B3F3082386717000657CDF /* hj.storyboard */,
+			);
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +307,7 @@
 			files = (
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
-				F4B3F2D523862B3000657CDF /* Main.storyboard in Resources */,
+				F4B3F3092386717000657CDF /* hj.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,9 +396,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4B3F2D223862B3000657CDF /* ViewController.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
+				F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */,
+				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
+				F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,14 +436,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F4B3F2D323862B3000657CDF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4B3F2D423862B3000657CDF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
