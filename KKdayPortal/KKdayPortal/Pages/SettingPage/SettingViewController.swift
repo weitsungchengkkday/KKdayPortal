@@ -11,9 +11,10 @@ import SnapKit
 
 class SettingViewController: UIViewController {
     
+    // 🏞 UI element
     lazy var loginButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Login", for: .normal)
+        btn.setTitle("Login Page", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         btn.setTitleColor(.white, for: .normal)

@@ -25,6 +25,16 @@
 		F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3182386F53400657CDF /* InternetProtocol.swift */; };
 		F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
 		F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */; };
+		F4B3F3292387C16D00657CDF /* CodableResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3262387C16D00657CDF /* CodableResponseType.swift */; };
+		F4B3F32A2387C16D00657CDF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3272387C16D00657CDF /* APIManager.swift */; };
+		F4B3F32E2387C34C00657CDF /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
+		F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
+		F4B3F3342387CD1F00657CDF /* PortalUserAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3332387CD1F00657CDF /* PortalUserAPITarget.swift */; };
+		F4B3F3382387CE4E00657CDF /* KKPortalMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* KKPortalMember.swift */; };
+		F4B3F33B238BB50400657CDF /* WebFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33A238BB50400657CDF /* WebFolderViewController.swift */; };
+		F4B3F340238BC60D00657CDF /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
+		F4B3F342238BC61D00657CDF /* PloneItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F341238BC61D00657CDF /* PloneItemType.swift */; };
+		F4B3F344238BDF0900657CDF /* PloneCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneCategory.swift */; };
 		F4C01BF63A920D50EE83D2A4 /* Pods_KKdayPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +85,16 @@
 		F4B3F3182386F53400657CDF /* InternetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetProtocol.swift; sourceTree = "<group>"; };
 		F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetAuthenticationType.swift; sourceTree = "<group>"; };
 		F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
+		F4B3F3262387C16D00657CDF /* CodableResponseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableResponseType.swift; sourceTree = "<group>"; };
+		F4B3F3272387C16D00657CDF /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalUserAPITargetType.swift; sourceTree = "<group>"; };
+		F4B3F32F2387CB7100657CDF /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		F4B3F3332387CD1F00657CDF /* PortalUserAPITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalUserAPITarget.swift; sourceTree = "<group>"; };
+		F4B3F3372387CE4E00657CDF /* KKPortalMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKPortalMember.swift; sourceTree = "<group>"; };
+		F4B3F33A238BB50400657CDF /* WebFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFolderViewController.swift; sourceTree = "<group>"; };
+		F4B3F33F238BC60D00657CDF /* PloneFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFolder.swift; sourceTree = "<group>"; };
+		F4B3F341238BC61D00657CDF /* PloneItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneItemType.swift; sourceTree = "<group>"; };
+		F4B3F343238BDF0900657CDF /* PloneCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +169,8 @@
 		F4B3F2CC23862B3000657CDF /* KKdayPortal */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3F3242387C15B00657CDF /* Network */,
+				F4B3F3352387CDB000657CDF /* Model */,
 				F4B3F30C2386EE1300657CDF /* EventRecord */,
 				F4B3F30B2386EDFA00657CDF /* Manager */,
 				F4B3F2FD238636F700657CDF /* Pages */,
@@ -183,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B3F2FE2386371100657CDF /* HomePage */,
+				F4B3F339238BB4C100657CDF /* WebHomePage */,
 				F4B3F2FF2386372400657CDF /* SettingPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
 			);
@@ -218,6 +241,7 @@
 			children = (
 				F4B3F3152386F53400657CDF /* SecureStore */,
 				F4B3F3132386EE9100657CDF /* NetStatusManager.swift */,
+				F4B3F32F2387CB7100657CDF /* StorageManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -257,6 +281,76 @@
 				F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */,
 			);
 			path = SecureStore;
+			sourceTree = "<group>";
+		};
+		F4B3F3242387C15B00657CDF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3252387C16D00657CDF /* APIManager */,
+				F4B3F32C2387C29900657CDF /* APITarget */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F4B3F3252387C16D00657CDF /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3262387C16D00657CDF /* CodableResponseType.swift */,
+				F4B3F3272387C16D00657CDF /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		F4B3F32C2387C29900657CDF /* APITarget */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */,
+				F4B3F3332387CD1F00657CDF /* PortalUserAPITarget.swift */,
+			);
+			path = APITarget;
+			sourceTree = "<group>";
+		};
+		F4B3F3352387CDB000657CDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3362387CDC300657CDF /* Portal */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4B3F3362387CDC300657CDF /* Portal */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F3372387CE4E00657CDF /* KKPortalMember.swift */,
+				F4B3F341238BC61D00657CDF /* PloneItemType.swift */,
+				F4B3F33F238BC60D00657CDF /* PloneFolder.swift */,
+				F4B3F343238BDF0900657CDF /* PloneCategory.swift */,
+			);
+			path = Portal;
+			sourceTree = "<group>";
+		};
+		F4B3F339238BB4C100657CDF /* WebHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F33D238BC4E100657CDF /* ViewModel */,
+				F4B3F33C238BC4D300657CDF /* View */,
+			);
+			path = WebHomePage;
+			sourceTree = "<group>";
+		};
+		F4B3F33C238BC4D300657CDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F33A238BB50400657CDF /* WebFolderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4B3F33D238BC4E100657CDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,19 +550,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B3F33B238BB50400657CDF /* WebFolderViewController.swift in Sources */,
+				F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */,
 				F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */,
 				F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
+				F4B3F342238BC61D00657CDF /* PloneItemType.swift in Sources */,
 				F4B3F3112386EE1300657CDF /* CrashlyticsEvent.swift in Sources */,
+				F4B3F3382387CE4E00657CDF /* KKPortalMember.swift in Sources */,
 				F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */,
+				F4B3F3292387C16D00657CDF /* CodableResponseType.swift in Sources */,
 				F4B3F31E2386F53400657CDF /* SecureStore.swift in Sources */,
+				F4B3F344238BDF0900657CDF /* PloneCategory.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */,
 				F4B3F31D2386F53400657CDF /* SecureStoreError.swift in Sources */,
+				F4B3F32E2387C34C00657CDF /* PortalUserAPITargetType.swift in Sources */,
+				F4B3F32A2387C16D00657CDF /* APIManager.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
+				F4B3F3342387CD1F00657CDF /* PortalUserAPITarget.swift in Sources */,
 				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
+				F4B3F340238BC60D00657CDF /* PloneFolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
