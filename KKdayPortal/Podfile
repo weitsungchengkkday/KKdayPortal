@@ -9,19 +9,19 @@ target 'KKdayPortal' do
   # Pods for KKdayPortal
 
   # UI
-  pod 'SnapKit', '~> 5.0.0'
+  pod 'SnapKit', '~> 5.0.1'
 
   # Firebase 
-  pod 'Firebase/Core', '~> 6.12.0'
+  pod 'Firebase/Core', '~> 6.13.0'
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.14.0'
 
   # Rx
   pod 'RxCocoa', '~> 4.5.0'
-  pod 'Moya/RxSwift', '13.0.1'
-  pod 'RxDataSources', '3.1.0' 
-  pod 'RxKeyboard', '0.9.0'
-  pod 'RxGesture', '2.2.0' 
+  pod 'Moya/RxSwift', '~> 13.0.1'
+  pod 'RxDataSources', '~> 3.1.0'
+  pod 'RxKeyboard', '~> 0.9.0'
+  pod 'RxGesture', '~> 2.2.0'
 
   target 'KKdayPortalTests' do
     inherit! :search_paths
