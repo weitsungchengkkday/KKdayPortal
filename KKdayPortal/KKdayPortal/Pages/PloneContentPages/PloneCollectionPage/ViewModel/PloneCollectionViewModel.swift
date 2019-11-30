@@ -52,7 +52,9 @@ final class PloneCollectionViewModel: PloneControllable, RXViewModelType {
         let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
         let response = apiManager.request(portalItem)
     
-        response.subscribe(onSuccess: { [weak self] ploneFolder in
+        response
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] ploneFolder in
         
             self?.ploneItem = ploneFolder
             self?.ploneItemsSubject.onNext(ploneFolder.items)

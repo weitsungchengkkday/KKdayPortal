@@ -48,7 +48,9 @@ final class PloneLinkViewModel : PloneControllable, RXViewModelType {
         let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
         let response = apiManager.request(portalItem)
     
-        response.subscribe(onSuccess: { [weak self] ploneLink in
+        response
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] ploneLink in
         
             self?.ploneItem = ploneLink
             self?.titleSubject.onNext(ploneLink.title)

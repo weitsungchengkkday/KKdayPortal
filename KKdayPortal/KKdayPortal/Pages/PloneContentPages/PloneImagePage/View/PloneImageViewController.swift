@@ -13,6 +13,12 @@ import SnapKit
 final class PloneImageViewController: UIViewController, PloneCoordinator {
     
     // 🏞 UI element
+    lazy var imageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icPicture")
+        imv.contentMode = .scaleAspectFit
+        return imv
+    }()
     
     var viewModel: PloneImageViewModel
     let disposeBag = DisposeBag()
@@ -33,12 +39,18 @@ final class PloneImageViewController: UIViewController, PloneCoordinator {
         bindViewModel()
 
         viewModel.getPloneData()
-        
     }
     
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
+        self.view.addSubview(imageView)
+        imageView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.bottom.equalTo(self.view.snp.bottomMargin)
+            maker.leading.equalToSuperview()
+            maker.trailing.equalToSuperview()
+        }
     }
     
     // 🎬 set action
@@ -52,6 +64,12 @@ final class PloneImageViewController: UIViewController, PloneCoordinator {
         viewModel.output.showTitle
             .drive(onNext: { title in
                 self.title = title
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showImage
+            .drive(onNext: { image in
+                self.imageView.image = image
             })
             .disposed(by: disposeBag)
     }

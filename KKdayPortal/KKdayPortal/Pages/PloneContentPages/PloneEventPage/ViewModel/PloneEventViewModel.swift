@@ -47,7 +47,9 @@ final class PloneEventViewModel: PloneControllable, RXViewModelType {
         let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
         let response = apiManager.request(portalItem)
     
-        response.subscribe(onSuccess: { [weak self] ploneEvent in
+        response
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] ploneEvent in
         
             self?.ploneItem = ploneEvent
             self?.titleSubject.onNext(ploneEvent.title)

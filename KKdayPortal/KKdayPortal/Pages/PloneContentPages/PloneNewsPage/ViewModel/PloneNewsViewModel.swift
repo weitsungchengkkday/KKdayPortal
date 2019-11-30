@@ -52,7 +52,9 @@ final class PloneNewsViewModel: PloneControllable, RXViewModelType {
         let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
         let response = apiManager.request(portalItem)
     
-        response.subscribe(onSuccess: { [weak self] ploneNews in
+        response
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] ploneNews in
         
             self?.ploneItem = ploneNews
             self?.titleSubject.onNext(ploneNews.title)

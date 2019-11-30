@@ -10,10 +10,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import WebKit
 
 final class PloneDocumentViewController: UIViewController, PloneCoordinator {
     
     // 🏞 UI element
+    lazy var wkWebView: WKWebView = {
+        let wkv = WKWebView()
+        return wkv
+    }()
     
     var viewModel: PloneDocumentViewModel
     let disposeBag = DisposeBag()
@@ -38,7 +43,15 @@ final class PloneDocumentViewController: UIViewController, PloneCoordinator {
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
-      
+        view.addSubview(wkWebView)
+        wkWebView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.bottom.equalTo(self.view.snp.bottomMargin)
+            maker.leading.equalToSuperview()
+            maker.trailing.equalToSuperview()
+        }
+        
+        wkWebView.loadHTMLString("", baseURL: nil)
     }
     
     // 🎬 set action
@@ -52,6 +65,12 @@ final class PloneDocumentViewController: UIViewController, PloneCoordinator {
         viewModel.output.showTitle
             .drive(onNext: { title in
                 self.title = title
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showDataText
+            .drive(onNext: { dataText in
+                self.wkWebView.loadHTMLString(dataText, baseURL: nil)
             })
             .disposed(by: disposeBag)
     }

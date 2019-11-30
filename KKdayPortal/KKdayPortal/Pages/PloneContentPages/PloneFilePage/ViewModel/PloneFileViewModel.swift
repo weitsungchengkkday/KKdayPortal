@@ -47,7 +47,9 @@ final class PloneFileViewModel: PloneControllable, RXViewModelType {
         let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
         let response = apiManager.request(portalItem)
     
-        response.subscribe(onSuccess: { [weak self] ploneFile in
+        response
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] ploneFile in
         
             self?.ploneItem = ploneFile
             self?.titleSubject.onNext(ploneFile.title)
