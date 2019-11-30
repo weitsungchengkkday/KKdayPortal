@@ -29,13 +29,13 @@
 import Foundation
 
 public enum SecureStoreError: Error {
-  case string2DataConversionError
-  case data2StringConversionError
-  case unhandledError(message: String)
+    case string2DataConversionError
+    case data2StringConversionError
+    case unhandledError(message: String)
 }
 
 extension SecureStoreError: LocalizedError {
-  public var errorDescription: String? {
+    public var errorDescription: String? {
     switch self {
     case .string2DataConversionError:
       return NSLocalizedString("String to Data conversion error", comment: "")

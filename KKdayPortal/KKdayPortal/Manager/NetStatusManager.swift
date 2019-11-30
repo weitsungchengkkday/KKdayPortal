@@ -7,7 +7,7 @@
 //
 import Network
 
-class NetStatusManager {
+final class NetStatusManager {
     
     static let shared = NetStatusManager()
     

@@ -8,13 +8,13 @@
 
 import Foundation
 
-class StorageManager {
+final class StorageManager {
 
     static let shared: StorageManager = StorageManager()
 
     /// Storage Key
     enum StorageKeys: String {
-        case authToken
+        case ploneUser
     }
 
     private init() {
