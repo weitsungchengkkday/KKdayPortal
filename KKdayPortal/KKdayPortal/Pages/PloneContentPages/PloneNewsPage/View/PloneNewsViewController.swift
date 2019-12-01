@@ -10,10 +10,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import WebKit
 
 final class PloneNewsViewController: UIViewController , PloneCoordinator {
     
     // 🏞 UI element
+    lazy var imageView: UIImageView = {
+        let imv = UIImageView()
+        return imv
+    }()
+    
+    lazy var wkWebView: WKWebView = {
+          let wkv = WKWebView()
+          return wkv
+    }()
 
     var viewModel: PloneNewsViewModel
     let disposeBag = DisposeBag()
@@ -39,6 +49,22 @@ final class PloneNewsViewController: UIViewController , PloneCoordinator {
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
+        view.addSubview(imageView)
+        view.addSubview(wkWebView)
+    
+        imageView.snp.makeConstraints { maker in
+            maker.top.equalTo(view.snp.topMargin)
+            maker.height.equalTo(view.frame.width * 2/3)
+            maker.leading.equalToSuperview()
+            maker.trailing.equalToSuperview()
+        }
+        
+        wkWebView.snp.makeConstraints { maker in
+            maker.top.equalTo(imageView.snp.bottom)
+            maker.bottom.equalTo(self.view.snp.bottomMargin)
+            maker.leading.equalToSuperview()
+            maker.trailing.equalToSuperview()
+        }
         
     }
     
@@ -51,10 +77,21 @@ final class PloneNewsViewController: UIViewController , PloneCoordinator {
     private func bindViewModel() {
         
         viewModel.output.showTitle
-            .drive(onNext: { title in
-                self.title = title
+            .drive(onNext: { [weak self] title in
+                self?.title = title
             })
             .disposed(by: disposeBag)
         
+        viewModel.output.showImage
+            .drive(onNext: { [weak self] image in
+                self?.imageView.image = image
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showDataText
+            .drive(onNext: { [weak self] dataText in
+                self?.wkWebView.loadHTMLString(dataText, baseURL: nil)
+            })
+            .disposed(by: disposeBag)
     }
 }

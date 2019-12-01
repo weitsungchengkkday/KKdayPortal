@@ -22,29 +22,33 @@ final class PloneNewsViewModel: PloneControllable, RXViewModelType {
     var output: PloneNewsViewModel.Output
        
     struct Input {
-        let ploneItems: AnyObserver<[PloneItem]>
         let title: AnyObserver<String>
+        let image: AnyObserver<UIImage>
+        let dataText: AnyObserver<String>
     }
     
     struct Output {
-        let showPloneItems: Driver<[PloneItem]>
         let showTitle: Driver<String>
+        let showImage: Driver<UIImage>
+        let showDataText: Driver<String>
     }
     
     private let ploneItemsSubject = PublishSubject<[PloneItem]>()
     private let titleSubject = PublishSubject<String>()
+    private let imageViewSubject = PublishSubject<UIImage>()
+    private let dataTextSubject = PublishSubject<String>()
     
     init(apiManager: APIManager, route: URL) {
         self.apiManager = apiManager
         self.route = route
         
-        self.input = Input(ploneItems: ploneItemsSubject.asObserver(),
-                           title: titleSubject.asObserver()
-        )
+        self.input = Input(title: titleSubject.asObserver(),
+                           image: imageViewSubject.asObserver(),
+                           dataText: dataTextSubject.asObserver())
         
-        self.output = Output(showPloneItems: ploneItemsSubject.asDriver(onErrorJustReturn: []),
-                             showTitle: titleSubject.asDriver(onErrorJustReturn: "Document")
-        )
+        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "News"),
+                             showImage: imageViewSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")),
+                             showDataText: dataTextSubject.asDriver(onErrorJustReturn: ""))
     }
     
     func getPloneData() {
@@ -55,9 +59,13 @@ final class PloneNewsViewModel: PloneControllable, RXViewModelType {
         response
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] ploneNews in
-        
+            
             self?.ploneItem = ploneNews
             self?.titleSubject.onNext(ploneNews.title)
+                
+                let imageURL = ploneNews.image.url
+                self?.dowloadImage(url: imageURL)
+                self?.dataTextSubject.onNext(ploneNews.text.data)
        
         }) { error in
               print("🚨 Func: \(#file),\(#function)")
@@ -65,5 +73,17 @@ final class PloneNewsViewModel: PloneControllable, RXViewModelType {
         }
         .disposed(by: disposeBag)
     }
+    
+    private func dowloadImage(url: URL) {
+          DispatchQueue.global().async { [weak self] in
+              if let data = try? Data(contentsOf: url) {
+                  if let image = UIImage(data: data) {
+                      DispatchQueue.main.async {
+                          self?.imageViewSubject.onNext(image)
+                      }
+                  }
+              }
+          }
+      }
     
 }

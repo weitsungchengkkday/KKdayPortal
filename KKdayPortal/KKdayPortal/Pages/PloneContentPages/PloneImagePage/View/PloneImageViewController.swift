@@ -62,14 +62,14 @@ final class PloneImageViewController: UIViewController, PloneCoordinator {
     private func bindViewModel() {
         
         viewModel.output.showTitle
-            .drive(onNext: { title in
-                self.title = title
+            .drive(onNext: { [weak self] title in
+                self?.title = title
             })
             .disposed(by: disposeBag)
         
         viewModel.output.showImage
-            .drive(onNext: { image in
-                self.imageView.image = image
+            .drive(onNext: { [weak self] image in
+                self?.imageView.image = image
             })
             .disposed(by: disposeBag)
     }

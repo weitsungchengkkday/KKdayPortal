@@ -50,8 +50,6 @@ final class PloneDocumentViewController: UIViewController, PloneCoordinator {
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }
-        
-        wkWebView.loadHTMLString("", baseURL: nil)
     }
     
     // 🎬 set action
@@ -69,8 +67,8 @@ final class PloneDocumentViewController: UIViewController, PloneCoordinator {
             .disposed(by: disposeBag)
         
         viewModel.output.showDataText
-            .drive(onNext: { dataText in
-                self.wkWebView.loadHTMLString(dataText, baseURL: nil)
+            .drive(onNext: { [weak self] dataText in
+                self?.wkWebView.loadHTMLString(dataText, baseURL: nil)
             })
             .disposed(by: disposeBag)
     }

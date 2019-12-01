@@ -49,8 +49,8 @@ final class PloneFileViewController: UIViewController , PloneCoordinator {
     private func bindViewModel() {
         
         viewModel.output.showTitle
-            .drive(onNext: { title in
-                self.title = title
+            .drive(onNext: { [weak self] title in
+                self?.title = title
             })
             .disposed(by: disposeBag)
     }
