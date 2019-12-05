@@ -45,7 +45,6 @@ enum PortalUser {
         
         var headers: [String: String]? {
             
-            
             return [
                 "Accept" : "application/json",
                 "Authorization" : "Bearer" + " " + token

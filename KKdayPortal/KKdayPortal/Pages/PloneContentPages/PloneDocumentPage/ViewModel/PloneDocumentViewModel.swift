@@ -46,18 +46,24 @@ final class PloneDocumentViewModel: PloneControllable, RXViewModelType {
         let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
         let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
         let response = apiManager.request(portalItem)
-    
+        
         response
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] ploneDocument in
-        
-            self?.ploneItem = ploneDocument
-            self?.titleSubject.onNext(ploneDocument.title)
-            self?.dataTextSubject.onNext(ploneDocument.text.data)
-       
-        }) { error in
-              print("🚨 Func: \(#file),\(#function)")
-              print("Error: \(error)")
+                
+                self?.ploneItem = ploneDocument
+                if let title = ploneDocument.title {
+                    self?.titleSubject.onNext(title)
+                }
+                
+                guard let text = ploneDocument.text else {
+                    return
+                }
+                self?.dataTextSubject.onNext(text.data)
+                
+            }) { error in
+                print("🚨 Func: \(#file),\(#function)")
+                print("Error: \(error)")
         }
         .disposed(by: disposeBag)
     }

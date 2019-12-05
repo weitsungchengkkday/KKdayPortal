@@ -17,11 +17,11 @@ final class PloneLink: PloneItem {
         case linkTitle = "title"
     }
     
-    init(atID: URL, atType: PloneItemType, description: String, title: String, isFolderish: Bool, parent: PloneItem, remoteURL: URL, linkTitle: String) {
+    init(UID: String?, atID: URL?, atType: PloneItemType?, description: String?, title: String?, isFolderish: Bool?, parent: PloneItem?, id: String?, remoteURL: URL, linkTitle: String) {
         self.remoteURL = remoteURL
         self.linkTitle = linkTitle
     
-        super.init(atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent)
+        super.init(UID: UID, atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent, id: id)
     }
     
     required init(from decoder: Decoder) throws {

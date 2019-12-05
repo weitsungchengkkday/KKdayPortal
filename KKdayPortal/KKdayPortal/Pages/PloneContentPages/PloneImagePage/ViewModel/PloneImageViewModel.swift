@@ -52,15 +52,19 @@ final class PloneImageViewModel: PloneControllable, RXViewModelType {
         response
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] ploneImage in
-            self?.ploneItem = ploneImage
-            self?.titleSubject.onNext(ploneImage.title)
-            
-            let imageURL = ploneImage.image.url
-            self?.dowloadImage(url: imageURL)
-            
-        }) { error in
-            print("🚨 Func: \(#file),\(#function)")
-            print("Error: \(error)")
+                self?.ploneItem = ploneImage
+                if let title = ploneImage.title {
+                    self?.titleSubject.onNext(title)
+                }
+                
+                guard let imageURL = ploneImage.image?.url else {
+                    return
+                }
+                self?.dowloadImage(url: imageURL)
+                
+            }) { error in
+                print("🚨 Func: \(#file),\(#function)")
+                print("Error: \(error)")
         }
         .disposed(by: disposeBag)
     }

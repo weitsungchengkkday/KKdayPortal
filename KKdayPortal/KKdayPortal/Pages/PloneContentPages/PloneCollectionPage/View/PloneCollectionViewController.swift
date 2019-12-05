@@ -84,7 +84,12 @@ final class PloneCollectionViewController: UIViewController, PloneCoordinator {
                 cell.selectCellButton.rx.tap.asObservable()
                     .subscribe({ [unowned self] _ in
                         
-                        self.goDetailPage(route: ploneItem.atID, type: ploneItem.atType)
+                        guard let type = ploneItem.atType,
+                            let atID = ploneItem.atID else {
+                                return
+                        }
+                        
+                        self.goDetailPage(route: atID, type: type)
                     })
                     .disposed(by: cell.disposeBag)
         }

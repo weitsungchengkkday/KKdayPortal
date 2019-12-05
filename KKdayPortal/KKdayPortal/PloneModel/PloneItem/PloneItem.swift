@@ -22,52 +22,56 @@ enum PloneItemType: String, Codable {
 }
 
 class PloneItem: Codable {
-    var atID: URL
-    var atType: PloneItemType
+
+    var UID: String?
+    var atID: URL?
+    var atType: PloneItemType?
     var description: String?
-    var title: String
-    var isFolderish: Bool
+    var title: String?
+    var isFolderish: Bool?
     var parent: PloneItem?
+    var id: String?
     
     private enum CodingKeys: String, CodingKey {
+        case UID
         case atID = "@id"
         case atType = "@type"
         case description
         case title
         case isFolderish = "is_folderish"
         case parent
+        case id = "id"
     }
     
-    init(atID: URL, atType: PloneItemType, description: String, title: String, isFolderish: Bool, parent: PloneItem?) {
+    init(UID: String?, atID: URL?, atType: PloneItemType?, description: String?, title: String?, isFolderish: Bool?, parent: PloneItem?, id: String?) {
+        self.UID = UID
         self.atID = atID
         self.atType = atType
         self.description = description
         self.title = title
         self.isFolderish = isFolderish
         self.parent = parent
+        self.id = id
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.atID = try container.decode(URL.self, forKey: .atID)
         
-        let rawValue = try container.decode(String.self, forKey: .atType)
-        self.atType = PloneItemType(rawValue: rawValue)!
-        self.description = try container.decodeIfPresent(String.self, forKey: .description)
-        self.title = try container.decode(String.self, forKey: .title)
-      
-        let atType = self.atType
-        let isFolderish: Bool = {
-            switch atType {
-            case .root, .folder:
-                return true
-            case .document, .news, .event, .image, .file, .link, .collection:
-                return false
-            }
-        }()
+        self.UID = try? container.decodeIfPresent(String.self, forKey: .UID)
+        self.atID = try? container.decode(URL.self, forKey: .atID)
         
-        self.isFolderish = try (container.decodeIfPresent(Bool.self, forKey: .isFolderish) ?? isFolderish)
+        if let rawValue = try? container.decode(String.self, forKey: .atType) {
+            self.atType = PloneItemType(rawValue: rawValue)
+        } else {
+            self.atType = nil
+        }
+        
+        self.description = try? container.decode(String.self, forKey: .description)
+        self.title = try? container.decode(String.self, forKey: .title)
+        
+        self.isFolderish = try? container.decodeIfPresent(Bool.self, forKey: .isFolderish)
         
         self.parent = try? container.decodeIfPresent(PloneItem.self, forKey: .parent)
+        self.id = try? container.decodeIfPresent(String.self, forKey: .id)
     }
 }

@@ -51,11 +51,13 @@ final class PloneLinkViewModel : PloneControllable, RXViewModelType {
         response
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] ploneLink in
-        
-            self?.ploneItem = ploneLink
-            self?.titleSubject.onNext(ploneLink.title)
-       
-        }) { error in
+                
+                self?.ploneItem = ploneLink
+                if let title = ploneLink.title {
+                    self?.titleSubject.onNext(title)
+                }
+                
+            }) { error in
               print("🚨 Func: \(#file),\(#function)")
               print("Error: \(error)")
         }

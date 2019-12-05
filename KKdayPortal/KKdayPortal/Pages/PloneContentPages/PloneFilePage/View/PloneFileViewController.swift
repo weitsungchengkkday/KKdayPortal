@@ -33,6 +33,9 @@ final class PloneFileViewController: UIViewController , PloneCoordinator {
         setupUI()
         bindViewModel()
         viewModel.getPloneData()
+        
+        let url = URL(string: "http://localhost:8080/pikaPika/movietheater/kkorganization/@@download/file")!
+        viewModel.downloadFile(fileURL: url)
     }
     
     // 🎨 draw UI

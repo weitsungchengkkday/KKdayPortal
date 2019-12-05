@@ -10,20 +10,20 @@ import Foundation
 
 final class PloneDocument: PloneItem {
     
-    var text: PloneTextObject
+    var text: PloneTextObject?
     
     private enum CodingKeys: String, CodingKey {
-         case text = "text"
+         case text
      }
      
-     init(atID: URL, atType: PloneItemType, description: String, title: String, isFolderish: Bool, parent: PloneItem, text: PloneTextObject) {
+    init(UID: String?, atID: URL?, atType: PloneItemType?, description: String?, title: String?, isFolderish: Bool?, parent: PloneItem?, id: String?, text: PloneTextObject?) {
          self.text = text
-         super.init(atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent)
+        super.init(UID: UID, atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent, id: id)
      }
      
      required init(from decoder: Decoder) throws {
          let container = try decoder.container(keyedBy: CodingKeys.self)
-         self.text = try container.decode(PloneTextObject.self, forKey: .text)
+         self.text = try? container.decode(PloneTextObject.self, forKey: .text)
          try super.init(from: decoder)
      }
     

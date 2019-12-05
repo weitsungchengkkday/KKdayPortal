@@ -10,20 +10,20 @@ import Foundation
 
 final class PloneImage: PloneItem {
     
-    var image: PloneImageObject
+    var image: PloneImageObject?
      
      private enum CodingKeys: String, CodingKey {
-          case image = "image"
+          case image
       }
       
-      init(atID: URL, atType: PloneItemType, description: String, title: String, isFolderish: Bool, parent: PloneItem, image: PloneImageObject) {
+    init(UID: String?, atID: URL?, atType: PloneItemType?, description: String?, title: String?, isFolderish: Bool?, parent: PloneItem?, id: String?, image: PloneImageObject?) {
           self.image = image
-          super.init(atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent)
+        super.init(UID: UID, atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent, id: id)
       }
       
       required init(from decoder: Decoder) throws {
           let container = try decoder.container(keyedBy: CodingKeys.self)
-          self.image = try container.decode(PloneImageObject.self, forKey: .image)
+          self.image = try? container.decode(PloneImageObject.self, forKey: .image)
           try super.init(from: decoder)
       }
 }

@@ -10,20 +10,20 @@ import Foundation
 
 final class PloneRoot: PloneItem {
  
-    var items: [PloneItem]
+    var items: [PloneItem]?
     
     private enum CodingKeys: String, CodingKey {
-        case items = "items"
+        case items
     }
     
-    init(atID: URL, atType: PloneItemType, description: String, title: String, isFolderish: Bool, parent: PloneItem, items: [PloneItem]) {
+    init(UID: String?, atID: URL?, atType: PloneItemType?, description: String?, title: String?, isFolderish: Bool?, parent: PloneItem?, id: String?, items: [PloneItem]?) {
         self.items = items
-        super.init(atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent)
+        super.init(UID: UID, atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent, id: id)
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.items = try container.decode([PloneItem].self, forKey: .items)
+        self.items = try? container.decode([PloneItem].self, forKey: .items)
         try super.init(from: decoder)
     }
     

@@ -20,7 +20,7 @@ final class PloneNewsViewModel: PloneControllable, RXViewModelType {
     
     var input: PloneNewsViewModel.Input
     var output: PloneNewsViewModel.Output
-       
+    
     struct Input {
         let title: AnyObserver<String>
         let image: AnyObserver<UIImage>
@@ -55,35 +55,41 @@ final class PloneNewsViewModel: PloneControllable, RXViewModelType {
         let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
         let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
         let response = apiManager.request(portalItem)
-    
+        
         response
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] ploneNews in
-            
-            self?.ploneItem = ploneNews
-            self?.titleSubject.onNext(ploneNews.title)
                 
-                let imageURL = ploneNews.image.url
+                self?.ploneItem = ploneNews
+                if let title = ploneNews.title {
+                    self?.titleSubject.onNext(title)
+                }
+                guard let imageURL = ploneNews.image?.url else {
+                    return
+                }
                 self?.dowloadImage(url: imageURL)
-                self?.dataTextSubject.onNext(ploneNews.text.data)
-       
-        }) { error in
-              print("🚨 Func: \(#file),\(#function)")
-              print("Error: \(error)")
+                
+                guard let text = ploneNews.text else {
+                    return
+                }
+                self?.dataTextSubject.onNext(text.data)
+                
+            }) { error in
+                print("🚨 Func: \(#file),\(#function)")
+                print("Error: \(error)")
         }
         .disposed(by: disposeBag)
     }
     
     private func dowloadImage(url: URL) {
-          DispatchQueue.global().async { [weak self] in
-              if let data = try? Data(contentsOf: url) {
-                  if let image = UIImage(data: data) {
-                      DispatchQueue.main.async {
-                          self?.imageViewSubject.onNext(image)
-                      }
-                  }
-              }
-          }
-      }
-    
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.imageViewSubject.onNext(image)
+                    }
+                }
+            }
+        }
+    }
 }

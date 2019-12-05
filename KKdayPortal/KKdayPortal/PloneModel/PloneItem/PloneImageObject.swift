@@ -27,8 +27,8 @@ final class PloneImageObject: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.contentType = try container.decode(String.self, forKey: .contentType)
-        self.name = try container.decode(String.self, forKey: .name)
+        self.contentType = try container.decodeIfPresent(String.self, forKey: .contentType) ?? ""
+        self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         self.url = try container.decode(URL.self, forKey: .url)
     }
     

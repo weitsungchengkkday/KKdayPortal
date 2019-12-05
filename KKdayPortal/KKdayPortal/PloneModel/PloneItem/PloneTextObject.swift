@@ -27,9 +27,9 @@ final class PloneTextObject: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.contentType = try container.decode(String.self, forKey: .contentType)
-        self.data = try container.decode(String.self, forKey: .data)
-        self.encoding = try container.decode(String.self, forKey: .encoding)
+        self.contentType = try container.decodeIfPresent(String.self, forKey: .contentType) ?? ""
+        self.data = try container.decodeIfPresent(String.self, forKey: .data) ?? ""
+        self.encoding = try container.decodeIfPresent(String.self, forKey: .encoding) ?? ""
     }
     
 }

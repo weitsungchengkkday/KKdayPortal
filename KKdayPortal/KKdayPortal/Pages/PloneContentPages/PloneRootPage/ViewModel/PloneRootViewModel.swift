@@ -53,16 +53,22 @@ final class PloneRootViewModel: PloneControllable, RXViewModelType {
         response
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] ploneRoot in
-            self?.ploneItem = ploneRoot
-            self?.ploneItemsSubject.onNext(ploneRoot.items)
-            self?.titleSubject.onNext(ploneRoot.title)
-            
-        }) { error in
-            print("🚨 Func: \(#file),\(#function)")
-            print("Error: \(error)")
+                self?.ploneItem = ploneRoot
+               
+                if let items = ploneRoot.items {
+                    self?.ploneItemsSubject.onNext(items)
+                }
+                
+                if let title = ploneRoot.title {
+                    self?.titleSubject.onNext(title)
+                }
+                
+            }) { error in
+                print("🚨 Func: \(#file),\(#function)")
+                print("Error: \(error)")
         }
         .disposed(by: disposeBag)
-     }
+    }
 
      
     

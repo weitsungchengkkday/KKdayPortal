@@ -13,12 +13,12 @@ final class PloneFile: PloneItem {
     var file: PloneFileObject
     
     private enum CodingKeys: String, CodingKey {
-        case file = "file"
+        case file 
     }
     
-    init(atID: URL, atType: PloneItemType, description: String, title: String, isFolderish: Bool, parent: PloneItem, file: PloneFileObject) {
+    init(UID: String?, atID: URL?, atType: PloneItemType?, description: String?, title: String?, isFolderish: Bool?, parent: PloneItem?, id: String?, file: PloneFileObject) {
         self.file = file
-        super.init(atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent)
+        super.init(UID: UID, atID: atID, atType: atType, description: description, title: title, isFolderish: isFolderish, parent: parent, id: id)
     }
     
     required init(from decoder: Decoder) throws {

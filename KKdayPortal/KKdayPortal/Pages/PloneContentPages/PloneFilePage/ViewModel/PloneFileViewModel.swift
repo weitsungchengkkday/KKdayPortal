@@ -50,16 +50,33 @@ final class PloneFileViewModel: PloneControllable, RXViewModelType {
         response
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] ploneFile in
-        
-            self?.ploneItem = ploneFile
-            self?.titleSubject.onNext(ploneFile.title)
-       
-        }) { error in
-              print("🚨 Func: \(#file),\(#function)")
-              print("Error: \(error)")
+                
+                self?.ploneItem = ploneFile
+                if let title = ploneFile.title {
+                    self?.titleSubject.onNext(title)
+                }
+                
+            }) { error in
+                print("🚨 Func: \(#file),\(#function)")
+                print("Error: \(error)")
         }
         .disposed(by: disposeBag)
     }
+    
+    func downloadFile(fileURL: URL) {
+        let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
+        
+        let unclassifiedFile = PortalFile.Unclassified(user: user, fileRoute: fileURL)
+        FileManager.default.downloadFile(unclassifiedFile)
+            .subscribe(onSuccess: { data in
+                print(type(of: data))
+                
+            }) { error in
+                print(error)
+        }
+        .disposed(by: disposeBag)
+    }
+   
     
 }
 
