@@ -59,6 +59,7 @@
 		F4544858239DF3E4001B8D31 /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */; };
 		F454485A239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */; };
 		F454485C239DF44C001B8D31 /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */; };
+		F454485F239E21FE001B8D31 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454485E239E21FE001B8D31 /* Authentication.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -168,6 +169,7 @@
 		F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewModel.swift; sourceTree = "<group>"; };
 		F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewController.swift; sourceTree = "<group>"; };
+		F454485E239E21FE001B8D31 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -716,6 +718,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F454485D239E21C3001B8D31 /* Authorizable */ = {
+			isa = PBXGroup;
+			children = (
+				F454485E239E21FE001B8D31 /* Authentication.swift */,
+			);
+			path = Authorizable;
+			sourceTree = "<group>";
+		};
 		F4B3F2C123862B3000657CDF = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +751,7 @@
 		F4B3F2CC23862B3000657CDF /* KKdayPortal */ = {
 			isa = PBXGroup;
 			children = (
+				F454485D239E21C3001B8D31 /* Authorizable */,
 				F45447DF23996298001B8D31 /* Repository */,
 				F4B3F3242387C15B00657CDF /* Network */,
 				F4544763239602FD001B8D31 /* Extension */,
@@ -1204,6 +1215,7 @@
 				F4544858239DF3E4001B8D31 /* GeneralCollectionViewModel.swift in Sources */,
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
+				F454485F239E21FE001B8D31 /* Authentication.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
 				F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */,
 				F4B3F3342387CD1F00657CDF /* PortalUserAPITarget.swift in Sources */,
