@@ -15,16 +15,8 @@ protocol RepositoryManageable {
     associatedtype R
     static var baseURL: URL { get }
     
-    func getItem() -> PrimitiveSequence<SingleTrait, R>
-    func create(item: R)
+    func getItem() -> Single<R>
+    func create()
     func update(item: R)
     func delete(item: R)
 }
-
-//
-//protocol AuthService where Self: UIViewController {
-//
-//    func login() -> String
-//    func renewToken(token: String) -> String
-//    func logout(token: String)
-//}

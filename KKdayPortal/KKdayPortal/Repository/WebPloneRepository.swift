@@ -29,7 +29,7 @@ final class WebPloneRepository: RepositoryManageable {
         self.ploneItemType = ploneItemType
     }
     
-    func getItem() -> PrimitiveSequence<SingleTrait, R> {
+    func getItem() -> Single<R> {
         
         switch ploneItemType {
         case .root:
@@ -118,7 +118,7 @@ final class WebPloneRepository: RepositoryManageable {
             
     }
     
-    func create(item: R) {}
+    func create() {}
     func update(item: R) {}
     func delete(item: R) {}
 }
