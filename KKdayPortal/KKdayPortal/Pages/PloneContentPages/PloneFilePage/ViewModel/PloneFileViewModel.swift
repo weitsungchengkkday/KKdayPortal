@@ -29,7 +29,6 @@ final class PloneFileViewModel: PloneControllable, RXViewModelType {
         let showTitle: Driver<String>
     }
     
-    private let ploneItemsSubject = PublishSubject<[PloneItem]>()
     private let titleSubject = PublishSubject<String>()
     
     init(apiManager: APIManager, route: URL) {

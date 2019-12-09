@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController, GeneralItemCoordinator {
     
     // 🏞 UI element
     lazy var webHomeButton: UIButton = {
@@ -50,9 +50,13 @@ final class HomeViewController: UIViewController {
     @objc private func goWebHomePage() {
         // https://sean.security.dev.kkday.com/Plone
         // http://localhost:8080/pikaPika
+        
         let rootURL = URL(string: "http://localhost:8080/pikaPika")!
-        let pushViewController = PloneRootViewController(viewModel: PloneRootViewModel(apiManager: APIManager.default, route: rootURL))
-        navigationController?.pushViewController(pushViewController, animated: false)
+//        let pushViewController = PloneRootViewController(viewModel: PloneRootViewModel(apiManager: APIManager.default, route: rootURL))
+      
+//        navigationController?.pushViewController(pushViewController, animated: false)
+        
+        goDetailPage(route: rootURL, type: .root)
     }
     
     // ⛓ bind viewModel

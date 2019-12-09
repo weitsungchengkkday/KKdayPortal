@@ -31,7 +31,6 @@ final class PloneDocumentViewModel: PloneControllable, RXViewModelType {
         let showDataText: Driver<String>
     }
     
-    private let ploneItemsSubject = PublishSubject<[PloneItem]>()
     private let titleSubject = PublishSubject<String>()
     private let dataTextSubject = PublishSubject<String>()
     

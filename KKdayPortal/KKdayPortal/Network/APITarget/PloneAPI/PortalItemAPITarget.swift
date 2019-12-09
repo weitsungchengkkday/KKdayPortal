@@ -15,10 +15,6 @@ enum PortalItem {
         typealias ResponseType = T
         
         var baseURL: URL {
-            let baseURLString = "http://localhost:8080/pikaPika"
-            guard let route = route else {
-                return URL(string: baseURLString)!
-            }
             return route
         }
         
@@ -42,16 +38,14 @@ enum PortalItem {
             ]
         }
         
+        let route: URL
         let user: PloneUser?
         let token: String
-        let route: URL?
      
-        
-        init(user: PloneUser?, route: URL?) {
+        init(user: PloneUser?, route: URL) {
             self.route = route
             self.user = user
             self.token = user?.token ?? ""
-        
         }
         
     }

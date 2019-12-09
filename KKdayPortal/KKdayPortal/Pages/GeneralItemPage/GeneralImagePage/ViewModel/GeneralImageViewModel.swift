@@ -1,25 +1,20 @@
 //
-//  PloneImageViewModel.swift
+//  GeneralImageViewModel.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2019/11/30.
+//  Created by WEI-TSUNG CHENG on 2019/12/8.
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import RxSwift
 import RxCocoa
 
-final class PloneImageViewModel: PloneControllable, RXViewModelType {
+final class GeneralImageViewModel: RXViewModelType, PortalControllable {
+ 
+    typealias PortalContent = GeneralItem
     
-    typealias PloneContent = PloneImage
-    
-    let apiManager: APIManager
-    var route: URL
-    let disposeBag = DisposeBag()
-    var ploneItem: PloneContent?
-    
-    var input: PloneImageViewModel.Input
-    var output: PloneImageViewModel.Output
+    var input: GeneralImageViewModel.Input
+    var output: GeneralImageViewModel.Output
     
     struct Input {
         let title: AnyObserver<String>
@@ -34,29 +29,31 @@ final class PloneImageViewModel: PloneControllable, RXViewModelType {
     private let titleSubject = PublishSubject<String>()
     private let imageViewSubject = PublishSubject<UIImage>()
     
-    init(apiManager: APIManager, route: URL) {
-        self.apiManager = apiManager
-        self.route = route
+    var source: URL
+    let disposeBag = DisposeBag()
+    var generalItem: PortalContent?
+    
+    init(source: URL) {
+        self.source = source
         self.input = Input(title: titleSubject.asObserver(), image: imageViewSubject.asObserver())
-        
         
         self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Image"), showImage: imageViewSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")))
     }
     
-    func getPloneData() {
-        let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
-        let portalItem = PortalItem.Item<PloneContent>(user: user, route: route)
-        let response = apiManager.request(portalItem)
+    func getPortalData() {
         
-        response
+        let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
+        
+        ModelLoader.PortalItem().getItem(repo: WebPloneRepository(source: source, user: user, ploneItemType: .image))
             .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] ploneImage in
-                self?.ploneItem = ploneImage
-                if let title = ploneImage.title {
+            .subscribe(onSuccess: { [weak self] generalItem in
+                
+                self?.generalItem = generalItem
+                if let title = generalItem.title {
                     self?.titleSubject.onNext(title)
                 }
                 
-                guard let imageURL = ploneImage.image?.url else {
+                guard let imageURL = generalItem.imageObject?.url else {
                     return
                 }
                 self?.dowloadImage(url: imageURL)
@@ -79,4 +76,5 @@ final class PloneImageViewModel: PloneControllable, RXViewModelType {
             }
         }
     }
+    
 }

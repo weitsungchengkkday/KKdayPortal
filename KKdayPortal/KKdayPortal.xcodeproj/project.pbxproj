@@ -45,6 +45,41 @@
 		F45447622393AAC2001B8D31 /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
 		F454476523960669001B8D31 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
 		F4544769239609E5001B8D31 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
+		F45447E12399632E001B8D31 /* RepositoryManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E02399632E001B8D31 /* RepositoryManageable.swift */; };
+		F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
+		F45447E9239AA320001B8D31 /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
+		F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
+		F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
+		F45447F0239AB75D001B8D31 /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
+		F45447F2239AB79A001B8D31 /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
+		F45447F4239AB7B6001B8D31 /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
+		F45447F6239AB816001B8D31 /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
+		F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
+		F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
+		F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
+		F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
+		F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
+		F4544823239CA036001B8D31 /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
+		F4544826239CA4AC001B8D31 /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
+		F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
+		F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
+		F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
+		F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
+		F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
+		F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544837239CAD0A001B8D31 /* GeneralNewsViewController.swift */; };
+		F454483A239CAD3D001B8D31 /* GeneralEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */; };
+		F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
+		F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483D239CAD72001B8D31 /* GeneralLinkViewModel.swift */; };
+		F4544840239CADE4001B8D31 /* GeneralLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */; };
+		F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
+		F4544844239CAE04001B8D31 /* GeneralFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */; };
+		F4544846239D01C8001B8D31 /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
+		F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
+		F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */; };
+		F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
+		F4544858239DF3E4001B8D31 /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */; };
+		F454485A239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */; };
+		F454485C239DF44C001B8D31 /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -142,6 +177,41 @@
 		F45447612393AAC2001B8D31 /* PortalFileTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalFileTarget.swift; sourceTree = "<group>"; };
 		F454476423960669001B8D31 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F4544768239609E5001B8D31 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		F45447E02399632E001B8D31 /* RepositoryManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryManageable.swift; sourceTree = "<group>"; };
+		F45447E6239AA1AC001B8D31 /* GeneralItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItem.swift; sourceTree = "<group>"; };
+		F45447E8239AA320001B8D31 /* GeneralList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralList.swift; sourceTree = "<group>"; };
+		F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageObject.swift; sourceTree = "<group>"; };
+		F45447ED239AB733001B8D31 /* GeneralEventObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralEventObject.swift; sourceTree = "<group>"; };
+		F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTextObject.swift; sourceTree = "<group>"; };
+		F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFileObject.swift; sourceTree = "<group>"; };
+		F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralLinkObject.swift; sourceTree = "<group>"; };
+		F45447F5239AB816001B8D31 /* WebPloneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPloneRepository.swift; sourceTree = "<group>"; };
+		F45447F8239AB8D6001B8D31 /* ItemConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemConverter.swift; sourceTree = "<group>"; };
+		F45447FB239BB4D6001B8D31 /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
+		F45447FD239BB577001B8D31 /* ModelLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoadable.swift; sourceTree = "<group>"; };
+		F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewModel.swift; sourceTree = "<group>"; };
+		F454481F239C040F001B8D31 /* GeneralRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewController.swift; sourceTree = "<group>"; };
+		F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootTableViewCell.swift; sourceTree = "<group>"; };
+		F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemCoordinator.swift; sourceTree = "<group>"; };
+		F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewModel.swift; sourceTree = "<group>"; };
+		F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewController.swift; sourceTree = "<group>"; };
+		F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDocumentViewModel.swift; sourceTree = "<group>"; };
+		F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDocumentViewController.swift; sourceTree = "<group>"; };
+		F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsViewModel.swift; sourceTree = "<group>"; };
+		F4544837239CAD0A001B8D31 /* GeneralNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsViewController.swift; sourceTree = "<group>"; };
+		F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralEventViewModel.swift; sourceTree = "<group>"; };
+		F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralEventViewController.swift; sourceTree = "<group>"; };
+		F454483D239CAD72001B8D31 /* GeneralLinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralLinkViewModel.swift; sourceTree = "<group>"; };
+		F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralLinkViewController.swift; sourceTree = "<group>"; };
+		F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFileViewModel.swift; sourceTree = "<group>"; };
+		F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFileViewController.swift; sourceTree = "<group>"; };
+		F4544845239D01C8001B8D31 /* PortalControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalControllable.swift; sourceTree = "<group>"; };
+		F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFolderViewModel.swift; sourceTree = "<group>"; };
+		F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFolderViewController.swift; sourceTree = "<group>"; };
+		F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFolderTableViewCell.swift; sourceTree = "<group>"; };
+		F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewModel.swift; sourceTree = "<group>"; };
+		F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewController.swift; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -598,6 +668,376 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		F45447DF23996298001B8D31 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F45447E02399632E001B8D31 /* RepositoryManageable.swift */,
+				F45447F5239AB816001B8D31 /* WebPloneRepository.swift */,
+				F45447F7239AB87C001B8D31 /* ObejectConverter */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F45447E2239AA0C2001B8D31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F45447FA239BB2EB001B8D31 /* ModelLoader */,
+				F45447E4239AA10E001B8D31 /* GeneralModel */,
+				F4B3F3352387CDB000657CDF /* PloneModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F45447E4239AA10E001B8D31 /* GeneralModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4544824239CA3E3001B8D31 /* GeneralItemProtocol */,
+				F45447E5239AA19B001B8D31 /* GeneralItem */,
+			);
+			path = GeneralModel;
+			sourceTree = "<group>";
+		};
+		F45447E5239AA19B001B8D31 /* GeneralItem */ = {
+			isa = PBXGroup;
+			children = (
+				F45447E6239AA1AC001B8D31 /* GeneralItem.swift */,
+				F45447E8239AA320001B8D31 /* GeneralList.swift */,
+				F45447EA239AB6D6001B8D31 /* GeneralContent */,
+			);
+			path = GeneralItem;
+			sourceTree = "<group>";
+		};
+		F45447EA239AB6D6001B8D31 /* GeneralContent */ = {
+			isa = PBXGroup;
+			children = (
+				F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */,
+				F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */,
+				F45447ED239AB733001B8D31 /* GeneralEventObject.swift */,
+				F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */,
+				F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */,
+			);
+			path = GeneralContent;
+			sourceTree = "<group>";
+		};
+		F45447F7239AB87C001B8D31 /* ObejectConverter */ = {
+			isa = PBXGroup;
+			children = (
+				F45447F8239AB8D6001B8D31 /* ItemConverter.swift */,
+			);
+			path = ObejectConverter;
+			sourceTree = "<group>";
+		};
+		F45447FA239BB2EB001B8D31 /* ModelLoader */ = {
+			isa = PBXGroup;
+			children = (
+				F45447FD239BB577001B8D31 /* ModelLoadable.swift */,
+				F45447FB239BB4D6001B8D31 /* ModelLoader.swift */,
+			);
+			path = ModelLoader;
+			sourceTree = "<group>";
+		};
+		F45447FF239BF63A001B8D31 /* GeneralItemPage */ = {
+			isa = PBXGroup;
+			children = (
+				F4544800239BF688001B8D31 /* GeneralRootPage */,
+				F4544847239DF041001B8D31 /* GeneralFolderPage */,
+				F4544848239DF062001B8D31 /* GeneralCollectionPage */,
+				F4544806239BF6C9001B8D31 /* GeneralImagePage */,
+				F4544805239BF6C5001B8D31 /* GeneralDocumentPage */,
+				F4544804239BF6C2001B8D31 /* GeneralNewsPage */,
+				F4544801239BF6B2001B8D31 /* GeneralEventPage */,
+				F4544802239BF6BC001B8D31 /* GeneralFilePage */,
+				F4544803239BF6BF001B8D31 /* GeneralLinkPage */,
+			);
+			path = GeneralItemPage;
+			sourceTree = "<group>";
+		};
+		F4544800239BF688001B8D31 /* GeneralRootPage */ = {
+			isa = PBXGroup;
+			children = (
+				F4544809239C02A2001B8D31 /* ViewModel */,
+				F4544808239C02A0001B8D31 /* View */,
+				F4544807239C029C001B8D31 /* Cell */,
+			);
+			path = GeneralRootPage;
+			sourceTree = "<group>";
+		};
+		F4544801239BF6B2001B8D31 /* GeneralEventPage */ = {
+			isa = PBXGroup;
+			children = (
+				F4544815239C02C5001B8D31 /* ViewModel */,
+				F4544814239C02C3001B8D31 /* View */,
+			);
+			path = GeneralEventPage;
+			sourceTree = "<group>";
+		};
+		F4544802239BF6BC001B8D31 /* GeneralFilePage */ = {
+			isa = PBXGroup;
+			children = (
+				F454481B239C02D5001B8D31 /* ViewModel */,
+				F454481A239C02D3001B8D31 /* VIew */,
+			);
+			path = GeneralFilePage;
+			sourceTree = "<group>";
+		};
+		F4544803239BF6BF001B8D31 /* GeneralLinkPage */ = {
+			isa = PBXGroup;
+			children = (
+				F4544818239C02CE001B8D31 /* ViewModel */,
+				F4544817239C02CC001B8D31 /* View */,
+			);
+			path = GeneralLinkPage;
+			sourceTree = "<group>";
+		};
+		F4544804239BF6C2001B8D31 /* GeneralNewsPage */ = {
+			isa = PBXGroup;
+			children = (
+				F4544812239C02BE001B8D31 /* ViewModel */,
+				F4544811239C02BC001B8D31 /* View */,
+			);
+			path = GeneralNewsPage;
+			sourceTree = "<group>";
+		};
+		F4544805239BF6C5001B8D31 /* GeneralDocumentPage */ = {
+			isa = PBXGroup;
+			children = (
+				F454480F239C02B5001B8D31 /* ViewModel */,
+				F454480E239C02B3001B8D31 /* View */,
+			);
+			path = GeneralDocumentPage;
+			sourceTree = "<group>";
+		};
+		F4544806239BF6C9001B8D31 /* GeneralImagePage */ = {
+			isa = PBXGroup;
+			children = (
+				F454481C239C0373001B8D31 /* ViewModel */,
+				F454480B239C02A8001B8D31 /* View */,
+			);
+			path = GeneralImagePage;
+			sourceTree = "<group>";
+		};
+		F4544807239C029C001B8D31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F4544821239C9FF7001B8D31 /* View */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F4544808239C02A0001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F454481F239C040F001B8D31 /* GeneralRootViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4544809239C02A2001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F454480B239C02A8001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F454480E239C02B3001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F454480F239C02B5001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4544811239C02BC001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4544837239CAD0A001B8D31 /* GeneralNewsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4544812239C02BE001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4544814239C02C3001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4544815239C02C5001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4544817239C02CC001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4544818239C02CE001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F454483D239CAD72001B8D31 /* GeneralLinkViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F454481A239C02D3001B8D31 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		F454481B239C02D5001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F454481C239C0373001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4544821239C9FF7001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4544824239CA3E3001B8D31 /* GeneralItemProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */,
+				F4544845239D01C8001B8D31 /* PortalControllable.swift */,
+			);
+			path = GeneralItemProtocol;
+			sourceTree = "<group>";
+		};
+		F4544847239DF041001B8D31 /* GeneralFolderPage */ = {
+			isa = PBXGroup;
+			children = (
+				F454484C239DF08E001B8D31 /* ViewModel */,
+				F454484B239DF08B001B8D31 /* View */,
+				F4544849239DF07B001B8D31 /* Cell */,
+			);
+			path = GeneralFolderPage;
+			sourceTree = "<group>";
+		};
+		F4544848239DF062001B8D31 /* GeneralCollectionPage */ = {
+			isa = PBXGroup;
+			children = (
+				F454484E239DF094001B8D31 /* ViewModel */,
+				F454484D239DF091001B8D31 /* View */,
+				F454484A239DF081001B8D31 /* Cell */,
+			);
+			name = GeneralCollectionPage;
+			path = GeneralFolderPage/GeneralCollectionPage;
+			sourceTree = "<group>";
+		};
+		F4544849239DF07B001B8D31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F454484F239DF0B3001B8D31 /* View */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F454484A239DF081001B8D31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F4544850239DF0C2001B8D31 /* View */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F454484B239DF08B001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F454484C239DF08E001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F454484D239DF091001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F454484E239DF094001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F454484F239DF0B3001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4544850239DF0C2001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F4B3F2C123862B3000657CDF = {
 			isa = PBXGroup;
 			children = (
@@ -623,11 +1063,11 @@
 		F4B3F2CC23862B3000657CDF /* KKdayPortal */ = {
 			isa = PBXGroup;
 			children = (
+				F45447DF23996298001B8D31 /* Repository */,
+				F4B3F3242387C15B00657CDF /* Network */,
 				F4544763239602FD001B8D31 /* Extension */,
 				F454475423926725001B8D31 /* Protocol */,
-				F4B3F3242387C15B00657CDF /* Network */,
-				F45447122390220E001B8D31 /* PloneProtocol */,
-				F4B3F3352387CDB000657CDF /* PloneModel */,
+				F45447E2239AA0C2001B8D31 /* Model */,
 				F4B3F30C2386EE1300657CDF /* EventRecord */,
 				F4B3F30B2386EDFA00657CDF /* Manager */,
 				F4B3F2FD238636F700657CDF /* Pages */,
@@ -662,6 +1102,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B3F2FE2386371100657CDF /* HomePage */,
+				F45447FF239BF63A001B8D31 /* GeneralItemPage */,
 				F4544704238FD837001B8D31 /* PloneContentPages */,
 				F4B3F2FF2386372400657CDF /* SettingPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
@@ -774,10 +1215,12 @@
 		F4B3F3352387CDB000657CDF /* PloneModel */ = {
 			isa = PBXGroup;
 			children = (
+				F45447122390220E001B8D31 /* PloneProtocol */,
 				F4FC41A0238CD78E00AC7315 /* PloneUser */,
 				F4B3F3362387CDC300657CDF /* PloneItem */,
 			);
-			path = PloneModel;
+			name = PloneModel;
+			path = PloneModel/PloneModel;
 			sourceTree = "<group>";
 		};
 		F4B3F3362387CDC300657CDF /* PloneItem */ = {
@@ -1052,26 +1495,40 @@
 				F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */,
 				F454474223923804001B8D31 /* PloneLinkViewController.swift in Sources */,
 				F45447622393AAC2001B8D31 /* PortalFileTarget.swift in Sources */,
+				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
 				F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */,
+				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
+				F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */,
 				F454474623923E40001B8D31 /* PloneCollectionViewModel.swift in Sources */,
+				F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */,
 				F454474023922D03001B8D31 /* PloneLinkViewModel.swift in Sources */,
+				F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */,
 				F4FC41A7238EB41700AC7315 /* PloneCollection.swift in Sources */,
+				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
 				F4B3F3112386EE1300657CDF /* CrashlyticsEvent.swift in Sources */,
 				F4FC419F238CCB6500AC7315 /* LoginViewModel.swift in Sources */,
+				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
 				F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */,
 				F454475D2393A2F4001B8D31 /* FileResponseType.swift in Sources */,
+				F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */,
+				F45447E9239AA320001B8D31 /* GeneralList.swift in Sources */,
+				F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */,
+				F45447E12399632E001B8D31 /* RepositoryManageable.swift in Sources */,
 				F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */,
 				F4B3F3292387C16D00657CDF /* CodableResponseType.swift in Sources */,
+				F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */,
 				F4544711238FEF75001B8D31 /* PloneRootViewController.swift in Sources */,
 				F45447602393AAA6001B8D31 /* PortalFileTargetType.swift in Sources */,
+				F45447F6239AB816001B8D31 /* WebPloneRepository.swift in Sources */,
 				F454473023922A00001B8D31 /* PloneNewsViewModel.swift in Sources */,
 				F4B3F31E2386F53400657CDF /* SecureStore.swift in Sources */,
 				F454473223922BC0001B8D31 /* PloneNewsViewController.swift in Sources */,
+				F45447F2239AB79A001B8D31 /* GeneralFileObject.swift in Sources */,
 				F4FC419D238CCA7D00AC7315 /* PloneUser.swift in Sources */,
 				F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
@@ -1079,25 +1536,44 @@
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
 				F454471E239226F3001B8D31 /* PloneCoordinator.swift in Sources */,
 				F454476523960669001B8D31 /* StringExtension.swift in Sources */,
+				F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */,
+				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
+				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
 				F454472E23922999001B8D31 /* PloneDocumentViewController.swift in Sources */,
+				F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */,
 				F454473623922C40001B8D31 /* PloneEventViewController.swift in Sources */,
+				F4544846239D01C8001B8D31 /* PortalControllable.swift in Sources */,
 				F454473823922C5C001B8D31 /* PloneImageViewModel.swift in Sources */,
+				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
+				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
 				F454474A23924BC4001B8D31 /* PloneRootTableViewCell.swift in Sources */,
+				F4544826239CA4AC001B8D31 /* GeneralItemCoordinator.swift in Sources */,
 				F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */,
+				F4544844239CAE04001B8D31 /* GeneralFileViewController.swift in Sources */,
 				F454471C23917AFF001B8D31 /* PloneFolderTableViewCell.swift in Sources */,
 				F4B3F31D2386F53400657CDF /* SecureStoreError.swift in Sources */,
 				F45446FA238F70DF001B8D31 /* PloneImage.swift in Sources */,
 				F454473C23922CCE001B8D31 /* PloneFileViewController.swift in Sources */,
+				F454485A239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F454473E23922CEA001B8D31 /* PloneFileViewModel.swift in Sources */,
 				F45446F8238F706C001B8D31 /* PloneEvent.swift in Sources */,
 				F4FC41A4238D35AA00AC7315 /* PortalItemAPITargetType.swift in Sources */,
 				F454472C2392294B001B8D31 /* PloneDocumentViewModel.swift in Sources */,
 				F4B3F346238CB9FC00657CDF /* PloneFolderViewModel.swift in Sources */,
 				F4B3F32E2387C34C00657CDF /* PortalUserAPITargetType.swift in Sources */,
+				F4544823239CA036001B8D31 /* GeneralRootTableViewCell.swift in Sources */,
+				F45447F4239AB7B6001B8D31 /* GeneralLinkObject.swift in Sources */,
+				F45447F0239AB75D001B8D31 /* GeneralTextObject.swift in Sources */,
+				F454485C239DF44C001B8D31 /* GeneralCollectionViewController.swift in Sources */,
+				F4544840239CADE4001B8D31 /* GeneralLinkViewController.swift in Sources */,
+				F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */,
+				F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */,
 				F4B3F32A2387C16D00657CDF /* APIManager.swift in Sources */,
 				F454474423923E20001B8D31 /* PloneCollectionViewController.swift in Sources */,
+				F4544858239DF3E4001B8D31 /* GeneralCollectionViewModel.swift in Sources */,
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
+				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
 				F4544714239023E3001B8D31 /* PloneControllable.swift in Sources */,
 				F454475823928C1C001B8D31 /* PloneCollectionTableViewCell.swift in Sources */,
@@ -1105,7 +1581,9 @@
 				F4B3F3342387CD1F00657CDF /* PortalUserAPITarget.swift in Sources */,
 				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
 				F454470F238FEF53001B8D31 /* PloneRootViewModel.swift in Sources */,
+				F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */,
 				F4B3F340238BC60D00657CDF /* PloneFolder.swift in Sources */,
+				F454483A239CAD3D001B8D31 /* GeneralEventViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,11 @@
 import Foundation
 
 final class PloneEvent: PloneItem {
-    
     var text: PloneTextObject?
 
     var contactEmail: String?
     var contactName: String?
     var contactPhone: String?
-    
     
     var createDate: Date?
     var startDate: Date?
@@ -25,6 +23,7 @@ final class PloneEvent: PloneItem {
 
     private enum CodingKeys: String, CodingKey {
         case text
+        
         case contactEmail = "contact_email"
         case contactName = "contact_name"
         case contactPhone = "contact_phone"
