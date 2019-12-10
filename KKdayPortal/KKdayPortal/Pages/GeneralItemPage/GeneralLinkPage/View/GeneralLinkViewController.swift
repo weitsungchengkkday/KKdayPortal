@@ -15,7 +15,7 @@ import SafariServices
 final class GeneralLinkViewController: UIViewController, GeneralItemCoordinator {
     
     // 🏞 UI element
-    var linkButton: UIButton = {
+    lazy var linkButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Link", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
@@ -25,8 +25,8 @@ final class GeneralLinkViewController: UIViewController, GeneralItemCoordinator 
         return btn
     }()
     
-    var viewModel: GeneralLinkViewModel
-    let disposeBag = DisposeBag()
+    private let viewModel: GeneralLinkViewModel
+    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralLinkViewModel) {
         self.viewModel = viewModel

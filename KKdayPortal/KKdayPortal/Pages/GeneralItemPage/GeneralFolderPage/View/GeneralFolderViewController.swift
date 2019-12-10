@@ -13,7 +13,9 @@ import SnapKit
 
 final class GeneralFolderViewController: UIViewController, GeneralItemCoordinator {
     
-    static let CellName = "FolderCell"
+    private static var CellName: String {
+        return "FolderCell"
+    }
     
     // 🏞 UI element
     lazy var tableView: UITableView = {
@@ -23,7 +25,7 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
     }()
     
     var viewModel: GeneralFolderViewModel
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralFolderViewModel) {
         self.viewModel = viewModel

@@ -36,7 +36,7 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
     private let textSubject = PublishSubject<String>()
     
     var source: URL
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     var generalItem: PortalContent?
     
     init(source: URL) {

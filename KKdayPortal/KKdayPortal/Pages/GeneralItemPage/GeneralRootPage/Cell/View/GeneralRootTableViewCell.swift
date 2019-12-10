@@ -13,33 +13,33 @@ import SnapKit
 
 final class GeneralRootTableViewCell: UITableViewCell {
 
-    var disposeBag = DisposeBag()
+    private(set) var disposeBag = DisposeBag()
     
-    let containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView()
         return view
     }()
 
-    let topView: UIView = {
+    lazy var topView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return view
     }()
 
-    let titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         lbl.numberOfLines = 0
         return lbl
     }()
     
-    let selectCellButton: UIButton = {
+    lazy var selectCellButton: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "icRightArrowGrey"), for: .normal)
         return btn
     }()
 
-    let descriptionLabel: UILabel = {
+    lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
         lbl.numberOfLines = 0

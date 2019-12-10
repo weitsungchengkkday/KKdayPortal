@@ -34,8 +34,8 @@ final class GeneralEventViewController: UIViewController, GeneralItemCoordinator
             return wkv
         }()
        
-        var viewModel: GeneralEventViewModel
-        let disposeBag = DisposeBag()
+        private let viewModel: GeneralEventViewModel
+        private let disposeBag = DisposeBag()
         
         init(viewModel: GeneralEventViewModel) {
             self.viewModel = viewModel

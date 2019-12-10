@@ -13,7 +13,9 @@ import SnapKit
 
 final class GeneralRootViewController: UIViewController, GeneralItemCoordinator {
     
-    static let CellName = "RootCell"
+    private static var CellName: String {
+        return "RootCell"
+    }
     
     // 🏞 UI element
     lazy var tableView: UITableView = {
@@ -22,8 +24,8 @@ final class GeneralRootViewController: UIViewController, GeneralItemCoordinator 
         return tbv
     }()
     
-    var viewModel: GeneralRootViewModel
-    let disposeBag = DisposeBag()
+    private let viewModel: GeneralRootViewModel
+    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralRootViewModel) {
         self.viewModel = viewModel

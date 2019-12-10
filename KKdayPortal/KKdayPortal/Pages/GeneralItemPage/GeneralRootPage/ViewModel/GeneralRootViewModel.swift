@@ -31,20 +31,20 @@ final class GeneralRootViewModel: RXViewModelType, PortalControllable {
     
     var generalItem: PortalContent?
     var source: URL
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init(source: URL) {
         self.source = source
-          
-          self.input = Input(generalItems: generalItemsSubject.asObserver(),
-                             title: titleSubject.asObserver()
-          )
-          
-          self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
-                               showTitle: titleSubject.asDriver(onErrorJustReturn: "Root")
-          )
-      }
-   
+        
+        self.input = Input(generalItems: generalItemsSubject.asObserver(),
+                           title: titleSubject.asObserver()
+        )
+        
+        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
+                             showTitle: titleSubject.asDriver(onErrorJustReturn: "Root")
+        )
+    }
+    
     func getPortalData() {
         
         ModelLoader.PortalLoader().getItem(source: source, type: .root)

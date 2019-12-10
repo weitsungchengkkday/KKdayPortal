@@ -25,8 +25,8 @@ final class GeneralNewsViewController: UIViewController, GeneralItemCoordinator 
               return wkv
         }()
 
-        var viewModel: GeneralNewsViewModel
-        let disposeBag = DisposeBag()
+        private let viewModel: GeneralNewsViewModel
+        private let disposeBag = DisposeBag()
         
         init(viewModel: GeneralNewsViewModel) {
             self.viewModel = viewModel

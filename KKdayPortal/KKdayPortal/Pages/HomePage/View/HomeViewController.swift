@@ -52,10 +52,6 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator {
         // http://localhost:8080/pikaPika
         
         let rootURL = URL(string: "http://localhost:8080/pikaPika")!
-//        let pushViewController = PloneRootViewController(viewModel: PloneRootViewModel(apiManager: APIManager.default, route: rootURL))
-      
-//        navigationController?.pushViewController(pushViewController, animated: false)
-        
         goDetailPage(route: rootURL, type: .root)
     }
     

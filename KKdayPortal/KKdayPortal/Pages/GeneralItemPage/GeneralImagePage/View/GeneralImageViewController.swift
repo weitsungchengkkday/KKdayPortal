@@ -21,8 +21,8 @@ final class GeneralImageViewController: UIViewController {
             return imv
         }()
         
-        var viewModel: GeneralImageViewModel
-        let disposeBag = DisposeBag()
+        private let viewModel: GeneralImageViewModel
+        private let disposeBag = DisposeBag()
         
         init(viewModel: GeneralImageViewModel) {
             self.viewModel = viewModel

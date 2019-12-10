@@ -18,17 +18,17 @@ final class GeneralFileViewModel: RXViewModelType, PortalControllable {
            
         struct Input {
             let title: AnyObserver<String>
-        }
-        
-        struct Output {
-            let showTitle: Driver<String>
-        }
-        
-        private let titleSubject = PublishSubject<String>()
-        
-      var source: URL
-           let disposeBag = DisposeBag()
-           var generalItem: PortalContent?
+    }
+    
+    struct Output {
+        let showTitle: Driver<String>
+    }
+    
+    private let titleSubject = PublishSubject<String>()
+    
+    var source: URL
+    private let disposeBag = DisposeBag()
+    var generalItem: PortalContent?
     
         init(source: URL) {
            

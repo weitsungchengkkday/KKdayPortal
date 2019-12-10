@@ -15,7 +15,9 @@ final class WebPloneRepository: RepositoryManageable {
     typealias User = GeneralUser
     typealias Item = GeneralItem
     
-    static var baseURL: URL = URL(string: "http://localhost:8080/pikaPika")!
+    static var baseURL: URL {
+        return  URL(string: "http://localhost:8080/pikaPika")!
+    }
     
     private let apiManager = APIManager.default
     private let disposeBag = DisposeBag()
@@ -101,82 +103,72 @@ final class WebPloneRepository: RepositoryManageable {
         case .root:
             let ploneRootRequest = PortalItem.Item<PloneRoot>(user: ploneUser, route: source)
             let response = apiManager.request(ploneRootRequest)
-            
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneRoot -> GeneralItem in
                     return ItemConverter.ploneItemToGeneralItem(item: ploneRoot)
                 })
+            
         case .folder:
             let ploneFolderRequest = PortalItem.Item<PloneFolder>(user: ploneUser, route: source)
             let response = apiManager.request(ploneFolderRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneFolder -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneFolder)
                 })
+            
         case .document:
             let ploneDocumentRequest = PortalItem.Item<PloneDocument>(user: ploneUser, route: source)
             let response = apiManager.request(ploneDocumentRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneDocument -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneDocument)
                 })
+            
         case .news:
             let ploneNewsRequest = PortalItem.Item<PloneNews>(user: ploneUser, route: source)
             let response = apiManager.request(ploneNewsRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneNews -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneNews)
                 })
+            
         case .event:
             let ploneEventRequest = PortalItem.Item<PloneEvent>(user: ploneUser, route: source)
             let response = apiManager.request(ploneEventRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneEvent -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneEvent)
                 })
+            
         case .image:
             let ploneImageRequest = PortalItem.Item<PloneImage>(user: ploneUser, route: source)
             let response = apiManager.request(ploneImageRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneImage -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneImage)
                 })
+            
         case .file:
             let ploneFileRequest = PortalItem.Item<PloneFile>(user: ploneUser, route: source)
             let response = apiManager.request(ploneFileRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneFile -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneFile)
                 })
+            
         case .link:
             let ploneLinkRequest = PortalItem.Item<PloneLink>(user: ploneUser, route: source)
             let response = apiManager.request(ploneLinkRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneLink -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneLink)
                 })
+            
         case .collection:
             let ploneCollectionRequest = PortalItem.Item<PloneCollection>(user: ploneUser, route: source)
             let response = apiManager.request(ploneCollectionRequest)
             return response
-                .subscribeOn(MainScheduler.instance)
                 .map({ ploneCollection -> GeneralItem in
-                    
                     ItemConverter.ploneItemToGeneralItem(item: ploneCollection)
                 })
         }

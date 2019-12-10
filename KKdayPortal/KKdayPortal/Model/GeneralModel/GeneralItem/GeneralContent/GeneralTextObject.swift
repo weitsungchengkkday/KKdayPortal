@@ -12,4 +12,5 @@ struct GeneralTextObject {
     let contentType: String?
     let name: String?
     let text: String?
+    
 }

@@ -47,7 +47,7 @@ final class SettingViewController: UIViewController {
     }
     
     @objc private func goLoginPage() {
-        let presentViewController = LoginViewController(viewModel: LoginViewModel(apiManager: APIManager.default))
+        let presentViewController = LoginViewController(viewModel: LoginViewModel())
         present(presentViewController, animated: true, completion: nil)
     }
     

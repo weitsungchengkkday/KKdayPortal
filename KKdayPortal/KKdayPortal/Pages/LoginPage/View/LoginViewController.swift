@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
         let skv = UIStackView()
         return skv
     }()
-    
+   
     lazy var accountLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Login"
@@ -76,7 +76,7 @@ final class LoginViewController: UIViewController {
         return btn
     }()
     
-    var viewModel: LoginViewModel
+    private let viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel

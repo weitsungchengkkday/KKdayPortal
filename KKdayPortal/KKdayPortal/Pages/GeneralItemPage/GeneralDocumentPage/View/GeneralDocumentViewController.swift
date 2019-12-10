@@ -20,8 +20,8 @@ final class GeneralDocumentViewController: UIViewController, GeneralItemCoordina
           return wkv
       }()
       
-      var viewModel: GeneralDocumentViewModel
-      let disposeBag = DisposeBag()
+      private let viewModel: GeneralDocumentViewModel
+      private let disposeBag = DisposeBag()
       
       init(viewModel: GeneralDocumentViewModel) {
           self.viewModel = viewModel

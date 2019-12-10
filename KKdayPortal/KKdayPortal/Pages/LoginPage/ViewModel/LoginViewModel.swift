@@ -11,9 +11,8 @@ import RxCocoa
 
 final class LoginViewModel: RXViewModelType {
     
-    var apiManager: APIManager
-    let disposeBag = DisposeBag()
-    
+    private let disposeBag = DisposeBag()
+
     var input: LoginViewModel.Input
     var output: LoginViewModel.Output
     
@@ -25,8 +24,7 @@ final class LoginViewModel: RXViewModelType {
         
     }
     
-    init(apiManager: APIManager) {
-        self.apiManager = apiManager
+    init() {
         self.input = Input()
         self.output = Output()
     }
@@ -35,6 +33,7 @@ final class LoginViewModel: RXViewModelType {
         
         ModelLoader.PortalLoader()
             .login(account: account, password: password)
+            .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { generalUser in
                 StorageManager.shared.saveObject(for: .generalUser, value: generalUser)
                 debugPrint("👥 Login -> General User: \(generalUser)")
@@ -49,6 +48,7 @@ final class LoginViewModel: RXViewModelType {
         
         ModelLoader.PortalLoader()
             .renewToken()
+            .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { generalUser in
                 guard let generalUser = generalUser else {
                     return

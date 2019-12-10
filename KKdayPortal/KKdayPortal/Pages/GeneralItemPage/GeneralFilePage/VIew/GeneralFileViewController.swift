@@ -15,8 +15,8 @@ final class GeneralFileViewController: UIViewController, GeneralItemCoordinator 
     
     // 🏞 UI element
     
-    var viewModel: GeneralFileViewModel
-    let disposeBag = DisposeBag()
+    private let viewModel: GeneralFileViewModel
+    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralFileViewModel) {
         self.viewModel = viewModel

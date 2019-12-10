@@ -30,7 +30,7 @@ final class GeneralImageViewModel: RXViewModelType, PortalControllable {
     private let imageViewSubject = PublishSubject<UIImage>()
     
     var source: URL
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     var generalItem: PortalContent?
     
     init(source: URL) {

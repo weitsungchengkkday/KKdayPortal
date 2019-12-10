@@ -31,7 +31,7 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
     
     var generalItem: PortalContent?
     var source: URL
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init(source: URL) {
         self.source = source

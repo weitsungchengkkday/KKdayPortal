@@ -722,13 +722,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F454485D239E21C3001B8D31 /* Authorizable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Authorizable;
-			sourceTree = "<group>";
-		};
 		F4544860239F432E001B8D31 /* GeneralUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,7 +763,6 @@
 		F4B3F2CC23862B3000657CDF /* KKdayPortal */ = {
 			isa = PBXGroup;
 			children = (
-				F454485D239E21C3001B8D31 /* Authorizable */,
 				F45447DF23996298001B8D31 /* Repository */,
 				F4B3F3242387C15B00657CDF /* Network */,
 				F4544763239602FD001B8D31 /* Extension */,
