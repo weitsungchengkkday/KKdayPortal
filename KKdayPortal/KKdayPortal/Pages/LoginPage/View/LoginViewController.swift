@@ -68,6 +68,14 @@ final class LoginViewController: UIViewController {
         return btn
     }()
     
+    lazy var logoutButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("logoutToken", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+        btn.layer.cornerRadius = 4
+        return btn
+    }()
+    
     var viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel) {
@@ -93,6 +101,7 @@ final class LoginViewController: UIViewController {
         view.addSubview(loginStackView)
         view.addSubview(loginButton)
         view.addSubview(renewTokenButton)
+        view.addSubview(logoutButton)
         
         loginStackView.axis = .vertical
         loginStackView.distribution = .fill
@@ -132,6 +141,13 @@ final class LoginViewController: UIViewController {
             maker.centerX.equalToSuperview()
             maker.width.equalTo(140)
         }
+        
+        logoutButton.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.width.equalTo(145)
+            maker.bottom.equalTo(self.view.snp.bottomMargin).offset(-80)
+        }
+        
     }
     
     // 🎬 set action
@@ -139,6 +155,8 @@ final class LoginViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(loginPlone), for: .touchUpInside)
         
         renewTokenButton.addTarget(self, action: #selector(renewToken), for: .touchUpInside)
+        
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
     
     @objc private func loginPlone() {
@@ -151,6 +169,10 @@ final class LoginViewController: UIViewController {
     
     @objc private func renewToken() {
         viewModel.renewToken()
+    }
+    
+    @objc private func logout() {
+        viewModel.logout()
     }
     
     // ⛓ bind viewModel

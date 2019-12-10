@@ -1,12 +1,14 @@
 //
-//  PloneUser.swift
+//  GeneralUser.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2019/11/26.
+//  Created by WEI-TSUNG CHENG on 2019/12/10.
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-struct PloneUser: Codable {
+import Foundation
+
+struct GeneralUser: Codable {
     let account: String
     let password: String
     let token: String

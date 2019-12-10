@@ -32,40 +32,43 @@ final class LoginViewModel: RXViewModelType {
     }
     
     func login(account: String, password: String) {
-        let ploneLogin = PortalUser.Login(account: account, password: password)
-        let response = apiManager.request(ploneLogin)
         
-        response
-            .subscribe(onSuccess: { authToken in
-                print("🎫 Plone authToken: \(authToken.token)")
-                let user = PloneUser(account: account, token: authToken.token)
-                StorageManager.shared.saveObject(for: .ploneUser, value: user)
+        ModelLoader.PortalLoader()
+            .login(account: account, password: password)
+            .subscribe(onSuccess: { generalUser in
+                StorageManager.shared.saveObject(for: .generalUser, value: generalUser)
+                debugPrint("👥 Login -> General User: \(generalUser)")
+                
             }) { error in
-                print("🚨 Login error is \(error)")
-        }
-        .disposed(by: disposeBag)
+                debugPrint("🚨 Login -> error is \(error)") }
+            .disposed(by: disposeBag)
+        
     }
     
     func renewToken() {
-        let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
-        let renewToken = PortalUser.RenewToken(user: user)
-        let response = apiManager.request(renewToken)
         
-        response
-            .subscribe(onSuccess: { authToken in
-                print("🎫 Renew authToken: \(authToken.token)")
-                
-                let renewToken = authToken.token
-                
-                if let user: PloneUser = StorageManager.shared.load(for: .ploneUser) {
-                    let renewUser = PloneUser(account: user.account, token: renewToken)
-                    StorageManager.shared.save(for: .ploneUser, value: renewUser)
+        ModelLoader.PortalLoader()
+            .renewToken()
+            .subscribe(onSuccess: { generalUser in
+                guard let generalUser = generalUser else {
+                    return
                 }
+                debugPrint("👥 Renew Token -> General User: \(generalUser)")
                 
             }) { error in
-                print("🚨 Renew token error is \(error)")
-        }
-        .disposed(by: disposeBag)
+                debugPrint("🚨 Renew Token -> error is \(error)")}
+            .disposed(by: disposeBag)
     }
     
+    func logout() {
+        
+        ModelLoader.PortalLoader()
+            .logout()
+            .subscribe(onSuccess: { generalUser in
+                debugPrint("👥 Logout -> General User: \(generalUser)")
+                
+            }) { error in
+                debugPrint("🚨 Renew Token -> error is \(error)")}
+            .disposed(by: disposeBag)
+    }
 }

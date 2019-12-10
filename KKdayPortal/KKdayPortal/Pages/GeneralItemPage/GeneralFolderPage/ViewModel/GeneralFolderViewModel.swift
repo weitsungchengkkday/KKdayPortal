@@ -46,7 +46,8 @@ final class GeneralFolderViewModel: RXViewModelType, PortalControllable {
       }
    
     func getPortalData() {
-        ModelLoader.PortalItem().getItem(repo: WebPloneRepository(source: source, user: nil, ploneItemType: .folder))
+        
+        ModelLoader.PortalLoader().getItem(source: source, type: .folder)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
                 

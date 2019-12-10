@@ -14,7 +14,8 @@ final class StorageManager {
 
     /// Storage Key
     enum StorageKeys: String {
-        case ploneUser
+        // Portal
+        case generalUser
     }
 
     private init() {

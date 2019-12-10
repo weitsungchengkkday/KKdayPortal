@@ -46,7 +46,8 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
       }
    
     func getPortalData() {
-        ModelLoader.PortalItem().getItem(repo: WebPloneRepository(source: source, user: nil, ploneItemType: .collection))
+        
+        ModelLoader.PortalLoader().getItem(source: source, type: .collection)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
                 

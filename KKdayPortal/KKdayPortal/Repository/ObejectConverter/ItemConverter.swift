@@ -10,6 +10,11 @@ import Foundation
 
 struct ItemConverter {
 
+}
+
+// Plone -> General
+extension ItemConverter {
+    
     static func ploneItemToGeneralItem(item: PloneItem) -> GeneralItem {
         
         let type: GeneralItemType? = typeTransfer(ploneItem: item)
@@ -259,6 +264,32 @@ struct ItemConverter {
             return nil
         }
     }
+    
 }
 
-
+// General -> Plone
+extension ItemConverter {
+    
+    static func typeTransfer(generalItemType: GeneralItemType) -> PloneItemType {
+        switch generalItemType {
+        case .root:
+            return .root
+        case .folder:
+            return .folder
+        case .collection:
+            return .collection
+        case .document:
+            return .document
+        case .news:
+            return .news
+        case .event:
+            return .event
+        case .image:
+            return .image
+        case .file:
+            return .file
+        case .link:
+            return .link
+        }
+    }
+}

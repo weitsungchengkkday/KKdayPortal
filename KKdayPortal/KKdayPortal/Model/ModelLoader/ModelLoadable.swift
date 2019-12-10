@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ModelLoadable {
-    
+    associatedtype Repository: RepositoryManageable
 }

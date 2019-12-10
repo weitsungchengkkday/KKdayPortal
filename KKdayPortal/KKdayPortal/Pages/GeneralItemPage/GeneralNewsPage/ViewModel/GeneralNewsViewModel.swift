@@ -48,9 +48,9 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
         }
         
         func getPortalData() {
-            let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
-           
-            ModelLoader.PortalItem().getItem(repo: WebPloneRepository(source: source, user: user, ploneItemType: .news))
+            
+            ModelLoader.PortalLoader()
+                .getItem(source: source, type: .news)
                 .subscribeOn(MainScheduler.instance)
                 .subscribe(onSuccess: { [weak self] generalItem in
                     

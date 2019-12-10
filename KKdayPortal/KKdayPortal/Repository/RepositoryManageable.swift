@@ -12,11 +12,19 @@ import RxCocoa
 
 protocol RepositoryManageable {
     
-    associatedtype R
+    associatedtype User
+    associatedtype Item
     static var baseURL: URL { get }
     
-    func getItem() -> Single<R>
+    // 👤 Authentication
+    func login(account: String, password: String) -> Single<User>
+    func renewToken() -> Single<User?>
+    func logout() -> Single<User>
+     
+    // 🎛 CRUD
+    
+    func getItem(generalItemType: GeneralItemType) -> Single<Item>
     func create()
-    func update(item: R)
-    func delete(item: R)
+    func update(item: Item)
+    func delete(item: Item)
 }

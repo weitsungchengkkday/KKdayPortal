@@ -41,10 +41,9 @@ final class GeneralImageViewModel: RXViewModelType, PortalControllable {
     }
     
     func getPortalData() {
-        
-        let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
-        
-        ModelLoader.PortalItem().getItem(repo: WebPloneRepository(source: source, user: user, ploneItemType: .image))
+
+        ModelLoader.PortalLoader()
+            .getItem(source: source, type: .image)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
                 

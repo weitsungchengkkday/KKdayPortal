@@ -41,10 +41,9 @@ final class GeneralFileViewModel: RXViewModelType, PortalControllable {
         }
         
         func getPortalData() {
-            let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
             
-        
-            ModelLoader.PortalItem().getItem(repo: WebPloneRepository(source: source, user: user, ploneItemType: .file))
+            ModelLoader.PortalLoader()
+                .getItem(source: source, type: .file)
                 .subscribeOn(MainScheduler.instance)
                 .subscribe(onSuccess: { [weak self] generalItem in
                     
@@ -61,7 +60,7 @@ final class GeneralFileViewModel: RXViewModelType, PortalControllable {
         }
         
         func downloadFile(fileURL: URL) {
-            let user: PloneUser? = StorageManager.shared.loadObject(for: .ploneUser)
+            let user: PloneUser? = StorageManager.shared.loadObject(for: .generalUser)
             
             let unclassifiedFile = PortalFile.Unclassified(user: user, fileRoute: fileURL)
             FileManager.default.downloadFile(unclassifiedFile)

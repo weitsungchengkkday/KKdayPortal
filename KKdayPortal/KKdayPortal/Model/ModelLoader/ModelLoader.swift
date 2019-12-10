@@ -12,13 +12,24 @@ import RxCocoa
 
 enum ModelLoader {
     
-    struct PortalItem: ModelLoadable {
+    struct PortalLoader: ModelLoadable {
         
-        func getItem<U: RepositoryManageable>(repo: U) -> PrimitiveSequence<SingleTrait, U.R> {
-            
-            return repo.getItem()
+        typealias Repository = WebPloneRepository
+        
+        func login(account: String, password: String) -> Single<Repository.User> {
+            return Repository().login(account: account, password: password)
         }
         
+        func renewToken() -> Single<Repository.User?> {
+            return Repository().renewToken()
+        }
         
+        func logout() -> Single<Repository.User> {
+            return Repository().logout()
+        }
+        
+        func getItem(source: URL, type: GeneralItemType) -> Single<Repository.Item> {
+            return Repository(source: source).getItem(generalItemType: type)
+        }
     }
 }
