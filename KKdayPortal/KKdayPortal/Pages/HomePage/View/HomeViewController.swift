@@ -28,6 +28,8 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator {
         super.viewDidLoad()
         setupUI()
         setAction()
+    ///
+        Region.systemPreferedRegion
     }
     
     // 🎨 draw UI
@@ -51,7 +53,7 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator {
         // https://sean.security.dev.kkday.com/Plone
         // http://localhost:8080/pikaPika
         
-        let rootURL = URL(string: "http://localhost:8080/pikaPika")!
+        let rootURL = URL(string: "https://sean.security.dev.kkday.com/Plone")!
         goDetailPage(route: rootURL, type: .root)
     }
     

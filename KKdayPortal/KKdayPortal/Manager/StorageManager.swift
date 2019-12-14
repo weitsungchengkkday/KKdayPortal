@@ -16,6 +16,14 @@ final class StorageManager {
     enum StorageKeys: String {
         // Portal
         case generalUser
+        
+        // Language Setting
+        case languageIsSelected
+        case selectedLanguageKey
+        
+        // Region Setting
+        case regionIsSelected
+        case selectedRegionKey
     }
 
     private init() {

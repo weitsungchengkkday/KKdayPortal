@@ -24,7 +24,7 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
         return tbv
     }()
     
-    var viewModel: GeneralFolderViewModel
+    private let viewModel: GeneralFolderViewModel
     private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralFolderViewModel) {
