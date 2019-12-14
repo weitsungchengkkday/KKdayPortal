@@ -12,16 +12,6 @@ import SnapKit
 final class SettingViewController: UIViewController {
     
     // 🏞 UI element
-    lazy var loginButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Login Page", for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-        btn.setTitleColor(.white, for: .normal)
-        btn.layer.cornerRadius = 4
-        return btn
-    }()
-    
     lazy var languageButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Language Page", for: .normal)
@@ -31,6 +21,24 @@ final class SettingViewController: UIViewController {
         btn.layer.cornerRadius = 4
         return btn
     }()
+    
+    lazy var renewTokenButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("RenewToken", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        btn.layer.cornerRadius = 4
+        return btn
+    }()
+    
+    lazy var logoutButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Logout", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+        btn.layer.cornerRadius = 4
+        return btn
+    }()
+    
+    private let viewModel = SettingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,37 +50,48 @@ final class SettingViewController: UIViewController {
     private func setupUI() {
         self.title = "Setting"
         view.backgroundColor = UIColor.white
-        view.addSubview(loginButton)
         view.addSubview(languageButton)
-        
-        loginButton.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
-            maker.centerX.equalToSuperview()
-            maker.width.equalTo(120)
-        }
+        view.addSubview(renewTokenButton)
+        view.addSubview(logoutButton)
         
         languageButton.snp.makeConstraints { maker in
-            maker.top.equalTo(loginButton.snp.bottom).offset(100)
+            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(100)
             maker.centerX.equalToSuperview()
             maker.width.equalTo(145)
+        }
+        
+        renewTokenButton.snp.makeConstraints { maker in
+            maker.top.equalTo(languageButton.snp.bottom).offset(50)
+            maker.centerX.equalToSuperview()
+            maker.width.equalTo(145)
+        }
+        
+        logoutButton.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.width.equalTo(145)
+            maker.bottom.equalTo(self.view.snp.bottomMargin).offset(-80)
         }
     }
     
     // 🎬 set action
     private func setAction() {
-        loginButton.addTarget(self, action: #selector(goLoginPage), for: .touchUpInside)
-        
         languageButton.addTarget(self, action: #selector(goLanguagePage), for: .touchUpInside)
-    }
-    
-    @objc private func goLoginPage() {
-        let presentViewController = LoginViewController(viewModel: LoginViewModel())
-        present(presentViewController, animated: true, completion: nil)
+        renewTokenButton.addTarget(self, action: #selector(renewToken), for: .touchUpInside)
+        
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
     
     @objc private func goLanguagePage() {
         let presentViewController = LanguageSettingViewController(viewModel: LanguageViewModel())
         present(presentViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func renewToken() {
+        viewModel.renewToken()
+    }
+    
+    @objc private func logout() {
+        viewModel.logout()
     }
     
     // ⛓ bind viewModel

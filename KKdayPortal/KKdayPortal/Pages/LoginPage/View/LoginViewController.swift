@@ -60,18 +60,10 @@ final class LoginViewController: UIViewController {
         return btn
     }()
     
-    lazy var renewTokenButton: UIButton = {
+    lazy var googleSignInButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("renewToken", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        btn.layer.cornerRadius = 4
-        return btn
-    }()
-    
-    lazy var logoutButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("logoutToken", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+        btn.setTitle("GoogleSignIn", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         btn.layer.cornerRadius = 4
         return btn
     }()
@@ -89,19 +81,20 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
         setAction()
+        
+   
     }
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Login"
+
         view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        
         view.addSubview(loginStackView)
         view.addSubview(loginButton)
-        view.addSubview(renewTokenButton)
-        view.addSubview(logoutButton)
+        view.addSubview(googleSignInButton)
         
         loginStackView.axis = .vertical
         loginStackView.distribution = .fill
@@ -136,16 +129,10 @@ final class LoginViewController: UIViewController {
             maker.width.equalTo(120)
         }
         
-        renewTokenButton.snp.makeConstraints { maker in
-            maker.top.equalTo(loginButton.snp.bottom).offset(10)
+        googleSignInButton.snp.makeConstraints { maker in
+            maker.top.equalTo(loginButton.snp.bottom).offset(30)
             maker.centerX.equalToSuperview()
-            maker.width.equalTo(140)
-        }
-        
-        logoutButton.snp.makeConstraints { maker in
-            maker.centerX.equalToSuperview()
-            maker.width.equalTo(145)
-            maker.bottom.equalTo(self.view.snp.bottomMargin).offset(-80)
+            maker.width.equalTo(120)
         }
         
     }
@@ -153,31 +140,28 @@ final class LoginViewController: UIViewController {
     // 🎬 set action
     private func setAction() {
         loginButton.addTarget(self, action: #selector(loginPlone), for: .touchUpInside)
-        
-        renewTokenButton.addTarget(self, action: #selector(renewToken), for: .touchUpInside)
-        
-        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        googleSignInButton.addTarget(self, action: #selector(signInGoogle), for: .touchUpInside)
     }
     
     @objc private func loginPlone() {
-//        let account: String = accountTextField.text
-//        let password: String = passwordTextField.text
-//        viewModel.login(account: account, password: password)
+        // let account: String = accountTextField.text
+        // let password: String = passwordTextField.text
+        // viewModel.login(account: account, password: password)
         viewModel.login(account: "admin", password: "axl08rG1dK17")
-        dismiss(animated: true, completion: nil)
+        
+        // If Login Success
+        let presentViewController = MainViewController()
+        presentViewController.modalPresentationStyle = .fullScreen
+        present(presentViewController, animated: true, completion: nil)
     }
     
-    @objc private func renewToken() {
-        viewModel.renewToken()
-    }
-    
-    @objc private func logout() {
-        viewModel.logout()
+    @objc private func signInGoogle() {
+        
     }
     
     // ⛓ bind viewModel
     private func bindViewModel() {
         
     }
-
+    
 }

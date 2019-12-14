@@ -69,6 +69,11 @@
 		F454487A23A336D6001B8D31 /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
 		F454487C23A337D3001B8D31 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
 		F454487F23A39956001B8D31 /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
+		F454488423A50A1D001B8D31 /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
+		F454488723A54D2D001B8D31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
+		F454488C23A55017001B8D31 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
+		F454489823A5E211001B8D31 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
+		F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -189,6 +194,16 @@
 		F454487B23A337D3001B8D31 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		F454487D23A36FBB001B8D31 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCellViewModel.swift; sourceTree = "<group>"; };
+		F454488323A50A1D001B8D31 /* LanguageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSection.swift; sourceTree = "<group>"; };
+		F454488823A54D2D001B8D31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F454488A23A54D45001B8D31 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F454488B23A55017001B8D31 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		F454489023A556AE001B8D31 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F454489123A556AE001B8D31 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F454489223A556B9001B8D31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F454489323A556B9001B8D31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F454489723A5E211001B8D31 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F454489923A5F611001B8D31 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -293,6 +308,7 @@
 		F454474F23926606001B8D31 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F454489923A5F611001B8D31 /* SettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -336,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				F454474B23924F38001B8D31 /* RXViewModelType.swift */,
+				F454488B23A55017001B8D31 /* Localizable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -695,7 +712,6 @@
 		F454484B239DF08B001B8D31 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -785,6 +801,7 @@
 		F454486F23A21854001B8D31 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F454488223A50A0D001B8D31 /* Model */,
 				F454488123A48850001B8D31 /* ViewModel */,
 				F454488023A4884A001B8D31 /* View */,
 			);
@@ -811,9 +828,26 @@
 		F454488123A48850001B8D31 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */,
 				F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F454488223A50A0D001B8D31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F454488323A50A1D001B8D31 /* LanguageSection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F454489623A5E004001B8D31 /* MainTabViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F454489723A5E211001B8D31 /* MainViewController.swift */,
+			);
+			path = MainTabViewController;
 			sourceTree = "<group>";
 		};
 		F4B3F2C123862B3000657CDF = {
@@ -854,6 +888,7 @@
 				F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */,
 				F4B3F2D623862B3100657CDF /* Assets.xcassets */,
 				F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */,
+				F454488923A54D2D001B8D31 /* Localizable.strings */,
 				F4B3F2DB23862B3100657CDF /* Info.plist */,
 			);
 			path = KKdayPortal;
@@ -880,10 +915,11 @@
 		F4B3F2FD238636F700657CDF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3F30423863C9100657CDF /* LoginPage */,
+				F454489623A5E004001B8D31 /* MainTabViewController */,
 				F4B3F2FE2386371100657CDF /* HomePage */,
 				F45447FF239BF63A001B8D31 /* GeneralItemPage */,
 				F4B3F2FF2386372400657CDF /* SettingPage */,
-				F4B3F30423863C9100657CDF /* LoginPage */,
 				F454486823A20E7E001B8D31 /* LanguageSettingPage */,
 			);
 			path = Pages;
@@ -1129,6 +1165,8 @@
 				en,
 				Base,
 				"zh-Hant",
+				"zh-Hans",
+				"zh-HK",
 			);
 			mainGroup = F4B3F2C123862B3000657CDF;
 			productRefGroup = F4B3F2CB23862B3000657CDF /* Products */;
@@ -1148,6 +1186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
+				F454488723A54D2D001B8D31 /* Localizable.strings in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1251,6 +1290,8 @@
 				F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */,
 				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
+				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
+				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
 				F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
@@ -1262,6 +1303,7 @@
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
 				F4544865239FA9D5001B8D31 /* AccountOperatingError.swift in Sources */,
 				F454487C23A337D3001B8D31 /* Region.swift in Sources */,
+				F454488423A50A1D001B8D31 /* LanguageSection.swift in Sources */,
 				F4B3F3112386EE1300657CDF /* CrashlyticsEvent.swift in Sources */,
 				F4FC419F238CCB6500AC7315 /* LoginViewModel.swift in Sources */,
 				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
@@ -1288,6 +1330,7 @@
 				F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */,
 				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
+				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
 				F454486C23A20EE3001B8D31 /* LanguageViewModel.swift in Sources */,
 				F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */,
@@ -1360,11 +1403,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F454488923A54D2D001B8D31 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F454488823A54D2D001B8D31 /* en */,
+				F454488A23A54D45001B8D31 /* zh-Hant */,
+				F454489123A556AE001B8D31 /* zh-Hans */,
+				F454489323A556B9001B8D31 /* zh-HK */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F4B3F2D923862B3100657CDF /* Base */,
 				F454487D23A36FBB001B8D31 /* zh-Hant */,
+				F454489023A556AE001B8D31 /* zh-Hans */,
+				F454489223A556B9001B8D31 /* zh-HK */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

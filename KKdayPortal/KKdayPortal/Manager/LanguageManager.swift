@@ -30,6 +30,7 @@ final class LanguageManager {
     }
     
     func setup() {
+        
         if Language.isUserSelectedLanguage,
             let language: Language = Language.userSelectedLanguage {
             self.currentLanguage = language

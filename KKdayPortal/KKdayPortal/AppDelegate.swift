@@ -16,10 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupLanguage()
         return true
     }
-
     
     private func setupLanguage() {
-           LanguageManager.shared.setup()
+        LanguageManager.shared.setup()
     }
     
     // MARK: UISceneSession Lifecycle

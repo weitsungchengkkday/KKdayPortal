@@ -19,28 +19,28 @@ final class LanguageViewModel: RXViewModelType {
     
     
     struct Input {
-        let cellViewModels: AnyObserver<[CellViewModel]>
+        let cellViewModels: AnyObserver<[LanguageSection]>
     }
     
     struct Output {
-        let showLanguageItems: Driver<[CellViewModel]>
+        let showLanguageItems: Driver<[LanguageSection]>
     }
     
-    private let cellViewModelsSubject = PublishSubject<[CellViewModel]>()
+    private let cellViewModelsSubject = PublishSubject<[LanguageSection]>()
     
     private let cellButtonClicked = PublishSubject<Bool>()
     
     init() {
         self.input = Input(cellViewModels: cellViewModelsSubject.asObserver())
         
-        self.output = Output(showLanguageItems: cellViewModelsSubject.asDriver(onErrorJustReturn: []))
+        self.output = Output(showLanguageItems: cellViewModelsSubject.asDriver(onErrorJustReturn: [LanguageSection(header: "Error", items: [])]))
     }
     
     func nextCellViewModelsEvent() {
         cellViewModelsSubject.onNext(getCellViewModels())
     }
     
-    private func getCellViewModels() -> [CellViewModel] {
+    private func getCellViewModels() -> [LanguageSection] {
         let availableLanguage: [Language] = [.en, .zhTW]
         
         let cellViewModels = availableLanguage.map { langauge -> CellViewModel in
@@ -49,6 +49,6 @@ final class LanguageViewModel: RXViewModelType {
             
             return CellViewModel(isSelected: isSelected, selectedLanguage: langauge)
         }
-        return cellViewModels
+        return [LanguageSection(header: "Language", items: cellViewModels)]
     }
 }

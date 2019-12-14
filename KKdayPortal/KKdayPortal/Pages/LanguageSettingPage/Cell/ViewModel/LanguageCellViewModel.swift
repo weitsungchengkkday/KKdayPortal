@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 final class LanguageSettingTableViewCellViewModel {
     
@@ -17,5 +18,19 @@ final class LanguageSettingTableViewCellViewModel {
     init(isSelected: Bool, selectedLanguage: Language) {
         self.isSelected = isSelected
         self.selectedLanguage = selectedLanguage
+    }
+}
+
+extension LanguageSettingTableViewCellViewModel: IdentifiableType, Equatable {
+    
+    typealias Identity = String
+    
+    var identity: String {
+        return selectedLanguage.identity
+    }
+    
+    static func == (lhs: LanguageSettingTableViewCellViewModel, rhs: LanguageSettingTableViewCellViewModel) -> Bool {
+        
+        return lhs.identity == rhs.identity
     }
 }

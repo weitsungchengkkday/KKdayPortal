@@ -21,7 +21,6 @@ public enum Language: String, CaseIterable {
 }
 
 extension Language {
-    
     // Get system prefered language (system + APP available)
     public static var systemPreferedLanguage: Language {
         
@@ -134,15 +133,24 @@ extension Language {
 extension Language {
     
     private var bundleName: String {
+        
         switch self {
-        case .en: return "Base"
-        case .zhTW: return "zh-Hant-TW"
-        case .zhHK: return "zh-Hant-HK"
-        case .zhCN: return "zh-Hans"
-        case .ja: return "ja"
-        case .ko: return "ko"
-        case .th: return "th"
-        case .vi: return "vi"
+        case .en:
+            return "en"
+        case .zhTW:
+            return "zh-Hant"
+        case .zhHK:
+            return "zh-HK"
+        case .zhCN:
+            return "zh-Hans"
+        case .ja:
+            return "ja"
+        case .ko:
+            return "ko"
+        case .th:
+            return "th"
+        case .vi:
+            return "vi"
         }
     }
     
@@ -165,6 +173,29 @@ extension Language {
 }
 
 extension Language {
+    
+    // IdentifiableType identity
+    public var identity: String {
+        switch self {
+        case .en:
+            return "en"
+        case .zhTW:
+            return "zh-tw"
+        case .zhHK:
+            return "zh-hk"
+        case .zhCN:
+            return "zh-cn"
+        case .ja:
+            return "ja"
+        case .ko:
+            return "ko"
+        case .th:
+            return "th"
+        case .vi:
+            return "vi"
+        }
+    }
+    
     // only use on Plone Portal
     public var portalLang: String? {
         switch self {

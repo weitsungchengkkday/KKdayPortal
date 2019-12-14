@@ -9,6 +9,11 @@
 import Foundation
 
 extension String {
+
+    func localize(_ comment: String = "", defaultValue: String = "") -> String {
+        return LanguageManager.shared.currentLanguage.localizeForLanguage(key: self, defaultValue: defaultValue, storyboardName: "", comment: comment)
+    }
+    
     /**
      String (Dateformat YYYY-MM-DD'T'hh:mm:ssTZD (e.g. )) convert to Date
      

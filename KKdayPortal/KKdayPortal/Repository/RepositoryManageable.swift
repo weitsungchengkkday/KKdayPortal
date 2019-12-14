@@ -22,7 +22,6 @@ protocol RepositoryManageable {
     func logout() -> Single<User>
      
     // 🎛 CRUD
-    
     func getItem(generalItemType: GeneralItemType) -> Single<Item>
     func create()
     func update(item: Item)

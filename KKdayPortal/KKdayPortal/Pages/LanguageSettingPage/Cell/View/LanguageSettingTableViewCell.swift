@@ -37,8 +37,6 @@ final class LanguageSettingTableViewCell: UITableViewCell {
     
     lazy var selectCellButton: UIButton = {
         let btn = UIButton()
-        
-        btn.setImage(#imageLiteral(resourceName: "icCircleNonchecked"), for: .normal)
         return btn
     }()
     
@@ -58,7 +56,6 @@ final class LanguageSettingTableViewCell: UITableViewCell {
          self.topView.addSubview(titleLabel)
          self.topView.addSubview(selectCellButton)
          self.containerView.addSubview(descriptionLabel)
-         
          
          containerView.snp.makeConstraints { make in
              make.width.equalToSuperview()
@@ -97,14 +94,13 @@ final class LanguageSettingTableViewCell: UITableViewCell {
          disposeBag = DisposeBag()
      }
     
-    func binViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
-        
+    func bindViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
         
         selectCellButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
-
-                self?.selectCellButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
                 
+                self?.selectCellButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
+                Language.isUserSelectedLanguage = true
                 LanguageManager.shared.currentLanguage = cellViewModel.selectedLanguage
             })
             .disposed(by: disposeBag)

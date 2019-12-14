@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import Foundation
 
 final class LoginViewModel: RXViewModelType {
     
@@ -42,33 +43,5 @@ final class LoginViewModel: RXViewModelType {
                 debugPrint("🚨 Login -> error is \(error)") }
             .disposed(by: disposeBag)
         
-    }
-    
-    func renewToken() {
-        
-        ModelLoader.PortalLoader()
-            .renewToken()
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { generalUser in
-                guard let generalUser = generalUser else {
-                    return
-                }
-                debugPrint("👥 Renew Token -> General User: \(generalUser)")
-                
-            }) { error in
-                debugPrint("🚨 Renew Token -> error is \(error)")}
-            .disposed(by: disposeBag)
-    }
-    
-    func logout() {
-        
-        ModelLoader.PortalLoader()
-            .logout()
-            .subscribe(onSuccess: { generalUser in
-                debugPrint("👥 Logout -> General User: \(generalUser)")
-                
-            }) { error in
-                debugPrint("🚨 Renew Token -> error is \(error)")}
-            .disposed(by: disposeBag)
     }
 }

@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class HomeViewController: UIViewController, GeneralItemCoordinator {
+final class HomeViewController: UIViewController, GeneralItemCoordinator, Localizable {
     
     // 🏞 UI element
     lazy var webHomeButton: UIButton = {
@@ -24,17 +24,26 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator {
         return btn
     }()
     
+    var observerLanguageChangedNotification: NSObjectProtocol?
+     
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setAction()
-    ///
-        Region.systemPreferedRegion
+        reigisterLanguageManager()
+    }
+    
+    deinit {
+        unregisterLanguageManager()
     }
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Home"
+        localizedText()
         view.backgroundColor = UIColor.white
         view.addSubview(webHomeButton)
         webHomeButton.snp.makeConstraints { maker in
@@ -42,6 +51,11 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator {
             maker.centerX.equalToSuperview()
             maker.width.equalTo(160)
         }
+    }
+    
+    // 🧾 localization
+    private func localizedText() {
+        self.title = "common_main_page".localize("首頁")
     }
     
     // 🎬 set action
