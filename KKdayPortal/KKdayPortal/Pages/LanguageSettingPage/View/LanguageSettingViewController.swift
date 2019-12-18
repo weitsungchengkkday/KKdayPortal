@@ -18,14 +18,12 @@ final class LanguageSettingViewController: UIViewController {
         return "LanguageCell"
     }
 
-    let buttonClicked = PublishSubject<Bool>()
+    private let buttonClicked = PublishSubject<Bool>()
     
     lazy var dataSource = {
         return RxTableViewSectionedReloadDataSource<LanguageSection> (
             configureCell: { [unowned self] dataSource, tableView, indexPath, item in
-                
-                
-                
+              
                 if let cell = tableView.dequeueReusableCell(withIdentifier: LanguageSettingViewController.CellName, for: indexPath) as? LanguageSettingTableViewCell {
                     
                     cell.titleLabel.text = item.selectedLanguage.name

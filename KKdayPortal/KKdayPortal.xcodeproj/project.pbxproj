@@ -74,6 +74,9 @@
 		F454488C23A55017001B8D31 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
 		F454489823A5E211001B8D31 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
 		F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
+		F45448A023A881E2001B8D31 /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
+		F45448A223A88636001B8D31 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
+		F45448A623A9D7B8001B8D31 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -204,6 +207,9 @@
 		F454489323A556B9001B8D31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F454489723A5E211001B8D31 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F454489923A5F611001B8D31 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocailLoginViewController.swift; sourceTree = "<group>"; };
+		F45448A123A88636001B8D31 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		F45448A523A9D7B8001B8D31 /* GoogleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleUser.swift; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -398,6 +404,7 @@
 		F45447E2239AA0C2001B8D31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F45448A323A9D767001B8D31 /* GoogleModel */,
 				F4544863239FA8E7001B8D31 /* Error */,
 				F45447FA239BB2EB001B8D31 /* ModelLoader */,
 				F45447E4239AA10E001B8D31 /* GeneralModel */,
@@ -850,6 +857,38 @@
 			path = MainTabViewController;
 			sourceTree = "<group>";
 		};
+		F454489D23A881A5001B8D31 /* SocailLoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				F454489E23A881CA001B8D31 /* View */,
+			);
+			path = SocailLoginPage;
+			sourceTree = "<group>";
+		};
+		F454489E23A881CA001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F45448A323A9D767001B8D31 /* GoogleModel */ = {
+			isa = PBXGroup;
+			children = (
+				F45448A423A9D784001B8D31 /* GoogleUser */,
+			);
+			path = GoogleModel;
+			sourceTree = "<group>";
+		};
+		F45448A423A9D784001B8D31 /* GoogleUser */ = {
+			isa = PBXGroup;
+			children = (
+				F45448A523A9D7B8001B8D31 /* GoogleUser.swift */,
+			);
+			path = GoogleUser;
+			sourceTree = "<group>";
+		};
 		F4B3F2C123862B3000657CDF = {
 			isa = PBXGroup;
 			children = (
@@ -890,6 +929,7 @@
 				F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */,
 				F454488923A54D2D001B8D31 /* Localizable.strings */,
 				F4B3F2DB23862B3100657CDF /* Info.plist */,
+				F45448A123A88636001B8D31 /* credentials.plist */,
 			);
 			path = KKdayPortal;
 			sourceTree = "<group>";
@@ -915,6 +955,7 @@
 		F4B3F2FD238636F700657CDF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				F454489D23A881A5001B8D31 /* SocailLoginPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				F4B3F2FE2386371100657CDF /* HomePage */,
@@ -1087,6 +1128,7 @@
 				F4B3F2C723862B3000657CDF /* Frameworks */,
 				F4B3F2C823862B3000657CDF /* Resources */,
 				03734F26BE43D4B7AE7C06BF /* [CP] Embed Pods Frameworks */,
+				474FDE5C6DCB26FB1B812B1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1186,6 +1228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
+				F45448A223A88636001B8D31 /* credentials.plist in Resources */,
 				F454488723A54D2D001B8D31 /* Localizable.strings in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
 			);
@@ -1223,6 +1266,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		474FDE5C6DCB26FB1B812B1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7B715A6943CD46A915930AD2 /* [CP] Check Pods Manifest.lock */ = {
@@ -1301,6 +1361,7 @@
 				F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */,
 				F4FC41A7238EB41700AC7315 /* PloneCollection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
+				F45448A623A9D7B8001B8D31 /* GoogleUser.swift in Sources */,
 				F4544865239FA9D5001B8D31 /* AccountOperatingError.swift in Sources */,
 				F454487C23A337D3001B8D31 /* Region.swift in Sources */,
 				F454488423A50A1D001B8D31 /* LanguageSection.swift in Sources */,
@@ -1349,6 +1410,7 @@
 				F4B3F32E2387C34C00657CDF /* PortalUserAPITargetType.swift in Sources */,
 				F4544823239CA036001B8D31 /* GeneralRootTableViewCell.swift in Sources */,
 				F45447F4239AB7B6001B8D31 /* GeneralLinkObject.swift in Sources */,
+				F45448A023A881E2001B8D31 /* SocailLoginViewController.swift in Sources */,
 				F454487123A218B0001B8D31 /* LanguageSettingTableViewCell.swift in Sources */,
 				F454487F23A39956001B8D31 /* LanguageCellViewModel.swift in Sources */,
 				F45447F0239AB75D001B8D31 /* GeneralTextObject.swift in Sources */,

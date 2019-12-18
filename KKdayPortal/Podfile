@@ -16,6 +16,9 @@ target 'KKdayPortal' do
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.14.0'
 
+  # Google
+  pod 'GoogleSignIn', '~> 5.0.2'
+
   # Rx
   pod 'RxCocoa', '~> 4.5.0'
   pod 'Moya/RxSwift', '~> 13.0.1'

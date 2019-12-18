@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         setupLanguage()
         return true
     }
     
     private func setupLanguage() {
         LanguageManager.shared.setup()
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        
+        return GIDSignIn.sharedInstance().handle(url)
     }
     
     // MARK: UISceneSession Lifecycle

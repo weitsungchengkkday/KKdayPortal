@@ -24,6 +24,9 @@ final class StorageManager {
         // Region Setting
         case regionIsSelected
         case selectedRegionKey
+        
+        // Google
+        case googleUser
     }
 
     private init() {

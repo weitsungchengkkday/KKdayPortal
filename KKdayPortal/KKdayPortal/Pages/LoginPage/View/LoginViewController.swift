@@ -62,8 +62,8 @@ final class LoginViewController: UIViewController {
     
     lazy var googleSignInButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("GoogleSignIn", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        btn.setTitle("Google Sign In", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         btn.layer.cornerRadius = 4
         return btn
     }()
@@ -84,8 +84,6 @@ final class LoginViewController: UIViewController {
         
         setupUI()
         setAction()
-        
-   
     }
     
     // 🎨 draw UI
@@ -139,7 +137,7 @@ final class LoginViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        loginButton.addTarget(self, action: #selector(loginPlone), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(signInGoogle), for: .touchUpInside)
         googleSignInButton.addTarget(self, action: #selector(signInGoogle), for: .touchUpInside)
     }
     
@@ -156,7 +154,8 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func signInGoogle() {
-        
+        let present33ViewController = SocailLoginViewController()
+        present(present33ViewController, animated: true, completion: nil)
     }
     
     // ⛓ bind viewModel
