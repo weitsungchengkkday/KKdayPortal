@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 import SafariServices
 
-final class GeneralLinkViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralLinkViewController: UIViewController {
     
     // 🏞 UI element
     lazy var linkButton: UIButton = {

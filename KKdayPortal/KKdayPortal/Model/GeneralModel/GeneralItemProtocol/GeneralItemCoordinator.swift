@@ -11,6 +11,7 @@ import UIKit
 
 protocol GeneralItemCoordinator where Self: UIViewController {
     func goDetailPage(route: URL, type: GeneralItemType)
+    func goDetailPageInWebView(route: URL, type: GeneralItemType)
 }
 
 extension GeneralItemCoordinator {
@@ -55,6 +56,23 @@ extension GeneralItemCoordinator {
             let pushViewController = GeneralLinkViewController(viewModel: GeneralLinkViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
             
+        }
+    }
+}
+
+
+extension GeneralItemCoordinator {
+
+    func goDetailPageInWebView(route: URL, type: GeneralItemType) {
+        
+        debugPrint("GoDetailInWebView: rout: \(route), type: \(type)")
+        switch type {
+        case .link:
+            let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: route))
+            navigationController?.pushViewController(pushViewController, animated: false)
+            break
+        default:
+            return
         }
     }
 }

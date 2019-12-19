@@ -58,16 +58,16 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
                     if let title = generalItem.title {
                         self?.titleSubject.onNext(title)
                     }
-                    guard let imageURL = generalItem.imageObject?.url else {
-                        return
-                    }
-                    self?.dowloadImage(url: imageURL)
                     
-                    guard let textObject = generalItem.textObject,
-                        let text = textObject.text else {
-                        return
+                    if let imageURL = generalItem.imageObject?.url {
+                        self?.dowloadImage(url: imageURL)
                     }
-                    self?.textSubject.onNext(text)
+                    
+                   if let textObject = generalItem.textObject,
+                        let text = textObject.text {
+                        self?.textSubject.onNext(text)
+                    }
+                    
                     
                 }) { error in
                     print("🚨 Func: \(#file),\(#function)")

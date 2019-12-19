@@ -77,6 +77,13 @@
 		F45448A023A881E2001B8D31 /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
 		F45448A223A88636001B8D31 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		F45448A623A9D7B8001B8D31 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
+		F45448AB23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
+		F45448AD23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
+		F45448B123AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B023AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift */; };
+		F45448B623AA3156001B8D31 /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
+		F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
+		F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */; };
+		F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -210,6 +217,13 @@
 		F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocailLoginViewController.swift; sourceTree = "<group>"; };
 		F45448A123A88636001B8D31 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		F45448A523A9D7B8001B8D31 /* GoogleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleUser.swift; sourceTree = "<group>"; };
+		F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryViewController.swift; sourceTree = "<group>"; };
+		F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryViewModel.swift; sourceTree = "<group>"; };
+		F45448B023AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryCollectionViewCell.swift; sourceTree = "<group>"; };
+		F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsContentViewController.swift; sourceTree = "<group>"; };
+		F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsContentViewModel.swift; sourceTree = "<group>"; };
+		F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewController.swift; sourceTree = "<group>"; };
+		F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationTypeExtension.swift; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -387,6 +401,7 @@
 				F454476423960669001B8D31 /* StringExtension.swift */,
 				F4544768239609E5001B8D31 /* DateFormatterExtension.swift */,
 				F454487923A336D6001B8D31 /* LocaleExtension.swift */,
+				F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -719,6 +734,7 @@
 		F454484B239DF08B001B8D31 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -835,7 +851,6 @@
 		F454488123A48850001B8D31 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */,
 				F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */,
 			);
 			path = ViewModel;
@@ -887,6 +902,89 @@
 				F45448A523A9D7B8001B8D31 /* GoogleUser.swift */,
 			);
 			path = GoogleUser;
+			sourceTree = "<group>";
+		};
+		F45448A723A9F951001B8D31 /* ApplicationsEntryPage */ = {
+			isa = PBXGroup;
+			children = (
+				F45448A923A9F974001B8D31 /* ViewModel */,
+				F45448A823A9F96C001B8D31 /* View */,
+				F45448AE23AA0131001B8D31 /* Cell */,
+			);
+			path = ApplicationsEntryPage;
+			sourceTree = "<group>";
+		};
+		F45448A823A9F96C001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F45448A923A9F974001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F45448AE23AA0131001B8D31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F45448AF23AA014C001B8D31 /* View */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F45448AF23AA014C001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F45448B023AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F45448B223AA301B001B8D31 /* ApplicationsContentPage */ = {
+			isa = PBXGroup;
+			children = (
+				F45448B423AA30A6001B8D31 /* ViewModel */,
+				F45448B323AA3090001B8D31 /* View */,
+			);
+			path = ApplicationsContentPage;
+			sourceTree = "<group>";
+		};
+		F45448B323AA3090001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F45448B423AA30A6001B8D31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F45448B923AA8644001B8D31 /* PloneSSOPage */ = {
+			isa = PBXGroup;
+			children = (
+				F45448BA23AA8667001B8D31 /* View */,
+			);
+			path = PloneSSOPage;
+			sourceTree = "<group>";
+		};
+		F45448BA23AA8667001B8D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F4B3F2C123862B3000657CDF = {
@@ -956,8 +1054,11 @@
 			isa = PBXGroup;
 			children = (
 				F454489D23A881A5001B8D31 /* SocailLoginPage */,
+				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
+				F45448A723A9F951001B8D31 /* ApplicationsEntryPage */,
+				F45448B223AA301B001B8D31 /* ApplicationsContentPage */,
 				F4B3F2FE2386371100657CDF /* HomePage */,
 				F45447FF239BF63A001B8D31 /* GeneralItemPage */,
 				F4B3F2FF2386372400657CDF /* SettingPage */,
@@ -1376,13 +1477,16 @@
 				F45447E12399632E001B8D31 /* RepositoryManageable.swift in Sources */,
 				F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */,
 				F4B3F3292387C16D00657CDF /* CodableResponseType.swift in Sources */,
+				F45448AB23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift in Sources */,
 				F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */,
+				F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */,
 				F45447602393AAA6001B8D31 /* PortalFileTargetType.swift in Sources */,
 				F45447F6239AB816001B8D31 /* WebPloneRepository.swift in Sources */,
 				F4B3F31E2386F53400657CDF /* SecureStore.swift in Sources */,
 				F45447F2239AB79A001B8D31 /* GeneralFileObject.swift in Sources */,
 				F4FC419D238CCA7D00AC7315 /* PloneUser.swift in Sources */,
 				F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */,
+				F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
 				F4FC41A2238D358A00AC7315 /* PortalItemAPITarget.swift in Sources */,
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
@@ -1390,6 +1494,7 @@
 				F454487423A235B4001B8D31 /* Language.swift in Sources */,
 				F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */,
 				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
+				F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */,
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
@@ -1399,6 +1504,7 @@
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
 				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
 				F4544826239CA4AC001B8D31 /* GeneralItemCoordinator.swift in Sources */,
+				F45448AD23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift in Sources */,
 				F454486E23A20EF9001B8D31 /* LanguageSettingViewController.swift in Sources */,
 				F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */,
 				F4544844239CAE04001B8D31 /* GeneralFileViewController.swift in Sources */,
@@ -1420,6 +1526,7 @@
 				F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */,
 				F4B3F32A2387C16D00657CDF /* APIManager.swift in Sources */,
 				F4544858239DF3E4001B8D31 /* GeneralCollectionViewModel.swift in Sources */,
+				F45448B123AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift in Sources */,
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
@@ -1428,6 +1535,7 @@
 				F454487623A32F92001B8D31 /* LanguageManager.swift in Sources */,
 				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
 				F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */,
+				F45448B623AA3156001B8D31 /* ApplicationsContentViewController.swift in Sources */,
 				F4B3F340238BC60D00657CDF /* PloneFolder.swift in Sources */,
 				F454483A239CAD3D001B8D31 /* GeneralEventViewModel.swift in Sources */,
 			);

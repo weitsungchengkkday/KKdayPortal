@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class GeneralFileViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralFileViewController: UIViewController {
     
     // 🏞 UI element
     

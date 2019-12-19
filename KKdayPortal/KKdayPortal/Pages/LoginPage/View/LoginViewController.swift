@@ -68,6 +68,14 @@ final class LoginViewController: UIViewController {
         return btn
     }()
     
+    lazy var ploneRestfulTokenButton: UIButton = {
+        let btn = UIButton()
+           btn.setTitle("Get Plone Restful Token", for: .normal)
+           btn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+           btn.layer.cornerRadius = 4
+           return btn
+    }()
+    
     private let viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel) {
@@ -93,6 +101,7 @@ final class LoginViewController: UIViewController {
         view.addSubview(loginStackView)
         view.addSubview(loginButton)
         view.addSubview(googleSignInButton)
+        view.addSubview(ploneRestfulTokenButton)
         
         loginStackView.axis = .vertical
         loginStackView.distribution = .fill
@@ -133,12 +142,18 @@ final class LoginViewController: UIViewController {
             maker.width.equalTo(120)
         }
         
+        ploneRestfulTokenButton.snp.makeConstraints { maker in
+            maker.top.equalTo(googleSignInButton.snp.bottom).offset(30)
+            maker.centerX.equalToSuperview()
+        }
+        
     }
     
     // 🎬 set action
     private func setAction() {
-        loginButton.addTarget(self, action: #selector(signInGoogle), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginPlone), for: .touchUpInside)
         googleSignInButton.addTarget(self, action: #selector(signInGoogle), for: .touchUpInside)
+        ploneRestfulTokenButton.addTarget(self, action: #selector(goPloneSSOPage), for: .touchUpInside)
     }
     
     @objc private func loginPlone() {
@@ -154,8 +169,13 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func signInGoogle() {
-        let present33ViewController = SocailLoginViewController()
-        present(present33ViewController, animated: true, completion: nil)
+        let presentViewController = SocailLoginViewController()
+        present(presentViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func goPloneSSOPage() {
+        let presentViewController = PloneSSOViewController()
+        present(presentViewController, animated: true, completion: nil)
     }
     
     // ⛓ bind viewModel

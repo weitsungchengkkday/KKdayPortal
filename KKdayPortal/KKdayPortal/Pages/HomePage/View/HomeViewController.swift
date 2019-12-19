@@ -66,8 +66,8 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator, Locali
     @objc private func goWebHomePage() {
         // https://sean.security.dev.kkday.com/Plone
         // http://localhost:8080/pikaPika
-        
-        let rootURL = URL(string: "https://sean.security.dev.kkday.com/Plone")!
+        // https://sit.eip.kkday.net/Plone/zh-tw
+        let rootURL = URL(string: "http://localhost:8080/pikaPika")!
         goDetailPage(route: rootURL, type: .root)
     }
     

@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 import WebKit
 
-final class GeneralEventViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralEventViewController: UIViewController {
 
       // 🏞 UI element
         lazy var contactTextView: UITextView = {
@@ -31,6 +31,7 @@ final class GeneralEventViewController: UIViewController, GeneralItemCoordinator
         
         lazy var wkWebView: WKWebView = {
             let wkv = WKWebView()
+            wkv.navigationDelegate = self
             return wkv
         }()
        
@@ -116,3 +117,22 @@ final class GeneralEventViewController: UIViewController, GeneralItemCoordinator
                 .disposed(by: disposeBag)
         }
     }
+
+extension GeneralEventViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
+        if navigationAction.navigationType == .linkActivated {
+            
+            if let url = navigationAction.request.url {
+                UIApplication.shared.open(url)
+            }
+            decisionHandler(.cancel)
+
+        } else {
+            decisionHandler(.allow)
+        }
+        
+    }
+}

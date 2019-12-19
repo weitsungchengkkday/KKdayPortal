@@ -175,13 +175,18 @@ extension ItemConverter {
     private static func imageObjectTypeTransfer(ploneItem: PloneItem) -> GeneralImageObject? {
         
         switch ploneItem.atType {
-        case .root, .folder, .collection, .document, .news, .event, .file, .link:
+        case .root, .folder, .collection, .document, .event, .file, .link:
             return nil
         case .image:
             guard let ploneImage = ploneItem as? PloneImage else {
                 return nil
             }
             return GeneralImageObject(contentType: ploneImage.image?.contentType, name: ploneImage.image?.name, url: ploneImage.image?.url)
+        case .news:
+            guard let ploneNews = ploneItem as? PloneNews else {
+                return nil
+            }
+            return GeneralImageObject(contentType: ploneNews.image?.contentType, name: ploneNews.image?.name, url: ploneNews.image?.url)
         default:
             return nil
         }

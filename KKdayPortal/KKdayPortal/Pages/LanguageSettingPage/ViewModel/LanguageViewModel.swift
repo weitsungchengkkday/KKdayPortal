@@ -13,7 +13,6 @@ final class LanguageViewModel: RXViewModelType {
     
     typealias CellViewModel = LanguageSettingTableViewCellViewModel
        
-    
     var input: LanguageViewModel.Input
     var output: LanguageViewModel.Output
     

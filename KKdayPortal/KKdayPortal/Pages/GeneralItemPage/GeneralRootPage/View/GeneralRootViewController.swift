@@ -42,7 +42,7 @@ final class GeneralRootViewController: UIViewController, GeneralItemCoordinator 
         setupUI()
         bindViewModel()
         
-        self.tableView.rx
+        tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
         

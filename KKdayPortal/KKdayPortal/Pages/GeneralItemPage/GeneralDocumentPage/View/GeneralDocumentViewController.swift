@@ -12,11 +12,12 @@ import RxCocoa
 import SnapKit
 import WebKit
 
-final class GeneralDocumentViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralDocumentViewController: UIViewController {
 
     // 🏞 UI element
       lazy var wkWebView: WKWebView = {
           let wkv = WKWebView()
+          wkv.navigationDelegate = self
           return wkv
       }()
       
@@ -72,4 +73,23 @@ final class GeneralDocumentViewController: UIViewController, GeneralItemCoordina
               })
               .disposed(by: disposeBag)
       }
+}
+
+extension GeneralDocumentViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
+        if navigationAction.navigationType == .linkActivated {
+            
+            if let url = navigationAction.request.url {
+                UIApplication.shared.open(url)
+            }
+            decisionHandler(.cancel)
+
+        } else {
+            decisionHandler(.allow)
+        }
+        
+    }
 }

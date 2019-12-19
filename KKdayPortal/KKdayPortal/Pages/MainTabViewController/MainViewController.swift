@@ -13,11 +13,11 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sss()
+        setupTabBarItems()
       
     }
     
-    func sss() {
+    private func setupTabBarItems() {
         let homeVC = HomeViewController(nibName: nil, bundle: nil)
         homeVC.view.backgroundColor = UIColor.white
         let homeItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icTabHomeDafault"), selectedImage: #imageLiteral(resourceName: "icTabHomePrimary"))
@@ -34,8 +34,15 @@ class MainViewController: UITabBarController {
         settingNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         settingNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
+        let applicationsEntryVC = ApplicationsEntryViewController(nibName: nil, bundle: nil)
+        let applicationsEntryItem = UITabBarItem(title: "Application Entry", image: #imageLiteral(resourceName: "icListPrimaryDefault"), selectedImage: #imageLiteral(resourceName: "icListPrimary"))
+        applicationsEntryVC.tabBarItem = applicationsEntryItem
+        let applicationsEntryNav = UINavigationController(rootViewController: applicationsEntryVC)
+        applicationsEntryNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        applicationsEntryNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
         self.tabBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         self.tabBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.viewControllers = [homeNav, settingNav]
+        self.viewControllers = [applicationsEntryNav, homeNav, settingNav]
     }
 }

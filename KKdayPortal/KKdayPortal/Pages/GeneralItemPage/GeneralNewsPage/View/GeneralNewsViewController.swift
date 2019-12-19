@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 import WebKit
 
-final class GeneralNewsViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralNewsViewController: UIViewController {
 
      // 🏞 UI element
         lazy var imageView: UIImageView = {
@@ -22,6 +22,7 @@ final class GeneralNewsViewController: UIViewController, GeneralItemCoordinator 
         
         lazy var wkWebView: WKWebView = {
               let wkv = WKWebView()
+              wkv.navigationDelegate = self
               return wkv
         }()
 
@@ -94,3 +95,22 @@ final class GeneralNewsViewController: UIViewController, GeneralItemCoordinator 
                 .disposed(by: disposeBag)
         }
     }
+
+extension GeneralNewsViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
+        if navigationAction.navigationType == .linkActivated {
+            
+            if let url = navigationAction.request.url {
+                UIApplication.shared.open(url)
+            }
+            decisionHandler(.cancel)
+
+        } else {
+            decisionHandler(.allow)
+        }
+        
+    }
+}
