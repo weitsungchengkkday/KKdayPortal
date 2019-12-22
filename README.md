@@ -6,7 +6,7 @@
 
 因為Mobile APP 無法直接使用 SAML, 所以APP端登入將分成兩個部分, PartI 使用WKWebView 完成SAML 登入的流程, PartII iOS APP 藉由 WKWebView 將 Web 上獲得的 Plone Restful API token 取回
 
-### PartI WKWebView 
+### PartI WKWebView SAML Flow
 
 step1. Client 和SP 要資源
 
