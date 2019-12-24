@@ -17,6 +17,7 @@ final class ApplicationsContentViewController: UIViewController {
     // 🏞 UI element
     lazy var webView: WKWebView = {
         let wkv = WKWebView()
+        wkv.navigationDelegate = self
         return wkv
     }()
     
@@ -68,10 +69,22 @@ final class ApplicationsContentViewController: UIViewController {
         viewModel.output.showLoadWebView
             .drive(onNext: { [weak self] url in
                 
-                guard let url = url else {
+                guard var url = url else {
                     return
                 }
                 
+                let userEmail = "william.cheng@kkday.com"
+                switch url.host {
+                case "sit.bpm.eip.kkday.net":
+                    url = URL(string: "http://sit.bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
+                    
+                case "bpm.eip.kkday.net":
+                    url = URL(string: "http://bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
+                    
+                default:
+                    break
+                }
+        
                 self?.webView.load(URLRequest(url: url))
                 
             })
@@ -80,3 +93,24 @@ final class ApplicationsContentViewController: UIViewController {
     
 
 }
+
+extension ApplicationsContentViewController: WKNavigationDelegate {
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+       
+        // BPM Redirect
+        if let response = navigationResponse.response as? HTTPURLResponse,
+            let hearders = response.allHeaderFields as? [String : Any],
+            let redirectURL = hearders["kkday_bpm_sso_url"] as? String {
+            
+            print("RedirectURL is: \(redirectURL)")
+            let url = URL(string: redirectURL)!
+            webView.load(URLRequest(url: url))
+        }
+        
+        decisionHandler(.allow)
+    }
+}
+
+
