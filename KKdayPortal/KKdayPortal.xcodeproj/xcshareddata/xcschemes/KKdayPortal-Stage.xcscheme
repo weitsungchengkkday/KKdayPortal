@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F44E8CE523B88AFA0032C6BE"
-               BuildableName = "KKdayPortal-Stage.app"
+               BuildableName = "KKdayPortal.app"
                BlueprintName = "KKdayPortal-Stage"
                ReferencedContainer = "container:KKdayPortal.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F44E8CE523B88AFA0032C6BE"
-            BuildableName = "KKdayPortal-Stage.app"
+            BuildableName = "KKdayPortal.app"
             BlueprintName = "KKdayPortal-Stage"
             ReferencedContainer = "container:KKdayPortal.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F44E8CE523B88AFA0032C6BE"
-            BuildableName = "KKdayPortal-Stage.app"
+            BuildableName = "KKdayPortal.app"
             BlueprintName = "KKdayPortal-Stage"
             ReferencedContainer = "container:KKdayPortal.xcodeproj">
          </BuildableReference>
