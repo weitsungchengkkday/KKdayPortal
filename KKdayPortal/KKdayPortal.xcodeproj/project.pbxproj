@@ -326,6 +326,12 @@
 		F44E8DC723B88AFC0032C6BE /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		F44E8DC823B88AFC0032C6BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
 		F44E8DC923B88AFC0032C6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
+		F453943623B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
+		F453943723B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
+		F453943823B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
+		F453943923B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
+		F453943A23B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
+		F453943B23B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
 		F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
 		F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
 		F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
@@ -466,6 +472,7 @@
 		F44E8D5A23B88AFA0032C6BE /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Stage-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Stage-Info.plist"; sourceTree = "<absolute>"; };
 		F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44E8DD023B88AFC0032C6BE /* KKdayPortal-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Test-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Test-Info.plist"; sourceTree = "<absolute>"; };
+		F453943523B8B44300136E6D /* Gif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gif; sourceTree = "<group>"; };
 		F45446EF238F5A70001B8D31 /* PloneDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneDocument.swift; sourceTree = "<group>"; };
 		F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneTextObject.swift; sourceTree = "<group>"; };
 		F45446F3238F6A9D001B8D31 /* PloneNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneNews.swift; sourceTree = "<group>"; };
@@ -667,6 +674,14 @@
 				F44E8DD023B88AFC0032C6BE /* KKdayPortal-Test-Info.plist */,
 			);
 			path = InfoPlist;
+			sourceTree = "<group>";
+		};
+		F453943023B8B3D100136E6D /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F453943523B8B44300136E6D /* Gif */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		F454474D2392651C001B8D31 /* View */ = {
@@ -1383,6 +1398,7 @@
 				F4B3F30C2386EE1300657CDF /* EventRecord */,
 				F4B3F30B2386EDFA00657CDF /* Manager */,
 				F4B3F2FD238636F700657CDF /* Pages */,
+				F453943023B8B3D100136E6D /* Content */,
 				F4B3F2CD23862B3000657CDF /* AppDelegate.swift */,
 				F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */,
 				F4B3F2D623862B3100657CDF /* Assets.xcassets */,
@@ -1753,6 +1769,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F453943723B8B44300136E6D /* Gif in Resources */,
 				F44E8CDA23B88AA30032C6BE /* LaunchScreen.storyboard in Resources */,
 				F44E8CDB23B88AA30032C6BE /* credentials.plist in Resources */,
 				F44E8CDC23B88AA30032C6BE /* Localizable.strings in Resources */,
@@ -1764,6 +1781,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F453943823B8B44300136E6D /* Gif in Resources */,
 				F44E8D5023B88AFA0032C6BE /* LaunchScreen.storyboard in Resources */,
 				F44E8D5123B88AFA0032C6BE /* credentials.plist in Resources */,
 				F44E8D5223B88AFA0032C6BE /* Localizable.strings in Resources */,
@@ -1775,6 +1793,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F453943923B8B44300136E6D /* Gif in Resources */,
 				F44E8DC623B88AFC0032C6BE /* LaunchScreen.storyboard in Resources */,
 				F44E8DC723B88AFC0032C6BE /* credentials.plist in Resources */,
 				F44E8DC823B88AFC0032C6BE /* Localizable.strings in Resources */,
@@ -1786,6 +1805,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F453943623B8B44300136E6D /* Gif in Resources */,
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
 				F45448A223A88636001B8D31 /* credentials.plist in Resources */,
 				F454488723A54D2D001B8D31 /* Localizable.strings in Resources */,
@@ -1797,6 +1817,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F453943A23B8B44300136E6D /* Gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1804,6 +1825,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F453943B23B8B44300136E6D /* Gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

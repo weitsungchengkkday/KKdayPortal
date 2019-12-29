@@ -44,5 +44,6 @@ class MainViewController: UITabBarController {
         self.tabBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         self.tabBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.viewControllers = [applicationsEntryNav, homeNav, settingNav]
+        self.selectedViewController = homeNav
     }
 }
