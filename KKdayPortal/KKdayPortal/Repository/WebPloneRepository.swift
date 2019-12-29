@@ -16,7 +16,21 @@ final class WebPloneRepository: RepositoryManageable {
     typealias Item = GeneralItem
     
     static var baseURL: URL {
-        return  URL(string: "http://localhost:8080/pikaPika")!
+        #if SIT_VERSION
+          #if DEBUG
+          let url = URL(string: "http://localhost:8080/pikaPika")!
+
+          #else
+          let url = URL(string: "https://sit.eip.kkday.net/Plone")!
+          #endif
+          
+        #elseif PRODUCTION_VERSION
+        let url = URL(string: "https://eip.kkday.net/Plone")!
+        #else
+        print("Not Implement")
+        #endif
+      
+        return url
     }
     
     private let apiManager = APIManager.default

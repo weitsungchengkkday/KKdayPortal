@@ -81,8 +81,20 @@ final class PloneSSOViewController: UIViewController {
     
     
     @objc func getToken() {
-        let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
-        //  http://localhost:8080/pikaPika
+      
+      #if SIT_VERSION
+           #if DEBUG
+           let url = URL(string: "")!
+           #else
+           let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
+           #endif
+           
+         #elseif PRODUCTION_VERSION
+         let url = URL(string: "https://eip.kkday.net/Plone/@@app_login")!
+         #else
+         print("Not Implement")
+         #endif
+      
         webView.load(URLRequest(url: url))
     }
 }

@@ -12,7 +12,19 @@ protocol PortalUserAPITargetType: CodableResponseType {
 
 extension PortalUserAPITargetType {
     var baseURL: URL {
+      #if SIT_VERSION
+        #if DEBUG
         let baseURLString = "http://localhost:8080/pikaPika"
+        #else
+        let baseURLString = "https://sit.eip.kkday.net/Plone"
+        #endif
+        
+      #elseif PRODUCTION_VERSION
+        let baseURLString = "https://eip.kkday.net/Plone"
+      #else
+      print("Not Implement")
+      #endif
+      
         return URL(string: baseURLString)!
     }
     

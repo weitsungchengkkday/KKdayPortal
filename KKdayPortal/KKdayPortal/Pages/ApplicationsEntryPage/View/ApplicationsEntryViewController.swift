@@ -35,8 +35,25 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
     
         return clv
     }()
+  
+  private let viewModel: ApplicationsEntryViewModel = {
     
-    private let viewModel = ApplicationsEntryViewModel(source: URL(string: "http://localhost:8080/pikaPika/application-items")!)
+    #if SIT_VERSION
+      #if DEBUG
+      let applicationSourceURL = URL(string: "http://localhost:8080/pikaPika/application-items")!
+      #else
+      let applicationSourceURL = URL(string: "")!
+      #endif
+      
+    #elseif PRODUCTION_VERSION
+    let applicationSourceURL = URL(string: "")!
+    #else
+    print("Not Implement")
+    #endif
+    
+    return ApplicationsEntryViewModel(source: applicationSourceURL)
+  }()
+  
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
