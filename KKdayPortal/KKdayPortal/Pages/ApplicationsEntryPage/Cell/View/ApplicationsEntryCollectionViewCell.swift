@@ -22,7 +22,7 @@ final class ApplicationsEntryCollectionViewCell: UICollectionViewCell {
     
     lazy var logoImageView: UIImageView = {
         let imv = UIImageView()
-        imv.image = #imageLiteral(resourceName: "icApplicationItem")
+        imv.image = UIImage(systemName: "globe")
         return imv
     }()
     

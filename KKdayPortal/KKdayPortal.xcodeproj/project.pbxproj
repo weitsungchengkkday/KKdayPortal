@@ -8,6 +8,324 @@
 
 /* Begin PBXBuildFile section */
 		DBFB8029590BFE0D8DF7EC49 /* Pods_KKdayPortalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */; };
+		F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
+		F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
+		F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
+		F44E8C7523B88AA30032C6BE /* RXViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* RXViewModelType.swift */; };
+		F44E8C7623B88AA30032C6BE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475A2393A057001B8D31 /* FileManager.swift */; };
+		F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
+		F44E8C7823B88AA30032C6BE /* PloneRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneRoot.swift */; };
+		F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
+		F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
+		F44E8C7B23B88AA30032C6BE /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
+		F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
+		F44E8C7D23B88AA30032C6BE /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
+		F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
+		F44E8C7F23B88AA30032C6BE /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
+		F44E8C8023B88AA30032C6BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
+		F44E8C8123B88AA30032C6BE /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
+		F44E8C8223B88AA30032C6BE /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */; };
+		F44E8C8323B88AA30032C6BE /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
+		F44E8C8423B88AA30032C6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
+		F44E8C8523B88AA30032C6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
+		F44E8C8623B88AA30032C6BE /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
+		F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
+		F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
+		F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
+		F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
+		F44E8C8B23B88AA30032C6BE /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
+		F44E8C8C23B88AA30032C6BE /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
+		F44E8C8D23B88AA30032C6BE /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
+		F44E8C8E23B88AA30032C6BE /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
+		F44E8C8F23B88AA30032C6BE /* CrashlyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F30E2386EE1300657CDF /* CrashlyticsEvent.swift */; };
+		F44E8C9023B88AA30032C6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
+		F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
+		F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
+		F44E8C9323B88AA30032C6BE /* FileResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475C2393A2F4001B8D31 /* FileResponseType.swift */; };
+		F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
+		F44E8C9523B88AA30032C6BE /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
+		F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
+		F44E8C9723B88AA30032C6BE /* RepositoryManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E02399632E001B8D31 /* RepositoryManageable.swift */; };
+		F44E8C9823B88AA30032C6BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* HomeViewController.swift */; };
+		F44E8C9923B88AA30032C6BE /* CodableResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3262387C16D00657CDF /* CodableResponseType.swift */; };
+		F44E8C9A23B88AA30032C6BE /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
+		F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
+		F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
+		F44E8C9D23B88AA30032C6BE /* PortalFileTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */; };
+		F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
+		F44E8C9F23B88AA30032C6BE /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3172386F53400657CDF /* SecureStore.swift */; };
+		F44E8CA023B88AA30032C6BE /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
+		F44E8CA123B88AA30032C6BE /* PloneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419C238CCA7D00AC7315 /* PloneUser.swift */; };
+		F44E8CA223B88AA30032C6BE /* PloneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneItem.swift */; };
+		F44E8CA323B88AA30032C6BE /* PloneSSOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */; };
+		F44E8CA423B88AA30032C6BE /* InternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3182386F53400657CDF /* InternetProtocol.swift */; };
+		F44E8CA523B88AA30032C6BE /* PortalItemAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A1238D358A00AC7315 /* PortalItemAPITarget.swift */; };
+		F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FB238F749A001B8D31 /* PloneFile.swift */; };
+		F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
+		F44E8CA823B88AA30032C6BE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487323A235B4001B8D31 /* Language.swift */; };
+		F44E8CA923B88AA30032C6BE /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
+		F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
+		F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
+		F44E8CAC23B88AA30032C6BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
+		F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
+		F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
+		F44E8CB023B88AA30032C6BE /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
+		F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
+		F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
+		F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
+		F44E8CB423B88AA30032C6BE /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
+		F44E8CB523B88AA30032C6BE /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
+		F44E8CB623B88AA30032C6BE /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486D23A20EF9001B8D31 /* LanguageSettingViewController.swift */; };
+		F44E8CB723B88AA30032C6BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
+		F44E8CB823B88AA30032C6BE /* GeneralFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */; };
+		F44E8CB923B88AA30032C6BE /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3162386F53400657CDF /* SecureStoreError.swift */; };
+		F44E8CBA23B88AA30032C6BE /* PloneImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F9238F70DF001B8D31 /* PloneImage.swift */; };
+		F44E8CBB23B88AA30032C6BE /* GeneralCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */; };
+		F44E8CBC23B88AA30032C6BE /* PloneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F7238F706C001B8D31 /* PloneEvent.swift */; };
+		F44E8CBD23B88AA30032C6BE /* PortalItemAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A3238D35AA00AC7315 /* PortalItemAPITargetType.swift */; };
+		F44E8CBE23B88AA30032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
+		F44E8CBF23B88AA30032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
+		F44E8CC023B88AA30032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
+		F44E8CC123B88AA30032C6BE /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
+		F44E8CC223B88AA30032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
+		F44E8CC323B88AA30032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
+		F44E8CC423B88AA30032C6BE /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
+		F44E8CC523B88AA30032C6BE /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */; };
+		F44E8CC623B88AA30032C6BE /* GeneralLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */; };
+		F44E8CC723B88AA30032C6BE /* GeneralFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */; };
+		F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544837239CAD0A001B8D31 /* GeneralNewsViewController.swift */; };
+		F44E8CC923B88AA30032C6BE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3272387C16D00657CDF /* APIManager.swift */; };
+		F44E8CCA23B88AA30032C6BE /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */; };
+		F44E8CCB23B88AA30032C6BE /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B023AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift */; };
+		F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
+		F44E8CCD23B88AA30032C6BE /* GeneralLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483D239CAD72001B8D31 /* GeneralLinkViewModel.swift */; };
+		F44E8CCE23B88AA30032C6BE /* CrashlyticsEventRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3102386EE1300657CDF /* CrashlyticsEventRecord.swift */; };
+		F44E8CCF23B88AA30032C6BE /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
+		F44E8CD023B88AA30032C6BE /* PortalUserAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3332387CD1F00657CDF /* PortalUserAPITarget.swift */; };
+		F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487523A32F92001B8D31 /* LanguageManager.swift */; };
+		F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
+		F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
+		F44E8CD423B88AA30032C6BE /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
+		F44E8CD523B88AA30032C6BE /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
+		F44E8CD623B88AA30032C6BE /* GeneralEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */; };
+		F44E8CD823B88AA30032C6BE /* Pods_KKdayPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */; };
+		F44E8CDA23B88AA30032C6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
+		F44E8CDB23B88AA30032C6BE /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
+		F44E8CDC23B88AA30032C6BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
+		F44E8CDD23B88AA30032C6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
+		F44E8CE823B88AFA0032C6BE /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
+		F44E8CE923B88AFA0032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
+		F44E8CEA23B88AFA0032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
+		F44E8CEB23B88AFA0032C6BE /* RXViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* RXViewModelType.swift */; };
+		F44E8CEC23B88AFA0032C6BE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475A2393A057001B8D31 /* FileManager.swift */; };
+		F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
+		F44E8CEE23B88AFA0032C6BE /* PloneRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneRoot.swift */; };
+		F44E8CEF23B88AFA0032C6BE /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
+		F44E8CF023B88AFA0032C6BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
+		F44E8CF123B88AFA0032C6BE /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
+		F44E8CF223B88AFA0032C6BE /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
+		F44E8CF323B88AFA0032C6BE /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
+		F44E8CF423B88AFA0032C6BE /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
+		F44E8CF523B88AFA0032C6BE /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
+		F44E8CF623B88AFA0032C6BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
+		F44E8CF723B88AFA0032C6BE /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
+		F44E8CF823B88AFA0032C6BE /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */; };
+		F44E8CF923B88AFA0032C6BE /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
+		F44E8CFA23B88AFA0032C6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
+		F44E8CFB23B88AFA0032C6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
+		F44E8CFC23B88AFA0032C6BE /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
+		F44E8CFD23B88AFA0032C6BE /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
+		F44E8CFE23B88AFA0032C6BE /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
+		F44E8CFF23B88AFA0032C6BE /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
+		F44E8D0023B88AFA0032C6BE /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
+		F44E8D0123B88AFA0032C6BE /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
+		F44E8D0223B88AFA0032C6BE /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
+		F44E8D0323B88AFA0032C6BE /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
+		F44E8D0423B88AFA0032C6BE /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
+		F44E8D0523B88AFA0032C6BE /* CrashlyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F30E2386EE1300657CDF /* CrashlyticsEvent.swift */; };
+		F44E8D0623B88AFA0032C6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
+		F44E8D0723B88AFA0032C6BE /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
+		F44E8D0823B88AFA0032C6BE /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
+		F44E8D0923B88AFA0032C6BE /* FileResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475C2393A2F4001B8D31 /* FileResponseType.swift */; };
+		F44E8D0A23B88AFA0032C6BE /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
+		F44E8D0B23B88AFA0032C6BE /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
+		F44E8D0C23B88AFA0032C6BE /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
+		F44E8D0D23B88AFA0032C6BE /* RepositoryManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E02399632E001B8D31 /* RepositoryManageable.swift */; };
+		F44E8D0E23B88AFA0032C6BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* HomeViewController.swift */; };
+		F44E8D0F23B88AFA0032C6BE /* CodableResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3262387C16D00657CDF /* CodableResponseType.swift */; };
+		F44E8D1023B88AFA0032C6BE /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
+		F44E8D1123B88AFA0032C6BE /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
+		F44E8D1223B88AFA0032C6BE /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
+		F44E8D1323B88AFA0032C6BE /* PortalFileTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */; };
+		F44E8D1423B88AFA0032C6BE /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
+		F44E8D1523B88AFA0032C6BE /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3172386F53400657CDF /* SecureStore.swift */; };
+		F44E8D1623B88AFA0032C6BE /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
+		F44E8D1723B88AFA0032C6BE /* PloneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419C238CCA7D00AC7315 /* PloneUser.swift */; };
+		F44E8D1823B88AFA0032C6BE /* PloneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneItem.swift */; };
+		F44E8D1923B88AFA0032C6BE /* PloneSSOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */; };
+		F44E8D1A23B88AFA0032C6BE /* InternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3182386F53400657CDF /* InternetProtocol.swift */; };
+		F44E8D1B23B88AFA0032C6BE /* PortalItemAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A1238D358A00AC7315 /* PortalItemAPITarget.swift */; };
+		F44E8D1C23B88AFA0032C6BE /* PloneFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FB238F749A001B8D31 /* PloneFile.swift */; };
+		F44E8D1D23B88AFA0032C6BE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
+		F44E8D1E23B88AFA0032C6BE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487323A235B4001B8D31 /* Language.swift */; };
+		F44E8D1F23B88AFA0032C6BE /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
+		F44E8D2023B88AFA0032C6BE /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
+		F44E8D2123B88AFA0032C6BE /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
+		F44E8D2223B88AFA0032C6BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		F44E8D2323B88AFA0032C6BE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
+		F44E8D2423B88AFA0032C6BE /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
+		F44E8D2523B88AFA0032C6BE /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
+		F44E8D2623B88AFA0032C6BE /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
+		F44E8D2723B88AFA0032C6BE /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
+		F44E8D2823B88AFA0032C6BE /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
+		F44E8D2923B88AFA0032C6BE /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
+		F44E8D2A23B88AFA0032C6BE /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
+		F44E8D2B23B88AFA0032C6BE /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
+		F44E8D2C23B88AFA0032C6BE /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486D23A20EF9001B8D31 /* LanguageSettingViewController.swift */; };
+		F44E8D2D23B88AFA0032C6BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
+		F44E8D2E23B88AFA0032C6BE /* GeneralFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */; };
+		F44E8D2F23B88AFA0032C6BE /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3162386F53400657CDF /* SecureStoreError.swift */; };
+		F44E8D3023B88AFA0032C6BE /* PloneImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F9238F70DF001B8D31 /* PloneImage.swift */; };
+		F44E8D3123B88AFA0032C6BE /* GeneralCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */; };
+		F44E8D3223B88AFA0032C6BE /* PloneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F7238F706C001B8D31 /* PloneEvent.swift */; };
+		F44E8D3323B88AFA0032C6BE /* PortalItemAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A3238D35AA00AC7315 /* PortalItemAPITargetType.swift */; };
+		F44E8D3423B88AFA0032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
+		F44E8D3523B88AFA0032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
+		F44E8D3623B88AFA0032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
+		F44E8D3723B88AFA0032C6BE /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
+		F44E8D3823B88AFA0032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
+		F44E8D3923B88AFA0032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
+		F44E8D3A23B88AFA0032C6BE /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
+		F44E8D3B23B88AFA0032C6BE /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */; };
+		F44E8D3C23B88AFA0032C6BE /* GeneralLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */; };
+		F44E8D3D23B88AFA0032C6BE /* GeneralFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */; };
+		F44E8D3E23B88AFA0032C6BE /* GeneralNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544837239CAD0A001B8D31 /* GeneralNewsViewController.swift */; };
+		F44E8D3F23B88AFA0032C6BE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3272387C16D00657CDF /* APIManager.swift */; };
+		F44E8D4023B88AFA0032C6BE /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */; };
+		F44E8D4123B88AFA0032C6BE /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B023AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift */; };
+		F44E8D4223B88AFA0032C6BE /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
+		F44E8D4323B88AFA0032C6BE /* GeneralLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483D239CAD72001B8D31 /* GeneralLinkViewModel.swift */; };
+		F44E8D4423B88AFA0032C6BE /* CrashlyticsEventRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3102386EE1300657CDF /* CrashlyticsEventRecord.swift */; };
+		F44E8D4523B88AFA0032C6BE /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
+		F44E8D4623B88AFA0032C6BE /* PortalUserAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3332387CD1F00657CDF /* PortalUserAPITarget.swift */; };
+		F44E8D4723B88AFA0032C6BE /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487523A32F92001B8D31 /* LanguageManager.swift */; };
+		F44E8D4823B88AFA0032C6BE /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
+		F44E8D4923B88AFA0032C6BE /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
+		F44E8D4A23B88AFA0032C6BE /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
+		F44E8D4B23B88AFA0032C6BE /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
+		F44E8D4C23B88AFA0032C6BE /* GeneralEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */; };
+		F44E8D4E23B88AFA0032C6BE /* Pods_KKdayPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */; };
+		F44E8D5023B88AFA0032C6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
+		F44E8D5123B88AFA0032C6BE /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
+		F44E8D5223B88AFA0032C6BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
+		F44E8D5323B88AFA0032C6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
+		F44E8D5E23B88AFC0032C6BE /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
+		F44E8D5F23B88AFC0032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
+		F44E8D6023B88AFC0032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
+		F44E8D6123B88AFC0032C6BE /* RXViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* RXViewModelType.swift */; };
+		F44E8D6223B88AFC0032C6BE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475A2393A057001B8D31 /* FileManager.swift */; };
+		F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
+		F44E8D6423B88AFC0032C6BE /* PloneRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneRoot.swift */; };
+		F44E8D6523B88AFC0032C6BE /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
+		F44E8D6623B88AFC0032C6BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
+		F44E8D6723B88AFC0032C6BE /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
+		F44E8D6823B88AFC0032C6BE /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
+		F44E8D6923B88AFC0032C6BE /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
+		F44E8D6A23B88AFC0032C6BE /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
+		F44E8D6B23B88AFC0032C6BE /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
+		F44E8D6C23B88AFC0032C6BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
+		F44E8D6D23B88AFC0032C6BE /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
+		F44E8D6E23B88AFC0032C6BE /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F31A2386F53400657CDF /* SecureStoreQueryable.swift */; };
+		F44E8D6F23B88AFC0032C6BE /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
+		F44E8D7023B88AFC0032C6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
+		F44E8D7123B88AFC0032C6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
+		F44E8D7223B88AFC0032C6BE /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
+		F44E8D7323B88AFC0032C6BE /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
+		F44E8D7423B88AFC0032C6BE /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
+		F44E8D7523B88AFC0032C6BE /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
+		F44E8D7623B88AFC0032C6BE /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
+		F44E8D7723B88AFC0032C6BE /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
+		F44E8D7823B88AFC0032C6BE /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
+		F44E8D7923B88AFC0032C6BE /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
+		F44E8D7A23B88AFC0032C6BE /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
+		F44E8D7B23B88AFC0032C6BE /* CrashlyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F30E2386EE1300657CDF /* CrashlyticsEvent.swift */; };
+		F44E8D7C23B88AFC0032C6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
+		F44E8D7D23B88AFC0032C6BE /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
+		F44E8D7E23B88AFC0032C6BE /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
+		F44E8D7F23B88AFC0032C6BE /* FileResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475C2393A2F4001B8D31 /* FileResponseType.swift */; };
+		F44E8D8023B88AFC0032C6BE /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
+		F44E8D8123B88AFC0032C6BE /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
+		F44E8D8223B88AFC0032C6BE /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
+		F44E8D8323B88AFC0032C6BE /* RepositoryManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E02399632E001B8D31 /* RepositoryManageable.swift */; };
+		F44E8D8423B88AFC0032C6BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* HomeViewController.swift */; };
+		F44E8D8523B88AFC0032C6BE /* CodableResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3262387C16D00657CDF /* CodableResponseType.swift */; };
+		F44E8D8623B88AFC0032C6BE /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
+		F44E8D8723B88AFC0032C6BE /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
+		F44E8D8823B88AFC0032C6BE /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
+		F44E8D8923B88AFC0032C6BE /* PortalFileTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */; };
+		F44E8D8A23B88AFC0032C6BE /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
+		F44E8D8B23B88AFC0032C6BE /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3172386F53400657CDF /* SecureStore.swift */; };
+		F44E8D8C23B88AFC0032C6BE /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
+		F44E8D8D23B88AFC0032C6BE /* PloneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419C238CCA7D00AC7315 /* PloneUser.swift */; };
+		F44E8D8E23B88AFC0032C6BE /* PloneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneItem.swift */; };
+		F44E8D8F23B88AFC0032C6BE /* PloneSSOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */; };
+		F44E8D9023B88AFC0032C6BE /* InternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3182386F53400657CDF /* InternetProtocol.swift */; };
+		F44E8D9123B88AFC0032C6BE /* PortalItemAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A1238D358A00AC7315 /* PortalItemAPITarget.swift */; };
+		F44E8D9223B88AFC0032C6BE /* PloneFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FB238F749A001B8D31 /* PloneFile.swift */; };
+		F44E8D9323B88AFC0032C6BE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
+		F44E8D9423B88AFC0032C6BE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487323A235B4001B8D31 /* Language.swift */; };
+		F44E8D9523B88AFC0032C6BE /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
+		F44E8D9623B88AFC0032C6BE /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
+		F44E8D9723B88AFC0032C6BE /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
+		F44E8D9823B88AFC0032C6BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		F44E8D9923B88AFC0032C6BE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
+		F44E8D9A23B88AFC0032C6BE /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
+		F44E8D9B23B88AFC0032C6BE /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
+		F44E8D9C23B88AFC0032C6BE /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
+		F44E8D9D23B88AFC0032C6BE /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
+		F44E8D9E23B88AFC0032C6BE /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
+		F44E8D9F23B88AFC0032C6BE /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
+		F44E8DA023B88AFC0032C6BE /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
+		F44E8DA123B88AFC0032C6BE /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
+		F44E8DA223B88AFC0032C6BE /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486D23A20EF9001B8D31 /* LanguageSettingViewController.swift */; };
+		F44E8DA323B88AFC0032C6BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
+		F44E8DA423B88AFC0032C6BE /* GeneralFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */; };
+		F44E8DA523B88AFC0032C6BE /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3162386F53400657CDF /* SecureStoreError.swift */; };
+		F44E8DA623B88AFC0032C6BE /* PloneImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F9238F70DF001B8D31 /* PloneImage.swift */; };
+		F44E8DA723B88AFC0032C6BE /* GeneralCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544859239DF42E001B8D31 /* GeneralCollectionTableViewCell.swift */; };
+		F44E8DA823B88AFC0032C6BE /* PloneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F7238F706C001B8D31 /* PloneEvent.swift */; };
+		F44E8DA923B88AFC0032C6BE /* PortalItemAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A3238D35AA00AC7315 /* PortalItemAPITargetType.swift */; };
+		F44E8DAA23B88AFC0032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
+		F44E8DAB23B88AFC0032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
+		F44E8DAC23B88AFC0032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
+		F44E8DAD23B88AFC0032C6BE /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
+		F44E8DAE23B88AFC0032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
+		F44E8DAF23B88AFC0032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
+		F44E8DB023B88AFC0032C6BE /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
+		F44E8DB123B88AFC0032C6BE /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454485B239DF44C001B8D31 /* GeneralCollectionViewController.swift */; };
+		F44E8DB223B88AFC0032C6BE /* GeneralLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */; };
+		F44E8DB323B88AFC0032C6BE /* GeneralFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */; };
+		F44E8DB423B88AFC0032C6BE /* GeneralNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544837239CAD0A001B8D31 /* GeneralNewsViewController.swift */; };
+		F44E8DB523B88AFC0032C6BE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3272387C16D00657CDF /* APIManager.swift */; };
+		F44E8DB623B88AFC0032C6BE /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544857239DF3E4001B8D31 /* GeneralCollectionViewModel.swift */; };
+		F44E8DB723B88AFC0032C6BE /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B023AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift */; };
+		F44E8DB823B88AFC0032C6BE /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
+		F44E8DB923B88AFC0032C6BE /* GeneralLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483D239CAD72001B8D31 /* GeneralLinkViewModel.swift */; };
+		F44E8DBA23B88AFC0032C6BE /* CrashlyticsEventRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3102386EE1300657CDF /* CrashlyticsEventRecord.swift */; };
+		F44E8DBB23B88AFC0032C6BE /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
+		F44E8DBC23B88AFC0032C6BE /* PortalUserAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3332387CD1F00657CDF /* PortalUserAPITarget.swift */; };
+		F44E8DBD23B88AFC0032C6BE /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487523A32F92001B8D31 /* LanguageManager.swift */; };
+		F44E8DBE23B88AFC0032C6BE /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
+		F44E8DBF23B88AFC0032C6BE /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
+		F44E8DC023B88AFC0032C6BE /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
+		F44E8DC123B88AFC0032C6BE /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
+		F44E8DC223B88AFC0032C6BE /* GeneralEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */; };
+		F44E8DC423B88AFC0032C6BE /* Pods_KKdayPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */; };
+		F44E8DC623B88AFC0032C6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
+		F44E8DC723B88AFC0032C6BE /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
+		F44E8DC823B88AFC0032C6BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
+		F44E8DC923B88AFC0032C6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
 		F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
 		F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
 		F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
@@ -142,6 +460,12 @@
 		A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal.release.xcconfig"; sourceTree = "<group>"; };
 		AA0A0DF4910C101190EB9DE3 /* Pods_KKdayPortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalTests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortalTests/Pods-KKdayPortalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F44E8CE323B88AA30032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44E8CE423B88AA30032C6BE /* KKdayPortal-Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Production-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Production-Info.plist"; sourceTree = "<absolute>"; };
+		F44E8D5923B88AFA0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44E8D5A23B88AFA0032C6BE /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Stage-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Stage-Info.plist"; sourceTree = "<absolute>"; };
+		F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44E8DD023B88AFC0032C6BE /* KKdayPortal-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Test-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Test-Info.plist"; sourceTree = "<absolute>"; };
 		F45446EF238F5A70001B8D31 /* PloneDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneDocument.swift; sourceTree = "<group>"; };
 		F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneTextObject.swift; sourceTree = "<group>"; };
 		F45446F3238F6A9D001B8D31 /* PloneNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneNews.swift; sourceTree = "<group>"; };
@@ -229,7 +553,7 @@
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2D623862B3100657CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4B3F2D923862B3100657CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F4B3F2DB23862B3100657CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4B3F2DB23862B3100657CDF /* KKdayPortal-Sit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Sit-Info.plist"; sourceTree = "<group>"; };
 		F4B3F2E023862B3100657CDF /* KKdayPortalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKdayPortalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2E423862B3100657CDF /* KKdayPortalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayPortalTests.swift; sourceTree = "<group>"; };
 		F4B3F2E623862B3100657CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -264,6 +588,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F44E8CD723B88AA30032C6BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8CD823B88AA30032C6BE /* Pods_KKdayPortal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44E8D4D23B88AFA0032C6BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8D4E23B88AFA0032C6BE /* Pods_KKdayPortal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44E8DC323B88AFC0032C6BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8DC423B88AFC0032C6BE /* Pods_KKdayPortal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4B3F2C723862B3000657CDF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +656,17 @@
 				52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F44E8DD923B89A220032C6BE /* InfoPlist */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3F2DB23862B3100657CDF /* KKdayPortal-Sit-Info.plist */,
+				F44E8CE423B88AA30032C6BE /* KKdayPortal-Production-Info.plist */,
+				F44E8D5A23B88AFA0032C6BE /* KKdayPortal-Stage-Info.plist */,
+				F44E8DD023B88AFC0032C6BE /* KKdayPortal-Test-Info.plist */,
+			);
+			path = InfoPlist;
 			sourceTree = "<group>";
 		};
 		F454474D2392651C001B8D31 /* View */ = {
@@ -1005,6 +1364,9 @@
 				F4B3F2CA23862B3000657CDF /* KKdayPortal.app */,
 				F4B3F2E023862B3100657CDF /* KKdayPortalTests.xctest */,
 				F4B3F2EB23862B3100657CDF /* KKdayPortalUITests.xctest */,
+				F44E8CE323B88AA30032C6BE /* KKdayPortal.app */,
+				F44E8D5923B88AFA0032C6BE /* KKdayPortal.app */,
+				F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1026,7 +1388,7 @@
 				F4B3F2D623862B3100657CDF /* Assets.xcassets */,
 				F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */,
 				F454488923A54D2D001B8D31 /* Localizable.strings */,
-				F4B3F2DB23862B3100657CDF /* Info.plist */,
+				F44E8DD923B89A220032C6BE /* InfoPlist */,
 				F45448A123A88636001B8D31 /* credentials.plist */,
 			);
 			path = KKdayPortal;
@@ -1220,9 +1582,69 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4B3F2C923862B3000657CDF /* KKdayPortal */ = {
+		F44E8C6F23B88AA30032C6BE /* KKdayPortal-Production */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4B3F2F423862B3100657CDF /* Build configuration list for PBXNativeTarget "KKdayPortal" */;
+			buildConfigurationList = F44E8CE023B88AA30032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Production" */;
+			buildPhases = (
+				F44E8C7023B88AA30032C6BE /* [CP] Check Pods Manifest.lock */,
+				F44E8C7123B88AA30032C6BE /* Sources */,
+				F44E8CD723B88AA30032C6BE /* Frameworks */,
+				F44E8CD923B88AA30032C6BE /* Resources */,
+				F44E8CDE23B88AA30032C6BE /* [CP] Embed Pods Frameworks */,
+				F44E8CDF23B88AA30032C6BE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KKdayPortal-Production";
+			productName = KKdayPortal;
+			productReference = F44E8CE323B88AA30032C6BE /* KKdayPortal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F44E8CE523B88AFA0032C6BE /* KKdayPortal-Stage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44E8D5623B88AFA0032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Stage" */;
+			buildPhases = (
+				F44E8CE623B88AFA0032C6BE /* [CP] Check Pods Manifest.lock */,
+				F44E8CE723B88AFA0032C6BE /* Sources */,
+				F44E8D4D23B88AFA0032C6BE /* Frameworks */,
+				F44E8D4F23B88AFA0032C6BE /* Resources */,
+				F44E8D5423B88AFA0032C6BE /* [CP] Embed Pods Frameworks */,
+				F44E8D5523B88AFA0032C6BE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KKdayPortal-Stage";
+			productName = KKdayPortal;
+			productReference = F44E8D5923B88AFA0032C6BE /* KKdayPortal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F44E8D5B23B88AFC0032C6BE /* KKdayPortal-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44E8DCC23B88AFC0032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Test" */;
+			buildPhases = (
+				F44E8D5C23B88AFC0032C6BE /* [CP] Check Pods Manifest.lock */,
+				F44E8D5D23B88AFC0032C6BE /* Sources */,
+				F44E8DC323B88AFC0032C6BE /* Frameworks */,
+				F44E8DC523B88AFC0032C6BE /* Resources */,
+				F44E8DCA23B88AFC0032C6BE /* [CP] Embed Pods Frameworks */,
+				F44E8DCB23B88AFC0032C6BE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KKdayPortal-Test";
+			productName = KKdayPortal;
+			productReference = F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4B3F2F423862B3100657CDF /* Build configuration list for PBXNativeTarget "KKdayPortal-Sit" */;
 			buildPhases = (
 				7B715A6943CD46A915930AD2 /* [CP] Check Pods Manifest.lock */,
 				F4B3F2C623862B3000657CDF /* Sources */,
@@ -1235,7 +1657,7 @@
 			);
 			dependencies = (
 			);
-			name = KKdayPortal;
+			name = "KKdayPortal-Sit";
 			productName = KKdayPortal;
 			productReference = F4B3F2CA23862B3000657CDF /* KKdayPortal.app */;
 			productType = "com.apple.product-type.application";
@@ -1316,7 +1738,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4B3F2C923862B3000657CDF /* KKdayPortal */,
+				F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */,
+				F44E8C6F23B88AA30032C6BE /* KKdayPortal-Production */,
+				F44E8CE523B88AFA0032C6BE /* KKdayPortal-Stage */,
+				F44E8D5B23B88AFC0032C6BE /* KKdayPortal-Test */,
 				F4B3F2DF23862B3100657CDF /* KKdayPortalTests */,
 				F4B3F2EA23862B3100657CDF /* KKdayPortalUITests */,
 			);
@@ -1324,6 +1749,39 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F44E8CD923B88AA30032C6BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8CDA23B88AA30032C6BE /* LaunchScreen.storyboard in Resources */,
+				F44E8CDB23B88AA30032C6BE /* credentials.plist in Resources */,
+				F44E8CDC23B88AA30032C6BE /* Localizable.strings in Resources */,
+				F44E8CDD23B88AA30032C6BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44E8D4F23B88AFA0032C6BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8D5023B88AFA0032C6BE /* LaunchScreen.storyboard in Resources */,
+				F44E8D5123B88AFA0032C6BE /* credentials.plist in Resources */,
+				F44E8D5223B88AFA0032C6BE /* Localizable.strings in Resources */,
+				F44E8D5323B88AFA0032C6BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44E8DC523B88AFC0032C6BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8DC623B88AFC0032C6BE /* LaunchScreen.storyboard in Resources */,
+				F44E8DC723B88AFC0032C6BE /* credentials.plist in Resources */,
+				F44E8DC823B88AFC0032C6BE /* Localizable.strings in Resources */,
+				F44E8DC923B88AFC0032C6BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4B3F2C823862B3000657CDF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1430,9 +1888,501 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F44E8C7023B88AA30032C6BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKdayPortal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8CDE23B88AA30032C6BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8CDF23B88AA30032C6BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8CE623B88AFA0032C6BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKdayPortal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8D5423B88AFA0032C6BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8D5523B88AFA0032C6BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8D5C23B88AFC0032C6BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKdayPortal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8DCA23B88AFC0032C6BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44E8DCB23B88AFC0032C6BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal/Pods-KKdayPortal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F44E8C7123B88AA30032C6BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */,
+				F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */,
+				F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */,
+				F44E8C7523B88AA30032C6BE /* RXViewModelType.swift in Sources */,
+				F44E8C7623B88AA30032C6BE /* FileManager.swift in Sources */,
+				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
+				F44E8C7823B88AA30032C6BE /* PloneRoot.swift in Sources */,
+				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
+				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
+				F44E8C7B23B88AA30032C6BE /* PortalFileTarget.swift in Sources */,
+				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
+				F44E8C7D23B88AA30032C6BE /* InternetAuthenticationType.swift in Sources */,
+				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
+				F44E8C7F23B88AA30032C6BE /* PloneLink.swift in Sources */,
+				F44E8C8023B88AA30032C6BE /* MainViewController.swift in Sources */,
+				F44E8C8123B88AA30032C6BE /* SettingViewModel.swift in Sources */,
+				F44E8C8223B88AA30032C6BE /* SecureStoreQueryable.swift in Sources */,
+				F44E8C8323B88AA30032C6BE /* PloneNews.swift in Sources */,
+				F44E8C8423B88AA30032C6BE /* AppDelegate.swift in Sources */,
+				F44E8C8523B88AA30032C6BE /* SceneDelegate.swift in Sources */,
+				F44E8C8623B88AA30032C6BE /* GeneralRootViewController.swift in Sources */,
+				F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */,
+				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
+				F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */,
+				F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */,
+				F44E8C8B23B88AA30032C6BE /* GoogleUser.swift in Sources */,
+				F44E8C8C23B88AA30032C6BE /* AccountOperatingError.swift in Sources */,
+				F44E8C8D23B88AA30032C6BE /* Region.swift in Sources */,
+				F44E8C8E23B88AA30032C6BE /* LanguageSection.swift in Sources */,
+				F44E8C8F23B88AA30032C6BE /* CrashlyticsEvent.swift in Sources */,
+				F44E8C9023B88AA30032C6BE /* LoginViewModel.swift in Sources */,
+				F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */,
+				F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */,
+				F44E8C9323B88AA30032C6BE /* FileResponseType.swift in Sources */,
+				F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */,
+				F44E8C9523B88AA30032C6BE /* GeneralList.swift in Sources */,
+				F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */,
+				F44E8C9723B88AA30032C6BE /* RepositoryManageable.swift in Sources */,
+				F44E8C9823B88AA30032C6BE /* HomeViewController.swift in Sources */,
+				F44E8C9923B88AA30032C6BE /* CodableResponseType.swift in Sources */,
+				F44E8C9A23B88AA30032C6BE /* ApplicationsEntryViewController.swift in Sources */,
+				F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */,
+				F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */,
+				F44E8C9D23B88AA30032C6BE /* PortalFileTargetType.swift in Sources */,
+				F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */,
+				F44E8C9F23B88AA30032C6BE /* SecureStore.swift in Sources */,
+				F44E8CA023B88AA30032C6BE /* GeneralFileObject.swift in Sources */,
+				F44E8CA123B88AA30032C6BE /* PloneUser.swift in Sources */,
+				F44E8CA223B88AA30032C6BE /* PloneItem.swift in Sources */,
+				F44E8CA323B88AA30032C6BE /* PloneSSOViewController.swift in Sources */,
+				F44E8CA423B88AA30032C6BE /* InternetProtocol.swift in Sources */,
+				F44E8CA523B88AA30032C6BE /* PortalItemAPITarget.swift in Sources */,
+				F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */,
+				F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */,
+				F44E8CA823B88AA30032C6BE /* Language.swift in Sources */,
+				F44E8CA923B88AA30032C6BE /* GeneralRootViewModel.swift in Sources */,
+				F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */,
+				F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */,
+				F44E8CAC23B88AA30032C6BE /* LoginViewController.swift in Sources */,
+				F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */,
+				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
+				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
+				F44E8CB023B88AA30032C6BE /* ModelLoadable.swift in Sources */,
+				F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */,
+				F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */,
+				F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */,
+				F44E8CB423B88AA30032C6BE /* GeneralItemCoordinator.swift in Sources */,
+				F44E8CB523B88AA30032C6BE /* ApplicationsEntryViewModel.swift in Sources */,
+				F44E8CB623B88AA30032C6BE /* LanguageSettingViewController.swift in Sources */,
+				F44E8CB723B88AA30032C6BE /* SettingViewController.swift in Sources */,
+				F44E8CB823B88AA30032C6BE /* GeneralFileViewController.swift in Sources */,
+				F44E8CB923B88AA30032C6BE /* SecureStoreError.swift in Sources */,
+				F44E8CBA23B88AA30032C6BE /* PloneImage.swift in Sources */,
+				F44E8CBB23B88AA30032C6BE /* GeneralCollectionTableViewCell.swift in Sources */,
+				F44E8CBC23B88AA30032C6BE /* PloneEvent.swift in Sources */,
+				F44E8CBD23B88AA30032C6BE /* PortalItemAPITargetType.swift in Sources */,
+				F44E8CBE23B88AA30032C6BE /* PortalUserAPITargetType.swift in Sources */,
+				F44E8CBF23B88AA30032C6BE /* GeneralRootTableViewCell.swift in Sources */,
+				F44E8CC023B88AA30032C6BE /* GeneralLinkObject.swift in Sources */,
+				F44E8CC123B88AA30032C6BE /* SocailLoginViewController.swift in Sources */,
+				F44E8CC223B88AA30032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
+				F44E8CC323B88AA30032C6BE /* LanguageCellViewModel.swift in Sources */,
+				F44E8CC423B88AA30032C6BE /* GeneralTextObject.swift in Sources */,
+				F44E8CC523B88AA30032C6BE /* GeneralCollectionViewController.swift in Sources */,
+				F44E8CC623B88AA30032C6BE /* GeneralLinkViewController.swift in Sources */,
+				F44E8CC723B88AA30032C6BE /* GeneralFolderViewController.swift in Sources */,
+				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
+				F44E8CC923B88AA30032C6BE /* APIManager.swift in Sources */,
+				F44E8CCA23B88AA30032C6BE /* GeneralCollectionViewModel.swift in Sources */,
+				F44E8CCB23B88AA30032C6BE /* ApplicationsEntryCollectionViewCell.swift in Sources */,
+				F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */,
+				F44E8CCD23B88AA30032C6BE /* GeneralLinkViewModel.swift in Sources */,
+				F44E8CCE23B88AA30032C6BE /* CrashlyticsEventRecord.swift in Sources */,
+				F44E8CCF23B88AA30032C6BE /* PloneTextObject.swift in Sources */,
+				F44E8CD023B88AA30032C6BE /* PortalUserAPITarget.swift in Sources */,
+				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
+				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
+				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
+				F44E8CD423B88AA30032C6BE /* ApplicationsContentViewController.swift in Sources */,
+				F44E8CD523B88AA30032C6BE /* PloneFolder.swift in Sources */,
+				F44E8CD623B88AA30032C6BE /* GeneralEventViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44E8CE723B88AFA0032C6BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8CE823B88AFA0032C6BE /* PloneImageObject.swift in Sources */,
+				F44E8CE923B88AFA0032C6BE /* GeneralUser.swift in Sources */,
+				F44E8CEA23B88AFA0032C6BE /* DateFormatterExtension.swift in Sources */,
+				F44E8CEB23B88AFA0032C6BE /* RXViewModelType.swift in Sources */,
+				F44E8CEC23B88AFA0032C6BE /* FileManager.swift in Sources */,
+				F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */,
+				F44E8CEE23B88AFA0032C6BE /* PloneRoot.swift in Sources */,
+				F44E8CEF23B88AFA0032C6BE /* PloneFileObject.swift in Sources */,
+				F44E8CF023B88AFA0032C6BE /* StorageManager.swift in Sources */,
+				F44E8CF123B88AFA0032C6BE /* PortalFileTarget.swift in Sources */,
+				F44E8CF223B88AFA0032C6BE /* GeneralDocumentViewController.swift in Sources */,
+				F44E8CF323B88AFA0032C6BE /* InternetAuthenticationType.swift in Sources */,
+				F44E8CF423B88AFA0032C6BE /* GeneralImageObject.swift in Sources */,
+				F44E8CF523B88AFA0032C6BE /* PloneLink.swift in Sources */,
+				F44E8CF623B88AFA0032C6BE /* MainViewController.swift in Sources */,
+				F44E8CF723B88AFA0032C6BE /* SettingViewModel.swift in Sources */,
+				F44E8CF823B88AFA0032C6BE /* SecureStoreQueryable.swift in Sources */,
+				F44E8CF923B88AFA0032C6BE /* PloneNews.swift in Sources */,
+				F44E8CFA23B88AFA0032C6BE /* AppDelegate.swift in Sources */,
+				F44E8CFB23B88AFA0032C6BE /* SceneDelegate.swift in Sources */,
+				F44E8CFC23B88AFA0032C6BE /* GeneralRootViewController.swift in Sources */,
+				F44E8CFD23B88AFA0032C6BE /* GeneralImageViewModel.swift in Sources */,
+				F44E8CFE23B88AFA0032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
+				F44E8CFF23B88AFA0032C6BE /* PloneCollection.swift in Sources */,
+				F44E8D0023B88AFA0032C6BE /* GeneralDocumentViewModel.swift in Sources */,
+				F44E8D0123B88AFA0032C6BE /* GoogleUser.swift in Sources */,
+				F44E8D0223B88AFA0032C6BE /* AccountOperatingError.swift in Sources */,
+				F44E8D0323B88AFA0032C6BE /* Region.swift in Sources */,
+				F44E8D0423B88AFA0032C6BE /* LanguageSection.swift in Sources */,
+				F44E8D0523B88AFA0032C6BE /* CrashlyticsEvent.swift in Sources */,
+				F44E8D0623B88AFA0032C6BE /* LoginViewModel.swift in Sources */,
+				F44E8D0723B88AFA0032C6BE /* GeneralNewsViewModel.swift in Sources */,
+				F44E8D0823B88AFA0032C6BE /* PloneAuthToken.swift in Sources */,
+				F44E8D0923B88AFA0032C6BE /* FileResponseType.swift in Sources */,
+				F44E8D0A23B88AFA0032C6BE /* GeneralItem.swift in Sources */,
+				F44E8D0B23B88AFA0032C6BE /* GeneralList.swift in Sources */,
+				F44E8D0C23B88AFA0032C6BE /* GeneralImageViewController.swift in Sources */,
+				F44E8D0D23B88AFA0032C6BE /* RepositoryManageable.swift in Sources */,
+				F44E8D0E23B88AFA0032C6BE /* HomeViewController.swift in Sources */,
+				F44E8D0F23B88AFA0032C6BE /* CodableResponseType.swift in Sources */,
+				F44E8D1023B88AFA0032C6BE /* ApplicationsEntryViewController.swift in Sources */,
+				F44E8D1123B88AFA0032C6BE /* GeneralFileViewModel.swift in Sources */,
+				F44E8D1223B88AFA0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
+				F44E8D1323B88AFA0032C6BE /* PortalFileTargetType.swift in Sources */,
+				F44E8D1423B88AFA0032C6BE /* WebPloneRepository.swift in Sources */,
+				F44E8D1523B88AFA0032C6BE /* SecureStore.swift in Sources */,
+				F44E8D1623B88AFA0032C6BE /* GeneralFileObject.swift in Sources */,
+				F44E8D1723B88AFA0032C6BE /* PloneUser.swift in Sources */,
+				F44E8D1823B88AFA0032C6BE /* PloneItem.swift in Sources */,
+				F44E8D1923B88AFA0032C6BE /* PloneSSOViewController.swift in Sources */,
+				F44E8D1A23B88AFA0032C6BE /* InternetProtocol.swift in Sources */,
+				F44E8D1B23B88AFA0032C6BE /* PortalItemAPITarget.swift in Sources */,
+				F44E8D1C23B88AFA0032C6BE /* PloneFile.swift in Sources */,
+				F44E8D1D23B88AFA0032C6BE /* StringExtension.swift in Sources */,
+				F44E8D1E23B88AFA0032C6BE /* Language.swift in Sources */,
+				F44E8D1F23B88AFA0032C6BE /* GeneralRootViewModel.swift in Sources */,
+				F44E8D2023B88AFA0032C6BE /* ItemConverter.swift in Sources */,
+				F44E8D2123B88AFA0032C6BE /* WKNavigationTypeExtension.swift in Sources */,
+				F44E8D2223B88AFA0032C6BE /* LoginViewController.swift in Sources */,
+				F44E8D2323B88AFA0032C6BE /* Localizable.swift in Sources */,
+				F44E8D2423B88AFA0032C6BE /* ModelLoader.swift in Sources */,
+				F44E8D2523B88AFA0032C6BE /* LanguageViewModel.swift in Sources */,
+				F44E8D2623B88AFA0032C6BE /* ModelLoadable.swift in Sources */,
+				F44E8D2723B88AFA0032C6BE /* PortalControllable.swift in Sources */,
+				F44E8D2823B88AFA0032C6BE /* GeneralEventObject.swift in Sources */,
+				F44E8D2923B88AFA0032C6BE /* GeneralEventViewController.swift in Sources */,
+				F44E8D2A23B88AFA0032C6BE /* GeneralItemCoordinator.swift in Sources */,
+				F44E8D2B23B88AFA0032C6BE /* ApplicationsEntryViewModel.swift in Sources */,
+				F44E8D2C23B88AFA0032C6BE /* LanguageSettingViewController.swift in Sources */,
+				F44E8D2D23B88AFA0032C6BE /* SettingViewController.swift in Sources */,
+				F44E8D2E23B88AFA0032C6BE /* GeneralFileViewController.swift in Sources */,
+				F44E8D2F23B88AFA0032C6BE /* SecureStoreError.swift in Sources */,
+				F44E8D3023B88AFA0032C6BE /* PloneImage.swift in Sources */,
+				F44E8D3123B88AFA0032C6BE /* GeneralCollectionTableViewCell.swift in Sources */,
+				F44E8D3223B88AFA0032C6BE /* PloneEvent.swift in Sources */,
+				F44E8D3323B88AFA0032C6BE /* PortalItemAPITargetType.swift in Sources */,
+				F44E8D3423B88AFA0032C6BE /* PortalUserAPITargetType.swift in Sources */,
+				F44E8D3523B88AFA0032C6BE /* GeneralRootTableViewCell.swift in Sources */,
+				F44E8D3623B88AFA0032C6BE /* GeneralLinkObject.swift in Sources */,
+				F44E8D3723B88AFA0032C6BE /* SocailLoginViewController.swift in Sources */,
+				F44E8D3823B88AFA0032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
+				F44E8D3923B88AFA0032C6BE /* LanguageCellViewModel.swift in Sources */,
+				F44E8D3A23B88AFA0032C6BE /* GeneralTextObject.swift in Sources */,
+				F44E8D3B23B88AFA0032C6BE /* GeneralCollectionViewController.swift in Sources */,
+				F44E8D3C23B88AFA0032C6BE /* GeneralLinkViewController.swift in Sources */,
+				F44E8D3D23B88AFA0032C6BE /* GeneralFolderViewController.swift in Sources */,
+				F44E8D3E23B88AFA0032C6BE /* GeneralNewsViewController.swift in Sources */,
+				F44E8D3F23B88AFA0032C6BE /* APIManager.swift in Sources */,
+				F44E8D4023B88AFA0032C6BE /* GeneralCollectionViewModel.swift in Sources */,
+				F44E8D4123B88AFA0032C6BE /* ApplicationsEntryCollectionViewCell.swift in Sources */,
+				F44E8D4223B88AFA0032C6BE /* PloneDocument.swift in Sources */,
+				F44E8D4323B88AFA0032C6BE /* GeneralLinkViewModel.swift in Sources */,
+				F44E8D4423B88AFA0032C6BE /* CrashlyticsEventRecord.swift in Sources */,
+				F44E8D4523B88AFA0032C6BE /* PloneTextObject.swift in Sources */,
+				F44E8D4623B88AFA0032C6BE /* PortalUserAPITarget.swift in Sources */,
+				F44E8D4723B88AFA0032C6BE /* LanguageManager.swift in Sources */,
+				F44E8D4823B88AFA0032C6BE /* NetStatusManager.swift in Sources */,
+				F44E8D4923B88AFA0032C6BE /* GeneralFolderViewModel.swift in Sources */,
+				F44E8D4A23B88AFA0032C6BE /* ApplicationsContentViewController.swift in Sources */,
+				F44E8D4B23B88AFA0032C6BE /* PloneFolder.swift in Sources */,
+				F44E8D4C23B88AFA0032C6BE /* GeneralEventViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44E8D5D23B88AFC0032C6BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44E8D5E23B88AFC0032C6BE /* PloneImageObject.swift in Sources */,
+				F44E8D5F23B88AFC0032C6BE /* GeneralUser.swift in Sources */,
+				F44E8D6023B88AFC0032C6BE /* DateFormatterExtension.swift in Sources */,
+				F44E8D6123B88AFC0032C6BE /* RXViewModelType.swift in Sources */,
+				F44E8D6223B88AFC0032C6BE /* FileManager.swift in Sources */,
+				F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */,
+				F44E8D6423B88AFC0032C6BE /* PloneRoot.swift in Sources */,
+				F44E8D6523B88AFC0032C6BE /* PloneFileObject.swift in Sources */,
+				F44E8D6623B88AFC0032C6BE /* StorageManager.swift in Sources */,
+				F44E8D6723B88AFC0032C6BE /* PortalFileTarget.swift in Sources */,
+				F44E8D6823B88AFC0032C6BE /* GeneralDocumentViewController.swift in Sources */,
+				F44E8D6923B88AFC0032C6BE /* InternetAuthenticationType.swift in Sources */,
+				F44E8D6A23B88AFC0032C6BE /* GeneralImageObject.swift in Sources */,
+				F44E8D6B23B88AFC0032C6BE /* PloneLink.swift in Sources */,
+				F44E8D6C23B88AFC0032C6BE /* MainViewController.swift in Sources */,
+				F44E8D6D23B88AFC0032C6BE /* SettingViewModel.swift in Sources */,
+				F44E8D6E23B88AFC0032C6BE /* SecureStoreQueryable.swift in Sources */,
+				F44E8D6F23B88AFC0032C6BE /* PloneNews.swift in Sources */,
+				F44E8D7023B88AFC0032C6BE /* AppDelegate.swift in Sources */,
+				F44E8D7123B88AFC0032C6BE /* SceneDelegate.swift in Sources */,
+				F44E8D7223B88AFC0032C6BE /* GeneralRootViewController.swift in Sources */,
+				F44E8D7323B88AFC0032C6BE /* GeneralImageViewModel.swift in Sources */,
+				F44E8D7423B88AFC0032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
+				F44E8D7523B88AFC0032C6BE /* PloneCollection.swift in Sources */,
+				F44E8D7623B88AFC0032C6BE /* GeneralDocumentViewModel.swift in Sources */,
+				F44E8D7723B88AFC0032C6BE /* GoogleUser.swift in Sources */,
+				F44E8D7823B88AFC0032C6BE /* AccountOperatingError.swift in Sources */,
+				F44E8D7923B88AFC0032C6BE /* Region.swift in Sources */,
+				F44E8D7A23B88AFC0032C6BE /* LanguageSection.swift in Sources */,
+				F44E8D7B23B88AFC0032C6BE /* CrashlyticsEvent.swift in Sources */,
+				F44E8D7C23B88AFC0032C6BE /* LoginViewModel.swift in Sources */,
+				F44E8D7D23B88AFC0032C6BE /* GeneralNewsViewModel.swift in Sources */,
+				F44E8D7E23B88AFC0032C6BE /* PloneAuthToken.swift in Sources */,
+				F44E8D7F23B88AFC0032C6BE /* FileResponseType.swift in Sources */,
+				F44E8D8023B88AFC0032C6BE /* GeneralItem.swift in Sources */,
+				F44E8D8123B88AFC0032C6BE /* GeneralList.swift in Sources */,
+				F44E8D8223B88AFC0032C6BE /* GeneralImageViewController.swift in Sources */,
+				F44E8D8323B88AFC0032C6BE /* RepositoryManageable.swift in Sources */,
+				F44E8D8423B88AFC0032C6BE /* HomeViewController.swift in Sources */,
+				F44E8D8523B88AFC0032C6BE /* CodableResponseType.swift in Sources */,
+				F44E8D8623B88AFC0032C6BE /* ApplicationsEntryViewController.swift in Sources */,
+				F44E8D8723B88AFC0032C6BE /* GeneralFileViewModel.swift in Sources */,
+				F44E8D8823B88AFC0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
+				F44E8D8923B88AFC0032C6BE /* PortalFileTargetType.swift in Sources */,
+				F44E8D8A23B88AFC0032C6BE /* WebPloneRepository.swift in Sources */,
+				F44E8D8B23B88AFC0032C6BE /* SecureStore.swift in Sources */,
+				F44E8D8C23B88AFC0032C6BE /* GeneralFileObject.swift in Sources */,
+				F44E8D8D23B88AFC0032C6BE /* PloneUser.swift in Sources */,
+				F44E8D8E23B88AFC0032C6BE /* PloneItem.swift in Sources */,
+				F44E8D8F23B88AFC0032C6BE /* PloneSSOViewController.swift in Sources */,
+				F44E8D9023B88AFC0032C6BE /* InternetProtocol.swift in Sources */,
+				F44E8D9123B88AFC0032C6BE /* PortalItemAPITarget.swift in Sources */,
+				F44E8D9223B88AFC0032C6BE /* PloneFile.swift in Sources */,
+				F44E8D9323B88AFC0032C6BE /* StringExtension.swift in Sources */,
+				F44E8D9423B88AFC0032C6BE /* Language.swift in Sources */,
+				F44E8D9523B88AFC0032C6BE /* GeneralRootViewModel.swift in Sources */,
+				F44E8D9623B88AFC0032C6BE /* ItemConverter.swift in Sources */,
+				F44E8D9723B88AFC0032C6BE /* WKNavigationTypeExtension.swift in Sources */,
+				F44E8D9823B88AFC0032C6BE /* LoginViewController.swift in Sources */,
+				F44E8D9923B88AFC0032C6BE /* Localizable.swift in Sources */,
+				F44E8D9A23B88AFC0032C6BE /* ModelLoader.swift in Sources */,
+				F44E8D9B23B88AFC0032C6BE /* LanguageViewModel.swift in Sources */,
+				F44E8D9C23B88AFC0032C6BE /* ModelLoadable.swift in Sources */,
+				F44E8D9D23B88AFC0032C6BE /* PortalControllable.swift in Sources */,
+				F44E8D9E23B88AFC0032C6BE /* GeneralEventObject.swift in Sources */,
+				F44E8D9F23B88AFC0032C6BE /* GeneralEventViewController.swift in Sources */,
+				F44E8DA023B88AFC0032C6BE /* GeneralItemCoordinator.swift in Sources */,
+				F44E8DA123B88AFC0032C6BE /* ApplicationsEntryViewModel.swift in Sources */,
+				F44E8DA223B88AFC0032C6BE /* LanguageSettingViewController.swift in Sources */,
+				F44E8DA323B88AFC0032C6BE /* SettingViewController.swift in Sources */,
+				F44E8DA423B88AFC0032C6BE /* GeneralFileViewController.swift in Sources */,
+				F44E8DA523B88AFC0032C6BE /* SecureStoreError.swift in Sources */,
+				F44E8DA623B88AFC0032C6BE /* PloneImage.swift in Sources */,
+				F44E8DA723B88AFC0032C6BE /* GeneralCollectionTableViewCell.swift in Sources */,
+				F44E8DA823B88AFC0032C6BE /* PloneEvent.swift in Sources */,
+				F44E8DA923B88AFC0032C6BE /* PortalItemAPITargetType.swift in Sources */,
+				F44E8DAA23B88AFC0032C6BE /* PortalUserAPITargetType.swift in Sources */,
+				F44E8DAB23B88AFC0032C6BE /* GeneralRootTableViewCell.swift in Sources */,
+				F44E8DAC23B88AFC0032C6BE /* GeneralLinkObject.swift in Sources */,
+				F44E8DAD23B88AFC0032C6BE /* SocailLoginViewController.swift in Sources */,
+				F44E8DAE23B88AFC0032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
+				F44E8DAF23B88AFC0032C6BE /* LanguageCellViewModel.swift in Sources */,
+				F44E8DB023B88AFC0032C6BE /* GeneralTextObject.swift in Sources */,
+				F44E8DB123B88AFC0032C6BE /* GeneralCollectionViewController.swift in Sources */,
+				F44E8DB223B88AFC0032C6BE /* GeneralLinkViewController.swift in Sources */,
+				F44E8DB323B88AFC0032C6BE /* GeneralFolderViewController.swift in Sources */,
+				F44E8DB423B88AFC0032C6BE /* GeneralNewsViewController.swift in Sources */,
+				F44E8DB523B88AFC0032C6BE /* APIManager.swift in Sources */,
+				F44E8DB623B88AFC0032C6BE /* GeneralCollectionViewModel.swift in Sources */,
+				F44E8DB723B88AFC0032C6BE /* ApplicationsEntryCollectionViewCell.swift in Sources */,
+				F44E8DB823B88AFC0032C6BE /* PloneDocument.swift in Sources */,
+				F44E8DB923B88AFC0032C6BE /* GeneralLinkViewModel.swift in Sources */,
+				F44E8DBA23B88AFC0032C6BE /* CrashlyticsEventRecord.swift in Sources */,
+				F44E8DBB23B88AFC0032C6BE /* PloneTextObject.swift in Sources */,
+				F44E8DBC23B88AFC0032C6BE /* PortalUserAPITarget.swift in Sources */,
+				F44E8DBD23B88AFC0032C6BE /* LanguageManager.swift in Sources */,
+				F44E8DBE23B88AFC0032C6BE /* NetStatusManager.swift in Sources */,
+				F44E8DBF23B88AFC0032C6BE /* GeneralFolderViewModel.swift in Sources */,
+				F44E8DC023B88AFC0032C6BE /* ApplicationsContentViewController.swift in Sources */,
+				F44E8DC123B88AFC0032C6BE /* PloneFolder.swift in Sources */,
+				F44E8DC223B88AFC0032C6BE /* GeneralEventViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4B3F2C623862B3000657CDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1562,12 +2512,12 @@
 /* Begin PBXTargetDependency section */
 		F4B3F2E223862B3100657CDF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4B3F2C923862B3000657CDF /* KKdayPortal */;
+			target = F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */;
 			targetProxy = F4B3F2E123862B3100657CDF /* PBXContainerItemProxy */;
 		};
 		F4B3F2ED23862B3100657CDF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4B3F2C923862B3000657CDF /* KKdayPortal */;
+			target = F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */;
 			targetProxy = F4B3F2EC23862B3100657CDF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1598,6 +2548,126 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F44E8CE123B88AA30032C6BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8266A742D809525944D92DD1 /* Pods-KKdayPortal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HA9F856YHB;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
+				PRODUCT_NAME = KKdayPortal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F44E8CE223B88AA30032C6BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HA9F856YHB;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
+				PRODUCT_NAME = KKdayPortal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F44E8D5723B88AFA0032C6BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8266A742D809525944D92DD1 /* Pods-KKdayPortal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Stage";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HA9F856YHB;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Stage-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DSTAGE_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.stage;
+				PRODUCT_NAME = KKdayPortal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F44E8D5823B88AFA0032C6BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Stage";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HA9F856YHB;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Stage-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DSTAGE_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.stage;
+				PRODUCT_NAME = KKdayPortal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F44E8DCD23B88AFC0032C6BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8266A742D809525944D92DD1 /* Pods-KKdayPortal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Test";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HA9F856YHB;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Test-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DTEST_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.test;
+				PRODUCT_NAME = KKdayPortal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F44E8DCE23B88AFC0032C6BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Test";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HA9F856YHB;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Test-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DTEST_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.test;
+				PRODUCT_NAME = KKdayPortal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F4B3F2F223862B3100657CDF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1708,6 +2778,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -1718,16 +2789,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8266A742D809525944D92DD1 /* Pods-KKdayPortal.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Sit";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HA9F856YHB;
-				INFOPLIST_FILE = KKdayPortal/Info.plist;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Sit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_SWIFT_FLAGS = "-DSIT_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.sit;
+				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1737,16 +2809,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A922AE7CBA9440CF7FC491D3 /* Pods-KKdayPortal.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Sit";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HA9F856YHB;
-				INFOPLIST_FILE = KKdayPortal/Info.plist;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Sit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_SWIFT_FLAGS = "-DSIT_VERSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.sit;
+				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1771,7 +2844,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KKdayPortal.app/KKdayPortal";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KKdayPortal-Sit.app/KKdayPortal-Sit";
 			};
 			name = Debug;
 		};
@@ -1794,7 +2867,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KKdayPortal.app/KKdayPortal";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KKdayPortal-Sit.app/KKdayPortal-Sit";
 			};
 			name = Release;
 		};
@@ -1841,6 +2914,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F44E8CE023B88AA30032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Production" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44E8CE123B88AA30032C6BE /* Debug */,
+				F44E8CE223B88AA30032C6BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44E8D5623B88AFA0032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Stage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44E8D5723B88AFA0032C6BE /* Debug */,
+				F44E8D5823B88AFA0032C6BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44E8DCC23B88AFC0032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44E8DCD23B88AFC0032C6BE /* Debug */,
+				F44E8DCE23B88AFC0032C6BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F4B3F2C523862B3000657CDF /* Build configuration list for PBXProject "KKdayPortal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1850,7 +2950,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4B3F2F423862B3100657CDF /* Build configuration list for PBXNativeTarget "KKdayPortal" */ = {
+		F4B3F2F423862B3100657CDF /* Build configuration list for PBXNativeTarget "KKdayPortal-Sit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4B3F2F523862B3100657CDF /* Debug */,

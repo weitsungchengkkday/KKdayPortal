@@ -69,5 +69,4 @@ final class GeneralFolderViewModel: RXViewModelType, PortalControllable {
         }
         .disposed(by: disposeBag)
     }
-    
 }
