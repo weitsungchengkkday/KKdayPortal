@@ -104,10 +104,14 @@ final class ApplicationsContentViewController: UIViewController {
                 guard var url = url else {
                     return
                 }
-                
+                // https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm
                 let userEmail = "william.cheng@kkday.com"
+                
+                
+                print(url)
+                print(url.host)
                 switch url.host {
-                case "sit.bpm.eip.kkday.net":
+                case "sit.eip.kkday.net":
                     url = URL(string: "http://sit.bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
                     
                 case "bpm.eip.kkday.net":

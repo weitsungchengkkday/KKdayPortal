@@ -147,6 +147,15 @@ final class LoginViewController: UIViewController {
             maker.centerX.equalToSuperview()
         }
         
+        #if RELEASE
+            loginStackView.isHidden = true
+            passwordStackView.isHidden = true
+            loginButton.isHidden = true
+            googleSignInButton.isHidden = true
+        #endif
+        
+        
+        
     }
     
     // 🎬 set action

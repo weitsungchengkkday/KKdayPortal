@@ -45,6 +45,29 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
     
     func getPortalData() {
         
+        print(self.source)
+        // Plone BPM's remoteUrl String can't be parsed to URL
+  
+        #if DEBUG
+        
+        #elseif RELEASE
+        
+        #else
+        
+        #endif
+        
+        if self.source == URL(string:
+            "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm") {
+            
+            self.titleSubject.onNext("BPM")
+            self.loadWebViewSubject.onNext(source)
+            
+            return
+        }
+        
+        
+       
+        
         ModelLoader.PortalLoader()
             .getItem(source: source, type: .link)
             .subscribeOn(MainScheduler.instance)

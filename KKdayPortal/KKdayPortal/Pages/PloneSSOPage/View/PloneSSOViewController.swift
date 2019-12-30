@@ -23,7 +23,6 @@ final class PloneSSOViewController: UIViewController {
         config.userContentController = contentController
         
         let wkv = WKWebView(frame: self.view.bounds, configuration: config)
-        
         wkv.navigationDelegate = self
         
         return wkv
@@ -37,8 +36,6 @@ final class PloneSSOViewController: UIViewController {
            return btn
        }()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +43,14 @@ final class PloneSSOViewController: UIViewController {
         setAction()
         bindViewModel()
         
-        let url = URL(string: "https://sit.eip.kkday.net/Plone")!
-        webView.load(URLRequest(url: url))
+        #if DEBUG
+            goMainViewController()
+        #elseif RELEASE
+            let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
+            webView.load(URLRequest(url: url))
+        #else
         
+        #endif
     }
     
     // 🎨 draw UI
@@ -57,14 +59,21 @@ final class PloneSSOViewController: UIViewController {
         view.addSubview(webView)
         view.addSubview(loginButton)
         webView.snp.makeConstraints { maker in
-            maker.trailing.leading.top.equalToSuperview()
-            maker.bottom.equalToSuperview().offset(-200)
+            maker.trailing.leading.top.bottom.equalToSuperview()
         }
         
         loginButton.snp.makeConstraints { maker in
            maker.top.equalTo(webView.snp.bottom).offset(20)
             maker.centerX.equalToSuperview()
         }
+        
+        #if DEBUG
+        
+        #elseif RELEASE
+           loginButton.isHidden = true
+        #else
+           
+        #endif
         
     }
     
@@ -73,41 +82,37 @@ final class PloneSSOViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        loginButton.addTarget(self, action: #selector(getToken), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(goMainViewController), for: .touchUpInside)
     }
     
     // ⛓ bind viewModel
     private func bindViewModel() {}
     
     
-    @objc func getToken() {
-      
-      #if SIT_VERSION
-           #if DEBUG
-           let url = URL(string: "")!
-           #else
-           let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
-           #endif
-           
-         #elseif PRODUCTION_VERSION
-         let url = URL(string: "https://eip.kkday.net/Plone/@@app_login")!
-         #else
-         print("Not Implement")
-         #endif
-      
-        webView.load(URLRequest(url: url))
+    @objc func goMainViewController() {
+        let presentViewController = MainViewController()
+        present(presentViewController, animated: true, completion: nil)
     }
 }
 
 extension PloneSSOViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-        print(message.name)
+    
+        // Get User Login Info
+        // With Plone Web Site (using SAML SSO)
+        // Web Site Post Message with JWT Token and email
         if (message.name == "userLogin"){
-            
-//            let dict = message.body as! [String : AnyObject]
-//            let username = dict["username"] as! String
-//            let secertToken = dict["secretToken"] as! String
+            if let body = message.body as? [String : Any],
+                let account = body["id"] as? String,
+                let token = body["token"] as? String {
+                
+                let user = GeneralUser(account: account, password: "", token: token)
+                StorageManager.shared.saveObject(for: .generalUser, value: user)
+                goMainViewController()
+                
+            } else {
+                // Alert User Can't Login
+            }
         }
         
     }
@@ -117,9 +122,8 @@ extension PloneSSOViewController: WKScriptMessageHandler {
 extension PloneSSOViewController: WKNavigationDelegate {
  
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        
-        print("⚠️")
-        print(navigationResponse.response)
+    
+        print("📮 Navigation Response: \(navigationResponse.response)")
         decisionHandler(.allow)
     }
     
@@ -127,32 +131,16 @@ extension PloneSSOViewController: WKNavigationDelegate {
 
         print("🔗 NavigationType: \(navigationAction.navigationType.description)")
         if navigationAction.navigationType == .linkActivated {
-//            if let url = navigationAction.request.url {
-//                print(url)
-//                print(url.host)
-//
-//                if url.host == "sit.eip.kkday.net" {
-//                    print("go")
-//                }
-//            }
+            
+            if let url = navigationAction.request.url {
+                print("🌐 Navigation URL: \(url)")
+            }
             
             decisionHandler(.allow)
         } else {
             decisionHandler(.allow)
         }
-        
     }
 }
 
-// HTML
 
-//var button = document.getElementById("login-button");
-//
-// button.addEventListener("click", function() {
-//   var message = {
-//     username: "Michael Phelps",
-//     secretToken: "secret"
-//   };
-//
-//   window.webkit.messageHandlers.userLogin.postMessage(message);
-// }, false);

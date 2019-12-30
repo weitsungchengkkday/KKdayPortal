@@ -23,7 +23,7 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 80, height: 120)
+        layout.itemSize = CGSize(width: 160, height: 240)
         layout.minimumLineSpacing = CGFloat(integerLiteral: 10)
         layout.minimumInteritemSpacing = CGFloat(integerLiteral: 10)
         layout.scrollDirection = UICollectionView.ScrollDirection.vertical
@@ -57,11 +57,11 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
         #if DEBUG
         let applicationSourceURL = URL(string: "http://localhost:8080/pikaPika/application-items")!
         #else
-        let applicationSourceURL = URL(string: "")!
+        let applicationSourceURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services")!
         #endif
         
         #elseif PRODUCTION_VERSION
-        let applicationSourceURL = URL(string: "")!
+        let applicationSourceURL = URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services")!
         #else
         print("Not Implement")
         #endif

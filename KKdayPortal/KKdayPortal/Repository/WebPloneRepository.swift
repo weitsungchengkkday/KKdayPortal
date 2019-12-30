@@ -16,6 +16,9 @@ final class WebPloneRepository: RepositoryManageable {
     typealias Item = GeneralItem
     
     static var baseURL: URL {
+        
+//        #if TEST_VERSION
+        
         #if SIT_VERSION
           #if DEBUG
           let url = URL(string: "http://localhost:8080/pikaPika")!
