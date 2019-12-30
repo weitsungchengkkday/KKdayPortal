@@ -100,25 +100,8 @@ final class ApplicationsContentViewController: UIViewController {
         
         viewModel.output.showLoadWebView
             .drive(onNext: { [weak self] url in
-                
-                guard var url = url else {
+                guard let url = url else {
                     return
-                }
-                // https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm
-                let userEmail = "william.cheng@kkday.com"
-                
-                
-                print(url)
-                print(url.host)
-                switch url.host {
-                case "sit.eip.kkday.net":
-                    url = URL(string: "http://sit.bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
-                    
-                case "bpm.eip.kkday.net":
-                    url = URL(string: "http://bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
-                    
-                default:
-                    break
                 }
                 
                 self?.webView.load(URLRequest(url: url))

@@ -48,20 +48,36 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
         // Plone BPM's remoteUrl String can't be parsed to URL
         #if SIT_VERSION
             let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!
-            
+        
             if self.source == url {
-                self.titleSubject.onNext("BPM")
-                self.loadWebViewSubject.onNext(source)
+                guard let generalUser: GeneralUser = StorageManager.shared.loadObject(for: .generalUser)
+                else {
+                    return
+                }
+                let account = generalUser.account
+
+                let redirectUrl = URL(string: "http://sit.bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(account)")!
+                
+                self.titleSubject.onNext("sit-BPM")
+                self.loadWebViewSubject.onNext(redirectUrl)
                 
                 return
             }
            
         #elseif PRODUCTION_VERSION
             let url = URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!
-            
+        
             if self.source == url {
+                guard let generalUser: GeneralUser = StorageManager.shared.loadObject(for: .generalUser)
+                    else {
+                        return
+                }
+                let account = generalUser.account
+                
+                let redirectUrl = URL(string: "http://bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(account)")!
+                
                 self.titleSubject.onNext("BPM")
-                self.loadWebViewSubject.onNext(source)
+                self.loadWebViewSubject.onNext(redirectUrl)
                 
                 return
             }
@@ -69,6 +85,23 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
         #else
         
         #endif
+        
+          
+                // https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm
+                         
+        //                    print(url)
+        //                    print(url.host)
+        //                    switch url.host {
+        //                    case "sit.eip.kkday.net":
+        //                        url = URL(string: "http://sit.bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
+        //
+        //                    case "eip.kkday.net":
+        //                        url = URL(string: "http://bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
+        //
+        //                    default:
+        //                        break
+        //                    }
+                
         
         ModelLoader.PortalLoader()
             .getItem(source: source, type: .link)

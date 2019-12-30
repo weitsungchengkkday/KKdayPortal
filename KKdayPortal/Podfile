@@ -28,13 +28,9 @@ target 'KKdayPortal-Sit' do
   project 'KKdayPortal.xcodeproj'
   shared
 
-  target 'KKdayPortalTests' do
+  target 'KKdayPortal-SitTests' do
     inherit! :search_paths
   end
-end
-
-target 'KKdayPortalUITests' do
-    inherit! :search_paths
 end
 
 target 'KKdayPortal-Stage' do
