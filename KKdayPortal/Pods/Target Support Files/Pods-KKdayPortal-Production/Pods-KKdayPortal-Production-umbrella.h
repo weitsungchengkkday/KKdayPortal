@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_KKdayPortalVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_KKdayPortalVersionString[];
+FOUNDATION_EXPORT double Pods_KKdayPortal_ProductionVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_KKdayPortal_ProductionVersionString[];
 

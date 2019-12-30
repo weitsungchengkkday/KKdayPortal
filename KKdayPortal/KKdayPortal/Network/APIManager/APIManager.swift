@@ -26,6 +26,7 @@ final public class APIManager {
     public func request<Request: CodableResponseType>(_ request: Request) -> Single<Request.ResponseType> {
         let target = MultiTarget(request)
         print("RxSwift APIMangager request start")
+        
         var rxRequest = provider.rx.request(target)
             .filterSuccessfulStatusAndRedirectCodes()
             .map(Request.ResponseType.self)

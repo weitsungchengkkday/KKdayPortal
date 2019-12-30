@@ -20,6 +20,20 @@
                ReferencedContainer = "container:KKdayPortal.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F45394D923B9CBD300136E6D"
+               BuildableName = "KKdayPortalTests.xctest"
+               BlueprintName = "KKdayPortalTests"
+               ReferencedContainer = "container:KKdayPortal.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -32,17 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4B3F2DF23862B3100657CDF"
-               BuildableName = "KKdayPortalTests.xctest"
-               BlueprintName = "KKdayPortalTests"
-               ReferencedContainer = "container:KKdayPortal.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4B3F2EA23862B3100657CDF"
+               BlueprintIdentifier = "F45394F523B9CCC100136E6D"
                BuildableName = "KKdayPortalUITests.xctest"
                BlueprintName = "KKdayPortalUITests"
                ReferencedContainer = "container:KKdayPortal.xcodeproj">

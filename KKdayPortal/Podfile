@@ -1,13 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 
 platform :ios, '13.2'
+use_frameworks!
+workspace 'KKdayPortal.xcworkspace'
 
-target 'KKdayPortal' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for KKdayPortal
-
+def shared
   # UI
   pod 'SnapKit', '~> 5.0.1'
 
@@ -25,10 +22,38 @@ target 'KKdayPortal' do
   pod 'RxDataSources', '~> 3.1.0'
   pod 'RxKeyboard', '~> 0.9.0'
   pod 'RxGesture', '~> 2.2.0'
+end
+
+target 'KKdayPortal-Sit' do
+  project 'KKdayPortal.xcodeproj'
+  shared
 
   target 'KKdayPortalTests' do
     inherit! :search_paths
-    # Pods for testing
   end
+end
+
+target 'KKdayPortalUITests' do
+    inherit! :search_paths
+end
+
+target 'KKdayPortal-Stage' do
+  project 'KKdayPortal.xcodeproj'
+  shared
 
 end
+
+target 'KKdayPortal-Test' do
+  project 'KKdayPortal.xcodeproj'
+  shared
+
+end
+
+target 'KKdayPortal-Production' do
+  project 'KKdayPortal.xcodeproj'
+  shared
+
+end
+
+
+

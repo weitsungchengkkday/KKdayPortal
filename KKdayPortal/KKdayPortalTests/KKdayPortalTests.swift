@@ -2,12 +2,11 @@
 //  KKdayPortalTests.swift
 //  KKdayPortalTests
 //
-//  Created by WEI-TSUNG CHENG on 2019/11/21.
+//  Created by WEI-TSUNG CHENG on 2019/12/30.
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import XCTest
-@testable import KKdayPortal
 
 class KKdayPortalTests: XCTestCase {
 
@@ -20,13 +19,14 @@ class KKdayPortalTests: XCTestCase {
     }
 
     func testExample() {
+        assert(true)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

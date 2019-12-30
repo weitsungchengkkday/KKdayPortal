@@ -14,7 +14,6 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupTabBarItems()
-      
     }
     
     private func setupTabBarItems() {
