@@ -35,10 +35,7 @@ final class PloneSSOViewController: UIViewController {
         setAction()
         bindViewModel()
         
-        #if TEST_VERSION
-            goMainViewController()
-        
-        #elseif SIT_VERSION
+        #if SIT_VERSION
             let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
             webView.load(URLRequest(url: url))
       
@@ -97,6 +94,8 @@ extension PloneSSOViewController: WKScriptMessageHandler {
                 // Alert User Can't Login
             }
         }
+
+        webView.stopLoading()
     }
 }
 

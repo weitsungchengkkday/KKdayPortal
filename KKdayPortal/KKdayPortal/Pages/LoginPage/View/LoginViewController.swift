@@ -50,11 +50,32 @@ final class LoginViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        ploneRestfulTokenButton.addTarget(self, action: #selector(goPloneSSOPage), for: .touchUpInside)
+        ploneRestfulTokenButton.addTarget(self, action: #selector(login), for: .touchUpInside)
     }
     
-    @objc private func goPloneSSOPage() {
+    @objc private func login() {
+        #if TEST_VERSION
+        directlyGoMainViewController()
+        
+        #elseif SIT_VERSION
+        goPloneSSOPage()
+        
+        #elseif PRODUCTION_VERSION
+        goPloneSSOPage()
+        
+        #else
+        
+        #endif
+    }
+    
+    private func goPloneSSOPage() {
         let presentViewController = PloneSSOViewController()
+        present(presentViewController, animated: true, completion: nil)
+    }
+    
+    private func directlyGoMainViewController() {
+        let presentViewController = MainViewController()
+        presentViewController.modalPresentationStyle = .fullScreen
         present(presentViewController, animated: true, completion: nil)
     }
     
