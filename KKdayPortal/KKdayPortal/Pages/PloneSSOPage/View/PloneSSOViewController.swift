@@ -28,14 +28,6 @@ final class PloneSSOViewController: UIViewController {
         return wkv
     }()
     
-      lazy var loginButton: UIButton = {
-           let btn = UIButton()
-           btn.setTitle("Login", for: .normal)
-           btn.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-           btn.layer.cornerRadius = 4
-           return btn
-       }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,11 +35,17 @@ final class PloneSSOViewController: UIViewController {
         setAction()
         bindViewModel()
         
-        #if DEBUG
+        #if TEST_VERSION
             goMainViewController()
-        #elseif RELEASE
+        
+        #elseif SIT_VERSION
             let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
             webView.load(URLRequest(url: url))
+      
+        #elseif PRODUCTION_VERSION
+            let url = URL(string: "https://eip.kkday.net/Plone/@@app_login")!
+            webView.load(URLRequest(url: url))
+       
         #else
         
         #endif
@@ -57,40 +55,24 @@ final class PloneSSOViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         view.addSubview(webView)
-        view.addSubview(loginButton)
+        
         webView.snp.makeConstraints { maker in
             maker.trailing.leading.top.bottom.equalToSuperview()
         }
-        
-        loginButton.snp.makeConstraints { maker in
-           maker.top.equalTo(webView.snp.bottom).offset(20)
-            maker.centerX.equalToSuperview()
-        }
-        
-        #if DEBUG
-        
-        #elseif RELEASE
-           loginButton.isHidden = true
-        #else
-           
-        #endif
-        
     }
     
     // 🧾 localization
     private func localizedText() {}
     
     // 🎬 set action
-    private func setAction() {
-        loginButton.addTarget(self, action: #selector(goMainViewController), for: .touchUpInside)
-    }
+    private func setAction() {}
     
     // ⛓ bind viewModel
     private func bindViewModel() {}
     
-    
-    @objc func goMainViewController() {
+    private func goMainViewController() {
         let presentViewController = MainViewController()
+        presentViewController.modalPresentationStyle = .fullScreen
         present(presentViewController, animated: true, completion: nil)
     }
 }
@@ -101,23 +83,22 @@ extension PloneSSOViewController: WKScriptMessageHandler {
         // Get User Login Info
         // With Plone Web Site (using SAML SSO)
         // Web Site Post Message with JWT Token and email
-        if (message.name == "userLogin"){
+        if (message.name == "userLogin") {
             if let body = message.body as? [String : Any],
                 let account = body["id"] as? String,
                 let token = body["token"] as? String {
                 
                 let user = GeneralUser(account: account, password: "", token: token)
                 StorageManager.shared.saveObject(for: .generalUser, value: user)
+                
                 goMainViewController()
                 
             } else {
                 // Alert User Can't Login
             }
         }
-        
     }
 }
-
 
 extension PloneSSOViewController: WKNavigationDelegate {
  
@@ -140,6 +121,18 @@ extension PloneSSOViewController: WKNavigationDelegate {
         } else {
             decisionHandler(.allow)
         }
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("\(#function) load start")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("\(#function) load finished")
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("\(#function) error is \(error)")
     }
 }
 

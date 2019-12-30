@@ -30,9 +30,9 @@ final public class APIManager {
         var rxRequest = provider.rx.request(target)
             .filterSuccessfulStatusAndRedirectCodes()
             .map(Request.ResponseType.self)
-        #if DEBUG
+        
         rxRequest = rxRequest.debug()
-        #endif
+        
         return rxRequest
     }
 }

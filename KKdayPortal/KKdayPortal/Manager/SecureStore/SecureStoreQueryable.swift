@@ -52,7 +52,7 @@ extension GenericPasswordQueryable: SecureStoreQueryable {
     query[String(kSecClass)] = kSecClassGenericPassword
     query[String(kSecAttrService)] = service
     
-    // 讓不同的App 可以存取相同的Access Group
+    // let differnt App can save and load same Access Group
     #if !targetEnvironment(simulator)
     if let accesssGroup = accessGroup {
       query[String(kSecAttrAccessGroup)] = accessGroup

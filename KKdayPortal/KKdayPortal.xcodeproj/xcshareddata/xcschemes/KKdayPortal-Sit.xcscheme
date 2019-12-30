@@ -52,10 +52,20 @@
                ReferencedContainer = "container:KKdayPortal.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F453951723BA2A1F00136E6D"
+               BuildableName = "KKdayPortal-SitTests.xctest"
+               BlueprintName = "KKdayPortal-SitTests"
+               ReferencedContainer = "container:KKdayPortal.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"

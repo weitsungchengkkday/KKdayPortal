@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B53C9BF98EE5B0926E3AB7E /* Pods_KKdayPortal_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E28182104343E874E2CEF6 /* Pods_KKdayPortal_Test.framework */; };
-		38C81F7BEC594C7F082FC403 /* Pods_KKdayPortalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */; };
-		509F272C8ECA94F23126D58C /* Pods_KKdayPortalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B15E99981334FA9FCA5A57 /* Pods_KKdayPortalUITests.framework */; };
 		77E5FB8106E4538F986E0785 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */; };
 		7F644BB20AD6E8ABC36BA339 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569478EC36DD5FD37783A5F8 /* Pods_KKdayPortal_Sit.framework */; };
 		D32F9400D430E881E5FD0900 /* Pods_KKdayPortal_Stage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C095C59F1F19D5D92E5B25 /* Pods_KKdayPortal_Stage.framework */; };
@@ -92,7 +90,6 @@
 		F44E8CBE23B88AA30032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
 		F44E8CBF23B88AA30032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
 		F44E8CC023B88AA30032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
-		F44E8CC123B88AA30032C6BE /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
 		F44E8CC223B88AA30032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
 		F44E8CC323B88AA30032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
 		F44E8CC423B88AA30032C6BE /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
@@ -197,7 +194,6 @@
 		F44E8D3423B88AFA0032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
 		F44E8D3523B88AFA0032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
 		F44E8D3623B88AFA0032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
-		F44E8D3723B88AFA0032C6BE /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
 		F44E8D3823B88AFA0032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
 		F44E8D3923B88AFA0032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
 		F44E8D3A23B88AFA0032C6BE /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
@@ -302,7 +298,6 @@
 		F44E8DAA23B88AFC0032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
 		F44E8DAB23B88AFC0032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
 		F44E8DAC23B88AFC0032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
-		F44E8DAD23B88AFC0032C6BE /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
 		F44E8DAE23B88AFC0032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
 		F44E8DAF23B88AFC0032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
 		F44E8DB023B88AFC0032C6BE /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
@@ -332,8 +327,7 @@
 		F453943723B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
 		F453943823B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
 		F453943923B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
-		F45394DD23B9CBD300136E6D /* KKdayPortalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45394DC23B9CBD300136E6D /* KKdayPortalTests.swift */; };
-		F45394F923B9CCC100136E6D /* KKdayPortalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45394F823B9CCC100136E6D /* KKdayPortalUITests.swift */; };
+		F453951B23BA2A1F00136E6D /* KKdayPortal_SitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453951A23BA2A1F00136E6D /* KKdayPortal_SitTests.swift */; };
 		F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
 		F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
 		F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
@@ -400,7 +394,6 @@
 		F454488C23A55017001B8D31 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
 		F454489823A5E211001B8D31 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
 		F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
-		F45448A023A881E2001B8D31 /* SocailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */; };
 		F45448A223A88636001B8D31 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		F45448A623A9D7B8001B8D31 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
 		F45448AB23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
@@ -442,14 +435,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F45394DF23B9CBD300136E6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4B3F2C223862B3000657CDF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4B3F2C923862B3000657CDF;
-			remoteInfo = "KKdayPortal-Sit";
-		};
-		F45394FB23B9CCC100136E6D /* PBXContainerItemProxy */ = {
+		F453951D23BA2A1F00136E6D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4B3F2C223862B3000657CDF /* Project object */;
 			proxyType = 1;
@@ -483,12 +469,9 @@
 		F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44E8DD023B88AFC0032C6BE /* KKdayPortal-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Test-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Test-Info.plist"; sourceTree = "<absolute>"; };
 		F453943523B8B44300136E6D /* Gif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gif; sourceTree = "<group>"; };
-		F45394DA23B9CBD300136E6D /* KKdayPortalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKdayPortalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F45394DC23B9CBD300136E6D /* KKdayPortalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayPortalTests.swift; sourceTree = "<group>"; };
-		F45394DE23B9CBD300136E6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F45394F623B9CCC100136E6D /* KKdayPortalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKdayPortalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F45394F823B9CCC100136E6D /* KKdayPortalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayPortalUITests.swift; sourceTree = "<group>"; };
-		F45394FA23B9CCC100136E6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F453951823BA2A1F00136E6D /* KKdayPortal-SitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KKdayPortal-SitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F453951A23BA2A1F00136E6D /* KKdayPortal_SitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayPortal_SitTests.swift; sourceTree = "<group>"; };
+		F453951C23BA2A1F00136E6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45446EF238F5A70001B8D31 /* PloneDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneDocument.swift; sourceTree = "<group>"; };
 		F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneTextObject.swift; sourceTree = "<group>"; };
 		F45446F3238F6A9D001B8D31 /* PloneNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneNews.swift; sourceTree = "<group>"; };
@@ -561,7 +544,6 @@
 		F454489323A556B9001B8D31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F454489723A5E211001B8D31 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F454489923A5F611001B8D31 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocailLoginViewController.swift; sourceTree = "<group>"; };
 		F45448A123A88636001B8D31 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		F45448A523A9D7B8001B8D31 /* GoogleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleUser.swift; sourceTree = "<group>"; };
 		F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryViewController.swift; sourceTree = "<group>"; };
@@ -630,19 +612,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F45394D723B9CBD300136E6D /* Frameworks */ = {
+		F453951523BA2A1F00136E6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C81F7BEC594C7F082FC403 /* Pods_KKdayPortalTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F45394F323B9CCC100136E6D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				509F272C8ECA94F23126D58C /* Pods_KKdayPortalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,22 +681,13 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
-		F45394DB23B9CBD300136E6D /* KKdayPortalTests */ = {
+		F453951923BA2A1F00136E6D /* KKdayPortal-SitTests */ = {
 			isa = PBXGroup;
 			children = (
-				F45394DC23B9CBD300136E6D /* KKdayPortalTests.swift */,
-				F45394DE23B9CBD300136E6D /* Info.plist */,
+				F453951A23BA2A1F00136E6D /* KKdayPortal_SitTests.swift */,
+				F453951C23BA2A1F00136E6D /* Info.plist */,
 			);
-			path = KKdayPortalTests;
-			sourceTree = "<group>";
-		};
-		F45394F723B9CCC100136E6D /* KKdayPortalUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F45394F823B9CCC100136E6D /* KKdayPortalUITests.swift */,
-				F45394FA23B9CCC100136E6D /* Info.plist */,
-			);
-			path = KKdayPortalUITests;
+			path = "KKdayPortal-SitTests";
 			sourceTree = "<group>";
 		};
 		F454474D2392651C001B8D31 /* View */ = {
@@ -1288,22 +1252,6 @@
 			path = MainTabViewController;
 			sourceTree = "<group>";
 		};
-		F454489D23A881A5001B8D31 /* SocailLoginPage */ = {
-			isa = PBXGroup;
-			children = (
-				F454489E23A881CA001B8D31 /* View */,
-			);
-			path = SocailLoginPage;
-			sourceTree = "<group>";
-		};
-		F454489E23A881CA001B8D31 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F454489F23A881E2001B8D31 /* SocailLoginViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		F45448A323A9D767001B8D31 /* GoogleModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1407,8 +1355,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B3F2CC23862B3000657CDF /* KKdayPortal */,
-				F45394DB23B9CBD300136E6D /* KKdayPortalTests */,
-				F45394F723B9CCC100136E6D /* KKdayPortalUITests */,
+				F453951923BA2A1F00136E6D /* KKdayPortal-SitTests */,
 				F4B3F2CB23862B3000657CDF /* Products */,
 				9FCD06F76BBA93E310024506 /* Pods */,
 				8D7EAA3CFA3FD11945DE76EA /* Frameworks */,
@@ -1422,8 +1369,7 @@
 				F44E8CE323B88AA30032C6BE /* KKdayPortal.app */,
 				F44E8D5923B88AFA0032C6BE /* KKdayPortal.app */,
 				F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */,
-				F45394DA23B9CBD300136E6D /* KKdayPortalTests.xctest */,
-				F45394F623B9CCC100136E6D /* KKdayPortalUITests.xctest */,
+				F453951823BA2A1F00136E6D /* KKdayPortal-SitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1455,9 +1401,8 @@
 		F4B3F2FD238636F700657CDF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				F454489D23A881A5001B8D31 /* SocailLoginPage */,
-				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
+				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				F45448A723A9F951001B8D31 /* ApplicationsEntryPage */,
 				F45448B223AA301B001B8D31 /* ApplicationsContentPage */,
@@ -1682,43 +1627,23 @@
 			productReference = F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F45394D923B9CBD300136E6D /* KKdayPortalTests */ = {
+		F453951723BA2A1F00136E6D /* KKdayPortal-SitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F45394E123B9CBD300136E6D /* Build configuration list for PBXNativeTarget "KKdayPortalTests" */;
+			buildConfigurationList = F453952123BA2A1F00136E6D /* Build configuration list for PBXNativeTarget "KKdayPortal-SitTests" */;
 			buildPhases = (
-				345280C7611BF5162BACC605 /* [CP] Check Pods Manifest.lock */,
-				F45394D623B9CBD300136E6D /* Sources */,
-				F45394D723B9CBD300136E6D /* Frameworks */,
-				F45394D823B9CBD300136E6D /* Resources */,
+				F453951423BA2A1F00136E6D /* Sources */,
+				F453951523BA2A1F00136E6D /* Frameworks */,
+				F453951623BA2A1F00136E6D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F45394E023B9CBD300136E6D /* PBXTargetDependency */,
+				F453951E23BA2A1F00136E6D /* PBXTargetDependency */,
 			);
-			name = KKdayPortalTests;
-			productName = KKdayPortalTests;
-			productReference = F45394DA23B9CBD300136E6D /* KKdayPortalTests.xctest */;
+			name = "KKdayPortal-SitTests";
+			productName = "KKdayPortal-SitTests";
+			productReference = F453951823BA2A1F00136E6D /* KKdayPortal-SitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F45394F523B9CCC100136E6D /* KKdayPortalUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F45394FD23B9CCC100136E6D /* Build configuration list for PBXNativeTarget "KKdayPortalUITests" */;
-			buildPhases = (
-				2399CCCC1AA0191E855A356B /* [CP] Check Pods Manifest.lock */,
-				F45394F223B9CCC100136E6D /* Sources */,
-				F45394F323B9CCC100136E6D /* Frameworks */,
-				F45394F423B9CCC100136E6D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F45394FC23B9CCC100136E6D /* PBXTargetDependency */,
-			);
-			name = KKdayPortalUITests;
-			productName = KKdayPortalUITests;
-			productReference = F45394F623B9CCC100136E6D /* KKdayPortalUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */ = {
 			isa = PBXNativeTarget;
@@ -1750,11 +1675,7 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "WEI-TSUNG CHENG";
 				TargetAttributes = {
-					F45394D923B9CBD300136E6D = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = F4B3F2C923862B3000657CDF;
-					};
-					F45394F523B9CCC100136E6D = {
+					F453951723BA2A1F00136E6D = {
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = F4B3F2C923862B3000657CDF;
 					};
@@ -1783,8 +1704,7 @@
 				F44E8C6F23B88AA30032C6BE /* KKdayPortal-Production */,
 				F44E8CE523B88AFA0032C6BE /* KKdayPortal-Stage */,
 				F44E8D5B23B88AFC0032C6BE /* KKdayPortal-Test */,
-				F45394D923B9CBD300136E6D /* KKdayPortalTests */,
-				F45394F523B9CCC100136E6D /* KKdayPortalUITests */,
+				F453951723BA2A1F00136E6D /* KKdayPortal-SitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1826,14 +1746,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F45394D823B9CBD300136E6D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F45394F423B9CCC100136E6D /* Resources */ = {
+		F453951623BA2A1F00136E6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1904,50 +1817,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Test/Pods-KKdayPortal-Test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2399CCCC1AA0191E855A356B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KKdayPortalUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		345280C7611BF5162BACC605 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KKdayPortalTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		360663CDB7C6870F83ADD286 /* [CP] Copy Pods Resources */ = {
@@ -2209,7 +2078,6 @@
 				F44E8CBE23B88AA30032C6BE /* PortalUserAPITargetType.swift in Sources */,
 				F44E8CBF23B88AA30032C6BE /* GeneralRootTableViewCell.swift in Sources */,
 				F44E8CC023B88AA30032C6BE /* GeneralLinkObject.swift in Sources */,
-				F44E8CC123B88AA30032C6BE /* SocailLoginViewController.swift in Sources */,
 				F44E8CC223B88AA30032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
 				F44E8CC323B88AA30032C6BE /* LanguageCellViewModel.swift in Sources */,
 				F44E8CC423B88AA30032C6BE /* GeneralTextObject.swift in Sources */,
@@ -2317,7 +2185,6 @@
 				F44E8D3423B88AFA0032C6BE /* PortalUserAPITargetType.swift in Sources */,
 				F44E8D3523B88AFA0032C6BE /* GeneralRootTableViewCell.swift in Sources */,
 				F44E8D3623B88AFA0032C6BE /* GeneralLinkObject.swift in Sources */,
-				F44E8D3723B88AFA0032C6BE /* SocailLoginViewController.swift in Sources */,
 				F44E8D3823B88AFA0032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
 				F44E8D3923B88AFA0032C6BE /* LanguageCellViewModel.swift in Sources */,
 				F44E8D3A23B88AFA0032C6BE /* GeneralTextObject.swift in Sources */,
@@ -2425,7 +2292,6 @@
 				F44E8DAA23B88AFC0032C6BE /* PortalUserAPITargetType.swift in Sources */,
 				F44E8DAB23B88AFC0032C6BE /* GeneralRootTableViewCell.swift in Sources */,
 				F44E8DAC23B88AFC0032C6BE /* GeneralLinkObject.swift in Sources */,
-				F44E8DAD23B88AFC0032C6BE /* SocailLoginViewController.swift in Sources */,
 				F44E8DAE23B88AFC0032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
 				F44E8DAF23B88AFC0032C6BE /* LanguageCellViewModel.swift in Sources */,
 				F44E8DB023B88AFC0032C6BE /* GeneralTextObject.swift in Sources */,
@@ -2450,19 +2316,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F45394D623B9CBD300136E6D /* Sources */ = {
+		F453951423BA2A1F00136E6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F45394DD23B9CBD300136E6D /* KKdayPortalTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F45394F223B9CCC100136E6D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F45394F923B9CCC100136E6D /* KKdayPortalUITests.swift in Sources */,
+				F453951B23BA2A1F00136E6D /* KKdayPortal_SitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2549,7 +2407,6 @@
 				F4B3F32E2387C34C00657CDF /* PortalUserAPITargetType.swift in Sources */,
 				F4544823239CA036001B8D31 /* GeneralRootTableViewCell.swift in Sources */,
 				F45447F4239AB7B6001B8D31 /* GeneralLinkObject.swift in Sources */,
-				F45448A023A881E2001B8D31 /* SocailLoginViewController.swift in Sources */,
 				F454487123A218B0001B8D31 /* LanguageSettingTableViewCell.swift in Sources */,
 				F454487F23A39956001B8D31 /* LanguageCellViewModel.swift in Sources */,
 				F45447F0239AB75D001B8D31 /* GeneralTextObject.swift in Sources */,
@@ -2577,15 +2434,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F45394E023B9CBD300136E6D /* PBXTargetDependency */ = {
+		F453951E23BA2A1F00136E6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */;
-			targetProxy = F45394DF23B9CBD300136E6D /* PBXContainerItemProxy */;
-		};
-		F45394FC23B9CCC100136E6D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */;
-			targetProxy = F45394FB23B9CCC100136E6D /* PBXContainerItemProxy */;
+			targetProxy = F453951D23BA2A1F00136E6D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2735,20 +2587,19 @@
 			};
 			name = Release;
 		};
-		F45394E223B9CBD300136E6D /* Debug */ = {
+		F453951F23BA2A1F00136E6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HA9F856YHB;
-				INFOPLIST_FILE = KKdayPortalTests/Info.plist;
+				INFOPLIST_FILE = "KKdayPortal-SitTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.weitsungCheng.KKdayPortal.KKdayPortal-SitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2756,64 +2607,23 @@
 			};
 			name = Debug;
 		};
-		F45394E323B9CBD300136E6D /* Release */ = {
+		F453952023BA2A1F00136E6D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HA9F856YHB;
-				INFOPLIST_FILE = KKdayPortalTests/Info.plist;
+				INFOPLIST_FILE = "KKdayPortal-SitTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.weitsungCheng.KKdayPortal.KKdayPortal-SitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KKdayPortal.app/KKdayPortal";
-			};
-			name = Release;
-		};
-		F45394FE23B9CCC100136E6D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4118F5E5FC3FE5AD7CF2FD8 /* Pods-KKdayPortalUITests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HA9F856YHB;
-				INFOPLIST_FILE = KKdayPortalUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortalUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "KKdayPortal-Sit";
-			};
-			name = Debug;
-		};
-		F45394FF23B9CCC100136E6D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HA9F856YHB;
-				INFOPLIST_FILE = KKdayPortalUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortalUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "KKdayPortal-Sit";
 			};
 			name = Release;
 		};
@@ -3004,20 +2814,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F45394E123B9CBD300136E6D /* Build configuration list for PBXNativeTarget "KKdayPortalTests" */ = {
+		F453952123BA2A1F00136E6D /* Build configuration list for PBXNativeTarget "KKdayPortal-SitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F45394E223B9CBD300136E6D /* Debug */,
-				F45394E323B9CBD300136E6D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F45394FD23B9CCC100136E6D /* Build configuration list for PBXNativeTarget "KKdayPortalUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F45394FE23B9CCC100136E6D /* Debug */,
-				F45394FF23B9CCC100136E6D /* Release */,
+				F453951F23BA2A1F00136E6D /* Debug */,
+				F453952023BA2A1F00136E6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
