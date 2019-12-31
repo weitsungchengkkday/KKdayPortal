@@ -103,9 +103,7 @@ final class ApplicationsContentViewController: UIViewController {
                 guard let url = url else {
                     return
                 }
-                
                 self?.webView.load(URLRequest(url: url))
-                
             })
             .disposed(by: disposeBag)
     }

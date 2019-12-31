@@ -329,6 +329,22 @@
 		F453943823B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
 		F453943923B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
 		F453951B23BA2A1F00136E6D /* KKdayPortal_SitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453951A23BA2A1F00136E6D /* KKdayPortal_SitTests.swift */; };
+		F453952523BAE0FC00136E6D /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952423BAE0FB00136E6D /* LoadingManager.swift */; };
+		F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952423BAE0FB00136E6D /* LoadingManager.swift */; };
+		F453952723BAE0FC00136E6D /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952423BAE0FB00136E6D /* LoadingManager.swift */; };
+		F453952823BAE0FC00136E6D /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952423BAE0FB00136E6D /* LoadingManager.swift */; };
+		F453952A23BAE21400136E6D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952923BAE21400136E6D /* LoadingViewController.swift */; };
+		F453952B23BAE21400136E6D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952923BAE21400136E6D /* LoadingViewController.swift */; };
+		F453952C23BAE21400136E6D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952923BAE21400136E6D /* LoadingViewController.swift */; };
+		F453952D23BAE21400136E6D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952923BAE21400136E6D /* LoadingViewController.swift */; };
+		F453953023BAE22C00136E6D /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952F23BAE22C00136E6D /* LoadingViewModel.swift */; };
+		F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952F23BAE22C00136E6D /* LoadingViewModel.swift */; };
+		F453953223BAE22C00136E6D /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952F23BAE22C00136E6D /* LoadingViewModel.swift */; };
+		F453953323BAE22C00136E6D /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952F23BAE22C00136E6D /* LoadingViewModel.swift */; };
+		F453953623BAE5A200136E6D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453953523BAE5A200136E6D /* UIImageExtension.swift */; };
+		F453953723BAE5A200136E6D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453953523BAE5A200136E6D /* UIImageExtension.swift */; };
+		F453953823BAE5A200136E6D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453953523BAE5A200136E6D /* UIImageExtension.swift */; };
+		F453953923BAE5A200136E6D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453953523BAE5A200136E6D /* UIImageExtension.swift */; };
 		F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
 		F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
 		F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
@@ -476,6 +492,10 @@
 		F453951823BA2A1F00136E6D /* KKdayPortal-SitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KKdayPortal-SitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F453951A23BA2A1F00136E6D /* KKdayPortal_SitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayPortal_SitTests.swift; sourceTree = "<group>"; };
 		F453951C23BA2A1F00136E6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F453952423BAE0FB00136E6D /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		F453952923BAE21400136E6D /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		F453952F23BAE22C00136E6D /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		F453953523BAE5A200136E6D /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		F45446EF238F5A70001B8D31 /* PloneDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneDocument.swift; sourceTree = "<group>"; };
 		F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneTextObject.swift; sourceTree = "<group>"; };
 		F45446F3238F6A9D001B8D31 /* PloneNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneNews.swift; sourceTree = "<group>"; };
@@ -681,12 +701,12 @@
 			path = InfoPlist;
 			sourceTree = "<group>";
 		};
-		F453943023B8B3D100136E6D /* Content */ = {
+		F453943023B8B3D100136E6D /* Contents */ = {
 			isa = PBXGroup;
 			children = (
 				F453943523B8B44300136E6D /* Gif */,
 			);
-			path = Content;
+			path = Contents;
 			sourceTree = "<group>";
 		};
 		F453951923BA2A1F00136E6D /* KKdayPortal-SitTests */ = {
@@ -696,6 +716,40 @@
 				F453951C23BA2A1F00136E6D /* Info.plist */,
 			);
 			path = "KKdayPortal-SitTests";
+			sourceTree = "<group>";
+		};
+		F453952223BADF9500136E6D /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				F453952423BAE0FB00136E6D /* LoadingManager.swift */,
+				F453952E23BAE21800136E6D /* ViewModel */,
+				F453952323BAE04F00136E6D /* View */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		F453952323BAE04F00136E6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F453952923BAE21400136E6D /* LoadingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F453952E23BAE21800136E6D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F453952F23BAE22C00136E6D /* LoadingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F453953423BAE53400136E6D /* UIKitExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F453953523BAE5A200136E6D /* UIImageExtension.swift */,
+			);
+			path = UIKitExtension;
 			sourceTree = "<group>";
 		};
 		F454474D2392651C001B8D31 /* View */ = {
@@ -1388,13 +1442,15 @@
 				F45447DF23996298001B8D31 /* Repository */,
 				F4B3F3242387C15B00657CDF /* Network */,
 				F4544763239602FD001B8D31 /* Extension */,
+				F453953423BAE53400136E6D /* UIKitExtension */,
 				F454487223A22A4D001B8D31 /* Enum */,
 				F454475423926725001B8D31 /* Protocol */,
 				F45447E2239AA0C2001B8D31 /* Model */,
 				F4B3F30C2386EE1300657CDF /* EventRecord */,
 				F4B3F30B2386EDFA00657CDF /* Manager */,
+				F453952223BADF9500136E6D /* Loading */,
 				F4B3F2FD238636F700657CDF /* Pages */,
-				F453943023B8B3D100136E6D /* Content */,
+				F453943023B8B3D100136E6D /* Contents */,
 				F4B3F2CD23862B3000657CDF /* AppDelegate.swift */,
 				F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */,
 				F4B3F2D623862B3100657CDF /* Assets.xcassets */,
@@ -2036,8 +2092,10 @@
 				F44E8C7523B88AA30032C6BE /* RXViewModelType.swift in Sources */,
 				F44E8C7623B88AA30032C6BE /* FileManager.swift in Sources */,
 				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
+				F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8C7823B88AA30032C6BE /* PloneRoot.swift in Sources */,
 				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
+				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F44E8C7B23B88AA30032C6BE /* PortalFileTarget.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
@@ -2082,6 +2140,7 @@
 				F44E8CA323B88AA30032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8CA423B88AA30032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8CA523B88AA30032C6BE /* PortalItemAPITarget.swift in Sources */,
+				F453952B23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */,
 				F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */,
 				F44E8CA823B88AA30032C6BE /* Language.swift in Sources */,
@@ -2114,6 +2173,7 @@
 				F44E8CC423B88AA30032C6BE /* GeneralTextObject.swift in Sources */,
 				F44E8CC523B88AA30032C6BE /* GeneralCollectionViewController.swift in Sources */,
 				F44E8CC623B88AA30032C6BE /* GeneralLinkViewController.swift in Sources */,
+				F453953723BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F44E8CC723B88AA30032C6BE /* GeneralFolderViewController.swift in Sources */,
 				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
 				F44E8CC923B88AA30032C6BE /* APIManager.swift in Sources */,
@@ -2143,8 +2203,10 @@
 				F44E8CEB23B88AFA0032C6BE /* RXViewModelType.swift in Sources */,
 				F44E8CEC23B88AFA0032C6BE /* FileManager.swift in Sources */,
 				F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */,
+				F453953223BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8CEE23B88AFA0032C6BE /* PloneRoot.swift in Sources */,
 				F44E8CEF23B88AFA0032C6BE /* PloneFileObject.swift in Sources */,
+				F453952723BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F44E8CF023B88AFA0032C6BE /* StorageManager.swift in Sources */,
 				F44E8CF123B88AFA0032C6BE /* PortalFileTarget.swift in Sources */,
 				F44E8CF223B88AFA0032C6BE /* GeneralDocumentViewController.swift in Sources */,
@@ -2189,6 +2251,7 @@
 				F44E8D1923B88AFA0032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8D1A23B88AFA0032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8D1B23B88AFA0032C6BE /* PortalItemAPITarget.swift in Sources */,
+				F453952C23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F44E8D1C23B88AFA0032C6BE /* PloneFile.swift in Sources */,
 				F44E8D1D23B88AFA0032C6BE /* StringExtension.swift in Sources */,
 				F44E8D1E23B88AFA0032C6BE /* Language.swift in Sources */,
@@ -2221,6 +2284,7 @@
 				F44E8D3A23B88AFA0032C6BE /* GeneralTextObject.swift in Sources */,
 				F44E8D3B23B88AFA0032C6BE /* GeneralCollectionViewController.swift in Sources */,
 				F44E8D3C23B88AFA0032C6BE /* GeneralLinkViewController.swift in Sources */,
+				F453953823BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F44E8D3D23B88AFA0032C6BE /* GeneralFolderViewController.swift in Sources */,
 				F44E8D3E23B88AFA0032C6BE /* GeneralNewsViewController.swift in Sources */,
 				F44E8D3F23B88AFA0032C6BE /* APIManager.swift in Sources */,
@@ -2250,8 +2314,10 @@
 				F44E8D6123B88AFC0032C6BE /* RXViewModelType.swift in Sources */,
 				F44E8D6223B88AFC0032C6BE /* FileManager.swift in Sources */,
 				F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */,
+				F453953323BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8D6423B88AFC0032C6BE /* PloneRoot.swift in Sources */,
 				F44E8D6523B88AFC0032C6BE /* PloneFileObject.swift in Sources */,
+				F453952823BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F44E8D6623B88AFC0032C6BE /* StorageManager.swift in Sources */,
 				F44E8D6723B88AFC0032C6BE /* PortalFileTarget.swift in Sources */,
 				F44E8D6823B88AFC0032C6BE /* GeneralDocumentViewController.swift in Sources */,
@@ -2296,6 +2362,7 @@
 				F44E8D8F23B88AFC0032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8D9023B88AFC0032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8D9123B88AFC0032C6BE /* PortalItemAPITarget.swift in Sources */,
+				F453952D23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F44E8D9223B88AFC0032C6BE /* PloneFile.swift in Sources */,
 				F44E8D9323B88AFC0032C6BE /* StringExtension.swift in Sources */,
 				F44E8D9423B88AFC0032C6BE /* Language.swift in Sources */,
@@ -2328,6 +2395,7 @@
 				F44E8DB023B88AFC0032C6BE /* GeneralTextObject.swift in Sources */,
 				F44E8DB123B88AFC0032C6BE /* GeneralCollectionViewController.swift in Sources */,
 				F44E8DB223B88AFC0032C6BE /* GeneralLinkViewController.swift in Sources */,
+				F453953923BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F44E8DB323B88AFC0032C6BE /* GeneralFolderViewController.swift in Sources */,
 				F44E8DB423B88AFC0032C6BE /* GeneralNewsViewController.swift in Sources */,
 				F44E8DB523B88AFC0032C6BE /* APIManager.swift in Sources */,
@@ -2365,8 +2433,10 @@
 				F454474C23924F38001B8D31 /* RXViewModelType.swift in Sources */,
 				F454475B2393A057001B8D31 /* FileManager.swift in Sources */,
 				F454487A23A336D6001B8D31 /* LocaleExtension.swift in Sources */,
+				F453953023BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F4FC41A9238EBACC00AC7315 /* PloneRoot.swift in Sources */,
 				F45446FE238F74DF001B8D31 /* PloneFileObject.swift in Sources */,
+				F453952523BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */,
 				F45447622393AAC2001B8D31 /* PortalFileTarget.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
@@ -2411,6 +2481,7 @@
 				F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
 				F4FC41A2238D358A00AC7315 /* PortalItemAPITarget.swift in Sources */,
+				F453952A23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
 				F454476523960669001B8D31 /* StringExtension.swift in Sources */,
 				F454487423A235B4001B8D31 /* Language.swift in Sources */,
@@ -2443,6 +2514,7 @@
 				F45447F0239AB75D001B8D31 /* GeneralTextObject.swift in Sources */,
 				F454485C239DF44C001B8D31 /* GeneralCollectionViewController.swift in Sources */,
 				F4544840239CADE4001B8D31 /* GeneralLinkViewController.swift in Sources */,
+				F453953623BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */,
 				F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */,
 				F4B3F32A2387C16D00657CDF /* APIManager.swift in Sources */,

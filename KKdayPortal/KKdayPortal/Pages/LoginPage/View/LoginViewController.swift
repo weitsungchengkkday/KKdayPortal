@@ -55,7 +55,13 @@ final class LoginViewController: UIViewController {
     
     @objc private func login() {
         #if TEST_VERSION
-        directlyGoMainViewController()
+       // directlyGoMainViewController()
+        let vm = LoadingViewModel(state: .normal)
+       // let vm = LoadingViewModel(state: .fail(message: "LOSE"))
+       // let vm = LoadingViewModel(state: .success(message: "WIN"))
+        let vc = LoadingViewController(viewModel: vm)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
         
         #elseif SIT_VERSION
         goPloneSSOPage()
