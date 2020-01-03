@@ -46,7 +46,8 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
     func getPortalData() {
         
         // Plone BPM's remoteUrl String can't be parsed to URL
-        #if SIT_VERSION
+#if SIT_VERSION
+        
             let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!
         
             if self.source == url {
@@ -64,7 +65,8 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
                 return
             }
            
-        #elseif PRODUCTION_VERSION
+#elseif PRODUCTION_VERSION
+        
             let url = URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!
         
             if self.source == url {
@@ -82,26 +84,9 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
                 return
             }
         
-        #else
+#else
         
-        #endif
-        
-          
-                // https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm
-                         
-        //                    print(url)
-        //                    print(url.host)
-        //                    switch url.host {
-        //                    case "sit.eip.kkday.net":
-        //                        url = URL(string: "http://sit.bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
-        //
-        //                    case "eip.kkday.net":
-        //                        url = URL(string: "http://bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(userEmail)")!
-        //
-        //                    default:
-        //                        break
-        //                    }
-                
+#endif
         
         ModelLoader.PortalLoader()
             .getItem(source: source, type: .link)

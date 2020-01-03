@@ -35,17 +35,17 @@ final class PloneSSOViewController: UIViewController {
         setAction()
         bindViewModel()
         
-        #if SIT_VERSION
+#if SIT_VERSION
             let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
             webView.load(URLRequest(url: url))
       
-        #elseif PRODUCTION_VERSION
+#elseif PRODUCTION_VERSION
             let url = URL(string: "https://eip.kkday.net/Plone/@@app_login")!
             webView.load(URLRequest(url: url))
        
-        #else
+#else
         
-        #endif
+#endif
     }
     
     // 🎨 draw UI

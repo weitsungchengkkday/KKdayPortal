@@ -65,17 +65,17 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator, Locali
 
     @objc private func goWebHomePage() {
 
-        #if TEST_VERSION
-            let rootURL = URL(string: "http://localhost:8080/pikaPika")!
+#if TEST_VERSION
+        let rootURL = URL(string: "http://localhost:8080/pikaPika")!
        
-        #elseif SIT_VERSION
-            let rootURL = URL(string: "https://sit.eip.kkday.net/Plone")!
+#elseif SIT_VERSION
+        let rootURL = URL(string: "https://sit.eip.kkday.net/Plone")!
         
-        #elseif PRODUCTION_VERSION
-            let rootURL = URL(string: "https://eip.kkday.net/Plone")!
-        #else
+#elseif PRODUCTION_VERSION
+        let rootURL = URL(string: "https://eip.kkday.net/Plone")!
+#else
         
-        #endif
+#endif
         
         goDetailPage(route: rootURL, type: .root)
     }

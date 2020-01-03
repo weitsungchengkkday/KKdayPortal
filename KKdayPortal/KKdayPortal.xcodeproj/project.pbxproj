@@ -420,6 +420,14 @@
 		F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
 		F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */; };
 		F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
+		F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
+		F45C2C4423BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
+		F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
+		F45C2C4623BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
+		F45C2C4723BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
+		F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
+		F45C2C4923BCD8C200A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
+		F45C2C4A23BCD8C300A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -577,6 +585,8 @@
 		F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsContentViewModel.swift; sourceTree = "<group>"; };
 		F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewController.swift; sourceTree = "<group>"; };
 		F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationTypeExtension.swift; sourceTree = "<group>"; };
+		F45C2C4023BCD60C00A1E769 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F45C2C4323BCD8AD00A1E769 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1413,6 +1423,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F45C2C3F23BCD50600A1E769 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F45C2C4023BCD60C00A1E769 /* Utilities.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F45C2C4223BCD88F00A1E769 /* UIState */ = {
+			isa = PBXGroup;
+			children = (
+				F45C2C4323BCD8AD00A1E769 /* UIState.swift */,
+			);
+			path = UIState;
+			sourceTree = "<group>";
+		};
 		F4B3F2C123862B3000657CDF = {
 			isa = PBXGroup;
 			children = (
@@ -1445,9 +1471,11 @@
 				F453953423BAE53400136E6D /* UIKitExtension */,
 				F454487223A22A4D001B8D31 /* Enum */,
 				F454475423926725001B8D31 /* Protocol */,
+				F45C2C4223BCD88F00A1E769 /* UIState */,
 				F45447E2239AA0C2001B8D31 /* Model */,
 				F4B3F30C2386EE1300657CDF /* EventRecord */,
 				F4B3F30B2386EDFA00657CDF /* Manager */,
+				F45C2C3F23BCD50600A1E769 /* Helper */,
 				F453952223BADF9500136E6D /* Loading */,
 				F4B3F2FD238636F700657CDF /* Pages */,
 				F453943023B8B3D100136E6D /* Contents */,
@@ -2091,6 +2119,7 @@
 				F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */,
 				F44E8C7523B88AA30032C6BE /* RXViewModelType.swift in Sources */,
 				F44E8C7623B88AA30032C6BE /* FileManager.swift in Sources */,
+				F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
 				F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8C7823B88AA30032C6BE /* PloneRoot.swift in Sources */,
@@ -2153,6 +2182,7 @@
 				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
 				F44E8CB023B88AA30032C6BE /* ModelLoadable.swift in Sources */,
 				F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */,
+				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */,
 				F44E8CB423B88AA30032C6BE /* GeneralItemCoordinator.swift in Sources */,
@@ -2202,6 +2232,7 @@
 				F44E8CEA23B88AFA0032C6BE /* DateFormatterExtension.swift in Sources */,
 				F44E8CEB23B88AFA0032C6BE /* RXViewModelType.swift in Sources */,
 				F44E8CEC23B88AFA0032C6BE /* FileManager.swift in Sources */,
+				F45C2C4623BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */,
 				F453953223BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8CEE23B88AFA0032C6BE /* PloneRoot.swift in Sources */,
@@ -2264,6 +2295,7 @@
 				F44E8D2523B88AFA0032C6BE /* LanguageViewModel.swift in Sources */,
 				F44E8D2623B88AFA0032C6BE /* ModelLoadable.swift in Sources */,
 				F44E8D2723B88AFA0032C6BE /* PortalControllable.swift in Sources */,
+				F45C2C4923BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8D2823B88AFA0032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8D2923B88AFA0032C6BE /* GeneralEventViewController.swift in Sources */,
 				F44E8D2A23B88AFA0032C6BE /* GeneralItemCoordinator.swift in Sources */,
@@ -2313,6 +2345,7 @@
 				F44E8D6023B88AFC0032C6BE /* DateFormatterExtension.swift in Sources */,
 				F44E8D6123B88AFC0032C6BE /* RXViewModelType.swift in Sources */,
 				F44E8D6223B88AFC0032C6BE /* FileManager.swift in Sources */,
+				F45C2C4723BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */,
 				F453953323BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8D6423B88AFC0032C6BE /* PloneRoot.swift in Sources */,
@@ -2375,6 +2408,7 @@
 				F44E8D9B23B88AFC0032C6BE /* LanguageViewModel.swift in Sources */,
 				F44E8D9C23B88AFC0032C6BE /* ModelLoadable.swift in Sources */,
 				F44E8D9D23B88AFC0032C6BE /* PortalControllable.swift in Sources */,
+				F45C2C4A23BCD8C300A1E769 /* Utilities.swift in Sources */,
 				F44E8D9E23B88AFC0032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8D9F23B88AFC0032C6BE /* GeneralEventViewController.swift in Sources */,
 				F44E8DA023B88AFC0032C6BE /* GeneralItemCoordinator.swift in Sources */,
@@ -2436,6 +2470,7 @@
 				F453953023BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F4FC41A9238EBACC00AC7315 /* PloneRoot.swift in Sources */,
 				F45446FE238F74DF001B8D31 /* PloneFileObject.swift in Sources */,
+				F45C2C4423BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F453952523BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */,
 				F45447622393AAC2001B8D31 /* PortalFileTarget.swift in Sources */,
@@ -2520,6 +2555,7 @@
 				F4B3F32A2387C16D00657CDF /* APIManager.swift in Sources */,
 				F4544858239DF3E4001B8D31 /* GeneralCollectionViewModel.swift in Sources */,
 				F45448B123AA0181001B8D31 /* ApplicationsEntryCollectionViewCell.swift in Sources */,
+				F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */,
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,

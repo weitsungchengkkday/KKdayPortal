@@ -11,7 +11,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class LoadingViewController: UIViewController {
+final class LoadingViewController: UIViewController {
 
     // 🏞 UI element
     lazy var containerView: UIView = {
@@ -59,12 +59,11 @@ class LoadingViewController: UIViewController {
         setupUI()
         setAction()
         bindViewModel()
-        viewModel.loadLoading()
+        viewModel.loadImageAndTitle()
     }
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         view.addSubview(containerView)
         containerView.addSubview(stackView)

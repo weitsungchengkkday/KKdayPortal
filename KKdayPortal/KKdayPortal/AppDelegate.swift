@@ -14,33 +14,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-    #if TEST_VERSION
-        print("1️⃣ test_version")
+#if TEST_VERSION
+    print("1️⃣ test_version")
     
-    #elseif SIT_VERSION
-        print("2️⃣ sit_version")
+#elseif SIT_VERSION
+    print("2️⃣ sit_version")
     
-    #elseif STAGE_VERSION
-        print("3️⃣ stage_version")
+#elseif STAGE_VERSION
+    print("3️⃣ stage_version")
     
-    #elseif PRODUCTION_VERSION
-        print("4️⃣ production_version")
+#elseif PRODUCTION_VERSION
+    print("4️⃣ production_version")
     
     #else
-        print("❗️target not exist")
+    print("❗️target not exist")
     
     #endif
     
-    #if DEBUG
-        print("🐛 Debug")
+#if DEBUG
+    print("🐛 Debug")
     
-    #elseif RELEASE
-        print("🦋 Release")
+#elseif RELEASE
+    print("🦋 Release")
     
-    #else
-        print("❗️configuration not exist")
+#else
+    print("❗️configuration not exist")
     
-    #endif
+#endif
     
     setupLanguage()
     

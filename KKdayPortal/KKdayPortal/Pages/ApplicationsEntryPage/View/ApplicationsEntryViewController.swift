@@ -53,18 +53,18 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
     
     private let viewModel: ApplicationsEntryViewModel = {
         
-        #if TEST_VERSION
+#if TEST_VERSION
             let applicationSourceURL = URL(string: "http://localhost:8080/pikaPika/application-items")!
         
-        #elseif SIT_VERSION
+#elseif SIT_VERSION
             let applicationSourceURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services")!
         
-        #elseif PRODUCTION_VERSION
+#elseif PRODUCTION_VERSION
             let applicationSourceURL = URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services")!
         
-        #else
+#else
         
-        #endif
+#endif
         
         return ApplicationsEntryViewModel(source: applicationSourceURL)
     }()

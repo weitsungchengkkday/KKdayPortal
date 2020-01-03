@@ -47,9 +47,13 @@ final class GeneralFolderViewModel: RXViewModelType, PortalControllable {
    
     func getPortalData() {
         
+        LoadingManager.shared.setState(state: .normal(value: true))
+        
         ModelLoader.PortalLoader().getItem(source: source, type: .folder)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
+                
+                LoadingManager.shared.setState(state: .normal(value: false))
                 
                 guard let generalItem = generalItem as? GeneralList else {
                     return
@@ -66,6 +70,8 @@ final class GeneralFolderViewModel: RXViewModelType, PortalControllable {
             }) { error in
                 print("🚨 Func: \(#file),\(#function)")
                 print("Error: \(error)")
+                
+                LoadingManager.shared.setState(state: .normal(value: false))
         }
         .disposed(by: disposeBag)
     }

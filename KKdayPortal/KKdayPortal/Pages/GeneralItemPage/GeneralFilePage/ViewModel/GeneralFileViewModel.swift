@@ -42,10 +42,13 @@ final class GeneralFileViewModel: RXViewModelType, PortalControllable {
         
         func getPortalData() {
             
+            LoadingManager.shared.setState(state: .normal(value: true))
+            
             ModelLoader.PortalLoader()
                 .getItem(source: source, type: .file)
                 .subscribeOn(MainScheduler.instance)
                 .subscribe(onSuccess: { [weak self] generalItem in
+                    LoadingManager.shared.setState(state: .normal(value: false))
                     
                     self?.generalItem = generalItem
                     if let title = generalItem.title {
@@ -53,6 +56,8 @@ final class GeneralFileViewModel: RXViewModelType, PortalControllable {
                     }
                     
                 }) { error in
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                    
                     print("🚨 Func: \(#file),\(#function)")
                     print("Error: \(error)")
             }

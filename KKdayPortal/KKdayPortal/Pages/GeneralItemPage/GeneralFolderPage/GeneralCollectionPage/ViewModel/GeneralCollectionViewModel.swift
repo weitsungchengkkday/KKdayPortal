@@ -47,9 +47,13 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
    
     func getPortalData() {
         
+        LoadingManager.shared.setState(state: .normal(value: true))
+        
         ModelLoader.PortalLoader().getItem(source: source, type: .collection)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
+                
+                LoadingManager.shared.setState(state: .normal(value: false))
                 
                 guard let generalItem = generalItem as? GeneralList else {
                     return
@@ -64,6 +68,9 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
                 }
                 
             }) { error in
+                
+                LoadingManager.shared.setState(state: .normal(value: false))
+                
                 print("🚨 Func: \(#file),\(#function)")
                 print("Error: \(error)")
         }

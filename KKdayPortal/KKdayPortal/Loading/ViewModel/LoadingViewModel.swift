@@ -10,13 +10,7 @@ import RxSwift
 import RxCocoa
 import Foundation
 
-enum UIState {
-    case normal
-    case success(message: String)
-    case fail(message: String)
-}
-
-class LoadingViewModel: RXViewModelType {
+final class LoadingViewModel: RXViewModelType {
     
     private let disposeBag = DisposeBag()
     
@@ -24,7 +18,11 @@ class LoadingViewModel: RXViewModelType {
         return UIImage.gifImageWithName("/Gif/cycle_loading/cycle_loading", isUseImageRetinaString: true, duration: 1500)!
     }()
     
-    private var state: UIState
+    var state: UIState<Bool> {
+        didSet {
+            loadImageAndTitle()
+        }
+    }
     
     private let successImage: UIImage = #imageLiteral(resourceName: "icSucess")
     private let failImage: UIImage = #imageLiteral(resourceName: "icError")
@@ -45,33 +43,28 @@ class LoadingViewModel: RXViewModelType {
     private let loadingImageSubject = PublishSubject<UIImage>()
     private let loadingTitleSubject = PublishSubject<(String, Bool)>()
     
-    init(state: UIState) {
+    init(state: UIState<Bool>) {
         self.input = Input(loadingImage: loadingImageSubject.asObserver(), loadingTitle: loadingTitleSubject.asObserver())
         self.output = Output(showLoadingImage: loadingImageSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")),
                              showLoadingTitle: loadingTitleSubject.asDriver(onErrorJustReturn: ("Loading", true)))
         self.state = state
     }
     
-    func loadLoading() {
-
+    func loadImageAndTitle() {
+    
         switch state {
         case .normal:
             loadingImageSubject.onNext(loadingImage)
             loadingTitleSubject.onNext(("", true))
             
-        case .success(message: let message):
+        case .success(value: _, message: let message, duration: _, completion: _):
             loadingImageSubject.onNext(successImage)
             loadingTitleSubject.onNext((message, false))
             
-        case .fail(message: let message):
+        case .error(value: _, message: let message, duration: _, completion: _):
             loadingImageSubject.onNext(failImage)
             loadingTitleSubject.onNext((message, false))
         }
     }
-    
-    
-    
-    
-    
 }
  

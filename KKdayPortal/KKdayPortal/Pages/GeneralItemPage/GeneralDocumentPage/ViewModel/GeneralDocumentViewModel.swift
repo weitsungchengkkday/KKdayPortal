@@ -42,10 +42,14 @@ final class GeneralDocumentViewModel: RXViewModelType, PortalControllable {
     
     func getPortalData() {
         
+        LoadingManager.shared.setState(state: .normal(value: true))
+        
         ModelLoader.PortalLoader()
             .getItem(source: source, type: .document)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
+                
+                LoadingManager.shared.setState(state: .normal(value: false))
                 
                 self?.generalItem = generalItem
                 if let title = generalItem.title {
@@ -59,6 +63,9 @@ final class GeneralDocumentViewModel: RXViewModelType, PortalControllable {
                 self?.textSubject.onNext(text)
                 
             }) { error in
+                
+                LoadingManager.shared.setState(state: .normal(value: false))
+                
                 print("🚨 Func: \(#file),\(#function)")
                 print("Error: \(error)")
         }
