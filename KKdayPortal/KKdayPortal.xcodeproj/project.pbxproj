@@ -1668,7 +1668,6 @@
 				F44E8CD723B88AA30032C6BE /* Frameworks */,
 				F44E8CD923B88AA30032C6BE /* Resources */,
 				0889653EF5BE71C975E04BC8 /* [CP] Embed Pods Frameworks */,
-				360663CDB7C6870F83ADD286 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1688,7 +1687,6 @@
 				F44E8D4D23B88AFA0032C6BE /* Frameworks */,
 				F44E8D4F23B88AFA0032C6BE /* Resources */,
 				80246057239BF1FAB57DFD60 /* [CP] Embed Pods Frameworks */,
-				AE326D67E8F8E603E717B651 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1708,7 +1706,6 @@
 				F44E8DC323B88AFC0032C6BE /* Frameworks */,
 				F44E8DC523B88AFC0032C6BE /* Resources */,
 				A9F2942BB2B24BE590C0C76A /* [CP] Embed Pods Frameworks */,
-				1B24F8CFBA6FDE13360416D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1747,7 +1744,6 @@
 				F4B3F2C723862B3000657CDF /* Frameworks */,
 				F4B3F2C823862B3000657CDF /* Resources */,
 				03734F26BE43D4B7AE7C06BF /* [CP] Embed Pods Frameworks */,
-				474FDE5C6DCB26FB1B812B1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1895,57 +1891,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1B24F8CFBA6FDE13360416D5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Test/Pods-KKdayPortal-Test-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Test/Pods-KKdayPortal-Test-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Test/Pods-KKdayPortal-Test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		360663CDB7C6870F83ADD286 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		474FDE5C6DCB26FB1B812B1E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		54A011ED5319FE8E3410F3D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2066,23 +2011,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Test/Pods-KKdayPortal-Test-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE326D67E8F8E603E717B651 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Stage/Pods-KKdayPortal-Stage-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Stage/Pods-KKdayPortal-Stage-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Stage/Pods-KKdayPortal-Stage-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD3E72D92F8C2CFC98E6905F /* [CP] Check Pods Manifest.lock */ = {
