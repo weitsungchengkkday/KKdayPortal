@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class ApplicationsEntryViewModel: RXViewModelType, PortalControllable {
+final class ApplicationsEntryViewModel: RXViewModelType {
     
     typealias PortalContent = GeneralItem
     
@@ -17,65 +17,32 @@ final class ApplicationsEntryViewModel: RXViewModelType, PortalControllable {
     var output: ApplicationsEntryViewModel.Output
     
     struct Input {
-        let generalItems: AnyObserver<[PortalContent]>
-        let title: AnyObserver<String>
+        let generalItemsURL: AnyObserver<[URL]>
         let isLoading: AnyObserver<Bool>
     }
     
     struct Output {
-        let showGeneralItems: Driver<[PortalContent]>
-        let showTitle: Driver<String>
+        let showGeneralItemsURL: Driver<[URL]>
         let showIsLoading: Driver<Bool>
     }
     
-    private let generalItemsSubject = PublishSubject<[PortalContent]>()
+    private let generalItemsURLSubject = PublishSubject<[URL]>()
     private let isLoadingSubject = PublishSubject<Bool>()
-    private let titleSubject = PublishSubject<String>()
     
-    var generalItem: PortalContent?
-    var source: URL
+    var generalItemsURL: [URL] = [URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!]
+    
     let disposeBag = DisposeBag()
     
-    init(source: URL) {
-        self.source = source
+    init() {
+        self.input = Input(generalItemsURL: generalItemsURLSubject.asObserver()
+            , isLoading: isLoadingSubject.asObserver())
         
-        self.input = Input(generalItems: generalItemsSubject.asObserver()
-            , title: titleSubject.asObserver(),
-                           isLoading: isLoadingSubject.asObserver())
-        
-        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
-                             showTitle: titleSubject.asDriver(onErrorJustReturn: "Applications"),
+        self.output = Output(showGeneralItemsURL: generalItemsURLSubject.asDriver(onErrorJustReturn: []),
                              showIsLoading: isLoadingSubject.asDriver(onErrorJustReturn: false))
     }
     
     func getPortalData() {
-        
-        isLoadingSubject.onNext(true)
-        
-        ModelLoader.PortalLoader().getItem(source: source, type: .folder)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
-                
-                self?.isLoadingSubject.onNext(false)
-                guard let generalItem = generalItem as? GeneralList else {
-                    return
-                }
-                
-                self?.generalItem = generalItem
-                if let items = generalItem.items {
-                    self?.generalItemsSubject.onNext(items)
-                }
-                if let title = generalItem.title {
-                    self?.titleSubject.onNext(title)
-                }
-                
-            }) { [weak self] error in
-                
-                self?.isLoadingSubject.onNext(false)
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-        }
-        .disposed(by: disposeBag)
+        generalItemsURLSubject.onNext(generalItemsURL)
     }
     
 }

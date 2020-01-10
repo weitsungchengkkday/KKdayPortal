@@ -12,6 +12,7 @@ import RxCocoa
 
 enum GeneralItemType {
     case root
+    case root_with_language
     case folder
     case collection
     case image
@@ -47,11 +48,11 @@ class GeneralItem {
          UID: String?,
          source: URL?,
          
-         imageObject: GeneralImageObject?,
-         textObject: GeneralTextObject?,
-         eventObject: GeneralEventObject?,
-         fileObject: GeneralFileObject?,
-         linkObject: GeneralLinkObject?) {
+         imageObject: GeneralImageObject? = nil,
+         textObject: GeneralTextObject? = nil,
+         eventObject: GeneralEventObject? = nil,
+         fileObject: GeneralFileObject? = nil,
+         linkObject: GeneralLinkObject? = nil) {
         
         self.type = type
         self.title = title

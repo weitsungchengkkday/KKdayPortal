@@ -1,14 +1,14 @@
 //
-//  PloneRoot.swift
+//  PloneLRF.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2019/11/27.
-//  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
+//  Created by WEI-TSUNG CHENG on 2020/1/7.
+//  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import Foundation
 
-final class PloneRoot: PloneItem {
+final class PloneLRF: PloneItem {
  
     var items: [PloneItem]?
     
@@ -26,5 +26,5 @@ final class PloneRoot: PloneItem {
         self.items = try? container.decode([PloneItem].self, forKey: .items)
         try super.init(from: decoder)
     }
-    
 }
+

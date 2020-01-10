@@ -1,9 +1,9 @@
 //
-//  GeneralFolderViewController.swift
-//  KKdayPortal
+//  GeneralIndexSideBarViewController.swift
+//  KKdayPortal-Sit
 //
-//  Created by WEI-TSUNG CHENG on 2019/12/9.
-//  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
+//  Created by WEI-TSUNG CHENG on 2020/1/9.
+//  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
@@ -11,23 +11,23 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class GeneralFolderViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralIndexSideBarViewController: UIViewController {
     
     private static var CellName: String {
-        return "FolderCell"
+        return "IndexSideBarCell"
     }
     
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
-        tbv.register(GeneralFolderTableViewCell.self, forCellReuseIdentifier: GeneralFolderViewController.CellName)
+        tbv.register(GeneralIndexSideBarTableViewCell.self, forCellReuseIdentifier: GeneralIndexSideBarViewController.CellName)
         return tbv
     }()
     
-    private let viewModel: GeneralFolderViewModel
+    private let viewModel: GeneralIndexSideBarViewModel
     private let disposeBag = DisposeBag()
     
-    init(viewModel: GeneralFolderViewModel) {
+    init(viewModel: GeneralIndexSideBarViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -42,12 +42,11 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
         setupUI()
         bindViewModel()
         
-        self.tableView.rx
+        tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        viewModel.getPortalData()
-        
+        viewModel.loadPortalContent()
     }
     
     // 🎨 draw UI
@@ -71,15 +70,9 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.title = title
-            })
-            .disposed(by: disposeBag)
-        
         viewModel.output.showGeneralItems
-            .drive(tableView.rx.items(cellIdentifier: GeneralFolderViewController.CellName, cellType: GeneralFolderTableViewCell.self)) { (row, generalItem, cell) in
-    
+            .drive(tableView.rx.items(cellIdentifier: GeneralIndexSideBarViewController.CellName, cellType: GeneralIndexSideBarTableViewCell.self)) { (row, generalItem, cell) in
+                
                 cell.titleLabel.text = generalItem.title
                 cell.descriptionLabel.text = generalItem.description
                 
@@ -88,9 +81,20 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
                         
                         guard let type = generalItem.type,
                             let source = generalItem.source else {
-                            return
+                                return
                         }
-                        self.goDetailPage(route: source, type: type)
+                        
+                        guard let presentingViewController = self.presentingViewController as? UITabBarController,
+                            let nav = presentingViewController.selectedViewController as? UINavigationController else {
+                                return
+                        }
+                        
+                        for vc in nav.viewControllers {
+                            if let vc = vc as? HomeViewController {
+                                vc.goDetailPage(route: source, type: type)
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        }
                     })
                     .disposed(by: cell.disposeBag)
         }
@@ -98,9 +102,11 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
     }
 }
 
-extension GeneralFolderViewController: UITableViewDelegate {
+extension GeneralIndexSideBarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
 }
+
+

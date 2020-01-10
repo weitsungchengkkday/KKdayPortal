@@ -41,4 +41,14 @@ extension String {
         
         return dateFormater.date(from: self)
     }
+    
+    func htmlStringTransferToNSAttributedString() -> NSAttributedString {
+        let data = self.data(using: .utf8)
+              let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+                  .documentType: NSAttributedString.DocumentType.html,
+                  .characterEncoding: String.Encoding.utf8.rawValue
+              ]
+              let attributedString = try! NSAttributedString(data: data!, options: options, documentAttributes: nil)
+        return attributedString
+    }
 }

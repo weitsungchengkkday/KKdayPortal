@@ -20,7 +20,7 @@ extension GeneralItemCoordinator {
         debugPrint("GoDetail: rout: \(route), type: \(type)")
         
         switch type {
-        case .root:
+        case .root, .root_with_language:
             let pushViewController = GeneralRootViewController(viewModel: GeneralRootViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
        
@@ -53,8 +53,21 @@ extension GeneralItemCoordinator {
             navigationController?.pushViewController(pushViewController, animated: false)
             
         case .link:
-            let pushViewController = GeneralLinkViewController(viewModel: GeneralLinkViewModel(source: route))
-            navigationController?.pushViewController(pushViewController, animated: false)
+            // If link is BPM open website in APP
+            if route == URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm") {
+                navigationController?.popViewController(animated: false)
+                
+                guard let currentViewController = Utilities.currentViewController as? HomeViewController else {
+                    return
+                }
+                currentViewController.tabBarController?.selectedIndex = 0
+                return
+            }
+
+            // Others jump out from APP
+            if UIApplication.shared.canOpenURL(route) {
+                UIApplication.shared.open(route, options: [:], completionHandler: nil)
+            }
             
         }
     }

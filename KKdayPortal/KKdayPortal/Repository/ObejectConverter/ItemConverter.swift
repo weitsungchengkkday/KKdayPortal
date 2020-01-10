@@ -26,7 +26,7 @@ extension ItemConverter {
         
         let parentType = typeTransfer(ploneItem: item.parent!)
         let parent: GeneralItem? = {
-            if case .root = item.atType {
+            if case .ploneSite = item.atType {
                 return nil
             }
             
@@ -96,12 +96,20 @@ extension ItemConverter {
         
         let items: [PloneItem]? = {
             switch ploneItem.atType {
-            case .root:
-                guard let ploneRoot = ploneItem as? PloneRoot else {
+
+            case .ploneSite:
+                guard let ploneRoot = ploneItem as? PloneSiteItem else {
                     return nil
                 }
                 
                 return ploneRoot.items
+                
+            case .lrf:
+                guard let ploneLrf = ploneItem as? PloneLRF else {
+                    return nil
+                }
+                
+                return ploneLrf.items
                 
             case .folder:
                 guard let ploneFolder = ploneItem as? PloneFolder else {
@@ -117,8 +125,9 @@ extension ItemConverter {
                 
             case .document, .news, .event, .image, .file, .link:
                 return nil
+
+            case .none:
                 
-            default:
                 return nil
             }
         }()
@@ -148,8 +157,10 @@ extension ItemConverter {
     private static func typeTransfer(ploneItem: PloneItem) -> GeneralItemType? {
         
         switch ploneItem.atType {
-        case .root:
+        case .ploneSite:
             return .root
+        case .lrf:
+            return .root_with_language
         case .folder:
             return .folder
         case .collection:
@@ -175,7 +186,7 @@ extension ItemConverter {
     private static func imageObjectTypeTransfer(ploneItem: PloneItem) -> GeneralImageObject? {
         
         switch ploneItem.atType {
-        case .root, .folder, .collection, .document, .event, .file, .link:
+        case .ploneSite, .lrf, .folder, .collection, .document, .event, .file, .link:
             return nil
         case .image:
             guard let ploneImage = ploneItem as? PloneImage else {
@@ -187,7 +198,8 @@ extension ItemConverter {
                 return nil
             }
             return GeneralImageObject(contentType: ploneNews.image?.contentType, name: ploneNews.image?.name, url: ploneNews.image?.url)
-        default:
+     
+        case .none:
             return nil
         }
         
@@ -196,8 +208,13 @@ extension ItemConverter {
     private static func textObjectTypeTransfer(ploneItem: PloneItem) -> GeneralTextObject? {
         
         switch ploneItem.atType {
-        case .root, .folder, .collection, .image, .file, .link:
+        case .ploneSite, .lrf, .folder, .image, .file, .link:
             return nil
+        case .collection:
+            guard let ploneCollection = ploneItem as? PloneCollection else {
+                return nil
+            }
+            return GeneralTextObject(contentType: ploneCollection.text?.contentType, name: "", text: ploneCollection.text?.data)
         case .document:
             guard let ploneDocument = ploneItem as? PloneDocument else {
                 return nil
@@ -213,7 +230,8 @@ extension ItemConverter {
                 return nil
             }
             return GeneralTextObject(contentType: ploneEvent.text?.contentType, name: "", text: ploneEvent.text?.data)
-        default:
+       
+        case .none:
             return nil
         }
     }
@@ -221,7 +239,7 @@ extension ItemConverter {
     private static func eventObjectTypeTransfer(ploneItem: PloneItem) -> GeneralEventObject? {
         
         switch ploneItem.atType {
-        case .root, .folder, .collection, .document, .news, .image, .file, .link:
+        case .ploneSite, .lrf, .folder, .collection, .document, .news, .image, .file, .link:
             return nil
         case .event:
             guard let ploneEvent = ploneItem as? PloneEvent else {
@@ -235,7 +253,8 @@ extension ItemConverter {
                                       endDate: ploneEvent.endDate,
                                       location: ploneEvent.location,
                                       eventURL: ploneEvent.eventURL)
-        default:
+        
+        case .none:
             return nil
         }
     }
@@ -243,14 +262,15 @@ extension ItemConverter {
     private static func fileObjectTypeTransfer(ploneItem: PloneItem) -> GeneralFileObject? {
         
         switch ploneItem.atType {
-        case .root, .folder, .collection, .document, .news, .image, .event, .link:
+        case .ploneSite, .lrf, .folder, .collection, .document, .news, .image, .event, .link:
             return nil
         case .file:
             guard let ploneFile = ploneItem as? PloneFile else {
                 return nil
             }
             return GeneralFileObject(contentType: ploneFile.file.contentType, name: ploneFile.file.name, url: ploneFile.file.url)
-        default:
+      
+        case .none:
             return nil
         }
     }
@@ -258,14 +278,15 @@ extension ItemConverter {
     private static func linkObjectTypeTransfer(ploneItem: PloneItem) -> GeneralLinkObject? {
         
         switch ploneItem.atType {
-        case .root, .folder, .collection, .document, .news, .image, .file, .event:
+        case .ploneSite, .lrf, .folder, .collection, .document, .news, .image, .file, .event:
             return nil
         case .link:
             guard let ploneLink = ploneItem as? PloneLink else {
                 return nil
             }
             return GeneralLinkObject(name: ploneLink.linkTitle, url: ploneLink.remoteURL)
-        default:
+        
+        case .none:
             return nil
         }
     }
@@ -278,7 +299,9 @@ extension ItemConverter {
     static func typeTransfer(generalItemType: GeneralItemType) -> PloneItemType {
         switch generalItemType {
         case .root:
-            return .root
+            return .ploneSite
+        case .root_with_language:
+            return .lrf
         case .folder:
             return .folder
         case .collection:

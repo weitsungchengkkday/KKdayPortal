@@ -9,8 +9,8 @@
 import Foundation
 
 enum PloneItemType: String, Codable {
-
-    case root = "Plone Site"
+    case lrf = "LRF"
+    case ploneSite = "Plone Site"
     case folder = "Folder"
     case document = "Document"
     case news = "News Item"

@@ -14,16 +14,11 @@ import SnapKit
 final class HomeViewController: UIViewController, GeneralItemCoordinator, Localizable {
     
     // 🏞 UI element
-    lazy var webHomeButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Plone Home Page", for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-        btn.setTitleColor(.white, for: .normal)
-        btn.layer.cornerRadius = 4
-        return btn
+    private lazy var homeContainerView: UIView = {
+        let view = UIView()
+        return view
     }()
-    
+
     var observerLanguageChangedNotification: NSObjectProtocol?
      
     func refreshLanguage(_ nofification: Notification) {
@@ -35,6 +30,7 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator, Locali
         setupUI()
         setAction()
         reigisterLanguageManager()
+        addChildViewController()
     }
     
     deinit {
@@ -43,41 +39,51 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator, Locali
     
     // 🎨 draw UI
     private func setupUI() {
+        
         localizedText()
-        view.backgroundColor = UIColor.white
-        view.addSubview(webHomeButton)
-        webHomeButton.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
-            maker.centerX.equalToSuperview()
-            maker.width.equalTo(160)
+        
+        self.view.addSubview(homeContainerView)
+        homeContainerView.snp.makeConstraints { maker in
+             maker.top.equalTo(view.safeAreaLayoutGuide)
+                       maker.leading.equalTo(view.safeAreaLayoutGuide)
+                       maker.trailing.equalTo(view.safeAreaLayoutGuide)
+                       maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    
+    private func addChildViewController() {
+        
+        #if TEST_VERSION
+                let rootURL = URL(string: "http://localhost:8080/pikaPika")!
+        #elseif SIT_VERSION
+                let rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
+        
+        #elseif PRODUCTION_VERSION
+                let rootURL = URL(string: "https://eip.kkday.net/Plone/zh-tw")!
+        #else
+        
+        
+        #endif
+        
+        let viewModel = GeneralRootWithLanguageViewModel(source: rootURL)
+
+        let childViewController = GeneralRootWithLanguageViewController(viewModel: viewModel)
+
+        addChild(childViewController)
+        childViewController.view.frame = homeContainerView.bounds
+        homeContainerView.addSubview(childViewController.view)
+        childViewController.didMove(toParent: self)
+        
     }
     
     // 🧾 localization
     private func localizedText() {
-        self.title = "common_main_page".localize("首頁")
+
     }
     
     // 🎬 set action
     private func setAction() {
-        webHomeButton.addTarget(self, action: #selector(goWebHomePage), for: .touchUpInside)
-    }
-
-    @objc private func goWebHomePage() {
-
-#if TEST_VERSION
-        let rootURL = URL(string: "http://localhost:8080/pikaPika")!
-       
-#elseif SIT_VERSION
-        let rootURL = URL(string: "https://sit.eip.kkday.net/Plone")!
         
-#elseif PRODUCTION_VERSION
-        let rootURL = URL(string: "https://eip.kkday.net/Plone")!
-#else
-        
-#endif
-        
-        goDetailPage(route: rootURL, type: .root)
     }
     
     // ⛓ bind viewModel

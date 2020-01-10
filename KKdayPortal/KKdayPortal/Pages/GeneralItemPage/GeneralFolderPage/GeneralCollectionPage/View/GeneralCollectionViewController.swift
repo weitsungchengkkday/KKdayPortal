@@ -24,6 +24,12 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         return tbv
     }()
     
+    lazy var textView: UITextView = {
+        let tv = UITextView()
+        tv.isEditable = false
+        return tv
+    }()
+    
     private let viewModel: GeneralCollectionViewModel
     private let disposeBag = DisposeBag()
     
@@ -55,12 +61,22 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         view.backgroundColor = UIColor.white
         
         view.addSubview(tableView)
+        view.addSubview(textView)
         tableView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
+            maker.height.equalTo(self.view.frame.width * 1)
+        }
+        
+        textView.snp.makeConstraints { maker in
+            maker.top.equalTo(tableView.snp.bottom)
+            maker.leading.equalTo(view.safeAreaLayoutGuide)
+            maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+        
+        
     }
     
     // 🎬 set action
@@ -101,6 +117,6 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
 extension GeneralCollectionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 60
     }
 }

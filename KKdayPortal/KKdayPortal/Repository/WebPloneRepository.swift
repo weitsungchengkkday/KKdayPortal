@@ -114,8 +114,16 @@ final class WebPloneRepository: RepositoryManageable {
         let ploneItemType = ItemConverter.typeTransfer(generalItemType: generalItemType)
       
         switch ploneItemType {
-        case .root:
-            let ploneRootRequest = PortalItem.Item<PloneRoot>(user: ploneUser, route: source)
+        case .lrf:
+            let ploneLrfRequest = PortalItem.Item<PloneLRF>(user: ploneUser, route: source)
+            let response = apiManager.request(ploneLrfRequest)
+            return response
+                .map({ ploneLrf -> GeneralItem in
+                              return ItemConverter.ploneItemToGeneralItem(item: ploneLrf)
+                          })
+            
+        case .ploneSite:
+            let ploneRootRequest = PortalItem.Item<PloneSiteItem>(user: ploneUser, route: source)
             let response = apiManager.request(ploneRootRequest)
             return response
                 .map({ ploneRoot -> GeneralItem in

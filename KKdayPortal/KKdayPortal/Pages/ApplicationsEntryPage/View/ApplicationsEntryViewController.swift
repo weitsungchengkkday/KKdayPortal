@@ -13,32 +13,20 @@ import SnapKit
 
 final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordinator {
     
-    private static var ItemName: String {
-        return "EntryItem"
+    private static var CellName: String {
+        return "EntryCell"
     }
     
     // 🏞 UI element
-    lazy var collectionView: UICollectionView = {
-        let clv: UICollectionView
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 160, height: 240)
-        layout.minimumLineSpacing = CGFloat(integerLiteral: 10)
-        layout.minimumInteritemSpacing = CGFloat(integerLiteral: 10)
-        layout.scrollDirection = UICollectionView.ScrollDirection.vertical
-        
-        clv = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height),
-                               collectionViewLayout: layout)
-        clv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        clv.register(ApplicationsEntryCollectionViewCell.self, forCellWithReuseIdentifier: ApplicationsEntryViewController.ItemName)
-        
-        return clv
+    lazy var tableView: UITableView = {
+        let tbl = UITableView()
+        tbl.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        tbl.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
+        return tbl
     }()
     
     private lazy var loadingActivityIndicatorContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
         view.isHidden = true
@@ -51,23 +39,7 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
         return idv
     }()
     
-    private let viewModel: ApplicationsEntryViewModel = {
-        
-#if TEST_VERSION
-            let applicationSourceURL = URL(string: "http://localhost:8080/pikaPika/application-items")!
-        
-#elseif SIT_VERSION
-            let applicationSourceURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services")!
-        
-#elseif PRODUCTION_VERSION
-            let applicationSourceURL = URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services")!
-        
-#else
-        
-#endif
-        
-        return ApplicationsEntryViewModel(source: applicationSourceURL)
-    }()
+    private let viewModel = ApplicationsEntryViewModel()
     
     private let disposeBag = DisposeBag()
     
@@ -78,7 +50,7 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
         setAction()
         bindViewModel()
         
-        collectionView.rx
+        tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
         
@@ -88,12 +60,12 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
-        
-        view.addSubview(collectionView)
+        title = "Service Links"
+        view.addSubview(tableView)
         view.addSubview(loadingActivityIndicatorContainerView)
         loadingActivityIndicatorContainerView.addSubview(loadingActivityIndicatorView)
         
-        collectionView.snp.makeConstraints { maker in
+        tableView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -124,19 +96,13 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showGeneralItems
-            .drive(collectionView.rx.items(cellIdentifier: ApplicationsEntryViewController.ItemName, cellType: ApplicationsEntryCollectionViewCell.self)) { (row, generalItem, cell) in
-                cell.titleLabel.text = generalItem.title
-                cell.descriptionLabel.text = generalItem.description
-                
+        viewModel.output.showGeneralItemsURL
+            .drive(tableView.rx.items(cellIdentifier: ApplicationsEntryViewController.CellName, cellType: ApplicationsEntryTableViewCell.self)) { (row, url, cell) in
+            
+                cell.titleLabel.text = "BPM"
+                cell.descriptionLabel.text = "簽核系統"
         }
         .disposed(by: disposeBag)
-        
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] text in
-                self?.title = text
-            })
-            .disposed(by: disposeBag)
         
         viewModel.output.showIsLoading
             .map { !$0 }
@@ -149,18 +115,13 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
     }
 }
 
-extension ApplicationsEntryViewController: UICollectionViewDelegate {
+extension ApplicationsEntryViewController: UITableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard let generalList = viewModel.generalItem as? GeneralList,
-            let items = generalList.items,
-            let source = items[indexPath.row].source,
-            let type = items[indexPath.row].type else {
-                return
-        }
-        
-        goDetailPageInWebView(route: source, type: type)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         
+        let URLs = viewModel.generalItemsURL
+        let route = URLs[indexPath.row]
+        goDetailPageInWebView(route: route, type: .link)
     }
     
 }
