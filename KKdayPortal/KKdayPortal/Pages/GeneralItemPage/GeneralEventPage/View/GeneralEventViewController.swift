@@ -13,110 +13,122 @@ import SnapKit
 import WebKit
 
 final class GeneralEventViewController: UIViewController {
-
-      // 🏞 UI element
-        lazy var contactTextView: UITextView = {
-            let txf = UITextView()
-            txf.isEditable = false
-            txf.isSelectable = false
-            return txf
-        }()
+    
+    // 🏞 UI element
+    lazy var logoImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+        return imv
+    }()
+    
+    lazy var contactTextView: UITextView = {
+        let txf = UITextView()
+        txf.isEditable = false
+        txf.isSelectable = false
+        return txf
+    }()
+    
+    lazy var eventTextView: UITextView = {
+        let txf = UITextView()
+        txf.isEditable = false
+        txf.isSelectable = false
+        return txf
+    }()
+    
+    lazy var wkWebView: WKWebView = {
+        let wkv = WKWebView()
+        wkv.navigationDelegate = self
+        return wkv
+    }()
+    
+    private let viewModel: GeneralEventViewModel
+    private let disposeBag = DisposeBag()
+    
+    init(viewModel: GeneralEventViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        bindViewModel()
+        viewModel.getPortalData()
         
-        lazy var eventTextView: UITextView = {
-            let txf = UITextView()
-            txf.isEditable = false
-            txf.isSelectable = false
-            return txf
-        }()
+    }
+    
+    // 🎨 draw UI
+    private func setupUI() {
+        view.backgroundColor = UIColor.white
+        view.addSubview(logoImageView)
+        view.addSubview(contactTextView)
+        view.addSubview(eventTextView)
+        view.addSubview(wkWebView)
         
-        lazy var wkWebView: WKWebView = {
-            let wkv = WKWebView()
-            wkv.navigationDelegate = self
-            return wkv
-        }()
-       
-        private let viewModel: GeneralEventViewModel
-        private let disposeBag = DisposeBag()
-        
-        init(viewModel: GeneralEventViewModel) {
-            self.viewModel = viewModel
-            super.init(nibName: nil, bundle: nil)
+        logoImageView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.leading.equalToSuperview()
         }
         
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+        contactTextView.snp.makeConstraints { maker in
+            maker.top.equalTo(logoImageView.snp.bottom)
+            maker.height.equalTo(60)
+            maker.leading.equalToSuperview()
+            maker.trailing.equalToSuperview()
         }
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            setupUI()
-            bindViewModel()
-            viewModel.getPortalData()
-            
+        eventTextView.snp.makeConstraints { maker in
+            maker.top.equalTo(contactTextView.snp.bottom)
+            maker.height.equalTo(100)
+            maker.leading.equalToSuperview()
+            maker.trailing.equalToSuperview()
         }
         
-        // 🎨 draw UI
-        private func setupUI() {
-            view.backgroundColor = UIColor.white
-            view.addSubview(contactTextView)
-            view.addSubview(eventTextView)
-            view.addSubview(wkWebView)
-            
-            contactTextView.snp.makeConstraints { maker in
-                maker.top.equalTo(view.snp.topMargin)
-                maker.height.equalTo(60)
-                maker.leading.equalToSuperview()
-                maker.trailing.equalToSuperview()
-            }
-            
-            eventTextView.snp.makeConstraints { maker in
-                maker.top.equalTo(contactTextView.snp.bottom)
-                maker.height.equalTo(100)
-                maker.leading.equalToSuperview()
-                maker.trailing.equalToSuperview()
-            }
-            
-            wkWebView.snp.makeConstraints { maker in
-                maker.top.equalTo(eventTextView.snp.bottom)
-                maker.bottom.equalTo(view.snp.bottomMargin)
-                maker.leading.equalToSuperview()
-                maker.trailing.equalToSuperview()
-            }
-        }
-        
-        // 🎬 set action
-        private func setAction() {
-            
-        }
-        
-        // ⛓ bind viewModel
-        private func bindViewModel() {
-            
-            viewModel.output.showTitle
-                .drive(onNext: { [weak self] title in
-                    self?.title = title
-                })
-                .disposed(by: disposeBag)
-            
-            viewModel.output.showContact
-                .drive(onNext: { [weak self] contact in
-                    self?.contactTextView.text = contact
-                })
-                .disposed(by: disposeBag)
-            
-            viewModel.output.showEvent
-                .drive(onNext: { [weak self] event in
-                    self?.eventTextView.text = event
-                })
-                .disposed(by: disposeBag)
-            
-            viewModel.output.showText
-                .drive(onNext: { [weak self] text in
-                    self?.wkWebView.loadHTMLString(text, baseURL: nil)
-                })
-                .disposed(by: disposeBag)
+        wkWebView.snp.makeConstraints { maker in
+            maker.top.equalTo(eventTextView.snp.bottom)
+            maker.bottom.equalTo(view.snp.bottomMargin)
+            maker.leading.equalToSuperview()
+            maker.trailing.equalToSuperview()
         }
     }
+    
+    // 🎬 set action
+    private func setAction() {
+        
+    }
+    
+    // ⛓ bind viewModel
+    private func bindViewModel() {
+        
+        viewModel.output.showTitle
+            .drive(onNext: { [weak self] title in
+                self?.title = title
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showContact
+            .drive(onNext: { [weak self] contact in
+                self?.contactTextView.text = contact
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showEvent
+            .drive(onNext: { [weak self] event in
+                self?.eventTextView.text = event
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showText
+            .drive(onNext: { [weak self] text in
+                self?.wkWebView.loadHTMLString(text, baseURL: nil)
+            })
+            .disposed(by: disposeBag)
+    }
+}
 
 extension GeneralEventViewController: WKNavigationDelegate {
     
@@ -129,7 +141,7 @@ extension GeneralEventViewController: WKNavigationDelegate {
                 UIApplication.shared.open(url)
             }
             decisionHandler(.cancel)
-
+            
         } else {
             decisionHandler(.allow)
         }

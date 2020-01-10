@@ -18,6 +18,12 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
     }
     
     // 🏞 UI element
+    lazy var logoImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+        return imv
+    }()
+    
     lazy var tableView: UITableView = {
         let tbv = UITableView()
         tbv.register(GeneralCollectionTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.CellName)
@@ -59,11 +65,17 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
-        
+        view.addSubview(logoImageView)
         view.addSubview(tableView)
         view.addSubview(textView)
+        
+        logoImageView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.leading.equalToSuperview()
+        }
+        
         tableView.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide)
+            maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.height.equalTo(self.view.frame.width * 1)

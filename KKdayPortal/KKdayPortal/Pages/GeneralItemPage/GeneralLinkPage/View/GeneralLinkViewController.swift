@@ -15,6 +15,12 @@ import SafariServices
 final class GeneralLinkViewController: UIViewController {
     
     // 🏞 UI element
+    lazy var logoImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+        return imv
+    }()
+    
     lazy var linkButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Link", for: .normal)
@@ -49,9 +55,16 @@ final class GeneralLinkViewController: UIViewController {
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
+        view.addSubview(logoImageView)
         view.addSubview(linkButton)
+        
+        logoImageView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.leading.equalToSuperview()
+        }
+        
         linkButton.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
+            maker.top.equalTo(logoImageView.snp.bottom).offset(50)
             maker.centerX.equalToSuperview()
             maker.width.equalTo(50)
         }

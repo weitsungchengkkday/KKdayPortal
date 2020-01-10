@@ -15,6 +15,12 @@ import WebKit
 final class GeneralRootWithLanguageViewController: UIViewController, GeneralItemCoordinator {
     
     // 🏞 UI element
+    lazy var logoImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+        return imv
+    }()
+    
     lazy var textView: UITextView = {
         let tv = UITextView()
         tv.isEditable = false
@@ -40,7 +46,6 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralItem
         bindViewModel()
         
         viewModel.getPortalData()
-        
     }
     
     // 📍 config NavBar
@@ -60,11 +65,17 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralItem
     
     // 🎨 draw UI
     private func setupUI() {
-
         view.backgroundColor = UIColor.white
+        view.addSubview(logoImageView)
         view.addSubview(textView)
-        textView.snp.makeConstraints { maker in
+        
+        logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
+            maker.leading.equalToSuperview()
+        }
+        
+        textView.snp.makeConstraints { maker in
+            maker.top.equalTo(logoImageView.snp.bottom)
             maker.bottom.equalTo(self.view.snp.bottomMargin)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()

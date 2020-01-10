@@ -18,6 +18,12 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
     }
     
     // 🏞 UI element
+    lazy var logoImageView: UIImageView = {
+         let imv = UIImageView()
+         imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+         return imv
+     }()
+    
     lazy var tableView: UITableView = {
         let tbv = UITableView()
         tbv.register(GeneralFolderTableViewCell.self, forCellReuseIdentifier: GeneralFolderViewController.CellName)
@@ -53,10 +59,16 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
-        
+        view.addSubview(logoImageView)
         view.addSubview(tableView)
+        
+        logoImageView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.leading.equalToSuperview()
+        }
+        
         tableView.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide)
+            maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)

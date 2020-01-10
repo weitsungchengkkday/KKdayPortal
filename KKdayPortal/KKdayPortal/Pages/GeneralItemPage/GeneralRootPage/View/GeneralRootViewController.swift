@@ -12,12 +12,18 @@ import RxCocoa
 import SnapKit
 
 final class GeneralRootViewController: UIViewController, GeneralItemCoordinator {
-    
+
     private static var CellName: String {
         return "RootCell"
     }
     
     // 🏞 UI element
+    lazy var logoImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+        return imv
+    }()
+    
     lazy var tableView: UITableView = {
         let tbv = UITableView()
         tbv.register(GeneralRootTableViewCell.self, forCellReuseIdentifier: GeneralRootViewController.CellName)
@@ -47,16 +53,21 @@ final class GeneralRootViewController: UIViewController, GeneralItemCoordinator 
             .disposed(by: disposeBag)
         
         viewModel.getPortalData()
-        
     }
     
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
-        
+        view.addSubview(logoImageView)
         view.addSubview(tableView)
+        
+        logoImageView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.leading.equalToSuperview()
+        }
+        
         tableView.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide)
+            maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)

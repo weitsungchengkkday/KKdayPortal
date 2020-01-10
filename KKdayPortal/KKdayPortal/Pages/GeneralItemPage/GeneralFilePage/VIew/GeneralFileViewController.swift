@@ -14,6 +14,11 @@ import SnapKit
 final class GeneralFileViewController: UIViewController {
     
     // 🏞 UI element
+    lazy var logoImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+        return imv
+    }()
     
     private let viewModel: GeneralFileViewModel
     private let disposeBag = DisposeBag()
@@ -41,6 +46,12 @@ final class GeneralFileViewController: UIViewController {
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
+        view.addSubview(logoImageView)
+        
+        logoImageView.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.leading.equalToSuperview()
+        }
     }
     
     // 🎬 set action
