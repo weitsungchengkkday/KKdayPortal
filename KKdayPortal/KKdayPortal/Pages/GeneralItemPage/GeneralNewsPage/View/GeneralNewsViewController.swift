@@ -26,12 +26,12 @@ final class GeneralNewsViewController: UIViewController {
         return imv
     }()
     
-    lazy var wkWebView: WKWebView = {
-        let wkv = WKWebView()
-        wkv.navigationDelegate = self
-        return wkv
+    lazy var textView: UITextView = {
+        let tv = UITextView()
+        tv.isEditable = false
+        return tv
     }()
-    
+
     private let viewModel: GeneralNewsViewModel
     private let disposeBag = DisposeBag()
     
@@ -57,7 +57,7 @@ final class GeneralNewsViewController: UIViewController {
         view.backgroundColor = UIColor.white
         view.addSubview(logoImageView)
         view.addSubview(imageView)
-        view.addSubview(wkWebView)
+        view.addSubview(textView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
@@ -71,7 +71,7 @@ final class GeneralNewsViewController: UIViewController {
             maker.trailing.equalToSuperview()
         }
         
-        wkWebView.snp.makeConstraints { maker in
+        textView.snp.makeConstraints { maker in
             maker.top.equalTo(imageView.snp.bottom)
             maker.bottom.equalTo(self.view.snp.bottomMargin)
             maker.leading.equalToSuperview()
@@ -102,27 +102,9 @@ final class GeneralNewsViewController: UIViewController {
         
         viewModel.output.showText
             .drive(onNext: { [weak self] dataText in
-                self?.wkWebView.loadHTMLString(dataText, baseURL: nil)
+                self?.textView.attributedText = dataText.htmlStringTransferToNSAttributedString()
             })
             .disposed(by: disposeBag)
     }
 }
 
-extension GeneralNewsViewController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
-        if navigationAction.navigationType == .linkActivated {
-            
-            if let url = navigationAction.request.url {
-                UIApplication.shared.open(url)
-            }
-            decisionHandler(.cancel)
-            
-        } else {
-            decisionHandler(.allow)
-        }
-        
-    }
-}

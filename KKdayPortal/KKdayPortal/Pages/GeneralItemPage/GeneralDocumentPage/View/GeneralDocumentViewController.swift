@@ -21,12 +21,12 @@ final class GeneralDocumentViewController: UIViewController {
         return imv
     }()
     
-    lazy var wkWebView: WKWebView = {
-        let wkv = WKWebView()
-        wkv.navigationDelegate = self
-        return wkv
+    lazy var textView: UITextView = {
+        let tv = UITextView()
+        tv.isEditable = false
+        return tv
     }()
-    
+
     private let viewModel: GeneralDocumentViewModel
     private let disposeBag = DisposeBag()
     
@@ -51,14 +51,14 @@ final class GeneralDocumentViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(logoImageView)
-        view.addSubview(wkWebView)
+        view.addSubview(textView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
         }
         
-        wkWebView.snp.makeConstraints { maker in
+        textView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.bottom.equalTo(self.view.snp.bottomMargin)
             maker.leading.equalToSuperview()
@@ -82,27 +82,9 @@ final class GeneralDocumentViewController: UIViewController {
         
         viewModel.output.showText
             .drive(onNext: { [weak self] dataText in
-                self?.wkWebView.loadHTMLString(dataText, baseURL: nil)
+                self?.textView.attributedText = dataText.htmlStringTransferToNSAttributedString()
             })
             .disposed(by: disposeBag)
     }
 }
 
-extension GeneralDocumentViewController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
-        if navigationAction.navigationType == .linkActivated {
-            
-            if let url = navigationAction.request.url {
-                UIApplication.shared.open(url)
-            }
-            decisionHandler(.cancel)
-            
-        } else {
-            decisionHandler(.allow)
-        }
-        
-    }
-}

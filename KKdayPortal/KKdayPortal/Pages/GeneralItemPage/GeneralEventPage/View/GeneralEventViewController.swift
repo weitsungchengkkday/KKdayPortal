@@ -35,11 +35,11 @@ final class GeneralEventViewController: UIViewController {
         return txf
     }()
     
-    lazy var wkWebView: WKWebView = {
-        let wkv = WKWebView()
-        wkv.navigationDelegate = self
-        return wkv
-    }()
+    lazy var textView: UITextView = {
+         let tv = UITextView()
+         tv.isEditable = false
+         return tv
+     }()
     
     private let viewModel: GeneralEventViewModel
     private let disposeBag = DisposeBag()
@@ -67,7 +67,7 @@ final class GeneralEventViewController: UIViewController {
         view.addSubview(logoImageView)
         view.addSubview(contactTextView)
         view.addSubview(eventTextView)
-        view.addSubview(wkWebView)
+        view.addSubview(textView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
@@ -88,7 +88,7 @@ final class GeneralEventViewController: UIViewController {
             maker.trailing.equalToSuperview()
         }
         
-        wkWebView.snp.makeConstraints { maker in
+        textView.snp.makeConstraints { maker in
             maker.top.equalTo(eventTextView.snp.bottom)
             maker.bottom.equalTo(view.snp.bottomMargin)
             maker.leading.equalToSuperview()
@@ -123,28 +123,10 @@ final class GeneralEventViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.output.showText
-            .drive(onNext: { [weak self] text in
-                self?.wkWebView.loadHTMLString(text, baseURL: nil)
+            .drive(onNext: { [weak self] dataText in
+                self?.textView.attributedText = dataText.htmlStringTransferToNSAttributedString()
             })
             .disposed(by: disposeBag)
     }
 }
 
-extension GeneralEventViewController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
-        if navigationAction.navigationType == .linkActivated {
-            
-            if let url = navigationAction.request.url {
-                UIApplication.shared.open(url)
-            }
-            decisionHandler(.cancel)
-            
-        } else {
-            decisionHandler(.allow)
-        }
-        
-    }
-}

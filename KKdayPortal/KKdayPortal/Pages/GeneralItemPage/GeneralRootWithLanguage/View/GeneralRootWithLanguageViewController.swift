@@ -99,21 +99,3 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralItem
     }
 }
 
-extension GeneralRootWithLanguageViewController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
-        if navigationAction.navigationType == .linkActivated {
-            
-            if let url = navigationAction.request.url {
-                UIApplication.shared.open(url)
-            }
-            decisionHandler(.cancel)
-
-        } else {
-            decisionHandler(.allow)
-        }
-    }
-
-}
