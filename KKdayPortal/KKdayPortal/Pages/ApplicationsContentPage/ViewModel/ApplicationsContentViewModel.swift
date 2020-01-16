@@ -64,7 +64,7 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
                 
                 return
             }
-           
+         
 #elseif PRODUCTION_VERSION
         
             let url = URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!

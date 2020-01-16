@@ -12,41 +12,30 @@ import RxCocoa
 final class GeneralRootWithLanguageViewModel: RXViewModelType {
     
     typealias PortalContent = GeneralItem
+    typealias PortalContentList = GeneralList
     
     var input: GeneralRootWithLanguageViewModel.Input
     var output: GeneralRootWithLanguageViewModel.Output
     
     struct Input {
-        let generalItemsOfFolders: AnyObserver<[PortalContent]>
+        let generalItemsOfFolders: AnyObserver<[PortalContentList]>
         let generalItemsOfDocument: AnyObserver<PortalContent>
     }
     
     struct Output {
-        let showGeneralItemsOfFolders: Driver<[PortalContent]>
+        let showGeneralItemsOfFolders: Driver<[PortalContentList]>
         let showGeneralItemsOfDocument: Driver<PortalContent>
-        
     }
     
-    private let generalItemsOfFoldersSubject = PublishSubject<[PortalContent]>()
+    private let generalItemsOfFoldersSubject = PublishSubject<[PortalContentList]>()
     private let generalItemsOfDocumentSubject = PublishSubject<PortalContent>()
-    
     private let titleSubject = PublishSubject<String>()
     
-    var generalItem: PortalContent?
+    var generalItem: PortalContentList?
     
-    var generalItemDocument: PortalContent? {
-        didSet {
-            if let generalItemDocunment = generalItemDocument {
-                generalItemsOfDocumentSubject.onNext(generalItemDocunment)
-            }
-        }
-    }
+    var generalItemDocument: PortalContent?
     
-    var generalItemFolders: [PortalContent] = [] {
-        didSet {
-            generalItemsOfFoldersSubject.onNext(generalItemFolders)
-        }
-    }
+    var generalItemFolders: [PortalContentList] = []
     
     var source: URL
     private let disposeBag = DisposeBag()
@@ -84,14 +73,35 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                 self?.generalItem = generalItem
                 
                 if let items = generalItem.items {
+                    // Document
                     let documentItem = items.filter ({ $0.type == .document })
                     self?.generalItemDocument = documentItem.first
                     
-                    let foldersItems = items.filter({ $0.type == .folder })
+                    // Folders
+                    let foldersItems = items
+                        .filter({ $0.type == .folder })
+                        .map { generalItem -> GeneralList in
+                            
+                            return GeneralList(type: generalItem.type,
+                                               title: generalItem.title,
+                                               description: generalItem.title,
+                                               parent: generalItem.parent,
+                                               id: generalItem.id,
+                                               UID: generalItem.UID,
+                                               source: generalItem.source,
+                                               imageObject: generalItem.imageObject,
+                                               textObject: generalItem.textObject,
+                                               eventObject: generalItem.eventObject,
+                                               fileObject: generalItem.fileObject,
+                                               linkObject: generalItem.linkObject,
+                                               items: nil)
+                    }
                     self?.generalItemFolders  = foldersItems
                 }
                 
-                self?.getPortalSecondLevelData()
+                // Get Detail Info
+                self?.getPortalDocumentData()
+                self?.getPortalFoldersData()
                 
             }) { error in
                 print("🚨 Func: \(#file),\(#function)")
@@ -102,20 +112,11 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
         .disposed(by: disposeBag)
     }
     
-    
-    private func getPortalSecondLevelData() {
-        if let source = generalItemDocument?.source {
-            self.getPortalDocumentData(source: source)
-        }
+    private func getPortalDocumentData() {
         
-        for folder in generalItemFolders {
-            if let source = folder.source {
-                self.getPortalFolderData(source: source)
-            }
+        guard let source = generalItemDocument?.source else {
+            return
         }
-    }
-    
-    private func getPortalDocumentData(source: URL) {
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
@@ -127,6 +128,7 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                 
                 if self?.generalItemDocument?.source == generalItem.source {
                     self?.generalItemDocument = generalItem
+                    self?.generalItemsOfDocumentSubject.onNext(generalItem)
                     print("🌝")
                 } else {
                     print("🌙")
@@ -141,36 +143,40 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
         .disposed(by: disposeBag)
     }
     
-    private func getPortalFolderData(source: URL) {
+    
+    
+    private func getPortalFoldersData() {
+        
+        var generalItemObservables: [Observable<GeneralItem>] = []
+        
+        for folder in generalItemFolders {
+            if let source = folder.source {
+                let generalItemObservable = ModelLoader.PortalLoader().getItem(source: source, type: .folder).asObservable()
+                generalItemObservables.append(generalItemObservable)
+            }
+        }
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
-        ModelLoader.PortalLoader().getItem(source: source, type: .folder)
+        Observable.combineLatest(generalItemObservables)
             .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
+            .subscribe(onNext: { [weak self] generalItems in
                 
-                guard let strongSelf = self else { return }
-                
-                LoadingManager.shared.setState(state: .normal(value: false))
-                let generalItemFolders = strongSelf.generalItemFolders
-                
-                for (index, folder) in generalItemFolders.enumerated() {
-                    
-                    if folder.source == generalItem.source {
-                        self?.generalItemFolders[index] = generalItem
+                let generalList =  generalItems.compactMap { generalItem -> GeneralList? in
+                    if let generalList = generalItem as? GeneralList {
                         print("🍎")
+                        return generalList
                     } else {
                         print("🍏")
+                        return nil
                     }
                 }
                 
-            }) { error in
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-                
+                print(generalList)
+                self?.generalItemsOfFoldersSubject.onNext(generalList)
                 LoadingManager.shared.setState(state: .normal(value: false))
-        }
-        .disposed(by: disposeBag)
+                
+            })
+            .disposed(by: disposeBag)
     }
-    
 }

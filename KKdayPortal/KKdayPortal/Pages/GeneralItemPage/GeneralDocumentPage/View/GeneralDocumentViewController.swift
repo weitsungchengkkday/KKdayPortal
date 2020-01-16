@@ -21,9 +21,17 @@ final class GeneralDocumentViewController: UIViewController {
         return imv
     }()
     
+    lazy var topTitleLabel: UILabel = {
+         let lbl = UILabel()
+         lbl.numberOfLines = 0
+         lbl.font = UIFont.systemFont(ofSize: 24)
+         return lbl
+     }()
+    
     lazy var textView: UITextView = {
         let tv = UITextView()
         tv.isEditable = false
+        tv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return tv
     }()
 
@@ -49,13 +57,20 @@ final class GeneralDocumentViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
+        view.addSubview(topTitleLabel)
         view.addSubview(textView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
+        }
+        
+        topTitleLabel.snp.makeConstraints { maker in
+            maker.leading.equalTo(logoImageView.snp.trailing)
+            maker.trailing.equalToSuperview()
+            maker.centerY.equalTo(logoImageView.snp.centerY)
         }
         
         textView.snp.makeConstraints { maker in
@@ -75,8 +90,8 @@ final class GeneralDocumentViewController: UIViewController {
     private func bindViewModel() {
         
         viewModel.output.showTitle
-            .drive(onNext: { title in
-                self.title = title
+            .drive(onNext: { [weak self] title in
+                self?.topTitleLabel.text = title
             })
             .disposed(by: disposeBag)
         

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import RxDataSources
 
 final class GeneralIndexSideBarViewController: UIViewController {
     
@@ -20,12 +21,25 @@ final class GeneralIndexSideBarViewController: UIViewController {
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
+        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralIndexSideBarTableViewCell.self, forCellReuseIdentifier: GeneralIndexSideBarViewController.CellName)
         return tbv
     }()
     
     private let viewModel: GeneralIndexSideBarViewModel
     private let disposeBag = DisposeBag()
+    
+    private lazy var dataSource = {
+        return RxTableViewSectionedReloadDataSource<ContentListSection> (configureCell: { dataSource, tableView, indexPath, item in
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralIndexSideBarViewController.CellName, for: indexPath) as! GeneralIndexSideBarTableViewCell
+            cell.titleLabel.text = item.generalItem.title
+            cell.typeImageView.image = item.generalItem.type?.image
+            
+            return cell
+        })
+        
+    }()
     
     init(viewModel: GeneralIndexSideBarViewModel) {
         self.viewModel = viewModel
@@ -51,7 +65,7 @@ final class GeneralIndexSideBarViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { maker in
@@ -71,34 +85,50 @@ final class GeneralIndexSideBarViewController: UIViewController {
     private func bindViewModel() {
         
         viewModel.output.showGeneralItems
-            .drive(tableView.rx.items(cellIdentifier: GeneralIndexSideBarViewController.CellName, cellType: GeneralIndexSideBarTableViewCell.self)) { (row, generalItem, cell) in
+            .map({ contentListSections -> [ContentListSection] in
                 
-                cell.titleLabel.text = generalItem.title
-                cell.descriptionLabel.text = generalItem.description
+                var sections: [ContentListSection] = []
                 
-                cell.selectCellButton.rx.tap.asObservable()
-                    .subscribe({ [unowned self] _ in
-                        
-                        guard let type = generalItem.type,
-                            let source = generalItem.source else {
-                                return
-                        }
-                        
-                        guard let presentingViewController = self.presentingViewController as? UITabBarController,
-                            let nav = presentingViewController.selectedViewController as? UINavigationController else {
-                                return
-                        }
-                        
-                        for vc in nav.viewControllers {
-                            if let vc = vc as? HomeViewController {
-                                vc.goDetailPage(route: source, type: type)
-                                self.dismiss(animated: true, completion: nil)
-                            }
-                        }
-                    })
-                    .disposed(by: cell.disposeBag)
-        }
-        .disposed(by: disposeBag)
+                for contentListSection in contentListSections {
+                    var section = contentListSection
+                    
+                    if section.isOpen == false {
+                        section.items = []
+                        sections.append(section)
+                    } else {
+                        sections.append(section)
+                    }
+                }
+                
+                return sections
+            })
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(GeneralIndexSideBarTableViewCellViewModel.self).subscribe(onNext: { [weak self] cellViewModel in
+            
+            guard let type = cellViewModel.generalItem.type,
+                let source = cellViewModel.generalItem.source else {
+                    return
+            }
+            
+            guard let tabVC = self?.presentingViewController as? UITabBarController,
+                let rootNav = tabVC.selectedViewController as? UINavigationController else {
+                    return
+            }
+            
+            guard let homeVC = rootNav.viewControllers[0] as? HomeViewController,
+                let nav = homeVC.children.first as? GeneralRootWithLanguageNavigationController,
+                let vc = nav.viewControllers.first as? GeneralRootWithLanguageViewController else {
+                    return
+            }
+            
+            vc.goDetailIndexPage(route: source, type: type)
+            self?.dismiss(animated: true, completion: nil)
+            
+        })
+            .disposed(by: disposeBag)
+        
     }
 }
 
@@ -106,6 +136,25 @@ extension GeneralIndexSideBarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerTitle = viewModel.contentListSections[section].header
+        
+        let btn = UIButton()
+        btn.tag = section
+        btn.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        btn.setTitle(headerTitle, for: .normal)
+        btn.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        btn.addTarget(self, action: #selector(hideSectionRows), for: .touchUpInside)
+        
+        return btn
+    }
+    
+    @objc func hideSectionRows(_ btn: UIButton) {
+        let section = btn.tag
+        viewModel.switchSectionIsOpen(at: section)
     }
 }
 

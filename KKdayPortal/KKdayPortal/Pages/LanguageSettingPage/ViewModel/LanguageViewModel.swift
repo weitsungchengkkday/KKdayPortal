@@ -16,7 +16,6 @@ final class LanguageViewModel: RXViewModelType {
     var input: LanguageViewModel.Input
     var output: LanguageViewModel.Output
     
-    
     struct Input {
         let cellViewModels: AnyObserver<[LanguageSection]>
     }

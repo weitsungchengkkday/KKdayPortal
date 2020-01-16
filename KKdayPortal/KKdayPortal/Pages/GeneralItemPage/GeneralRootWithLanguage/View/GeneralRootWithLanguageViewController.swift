@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 import WebKit
 
-final class GeneralRootWithLanguageViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralRootWithLanguageViewController: UIViewController, GeneralIndexSideBarCoordinator {
     
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
@@ -21,14 +21,43 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralItem
         return imv
     }()
     
+    lazy var topTitleLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.numberOfLines = 0
+        lbl.font = UIFont.systemFont(ofSize: 24)
+        return lbl
+    }()
+    
     lazy var textView: UITextView = {
         let tv = UITextView()
         tv.isEditable = false
+        tv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return tv
     }()
     
     private let viewModel: GeneralRootWithLanguageViewModel
     private let disposeBag = DisposeBag()
+    
+    static var welcomePageContent: String {
+        return """
+        <h2/>
+        &#13;\n
+        <h2>【簽核流程系統】</h2>
+        &#13;\n
+        <p>請點擊
+        <a href=\"https://sit.eip.kkday.net/Plone/@@bpm_redirect\">https://sit.eip.kkday.net/Plone/@@bpm_redirect</a>
+        <a href=\"https://sit.eip.kkday.net/Plone/@@bpm_redirect\"></a>
+        </p>
+        &#13;\n
+        <p>並給我們回饋，感謝您！</p>
+        &#13;\n
+        <p/>&#13;\n
+        <p/>&#13;\n
+        <div id=\"gtx-trans\">
+        &#13;\n
+        <div class=\"gtx-trans-icon\"/>&#13;\n</div>
+        """
+    }
     
     init(viewModel: GeneralRootWithLanguageViewModel) {
         self.viewModel = viewModel
@@ -41,37 +70,35 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralItem
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBar()
+        
         setupUI()
         bindViewModel()
-        
         viewModel.getPortalData()
     }
     
-    // 📍 config NavBar
-    private func setupNavBar() {
-        let config = UIImage.SymbolConfiguration(pointSize: 16, weight: .black, scale: .large)
-        let sfImage = UIImage(systemName: "text.append", withConfiguration: config)
-        
-        parent?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: sfImage, style: .plain, target: self, action: #selector(showGeneralIndexSideBar))
-    }
     
-    @objc private func showGeneralIndexSideBar() {
-        let generalIndexSideBarViewModel = GeneralIndexSideBarViewModel(contents: viewModel.generalItemFolders)
-        let presentViewController: GeneralIndexSideBarViewController = GeneralIndexSideBarViewController(viewModel: generalIndexSideBarViewModel)
-        guard let parent = parent else { return }
-        parent.present(presentViewController, animated: true, completion: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
     }
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
+        view.addSubview(topTitleLabel)
         view.addSubview(textView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
+        }
+        
+        topTitleLabel.snp.makeConstraints { maker in
+            maker.leading.equalTo(logoImageView.snp.trailing)
+            maker.trailing.equalToSuperview()
+            maker.centerY.equalTo(logoImageView.snp.centerY)
         }
         
         textView.snp.makeConstraints { maker in
@@ -92,10 +119,30 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralItem
         
         viewModel.output.showGeneralItemsOfDocument
             .drive(onNext: { [weak self] content in
-                self?.parent?.title = content.title
-                self?.textView.attributedText = content.textObject?.text?.htmlStringTransferToNSAttributedString()
+                
+                self?.topTitleLabel.text = content.title
+                self?.textView.attributedText = GeneralRootWithLanguageViewController.welcomePageContent.htmlStringTransferToNSAttributedString()
             })
             .disposed(by: disposeBag)
+        
+        viewModel.output.showGeneralItemsOfFolders
+            .drive(onNext: { [weak self] generalList in
+                self?.setupNavBar(lists: generalList)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    // 📍 config NavBar
+    private func setupNavBar(lists: [GeneralList] = []) {
+
+        guard let nav = navigationController as? GeneralRootWithLanguageNavigationController else {
+            return
+        }
+        if !lists.isEmpty {
+            nav.indexContents = lists
+        }
+        
+        nav.setParentLeftBarButtonItem()
     }
 }
 

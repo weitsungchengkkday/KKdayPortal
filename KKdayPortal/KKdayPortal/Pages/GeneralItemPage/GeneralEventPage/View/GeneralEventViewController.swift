@@ -21,6 +21,13 @@ final class GeneralEventViewController: UIViewController {
         return imv
     }()
     
+    lazy var topTitleLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.numberOfLines = 0
+        lbl.font = UIFont.systemFont(ofSize: 24)
+        return lbl
+    }()
+    
     lazy var contactTextView: UITextView = {
         let txf = UITextView()
         txf.isEditable = false
@@ -36,10 +43,11 @@ final class GeneralEventViewController: UIViewController {
     }()
     
     lazy var textView: UITextView = {
-         let tv = UITextView()
-         tv.isEditable = false
-         return tv
-     }()
+        let tv = UITextView()
+        tv.isEditable = false
+        tv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return tv
+    }()
     
     private let viewModel: GeneralEventViewModel
     private let disposeBag = DisposeBag()
@@ -63,8 +71,9 @@ final class GeneralEventViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
+        view.addSubview(topTitleLabel)
         view.addSubview(contactTextView)
         view.addSubview(eventTextView)
         view.addSubview(textView)
@@ -72,6 +81,12 @@ final class GeneralEventViewController: UIViewController {
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
+        }
+        
+        topTitleLabel.snp.makeConstraints { maker in
+            maker.leading.equalTo(logoImageView.snp.trailing)
+            maker.trailing.equalToSuperview()
+            maker.centerY.equalTo(logoImageView.snp.centerY)
         }
         
         contactTextView.snp.makeConstraints { maker in
@@ -106,7 +121,7 @@ final class GeneralEventViewController: UIViewController {
         
         viewModel.output.showTitle
             .drive(onNext: { [weak self] title in
-                self?.title = title
+                self?.topTitleLabel.text = title
             })
             .disposed(by: disposeBag)
         

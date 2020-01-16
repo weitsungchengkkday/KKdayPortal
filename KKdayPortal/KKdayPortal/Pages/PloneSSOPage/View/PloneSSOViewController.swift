@@ -50,7 +50,7 @@ final class PloneSSOViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(webView)
         
         webView.snp.makeConstraints { maker in

@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordinator {
+final class ApplicationsEntryViewController: UIViewController {
     
     private static var CellName: String {
         return "EntryCell"
@@ -19,10 +19,10 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
     
     // 🏞 UI element
     lazy var tableView: UITableView = {
-        let tbl = UITableView()
-        tbl.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        tbl.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
-        return tbl
+        let tbv = UITableView()
+        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        tbv.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
+        return tbv 
     }()
     
     private lazy var loadingActivityIndicatorContainerView: UIView = {
@@ -59,7 +59,7 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         title = "Service Links"
         view.addSubview(tableView)
         view.addSubview(loadingActivityIndicatorContainerView)
@@ -118,10 +118,14 @@ final class ApplicationsEntryViewController: UIViewController, GeneralItemCoordi
 extension ApplicationsEntryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         
+        
         let URLs = viewModel.generalItemsURL
         let route = URLs[indexPath.row]
-        goDetailPageInWebView(route: route, type: .link)
+        goDetailPageInWebView(route: route)
     }
     
+    private func goDetailPageInWebView(route: URL) {
+        let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: route))
+        navigationController?.pushViewController(pushViewController, animated: false)
+    }
 }

@@ -26,6 +26,7 @@ final class GeneralRootViewController: UIViewController, GeneralItemCoordinator 
     
     lazy var tableView: UITableView = {
         let tbv = UITableView()
+        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralRootTableViewCell.self, forCellReuseIdentifier: GeneralRootViewController.CellName)
         return tbv
     }()
@@ -57,7 +58,7 @@ final class GeneralRootViewController: UIViewController, GeneralItemCoordinator 
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(tableView)
         

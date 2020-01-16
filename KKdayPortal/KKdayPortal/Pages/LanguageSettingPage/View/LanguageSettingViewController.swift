@@ -20,7 +20,7 @@ final class LanguageSettingViewController: UIViewController {
 
     private let buttonClicked = PublishSubject<Bool>()
     
-    lazy var dataSource = {
+    private lazy var dataSource = {
         return RxTableViewSectionedReloadDataSource<LanguageSection> (
             configureCell: { [unowned self] dataSource, tableView, indexPath, item in
               
@@ -43,6 +43,7 @@ final class LanguageSettingViewController: UIViewController {
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
+        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
@@ -74,6 +75,7 @@ final class LanguageSettingViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.title = "Language Setting"
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { maker in
@@ -105,9 +107,10 @@ final class LanguageSettingViewController: UIViewController {
 }
 
 extension LanguageSettingViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-}
 
+}
 

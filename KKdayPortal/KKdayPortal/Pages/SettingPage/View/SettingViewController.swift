@@ -48,8 +48,8 @@ final class SettingViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.title = "Setting"
-        view.backgroundColor = UIColor.white
         view.addSubview(languageButton)
         view.addSubview(renewTokenButton)
         view.addSubview(logoutButton)

@@ -64,7 +64,7 @@ final class LoadingViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(containerView)
         containerView.addSubview(stackView)
         

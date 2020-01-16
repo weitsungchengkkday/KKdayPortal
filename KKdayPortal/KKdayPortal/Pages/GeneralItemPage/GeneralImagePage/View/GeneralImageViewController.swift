@@ -20,6 +20,13 @@ final class GeneralImageViewController: UIViewController {
         return imv
     }()
     
+    lazy var topTitleLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.numberOfLines = 0
+        lbl.font = UIFont.systemFont(ofSize: 24)
+        return lbl
+    }()
+    
     lazy var imageView: UIImageView = {
         let imv = UIImageView()
         imv.image = #imageLiteral(resourceName: "icPicture")
@@ -50,13 +57,20 @@ final class GeneralImageViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
+        view.addSubview(topTitleLabel)
         self.view.addSubview(imageView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
+        }
+        
+        topTitleLabel.snp.makeConstraints { maker in
+            maker.leading.equalTo(logoImageView.snp.trailing)
+            maker.trailing.equalToSuperview()
+            maker.centerY.equalTo(logoImageView.snp.centerY)
         }
         
         imageView.snp.makeConstraints { maker in
@@ -77,7 +91,7 @@ final class GeneralImageViewController: UIViewController {
         
         viewModel.output.showTitle
             .drive(onNext: { [weak self] title in
-                self?.title = title
+                self?.topTitleLabel.text = title
             })
             .disposed(by: disposeBag)
         

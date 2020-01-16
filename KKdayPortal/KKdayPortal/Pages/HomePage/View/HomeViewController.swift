@@ -11,16 +11,16 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class HomeViewController: UIViewController, GeneralItemCoordinator, Localizable {
+final class HomeViewController: UIViewController, Localizable {
     
     // 🏞 UI element
     private lazy var homeContainerView: UIView = {
         let view = UIView()
         return view
     }()
-
+    
     var observerLanguageChangedNotification: NSObjectProtocol?
-     
+    
     func refreshLanguage(_ nofification: Notification) {
         localizedText()
     }
@@ -39,46 +39,50 @@ final class HomeViewController: UIViewController, GeneralItemCoordinator, Locali
     
     // 🎨 draw UI
     private func setupUI() {
-        
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         localizedText()
         
         self.view.addSubview(homeContainerView)
         homeContainerView.snp.makeConstraints { maker in
-             maker.top.equalTo(view.safeAreaLayoutGuide)
-                       maker.leading.equalTo(view.safeAreaLayoutGuide)
-                       maker.trailing.equalTo(view.safeAreaLayoutGuide)
-                       maker.bottom.equalTo(view.safeAreaLayoutGuide)
+            maker.top.equalTo(view.safeAreaLayoutGuide)
+            maker.leading.equalTo(view.safeAreaLayoutGuide)
+            maker.trailing.equalTo(view.safeAreaLayoutGuide)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
     private func addChildViewController() {
         
-        #if TEST_VERSION
+#if TEST_VERSION
                 let rootURL = URL(string: "http://localhost:8080/pikaPika")!
-        #elseif SIT_VERSION
+        
+#elseif SIT_VERSION
                 let rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
         
-        #elseif PRODUCTION_VERSION
+#elseif PRODUCTION_VERSION
                 let rootURL = URL(string: "https://eip.kkday.net/Plone/zh-tw")!
-        #else
         
+#else
         
-        #endif
+#endif
         
         let viewModel = GeneralRootWithLanguageViewModel(source: rootURL)
-
         let childViewController = GeneralRootWithLanguageViewController(viewModel: viewModel)
-
-        addChild(childViewController)
-        childViewController.view.frame = homeContainerView.bounds
-        homeContainerView.addSubview(childViewController.view)
-        childViewController.didMove(toParent: self)
+        
+        let navigationController = GeneralRootWithLanguageNavigationController()
+        navigationController.viewControllers = [childViewController]
+        navigationController.navigationBar.isHidden = true
+        
+        addChild(navigationController)
+        navigationController.view.frame = homeContainerView.bounds
+        homeContainerView.addSubview(navigationController.view)
+        navigationController.didMove(toParent: self)
         
     }
     
     // 🧾 localization
     private func localizedText() {
-
+        
     }
     
     // 🎬 set action

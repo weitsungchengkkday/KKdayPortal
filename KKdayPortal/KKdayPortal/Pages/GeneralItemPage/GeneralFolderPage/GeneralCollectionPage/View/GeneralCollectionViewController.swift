@@ -24,8 +24,16 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         return imv
     }()
     
+    lazy var topTitleLabel: UILabel = {
+         let lbl = UILabel()
+         lbl.numberOfLines = 0
+         lbl.font = UIFont.systemFont(ofSize: 24)
+         return lbl
+     }()
+    
     lazy var tableView: UITableView = {
         let tbv = UITableView()
+        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralCollectionTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.CellName)
         return tbv
     }()
@@ -33,6 +41,7 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
     lazy var textView: UITextView = {
         let tv = UITextView()
         tv.isEditable = false
+        tv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return tv
     }()
     
@@ -59,13 +68,14 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
             .disposed(by: disposeBag)
         
         viewModel.getPortalData()
-        
+        setupNavBar()
     }
     
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(logoImageView)
+        view.addSubview(topTitleLabel)
         view.addSubview(tableView)
         view.addSubview(textView)
         
@@ -73,6 +83,12 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
         }
+        
+        topTitleLabel.snp.makeConstraints { maker in
+               maker.leading.equalTo(logoImageView.snp.trailing)
+               maker.trailing.equalToSuperview()
+               maker.centerY.equalTo(logoImageView.snp.centerY)
+           }
         
         tableView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
@@ -101,7 +117,7 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         
         viewModel.output.showTitle
             .drive(onNext: { [weak self] title in
-                self?.title = title
+                self?.topTitleLabel.text = title
             })
             .disposed(by: disposeBag)
         
@@ -123,6 +139,19 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
                     .disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
+    }
+    
+    // 📍 config NavBar
+    private func setupNavBar(lists: [GeneralList] = []) {
+
+        guard let nav = navigationController as? GeneralRootWithLanguageNavigationController else {
+            return
+        }
+        if !lists.isEmpty {
+            nav.indexContents = lists
+        }
+        
+        nav.setParentLeftBarButtonItem()
     }
 }
 

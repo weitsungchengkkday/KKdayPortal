@@ -29,7 +29,20 @@ final class ApplicationsEntryViewModel: RXViewModelType {
     private let generalItemsURLSubject = PublishSubject<[URL]>()
     private let isLoadingSubject = PublishSubject<Bool>()
     
-    var generalItemsURL: [URL] = [URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!]
+    var generalItemsURL: [URL] = {
+        
+#if SIT_VERSION
+        let urls = [ URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")! ]
+       
+#elseif PRODUCTION_VERSION
+        let urls = [ URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm")! ]
+        
+#else
+        
+#endif
+        
+        return urls
+    }()
     
     let disposeBag = DisposeBag()
     

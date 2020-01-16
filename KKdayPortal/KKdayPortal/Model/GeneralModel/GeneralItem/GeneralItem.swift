@@ -23,6 +23,42 @@ enum GeneralItemType {
     case link
 }
 
+extension GeneralItemType {
+    
+    var image: UIImage {
+    
+        let systemName: String
+
+        switch self {
+        case .root:
+            systemName = "house"
+        case .root_with_language:
+            systemName = "house.fill"
+        case .folder:
+            systemName = "folder.fill"
+        case .collection:
+            systemName = "tray.full.fill"
+        case .image:
+            systemName = "photo"
+        case .document:
+            systemName = "doc.fill"
+        case .news:
+            systemName = "antenna.radiowaves.left.and.right"
+        case .event:
+            systemName = "calendar"
+        case .file:
+            systemName = "paperclip"
+        case .link:
+            systemName = "link"
+        }
+        
+        guard let image = UIImage(systemName: systemName) else {
+            return #imageLiteral(resourceName: "icPicture")
+        }
+        return image
+    }
+}
+
 class GeneralItem {
     var type: GeneralItemType?
     var title: String?

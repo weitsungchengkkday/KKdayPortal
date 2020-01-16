@@ -11,27 +11,40 @@ import RxCocoa
 
 final class GeneralIndexSideBarViewModel: RXViewModelType  {
     
-    typealias PortalContent = GeneralItem
+    typealias PortalContentList = GeneralList
     
     var input: GeneralIndexSideBarViewModel.Input
     var output: GeneralIndexSideBarViewModel.Output
     
     struct Input {
-        let generalItems: AnyObserver<[PortalContent]>
+        let generalItems: AnyObserver<[ContentListSection]>
     }
     
     struct Output {
-        let showGeneralItems: Driver<[PortalContent]>
+        let showGeneralItems: Driver<[ContentListSection]>
     }
     
-    private let generalItemsSubject = PublishSubject<[PortalContent]>()
+    private let generalItemsSubject = PublishSubject<[ContentListSection]>()
     
-    var generalItem: PortalContent?
-    var contents: [PortalContent]
+    private(set) var contentListSections: [ContentListSection]
+    
     private let disposeBag = DisposeBag()
     
-    init(contents: [PortalContent]) {
-        self.contents = contents
+    init(contentList: [PortalContentList]) {
+        
+        self.contentListSections = contentList.compactMap({ generalList -> ContentListSection? in
+            //generalList
+            var items: [GeneralIndexSideBarTableViewCellViewModel] = []
+          
+            guard let generalItems = generalList.items else {
+                return nil
+            }
+            
+            for generaItem in generalItems { items.append(GeneralIndexSideBarTableViewCellViewModel(generalItem: generaItem))
+            }
+            
+            return ContentListSection(header: generalList.title ?? "", items: items, isOpen: false)
+        })
         
         self.input = Input(generalItems: generalItemsSubject.asObserver())
         
@@ -39,7 +52,13 @@ final class GeneralIndexSideBarViewModel: RXViewModelType  {
     }
     
     func loadPortalContent() {
-        generalItemsSubject.onNext(contents)
+        generalItemsSubject.onNext(contentListSections)
     }
     
+    
+    func switchSectionIsOpen(at section: Int) {
+        contentListSections[section].isOpen = !contentListSections[section].isOpen
+        generalItemsSubject.onNext(contentListSections)
+    }
 }
+

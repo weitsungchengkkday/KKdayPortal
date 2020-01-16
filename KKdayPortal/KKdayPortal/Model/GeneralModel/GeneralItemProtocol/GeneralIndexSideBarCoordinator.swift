@@ -1,49 +1,53 @@
 //
-//  GeneralItemCoordinator.swift
+//  GeneralIndexSideBarCoordinator.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2019/12/8.
-//  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
+//  Created by WEI-TSUNG CHENG on 2020/1/16.
+//  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol GeneralItemCoordinator where Self: UIViewController {
-    func goDetailPage(route: URL, type: GeneralItemType)
+protocol GeneralIndexSideBarCoordinator where Self: UIViewController {
+    func goDetailIndexPage(route: URL, type: GeneralItemType)
 }
 
-extension GeneralItemCoordinator {
-    func goDetailPage(route: URL, type: GeneralItemType) {
+extension GeneralIndexSideBarCoordinator {
+    func goDetailIndexPage(route: URL, type: GeneralItemType) {
         
         debugPrint("GoDetail: rout: \(route), type: \(type)")
+    
+        guard let firstVC = navigationController?.viewControllers.first else {
+            return
+        }
+        navigationController?.viewControllers = [firstVC]
         
         switch type {
         case .root, .root_with_language:
             let pushViewController = GeneralRootViewController(viewModel: GeneralRootViewModel(source: route))
-           
-             navigationController?.pushViewController(pushViewController, animated: false)
-       
+            navigationController?.pushViewController(pushViewController, animated: false)
+            
         case .folder:
             let pushViewController = GeneralFolderViewController(viewModel: GeneralFolderViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
-      
+            
         case .collection:
             let pushViewController = GeneralCollectionViewController(viewModel: GeneralCollectionViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
-      
+            
         case .image:
             let pushViewController = GeneralImageViewController(viewModel: GeneralImageViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
-     
+            
         case .document:
             let pushViewController = GeneralDocumentViewController(viewModel: GeneralDocumentViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
-      
+            
         case .news:
             let pushViewController = GeneralNewsViewController(viewModel: GeneralNewsViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
-       
+            
         case .event:
             let pushViewController = GeneralEventViewController(viewModel: GeneralEventViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
@@ -67,7 +71,7 @@ extension GeneralItemCoordinator {
                 
                 return
             }
-
+            
             // Others jump out from APP
             if UIApplication.shared.canOpenURL(route) {
                 UIApplication.shared.open(route, options: [:], completionHandler: nil)
