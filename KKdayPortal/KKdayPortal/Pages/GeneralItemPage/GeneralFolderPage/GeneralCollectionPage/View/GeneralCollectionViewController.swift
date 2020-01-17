@@ -156,7 +156,7 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
                     print(text.htmlStringTransferToNSAttributedString())
                     // https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_wl8rB6109Jt5YWKjKP_T8Z0lL2zUVwYTJmKOz_BvxvvJN9q8oJxNuD6_ai8Kn-uT0Lglj5M3beGI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false
                   // self?.textView.attributedText = text.htmlStringTransferToNSAttributedString()
-                    self?.textView.attributedText = ("<b><i>\(text)</i></b>").htmlStringTransferToNSAttributedString()
+                    self?.textView.attributedText = ("<html><body> \(text) <html><body> ").htmlStringTransferToNSAttributedString()
                 }
             })
             .disposed(by: disposeBag)

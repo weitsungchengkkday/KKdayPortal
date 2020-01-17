@@ -12,6 +12,12 @@ final class LoginViewController: UIViewController {
     
     // 🏞 UI element
     
+    lazy var imageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icTabHomeDafault")
+        return imv
+    }()
+    
     lazy var ploneRestfulTokenButton: UIButton = {
         let btn = UIButton()
            btn.setTitle("Get Plone Restful Token", for: .normal)
@@ -41,7 +47,14 @@ final class LoginViewController: UIViewController {
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.addSubview(imageView)
         view.addSubview(ploneRestfulTokenButton)
+        
+        imageView.snp.makeConstraints { maker in
+            maker.size.equalTo(300)
+            maker.top.equalTo(view.snp.topMargin)
+            maker.centerX.equalToSuperview()
+        }
         
         ploneRestfulTokenButton.snp.makeConstraints { maker in
             maker.centerX.centerY.equalToSuperview()
