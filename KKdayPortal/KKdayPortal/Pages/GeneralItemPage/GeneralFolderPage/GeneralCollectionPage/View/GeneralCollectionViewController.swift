@@ -25,11 +25,11 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
     }()
     
     lazy var topTitleLabel: UILabel = {
-         let lbl = UILabel()
-         lbl.numberOfLines = 0
-         lbl.font = UIFont.systemFont(ofSize: 24)
-         return lbl
-     }()
+        let lbl = UILabel()
+        lbl.numberOfLines = 0
+        lbl.font = UIFont.systemFont(ofSize: 24)
+        return lbl
+    }()
     
     lazy var tableView: UITableView = {
         let tbv = UITableView()
@@ -85,16 +85,16 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         }
         
         topTitleLabel.snp.makeConstraints { maker in
-               maker.leading.equalTo(logoImageView.snp.trailing)
-               maker.trailing.equalToSuperview()
-               maker.centerY.equalTo(logoImageView.snp.centerY)
-           }
+            maker.leading.equalTo(logoImageView.snp.trailing)
+            maker.trailing.equalToSuperview()
+            maker.centerY.equalTo(logoImageView.snp.centerY)
+        }
         
         tableView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
-            maker.height.equalTo(self.view.frame.width * 1)
+            maker.height.equalTo(50)
         }
         
         textView.snp.makeConstraints { maker in
@@ -103,8 +103,6 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        
-        
     }
     
     // 🎬 set action
@@ -122,8 +120,13 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
             .disposed(by: disposeBag)
         
         viewModel.output.showGeneralItems
+            .do(onNext: { [weak self] generalItems in
+                if generalItems.isEmpty {
+                    self?.tableView.isHidden = true
+                }
+            })
             .drive(tableView.rx.items(cellIdentifier: GeneralCollectionViewController.CellName, cellType: GeneralCollectionTableViewCell.self)) { (row, generalItem, cell) in
-    
+                
                 cell.titleLabel.text = generalItem.title
                 cell.descriptionLabel.text = generalItem.description
                 
@@ -132,18 +135,37 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
                         
                         guard let type = generalItem.type,
                             let source = generalItem.source else {
-                            return
+                                return
                         }
                         self.goDetailPage(route: source, type: type)
                     })
                     .disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
+        
+        viewModel.output.showGeneralText
+            .do(onNext: { [weak self] textObject in
+                if textObject.contentType == nil {
+                    self?.textView.isHidden = true
+                }
+            })
+            .drive(onNext: { [weak self] textObject in
+                
+                if let text = textObject.text {
+                    print(text)
+                    print(text.htmlStringTransferToNSAttributedString())
+                    // https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_wl8rB6109Jt5YWKjKP_T8Z0lL2zUVwYTJmKOz_BvxvvJN9q8oJxNuD6_ai8Kn-uT0Lglj5M3beGI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false
+                  // self?.textView.attributedText = text.htmlStringTransferToNSAttributedString()
+                    self?.textView.attributedText = ("<b><i>\(text)</i></b>").htmlStringTransferToNSAttributedString()
+                }
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     // 📍 config NavBar
     private func setupNavBar(lists: [GeneralList] = []) {
-
+        
         guard let nav = navigationController as? GeneralRootWithLanguageNavigationController else {
             return
         }

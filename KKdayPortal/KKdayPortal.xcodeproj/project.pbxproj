@@ -434,14 +434,35 @@
 		F45740D323CEED6100FB5EEC /* ContentListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D123CEED6100FB5EEC /* ContentListSection.swift */; };
 		F45740D423CEED6100FB5EEC /* ContentListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D123CEED6100FB5EEC /* ContentListSection.swift */; };
 		F45740D523CEED6100FB5EEC /* ContentListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D123CEED6100FB5EEC /* ContentListSection.swift */; };
-		F45740D823CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift */; };
-		F45740D923CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift */; };
-		F45740DA23CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift */; };
-		F45740DB23CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift */; };
+		F45740D823CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift */; };
+		F45740D923CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift */; };
+		F45740DA23CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift */; };
+		F45740DB23CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift */; };
 		F45740DF23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
 		F45740E023D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
 		F45740E123D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
 		F45740E223D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
+		F45740E423D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E323D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift */; };
+		F45740E623D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift */; };
+		F45740E723D13A2B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift */; };
+		F45740E823D13A2B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift */; };
+		F45740E923D13A2C00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift */; };
+		F45740EA23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift */; };
+		F45740EB23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift */; };
+		F45740EC23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift */; };
+		F45740ED23D13A3400FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E323D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift */; };
+		F45740EE23D13A3500FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E323D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift */; };
+		F45740EF23D13A3500FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E323D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift */; };
+		F45740F023D13A3F00FB5EEC /* GeneralIndexSideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5323C6F15300F79BA8 /* GeneralIndexSideBarViewController.swift */; };
+		F45740F123D13A3F00FB5EEC /* GeneralIndexSideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5323C6F15300F79BA8 /* GeneralIndexSideBarViewController.swift */; };
+		F45740F223D13A4000FB5EEC /* GeneralIndexSideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5323C6F15300F79BA8 /* GeneralIndexSideBarViewController.swift */; };
+		F45740F323D13A4300FB5EEC /* GeneralIndexSideBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5523C6F17600F79BA8 /* GeneralIndexSideBarViewModel.swift */; };
+		F45740F423D13A4300FB5EEC /* GeneralIndexSideBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5523C6F17600F79BA8 /* GeneralIndexSideBarViewModel.swift */; };
+		F45740F523D13A4400FB5EEC /* GeneralIndexSideBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5523C6F17600F79BA8 /* GeneralIndexSideBarViewModel.swift */; };
+		F45740F623D13A4A00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740CE23CD6C1300FB5EEC /* GeneralRootWithLanguageNavigationController.swift */; };
+		F45740F723D13A4B00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740CE23CD6C1300FB5EEC /* GeneralRootWithLanguageNavigationController.swift */; };
+		F45740F823D13A4B00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740CE23CD6C1300FB5EEC /* GeneralRootWithLanguageNavigationController.swift */; };
+		F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */; };
 		F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
 		F45C2C4423BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
 		F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
@@ -450,7 +471,7 @@
 		F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
 		F45C2C4923BCD8C200A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
 		F45C2C4A23BCD8C300A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
-		F4603C5023C6F06C00F79BA8 /* GeneralIndexSideBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarTableViewCell.swift */; };
+		F4603C5023C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift */; };
 		F4603C5423C6F15300F79BA8 /* GeneralIndexSideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5323C6F15300F79BA8 /* GeneralIndexSideBarViewController.swift */; };
 		F4603C5623C6F17600F79BA8 /* GeneralIndexSideBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C5523C6F17600F79BA8 /* GeneralIndexSideBarViewModel.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
@@ -615,11 +636,14 @@
 		F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationTypeExtension.swift; sourceTree = "<group>"; };
 		F45740CE23CD6C1300FB5EEC /* GeneralRootWithLanguageNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageNavigationController.swift; sourceTree = "<group>"; };
 		F45740D123CEED6100FB5EEC /* ContentListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListSection.swift; sourceTree = "<group>"; };
-		F45740D723CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		F45740D723CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarNormalTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarCoordinator.swift; sourceTree = "<group>"; };
+		F45740E323D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		F45740E523D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarHeaderTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListSectionItem.swift; sourceTree = "<group>"; };
 		F45C2C4023BCD60C00A1E769 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F45C2C4323BCD8AD00A1E769 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
-		F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarTableViewCell.swift; sourceTree = "<group>"; };
+		F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarNormalTableViewCell.swift; sourceTree = "<group>"; };
 		F4603C5323C6F15300F79BA8 /* GeneralIndexSideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarViewController.swift; sourceTree = "<group>"; };
 		F4603C5523C6F17600F79BA8 /* GeneralIndexSideBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarViewModel.swift; sourceTree = "<group>"; };
 		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1490,6 +1514,7 @@
 		F45740D023CEED3C00FB5EEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */,
 				F45740D123CEED6100FB5EEC /* ContentListSection.swift */,
 			);
 			path = Model;
@@ -1498,7 +1523,8 @@
 		F45740D623CEEFA600FB5EEC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F45740D723CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift */,
+				F45740E523D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift */,
+				F45740D723CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1558,7 +1584,8 @@
 		F4603C5223C6F07900F79BA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarTableViewCell.swift */,
+				F45740E323D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift */,
+				F4603C4F23C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2171,10 +2198,12 @@
 				F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */,
 				F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */,
 				F44E8C7523B88AA30032C6BE /* RXViewModelType.swift in Sources */,
+				F45740EA23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F44E8C7623B88AA30032C6BE /* FileManager.swift in Sources */,
 				F44A199923C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
+				F45740E723D13A2B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */,
 				F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
@@ -2189,6 +2218,8 @@
 				F44E8C8023B88AA30032C6BE /* MainViewController.swift in Sources */,
 				F44E8C8123B88AA30032C6BE /* SettingViewModel.swift in Sources */,
 				F44E8C8223B88AA30032C6BE /* SecureStoreQueryable.swift in Sources */,
+				F45740F023D13A3F00FB5EEC /* GeneralIndexSideBarViewController.swift in Sources */,
+				F45740F323D13A4300FB5EEC /* GeneralIndexSideBarViewModel.swift in Sources */,
 				F44E8C8323B88AA30032C6BE /* PloneNews.swift in Sources */,
 				F44E8C8423B88AA30032C6BE /* AppDelegate.swift in Sources */,
 				F44E8C8523B88AA30032C6BE /* SceneDelegate.swift in Sources */,
@@ -2231,6 +2262,7 @@
 				F44E8CA823B88AA30032C6BE /* Language.swift in Sources */,
 				F44E8CA923B88AA30032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */,
+				F45740F623D13A4A00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
 				F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */,
 				F44E8CAC23B88AA30032C6BE /* LoginViewController.swift in Sources */,
 				F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */,
@@ -2270,12 +2302,13 @@
 				F44E8CCD23B88AA30032C6BE /* GeneralLinkViewModel.swift in Sources */,
 				F44E8CCE23B88AA30032C6BE /* CrashlyticsEventRecord.swift in Sources */,
 				F44E8CCF23B88AA30032C6BE /* PloneTextObject.swift in Sources */,
-				F45740D923CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */,
+				F45740D923CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */,
 				F44E8CD023B88AA30032C6BE /* PortalUserAPITarget.swift in Sources */,
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
 				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
 				F44E8CD423B88AA30032C6BE /* ApplicationsContentViewController.swift in Sources */,
+				F45740ED23D13A3400FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */,
 				F44E8CD523B88AA30032C6BE /* PloneFolder.swift in Sources */,
 				F44E8CD623B88AA30032C6BE /* GeneralEventViewModel.swift in Sources */,
 			);
@@ -2289,10 +2322,12 @@
 				F44E8CE923B88AFA0032C6BE /* GeneralUser.swift in Sources */,
 				F44E8CEA23B88AFA0032C6BE /* DateFormatterExtension.swift in Sources */,
 				F44E8CEB23B88AFA0032C6BE /* RXViewModelType.swift in Sources */,
+				F45740EB23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F44E8CEC23B88AFA0032C6BE /* FileManager.swift in Sources */,
 				F44A199A23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4623BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */,
+				F45740E823D13A2B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */,
 				F453953223BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8CEE23B88AFA0032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8CEF23B88AFA0032C6BE /* PloneFileObject.swift in Sources */,
@@ -2307,6 +2342,8 @@
 				F44E8CF623B88AFA0032C6BE /* MainViewController.swift in Sources */,
 				F44E8CF723B88AFA0032C6BE /* SettingViewModel.swift in Sources */,
 				F44E8CF823B88AFA0032C6BE /* SecureStoreQueryable.swift in Sources */,
+				F45740F123D13A3F00FB5EEC /* GeneralIndexSideBarViewController.swift in Sources */,
+				F45740F423D13A4300FB5EEC /* GeneralIndexSideBarViewModel.swift in Sources */,
 				F44E8CF923B88AFA0032C6BE /* PloneNews.swift in Sources */,
 				F44E8CFA23B88AFA0032C6BE /* AppDelegate.swift in Sources */,
 				F44E8CFB23B88AFA0032C6BE /* SceneDelegate.swift in Sources */,
@@ -2349,6 +2386,7 @@
 				F44E8D1E23B88AFA0032C6BE /* Language.swift in Sources */,
 				F44E8D1F23B88AFA0032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8D2023B88AFA0032C6BE /* ItemConverter.swift in Sources */,
+				F45740F723D13A4B00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
 				F44E8D2123B88AFA0032C6BE /* WKNavigationTypeExtension.swift in Sources */,
 				F44E8D2223B88AFA0032C6BE /* LoginViewController.swift in Sources */,
 				F44E8D2323B88AFA0032C6BE /* Localizable.swift in Sources */,
@@ -2388,12 +2426,13 @@
 				F44E8D4323B88AFA0032C6BE /* GeneralLinkViewModel.swift in Sources */,
 				F44E8D4423B88AFA0032C6BE /* CrashlyticsEventRecord.swift in Sources */,
 				F44E8D4523B88AFA0032C6BE /* PloneTextObject.swift in Sources */,
-				F45740DA23CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */,
+				F45740DA23CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */,
 				F44E8D4623B88AFA0032C6BE /* PortalUserAPITarget.swift in Sources */,
 				F44E8D4723B88AFA0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8D4823B88AFA0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8D4923B88AFA0032C6BE /* GeneralFolderViewModel.swift in Sources */,
 				F44E8D4A23B88AFA0032C6BE /* ApplicationsContentViewController.swift in Sources */,
+				F45740EE23D13A3500FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */,
 				F44E8D4B23B88AFA0032C6BE /* PloneFolder.swift in Sources */,
 				F44E8D4C23B88AFA0032C6BE /* GeneralEventViewModel.swift in Sources */,
 			);
@@ -2407,10 +2446,12 @@
 				F44E8D5F23B88AFC0032C6BE /* GeneralUser.swift in Sources */,
 				F44E8D6023B88AFC0032C6BE /* DateFormatterExtension.swift in Sources */,
 				F44E8D6123B88AFC0032C6BE /* RXViewModelType.swift in Sources */,
+				F45740EC23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F44E8D6223B88AFC0032C6BE /* FileManager.swift in Sources */,
 				F44A199B23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4723BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */,
+				F45740E923D13A2C00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */,
 				F453953323BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F44E8D6423B88AFC0032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8D6523B88AFC0032C6BE /* PloneFileObject.swift in Sources */,
@@ -2425,6 +2466,8 @@
 				F44E8D6C23B88AFC0032C6BE /* MainViewController.swift in Sources */,
 				F44E8D6D23B88AFC0032C6BE /* SettingViewModel.swift in Sources */,
 				F44E8D6E23B88AFC0032C6BE /* SecureStoreQueryable.swift in Sources */,
+				F45740F223D13A4000FB5EEC /* GeneralIndexSideBarViewController.swift in Sources */,
+				F45740F523D13A4400FB5EEC /* GeneralIndexSideBarViewModel.swift in Sources */,
 				F44E8D6F23B88AFC0032C6BE /* PloneNews.swift in Sources */,
 				F44E8D7023B88AFC0032C6BE /* AppDelegate.swift in Sources */,
 				F44E8D7123B88AFC0032C6BE /* SceneDelegate.swift in Sources */,
@@ -2467,6 +2510,7 @@
 				F44E8D9423B88AFC0032C6BE /* Language.swift in Sources */,
 				F44E8D9523B88AFC0032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8D9623B88AFC0032C6BE /* ItemConverter.swift in Sources */,
+				F45740F823D13A4B00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
 				F44E8D9723B88AFC0032C6BE /* WKNavigationTypeExtension.swift in Sources */,
 				F44E8D9823B88AFC0032C6BE /* LoginViewController.swift in Sources */,
 				F44E8D9923B88AFC0032C6BE /* Localizable.swift in Sources */,
@@ -2506,12 +2550,13 @@
 				F44E8DB923B88AFC0032C6BE /* GeneralLinkViewModel.swift in Sources */,
 				F44E8DBA23B88AFC0032C6BE /* CrashlyticsEventRecord.swift in Sources */,
 				F44E8DBB23B88AFC0032C6BE /* PloneTextObject.swift in Sources */,
-				F45740DB23CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */,
+				F45740DB23CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */,
 				F44E8DBC23B88AFC0032C6BE /* PortalUserAPITarget.swift in Sources */,
 				F44E8DBD23B88AFC0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8DBE23B88AFC0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8DBF23B88AFC0032C6BE /* GeneralFolderViewModel.swift in Sources */,
 				F44E8DC023B88AFC0032C6BE /* ApplicationsContentViewController.swift in Sources */,
+				F45740EF23D13A3500FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */,
 				F44E8DC123B88AFC0032C6BE /* PloneFolder.swift in Sources */,
 				F44E8DC223B88AFC0032C6BE /* GeneralEventViewModel.swift in Sources */,
 			);
@@ -2551,19 +2596,20 @@
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
 				F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
+				F45740E623D13A2400FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
 				F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */,
 				F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */,
 				F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */,
-				F45740D823CEF05400FB5EEC /* GeneralIndexSideBarTableViewCellViewModel.swift in Sources */,
+				F45740D823CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */,
 				F4FC41A7238EB41700AC7315 /* PloneCollection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
 				F45448A623A9D7B8001B8D31 /* GoogleUser.swift in Sources */,
 				F4544865239FA9D5001B8D31 /* AccountOperatingError.swift in Sources */,
 				F454487C23A337D3001B8D31 /* Region.swift in Sources */,
 				F454488423A50A1D001B8D31 /* LanguageSection.swift in Sources */,
-				F4603C5023C6F06C00F79BA8 /* GeneralIndexSideBarTableViewCell.swift in Sources */,
+				F4603C5023C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F4B3F3112386EE1300657CDF /* CrashlyticsEvent.swift in Sources */,
 				F4FC419F238CCB6500AC7315 /* LoginViewModel.swift in Sources */,
 				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
@@ -2585,6 +2631,7 @@
 				F4FC419D238CCA7D00AC7315 /* PloneUser.swift in Sources */,
 				F44A199323C56CB300B35976 /* GeneralRootWithLanguageViewModel.swift in Sources */,
 				F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */,
+				F45740E423D0C52B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCell.swift in Sources */,
 				F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
 				F4FC41A2238D358A00AC7315 /* PortalItemAPITarget.swift in Sources */,
@@ -2637,6 +2684,7 @@
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
+				F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */,
 				F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */,
 				F4B3F3342387CD1F00657CDF /* PortalUserAPITarget.swift in Sources */,
 				F454487623A32F92001B8D31 /* LanguageManager.swift in Sources */,

@@ -12,22 +12,25 @@ import RxCocoa
 final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
     
     typealias PortalContent = GeneralItem
- 
+    
     var input: GeneralCollectionViewModel.Input
     var output: GeneralCollectionViewModel.Output
     
     struct Input {
         let generalItems: AnyObserver<[PortalContent]>
+        let generalText: AnyObserver<GeneralTextObject>
         let title: AnyObserver<String>
     }
     
     struct Output {
         let showGeneralItems: Driver<[PortalContent]>
+        let showGeneralText: Driver<GeneralTextObject>
         let showTitle: Driver<String>
     }
     
     private let generalItemsSubject = PublishSubject<[PortalContent]>()
-       private let titleSubject = PublishSubject<String>()
+    private let generalTextSubject = PublishSubject<GeneralTextObject>()
+    private let titleSubject = PublishSubject<String>()
     
     var generalItem: PortalContent?
     var source: URL
@@ -35,16 +38,18 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
     
     init(source: URL) {
         self.source = source
-          
-          self.input = Input(generalItems: generalItemsSubject.asObserver(),
-                             title: titleSubject.asObserver()
-          )
-          
-          self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
-                               showTitle: titleSubject.asDriver(onErrorJustReturn: "Collection")
-          )
-      }
-   
+        
+        self.input = Input(generalItems: generalItemsSubject.asObserver(),
+                           generalText: generalTextSubject.asObserver(),
+                           title: titleSubject.asObserver()
+        )
+        
+        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
+                             showGeneralText: generalTextSubject.asDriver(onErrorJustReturn: GeneralTextObject(contentType: nil, name: "", text: nil)),
+                             showTitle: titleSubject.asDriver(onErrorJustReturn: "Collection")
+        )
+    }
+    
     func getPortalData() {
         
         LoadingManager.shared.setState(state: .normal(value: true))
@@ -63,6 +68,11 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
                 if let items = generalItem.items {
                     self?.generalItemsSubject.onNext(items)
                 }
+                
+                if let textOnbject = self?.generalItem?.textObject {
+                    self?.generalTextSubject.onNext(textOnbject)
+                }
+                
                 if let title = generalItem.title {
                     self?.titleSubject.onNext(title)
                 }

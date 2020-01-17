@@ -11,12 +11,11 @@ import RxDataSources
 struct ContentListSection {
     let header: String
     var items: [Item]
-    var isOpen: Bool
 }
 
-extension ContentListSection: AnimatableSectionModelType  {
+extension ContentListSection: SectionModelType {
     
-    typealias Item = GeneralIndexSideBarTableViewCellViewModel
+    typealias Item = ContentListSectionItem
     var identity: String {
         return header
     }

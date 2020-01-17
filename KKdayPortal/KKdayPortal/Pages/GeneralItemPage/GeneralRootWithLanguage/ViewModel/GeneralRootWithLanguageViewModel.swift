@@ -75,6 +75,7 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                 if let items = generalItem.items {
                     // Document
                     let documentItem = items.filter ({ $0.type == .document })
+                    
                     self?.generalItemDocument = documentItem.first
                     
                     // Folders
@@ -113,7 +114,7 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
     }
     
     private func getPortalDocumentData() {
-        
+
         guard let source = generalItemDocument?.source else {
             return
         }
@@ -126,12 +127,12 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                 
                 LoadingManager.shared.setState(state: .normal(value: false))
                 
-                if self?.generalItemDocument?.source == generalItem.source {
+                if let generalItemSource = generalItem.source,
+                    let generalItemDocumentSource = self?.generalItemDocument?.source,
+                    generalItemSource == generalItemDocumentSource {
+                    
                     self?.generalItemDocument = generalItem
                     self?.generalItemsOfDocumentSubject.onNext(generalItem)
-                    print("🌝")
-                } else {
-                    print("🌙")
                 }
                 
             }) { error in
@@ -164,18 +165,16 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                 
                 let generalList =  generalItems.compactMap { generalItem -> GeneralList? in
                     if let generalList = generalItem as? GeneralList {
-                        print("🍎")
                         return generalList
                     } else {
-                        print("🍏")
                         return nil
                     }
                 }
                 
-                print(generalList)
+                self?.generalItemFolders = generalList
                 self?.generalItemsOfFoldersSubject.onNext(generalList)
-                LoadingManager.shared.setState(state: .normal(value: false))
                 
+                LoadingManager.shared.setState(state: .normal(value: false))
             })
             .disposed(by: disposeBag)
     }

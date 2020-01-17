@@ -14,15 +14,20 @@ import RxDataSources
 
 final class GeneralIndexSideBarViewController: UIViewController {
     
-    private static var CellName: String {
-        return "IndexSideBarCell"
+    private static var NormalCellName: String {
+        return "IndexSideBarNormalCell"
+    }
+    
+    private static var HeaderCellName: String {
+        return "IndexSideBarHeaderCell"
     }
     
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        tbv.register(GeneralIndexSideBarTableViewCell.self, forCellReuseIdentifier: GeneralIndexSideBarViewController.CellName)
+        tbv.register(GeneralIndexSideBarHeaderTableViewCell.self, forCellReuseIdentifier: GeneralIndexSideBarViewController.HeaderCellName)
+        tbv.register(GeneralIndexSideBarNormalTableViewCell.self, forCellReuseIdentifier: GeneralIndexSideBarViewController.NormalCellName)
         return tbv
     }()
     
@@ -30,13 +35,27 @@ final class GeneralIndexSideBarViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private lazy var dataSource = {
-        return RxTableViewSectionedReloadDataSource<ContentListSection> (configureCell: { dataSource, tableView, indexPath, item in
+        return RxTableViewSectionedReloadDataSource<ContentListSection> (configureCell: { dataSource, tableView, indexPath, sectionItem in
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralIndexSideBarViewController.CellName, for: indexPath) as! GeneralIndexSideBarTableViewCell
-            cell.titleLabel.text = item.generalItem.title
-            cell.typeImageView.image = item.generalItem.type?.image
+            switch sectionItem {
+                
+            case .header(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralIndexSideBarViewController.HeaderCellName, for: indexPath) as! GeneralIndexSideBarHeaderTableViewCell
+                cell.titleLabel.text = cellViewModel.generalItem.title
+                
+                let isOpen: Bool = cellViewModel.isOpen
+                cell.pullDownImageView.image = isOpen ? UIImage(systemName: "arrowtriangle.up.fill") : UIImage(systemName: "arrowtriangle.down.fill")
+                cell.contentView.backgroundColor = isOpen ? #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                return cell
+                
+            case .normal(let viewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralIndexSideBarViewController.NormalCellName, for: indexPath) as! GeneralIndexSideBarNormalTableViewCell
+                cell.titleLabel.text = viewModel.generalItem.title
+                cell.typeImageView.image = viewModel.generalItem.type?.image
+                
+                return cell
+            }
             
-            return cell
         })
         
     }()
@@ -55,11 +74,9 @@ final class GeneralIndexSideBarViewController: UIViewController {
         
         setupUI()
         bindViewModel()
-        
         tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
-        
         viewModel.loadPortalContent()
     }
     
@@ -92,8 +109,10 @@ final class GeneralIndexSideBarViewController: UIViewController {
                 for contentListSection in contentListSections {
                     var section = contentListSection
                     
-                    if section.isOpen == false {
-                        section.items = []
+                    if case let .header(cellViewModel: cellViewModel) = section.items.first {
+                        if cellViewModel.isOpen == false {
+                            section.items = [.header(cellViewModel: cellViewModel)]
+                        }
                         sections.append(section)
                     } else {
                         sections.append(section)
@@ -105,56 +124,50 @@ final class GeneralIndexSideBarViewController: UIViewController {
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(GeneralIndexSideBarTableViewCellViewModel.self).subscribe(onNext: { [weak self] cellViewModel in
-            
-            guard let type = cellViewModel.generalItem.type,
-                let source = cellViewModel.generalItem.source else {
-                    return
-            }
-            
-            guard let tabVC = self?.presentingViewController as? UITabBarController,
-                let rootNav = tabVC.selectedViewController as? UINavigationController else {
-                    return
-            }
-            
-            guard let homeVC = rootNav.viewControllers[0] as? HomeViewController,
-                let nav = homeVC.children.first as? GeneralRootWithLanguageNavigationController,
-                let vc = nav.viewControllers.first as? GeneralRootWithLanguageViewController else {
-                    return
-            }
-            
-            vc.goDetailIndexPage(route: source, type: type)
-            self?.dismiss(animated: true, completion: nil)
-            
-        })
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                if indexPath.row == 0 {
+                    self?.viewModel.switchSectionIsOpen(at: indexPath.section)
+                }
+            })
             .disposed(by: disposeBag)
         
+        tableView.rx.modelSelected(ContentListSectionItem.self)
+            .subscribe(onNext: { [weak self] sectionItem in
+                
+                switch sectionItem {
+                case .header:
+                    break
+                case .normal(cellViewModel: let cellViewModel):
+                    
+                    guard let type = cellViewModel.generalItem.type,
+                        let source = cellViewModel.generalItem.source else {
+                            return
+                    }
+                    
+                    guard let tabVC = self?.presentingViewController as? UITabBarController,
+                        let rootNav = tabVC.selectedViewController as? UINavigationController else {
+                            return
+                    }
+                    
+                    guard let homeVC = rootNav.viewControllers[0] as? HomeViewController,
+                        let nav = homeVC.children.first as? GeneralRootWithLanguageNavigationController,
+                        let vc = nav.viewControllers.first as? GeneralRootWithLanguageViewController else {
+                            return
+                    }
+                    
+                    vc.goDetailIndexPage(route: source, type: type)
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 extension GeneralIndexSideBarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let headerTitle = viewModel.contentListSections[section].header
-        
-        let btn = UIButton()
-        btn.tag = section
-        btn.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-        btn.setTitle(headerTitle, for: .normal)
-        btn.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        btn.addTarget(self, action: #selector(hideSectionRows), for: .touchUpInside)
-        
-        return btn
-    }
-    
-    @objc func hideSectionRows(_ btn: UIButton) {
-        let section = btn.tag
-        viewModel.switchSectionIsOpen(at: section)
+        return 40
     }
 }
 

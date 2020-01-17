@@ -33,21 +33,25 @@ final class GeneralIndexSideBarViewModel: RXViewModelType  {
     init(contentList: [PortalContentList]) {
         
         self.contentListSections = contentList.compactMap({ generalList -> ContentListSection? in
+            
             //generalList
-            var items: [GeneralIndexSideBarTableViewCellViewModel] = []
-          
             guard let generalItems = generalList.items else {
                 return nil
             }
+    
+            let headerSectionItem: ContentListSectionItem = .header(cellViewModel: GeneralIndexSideBarHeaderTableViewCellViewModel(generalItem: generalList, isOpen: false))
             
-            for generaItem in generalItems { items.append(GeneralIndexSideBarTableViewCellViewModel(generalItem: generaItem))
+            var normalSectionItems: [ContentListSectionItem] = []
+            
+            for generaItem in generalItems {
+                normalSectionItems.append(.normal(cellViewModel: GeneralIndexSideBarNormalTableViewCellViewModel(generalItem: generaItem)))
             }
             
-            return ContentListSection(header: generalList.title ?? "", items: items, isOpen: false)
+         return ContentListSection(header: generalList.title ?? "", items: [headerSectionItem] + normalSectionItems)
+            
         })
         
         self.input = Input(generalItems: generalItemsSubject.asObserver())
-        
         self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []))
     }
     
@@ -57,7 +61,12 @@ final class GeneralIndexSideBarViewModel: RXViewModelType  {
     
     
     func switchSectionIsOpen(at section: Int) {
-        contentListSections[section].isOpen = !contentListSections[section].isOpen
+        
+        if case let .header(cellViewModel: cellViewModel) = contentListSections[section].items.first {
+            let isOpen: Bool = cellViewModel.isOpen
+            cellViewModel.isOpen = !isOpen
+        }
+        
         generalItemsSubject.onNext(contentListSections)
     }
 }
