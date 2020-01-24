@@ -37,6 +37,7 @@ final class LanguageSettingTableViewCell: UITableViewCell {
     
     lazy var selectCellButton: UIButton = {
         let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "icCircleNonchecked"), for: .normal)
         return btn
     }()
     
@@ -57,31 +58,31 @@ final class LanguageSettingTableViewCell: UITableViewCell {
          self.topView.addSubview(selectCellButton)
          self.containerView.addSubview(descriptionLabel)
          
-         containerView.snp.makeConstraints { make in
-             make.width.equalToSuperview()
-             make.edges.equalToSuperview()
+         containerView.snp.makeConstraints { maker in
+             maker.width.equalToSuperview()
+             maker.edges.equalToSuperview()
          }
          
-         topView.snp.makeConstraints { make in
-             make.height.equalTo(36)
-             make.top.left.right.equalToSuperview()
+         topView.snp.makeConstraints { maker in
+             maker.height.equalTo(36)
+             maker.top.left.right.equalToSuperview()
          }
          
-         titleLabel.snp.makeConstraints { make in
-             make.centerY.equalToSuperview()
-             make.left.equalToSuperview().offset(15)
+         titleLabel.snp.makeConstraints { maker in
+             maker.centerY.equalToSuperview()
+             maker.left.equalToSuperview().offset(15)
          }
          
-         selectCellButton.snp.makeConstraints { make in
-             make.centerY.equalToSuperview()
-             make.right.equalTo(self.containerView).offset(-17.5)
+         selectCellButton.snp.makeConstraints { maker in
+             maker.centerY.equalToSuperview()
+             maker.right.equalTo(self.containerView).offset(-17.5)
          }
          
-         descriptionLabel.snp.makeConstraints { make in
-             make.top.equalTo(self.topView.snp.bottom).offset(10)
-             make.left.equalToSuperview().offset(15)
-             make.right.equalToSuperview().offset(-15)
-             make.bottom.equalToSuperview().offset(-20)
+         descriptionLabel.snp.makeConstraints { maker in
+             maker.top.equalTo(self.topView.snp.bottom).offset(10)
+             maker.left.equalToSuperview().offset(15)
+             maker.right.equalToSuperview().offset(-15)
+             maker.bottom.equalToSuperview().offset(-20)
          }
      }
     
@@ -98,7 +99,7 @@ final class LanguageSettingTableViewCell: UITableViewCell {
         
         selectCellButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
-                
+        
                 self?.selectCellButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
                 Language.isUserSelectedLanguage = true
                 LanguageManager.shared.currentLanguage = cellViewModel.selectedLanguage
@@ -106,7 +107,7 @@ final class LanguageSettingTableViewCell: UITableViewCell {
             .disposed(by: disposeBag)
         
         selectCellButton.rx.tap
-            .map{ cellViewModel.isSelected }
+            .map { cellViewModel.isSelected }
             .bind(to: selectButtonClicked)
             .disposed(by: disposeBag)
     }

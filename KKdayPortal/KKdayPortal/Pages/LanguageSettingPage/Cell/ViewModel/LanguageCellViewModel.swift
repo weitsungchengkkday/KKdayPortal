@@ -25,7 +25,7 @@ extension LanguageSettingTableViewCellViewModel: IdentifiableType, Equatable {
     
     typealias Identity = String
     
-    var identity: String {
+    var identity: Identity {
         return selectedLanguage.identity
     }
     

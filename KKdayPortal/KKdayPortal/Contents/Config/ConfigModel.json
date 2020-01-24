@@ -1,0 +1,10 @@
+{
+    "host": "",
+    "token": "",
+   
+    "sitServer": "https://sit.eip.kkday.net",
+    "productionServer": "https://eip.kkday.net",
+    
+    "sitToken": "",
+    "productionToken": ""
+}

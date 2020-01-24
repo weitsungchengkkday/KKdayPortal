@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 #endif
     
+    ConfigManager.shared.setup()
     setupLanguage()
     
         return true

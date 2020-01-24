@@ -38,6 +38,14 @@ final class SettingViewController: UIViewController {
         return btn
     }()
     
+    lazy var testingButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Testing", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        btn.layer.cornerRadius = 4
+        return btn
+    }()
+    
     private let viewModel = SettingViewModel()
     
     override func viewDidLoad() {
@@ -53,6 +61,7 @@ final class SettingViewController: UIViewController {
         view.addSubview(languageButton)
         view.addSubview(renewTokenButton)
         view.addSubview(logoutButton)
+        view.addSubview(testingButton)
         
         languageButton.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(100)
@@ -67,18 +76,25 @@ final class SettingViewController: UIViewController {
         }
         
         logoutButton.snp.makeConstraints { maker in
+            maker.top.equalTo(renewTokenButton.snp.bottom).offset(50)
+            maker.centerX.equalToSuperview()
+            maker.width.equalTo(145)
+        }
+        
+        testingButton.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.width.equalTo(145)
             maker.bottom.equalTo(self.view.snp.bottomMargin).offset(-80)
         }
+        
     }
     
     // 🎬 set action
     private func setAction() {
         languageButton.addTarget(self, action: #selector(goLanguagePage), for: .touchUpInside)
         renewTokenButton.addTarget(self, action: #selector(renewToken), for: .touchUpInside)
-        
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        testingButton.addTarget(self, action: #selector(goTestingPage), for: .touchUpInside)
     }
     
     @objc private func goLanguagePage() {
@@ -92,6 +108,11 @@ final class SettingViewController: UIViewController {
     
     @objc private func logout() {
         viewModel.logout()
+    }
+    
+    @objc private func goTestingPage() {
+        let presentViewController = TestingViewController(viewModel: TestingViewModel())
+        present(presentViewController, animated: true, completion: nil)
     }
     
     // ⛓ bind viewModel

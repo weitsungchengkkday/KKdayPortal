@@ -27,6 +27,9 @@ final class StorageManager {
         
         // Google
         case googleUser
+        
+        // ServerType
+        case serverType
     }
 
     private init() {

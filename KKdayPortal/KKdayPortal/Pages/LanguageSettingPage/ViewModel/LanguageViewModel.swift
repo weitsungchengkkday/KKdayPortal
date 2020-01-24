@@ -26,8 +26,6 @@ final class LanguageViewModel: RXViewModelType {
     
     private let cellViewModelsSubject = PublishSubject<[LanguageSection]>()
     
-    private let cellButtonClicked = PublishSubject<Bool>()
-    
     init() {
         self.input = Input(cellViewModels: cellViewModelsSubject.asObserver())
         
