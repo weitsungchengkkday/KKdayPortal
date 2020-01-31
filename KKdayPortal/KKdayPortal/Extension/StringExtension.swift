@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import SwiftSoup
 
 extension String {
-
+    
     func localize(_ comment: String = "", defaultValue: String = "") -> String {
         return LanguageManager.shared.currentLanguage.localizeForLanguage(key: self, defaultValue: defaultValue, storyboardName: "", comment: comment)
     }
@@ -42,13 +43,48 @@ extension String {
         return dateFormater.date(from: self)
     }
     
-    func htmlStringTransferToNSAttributedString() -> NSAttributedString {
+    func htmlStringTransferToNSAttributedString() -> NSAttributedString? {
         let data = self.data(using: .utf8)
-              let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                  .documentType: NSAttributedString.DocumentType.html,
-                  .characterEncoding: String.Encoding.utf8.rawValue
-              ]
-              let attributedString = try! NSAttributedString(data: data!, options: options, documentAttributes: nil)
-        return attributedString
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+        
+        do {
+            guard let data = data else {
+                return nil
+            }
+            let attributedString = try NSAttributedString(data: data, options: options, documentAttributes: nil)
+            return attributedString
+            
+        } catch {
+            print("❌ Data to AttributedString \(error)")
+        }
+        
+        return nil
+    }
+    
+}
+
+// SwiftSoup
+// HTML DOM Tree parsing
+extension String {
+    
+    // switch htmlString which use self-closing tag to normal format
+    // because WKwebView & UITextView can't handle htmlString without closing tag (e.g. </a>, </iframe>)
+    func switchSelfClosingTagToNormalClosingTag() -> String? {
+        
+        do {
+            let doc: Document = try SwiftSoup.parseBodyFragment(self)
+            
+            do {
+                let htmlString = try doc.html()
+                return htmlString
+            }
+            
+        } catch {
+            print("❌ SwiftSoup, Parsing HTML String Error: \(error)")
+        }
+        return nil
     }
 }

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import WebKit
+import SwiftSoup
 
 final class GeneralRootWithLanguageViewController: UIViewController, GeneralIndexSideBarCoordinator {
     
@@ -37,27 +38,6 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
     
     private let viewModel: GeneralRootWithLanguageViewModel
     private let disposeBag = DisposeBag()
-    
-    static var welcomePageContent: String {
-        return """
-        <h2/>
-        &#13;\n
-        <h2>【簽核流程系統】</h2>
-        &#13;\n
-        <p>請點擊
-        <a href=\"https://sit.eip.kkday.net/Plone/@@bpm_redirect\">https://sit.eip.kkday.net/Plone/@@bpm_redirect</a>
-        <a href=\"https://sit.eip.kkday.net/Plone/@@bpm_redirect\"></a>
-        </p>
-        &#13;\n
-        <p>並給我們回饋，感謝您！</p>
-        &#13;\n
-        <p/>&#13;\n
-        <p/>&#13;\n
-        <div id=\"gtx-trans\">
-        &#13;\n
-        <div class=\"gtx-trans-icon\"/>&#13;\n</div>
-        """
-    }
     
     init(viewModel: GeneralRootWithLanguageViewModel) {
         self.viewModel = viewModel
@@ -121,7 +101,10 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
             .drive(onNext: { [weak self] content in
                 
                 self?.topTitleLabel.text = content.title
-                self?.textView.attributedText = GeneralRootWithLanguageViewController.welcomePageContent.htmlStringTransferToNSAttributedString()
+                if let fixHTMLString = content.textObject?.text?.switchSelfClosingTagToNormalClosingTag(), let attributedString = fixHTMLString.htmlStringTransferToNSAttributedString() {
+                    self?.textView.attributedText = attributedString
+                }
+                
             })
             .disposed(by: disposeBag)
         
