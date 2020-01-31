@@ -88,6 +88,7 @@ PODS:
     - RxSwift (>= 4.3.1)
   - RxSwift (4.5.0)
   - SnapKit (5.0.1)
+  - SwiftSoup (2.3.0)
 
 DEPENDENCIES:
   - Crashlytics (~> 3.14.0)
@@ -99,6 +100,7 @@ DEPENDENCIES:
   - RxGesture (~> 2.2.0)
   - RxKeyboard (~> 0.9.0)
   - SnapKit (~> 5.0.1)
+  - SwiftSoup (~> 2.3.0)
 
 SPEC REPOS:
   trunk:
@@ -125,6 +127,7 @@ SPEC REPOS:
     - RxKeyboard
     - RxSwift
     - SnapKit
+    - SwiftSoup
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -150,7 +153,8 @@ SPEC CHECKSUMS:
   RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
 
-PODFILE CHECKSUM: 0feffcefb5558f1e530ef67bcfbcbb3dbf447631
+PODFILE CHECKSUM: 41020cc1a20b959f20d1a1f9fe6ea121c405b9d0
 
 COCOAPODS: 1.8.4

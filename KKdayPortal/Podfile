@@ -19,6 +19,11 @@ def shared
   pod 'RxDataSources', '~> 3.1.0'
   pod 'RxKeyboard', '~> 0.9.0'
   pod 'RxGesture', '~> 2.2.0'
+
+  # HTML Parsing
+  pod 'SwiftSoup', '~> 2.3.0'
+  
+  
 end
 
 target 'KKdayPortal-Sit' do
