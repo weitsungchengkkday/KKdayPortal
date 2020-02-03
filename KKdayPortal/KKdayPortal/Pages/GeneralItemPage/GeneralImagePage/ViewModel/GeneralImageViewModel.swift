@@ -8,9 +8,10 @@
 
 import RxSwift
 import RxCocoa
+import Alamofire
 
 final class GeneralImageViewModel: RXViewModelType, PortalControllable {
- 
+    
     typealias PortalContent = GeneralItem
     
     var input: GeneralImageViewModel.Input
@@ -43,7 +44,7 @@ final class GeneralImageViewModel: RXViewModelType, PortalControllable {
     func getPortalData() {
         
         LoadingManager.shared.setState(state: .normal(value: true))
-
+        
         ModelLoader.PortalLoader()
             .getItem(source: source, type: .image)
             .subscribeOn(MainScheduler.instance)
@@ -72,11 +73,32 @@ final class GeneralImageViewModel: RXViewModelType, PortalControllable {
     }
     
     private func dowloadImage(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.imageViewSubject.onNext(image)
+        
+        guard let user: GeneralUser = StorageManager.shared.loadObject(for: .generalUser) else {
+            print("❌ No generalUser exist")
+            return
+        }
+        
+        let token = user.token
+        let header: [String : String] = [
+            "Authorization" : "Bearer" + " " + token
+        ]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseData { dataResponse
+            in
+            
+            DispatchQueue.global().async { [weak self] in
+                if let data = dataResponse.data {
+                    print(data.count)
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.imageViewSubject.onNext(image)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            let image = UIImage(systemName: "xmark.rectangle")!
+                            self?.imageViewSubject.onNext(image)
+                        }
                     }
                 }
             }

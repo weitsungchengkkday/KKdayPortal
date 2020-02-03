@@ -10,8 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import SwiftSoup
 
-class GeneralCollectionTableViewCell: UITableViewCell {
+final class GeneralCollectionTableViewCell: UITableViewCell {
 
     private(set) var disposeBag = DisposeBag()
         
