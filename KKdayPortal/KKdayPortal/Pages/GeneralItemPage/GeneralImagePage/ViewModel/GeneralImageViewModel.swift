@@ -89,7 +89,7 @@ final class GeneralImageViewModel: RXViewModelType, PortalControllable {
             
             DispatchQueue.global().async { [weak self] in
                 if let data = dataResponse.data {
-                    print(data.count)
+                
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
                             self?.imageViewSubject.onNext(image)

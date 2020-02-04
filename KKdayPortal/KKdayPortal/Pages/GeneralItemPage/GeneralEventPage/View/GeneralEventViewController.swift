@@ -11,8 +11,16 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import WebKit
+import RxDataSources
 
 final class GeneralEventViewController: UIViewController {
+    
+    // generalTextObject cell
+    struct GeneralTextObjectCellName {
+        static let normal: String = "GeneralTextObjectNormalCell"
+        static let iframe: String = "GeneralTextObjectIframeCell"
+        static let image: String = "GeneralTextObjectImageIframeCell"
+    }
     
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
@@ -42,15 +50,43 @@ final class GeneralEventViewController: UIViewController {
         return txf
     }()
     
-    lazy var textView: UITextView = {
-        let tv = UITextView()
-        tv.isEditable = false
-        tv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        return tv
-    }()
+    lazy var generalTextObjectTableView: UITableView = {
+          let tbv = UITableView()
+          tbv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+          tbv.register(GeneralTextObjectNormalTableViewCell.self, forCellReuseIdentifier: GeneralEventViewController.GeneralTextObjectCellName.normal)
+          tbv.register(GeneralTextObjectIFrameTableViewCell.self, forCellReuseIdentifier: GeneralEventViewController.GeneralTextObjectCellName.iframe)
+          tbv.register(GeneralTextObjectImageTableViewCell.self, forCellReuseIdentifier: GeneralEventViewController.GeneralTextObjectCellName.image)
+          tbv.tableFooterView = UIView()
+          return tbv
+      }()
     
     private let viewModel: GeneralEventViewModel
     private let disposeBag = DisposeBag()
+    
+    private lazy var generalTextObjectDataSource = {
+        return RxTableViewSectionedReloadDataSource<GeneralTextObjectSection>(configureCell: { [weak self] dataSource, tableView, indexPath, sectionItem in
+            
+            switch sectionItem {
+            case .normal(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralEventViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
+                
+                cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
+                return cell
+                
+            case .iframe(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralEventViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
+                cell.iframeTitleLabel.text = cellViewModel.title
+                cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
+                return cell
+                
+            case .image(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralEventViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
+                cell.textObjectImageTitleLabel.text = cellViewModel.title
+                cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
+                return cell
+            }
+        })
+    }()
     
     init(viewModel: GeneralEventViewModel) {
         self.viewModel = viewModel
@@ -65,8 +101,11 @@ final class GeneralEventViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
-        viewModel.getPortalData()
         
+        generalTextObjectTableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        viewModel.getPortalData()
     }
     
     // 🎨 draw UI
@@ -76,7 +115,7 @@ final class GeneralEventViewController: UIViewController {
         view.addSubview(topTitleLabel)
         view.addSubview(contactTextView)
         view.addSubview(eventTextView)
-        view.addSubview(textView)
+        view.addSubview(generalTextObjectTableView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
@@ -103,7 +142,7 @@ final class GeneralEventViewController: UIViewController {
             maker.trailing.equalToSuperview()
         }
         
-        textView.snp.makeConstraints { maker in
+        generalTextObjectTableView.snp.makeConstraints { maker in
             maker.top.equalTo(eventTextView.snp.bottom)
             maker.bottom.equalTo(view.snp.bottomMargin)
             maker.leading.equalToSuperview()
@@ -137,11 +176,26 @@ final class GeneralEventViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.output.showText
-            .drive(onNext: { [weak self] dataText in
-                self?.textView.attributedText = dataText.htmlStringTransferToNSAttributedString()
-            })
+        viewModel.output.showGeneralTextObjectItems
+            .do(onNext: { [weak self] generalTextObjectSections in
+                if generalTextObjectSections.isEmpty {
+                    self?.generalTextObjectTableView.isHidden = true
+                }
+            }) .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
+        
     }
 }
 
+extension GeneralEventViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.row {
+        case 0:
+            return 200
+        default:
+            return 320
+        }
+    }
+}

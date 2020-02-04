@@ -11,8 +11,16 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import WebKit
+import RxDataSources
 
 final class GeneralDocumentViewController: UIViewController {
+    
+    // generalTextObject cell
+    struct GeneralTextObjectCellName {
+        static let normal: String = "GeneralTextObjectNormalCell"
+        static let iframe: String = "GeneralTextObjectIframeCell"
+        static let image: String = "GeneralTextObjectImageIframeCell"
+    }
     
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
@@ -22,21 +30,49 @@ final class GeneralDocumentViewController: UIViewController {
     }()
     
     lazy var topTitleLabel: UILabel = {
-         let lbl = UILabel()
-         lbl.numberOfLines = 0
-         lbl.font = UIFont.systemFont(ofSize: 24)
-         return lbl
-     }()
-    
-    lazy var textView: UITextView = {
-        let tv = UITextView()
-        tv.isEditable = false
-        tv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        return tv
+        let lbl = UILabel()
+        lbl.numberOfLines = 0
+        lbl.font = UIFont.systemFont(ofSize: 24)
+        return lbl
     }()
-
+    
+    lazy var generalTextObjectTableView: UITableView = {
+        let tbv = UITableView()
+        tbv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tbv.register(GeneralTextObjectNormalTableViewCell.self, forCellReuseIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.normal)
+        tbv.register(GeneralTextObjectIFrameTableViewCell.self, forCellReuseIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.iframe)
+        tbv.register(GeneralTextObjectImageTableViewCell.self, forCellReuseIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.image)
+        tbv.tableFooterView = UIView()
+        return tbv
+    }()
+    
     private let viewModel: GeneralDocumentViewModel
     private let disposeBag = DisposeBag()
+    
+    private lazy var generalTextObjectDataSource = {
+        return RxTableViewSectionedReloadDataSource<GeneralTextObjectSection>(configureCell: { [weak self] dataSource, tableView, indexPath, sectionItem in
+            
+            switch sectionItem {
+            case .normal(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
+                
+                cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
+                return cell
+                
+            case .iframe(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
+                cell.iframeTitleLabel.text = cellViewModel.title
+                cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
+                return cell
+                
+            case .image(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
+                cell.textObjectImageTitleLabel.text = cellViewModel.title
+                cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
+                return cell
+            }
+        })
+    }()
     
     init(viewModel: GeneralDocumentViewModel) {
         self.viewModel = viewModel
@@ -52,6 +88,11 @@ final class GeneralDocumentViewController: UIViewController {
         
         setupUI()
         bindViewModel()
+        
+        generalTextObjectTableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        
         viewModel.getPortalData()
     }
     
@@ -60,7 +101,7 @@ final class GeneralDocumentViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
-        view.addSubview(textView)
+        view.addSubview(generalTextObjectTableView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
@@ -73,7 +114,7 @@ final class GeneralDocumentViewController: UIViewController {
             maker.centerY.equalTo(logoImageView.snp.centerY)
         }
         
-        textView.snp.makeConstraints { maker in
+        generalTextObjectTableView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.bottom.equalTo(self.view.snp.bottomMargin)
             maker.leading.equalToSuperview()
@@ -95,11 +136,24 @@ final class GeneralDocumentViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.output.showText
-            .drive(onNext: { [weak self] dataText in
-                self?.textView.attributedText = dataText.htmlStringTransferToNSAttributedString()
-            })
+        viewModel.output.showGeneralTextObjectItems
+            .do(onNext: { [weak self] generalTextObjectSections in
+                if generalTextObjectSections.isEmpty {
+                    self?.generalTextObjectTableView.isHidden = true
+                }
+            }) .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
     }
 }
 
+extension GeneralDocumentViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 200
+        default:
+            return 320
+        }
+    }
+}

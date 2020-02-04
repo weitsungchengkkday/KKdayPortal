@@ -15,29 +15,29 @@ final class GeneralDocumentViewModel: RXViewModelType, PortalControllable {
     
     var input: GeneralDocumentViewModel.Input
     var output: GeneralDocumentViewModel.Output
-       
+    
     struct Input {
         let title: AnyObserver<String>
-        let text: AnyObserver<String>
+        let generalTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
     }
     
     struct Output {
         let showTitle: Driver<String>
-        let showText: Driver<String>
+        let showGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
     private let titleSubject = PublishSubject<String>()
-    private let textSubject = PublishSubject<String>()
+    private let generalTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
     
     var source: URL
     private let disposeBag = DisposeBag()
     var generalItem: PortalContent?
     
     init(source: URL) {
-
+        
         self.source = source
-        self.input = Input(title: titleSubject.asObserver(), text: textSubject.asObserver())
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Document"), showText: textSubject.asDriver(onErrorJustReturn: "No available info"))
+        self.input = Input(title: titleSubject.asObserver(), generalTextObjectItems: generalTextObjectItemsSubject.asObserver())
+        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Document"), showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
     }
     
     func getPortalData() {
@@ -56,11 +56,11 @@ final class GeneralDocumentViewModel: RXViewModelType, PortalControllable {
                     self?.titleSubject.onNext(title)
                 }
                 
-                guard let textObject = generalItem.textObject,
-                    let text = textObject.text else {
-                    return
+                if let textObject = generalItem.textObject {
+                    
+                    let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+                    self?.generalTextObjectItemsSubject.onNext(generalTextObjectSections)
                 }
-                self?.textSubject.onNext(text)
                 
             }) { error in
                 
@@ -71,6 +71,4 @@ final class GeneralDocumentViewModel: RXViewModelType, PortalControllable {
         }
         .disposed(by: disposeBag)
     }
-    
-    
 }

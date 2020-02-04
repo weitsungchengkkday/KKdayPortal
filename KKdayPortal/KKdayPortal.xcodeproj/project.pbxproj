@@ -57,6 +57,10 @@
 		F43AFC8223E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7823E87DD10050C851 /* GeneralCollectionViewController.swift */; };
 		F43AFC8323E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7823E87DD10050C851 /* GeneralCollectionViewController.swift */; };
 		F43AFC8423E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7823E87DD10050C851 /* GeneralCollectionViewController.swift */; };
+		F43AFC8723E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC8623E92E4D0050C851 /* GeneralTextObjectConverter.swift */; };
+		F43AFC8823E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC8623E92E4D0050C851 /* GeneralTextObjectConverter.swift */; };
+		F43AFC8923E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC8623E92E4D0050C851 /* GeneralTextObjectConverter.swift */; };
+		F43AFC8A23E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC8623E92E4D0050C851 /* GeneralTextObjectConverter.swift */; };
 		F44A198B23C48BF000B35976 /* PloneLRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A198A23C48BF000B35976 /* PloneLRF.swift */; };
 		F44A198C23C48BF000B35976 /* PloneLRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A198A23C48BF000B35976 /* PloneLRF.swift */; };
 		F44A198D23C48BF000B35976 /* PloneLRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A198A23C48BF000B35976 /* PloneLRF.swift */; };
@@ -620,6 +624,7 @@
 		F43AFC7323E87DD10050C851 /* GeneralCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewModel.swift; sourceTree = "<group>"; };
 		F43AFC7623E87DD10050C851 /* GeneralCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		F43AFC7823E87DD10050C851 /* GeneralCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewController.swift; sourceTree = "<group>"; };
+		F43AFC8623E92E4D0050C851 /* GeneralTextObjectConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTextObjectConverter.swift; sourceTree = "<group>"; };
 		F44A198A23C48BF000B35976 /* PloneLRF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneLRF.swift; sourceTree = "<group>"; };
 		F44A199223C56CB300B35976 /* GeneralRootWithLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageViewModel.swift; sourceTree = "<group>"; };
 		F44A199723C56CC900B35976 /* GeneralRootWithLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageViewController.swift; sourceTree = "<group>"; };
@@ -852,6 +857,7 @@
 		F43AFC4423E87D6D0050C851 /* GeneralTextObjectTableView */ = {
 			isa = PBXGroup;
 			children = (
+				F43AFC8523E920930050C851 /* Converter */,
 				F43AFC4523E87D6D0050C851 /* Cell */,
 			);
 			path = GeneralTextObjectTableView;
@@ -936,6 +942,14 @@
 				F43AFC7823E87DD10050C851 /* GeneralCollectionViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F43AFC8523E920930050C851 /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				F43AFC8623E92E4D0050C851 /* GeneralTextObjectConverter.swift */,
+			);
+			path = Converter;
 			sourceTree = "<group>";
 		};
 		F44A198F23C56C7D00B35976 /* GeneralRootWithLanguage */ = {
@@ -1129,7 +1143,7 @@
 			children = (
 				F45447E02399632E001B8D31 /* RepositoryManageable.swift */,
 				F45447F5239AB816001B8D31 /* WebPloneRepository.swift */,
-				F45447F7239AB87C001B8D31 /* ObejectConverter */,
+				F45447F7239AB87C001B8D31 /* Converter */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1178,12 +1192,12 @@
 			path = GeneralContent;
 			sourceTree = "<group>";
 		};
-		F45447F7239AB87C001B8D31 /* ObejectConverter */ = {
+		F45447F7239AB87C001B8D31 /* Converter */ = {
 			isa = PBXGroup;
 			children = (
 				F45447F8239AB8D6001B8D31 /* ItemConverter.swift */,
 			);
-			path = ObejectConverter;
+			path = Converter;
 			sourceTree = "<group>";
 		};
 		F45447FA239BB2EB001B8D31 /* ModelLoader */ = {
@@ -2478,6 +2492,7 @@
 				F44E8C9823B88AA30032C6BE /* HomeViewController.swift in Sources */,
 				F44E8C9923B88AA30032C6BE /* CodableResponseType.swift in Sources */,
 				F44E8C9A23B88AA30032C6BE /* ApplicationsEntryViewController.swift in Sources */,
+				F43AFC8823E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8C9D23B88AA30032C6BE /* PortalFileTargetType.swift in Sources */,
@@ -2619,6 +2634,7 @@
 				F44E8D0E23B88AFA0032C6BE /* HomeViewController.swift in Sources */,
 				F44E8D0F23B88AFA0032C6BE /* CodableResponseType.swift in Sources */,
 				F44E8D1023B88AFA0032C6BE /* ApplicationsEntryViewController.swift in Sources */,
+				F43AFC8923E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F44E8D1123B88AFA0032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8D1223B88AFA0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8D1323B88AFA0032C6BE /* PortalFileTargetType.swift in Sources */,
@@ -2760,6 +2776,7 @@
 				F44E8D8423B88AFC0032C6BE /* HomeViewController.swift in Sources */,
 				F44E8D8523B88AFC0032C6BE /* CodableResponseType.swift in Sources */,
 				F44E8D8623B88AFC0032C6BE /* ApplicationsEntryViewController.swift in Sources */,
+				F43AFC8A23E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F44E8D8723B88AFC0032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8D8823B88AFC0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8D8923B88AFC0032C6BE /* PortalFileTargetType.swift in Sources */,
@@ -2882,6 +2899,7 @@
 				F457416223D5462C00FB5EEC /* ConfigManager.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
+				F43AFC8723E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */,
 				F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */,
 				F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */,

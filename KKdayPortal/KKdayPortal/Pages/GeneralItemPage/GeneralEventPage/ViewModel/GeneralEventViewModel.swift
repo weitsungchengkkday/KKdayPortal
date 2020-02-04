@@ -20,20 +20,20 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
         let title: AnyObserver<String>
         let contact: AnyObserver<String>
         let event: AnyObserver<String>
-        let text: AnyObserver<String>
+        let generalTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
     }
     
     struct Output {
         let showTitle: Driver<String>
         let showContact: Driver<String>
         let showEvent: Driver<String>
-        let showText: Driver<String>
+        let showGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
     private let titleSubject = PublishSubject<String>()
     private let contactSubject = PublishSubject<String>()
     private let eventSubject = PublishSubject<String>()
-    private let textSubject = PublishSubject<String>()
+    private let generalTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
     
     var source: URL
     private let disposeBag = DisposeBag()
@@ -42,15 +42,15 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
     init(source: URL) {
         
         self.source = source
-        self.input = Input(title: titleSubject.asObserver(), contact: contactSubject.asObserver(), event: eventSubject.asObserver(), text: textSubject.asObserver())
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Event"), showContact: contactSubject.asDriver(onErrorJustReturn: ""), showEvent: eventSubject.asDriver(onErrorJustReturn: ""), showText: textSubject.asDriver(onErrorJustReturn: "")
+        self.input = Input(title: titleSubject.asObserver(), contact: contactSubject.asObserver(), event: eventSubject.asObserver(), generalTextObjectItems: generalTextObjectItemsSubject.asObserver())
+        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Event"), showContact: contactSubject.asDriver(onErrorJustReturn: ""), showEvent: eventSubject.asDriver(onErrorJustReturn: ""), showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: [])
         )
     }
     
     func getPortalData() {
         
         LoadingManager.shared.setState(state: .normal(value: true))
-       
+        
         ModelLoader.PortalLoader()
             .getItem(source: source, type: .event)
             .subscribeOn(MainScheduler.instance)
@@ -79,9 +79,10 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
                 """
                 
                 self?.eventSubject.onNext(eventInfo)
-                if let textObject = generalItem.textObject,
-                    let text = textObject.text {
-                    self?.textSubject.onNext(text)
+                if let textObject = generalItem.textObject {
+                 
+                    let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+                    self?.generalTextObjectItemsSubject.onNext(generalTextObjectSections)
                 }
                 
             }) { error in

@@ -108,11 +108,11 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         setupUI()
         bindViewModel()
         
-        self.itemsTableView.rx
+        itemsTableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        self.generalTextObjectTableView.rx
+        generalTextObjectTableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
         
@@ -186,9 +186,9 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         }
         .disposed(by: disposeBag)
         
-        viewModel.output.showCollectionContentItems
-            .do(onNext: { [weak self] collectionContentSections in
-                if collectionContentSections.isEmpty {
+        viewModel.output.showGeneralTextObjectItems
+            .do(onNext: { [weak self] generalTextObjectSections in
+                if generalTextObjectSections.isEmpty {
                     self?.generalTextObjectTableView.isHidden = true
                 }
             })
@@ -221,7 +221,7 @@ extension GeneralCollectionViewController: UITableViewDelegate {
         case generalTextObjectTableView:
             switch indexPath.row {
             case 0:
-                return 120
+                return 200
             default:
                 return 320
             }

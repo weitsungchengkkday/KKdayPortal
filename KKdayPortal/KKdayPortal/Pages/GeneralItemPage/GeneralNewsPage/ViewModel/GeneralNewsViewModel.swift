@@ -19,18 +19,18 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
     struct Input {
         let title: AnyObserver<String>
         let image: AnyObserver<UIImage>
-        let text: AnyObserver<String>
+        let generalTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
     }
     
     struct Output {
         let showTitle: Driver<String>
         let showImage: Driver<UIImage>
-        let showText: Driver<String>
+        let showGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
     private let titleSubject = PublishSubject<String>()
     private let imageViewSubject = PublishSubject<UIImage>()
-    private let textSubject = PublishSubject<String>()
+    private let generalTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
     
     var source: URL
     private let disposeBag = DisposeBag()
@@ -41,11 +41,11 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
         
         self.input = Input(title: titleSubject.asObserver(),
                            image: imageViewSubject.asObserver(),
-                           text: textSubject.asObserver())
+                           generalTextObjectItems: generalTextObjectItemsSubject.asObserver())
         
         self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "News"),
                              showImage: imageViewSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")),
-                             showText: textSubject.asDriver(onErrorJustReturn: ""))
+                             showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
     }
     
     func getPortalData() {
@@ -67,11 +67,11 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
                     self?.dowloadImage(url: imageURL)
                 }
                 
-                if let textObject = generalItem.textObject,
-                    let text = textObject.text {
-                    self?.textSubject.onNext(text)
+                if let textObject = generalItem.textObject {
+                    
+                    let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+                    self?.generalTextObjectItemsSubject.onNext(generalTextObjectSections)
                 }
-                
                 
             }) { error in
                 LoadingManager.shared.setState(state: .normal(value: false))
