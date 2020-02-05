@@ -18,23 +18,21 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
     var output: GeneralRootWithLanguageViewModel.Output
     
     struct Input {
-        let generalItemsOfFolders: AnyObserver<[PortalContentList]>
-        let generalItemsOfDocument: AnyObserver<PortalContent>
+        let generalItems: AnyObserver<[PortalContentList]>
+        let documentGeneralTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
     }
     
     struct Output {
-        let showGeneralItemsOfFolders: Driver<[PortalContentList]>
-        let showGeneralItemsOfDocument: Driver<PortalContent>
+        let showGeneralItems: Driver<[PortalContentList]>
+        let showDocumentGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
-    private let generalItemsOfFoldersSubject = PublishSubject<[PortalContentList]>()
-    private let generalItemsOfDocumentSubject = PublishSubject<PortalContent>()
-    private let titleSubject = PublishSubject<String>()
+    private let generalItemsSubject = PublishSubject<[PortalContentList]>()
+    private let documentGeneralTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
     
     var generalItem: PortalContentList?
     
     var generalItemDocument: PortalContent?
-    
     var generalItemFolders: [PortalContentList] = []
     
     var source: URL
@@ -43,17 +41,10 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
     init(source: URL) {
         self.source = source
         
-        self.input = Input(generalItemsOfFolders: generalItemsOfFoldersSubject.asObserver(), generalItemsOfDocument: generalItemsOfDocumentSubject.asObserver()
+        self.input = Input(generalItems: generalItemsSubject.asObserver(), documentGeneralTextObjectItems: documentGeneralTextObjectItemsSubject.asObserver()
         )
         
-        self.output = Output(showGeneralItemsOfFolders: generalItemsOfFoldersSubject.asDriver(onErrorJustReturn: []), showGeneralItemsOfDocument: generalItemsOfDocumentSubject.asDriver(onErrorJustReturn:
-            PortalContent(type: .document,
-                          title: "Home",
-                          description: "Welcome To KKday Website",
-                          parent: nil,
-                          id: nil,
-                          UID: nil,
-                          source: nil)))
+        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []), showDocumentGeneralTextObjectItems: documentGeneralTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
     }
     
     func getPortalData() {
@@ -114,7 +105,7 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
     }
     
     private func getPortalDocumentData() {
-
+        
         guard let source = generalItemDocument?.source else {
             return
         }
@@ -132,7 +123,12 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                     generalItemSource == generalItemDocumentSource {
                     
                     self?.generalItemDocument = generalItem
-                    self?.generalItemsOfDocumentSubject.onNext(generalItem)
+                    
+                    if let textObject = generalItem.textObject {
+                        
+                        let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+                        self?.documentGeneralTextObjectItemsSubject.onNext(generalTextObjectSections)
+                    }
                 }
                 
             }) { error in
@@ -172,7 +168,7 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                 }
                 
                 self?.generalItemFolders = generalList
-                self?.generalItemsOfFoldersSubject.onNext(generalList)
+                self?.generalItemsSubject.onNext(generalList)
                 
                 LoadingManager.shared.setState(state: .normal(value: false))
             })

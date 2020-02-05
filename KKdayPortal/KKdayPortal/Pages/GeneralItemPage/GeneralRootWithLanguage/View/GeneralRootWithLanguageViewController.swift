@@ -12,8 +12,16 @@ import RxCocoa
 import SnapKit
 import WebKit
 import SwiftSoup
+import RxDataSources
 
 final class GeneralRootWithLanguageViewController: UIViewController, GeneralIndexSideBarCoordinator {
+    
+    // generalTextObject cell
+    struct GeneralTextObjectCellName {
+        static let normal: String = "GeneralTextObjectNormalCell"
+        static let iframe: String = "GeneralTextObjectIframeCell"
+        static let image: String = "GeneralTextObjectImageIframeCell"
+    }
     
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
@@ -29,15 +37,43 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
         return lbl
     }()
     
-    lazy var textView: UITextView = {
-        let tv = UITextView()
-        tv.isEditable = false
-        tv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        return tv
+    lazy var generalTextObjectTableView: UITableView = {
+        let tbv = UITableView()
+        tbv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tbv.register(GeneralTextObjectNormalTableViewCell.self, forCellReuseIdentifier: GeneralRootWithLanguageViewController.GeneralTextObjectCellName.normal)
+        tbv.register(GeneralTextObjectIFrameTableViewCell.self, forCellReuseIdentifier: GeneralRootWithLanguageViewController.GeneralTextObjectCellName.iframe)
+        tbv.register(GeneralTextObjectImageTableViewCell.self, forCellReuseIdentifier: GeneralRootWithLanguageViewController.GeneralTextObjectCellName.image)
+        tbv.tableFooterView = UIView()
+        return tbv
     }()
     
     private let viewModel: GeneralRootWithLanguageViewModel
     private let disposeBag = DisposeBag()
+    
+    private lazy var generalTextObjectDataSource = {
+        return RxTableViewSectionedReloadDataSource<GeneralTextObjectSection>(configureCell: { [weak self] dataSource, tableView, indexPath, sectionItem in
+            
+            switch sectionItem {
+            case .normal(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
+                
+                cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
+                return cell
+                
+            case .iframe(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
+                cell.iframeTitleLabel.text = cellViewModel.title
+                cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
+                return cell
+                
+            case .image(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
+                cell.textObjectImageTitleLabel.text = cellViewModel.title
+                cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
+                return cell
+            }
+        })
+    }()
     
     init(viewModel: GeneralRootWithLanguageViewModel) {
         self.viewModel = viewModel
@@ -53,6 +89,11 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
         
         setupUI()
         bindViewModel()
+        
+        generalTextObjectTableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        
         viewModel.getPortalData()
     }
     
@@ -68,7 +109,7 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
-        view.addSubview(textView)
+        view.addSubview(generalTextObjectTableView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
@@ -81,7 +122,7 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
             maker.centerY.equalTo(logoImageView.snp.centerY)
         }
         
-        textView.snp.makeConstraints { maker in
+        generalTextObjectTableView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.bottom.equalTo(self.view.snp.bottomMargin)
             maker.leading.equalToSuperview()
@@ -97,18 +138,16 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showGeneralItemsOfDocument
-            .drive(onNext: { [weak self] content in
-                
-                self?.topTitleLabel.text = content.title
-                if let fixHTMLString = content.textObject?.text?.switchSelfClosingTagToNormalClosingTag(), let attributedString = fixHTMLString.htmlStringTransferToNSAttributedString() {
-                    self?.textView.attributedText = attributedString
+        viewModel.output.showDocumentGeneralTextObjectItems
+            .do(onNext: { [weak self] generalItems in
+                if generalItems.isEmpty {
+                    self?.generalTextObjectTableView.isHidden = true
                 }
-                
             })
+            .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
         
-        viewModel.output.showGeneralItemsOfFolders
+        viewModel.output.showGeneralItems
             .drive(onNext: { [weak self] generalList in
                 self?.setupNavBar(lists: generalList)
             })
@@ -117,7 +156,7 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
     
     // 📍 config NavBar
     private func setupNavBar(lists: [GeneralList] = []) {
-
+        
         guard let nav = navigationController as? GeneralRootWithLanguageNavigationController else {
             return
         }
@@ -129,3 +168,14 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
     }
 }
 
+extension GeneralRootWithLanguageViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 200
+        default:
+            return 320
+        }
+    }
+}
