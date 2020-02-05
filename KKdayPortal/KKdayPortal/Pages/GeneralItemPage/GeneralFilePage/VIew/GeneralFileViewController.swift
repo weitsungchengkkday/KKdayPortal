@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import WebKit
 
 final class GeneralFileViewController: UIViewController {
     
@@ -25,6 +26,11 @@ final class GeneralFileViewController: UIViewController {
         lbl.numberOfLines = 0
         lbl.font = UIFont.systemFont(ofSize: 24)
         return lbl
+    }()
+    
+    lazy var displayFileWebView: WKWebView = {
+        let wkv = WKWebView()
+        return wkv
     }()
     
     private let viewModel: GeneralFileViewModel
@@ -45,9 +51,6 @@ final class GeneralFileViewController: UIViewController {
         setupUI()
         bindViewModel()
         viewModel.getPortalData()
-        
-        let url = URL(string: "http://localhost:8080/pikaPika/movietheater/kkorganization/@@download/file")!
-        viewModel.downloadFile(fileURL: url)
     }
     
     // 🎨 draw UI
@@ -55,6 +58,7 @@ final class GeneralFileViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
+        view.addSubview(displayFileWebView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.topMargin)
@@ -65,6 +69,12 @@ final class GeneralFileViewController: UIViewController {
             maker.leading.equalTo(logoImageView.snp.trailing)
             maker.trailing.equalToSuperview()
             maker.centerY.equalTo(logoImageView.snp.centerY)
+        }
+        
+        displayFileWebView.snp.makeConstraints { maker in
+            maker.top.equalTo(logoImageView.snp.bottom)
+            maker.leading.trailing.equalToSuperview()
+            maker.bottom.equalToSuperview()
         }
     }
     
@@ -79,6 +89,18 @@ final class GeneralFileViewController: UIViewController {
         viewModel.output.showTitle
             .drive(onNext: { [weak self] title in
                 self?.topTitleLabel.text = title
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showGeneralFileObject
+            .drive(onNext: { [weak self] generalFileObject in
+                
+                guard let generalFileObject = generalFileObject else {
+                    print("❌, No generalFileObject")
+                    return
+                }
+                
+                self?.displayFileWebView.load(URLRequest(url: generalFileObject.url))
             })
             .disposed(by: disposeBag)
     }

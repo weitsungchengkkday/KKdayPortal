@@ -77,12 +77,10 @@
 		F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
 		F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
 		F44E8C7523B88AA30032C6BE /* RXViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* RXViewModelType.swift */; };
-		F44E8C7623B88AA30032C6BE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475A2393A057001B8D31 /* FileManager.swift */; };
 		F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
 		F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneSiteItem.swift */; };
 		F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
 		F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
-		F44E8C7B23B88AA30032C6BE /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
 		F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
 		F44E8C7D23B88AA30032C6BE /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
 		F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
@@ -106,7 +104,6 @@
 		F44E8C9023B88AA30032C6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
 		F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
 		F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
-		F44E8C9323B88AA30032C6BE /* FileResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475C2393A2F4001B8D31 /* FileResponseType.swift */; };
 		F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
 		F44E8C9523B88AA30032C6BE /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
 		F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
@@ -116,7 +113,6 @@
 		F44E8C9A23B88AA30032C6BE /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
 		F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
 		F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
-		F44E8C9D23B88AA30032C6BE /* PortalFileTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */; };
 		F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
 		F44E8C9F23B88AA30032C6BE /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3172386F53400657CDF /* SecureStore.swift */; };
 		F44E8CA023B88AA30032C6BE /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
@@ -177,12 +173,10 @@
 		F44E8CE923B88AFA0032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
 		F44E8CEA23B88AFA0032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
 		F44E8CEB23B88AFA0032C6BE /* RXViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* RXViewModelType.swift */; };
-		F44E8CEC23B88AFA0032C6BE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475A2393A057001B8D31 /* FileManager.swift */; };
 		F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
 		F44E8CEE23B88AFA0032C6BE /* PloneSiteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneSiteItem.swift */; };
 		F44E8CEF23B88AFA0032C6BE /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
 		F44E8CF023B88AFA0032C6BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
-		F44E8CF123B88AFA0032C6BE /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
 		F44E8CF223B88AFA0032C6BE /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
 		F44E8CF323B88AFA0032C6BE /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
 		F44E8CF423B88AFA0032C6BE /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
@@ -206,7 +200,6 @@
 		F44E8D0623B88AFA0032C6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
 		F44E8D0723B88AFA0032C6BE /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
 		F44E8D0823B88AFA0032C6BE /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
-		F44E8D0923B88AFA0032C6BE /* FileResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475C2393A2F4001B8D31 /* FileResponseType.swift */; };
 		F44E8D0A23B88AFA0032C6BE /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
 		F44E8D0B23B88AFA0032C6BE /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
 		F44E8D0C23B88AFA0032C6BE /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
@@ -216,7 +209,6 @@
 		F44E8D1023B88AFA0032C6BE /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
 		F44E8D1123B88AFA0032C6BE /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
 		F44E8D1223B88AFA0032C6BE /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
-		F44E8D1323B88AFA0032C6BE /* PortalFileTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */; };
 		F44E8D1423B88AFA0032C6BE /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
 		F44E8D1523B88AFA0032C6BE /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3172386F53400657CDF /* SecureStore.swift */; };
 		F44E8D1623B88AFA0032C6BE /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
@@ -277,12 +269,10 @@
 		F44E8D5F23B88AFC0032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
 		F44E8D6023B88AFC0032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
 		F44E8D6123B88AFC0032C6BE /* RXViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* RXViewModelType.swift */; };
-		F44E8D6223B88AFC0032C6BE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475A2393A057001B8D31 /* FileManager.swift */; };
 		F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
 		F44E8D6423B88AFC0032C6BE /* PloneSiteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneSiteItem.swift */; };
 		F44E8D6523B88AFC0032C6BE /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
 		F44E8D6623B88AFC0032C6BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
-		F44E8D6723B88AFC0032C6BE /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
 		F44E8D6823B88AFC0032C6BE /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
 		F44E8D6923B88AFC0032C6BE /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3192386F53400657CDF /* InternetAuthenticationType.swift */; };
 		F44E8D6A23B88AFC0032C6BE /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
@@ -306,7 +296,6 @@
 		F44E8D7C23B88AFC0032C6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
 		F44E8D7D23B88AFC0032C6BE /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
 		F44E8D7E23B88AFC0032C6BE /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
-		F44E8D7F23B88AFC0032C6BE /* FileResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475C2393A2F4001B8D31 /* FileResponseType.swift */; };
 		F44E8D8023B88AFC0032C6BE /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
 		F44E8D8123B88AFC0032C6BE /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
 		F44E8D8223B88AFC0032C6BE /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
@@ -316,7 +305,6 @@
 		F44E8D8623B88AFC0032C6BE /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
 		F44E8D8723B88AFC0032C6BE /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
 		F44E8D8823B88AFC0032C6BE /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
-		F44E8D8923B88AFC0032C6BE /* PortalFileTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */; };
 		F44E8D8A23B88AFC0032C6BE /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
 		F44E8D8B23B88AFC0032C6BE /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3172386F53400657CDF /* SecureStore.swift */; };
 		F44E8D8C23B88AFC0032C6BE /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
@@ -404,10 +392,6 @@
 		F45446FE238F74DF001B8D31 /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
 		F4544700238F787A001B8D31 /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
 		F454474C23924F38001B8D31 /* RXViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* RXViewModelType.swift */; };
-		F454475B2393A057001B8D31 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475A2393A057001B8D31 /* FileManager.swift */; };
-		F454475D2393A2F4001B8D31 /* FileResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475C2393A2F4001B8D31 /* FileResponseType.swift */; };
-		F45447602393AAA6001B8D31 /* PortalFileTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */; };
-		F45447622393AAC2001B8D31 /* PortalFileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447612393AAC2001B8D31 /* PortalFileTarget.swift */; };
 		F454476523960669001B8D31 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
 		F4544769239609E5001B8D31 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
 		F45447E12399632E001B8D31 /* RepositoryManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E02399632E001B8D31 /* RepositoryManageable.swift */; };
@@ -652,10 +636,6 @@
 		F45446FD238F74DF001B8D31 /* PloneFileObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileObject.swift; sourceTree = "<group>"; };
 		F45446FF238F787A001B8D31 /* PloneLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneLink.swift; sourceTree = "<group>"; };
 		F454474B23924F38001B8D31 /* RXViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXViewModelType.swift; sourceTree = "<group>"; };
-		F454475A2393A057001B8D31 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		F454475C2393A2F4001B8D31 /* FileResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileResponseType.swift; sourceTree = "<group>"; };
-		F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalFileTargetType.swift; sourceTree = "<group>"; };
-		F45447612393AAC2001B8D31 /* PortalFileTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalFileTarget.swift; sourceTree = "<group>"; };
 		F454476423960669001B8D31 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F4544768239609E5001B8D31 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		F45447E02399632E001B8D31 /* RepositoryManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryManageable.swift; sourceTree = "<group>"; };
@@ -1107,24 +1087,6 @@
 				F454488B23A55017001B8D31 /* Localizable.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		F454475923939FC0001B8D31 /* FileManager */ = {
-			isa = PBXGroup;
-			children = (
-				F454475A2393A057001B8D31 /* FileManager.swift */,
-				F454475C2393A2F4001B8D31 /* FileResponseType.swift */,
-			);
-			path = FileManager;
-			sourceTree = "<group>";
-		};
-		F454475E2393A9E5001B8D31 /* FileTarget */ = {
-			isa = PBXGroup;
-			children = (
-				F454475F2393AAA6001B8D31 /* PortalFileTargetType.swift */,
-				F45447612393AAC2001B8D31 /* PortalFileTarget.swift */,
-			);
-			path = FileTarget;
 			sourceTree = "<group>";
 		};
 		F4544763239602FD001B8D31 /* Extension */ = {
@@ -1962,8 +1924,6 @@
 			children = (
 				F4B3F3252387C16D00657CDF /* APIManager */,
 				F4B3F32C2387C29900657CDF /* APITarget */,
-				F454475923939FC0001B8D31 /* FileManager */,
-				F454475E2393A9E5001B8D31 /* FileTarget */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2440,7 +2400,6 @@
 				F43AFC6E23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
 				F43AFC8223E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EA23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
-				F44E8C7623B88AA30032C6BE /* FileManager.swift in Sources */,
 				F44A199923C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
@@ -2454,7 +2413,6 @@
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417B23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
-				F44E8C7B23B88AA30032C6BE /* PortalFileTarget.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
 				F44E8C7D23B88AA30032C6BE /* InternetAuthenticationType.swift in Sources */,
 				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
@@ -2484,7 +2442,6 @@
 				F44E8C9023B88AA30032C6BE /* LoginViewModel.swift in Sources */,
 				F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */,
 				F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */,
-				F44E8C9323B88AA30032C6BE /* FileResponseType.swift in Sources */,
 				F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */,
 				F44E8C9523B88AA30032C6BE /* GeneralList.swift in Sources */,
 				F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */,
@@ -2495,7 +2452,6 @@
 				F43AFC8823E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */,
-				F44E8C9D23B88AA30032C6BE /* PortalFileTargetType.swift in Sources */,
 				F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */,
 				F44E8C9F23B88AA30032C6BE /* SecureStore.swift in Sources */,
 				F44E8CA023B88AA30032C6BE /* GeneralFileObject.swift in Sources */,
@@ -2582,7 +2538,6 @@
 				F43AFC6F23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
 				F43AFC8323E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EB23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
-				F44E8CEC23B88AFA0032C6BE /* FileManager.swift in Sources */,
 				F44A199A23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4623BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */,
@@ -2596,7 +2551,6 @@
 				F44E8CF023B88AFA0032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7F23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417C23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
-				F44E8CF123B88AFA0032C6BE /* PortalFileTarget.swift in Sources */,
 				F44E8CF223B88AFA0032C6BE /* GeneralDocumentViewController.swift in Sources */,
 				F44E8CF323B88AFA0032C6BE /* InternetAuthenticationType.swift in Sources */,
 				F44E8CF423B88AFA0032C6BE /* GeneralImageObject.swift in Sources */,
@@ -2626,7 +2580,6 @@
 				F44E8D0623B88AFA0032C6BE /* LoginViewModel.swift in Sources */,
 				F44E8D0723B88AFA0032C6BE /* GeneralNewsViewModel.swift in Sources */,
 				F44E8D0823B88AFA0032C6BE /* PloneAuthToken.swift in Sources */,
-				F44E8D0923B88AFA0032C6BE /* FileResponseType.swift in Sources */,
 				F44E8D0A23B88AFA0032C6BE /* GeneralItem.swift in Sources */,
 				F44E8D0B23B88AFA0032C6BE /* GeneralList.swift in Sources */,
 				F44E8D0C23B88AFA0032C6BE /* GeneralImageViewController.swift in Sources */,
@@ -2637,7 +2590,6 @@
 				F43AFC8923E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F44E8D1123B88AFA0032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8D1223B88AFA0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
-				F44E8D1323B88AFA0032C6BE /* PortalFileTargetType.swift in Sources */,
 				F44E8D1423B88AFA0032C6BE /* WebPloneRepository.swift in Sources */,
 				F44E8D1523B88AFA0032C6BE /* SecureStore.swift in Sources */,
 				F44E8D1623B88AFA0032C6BE /* GeneralFileObject.swift in Sources */,
@@ -2724,7 +2676,6 @@
 				F43AFC7023E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
 				F43AFC8423E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EC23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
-				F44E8D6223B88AFC0032C6BE /* FileManager.swift in Sources */,
 				F44A199B23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4723BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */,
@@ -2738,7 +2689,6 @@
 				F44E8D6623B88AFC0032C6BE /* StorageManager.swift in Sources */,
 				F43AFC8023E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417D23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
-				F44E8D6723B88AFC0032C6BE /* PortalFileTarget.swift in Sources */,
 				F44E8D6823B88AFC0032C6BE /* GeneralDocumentViewController.swift in Sources */,
 				F44E8D6923B88AFC0032C6BE /* InternetAuthenticationType.swift in Sources */,
 				F44E8D6A23B88AFC0032C6BE /* GeneralImageObject.swift in Sources */,
@@ -2768,7 +2718,6 @@
 				F44E8D7C23B88AFC0032C6BE /* LoginViewModel.swift in Sources */,
 				F44E8D7D23B88AFC0032C6BE /* GeneralNewsViewModel.swift in Sources */,
 				F44E8D7E23B88AFC0032C6BE /* PloneAuthToken.swift in Sources */,
-				F44E8D7F23B88AFC0032C6BE /* FileResponseType.swift in Sources */,
 				F44E8D8023B88AFC0032C6BE /* GeneralItem.swift in Sources */,
 				F44E8D8123B88AFC0032C6BE /* GeneralList.swift in Sources */,
 				F44E8D8223B88AFC0032C6BE /* GeneralImageViewController.swift in Sources */,
@@ -2779,7 +2728,6 @@
 				F43AFC8A23E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F44E8D8723B88AFC0032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8D8823B88AFC0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
-				F44E8D8923B88AFC0032C6BE /* PortalFileTargetType.swift in Sources */,
 				F44E8D8A23B88AFC0032C6BE /* WebPloneRepository.swift in Sources */,
 				F44E8D8B23B88AFC0032C6BE /* SecureStore.swift in Sources */,
 				F44E8D8C23B88AFC0032C6BE /* GeneralFileObject.swift in Sources */,
@@ -2872,7 +2820,6 @@
 				F43AFC6123E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F4544769239609E5001B8D31 /* DateFormatterExtension.swift in Sources */,
 				F454474C23924F38001B8D31 /* RXViewModelType.swift in Sources */,
-				F454475B2393A057001B8D31 /* FileManager.swift in Sources */,
 				F44A199823C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F43AFC6523E87D6D0050C851 /* GeneralTextObjectNormalTableViewCell.swift in Sources */,
 				F454487A23A336D6001B8D31 /* LocaleExtension.swift in Sources */,
@@ -2883,7 +2830,6 @@
 				F453952523BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */,
 				F43AFC8123E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
-				F45447622393AAC2001B8D31 /* PortalFileTarget.swift in Sources */,
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
 				F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */,
@@ -2918,7 +2864,6 @@
 				F4FC419F238CCB6500AC7315 /* LoginViewModel.swift in Sources */,
 				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
 				F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */,
-				F454475D2393A2F4001B8D31 /* FileResponseType.swift in Sources */,
 				F457417A23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */,
 				F45447E9239AA320001B8D31 /* GeneralList.swift in Sources */,
@@ -2929,7 +2874,6 @@
 				F45448AB23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift in Sources */,
 				F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */,
 				F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */,
-				F45447602393AAA6001B8D31 /* PortalFileTargetType.swift in Sources */,
 				F45447F6239AB816001B8D31 /* WebPloneRepository.swift in Sources */,
 				F4B3F31E2386F53400657CDF /* SecureStore.swift in Sources */,
 				F45447F2239AB79A001B8D31 /* GeneralFileObject.swift in Sources */,

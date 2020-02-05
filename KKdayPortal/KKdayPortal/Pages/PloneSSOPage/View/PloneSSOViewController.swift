@@ -15,7 +15,7 @@ import WebKit
 final class PloneSSOViewController: UIViewController {
 
     // 🏞 UI element
-    lazy var webView: WKWebView = {
+    lazy var SSOwebView: WKWebView = {
         let contentController = WKUserContentController()
         contentController.add(self, name: "userLogin")
         
@@ -37,11 +37,11 @@ final class PloneSSOViewController: UIViewController {
         
 #if SIT_VERSION
             let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
-            webView.load(URLRequest(url: url))
+            SSOwebView.load(URLRequest(url: url))
       
 #elseif PRODUCTION_VERSION
             let url = URL(string: "https://eip.kkday.net/Plone/@@app_login")!
-            webView.load(URLRequest(url: url))
+            SSOwebView.load(URLRequest(url: url))
        
 #else
         
@@ -51,9 +51,9 @@ final class PloneSSOViewController: UIViewController {
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        view.addSubview(webView)
+        view.addSubview(SSOwebView)
         
-        webView.snp.makeConstraints { maker in
+        SSOwebView.snp.makeConstraints { maker in
             maker.trailing.leading.top.bottom.equalToSuperview()
         }
     }
@@ -95,7 +95,7 @@ extension PloneSSOViewController: WKScriptMessageHandler {
             }
         }
 
-        webView.stopLoading()
+        SSOwebView.stopLoading()
     }
 }
 

@@ -175,7 +175,7 @@ final class WebPloneRepository: RepositoryManageable {
             let response = apiManager.request(ploneFileRequest)
             return response
                 .map({ ploneFile -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneFile)
+                    return ItemConverter.ploneItemToGeneralItem(item: ploneFile)
                 })
             
         case .link:
