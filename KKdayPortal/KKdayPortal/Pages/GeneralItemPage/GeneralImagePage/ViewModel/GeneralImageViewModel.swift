@@ -80,11 +80,11 @@ final class GeneralImageViewModel: RXViewModelType, PortalControllable {
         }
         
         let token = user.token
-        let header: [String : String] = [
+        let headers: [String : String] = [
             "Authorization" : "Bearer" + " " + token
         ]
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseData { dataResponse
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { dataResponse
             in
             
             DispatchQueue.global().async { [weak self] in

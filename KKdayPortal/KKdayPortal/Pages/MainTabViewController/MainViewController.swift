@@ -38,7 +38,7 @@ class MainViewController: UITabBarController {
         settingNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         let applicationsEntryVC = ApplicationsEntryViewController(nibName: nil, bundle: nil)
-        let applicationsEntryItem = UITabBarItem(title: "Application Entry", image: #imageLiteral(resourceName: "icListPrimaryDefault"), selectedImage: #imageLiteral(resourceName: "icListPrimary"))
+        let applicationsEntryItem = UITabBarItem(title: "Service Links", image: #imageLiteral(resourceName: "icListPrimaryDefault"), selectedImage: #imageLiteral(resourceName: "icListPrimary"))
         applicationsEntryVC.tabBarItem = applicationsEntryItem
         let applicationsEntryNav = UINavigationController(rootViewController: applicationsEntryVC)
         applicationsEntryNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)

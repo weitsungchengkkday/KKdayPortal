@@ -553,6 +553,13 @@
 		F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
 		F4B3F340238BC60D00657CDF /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
 		F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneItem.swift */; };
+		F4D8DE1023EBB81A0091A51A /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
+		F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
+		F4D8DE1223EBB81A0091A51A /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
+		F4D8DE1323EBB81A0091A51A /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
+		F4D8DE1723EC01F60091A51A /* KKdayPortal-Test-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D8DE1423EC01F60091A51A /* KKdayPortal-Test-Info.plist */; };
+		F4D8DE1823EC01F60091A51A /* KKdayPortal-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D8DE1523EC01F60091A51A /* KKdayPortal-Production-Info.plist */; };
+		F4D8DE1923EC01F60091A51A /* KKdayPortal-Stage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D8DE1623EC01F60091A51A /* KKdayPortal-Stage-Info.plist */; };
 		F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		F4DDFDC623D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
@@ -613,11 +620,8 @@
 		F44A199223C56CB300B35976 /* GeneralRootWithLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageViewModel.swift; sourceTree = "<group>"; };
 		F44A199723C56CC900B35976 /* GeneralRootWithLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageViewController.swift; sourceTree = "<group>"; };
 		F44E8CE323B88AA30032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F44E8CE423B88AA30032C6BE /* KKdayPortal-Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Production-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Production-Info.plist"; sourceTree = "<absolute>"; };
 		F44E8D5923B88AFA0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F44E8D5A23B88AFA0032C6BE /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Stage-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Stage-Info.plist"; sourceTree = "<absolute>"; };
 		F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F44E8DD023B88AFC0032C6BE /* KKdayPortal-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KKdayPortal-Test-Info.plist"; path = "/Users/wei-tsung-cheng/Desktop/KKDAY-BCI-TEAM/KKStaffWebsite/KK-Portal-Project/KKdayPortal/KKdayPortal-Test-Info.plist"; sourceTree = "<absolute>"; };
 		F453943523B8B44300136E6D /* Gif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gif; sourceTree = "<group>"; };
 		F453951823BA2A1F00136E6D /* KKdayPortal-SitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KKdayPortal-SitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F453951A23BA2A1F00136E6D /* KKdayPortal_SitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayPortal_SitTests.swift; sourceTree = "<group>"; };
@@ -746,6 +750,10 @@
 		F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneAuthToken.swift; sourceTree = "<group>"; };
 		F4B3F33F238BC60D00657CDF /* PloneFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFolder.swift; sourceTree = "<group>"; };
 		F4B3F343238BDF0900657CDF /* PloneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneItem.swift; sourceTree = "<group>"; };
+		F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
+		F4D8DE1423EC01F60091A51A /* KKdayPortal-Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Test-Info.plist"; sourceTree = "<group>"; };
+		F4D8DE1523EC01F60091A51A /* KKdayPortal-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Production-Info.plist"; sourceTree = "<group>"; };
+		F4D8DE1623EC01F60091A51A /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Stage-Info.plist"; sourceTree = "<group>"; };
 		F4DDFDC323D69F3F00B5802B /* TestingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSection.swift; sourceTree = "<group>"; };
 		F4FC419C238CCA7D00AC7315 /* PloneUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneUser.swift; sourceTree = "<group>"; };
 		F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -963,9 +971,9 @@
 			isa = PBXGroup;
 			children = (
 				F4B3F2DB23862B3100657CDF /* KKdayPortal-Sit-Info.plist */,
-				F44E8CE423B88AA30032C6BE /* KKdayPortal-Production-Info.plist */,
-				F44E8D5A23B88AFA0032C6BE /* KKdayPortal-Stage-Info.plist */,
-				F44E8DD023B88AFC0032C6BE /* KKdayPortal-Test-Info.plist */,
+				F4D8DE1523EC01F60091A51A /* KKdayPortal-Production-Info.plist */,
+				F4D8DE1623EC01F60091A51A /* KKdayPortal-Stage-Info.plist */,
+				F4D8DE1423EC01F60091A51A /* KKdayPortal-Test-Info.plist */,
 			);
 			path = InfoPlist;
 			sourceTree = "<group>";
@@ -1924,6 +1932,7 @@
 			children = (
 				F4B3F3252387C16D00657CDF /* APIManager */,
 				F4B3F32C2387C29900657CDF /* APITarget */,
+				F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2194,10 +2203,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D8DE1923EC01F60091A51A /* KKdayPortal-Stage-Info.plist in Resources */,
 				F453943623B8B44300136E6D /* Gif in Resources */,
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
+				F4D8DE1823EC01F60091A51A /* KKdayPortal-Production-Info.plist in Resources */,
 				F45448A223A88636001B8D31 /* credentials.plist in Resources */,
 				F457415C23D53EEB00FB5EEC /* ConfigModel.json in Resources */,
+				F4D8DE1723EC01F60091A51A /* KKdayPortal-Test-Info.plist in Resources */,
 				F454488723A54D2D001B8D31 /* Localizable.strings in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
 			);
@@ -2409,6 +2421,7 @@
 				F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
 				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
+				F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
@@ -2547,6 +2560,7 @@
 				F44E8CEE23B88AFA0032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8CEF23B88AFA0032C6BE /* PloneFileObject.swift in Sources */,
 				F453952723BAE0FC00136E6D /* LoadingManager.swift in Sources */,
+				F4D8DE1223EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F4DDFDC623D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F44E8CF023B88AFA0032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7F23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
@@ -2685,6 +2699,7 @@
 				F44E8D6423B88AFC0032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8D6523B88AFC0032C6BE /* PloneFileObject.swift in Sources */,
 				F453952823BAE0FC00136E6D /* LoadingManager.swift in Sources */,
+				F4D8DE1323EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F4DDFDC723D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F44E8D6623B88AFC0032C6BE /* StorageManager.swift in Sources */,
 				F43AFC8023E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
@@ -2837,6 +2852,7 @@
 				F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
+				F4D8DE1023EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
 				F4B3F3212386F53400657CDF /* SecureStoreQueryable.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,

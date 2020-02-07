@@ -15,7 +15,7 @@ import WebKit
 final class ApplicationsContentViewController: UIViewController {
     
     // 🏞 UI element
-    lazy var webView: WKWebView = {
+    private lazy var webView: WKWebView = {
         let wkv = WKWebView()
         wkv.navigationDelegate = self
         return wkv
@@ -135,7 +135,6 @@ extension ApplicationsContentViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("\(#function) load finished")
         showActivityInicator(false)
-        
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
