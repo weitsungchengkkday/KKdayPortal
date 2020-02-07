@@ -14,39 +14,51 @@ final class SettingViewController: UIViewController {
     // 🏞 UI element
     lazy var languageButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Language Page", for: .normal)
+        btn.setTitle("Language Setting (preparing...)", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        btn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         btn.setTitleColor(.white, for: .normal)
-        btn.layer.cornerRadius = 4
+        btn.layer.cornerRadius = 8
+        btn.isEnabled = false
         return btn
     }()
     
     lazy var renewTokenButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("RenewToken", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        btn.layer.cornerRadius = 4
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        btn.layer.cornerRadius = 8
+        btn.isHidden = true
         return btn
     }()
     
     lazy var logoutButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Logout", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-        btn.layer.cornerRadius = 4
+        btn.layer.cornerRadius = 8
         return btn
     }()
     
-    lazy var testingButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Testing", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        btn.layer.cornerRadius = 4
-        return btn
+    lazy var logoWithTextImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKkdayLogoWithText")
+        imv.isUserInteractionEnabled = true
+        return imv
+    }()
+    
+    lazy var versionLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.font = UIFont.systemFont(ofSize: 12)
+        lbl.text = "Version" + " " + Utilities.getCurrentVersion()
+        lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        return lbl
     }()
     
     private let viewModel = SettingViewModel()
+    private let testingModeTapRequired: Int = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,32 +73,41 @@ final class SettingViewController: UIViewController {
         view.addSubview(languageButton)
         view.addSubview(renewTokenButton)
         view.addSubview(logoutButton)
-        view.addSubview(testingButton)
+        view.addSubview(logoWithTextImageView)
+        view.addSubview(versionLabel)
         
         languageButton.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(100)
             maker.centerX.equalToSuperview()
-            maker.width.equalTo(145)
+            maker.height.equalTo(60)
+            maker.width.equalToSuperview().offset(-60)
         }
         
         renewTokenButton.snp.makeConstraints { maker in
             maker.top.equalTo(languageButton.snp.bottom).offset(50)
             maker.centerX.equalToSuperview()
-            maker.width.equalTo(145)
+            maker.height.equalTo(60)
+            maker.width.equalToSuperview().offset(-80)
         }
         
         logoutButton.snp.makeConstraints { maker in
             maker.top.equalTo(renewTokenButton.snp.bottom).offset(50)
             maker.centerX.equalToSuperview()
-            maker.width.equalTo(145)
+            maker.height.equalTo(60)
+            maker.width.equalToSuperview().offset(-200)
         }
         
-        testingButton.snp.makeConstraints { maker in
+        logoWithTextImageView.snp.makeConstraints { maker in
+            maker.width.equalTo(180)
+            maker.height.equalTo(77.4)
             maker.centerX.equalToSuperview()
-            maker.width.equalTo(145)
-            maker.bottom.equalTo(self.view.snp.bottomMargin).offset(-80)
+            maker.bottom.equalTo(view.snp.bottomMargin).offset(-44)
         }
         
+        versionLabel.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(logoWithTextImageView.snp.bottom).offset(7)
+        }
     }
     
     // 🎬 set action
@@ -94,7 +115,11 @@ final class SettingViewController: UIViewController {
         languageButton.addTarget(self, action: #selector(goLanguagePage), for: .touchUpInside)
         renewTokenButton.addTarget(self, action: #selector(renewToken), for: .touchUpInside)
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-        testingButton.addTarget(self, action: #selector(goTestingPage), for: .touchUpInside)
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(goTestingPage))
+        recognizer.numberOfTapsRequired = testingModeTapRequired
+        logoWithTextImageView.addGestureRecognizer(recognizer)
+        
     }
     
     @objc private func goLanguagePage() {

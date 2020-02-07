@@ -11,19 +11,30 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     // 🏞 UI element
+    lazy var loginTitleLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        lbl.text = "Welcome to KKday\nEnterprise Information Portal"
+        lbl.font = UIFont.boldSystemFont(ofSize: 26)
+        lbl.textAlignment = .center
+        lbl.numberOfLines = 2
+        return lbl
+    }()
     
-    lazy var imageView: UIImageView = {
+    lazy var backgroundImageVeiw: UIImageView = {
         let imv = UIImageView()
-        imv.image = #imageLiteral(resourceName: "icTabHomeDafault")
+        imv.image = #imageLiteral(resourceName: "icLoginPageBackground")
+        imv.contentMode = .scaleAspectFill
         return imv
     }()
     
     lazy var ploneRestfulTokenButton: UIButton = {
         let btn = UIButton()
-           btn.setTitle("Get Plone Restful Token", for: .normal)
-           btn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-           btn.layer.cornerRadius = 4
-           return btn
+        btn.setTitle("Login", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        btn.layer.cornerRadius = 8
+        return btn
     }()
     
     private let viewModel: LoginViewModel
@@ -46,18 +57,27 @@ final class LoginViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        view.addSubview(imageView)
+        view.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        view.addSubview(backgroundImageVeiw)
+        view.addSubview(loginTitleLabel)
         view.addSubview(ploneRestfulTokenButton)
         
-        imageView.snp.makeConstraints { maker in
-            maker.size.equalTo(300)
+        backgroundImageVeiw.snp.makeConstraints { maker in
             maker.top.equalTo(view.snp.topMargin)
+            maker.bottom.equalToSuperview()
+            maker.trailing.leading.equalToSuperview()
+        }
+        
+        loginTitleLabel.snp.makeConstraints { maker in
+            maker.top.equalTo(view.snp.topMargin).offset(68)
             maker.centerX.equalToSuperview()
         }
         
         ploneRestfulTokenButton.snp.makeConstraints { maker in
-            maker.centerX.centerY.equalToSuperview()
+            maker.height.equalTo(60)
+            maker.width.equalToSuperview().offset(-120)
+            maker.bottom.equalTo(view.snp.bottomMargin).offset(-44)
+            maker.centerX.equalToSuperview()
         }
     }
     

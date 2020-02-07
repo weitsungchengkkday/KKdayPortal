@@ -3286,12 +3286,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Sit";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = dev;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Sit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DSIT_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.sit;
 				PRODUCT_NAME = KKdayPortal;
@@ -3306,12 +3308,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Sit";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = dev;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Sit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DSIT_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.sit;
 				PRODUCT_NAME = KKdayPortal;

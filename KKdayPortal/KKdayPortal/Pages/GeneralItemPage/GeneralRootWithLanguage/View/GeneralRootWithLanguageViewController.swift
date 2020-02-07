@@ -105,7 +105,7 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
     
     // 🎨 draw UI
     private func setupUI() {
-        
+        self.title = "Home"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)

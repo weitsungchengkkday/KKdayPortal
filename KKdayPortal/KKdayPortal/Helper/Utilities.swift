@@ -11,7 +11,7 @@ import UIKit
 struct Utilities {
     
     public static var appDelegateWindow: UIWindow? {
-
+        
         guard let window: UIWindow = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})
             .map({$0 as? UIWindowScene})
@@ -20,7 +20,7 @@ struct Utilities {
             .filter({$0.isKeyWindow}).first else {
                 return nil
         }
-
+        
         return window
     }
     
@@ -36,23 +36,46 @@ struct Utilities {
     public static var currentViewController: UIViewController? {
         return getCurrentViewController(viewController: rootViewController)
     }
-
+    
     private static func getCurrentViewController(viewController: UIViewController?) -> UIViewController? {
-
+        
         switch viewController {
         case let navigationController as UINavigationController:
             return getCurrentViewController(viewController: navigationController.visibleViewController)
-
+            
         case let tabBarViewController as UITabBarController:
             return getCurrentViewController(viewController: tabBarViewController.selectedViewController)
-
+            
         default:
-
+            
             guard let presentedViewController: UIViewController = viewController?.presentedViewController else {
                 return viewController
             }
-
+            
             return getCurrentViewController(viewController: presentedViewController)
         }
+    }
+    
+    public static func getCurrentVersion() -> String {
+        
+        guard let infoDictionary = Bundle.main.infoDictionary else {
+            return ""
+        }
+        
+        let version = infoDictionary["CFBundleVersion"] as? String ?? ""
+        let marketingVersion = infoDictionary["CFBundleShortVersionString"] as? String ?? ""
+        let appVersion = "\(marketingVersion)(\(version))"
+        
+        return appVersion
+    }
+    
+    public static func shortVersion() -> String {
+        
+        guard let infoDictionary = Bundle.main.infoDictionary else {
+            return ""
+        }
+        
+        let marketingVersion = infoDictionary["CFBundleShortVersionString"] as? String ?? ""
+        return marketingVersion
     }
 }
