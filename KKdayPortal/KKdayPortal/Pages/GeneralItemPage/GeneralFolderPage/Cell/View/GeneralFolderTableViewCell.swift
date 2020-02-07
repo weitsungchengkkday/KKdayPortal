@@ -28,10 +28,10 @@ final class GeneralFolderTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var selectCellButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(#imageLiteral(resourceName: "icRightArrowGrey"), for: .normal)
-        return btn
+    lazy var rightArrowImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icRightArrowGrey")
+        return imv
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,7 +40,7 @@ final class GeneralFolderTableViewCell: UITableViewCell {
         self.contentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(typeImageView)
-        self.contentView.addSubview(selectCellButton)
+        self.contentView.addSubview(rightArrowImageView)
         
         typeImageView.snp.makeConstraints { maker in
             maker.height.width.equalTo(24)
@@ -50,17 +50,15 @@ final class GeneralFolderTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints { maker in
             maker.top.bottom.equalToSuperview()
-            maker.right.equalTo(selectCellButton.snp.left).offset(-15)
+            maker.right.equalTo(rightArrowImageView.snp.left).offset(-15)
             maker.left.equalTo(typeImageView.snp.right).offset(15)
         }
         
-        selectCellButton.snp.makeConstraints { maker in
-            maker.height.width.equalTo(40)
+        rightArrowImageView.snp.makeConstraints { maker in
+            maker.height.width.equalTo(16)
             maker.centerY.equalToSuperview()
             maker.right.equalToSuperview().offset(-17.5)
         }
-        
-      
     }
     
     required init?(coder aDecoder: NSCoder) {

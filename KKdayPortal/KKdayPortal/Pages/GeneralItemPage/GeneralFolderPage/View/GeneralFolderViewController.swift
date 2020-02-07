@@ -109,19 +109,20 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
             .drive(tableView.rx.items(cellIdentifier: GeneralFolderViewController.CellName, cellType: GeneralFolderTableViewCell.self)) { (row, generalItem, cell) in
                 
                 cell.typeImageView.image = generalItem.type?.image
-                cell.titleLabel.text = generalItem.title 
-                cell.selectCellButton.rx.tap.asObservable()
-                    .subscribe({ [unowned self] _ in
-                        
-                        guard let type = generalItem.type,
-                            let source = generalItem.source else {
-                                return
-                        }
-                        self.goDetailPage(route: source, type: type)
-                    })
-                    .disposed(by: cell.disposeBag)
+                cell.titleLabel.text = generalItem.title
         }
         .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(GeneralItem.self)
+            .subscribe(onNext: { [weak self] generalItem in
+                
+                guard let type = generalItem.type,
+                    let source = generalItem.source else {
+                        return
+                }
+                self?.goDetailPage(route: source, type: type)
+            })
+            .disposed(by: disposeBag)
     }
     
     // 📍 config NavBar
