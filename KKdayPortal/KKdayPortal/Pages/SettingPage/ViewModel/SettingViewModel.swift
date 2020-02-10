@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import WebKit
 
 final class SettingViewModel: RXViewModelType {
     
@@ -47,14 +48,23 @@ final class SettingViewModel: RXViewModelType {
     
     func logout() {
         
+        // Logout from Plone
         ModelLoader.PortalLoader()
             .logout()
             .subscribe(onSuccess: { generalUser in
                 debugPrint("👥 Logout -> General User: \(generalUser)")
                 
             }) { error in
-                debugPrint("🚨 Renew Token -> error is \(error)")}
+                debugPrint("🚨 logout -> error is \(error)")}
             .disposed(by: disposeBag)
+        
+        // Clear UserDefault
+        StorageManager.shared.removeAll()
+        // Clear WebCache
+        WebCacheCleaner.clean()
+        
+        // FIXME: Note: use coordinator pattern
+        let loginController = LoginViewController(viewModel: LoginViewModel())
+        Utilities.appDelegateWindow?.rootViewController = loginController
     }
-    
 }
