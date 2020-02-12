@@ -129,18 +129,15 @@ extension PloneSSOViewController: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-
-        print("🔗 NavigationType: \(navigationAction.navigationType.description)")
-        if navigationAction.navigationType == .linkActivated {
-            
-            if let url = navigationAction.request.url {
-                print("🌐 Navigation URL: \(url)")
-            }
-            
-            decisionHandler(.allow)
-        } else {
-            decisionHandler(.allow)
+        
+        let navigationType = navigationAction.navigationType
+         print("🔗 Navigation Type: \(navigationType)")
+        
+        if let url = navigationAction.request.url {
+            print("🌐 Navigation URL: \(url)")
         }
+        
+        decisionHandler(.allow)
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

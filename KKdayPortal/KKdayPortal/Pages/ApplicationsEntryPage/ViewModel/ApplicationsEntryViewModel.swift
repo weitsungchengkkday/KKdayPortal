@@ -30,8 +30,10 @@ final class ApplicationsEntryViewModel: RXViewModelType {
     private let isLoadingSubject = PublishSubject<Bool>()
     
     var generalItemsURL: [URL] = {
+#if TEST_VERSION
+        let urls = [ URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")! ]
         
-#if SIT_VERSION
+#elseif SIT_VERSION
         let urls = [ URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")! ]
        
 #elseif PRODUCTION_VERSION
@@ -40,7 +42,6 @@ final class ApplicationsEntryViewModel: RXViewModelType {
 #else
         
 #endif
-        
         return urls
     }()
     

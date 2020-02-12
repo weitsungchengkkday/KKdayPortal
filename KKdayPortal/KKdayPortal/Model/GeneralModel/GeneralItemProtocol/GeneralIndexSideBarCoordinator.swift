@@ -24,7 +24,11 @@ extension GeneralIndexSideBarCoordinator {
         navigationController?.viewControllers = [firstVC]
         
         switch type {
-        case .root, .root_with_language:
+        case .root:
+            let pushViewController = GeneralRootWithLanguageViewController(viewModel: GeneralRootWithLanguageViewModel(source: route))
+            navigationController?.pushViewController(pushViewController, animated: false)
+            
+        case .root_with_language:
             let pushViewController = GeneralRootViewController(viewModel: GeneralRootViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
             

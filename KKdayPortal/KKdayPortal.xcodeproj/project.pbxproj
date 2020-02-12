@@ -96,7 +96,6 @@
 		F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
 		F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
 		F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
-		F44E8C8B23B88AA30032C6BE /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
 		F44E8C8C23B88AA30032C6BE /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
 		F44E8C8D23B88AA30032C6BE /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
 		F44E8C8E23B88AA30032C6BE /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
@@ -145,7 +144,6 @@
 		F44E8CBC23B88AA30032C6BE /* PloneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F7238F706C001B8D31 /* PloneEvent.swift */; };
 		F44E8CBD23B88AA30032C6BE /* PortalItemAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A3238D35AA00AC7315 /* PortalItemAPITargetType.swift */; };
 		F44E8CBE23B88AA30032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
-		F44E8CBF23B88AA30032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
 		F44E8CC023B88AA30032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
 		F44E8CC223B88AA30032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
 		F44E8CC323B88AA30032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
@@ -192,7 +190,6 @@
 		F44E8CFE23B88AFA0032C6BE /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
 		F44E8CFF23B88AFA0032C6BE /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
 		F44E8D0023B88AFA0032C6BE /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
-		F44E8D0123B88AFA0032C6BE /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
 		F44E8D0223B88AFA0032C6BE /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
 		F44E8D0323B88AFA0032C6BE /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
 		F44E8D0423B88AFA0032C6BE /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
@@ -241,7 +238,6 @@
 		F44E8D3223B88AFA0032C6BE /* PloneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F7238F706C001B8D31 /* PloneEvent.swift */; };
 		F44E8D3323B88AFA0032C6BE /* PortalItemAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A3238D35AA00AC7315 /* PortalItemAPITargetType.swift */; };
 		F44E8D3423B88AFA0032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
-		F44E8D3523B88AFA0032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
 		F44E8D3623B88AFA0032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
 		F44E8D3823B88AFA0032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
 		F44E8D3923B88AFA0032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
@@ -288,7 +284,6 @@
 		F44E8D7423B88AFC0032C6BE /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
 		F44E8D7523B88AFC0032C6BE /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
 		F44E8D7623B88AFC0032C6BE /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
-		F44E8D7723B88AFC0032C6BE /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
 		F44E8D7823B88AFC0032C6BE /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
 		F44E8D7923B88AFC0032C6BE /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
 		F44E8D7A23B88AFC0032C6BE /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
@@ -337,7 +332,6 @@
 		F44E8DA823B88AFC0032C6BE /* PloneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F7238F706C001B8D31 /* PloneEvent.swift */; };
 		F44E8DA923B88AFC0032C6BE /* PortalItemAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A3238D35AA00AC7315 /* PortalItemAPITargetType.swift */; };
 		F44E8DAA23B88AFC0032C6BE /* PortalUserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32D2387C34C00657CDF /* PortalUserAPITargetType.swift */; };
-		F44E8DAB23B88AFC0032C6BE /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
 		F44E8DAC23B88AFC0032C6BE /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
 		F44E8DAE23B88AFC0032C6BE /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
 		F44E8DAF23B88AFC0032C6BE /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
@@ -408,7 +402,6 @@
 		F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
 		F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
 		F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
-		F4544823239CA036001B8D31 /* GeneralRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */; };
 		F4544826239CA4AC001B8D31 /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
 		F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
 		F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
@@ -442,7 +435,6 @@
 		F454489823A5E211001B8D31 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
 		F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
 		F45448A223A88636001B8D31 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
-		F45448A623A9D7B8001B8D31 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448A523A9D7B8001B8D31 /* GoogleUser.swift */; };
 		F45448AB23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
 		F45448AD23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
 		F45448B623AA3156001B8D31 /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
@@ -495,10 +487,6 @@
 		F457416823D5463E00FB5EEC /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416623D5463E00FB5EEC /* ConfigModel.swift */; };
 		F457416923D5463E00FB5EEC /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416623D5463E00FB5EEC /* ConfigModel.swift */; };
 		F457416A23D5463E00FB5EEC /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416623D5463E00FB5EEC /* ConfigModel.swift */; };
-		F457416C23D5465C00FB5EEC /* ConfigParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416B23D5465C00FB5EEC /* ConfigParser.swift */; };
-		F457416D23D5465C00FB5EEC /* ConfigParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416B23D5465C00FB5EEC /* ConfigParser.swift */; };
-		F457416E23D5465C00FB5EEC /* ConfigParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416B23D5465C00FB5EEC /* ConfigParser.swift */; };
-		F457416F23D5465C00FB5EEC /* ConfigParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416B23D5465C00FB5EEC /* ConfigParser.swift */; };
 		F457417123D5525F00FB5EEC /* ServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417023D5525F00FB5EEC /* ServerType.swift */; };
 		F457417223D5525F00FB5EEC /* ServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417023D5525F00FB5EEC /* ServerType.swift */; };
 		F457417323D5525F00FB5EEC /* ServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417023D5525F00FB5EEC /* ServerType.swift */; };
@@ -574,6 +562,12 @@
 		F4B3BCBC23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
 		F4B3BCBD23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
 		F4B3BCBE23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
+		F4B3BCBF23F3A417009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
+		F4B3BCC023F3A418009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
+		F4B3BCC123F3A418009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
+		F4B3BCC223F3A42C009699E5 /* ContentListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */; };
+		F4B3BCC323F3A42C009699E5 /* ContentListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */; };
+		F4B3BCC423F3A42D009699E5 /* ContentListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -697,7 +691,6 @@
 		F45447FD239BB577001B8D31 /* ModelLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoadable.swift; sourceTree = "<group>"; };
 		F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewModel.swift; sourceTree = "<group>"; };
 		F454481F239C040F001B8D31 /* GeneralRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewController.swift; sourceTree = "<group>"; };
-		F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootTableViewCell.swift; sourceTree = "<group>"; };
 		F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemCoordinator.swift; sourceTree = "<group>"; };
 		F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewModel.swift; sourceTree = "<group>"; };
 		F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewController.swift; sourceTree = "<group>"; };
@@ -737,7 +730,6 @@
 		F454489723A5E211001B8D31 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F454489923A5F611001B8D31 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		F45448A123A88636001B8D31 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
-		F45448A523A9D7B8001B8D31 /* GoogleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleUser.swift; sourceTree = "<group>"; };
 		F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryViewController.swift; sourceTree = "<group>"; };
 		F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryViewModel.swift; sourceTree = "<group>"; };
 		F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsContentViewController.swift; sourceTree = "<group>"; };
@@ -754,7 +746,6 @@
 		F457415B23D53EEB00FB5EEC /* ConfigModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ConfigModel.json; sourceTree = "<group>"; };
 		F457416123D5462C00FB5EEC /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		F457416623D5463E00FB5EEC /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
-		F457416B23D5465C00FB5EEC /* ConfigParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigParser.swift; sourceTree = "<group>"; };
 		F457417023D5525F00FB5EEC /* ServerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerType.swift; sourceTree = "<group>"; };
 		F457417923D55FB400FB5EEC /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		F457417E23D58F4E00FB5EEC /* TestingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewModel.swift; sourceTree = "<group>"; };
@@ -1166,7 +1157,6 @@
 		F45447E2239AA0C2001B8D31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F45448A323A9D767001B8D31 /* GoogleModel */,
 				F4544863239FA8E7001B8D31 /* Error */,
 				F45447FA239BB2EB001B8D31 /* ModelLoader */,
 				F45447E4239AA10E001B8D31 /* GeneralModel */,
@@ -1246,7 +1236,6 @@
 			children = (
 				F4544809239C02A2001B8D31 /* ViewModel */,
 				F4544808239C02A0001B8D31 /* View */,
-				F4544807239C029C001B8D31 /* Cell */,
 			);
 			path = GeneralRootPage;
 			sourceTree = "<group>";
@@ -1303,14 +1292,6 @@
 				F454480B239C02A8001B8D31 /* View */,
 			);
 			path = GeneralImagePage;
-			sourceTree = "<group>";
-		};
-		F4544807239C029C001B8D31 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F4544821239C9FF7001B8D31 /* View */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		F4544808239C02A0001B8D31 /* View */ = {
@@ -1423,14 +1404,6 @@
 				F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F4544821239C9FF7001B8D31 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F4544822239CA036001B8D31 /* GeneralRootTableViewCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F4544824239CA3E3001B8D31 /* GeneralItemProtocol */ = {
@@ -1579,22 +1552,6 @@
 			path = MainTabViewController;
 			sourceTree = "<group>";
 		};
-		F45448A323A9D767001B8D31 /* GoogleModel */ = {
-			isa = PBXGroup;
-			children = (
-				F45448A423A9D784001B8D31 /* GoogleUser */,
-			);
-			path = GoogleModel;
-			sourceTree = "<group>";
-		};
-		F45448A423A9D784001B8D31 /* GoogleUser */ = {
-			isa = PBXGroup;
-			children = (
-				F45448A523A9D7B8001B8D31 /* GoogleUser.swift */,
-			);
-			path = GoogleUser;
-			sourceTree = "<group>";
-		};
 		F45448A723A9F951001B8D31 /* ApplicationsEntryPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1701,7 +1658,6 @@
 			children = (
 				F457416123D5462C00FB5EEC /* ConfigManager.swift */,
 				F457416623D5463E00FB5EEC /* ConfigModel.swift */,
-				F457416B23D5465C00FB5EEC /* ConfigParser.swift */,
 			);
 			path = "ConfigManager ";
 			sourceTree = "<group>";
@@ -2510,6 +2466,7 @@
 				F44E8C7523B88AA30032C6BE /* RXViewModelType.swift in Sources */,
 				F43AFC6223E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F43AFC6E23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
+				F4B3BCBF23F3A417009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */,
 				F43AFC8223E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EA23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F44A199923C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
@@ -2548,7 +2505,6 @@
 				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */,
 				F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */,
-				F44E8C8B23B88AA30032C6BE /* GoogleUser.swift in Sources */,
 				F44E8C8C23B88AA30032C6BE /* AccountOperatingError.swift in Sources */,
 				F44E8C8D23B88AA30032C6BE /* Region.swift in Sources */,
 				F44E8C8E23B88AA30032C6BE /* LanguageSection.swift in Sources */,
@@ -2611,9 +2567,9 @@
 				F44E8CBA23B88AA30032C6BE /* PloneImage.swift in Sources */,
 				F457418723D593C600FB5EEC /* TestingTableViewCell.swift in Sources */,
 				F44E8CBC23B88AA30032C6BE /* PloneEvent.swift in Sources */,
+				F4B3BCC223F3A42C009699E5 /* ContentListSectionItem.swift in Sources */,
 				F44E8CBD23B88AA30032C6BE /* PortalItemAPITargetType.swift in Sources */,
 				F44E8CBE23B88AA30032C6BE /* PortalUserAPITargetType.swift in Sources */,
-				F44E8CBF23B88AA30032C6BE /* GeneralRootTableViewCell.swift in Sources */,
 				F44E8CC023B88AA30032C6BE /* GeneralLinkObject.swift in Sources */,
 				F44E8CC223B88AA30032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
 				F44E8CC323B88AA30032C6BE /* LanguageCellViewModel.swift in Sources */,
@@ -2625,7 +2581,6 @@
 				F457416823D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				F45740E023D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */,
 				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
-				F457416D23D5465C00FB5EEC /* ConfigParser.swift in Sources */,
 				F44E8CC923B88AA30032C6BE /* APIManager.swift in Sources */,
 				F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */,
 				F44E8CCD23B88AA30032C6BE /* GeneralLinkViewModel.swift in Sources */,
@@ -2656,6 +2611,7 @@
 				F44E8CEB23B88AFA0032C6BE /* RXViewModelType.swift in Sources */,
 				F43AFC6323E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F43AFC6F23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
+				F4B3BCC123F3A418009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */,
 				F43AFC8323E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EB23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F44A199A23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
@@ -2694,7 +2650,6 @@
 				F44E8CFE23B88AFA0032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F44E8CFF23B88AFA0032C6BE /* PloneCollection.swift in Sources */,
 				F44E8D0023B88AFA0032C6BE /* GeneralDocumentViewModel.swift in Sources */,
-				F44E8D0123B88AFA0032C6BE /* GoogleUser.swift in Sources */,
 				F44E8D0223B88AFA0032C6BE /* AccountOperatingError.swift in Sources */,
 				F44E8D0323B88AFA0032C6BE /* Region.swift in Sources */,
 				F44E8D0423B88AFA0032C6BE /* LanguageSection.swift in Sources */,
@@ -2757,9 +2712,9 @@
 				F44E8D3023B88AFA0032C6BE /* PloneImage.swift in Sources */,
 				F457418823D593C600FB5EEC /* TestingTableViewCell.swift in Sources */,
 				F44E8D3223B88AFA0032C6BE /* PloneEvent.swift in Sources */,
+				F4B3BCC323F3A42C009699E5 /* ContentListSectionItem.swift in Sources */,
 				F44E8D3323B88AFA0032C6BE /* PortalItemAPITargetType.swift in Sources */,
 				F44E8D3423B88AFA0032C6BE /* PortalUserAPITargetType.swift in Sources */,
-				F44E8D3523B88AFA0032C6BE /* GeneralRootTableViewCell.swift in Sources */,
 				F44E8D3623B88AFA0032C6BE /* GeneralLinkObject.swift in Sources */,
 				F44E8D3823B88AFA0032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
 				F44E8D3923B88AFA0032C6BE /* LanguageCellViewModel.swift in Sources */,
@@ -2771,7 +2726,6 @@
 				F457416923D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				F45740E123D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */,
 				F44E8D3E23B88AFA0032C6BE /* GeneralNewsViewController.swift in Sources */,
-				F457416E23D5465C00FB5EEC /* ConfigParser.swift in Sources */,
 				F44E8D3F23B88AFA0032C6BE /* APIManager.swift in Sources */,
 				F44E8D4223B88AFA0032C6BE /* PloneDocument.swift in Sources */,
 				F44E8D4323B88AFA0032C6BE /* GeneralLinkViewModel.swift in Sources */,
@@ -2802,6 +2756,7 @@
 				F44E8D6123B88AFC0032C6BE /* RXViewModelType.swift in Sources */,
 				F43AFC6423E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F43AFC7023E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
+				F4B3BCC023F3A418009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */,
 				F43AFC8423E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EC23D13A3100FB5EEC /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F44A199B23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
@@ -2840,7 +2795,6 @@
 				F44E8D7423B88AFC0032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F44E8D7523B88AFC0032C6BE /* PloneCollection.swift in Sources */,
 				F44E8D7623B88AFC0032C6BE /* GeneralDocumentViewModel.swift in Sources */,
-				F44E8D7723B88AFC0032C6BE /* GoogleUser.swift in Sources */,
 				F44E8D7823B88AFC0032C6BE /* AccountOperatingError.swift in Sources */,
 				F44E8D7923B88AFC0032C6BE /* Region.swift in Sources */,
 				F44E8D7A23B88AFC0032C6BE /* LanguageSection.swift in Sources */,
@@ -2903,9 +2857,9 @@
 				F44E8DA623B88AFC0032C6BE /* PloneImage.swift in Sources */,
 				F457418923D593C600FB5EEC /* TestingTableViewCell.swift in Sources */,
 				F44E8DA823B88AFC0032C6BE /* PloneEvent.swift in Sources */,
+				F4B3BCC423F3A42D009699E5 /* ContentListSectionItem.swift in Sources */,
 				F44E8DA923B88AFC0032C6BE /* PortalItemAPITargetType.swift in Sources */,
 				F44E8DAA23B88AFC0032C6BE /* PortalUserAPITargetType.swift in Sources */,
-				F44E8DAB23B88AFC0032C6BE /* GeneralRootTableViewCell.swift in Sources */,
 				F44E8DAC23B88AFC0032C6BE /* GeneralLinkObject.swift in Sources */,
 				F44E8DAE23B88AFC0032C6BE /* LanguageSettingTableViewCell.swift in Sources */,
 				F44E8DAF23B88AFC0032C6BE /* LanguageCellViewModel.swift in Sources */,
@@ -2917,7 +2871,6 @@
 				F457416A23D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				F45740E223D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */,
 				F44E8DB423B88AFC0032C6BE /* GeneralNewsViewController.swift in Sources */,
-				F457416F23D5465C00FB5EEC /* ConfigParser.swift in Sources */,
 				F44E8DB523B88AFC0032C6BE /* APIManager.swift in Sources */,
 				F44E8DB823B88AFC0032C6BE /* PloneDocument.swift in Sources */,
 				F44E8DB923B88AFC0032C6BE /* GeneralLinkViewModel.swift in Sources */,
@@ -2991,7 +2944,6 @@
 				F43AFC6923E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
-				F45448A623A9D7B8001B8D31 /* GoogleUser.swift in Sources */,
 				F43AFC7923E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
 				F4544865239FA9D5001B8D31 /* AccountOperatingError.swift in Sources */,
 				F454487C23A337D3001B8D31 /* Region.swift in Sources */,
@@ -3064,7 +3016,6 @@
 				F45446F8238F706C001B8D31 /* PloneEvent.swift in Sources */,
 				F4FC41A4238D35AA00AC7315 /* PortalItemAPITargetType.swift in Sources */,
 				F4B3F32E2387C34C00657CDF /* PortalUserAPITargetType.swift in Sources */,
-				F4544823239CA036001B8D31 /* GeneralRootTableViewCell.swift in Sources */,
 				F45447F4239AB7B6001B8D31 /* GeneralLinkObject.swift in Sources */,
 				F454487123A218B0001B8D31 /* LanguageSettingTableViewCell.swift in Sources */,
 				F454487F23A39956001B8D31 /* LanguageCellViewModel.swift in Sources */,
@@ -3078,7 +3029,6 @@
 				F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */,
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F43AFC7D23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
-				F457416C23D5465C00FB5EEC /* ConfigParser.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
 				F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */,

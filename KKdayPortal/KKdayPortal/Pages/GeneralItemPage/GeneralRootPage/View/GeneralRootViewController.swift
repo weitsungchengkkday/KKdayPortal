@@ -12,24 +12,6 @@ import RxCocoa
 import SnapKit
 
 final class GeneralRootViewController: UIViewController, GeneralItemCoordinator {
-
-    private static var CellName: String {
-        return "RootCell"
-    }
-    
-    // 🏞 UI element
-    lazy var logoImageView: UIImageView = {
-        let imv = UIImageView()
-        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
-        return imv
-    }()
-    
-    lazy var tableView: UITableView = {
-        let tbv = UITableView()
-        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        tbv.register(GeneralRootTableViewCell.self, forCellReuseIdentifier: GeneralRootViewController.CellName)
-        return tbv
-    }()
     
     private let viewModel: GeneralRootViewModel
     private let disposeBag = DisposeBag()
@@ -48,31 +30,11 @@ final class GeneralRootViewController: UIViewController, GeneralItemCoordinator 
         
         setupUI()
         bindViewModel()
-        
-        tableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        
-        viewModel.getPortalData()
     }
     
     // 🎨 draw UI
     private func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        view.addSubview(logoImageView)
-        view.addSubview(tableView)
         
-        logoImageView.snp.makeConstraints { maker in
-            maker.top.equalTo(self.view.snp.topMargin)
-            maker.leading.equalToSuperview()
-        }
-        
-        tableView.snp.makeConstraints { maker in
-            maker.top.equalTo(logoImageView.snp.bottom)
-            maker.leading.equalTo(view.safeAreaLayoutGuide)
-            maker.trailing.equalTo(view.safeAreaLayoutGuide)
-            maker.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
     }
     
     // 🎬 set action
@@ -82,37 +44,6 @@ final class GeneralRootViewController: UIViewController, GeneralItemCoordinator 
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.title = title
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showGeneralItems
-            .drive(tableView.rx.items(cellIdentifier: GeneralRootViewController.CellName, cellType: GeneralRootTableViewCell.self)) { (row, generalItem, cell) in
-    
-                cell.titleLabel.text = generalItem.title
-                cell.descriptionLabel.text = generalItem.description
-                
-                cell.selectCellButton.rx.tap.asObservable()
-                    .subscribe({ [unowned self] _ in
-                
-                        guard let type = generalItem.type,
-                            let source = generalItem.source else {
-                            return
-                        }
-                        self.goDetailPage(route: source, type: type)
-                    })
-                    .disposed(by: cell.disposeBag)
-        }
-        .disposed(by: disposeBag)
-    }
-}
-
-extension GeneralRootViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+      
     }
 }
