@@ -132,7 +132,17 @@ final class SettingViewController: UIViewController {
     }
     
     @objc private func logout() {
-        viewModel.logout()
+        let alertController =  UIAlertController(title: "Warning", message: "Logout will clear all personal information", preferredStyle: .alert)
+        
+        let confirmAlertAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] _ in
+            self?.viewModel.logout()
+        }
+        
+        let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(confirmAlertAction)
+        alertController.addAction(cancelAlertAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @objc private func goTestingPage() {

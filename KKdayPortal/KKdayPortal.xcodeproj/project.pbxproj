@@ -550,6 +550,30 @@
 		F4B3BC9B23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
 		F4B3BC9C23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
 		F4B3BC9D23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
+		F4B3BCA023F15A53009699E5 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9F23F15A53009699E5 /* HTTPError.swift */; };
+		F4B3BCA123F15A53009699E5 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9F23F15A53009699E5 /* HTTPError.swift */; };
+		F4B3BCA223F15A53009699E5 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9F23F15A53009699E5 /* HTTPError.swift */; };
+		F4B3BCA323F15A53009699E5 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9F23F15A53009699E5 /* HTTPError.swift */; };
+		F4B3BCA523F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
+		F4B3BCA623F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
+		F4B3BCA723F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
+		F4B3BCA823F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
+		F4B3BCAA23F30F6D009699E5 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
+		F4B3BCAB23F30F6D009699E5 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
+		F4B3BCAC23F30F6D009699E5 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
+		F4B3BCAD23F30F6D009699E5 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
+		F4B3BCAF23F30FB4009699E5 /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */; };
+		F4B3BCB023F30FB4009699E5 /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */; };
+		F4B3BCB123F30FB4009699E5 /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */; };
+		F4B3BCB223F30FB4009699E5 /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */; };
+		F4B3BCB623F31052009699E5 /* AlertEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */; };
+		F4B3BCB723F31052009699E5 /* AlertEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */; };
+		F4B3BCB823F31052009699E5 /* AlertEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */; };
+		F4B3BCB923F31052009699E5 /* AlertEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */; };
+		F4B3BCBB23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
+		F4B3BCBC23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
+		F4B3BCBD23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
+		F4B3BCBE23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
 		F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
@@ -747,6 +771,12 @@
 		F4B3BC8B23F0F576009699E5 /* KKdayPortal-Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Test-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC9423F0F57C009699E5 /* KKdayPortal-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Production-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
+		F4B3BC9F23F15A53009699E5 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
+		F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
+		F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEventInfo.swift; sourceTree = "<group>"; };
+		F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManageable.swift; sourceTree = "<group>"; };
 		F4B3F2CA23862B3000657CDF /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3F2CD23862B3000657CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1118,6 +1148,7 @@
 				F4544768239609E5001B8D31 /* DateFormatterExtension.swift */,
 				F454487923A336D6001B8D31 /* LocaleExtension.swift */,
 				F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */,
+				F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1808,6 +1839,32 @@
 			path = InfoPlist;
 			sourceTree = "<group>";
 		};
+		F4B3BC9E23F15A0C009699E5 /* HTTPError */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3BC9F23F15A53009699E5 /* HTTPError.swift */,
+			);
+			path = HTTPError;
+			sourceTree = "<group>";
+		};
+		F4B3BCB323F3100F009699E5 /* MemberManager */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */,
+				F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */,
+			);
+			path = MemberManager;
+			sourceTree = "<group>";
+		};
+		F4B3BCB423F31027009699E5 /* WebAPIManager */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */,
+				F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */,
+			);
+			path = WebAPIManager;
+			sourceTree = "<group>";
+		};
 		F4B3F2C123862B3000657CDF = {
 			isa = PBXGroup;
 			children = (
@@ -1910,6 +1967,8 @@
 			children = (
 				F457416023D5460700FB5EEC /* ConfigManager  */,
 				F4B3F3152386F53400657CDF /* SecureStore */,
+				F4B3BCB423F31027009699E5 /* WebAPIManager */,
+				F4B3BCB323F3100F009699E5 /* MemberManager */,
 				F4B3F3132386EE9100657CDF /* NetStatusManager.swift */,
 				F4B3F32F2387CB7100657CDF /* StorageManager.swift */,
 				F454487523A32F92001B8D31 /* LanguageManager.swift */,
@@ -1957,6 +2016,7 @@
 		F4B3F3242387C15B00657CDF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3BC9E23F15A0C009699E5 /* HTTPError */,
 				F4B3F3252387C16D00657CDF /* APIManager */,
 				F4B3F32C2387C29900657CDF /* APITarget */,
 				F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */,
@@ -2455,6 +2515,7 @@
 				F44A199923C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
+				F4B3BCA123F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740E723D13A2B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */,
 				F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F43AFC5623E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
@@ -2496,8 +2557,10 @@
 				F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */,
 				F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */,
 				F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */,
+				F4B3BCA623F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
 				F44E8C9523B88AA30032C6BE /* GeneralList.swift in Sources */,
 				F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */,
+				F4B3BCAB23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
 				F44E8C9723B88AA30032C6BE /* RepositoryManageable.swift in Sources */,
 				F44E8C9823B88AA30032C6BE /* HomeViewController.swift in Sources */,
 				F44E8C9923B88AA30032C6BE /* CodableResponseType.swift in Sources */,
@@ -2507,11 +2570,13 @@
 				F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */,
 				F44E8C9F23B88AA30032C6BE /* SecureStore.swift in Sources */,
+				F4B3BCB023F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F44E8CA023B88AA30032C6BE /* GeneralFileObject.swift in Sources */,
 				F44E8CA123B88AA30032C6BE /* PloneUser.swift in Sources */,
 				F44A199423C56CB300B35976 /* GeneralRootWithLanguageViewModel.swift in Sources */,
 				F4B3BC9B23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
 				F44E8CA223B88AA30032C6BE /* PloneItem.swift in Sources */,
+				F4B3BCBC23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F44E8CA323B88AA30032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8CA423B88AA30032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8CA523B88AA30032C6BE /* PortalItemAPITarget.swift in Sources */,
@@ -2568,6 +2633,7 @@
 				F44E8CCF23B88AA30032C6BE /* PloneTextObject.swift in Sources */,
 				F45740D923CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */,
 				F44E8CD023B88AA30032C6BE /* PortalUserAPITarget.swift in Sources */,
+				F4B3BCB723F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
 				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
@@ -2595,6 +2661,7 @@
 				F44A199A23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4623BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */,
+				F4B3BCA223F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740E823D13A2B00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */,
 				F453953223BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F43AFC5723E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
@@ -2636,8 +2703,10 @@
 				F44E8D0723B88AFA0032C6BE /* GeneralNewsViewModel.swift in Sources */,
 				F44E8D0823B88AFA0032C6BE /* PloneAuthToken.swift in Sources */,
 				F44E8D0A23B88AFA0032C6BE /* GeneralItem.swift in Sources */,
+				F4B3BCA723F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
 				F44E8D0B23B88AFA0032C6BE /* GeneralList.swift in Sources */,
 				F44E8D0C23B88AFA0032C6BE /* GeneralImageViewController.swift in Sources */,
+				F4B3BCAC23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
 				F44E8D0D23B88AFA0032C6BE /* RepositoryManageable.swift in Sources */,
 				F44E8D0E23B88AFA0032C6BE /* HomeViewController.swift in Sources */,
 				F44E8D0F23B88AFA0032C6BE /* CodableResponseType.swift in Sources */,
@@ -2647,11 +2716,13 @@
 				F44E8D1223B88AFA0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8D1423B88AFA0032C6BE /* WebPloneRepository.swift in Sources */,
 				F44E8D1523B88AFA0032C6BE /* SecureStore.swift in Sources */,
+				F4B3BCB123F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F44E8D1623B88AFA0032C6BE /* GeneralFileObject.swift in Sources */,
 				F44E8D1723B88AFA0032C6BE /* PloneUser.swift in Sources */,
 				F44A199523C56CB300B35976 /* GeneralRootWithLanguageViewModel.swift in Sources */,
 				F4B3BC9C23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
 				F44E8D1823B88AFA0032C6BE /* PloneItem.swift in Sources */,
+				F4B3BCBD23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F44E8D1923B88AFA0032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8D1A23B88AFA0032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8D1B23B88AFA0032C6BE /* PortalItemAPITarget.swift in Sources */,
@@ -2708,6 +2779,7 @@
 				F44E8D4523B88AFA0032C6BE /* PloneTextObject.swift in Sources */,
 				F45740DA23CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */,
 				F44E8D4623B88AFA0032C6BE /* PortalUserAPITarget.swift in Sources */,
+				F4B3BCB823F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F44E8D4723B88AFA0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8D4823B88AFA0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8D4923B88AFA0032C6BE /* GeneralFolderViewModel.swift in Sources */,
@@ -2735,6 +2807,7 @@
 				F44A199B23C56CC900B35976 /* GeneralRootWithLanguageViewController.swift in Sources */,
 				F45C2C4723BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */,
+				F4B3BCA323F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740E923D13A2C00FB5EEC /* GeneralIndexSideBarHeaderTableViewCellViewModel.swift in Sources */,
 				F453953323BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F43AFC5823E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
@@ -2776,8 +2849,10 @@
 				F44E8D7D23B88AFC0032C6BE /* GeneralNewsViewModel.swift in Sources */,
 				F44E8D7E23B88AFC0032C6BE /* PloneAuthToken.swift in Sources */,
 				F44E8D8023B88AFC0032C6BE /* GeneralItem.swift in Sources */,
+				F4B3BCA823F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
 				F44E8D8123B88AFC0032C6BE /* GeneralList.swift in Sources */,
 				F44E8D8223B88AFC0032C6BE /* GeneralImageViewController.swift in Sources */,
+				F4B3BCAD23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
 				F44E8D8323B88AFC0032C6BE /* RepositoryManageable.swift in Sources */,
 				F44E8D8423B88AFC0032C6BE /* HomeViewController.swift in Sources */,
 				F44E8D8523B88AFC0032C6BE /* CodableResponseType.swift in Sources */,
@@ -2787,11 +2862,13 @@
 				F44E8D8823B88AFC0032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8D8A23B88AFC0032C6BE /* WebPloneRepository.swift in Sources */,
 				F44E8D8B23B88AFC0032C6BE /* SecureStore.swift in Sources */,
+				F4B3BCB223F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F44E8D8C23B88AFC0032C6BE /* GeneralFileObject.swift in Sources */,
 				F44E8D8D23B88AFC0032C6BE /* PloneUser.swift in Sources */,
 				F44A199623C56CB300B35976 /* GeneralRootWithLanguageViewModel.swift in Sources */,
 				F4B3BC9D23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
 				F44E8D8E23B88AFC0032C6BE /* PloneItem.swift in Sources */,
+				F4B3BCBE23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F44E8D8F23B88AFC0032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8D9023B88AFC0032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8D9123B88AFC0032C6BE /* PortalItemAPITarget.swift in Sources */,
@@ -2848,6 +2925,7 @@
 				F44E8DBB23B88AFC0032C6BE /* PloneTextObject.swift in Sources */,
 				F45740DB23CEF05400FB5EEC /* GeneralIndexSideBarNormalTableViewCellViewModel.swift in Sources */,
 				F44E8DBC23B88AFC0032C6BE /* PortalUserAPITarget.swift in Sources */,
+				F4B3BCB923F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F44E8DBD23B88AFC0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8DBE23B88AFC0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8DBF23B88AFC0032C6BE /* GeneralFolderViewModel.swift in Sources */,
@@ -2920,12 +2998,15 @@
 				F454488423A50A1D001B8D31 /* LanguageSection.swift in Sources */,
 				F4603C5023C6F06C00F79BA8 /* GeneralIndexSideBarNormalTableViewCell.swift in Sources */,
 				F4B3F3112386EE1300657CDF /* CrashlyticsEvent.swift in Sources */,
+				F4B3BCAA23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
 				F4FC419F238CCB6500AC7315 /* LoginViewModel.swift in Sources */,
+				F4B3BCAF23F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
 				F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */,
 				F457417A23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */,
 				F45447E9239AA320001B8D31 /* GeneralList.swift in Sources */,
+				F4B3BCA523F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
 				F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */,
 				F45447E12399632E001B8D31 /* RepositoryManageable.swift in Sources */,
 				F4B3F3012386386900657CDF /* HomeViewController.swift in Sources */,
@@ -2943,6 +3024,7 @@
 				F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
 				F4FC41A2238D358A00AC7315 /* PortalItemAPITarget.swift in Sources */,
+				F4B3BCBB23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F457419123D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */,
 				F453952A23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
@@ -2955,6 +3037,7 @@
 				F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */,
 				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
 				F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */,
+				F4B3BCA023F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740CF23CD6C1300FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
@@ -2964,6 +3047,7 @@
 				F4544846239D01C8001B8D31 /* PortalControllable.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
 				F4603C5423C6F15300F79BA8 /* GeneralIndexSideBarViewController.swift in Sources */,
+				F4B3BCB623F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
 				F4544826239CA4AC001B8D31 /* GeneralItemCoordinator.swift in Sources */,
 				F45448AD23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift in Sources */,

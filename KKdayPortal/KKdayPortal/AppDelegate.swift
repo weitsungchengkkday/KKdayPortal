@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #endif
     
     ConfigManager.shared.setup()
+    APIManager.default.httpErrorHandler = WebAPIManager.shared
     setupLanguage()
     
         return true

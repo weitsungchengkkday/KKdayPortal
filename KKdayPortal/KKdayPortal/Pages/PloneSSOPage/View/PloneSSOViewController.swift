@@ -50,6 +50,7 @@ final class PloneSSOViewController: UIViewController {
     // 🎨 draw UI
     private func setupUI() {
         view.addSubview(SSOwebView)
+        
         SSOwebView.snp.makeConstraints { maker in
             maker.trailing.leading.top.bottom.equalToSuperview()
         }
@@ -101,6 +102,29 @@ extension PloneSSOViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
     
         print("📮 Navigation Response: \(navigationResponse.response)")
+        
+        
+        guard let response = navigationResponse.response as? HTTPURLResponse else {
+            return
+        }
+        
+        let statusCode = response.statusCode
+        guard statusCode >= 200 && statusCode <= 300 else {
+
+            let alertController =  UIAlertController(title: "Warning", message: "Please use valid email account", preferredStyle: .alert)
+            
+            let alertAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                WebCacheCleaner.clean()
+                self?.dismiss(animated: true, completion: nil)
+            }
+            
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+            
+            decisionHandler(.cancel)
+            return
+        }
+
         decisionHandler(.allow)
     }
     

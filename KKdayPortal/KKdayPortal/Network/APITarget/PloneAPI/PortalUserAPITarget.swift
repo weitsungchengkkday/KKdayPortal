@@ -71,4 +71,7 @@ enum PortalUser {
             self.token = user?.token ?? ""
         }
     }
+    
+    // MARK: Plone  Invalidating a token (@logout) can not be called
+    // Plone API Document: https://plonerestapi.readthedocs.io/en/latest/authentication.html
 }

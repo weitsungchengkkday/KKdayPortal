@@ -47,9 +47,5 @@ enum PortalItem {
             self.user = user
             self.token = user?.token ?? ""
         }
-        
     }
-    
-    
-   
 }

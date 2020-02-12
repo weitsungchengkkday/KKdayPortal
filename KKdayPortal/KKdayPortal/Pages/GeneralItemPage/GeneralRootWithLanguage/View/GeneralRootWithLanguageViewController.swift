@@ -86,6 +86,7 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(alertIfNeeded), name: Notification.Name.alertEvent, object: nil)
         
         setupUI()
         bindViewModel()
@@ -97,10 +98,19 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
         viewModel.getPortalData()
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBar()
+    }
+    
+    @objc private func alertIfNeeded(_ notification: Notification) {
+        if (notification.name == Notification.Name.alertEvent) {
+            MemberManager.shared.showAlertController(self, with: disposeBag)
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.alertEvent, object: nil)
     }
     
     // 🎨 draw UI

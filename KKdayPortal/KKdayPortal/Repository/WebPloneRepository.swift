@@ -99,7 +99,6 @@ final class WebPloneRepository: RepositoryManageable {
         
         return Single<User>.create { single -> Disposable in
             if let logoutGeneralUser = logoutGeneralUser {
-                StorageManager.shared.remove(for: .generalUser)
                 single(.success(logoutGeneralUser))
             } else {
                 single(.error(AccountOperatingError.UserNonExisting))
