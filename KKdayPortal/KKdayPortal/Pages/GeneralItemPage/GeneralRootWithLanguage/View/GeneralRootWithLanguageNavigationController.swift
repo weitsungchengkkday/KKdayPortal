@@ -14,7 +14,7 @@ class GeneralRootWithLanguageNavigationController: UINavigationController {
     
     lazy var backBarButtonItem: UIBarButtonItem = {
         let backSFConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .black, scale: .large)
-        let backSFImage = UIImage(systemName: "arrow.left", withConfiguration: backSFConfig)
+        let backSFImage = #imageLiteral(resourceName: "icMenuBackWhite")
         
         return UIBarButtonItem(image: backSFImage, style: .plain, target: self, action: #selector(popToPreviousPage))
     }()

@@ -214,7 +214,24 @@ final class GeneralIndexSideBarViewController: UIViewController {
                         self?.dismiss(animated: true, completion: nil)
                         
                     case .link:
-                        if source == URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm") {
+                        
+                        let BPMString: String
+                        
+                        #if TEST_VERSION
+                            BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
+                                
+                        #elseif SIT_VERSION
+                            BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
+                               
+                        #elseif PRODUCTION_VERSION
+                            BPMString = "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
+                       
+                        #else
+                                
+                        #endif
+                       
+                        
+                        if source == URL(string: BPMString) {
                             
                             // If link is BPM open website in APP
                             guard let currentViewController = Utilities.currentViewController as? GeneralIndexSideBarViewController else {
