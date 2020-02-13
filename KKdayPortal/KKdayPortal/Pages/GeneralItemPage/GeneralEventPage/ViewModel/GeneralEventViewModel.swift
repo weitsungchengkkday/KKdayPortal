@@ -18,6 +18,7 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
     
     struct Input {
         let title: AnyObserver<String>
+        let description: AnyObserver<String>
         let contact: AnyObserver<String>
         let event: AnyObserver<String>
         let generalTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
@@ -25,12 +26,14 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
     
     struct Output {
         let showTitle: Driver<String>
+        let showDescription: Driver<String>
         let showContact: Driver<String>
         let showEvent: Driver<String>
         let showGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
     private let titleSubject = PublishSubject<String>()
+    private let descriptionSubject = PublishSubject<String>()
     private let contactSubject = PublishSubject<String>()
     private let eventSubject = PublishSubject<String>()
     private let generalTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
@@ -42,8 +45,15 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
     init(source: URL) {
         
         self.source = source
-        self.input = Input(title: titleSubject.asObserver(), contact: contactSubject.asObserver(), event: eventSubject.asObserver(), generalTextObjectItems: generalTextObjectItemsSubject.asObserver())
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Event"), showContact: contactSubject.asDriver(onErrorJustReturn: ""), showEvent: eventSubject.asDriver(onErrorJustReturn: ""), showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: [])
+        self.input = Input(title: titleSubject.asObserver(),
+                           description: descriptionSubject.asObserver(),
+                           contact: contactSubject.asObserver(),
+                           event: eventSubject.asObserver(),
+                           generalTextObjectItems: generalTextObjectItemsSubject.asObserver())
+        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Event"),
+                             showDescription: descriptionSubject.asDriver(onErrorJustReturn: ""), showContact: contactSubject.asDriver(onErrorJustReturn: ""),
+                             showEvent: eventSubject.asDriver(onErrorJustReturn: ""),
+                             showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: [])
         )
     }
     
@@ -61,6 +71,10 @@ final class GeneralEventViewModel: RXViewModelType, PortalControllable {
                 self?.generalItem = generalItem
                 if let title = generalItem.title {
                     self?.titleSubject.onNext(title)
+                }
+                
+                if let description = generalItem.description {
+                    self?.descriptionSubject.onNext(description)
                 }
                 
                 let contactInfo = """

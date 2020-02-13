@@ -18,6 +18,7 @@ final class LoginViewController: UIViewController {
         lbl.font = UIFont.boldSystemFont(ofSize: 26)
         lbl.textAlignment = .center
         lbl.numberOfLines = 2
+        lbl.adjustsFontSizeToFitWidth = true
         return lbl
     }()
     
@@ -70,7 +71,8 @@ final class LoginViewController: UIViewController {
         
         loginTitleLabel.snp.makeConstraints { maker in
             maker.top.equalTo(view.snp.topMargin).offset(68)
-            maker.centerX.equalToSuperview()
+            maker.trailing.equalToSuperview().offset(-10)
+            maker.leading.equalToSuperview().offset(10)
         }
         
         ploneRestfulTokenButton.snp.makeConstraints { maker in

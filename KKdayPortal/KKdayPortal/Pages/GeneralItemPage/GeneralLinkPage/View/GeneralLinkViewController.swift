@@ -21,21 +21,9 @@ final class GeneralLinkViewController: UIViewController {
         return imv
     }()
     
-    lazy var topTitleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
-        lbl.font = UIFont.systemFont(ofSize: 24)
+    lazy var topTitleLabel: GeneralItemTopTitleLabel = {
+        let lbl = GeneralItemTopTitleLabel()
         return lbl
-    }()
-    
-    lazy var linkButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Link", for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        btn.setTitleColor(.white, for: .normal)
-        btn.layer.cornerRadius = 4
-        return btn
     }()
     
     private let viewModel: GeneralLinkViewModel
@@ -75,46 +63,25 @@ final class GeneralLinkViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
-        view.addSubview(linkButton)
         
         logoImageView.snp.makeConstraints { maker in
+            maker.width.equalTo(140)
+            maker.height.equalTo(79)
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
         }
         
         topTitleLabel.snp.makeConstraints { maker in
             maker.leading.equalTo(logoImageView.snp.trailing)
-            maker.trailing.equalToSuperview()
-            maker.centerY.equalTo(logoImageView.snp.centerY)
+            maker.trailing.equalToSuperview().offset(-5)
+            maker.top.equalToSuperview().offset(5)
+            maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
-        
-        linkButton.snp.makeConstraints { maker in
-            maker.top.equalTo(logoImageView.snp.bottom).offset(50)
-            maker.centerX.equalToSuperview()
-            maker.width.equalTo(50)
-        }
-        
     }
     
     // 🎬 set action
     private func setAction() {
         
-        linkButton.rx.tap
-            .subscribe(onNext: { [weak self] _ in
-                self?.goWebLinkViewController()
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func goWebLinkViewController() {
-        
-        guard let url = viewModel.generalItem?.linkObject?.url
-            else {
-                return
-        }
-        
-        let safariViewController = SFSafariViewController(url: url)
-        navigationController?.pushViewController(safariViewController, animated: false)
     }
     
     // ⛓ bind viewModel

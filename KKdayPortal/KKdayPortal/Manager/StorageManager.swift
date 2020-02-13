@@ -25,9 +25,6 @@ final class StorageManager {
         case regionIsSelected
         case selectedRegionKey
         
-        // Google
-        case googleUser
-        
         // ServerType
         case serverType
     }

@@ -23,6 +23,30 @@ final class GeneralIndexSideBarViewController: UIViewController {
     }
     
     // 🏞 UI element
+    lazy var topView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    lazy var titleLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        lbl.font = UIFont.boldSystemFont(ofSize: 24)
+        lbl.numberOfLines = 1
+        lbl.adjustsFontSizeToFitWidth = true
+        lbl.textAlignment = .center
+        lbl.text = "Table of Content"
+        return lbl
+    }()
+
+    lazy var closeButton: UIButton = {
+        let btn = UIButton()
+        let image = UIImage(systemName: "multiply", withConfiguration: UIImage.SymbolConfiguration(pointSize: 40, weight: .medium))
+        btn.setImage(image, for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
+        return btn
+    }()
+    
     lazy var tableView: UITableView = {
         let tbv = UITableView()
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -73,6 +97,7 @@ final class GeneralIndexSideBarViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        setAction()
         bindViewModel()
         tableView.rx
             .setDelegate(self)
@@ -84,9 +109,31 @@ final class GeneralIndexSideBarViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
+        view.addSubview(topView)
+        topView.addSubview(titleLabel)
+        topView.addSubview(closeButton)
         view.addSubview(tableView)
+        
+        topView.snp.makeConstraints { maker in
+           maker.top.equalTo(view.safeAreaLayoutGuide)
+           maker.leading.trailing.equalToSuperview()
+           maker.height.equalTo(50)
+        }
+        
+        titleLabel.snp.makeConstraints { maker in
+            maker.centerY.equalToSuperview()
+            maker.leading.equalToSuperview().offset(50)
+            maker.trailing.equalToSuperview().offset(-50)
+        }
+        
+        closeButton.snp.makeConstraints { maker in
+            maker.centerY.equalToSuperview()
+            maker.height.width.equalTo(40)
+            maker.trailing.equalToSuperview().offset(-5)
+        }
+        
         tableView.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide)
+            maker.top.equalTo(topView.snp.bottom)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
@@ -95,7 +142,11 @@ final class GeneralIndexSideBarViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        
+        closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+    }
+    
+    @objc private func close() {
+        dismiss(animated: true, completion: nil)
     }
     
     // ⛓ bind viewModel
@@ -156,12 +207,57 @@ final class GeneralIndexSideBarViewController: UIViewController {
                             return
                     }
                     
-                    vc.goDetailIndexPage(route: source, type: type)
-                    self?.dismiss(animated: true, completion: nil)
+                    switch type {
+                    case .root_with_language, .root, .folder, .collection, .image, .document, .news, .event, .file:
+                        vc.goDetailIndexPage(route: source, type: type)
+                        self?.dismiss(animated: true, completion: nil)
+                        
+                    case .link:
+                        if source == URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm") {
+                            
+                            // If link is BPM open website in APP
+                            guard let currentViewController = Utilities.currentViewController as? GeneralIndexSideBarViewController else {
+                                return
+                            }
+                            guard let tab = currentViewController.presentingViewController as? MainViewController else {
+                                return
+                            }
+                            
+                            tab.selectedIndex = 0
+                            self?.dismiss(animated: true, completion: nil)
+                            
+                        } else {
+                            
+                            // Others jump out from APP
+                            let alertController = UIAlertController(title: "Warning", message: "Will Jump Out APP", preferredStyle: .actionSheet)
+                            let confirmAlertAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+                                if UIApplication.shared.canOpenURL(source) {
+                                    UIApplication.shared.open(source, options: [:], completionHandler: nil)
+                                    self?.dismiss(animated: true, completion: nil)
+                                }
+                            }
+                            let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                           
+                            alertController.addAction(confirmAlertAction)
+                            alertController.addAction(cancelAlertAction)
+                            self?.present(alertController, animated: true, completion: nil)
+                        }
+                    }
+                    
                 }
             })
             .disposed(by: disposeBag)
     }
+}
+
+
+extension GeneralIndexSideBarViewController {
+    
+    func openApplication() {
+        
+    }
+    
+    
 }
 
 extension GeneralIndexSideBarViewController: UITableViewDelegate {

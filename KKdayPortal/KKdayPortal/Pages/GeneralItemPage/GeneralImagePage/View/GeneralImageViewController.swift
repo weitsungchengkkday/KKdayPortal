@@ -20,10 +20,8 @@ final class GeneralImageViewController: UIViewController {
         return imv
     }()
     
-    lazy var topTitleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
-        lbl.font = UIFont.systemFont(ofSize: 24)
+    lazy var topTitleLabel: GeneralItemTopTitleLabel = {
+        let lbl = GeneralItemTopTitleLabel()
         return lbl
     }()
     
@@ -74,14 +72,17 @@ final class GeneralImageViewController: UIViewController {
         self.view.addSubview(imageView)
         
         logoImageView.snp.makeConstraints { maker in
+            maker.width.equalTo(140)
+            maker.height.equalTo(79)
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
         }
         
         topTitleLabel.snp.makeConstraints { maker in
             maker.leading.equalTo(logoImageView.snp.trailing)
-            maker.trailing.equalToSuperview()
-            maker.centerY.equalTo(logoImageView.snp.centerY)
+            maker.trailing.equalToSuperview().offset(-5)
+            maker.top.equalToSuperview().offset(5)
+            maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
         
         imageView.snp.makeConstraints { maker in

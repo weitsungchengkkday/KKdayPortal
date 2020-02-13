@@ -1,8 +1,8 @@
 //
-//  GeneralCollectionImageContentTableViewCell.swift
+//  GeneralCollectionIFrameContentTableViewCell.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2020/2/3.
+//  Created by WEI-TSUNG CHENG on 2020/1/31.
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
@@ -11,20 +11,20 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import WebKit
-import Alamofire
 
-final class GeneralTextObjectImageTableViewCell: UITableViewCell {
+final class GeneralTextObjectIFrameTableViewCell: UITableViewCell {
     
     private(set) var disposeBag = DisposeBag()
     
-    lazy var textObjectImageTitleLabel: UILabel = {
+    lazy var iframeTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return lbl
     }()
     
-    lazy var textObjectImageWebView: WKWebView = {
-        let wkv = WKWebView()
+    lazy var iframeWKWebView: CustomWKWebView = {
+        let wkv = CustomWKWebView()
+        wkv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return wkv
     }()
     
@@ -32,16 +32,16 @@ final class GeneralTextObjectImageTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.contentView.addSubview(textObjectImageTitleLabel)
-        self.contentView.addSubview(textObjectImageWebView)
+        self.contentView.addSubview(iframeTitleLabel)
+        self.contentView.addSubview(iframeWKWebView)
         
-        textObjectImageTitleLabel.snp.makeConstraints { maker in
+        iframeTitleLabel.snp.makeConstraints { maker in
             maker.top.leading.trailing.equalToSuperview()
             maker.height.equalTo(24)
         }
         
-        textObjectImageWebView.snp.makeConstraints { maker in
-            maker.top.equalTo(textObjectImageTitleLabel.snp.bottom)
+        iframeWKWebView.snp.makeConstraints { maker in
+            maker.top.equalTo(iframeTitleLabel.snp.bottom)
             maker.bottom.leading.trailing.equalToSuperview()
             maker.height.equalTo(400)
         }

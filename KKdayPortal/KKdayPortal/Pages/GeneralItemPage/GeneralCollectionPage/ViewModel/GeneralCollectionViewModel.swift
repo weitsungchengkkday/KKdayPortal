@@ -20,17 +20,20 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
     
     struct Input {
         let title: AnyObserver<String>
+        let description: AnyObserver<String>
         let generalItems: AnyObserver<[PortalContent]>
         let generalTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
     }
     
     struct Output {
         let showTitle: Driver<String>
+        let showDescription: Driver<String>
         let showGeneralItems: Driver<[PortalContent]>
         let showGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
     private let titleSubject = PublishSubject<String>()
+    private let descriptionSubject = PublishSubject<String>()
     private let generalItemsSubject = PublishSubject<[PortalContent]>()
     private let generalTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
     
@@ -41,11 +44,13 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
     init(source: URL) {
         self.source = source
         
-        self.input = Input(title: titleSubject.asObserver(), generalItems: generalItemsSubject.asObserver(),
+        self.input = Input(title: titleSubject.asObserver(),
+                           description: descriptionSubject.asObserver(), generalItems: generalItemsSubject.asObserver(),
                            generalTextObjectItems: generalTextObjectItemsSubject.asObserver()
         )
         
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Collection"), showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
+        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Collection"),
+                             showDescription: descriptionSubject.asDriver(onErrorJustReturn: ""), showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
                              showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: [])
         )
     }
@@ -67,6 +72,10 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
                 self?.generalItem = generalItem
                 if let title = generalItem.title {
                     self?.titleSubject.onNext(title)
+                }
+                
+                if let description = generalItem.description {
+                    self?.descriptionSubject.onNext(description)
                 }
                 
                 if let items = generalItem.items {

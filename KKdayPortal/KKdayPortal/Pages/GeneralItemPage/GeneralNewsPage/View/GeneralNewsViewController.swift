@@ -29,11 +29,14 @@ final class GeneralNewsViewController: UIViewController {
         return imv
     }()
     
-    lazy var topTitleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
-        lbl.font = UIFont.systemFont(ofSize: 24)
+    lazy var topTitleLabel: GeneralItemTopTitleLabel = {
+        let lbl = GeneralItemTopTitleLabel()
         return lbl
+    }()
+    
+    lazy var descriptionTextView: GeneralItemDescriptionTextView = {
+        let txv = GeneralItemDescriptionTextView()
+        return txv
     }()
     
     lazy var stackView: UIStackView = {
@@ -123,23 +126,34 @@ final class GeneralNewsViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
+        view.addSubview(descriptionTextView)
         view.addSubview(stackView)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(generalTextObjectTableView)
         
-        logoImageView.snp.makeConstraints { maker in
+                logoImageView.snp.makeConstraints { maker in
+            maker.width.equalTo(140)
+            maker.height.equalTo(79)
             maker.top.equalTo(self.view.snp.topMargin)
             maker.leading.equalToSuperview()
         }
         
         topTitleLabel.snp.makeConstraints { maker in
             maker.leading.equalTo(logoImageView.snp.trailing)
+            maker.trailing.equalToSuperview().offset(-5)
+            maker.top.equalToSuperview().offset(5)
+            maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
+        }
+        
+        descriptionTextView.snp.makeConstraints { maker in
+            maker.top.equalTo(logoImageView.snp.bottom)
+            maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
-            maker.centerY.equalTo(logoImageView.snp.centerY)
+            maker.height.equalTo(50)
         }
         
         stackView.snp.makeConstraints { maker in
-            maker.top.equalTo(logoImageView.snp.bottom)
+            maker.top.equalTo(descriptionTextView.snp.bottom)
             maker.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -155,6 +169,17 @@ final class GeneralNewsViewController: UIViewController {
         viewModel.output.showTitle
             .drive(onNext: { [weak self] title in
                 self?.topTitleLabel.text = title
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showDescription
+            .do(onNext: { [weak self] text in
+                if text.isEmpty {
+                    self?.descriptionTextView.isHidden = true
+                }
+            })
+            .drive(onNext: { [weak self] text in
+                self?.descriptionTextView.text = text
             })
             .disposed(by: disposeBag)
         

@@ -49,7 +49,7 @@ extension GeneralItemType {
         case .file:
             systemName = "paperclip"
         case .link:
-            systemName = "link"
+            systemName = "globe"
         }
         
         guard let image = UIImage(systemName: systemName) else {

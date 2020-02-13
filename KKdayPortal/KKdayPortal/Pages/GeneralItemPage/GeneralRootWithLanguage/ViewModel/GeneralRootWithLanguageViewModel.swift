@@ -19,15 +19,21 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
     
     struct Input {
         let generalItems: AnyObserver<[PortalContentList]>
+        let documentTitle: AnyObserver<String>
+        let documentDescription: AnyObserver<String>
         let documentGeneralTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
     }
     
     struct Output {
         let showGeneralItems: Driver<[PortalContentList]>
+        let showDocumentTitle: Driver<String>
+        let showDocumentDescription: Driver<String>
         let showDocumentGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
     private let generalItemsSubject = PublishSubject<[PortalContentList]>()
+    private let documentTitleSubject = PublishSubject<String>()
+    private let documentDescriptionSubject = PublishSubject<String>()
     private let documentGeneralTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
     
     var generalItem: PortalContentList?
@@ -41,10 +47,10 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
     init(source: URL) {
         self.source = source
         
-        self.input = Input(generalItems: generalItemsSubject.asObserver(), documentGeneralTextObjectItems: documentGeneralTextObjectItemsSubject.asObserver()
+        self.input = Input(generalItems: generalItemsSubject.asObserver(), documentTitle: documentTitleSubject.asObserver(), documentDescription: documentDescriptionSubject.asObserver(), documentGeneralTextObjectItems: documentGeneralTextObjectItemsSubject.asObserver()
         )
         
-        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []), showDocumentGeneralTextObjectItems: documentGeneralTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
+        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []), showDocumentTitle: documentTitleSubject.asDriver(onErrorJustReturn: ""), showDocumentDescription: documentDescriptionSubject.asDriver(onErrorJustReturn: ""), showDocumentGeneralTextObjectItems: documentGeneralTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
     }
     
     func getPortalData() {
@@ -123,6 +129,14 @@ final class GeneralRootWithLanguageViewModel: RXViewModelType {
                     generalItemSource == generalItemDocumentSource {
                     
                     self?.generalItemDocument = generalItem
+                    
+                    if let title = generalItem.title {
+                        self?.documentTitleSubject.onNext(title)
+                    }
+                    
+                    if let description = generalItem.description {
+                        self?.documentDescriptionSubject.onNext(description)
+                    }
                     
                     if let textObject = generalItem.textObject {
                         

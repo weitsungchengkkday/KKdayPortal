@@ -18,17 +18,20 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
     
     struct Input {
         let title: AnyObserver<String>
+        let description: AnyObserver<String>
         let image: AnyObserver<UIImage>
         let generalTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
     }
     
     struct Output {
         let showTitle: Driver<String>
+        let showDescription: Driver<String>
         let showImage: Driver<UIImage>
         let showGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
     }
     
     private let titleSubject = PublishSubject<String>()
+    private let descriptionSubject = PublishSubject<String>()
     private let imageViewSubject = PublishSubject<UIImage>()
     private let generalTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
     
@@ -40,10 +43,12 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
         self.source = source
         
         self.input = Input(title: titleSubject.asObserver(),
+                           description: descriptionSubject.asObserver(),
                            image: imageViewSubject.asObserver(),
                            generalTextObjectItems: generalTextObjectItemsSubject.asObserver())
         
         self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "News"),
+                             showDescription: descriptionSubject.asDriver(onErrorJustReturn: ""),
                              showImage: imageViewSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")),
                              showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
     }
@@ -61,6 +66,10 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
                 self?.generalItem = generalItem
                 if let title = generalItem.title {
                     self?.titleSubject.onNext(title)
+                }
+                
+                if let description = generalItem.description {
+                    self?.descriptionSubject.onNext(description)
                 }
                 
                 if let imageURL = generalItem.imageObject?.url {
@@ -99,7 +108,7 @@ final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
             
             DispatchQueue.global().async { [weak self] in
                 if let data = dataResponse.data {
-                    print(data.count)
+                    
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
                             self?.imageViewSubject.onNext(image)
