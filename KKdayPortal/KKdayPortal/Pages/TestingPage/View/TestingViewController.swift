@@ -47,6 +47,7 @@ final class TestingViewController: UIViewController {
             .disposed(by: disposeBag)
         
         tbv.register(TestingTableViewCell.self, forCellReuseIdentifier: TestingViewController.CellName)
+        tbv.tableFooterView = UIView()
         return tbv
     }()
     

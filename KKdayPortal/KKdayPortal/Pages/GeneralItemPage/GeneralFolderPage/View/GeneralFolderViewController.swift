@@ -33,6 +33,7 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
         let tbv = UITableView()
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralFolderTableViewCell.self, forCellReuseIdentifier: GeneralFolderViewController.CellName)
+        tbv.tableFooterView = UIView()
         return tbv
     }()
     
@@ -120,6 +121,15 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
             .disposed(by: disposeBag)
         
         viewModel.output.showGeneralItems
+            .do(onNext: { [weak self] generalItems in
+                if generalItems.count == 0 {
+                    self?.tableView.backgroundView?.contentMode = .center
+                    self?.tableView.backgroundView = NoInformationLabel()
+                    
+                } else {
+                    self?.tableView.backgroundView = nil
+                }
+            })
             .drive(tableView.rx.items(cellIdentifier: GeneralFolderViewController.CellName, cellType: GeneralFolderTableViewCell.self)) { (row, generalItem, cell) in
                 
                 cell.typeImageView.image = generalItem.type?.image

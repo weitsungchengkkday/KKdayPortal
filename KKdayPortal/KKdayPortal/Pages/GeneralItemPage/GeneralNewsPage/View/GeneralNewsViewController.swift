@@ -131,7 +131,7 @@ final class GeneralNewsViewController: UIViewController {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(generalTextObjectTableView)
         
-                logoImageView.snp.makeConstraints { maker in
+        logoImageView.snp.makeConstraints { maker in
             maker.width.equalTo(140)
             maker.height.equalTo(79)
             maker.top.equalTo(self.view.snp.topMargin)
@@ -174,9 +174,7 @@ final class GeneralNewsViewController: UIViewController {
         
         viewModel.output.showDescription
             .do(onNext: { [weak self] text in
-                if text.isEmpty {
-                    self?.descriptionTextView.isHidden = true
-                }
+                self?.descriptionTextView.isHidden = text.isEmpty
             })
             .drive(onNext: { [weak self] text in
                 self?.descriptionTextView.text = text
@@ -191,9 +189,7 @@ final class GeneralNewsViewController: UIViewController {
         
         viewModel.output.showGeneralTextObjectItems
             .do(onNext: { [weak self] generalTextObjectSections in
-                if generalTextObjectSections.isEmpty {
-                    self?.generalTextObjectTableView.isHidden = true
-                }
+                self?.generalTextObjectTableView.isHidden = generalTextObjectSections.isEmpty
             }) .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
     }

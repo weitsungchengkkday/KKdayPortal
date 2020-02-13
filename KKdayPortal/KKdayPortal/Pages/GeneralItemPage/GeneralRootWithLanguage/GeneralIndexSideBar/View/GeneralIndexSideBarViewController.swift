@@ -52,6 +52,7 @@ final class GeneralIndexSideBarViewController: UIViewController {
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralIndexSideBarHeaderTableViewCell.self, forCellReuseIdentifier: GeneralIndexSideBarViewController.HeaderCellName)
         tbv.register(GeneralIndexSideBarNormalTableViewCell.self, forCellReuseIdentifier: GeneralIndexSideBarViewController.NormalCellName)
+        tbv.tableFooterView = UIView()
         return tbv
     }()
     

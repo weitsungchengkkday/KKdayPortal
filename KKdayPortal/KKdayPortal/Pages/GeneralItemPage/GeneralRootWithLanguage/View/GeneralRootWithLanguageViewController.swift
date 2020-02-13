@@ -164,9 +164,7 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
         
         viewModel.output.showDocumentTitle
             .do(onNext: { [weak self] text in
-                if text.isEmpty {
-                    self?.topTitleLabel.isHidden = true
-                }
+                self?.topTitleLabel.isHidden = text.isEmpty
             })
             .drive(onNext: { [weak self] text in
                 self?.topTitleLabel.text = text
@@ -175,19 +173,16 @@ final class GeneralRootWithLanguageViewController: UIViewController, GeneralInde
         
         viewModel.output.showDocumentDescription
             .do(onNext: { [weak self] text in
-                if text.isEmpty {
-                    self?.descriptionTextView.isHidden = true
-                }
+                self?.descriptionTextView.isHidden = text.isEmpty
             })
             .drive(onNext: { [weak self] text in
                 self?.descriptionTextView.text = text
             })
             .disposed(by: disposeBag)
+        
         viewModel.output.showDocumentGeneralTextObjectItems
             .do(onNext: { [weak self] generalItems in
-                if generalItems.isEmpty {
-                    self?.generalTextObjectTableView.isHidden = true
-                }
+                self?.generalTextObjectTableView.isHidden = generalItems.isEmpty
             })
             .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)

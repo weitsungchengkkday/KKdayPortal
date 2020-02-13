@@ -49,6 +49,7 @@ final class LanguageSettingViewController: UIViewController {
             .disposed(by: disposeBag)
         
         tbv.register(LanguageSettingTableViewCell.self, forCellReuseIdentifier: LanguageSettingViewController.CellName)
+        tbv.tableFooterView = UIView()
         return tbv
     }()
     

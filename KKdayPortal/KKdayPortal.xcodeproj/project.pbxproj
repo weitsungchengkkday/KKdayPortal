@@ -25,6 +25,10 @@
 		F426FEC123F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */; };
 		F426FEC223F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */; };
 		F426FEC323F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */; };
+		F426FEC523F5610800BFDA3B /* NoInformationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */; };
+		F426FEC623F5610800BFDA3B /* NoInformationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */; };
+		F426FEC723F5610800BFDA3B /* NoInformationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */; };
+		F426FEC823F5610800BFDA3B /* NoInformationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */; };
 		F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4723E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift */; };
 		F43AFC5223E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4723E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift */; };
 		F43AFC5323E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4723E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift */; };
@@ -654,6 +658,7 @@
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
 		F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemDescriptionTextView.swift; sourceTree = "<group>"; };
+		F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInformationLabel.swift; sourceTree = "<group>"; };
 		F43AFC4723E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralTextObjectImageTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F43AFC4823E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralTextObjectIFrameTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F43AFC4923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralTextObjectNormalTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -900,10 +905,9 @@
 			isa = PBXGroup;
 			children = (
 				F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */,
+				F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */,
 				F43AFC4423E87D6D0050C851 /* GeneralTextObjectTableView */,
 				F426FEBE23F51A2300BFDA3B /* GeneralItemElement */,
-				F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */,
-				F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */,
 			);
 			path = CustomUIElement;
 			sourceTree = "<group>";
@@ -911,6 +915,8 @@
 		F426FEBE23F51A2300BFDA3B /* GeneralItemElement */ = {
 			isa = PBXGroup;
 			children = (
+				F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */,
+				F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */,
 			);
 			path = GeneralItemElement;
 			sourceTree = "<group>";
@@ -1038,13 +1044,6 @@
 				F44A199723C56CC900B35976 /* GeneralRootWithLanguageViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F44E8DD923B89A220032C6BE /* InfoPlist */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InfoPlist;
 			sourceTree = "<group>";
 		};
 		F453943023B8B3D100136E6D /* Contents */ = {
@@ -1902,7 +1901,6 @@
 				F4B3F2D623862B3100657CDF /* Assets.xcassets */,
 				F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */,
 				F454488923A54D2D001B8D31 /* Localizable.strings */,
-				F44E8DD923B89A220032C6BE /* InfoPlist */,
 				F45448A123A88636001B8D31 /* credentials.plist */,
 			);
 			path = KKdayPortal;
@@ -2581,6 +2579,7 @@
 				F44E8CA923B88AA30032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */,
 				F43AFC5223E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
+				F426FEC623F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F45740F623D13A4A00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
 				F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */,
 				F457419223D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */,
@@ -2729,6 +2728,7 @@
 				F44E8D1F23B88AFA0032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8D2023B88AFA0032C6BE /* ItemConverter.swift in Sources */,
 				F43AFC5323E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
+				F426FEC723F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F45740F723D13A4B00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
 				F44E8D2123B88AFA0032C6BE /* WKNavigationTypeExtension.swift in Sources */,
 				F457419323D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */,
@@ -2877,6 +2877,7 @@
 				F44E8D9523B88AFC0032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8D9623B88AFC0032C6BE /* ItemConverter.swift in Sources */,
 				F43AFC5423E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
+				F426FEC823F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F45740F823D13A4B00FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
 				F44E8D9723B88AFC0032C6BE /* WKNavigationTypeExtension.swift in Sources */,
 				F457419423D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */,
@@ -3033,6 +3034,7 @@
 				F454487423A235B4001B8D31 /* Language.swift in Sources */,
 				F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */,
 				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
+				F426FEC523F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */,
 				F4B3BCA023F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740CF23CD6C1300FB5EEC /* GeneralRootWithLanguageNavigationController.swift in Sources */,
@@ -3131,12 +3133,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = production;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
 				PRODUCT_NAME = KKdayPortal;
@@ -3151,12 +3155,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = production;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
 				PRODUCT_NAME = KKdayPortal;
@@ -3171,12 +3177,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Stage";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = stage;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Stage-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DSTAGE_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.stage;
 				PRODUCT_NAME = KKdayPortal;
@@ -3191,12 +3199,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Stage";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = stage;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Stage-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DSTAGE_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.stage;
 				PRODUCT_NAME = KKdayPortal;
@@ -3211,12 +3221,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Test";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = test;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DTEST_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.test;
 				PRODUCT_NAME = KKdayPortal;
@@ -3231,12 +3243,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Test";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = test;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DTEST_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.test;
 				PRODUCT_NAME = KKdayPortal;

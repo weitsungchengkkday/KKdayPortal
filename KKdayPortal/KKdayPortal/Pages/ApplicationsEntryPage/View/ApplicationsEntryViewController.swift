@@ -22,6 +22,7 @@ final class ApplicationsEntryViewController: UIViewController {
         let tbv = UITableView()
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
+        tbv.tableFooterView = UIView()
         return tbv 
     }()
     

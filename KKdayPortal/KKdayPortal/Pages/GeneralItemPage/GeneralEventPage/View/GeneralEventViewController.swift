@@ -196,9 +196,7 @@ final class GeneralEventViewController: UIViewController {
         
         viewModel.output.showDescription
             .do(onNext: { [weak self] text in
-                if text.isEmpty {
-                    self?.descriptionTextView.isHidden = true
-                }
+                self?.descriptionTextView.isHidden = text.isEmpty
             })
             .drive(onNext: { [weak self] text in
                 self?.descriptionTextView.text = text
@@ -219,12 +217,9 @@ final class GeneralEventViewController: UIViewController {
         
         viewModel.output.showGeneralTextObjectItems
             .do(onNext: { [weak self] generalTextObjectSections in
-                if generalTextObjectSections.isEmpty {
-                    self?.generalTextObjectTableView.isHidden = true
-                }
+                self?.generalTextObjectTableView.isHidden = generalTextObjectSections.isEmpty
             }) .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
-        
     }
 }
 

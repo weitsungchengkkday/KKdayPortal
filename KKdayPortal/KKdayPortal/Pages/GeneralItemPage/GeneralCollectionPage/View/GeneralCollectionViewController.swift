@@ -187,9 +187,7 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         
         viewModel.output.showDescription
             .do(onNext: { [weak self] text in
-                if text.isEmpty {
-                    self?.descriptionTextView.isHidden = true
-                }
+                self?.descriptionTextView.isHidden = text.isEmpty
             })
             .drive(onNext: { [weak self] text in
                 self?.descriptionTextView.text = text
@@ -198,9 +196,7 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         
         viewModel.output.showGeneralItems
             .do(onNext: { [weak self] generalItems in
-                if generalItems.isEmpty {
-                    self?.itemsTableView.isHidden = true
-                }
+                self?.itemsTableView.isHidden = generalItems.isEmpty
             })
             .drive(itemsTableView.rx.items(cellIdentifier: GeneralCollectionViewController.CellName, cellType: GeneralCollectionTableViewCell.self)) { (row, generalItem, cell) in
                 
@@ -222,9 +218,7 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         
         viewModel.output.showGeneralTextObjectItems
             .do(onNext: { [weak self] generalTextObjectSections in
-                if generalTextObjectSections.isEmpty {
-                    self?.generalTextObjectTableView.isHidden = true
-                }
+                self?.generalTextObjectTableView.isHidden = generalTextObjectSections.isEmpty
             })
             .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
