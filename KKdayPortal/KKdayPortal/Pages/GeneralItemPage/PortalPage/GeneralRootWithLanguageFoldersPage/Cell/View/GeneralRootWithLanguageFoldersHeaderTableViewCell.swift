@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class GeneralIndexSideBarHeaderTableViewCell: UITableViewCell {
+final class GeneralRootWithLanguageFoldersHeaderTableViewCell: UITableViewCell {
     
     private(set) var disposeBag = DisposeBag()
     
@@ -44,9 +44,6 @@ final class GeneralIndexSideBarHeaderTableViewCell: UITableViewCell {
             maker.centerY.equalToSuperview()
             maker.trailing.equalToSuperview().offset(-17.5)
         }
-        
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

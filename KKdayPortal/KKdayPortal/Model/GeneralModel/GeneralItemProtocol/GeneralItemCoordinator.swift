@@ -24,7 +24,7 @@ extension GeneralItemCoordinator {
             navigationController?.pushViewController(pushViewController, animated: false)
             
         case .root_with_language:
-            let pushViewController = GeneralRootWithLanguageViewController(viewModel: GeneralRootWithLanguageViewModel(source: route))
+            let pushViewController = GeneralRootWithLanguageDocumentViewController(viewModel: GeneralRootWithLanguageDocumentViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
             
         case .folder:
@@ -59,7 +59,7 @@ extension GeneralItemCoordinator {
             // If link is BPM open website in APP
             if route == URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm") {
                 
-                guard let currentViewController = Utilities.currentViewController as? GeneralIndexSideBarViewController else {
+                guard let currentViewController = Utilities.currentViewController as? GeneralRootWithLanguageFoldersViewController else {
                     return
                 }
                 guard let tab = currentViewController.presentingViewController as? MainViewController else {

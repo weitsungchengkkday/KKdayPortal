@@ -2,8 +2,8 @@
 //  HomeViewController.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2020/2/14.
-//  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
+//  Created by WEI-TSUNG CHENG on 2019/11/21.
+//  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
@@ -11,10 +11,10 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class HomeViewController: UIViewController, Localizable {
+final class PortalViewController: UIViewController, Localizable {
     
     // 🏞 UI element
-    private lazy var homeContainerView: UIView = {
+    private lazy var portalContainerView: UIView = {
         let view = UIView()
         return view
     }()
@@ -39,12 +39,12 @@ class HomeViewController: UIViewController, Localizable {
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Home"
+        self.title = "Portal"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         localizedText()
         
-        self.view.addSubview(homeContainerView)
-        homeContainerView.snp.makeConstraints { maker in
+        self.view.addSubview(portalContainerView)
+        portalContainerView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -56,38 +56,38 @@ class HomeViewController: UIViewController, Localizable {
         
         let rootURL: URL
         
-        #if TEST_VERSION
+#if TEST_VERSION
         guard let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw") else {
             print("❌, not valid root url")
             return
         }
         
-        #elseif SIT_VERSION
+#elseif SIT_VERSION
         guard let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw") else {
             print("❌, not valid root url")
             return
         }
         
-        #elseif PRODUCTION_VERSION
+#elseif PRODUCTION_VERSION
         guard let url = URL(string: "https://eip.kkday.net/Plone/zh-tw") else {
             print("❌, not valid root url")
             return
         }
+    
+#else
         
-        #else
         
-        
-        #endif
-        
+#endif
+
         rootURL = url
         
-        let viewModel = GeneralRootWithLanguageDocumentViewModel(source: rootURL)
-        let childViewController = GeneralRootWithLanguageDocumentViewController(viewModel: viewModel)
+        let viewModel = GeneralRootWithLanguageFoldersViewModel(source: rootURL)
+        let childViewController = GeneralRootWithLanguageFoldersViewController(viewModel: viewModel)
         addChild(childViewController)
-        childViewController.view.frame = homeContainerView.bounds
-        
-        homeContainerView.addSubview(childViewController.view)
+        childViewController.view.frame = portalContainerView.bounds
+        portalContainerView.addSubview(childViewController.view)
         childViewController.didMove(toParent: self)
+        
     }
     
     // 🧾 localization
@@ -104,5 +104,4 @@ class HomeViewController: UIViewController, Localizable {
     private func bindViewModel() {
         
     }
-    
 }

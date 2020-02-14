@@ -1,5 +1,5 @@
 //
-//  GeneralIndexSideBarTableViewCellViewModel.swift
+//  GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift
 //  KKdayPortal
 //
 //  Created by WEI-TSUNG CHENG on 2020/1/15.
@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-final class GeneralIndexSideBarNormalTableViewCellViewModel {
+final class GeneralRootWithLanguageFoldersNormalTableViewCellViewModel {
     
     let generalItem: GeneralItem
     

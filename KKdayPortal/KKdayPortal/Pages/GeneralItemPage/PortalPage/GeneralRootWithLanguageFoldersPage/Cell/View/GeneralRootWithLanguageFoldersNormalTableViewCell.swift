@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class GeneralIndexSideBarNormalTableViewCell: UITableViewCell {
+final class GeneralRootWithLanguageFoldersNormalTableViewCell: UITableViewCell {
     
     private(set) var disposeBag = DisposeBag()
     

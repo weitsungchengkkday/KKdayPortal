@@ -17,16 +17,10 @@ extension GeneralIndexSideBarCoordinator {
     func goDetailIndexPage(route: URL, type: GeneralItemType) {
         
         debugPrint("GoDetail: rout: \(route), type: \(type)")
-        
-        guard let firstVC = navigationController?.viewControllers.first else {
-            return
-        }
-        navigationController?.viewControllers = [firstVC]
-        
-        
+
         switch type {
         case .root:
-            let pushViewController = GeneralRootWithLanguageViewController(viewModel: GeneralRootWithLanguageViewModel(source: route))
+            let pushViewController = GeneralRootWithLanguageDocumentViewController(viewModel: GeneralRootWithLanguageDocumentViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
             
             

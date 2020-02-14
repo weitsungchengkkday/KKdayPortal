@@ -9,7 +9,7 @@
 import RxDataSources
 
 enum ContentListSectionItem {
-    case header(cellViewModel: GeneralIndexSideBarHeaderTableViewCellViewModel)
-    case normal(cellViewModel: GeneralIndexSideBarNormalTableViewCellViewModel)
+    case header(cellViewModel: GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel)
+    case normal(cellViewModel: GeneralRootWithLanguageFoldersNormalTableViewCellViewModel)
 }
 

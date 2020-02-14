@@ -63,7 +63,6 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
             .disposed(by: disposeBag)
         
         viewModel.getPortalData()
-        setupNavBar()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
@@ -94,7 +93,7 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
         topTitleLabel.snp.makeConstraints { maker in
             maker.leading.equalTo(logoImageView.snp.trailing)
             maker.trailing.equalToSuperview().offset(-5)
-            maker.top.equalToSuperview().offset(5)
+            maker.top.equalTo(view.safeAreaLayoutGuide).offset(5)
             maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
         
@@ -148,19 +147,7 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
             })
             .disposed(by: disposeBag)
     }
-    
-    // 📍 config NavBar
-    private func setupNavBar(lists: [GeneralList] = []) {
-        
-        guard let nav = navigationController as? GeneralRootWithLanguageNavigationController else {
-            return
-        }
-        if !lists.isEmpty {
-            nav.indexContents = lists
-        }
-        
-        nav.setParentLeftBarButtonItem()
-    }
+
 }
 
 extension GeneralFolderViewController: UITableViewDelegate {
