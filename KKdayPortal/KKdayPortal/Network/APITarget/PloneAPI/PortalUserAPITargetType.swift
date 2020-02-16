@@ -14,7 +14,7 @@ extension PortalUserAPITargetType {
     var baseURL: URL {
         
 #if TEST_VERSION
-        let baseURLString = "http://localhost:8080/pikaPika"
+        let baseURLString = "https://sit.eip.kkday.net/Plone"
        
 #elseif SIT_VERSION
         let baseURLString = "https://sit.eip.kkday.net/Plone"

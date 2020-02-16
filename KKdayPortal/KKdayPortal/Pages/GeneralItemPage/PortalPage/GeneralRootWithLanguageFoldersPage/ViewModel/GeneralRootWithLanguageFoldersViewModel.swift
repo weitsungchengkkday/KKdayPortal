@@ -45,7 +45,8 @@ final class GeneralRootWithLanguageFoldersViewModel: RXViewModelType {
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
-        ModelLoader.PortalLoader().getItem(source: source, type: .root_with_language)
+        ModelLoader.PortalLoader()
+            .getItem(source: source, type: .root_with_language)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
                 
@@ -99,7 +100,8 @@ final class GeneralRootWithLanguageFoldersViewModel: RXViewModelType {
         
         for folder in generalItemFolders {
             if let source = folder.source {
-                let generalItemObservable = ModelLoader.PortalLoader().getItem(source: source, type: .folder).asObservable()
+                let generalItemObservable = ModelLoader.PortalLoader()
+                    .getItem(source: source, type: .folder).asObservable()
                 generalItemObservables.append(generalItemObservable)
             }
         }

@@ -74,7 +74,7 @@ enum PortalUser {
     
     struct Logout: PortalUserAPITargetType {
         
-        typealias ResponseType = PloneAuthToken
+        typealias ResponseType = PloneEmptyData
         
         var headers: [String: String]? {
             return ["Accept": "application/json",

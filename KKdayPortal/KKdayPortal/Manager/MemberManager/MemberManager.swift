@@ -14,18 +14,18 @@ final class MemberManager {
     
     static let shared = MemberManager()
     var alertErrorInfo: AlertEventInfo?
-
+    
     private init() {}
     
     func notifyAlertEvent(_ error: Error, userInfo: [AnyHashable : Any]? = nil) {
         
         if let error = error as? HTTPError {
             self.alertErrorInfo = AlertEventInfo(error: error,
-                                             message: error.message)
+                                                 message: error.message)
         } else {
             self.alertErrorInfo = AlertEventInfo(error: error, message: error.localizedDescription)
         }
-         
+        
         NotificationCenter.default.post(name: Notification.Name.alertEvent, object: self, userInfo: userInfo)
     }
     
@@ -60,20 +60,25 @@ final class MemberManager {
         ModelLoader.PortalLoader()
             .logout()
             .subscribe(onSuccess: { generalUser in
-                debugPrint("👥 Logout -> General User: \(generalUser)")
+                
+                debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
+                // 👶🏻 Restart from login page
+                let loginController = LoginViewController(viewModel: LoginViewModel())
+                Utilities.appDelegateWindow?.rootViewController = loginController
                 
             }) { error in
                 
-                debugPrint("🚨 logout -> error is \(error)")}
-            .disposed(by: disposeBag)
+                debugPrint("🚨 logout -> error is \(error)")
+                // 👶🏻 Restart from login page
+                let loginController = LoginViewController(viewModel: LoginViewModel())
+                Utilities.appDelegateWindow?.rootViewController = loginController
+        }
+        .disposed(by: disposeBag)
         
         // Clear UserDefault
         StorageManager.shared.removeAll()
         // Clear WebCache
         WebCacheCleaner.clean()
         
-        // 👶🏻 Restart from login page
-        let loginController = LoginViewController(viewModel: LoginViewModel())
-        Utilities.appDelegateWindow?.rootViewController = loginController
     }
 }

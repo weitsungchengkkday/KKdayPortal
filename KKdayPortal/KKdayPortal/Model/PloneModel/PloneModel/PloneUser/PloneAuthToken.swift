@@ -9,5 +9,3 @@
 struct PloneAuthToken: Codable {
     let token: String
 }
-
-

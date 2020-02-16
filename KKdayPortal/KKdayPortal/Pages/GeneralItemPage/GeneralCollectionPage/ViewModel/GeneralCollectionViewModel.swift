@@ -59,7 +59,8 @@ final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
-        ModelLoader.PortalLoader().getItem(source: source, type: .collection)
+        ModelLoader.PortalLoader()
+            .getItem(source: source, type: .collection)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
                 

@@ -8,6 +8,5 @@
 
 struct PloneUser: Codable {
     let account: String
-    let password: String
     let token: String
 }

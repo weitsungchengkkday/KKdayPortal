@@ -52,7 +52,8 @@ final class GeneralRootWithLanguageDocumentViewModel: RXViewModelType {
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
-        ModelLoader.PortalLoader().getItem(source: source, type: .root_with_language)
+        ModelLoader.PortalLoader()
+            .getItem(source: source, type: .root_with_language)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
                 
@@ -88,7 +89,8 @@ final class GeneralRootWithLanguageDocumentViewModel: RXViewModelType {
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
-        ModelLoader.PortalLoader().getItem(source: source, type: .document)
+        ModelLoader.PortalLoader()
+            .getItem(source: source, type: .document)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] generalItem in
                 

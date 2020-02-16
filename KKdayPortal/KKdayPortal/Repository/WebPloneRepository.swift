@@ -49,7 +49,6 @@ final class WebPloneRepository: RepositoryManageable {
         }
         
         let ploneUser: PloneUser = PloneUser(account: user.account,
-                                             password: user.password,
                                              token: user.token)
         return ploneUser
     }
@@ -66,7 +65,6 @@ final class WebPloneRepository: RepositoryManageable {
             .map { ploneAuthToken -> User in
                 
                 return User(account: account,
-                            password: password,
                             token: ploneAuthToken.token)
         }
         return response
@@ -86,7 +84,6 @@ final class WebPloneRepository: RepositoryManageable {
                 }
                 
                 return User(account: renewGeneralUser.account,
-                            password: renewGeneralUser.password,
                             token: ploneAuthToken.token)
         }
         
@@ -99,15 +96,14 @@ final class WebPloneRepository: RepositoryManageable {
         let logoutRequest = PortalUser.Logout(user: ploneUser)
         
         return apiManager.request(logoutRequest)
-            .map { ploneAuthToken -> User? in
+            .map { ploneNoInfo -> User? in
 
                 guard let logoutGeneralUser = logoutGeneralUser else {
                     return nil
                 }
                 
                 return User(account: logoutGeneralUser.account,
-                            password: logoutGeneralUser.password,
-                            token: ploneAuthToken.token)
+                            token: "")
         }
     }
     

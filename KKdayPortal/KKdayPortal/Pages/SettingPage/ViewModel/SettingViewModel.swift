@@ -31,7 +31,6 @@ final class SettingViewModel: RXViewModelType {
     }
     
     func renewToken() {
-        
         ModelLoader.PortalLoader()
             .renewToken()
             .subscribeOn(MainScheduler.instance)

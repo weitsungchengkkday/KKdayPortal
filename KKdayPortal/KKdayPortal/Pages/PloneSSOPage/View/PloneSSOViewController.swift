@@ -82,19 +82,29 @@ extension PloneSSOViewController: WKScriptMessageHandler {
             if let body = message.body as? [String : Any],
                 let account = body["id"] as? String,
                 let token = body["token"] as? String {
-                print("💎PLONE TOKEN: \(token)")
-                let user = GeneralUser(account: account, password: "", token: token)
+                
+                debugPrint("👥 Get Token 💎PLONE TOKEN: \(token)")
+                let user = GeneralUser(account: account, token: token)
                 StorageManager.shared.saveObject(for: .generalUser, value: user)
                 
                 goMainViewController()
                 
             } else {
-                // Alert User Can't Login
+                debugPrint("🚨 Get Token form message body failed, message is \(message.body)")
+                WebCacheCleaner.clean()
+                dismiss(animated: true, completion: nil)
             }
+        } else {
+            debugPrint("🚨 Get Token form message failed, message name \(message.name)")
+            WebCacheCleaner.clean()
+            dismiss(animated: true, completion: nil)
         }
 
         SSOwebView.stopLoading()
     }
+    
+    
+    
 }
 
 extension PloneSSOViewController: WKNavigationDelegate {

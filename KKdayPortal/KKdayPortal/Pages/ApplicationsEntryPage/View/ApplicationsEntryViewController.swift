@@ -119,7 +119,6 @@ final class ApplicationsEntryViewController: UIViewController {
 extension ApplicationsEntryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let URLs = viewModel.generalItemsURL
         let route = URLs[indexPath.row]
         goDetailPageInWebView(route: route)

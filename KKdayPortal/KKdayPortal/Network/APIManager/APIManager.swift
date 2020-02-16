@@ -72,11 +72,10 @@ final public class APIManager {
             })
             .catchError({ [weak self] error -> Single<Response> in
                 self?.httpErrorHandler?.handle(error: error)
-                
                 return Single.error(error)
             })
             .filterSuccessfulStatusAndRedirectCodes() // only 200 ~ 399 are Success
-            .map(Request.ResponseType.self)
+            .map(Request.ResponseType.self, atKeyPath: nil, using: JSONDecoder(), failsOnEmptyData: false) // failsOnEmptyData should be fasle, because HTTP status code 204, whould not get any response data
         
         rxRequest = rxRequest.debug()
         

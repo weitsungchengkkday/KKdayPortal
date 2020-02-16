@@ -42,10 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #endif
     
     ConfigManager.shared.setup()
+    // assign WebAPIManager as APIManager's errorhandler
     APIManager.default.httpErrorHandler = WebAPIManager.shared
     setupLanguage()
     
-        return true
+    return true
     }
     
     private func setupLanguage() {
@@ -57,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 }
