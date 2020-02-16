@@ -64,6 +64,10 @@ extension String {
         return nil
     }
     
+    func onlyKeepDigitalNumber() -> String {
+        return self.filter("0123456789.".contains)
+    }
+    
 }
 
 // SwiftSoup

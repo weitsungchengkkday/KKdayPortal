@@ -73,9 +73,9 @@ extension GeneralTextObjectConverter {
                         let iframeSize: CGSize?
                         
                         if let iframeHeight = iframeHeight,
-                        let height = Double(iframeHeight),
+                        let height = Double(iframeHeight.onlyKeepDigitalNumber()),
                         let iframeWidth = iframeWidth,
-                            let width = Double(iframeWidth) {
+                            let width = Double(iframeWidth.onlyKeepDigitalNumber()) {
                             iframeSize = CGSize(width: width, height: height)
                         } else {
                             iframeSize = nil
@@ -125,9 +125,9 @@ extension GeneralTextObjectConverter {
                         let imageSize: CGSize?
                         
                         if let imageHeight = imageHeight,
-                        let height = Double(imageHeight),
+                        let height = Double(imageHeight.onlyKeepDigitalNumber()),
                         let imageWidth = imageWidth,
-                            let width = Double(imageWidth) {
+                            let width = Double(imageWidth.onlyKeepDigitalNumber()) {
                             imageSize = CGSize(width: width, height: height)
                         } else {
                             imageSize = nil
