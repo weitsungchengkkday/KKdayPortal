@@ -27,8 +27,8 @@ final class CustomWKWebView: WKWebView {
     
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
-        
         self.navigationDelegate = self
+        
     self.addSubview(loadingActivityIndicatorContainerView)
         loadingActivityIndicatorContainerView.addSubview(loadingActivityIndicatorView)
         
@@ -53,7 +53,7 @@ final class CustomWKWebView: WKWebView {
     }
     
     private func stopLoadingAnimation() {
-         loadingActivityIndicatorContainerView.isHidden = true
+        loadingActivityIndicatorContainerView.isHidden = true
         loadingActivityIndicatorView.stopAnimating()
     }
     
@@ -61,8 +61,6 @@ final class CustomWKWebView: WKWebView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-
 }
 
 extension CustomWKWebView: WKNavigationDelegate {

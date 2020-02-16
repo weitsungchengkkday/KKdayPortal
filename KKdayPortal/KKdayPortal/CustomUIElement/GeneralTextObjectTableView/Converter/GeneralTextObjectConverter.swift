@@ -68,9 +68,21 @@ extension GeneralTextObjectConverter {
                 for (index , element) in iframeArray.enumerated() {
                     do {
                         let urlString = try element.attr("src")
+                        let iframeHeight = try? element.attr("height")
+                        let iframeWidth = try? element.attr("width")
+                        let iframeSize: CGSize?
+                        
+                        if let iframeHeight = iframeHeight,
+                        let height = Double(iframeHeight),
+                        let iframeWidth = iframeWidth,
+                            let width = Double(iframeWidth) {
+                            iframeSize = CGSize(width: width, height: height)
+                        } else {
+                            iframeSize = nil
+                        }
                         
                         if let url = URL(string: urlString) {
-                            sectionItems.append( GeneralTextObjectSectionItem.iframe(cellViewModel: GeneralTextObjectIFrameTableViewCellViewModel(title: "(表\(index + 1))", url: url)))
+                            sectionItems.append( GeneralTextObjectSectionItem.iframe(cellViewModel: GeneralTextObjectIFrameTableViewCellViewModel(title: "(表\(index + 1))", url: url, size: iframeSize)))
                         } else {
                             print("❌ not valid urlString")
                         }
@@ -108,8 +120,21 @@ extension GeneralTextObjectConverter {
                     do {
                         let urlString = try element.attr("src")
                         
+                        let imageHeight = try? element.attr("height")
+                        let imageWidth = try? element.attr("width")
+                        let imageSize: CGSize?
+                        
+                        if let imageHeight = imageHeight,
+                        let height = Double(imageHeight),
+                        let imageWidth = imageWidth,
+                            let width = Double(imageWidth) {
+                            imageSize = CGSize(width: width, height: height)
+                        } else {
+                            imageSize = nil
+                        }
+                        
                         if let url = URL(string: urlString) {
-                            sectionItems.append(GeneralTextObjectSectionItem.image(cellViewModel: GeneralTextObjectImageTableViewCellViewModel(title: "(圖\(index + 1))", url: url)))
+                            sectionItems.append(GeneralTextObjectSectionItem.image(cellViewModel: GeneralTextObjectImageTableViewCellViewModel(title: "(圖\(index + 1))", url: url, size: imageSize)))
                         } else {
                             print("❌ not valid urlString")
                         }

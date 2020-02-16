@@ -16,6 +16,7 @@ final class GeneralItemDescriptionTextView: UITextView {
         self.textColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 1)
         self.font = UIFont.systemFont(ofSize: 14)
         self.isEditable = false
+        self.isScrollEnabled = false
     }
     
     required init?(coder: NSCoder) {

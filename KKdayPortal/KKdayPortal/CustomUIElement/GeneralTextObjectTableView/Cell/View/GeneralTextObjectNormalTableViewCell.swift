@@ -19,7 +19,8 @@ final class GeneralTextObjectNormalTableViewCell: UITableViewCell {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         txv.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        txv.isEditable = false 
+        txv.isEditable = false
+        txv.isScrollEnabled = false
         return txv
     }()
     
@@ -30,7 +31,6 @@ final class GeneralTextObjectNormalTableViewCell: UITableViewCell {
         self.contentView.addSubview(normalContentTextView)
         normalContentTextView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
-            maker.height.equalTo(300)
         }
     }
     

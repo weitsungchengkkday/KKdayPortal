@@ -19,7 +19,7 @@ protocol RepositoryManageable {
     // 👤 Authentication
     func login(account: String, password: String) -> Single<User>
     func renewToken() -> Single<User?>
-    func logout() -> Single<User>
+    func logout() -> Single<User?>
      
     // 🎛 CRUD
     func getItem(generalItemType: GeneralItemType) -> Single<Item>

@@ -111,15 +111,10 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         
         setupUI()
         bindViewModel()
-        
         itemsTableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
-        
-        generalTextObjectTableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        
+
         viewModel.getPortalData()
     }
     
@@ -166,7 +161,7 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
         
         stackView.snp.makeConstraints { maker in
             maker.top.equalTo(descriptionTextView.snp.bottom)
-            maker.leading.trailing.bottom.equalToSuperview()
+            maker.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -228,20 +223,6 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
 extension GeneralCollectionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch tableView {
-        case itemsTableView:
-            return 60
-            
-        case generalTextObjectTableView:
-            switch indexPath.row {
-            case 0:
-                return 200
-            default:
-                return 320
-            }
-        default:
-            return 60
-        }
+        return 60
     }
 }

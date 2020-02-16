@@ -86,7 +86,6 @@ final class GeneralLinkViewController: UIViewController {
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        
         viewModel.output.showTitle
             .drive(onNext: { [weak self] title in
                 self?.topTitleLabel.text = title

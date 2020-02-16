@@ -93,18 +93,21 @@ final class WebPloneRepository: RepositoryManageable {
         return response
     }
     
-    func logout() -> Single<User> {
+    func logout() -> Single<User?> {
        
         let logoutGeneralUser: User? = user
+        let logoutRequest = PortalUser.Logout(user: ploneUser)
         
-        return Single<User>.create { single -> Disposable in
-            if let logoutGeneralUser = logoutGeneralUser {
-                single(.success(logoutGeneralUser))
-            } else {
-                single(.error(AccountOperatingError.UserNonExisting))
-            }
-            
-            return Disposables.create()
+        return apiManager.request(logoutRequest)
+            .map { ploneAuthToken -> User? in
+
+                guard let logoutGeneralUser = logoutGeneralUser else {
+                    return nil
+                }
+                
+                return User(account: logoutGeneralUser.account,
+                            password: logoutGeneralUser.password,
+                            token: ploneAuthToken.token)
         }
     }
     

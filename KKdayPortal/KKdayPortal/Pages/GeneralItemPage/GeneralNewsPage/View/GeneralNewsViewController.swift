@@ -104,10 +104,6 @@ final class GeneralNewsViewController: UIViewController {
         
         setupUI()
         bindViewModel()
-        
-        generalTextObjectTableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
         viewModel.getPortalData()
     }
     
@@ -154,7 +150,7 @@ final class GeneralNewsViewController: UIViewController {
         
         stackView.snp.makeConstraints { maker in
             maker.top.equalTo(descriptionTextView.snp.bottom)
-            maker.leading.trailing.bottom.equalToSuperview()
+            maker.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -194,17 +190,3 @@ final class GeneralNewsViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 }
-
-extension GeneralNewsViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch indexPath.row {
-        case 0:
-            return 200
-        default:
-            return 320
-        }
-    }
-}
-

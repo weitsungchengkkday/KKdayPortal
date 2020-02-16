@@ -24,7 +24,7 @@ enum ModelLoader {
             return Repository().renewToken()
         }
         
-        func logout() -> Single<Repository.User> {
+        func logout() -> Single<Repository.User?> {
             return Repository().logout()
         }
         

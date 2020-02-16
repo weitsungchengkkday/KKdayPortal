@@ -93,11 +93,6 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController, Gen
         
         setupUI()
         bindViewModel()
-        
-        generalTextObjectTableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        
         viewModel.getPortalData()
     }
     
@@ -135,7 +130,6 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController, Gen
         }
         
         descriptionTextView.snp.makeConstraints { maker in
-            maker.height.equalTo(50)
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
@@ -143,7 +137,7 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController, Gen
         
         generalTextObjectTableView.snp.makeConstraints { maker in
             maker.top.equalTo(descriptionTextView.snp.bottom)
-            maker.bottom.equalTo(self.view.snp.bottomMargin)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }
@@ -181,36 +175,6 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController, Gen
             })
             .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
-        
-//        viewModel.output.showGeneralItems
-//            .drive(onNext: { [weak self] generalList in
-//                self?.setupNavBar(lists: generalList)
-//            })
-//            .disposed(by: disposeBag)
     }
-    
-    // 📍 config NavBar
-//    private func setupNavBar(lists: [GeneralList] = []) {
-//
-//        guard let nav = navigationController as? GeneralRootWithLanguageNavigationController else {
-//            return
-//        }
-//        if !lists.isEmpty {
-//            nav.indexContents = lists
-//        }
-//
-//        nav.setParentLeftBarButtonItem()
-//    }
 }
 
-extension GeneralRootWithLanguageDocumentViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return 200
-        default:
-            return 320
-        }
-    }
-}

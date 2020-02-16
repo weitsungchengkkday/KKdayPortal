@@ -92,11 +92,6 @@ final class GeneralDocumentViewController: UIViewController {
         
         setupUI()
         bindViewModel()
-        
-        generalTextObjectTableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        
         viewModel.getPortalData()
     }
     
@@ -141,7 +136,7 @@ final class GeneralDocumentViewController: UIViewController {
         
         generalTextObjectTableView.snp.makeConstraints { maker in
             maker.top.equalTo(descriptionTextView.snp.bottom)
-            maker.bottom.equalTo(self.view.snp.bottomMargin)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }
@@ -175,17 +170,5 @@ final class GeneralDocumentViewController: UIViewController {
                 self?.generalTextObjectTableView.isHidden = generalTextObjectSections.isEmpty
             }) .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
-    }
-}
-
-extension GeneralDocumentViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return 200
-        default:
-            return 320
-        }
     }
 }

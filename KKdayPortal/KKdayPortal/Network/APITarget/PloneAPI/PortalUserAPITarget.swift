@@ -72,6 +72,34 @@ enum PortalUser {
         }
     }
     
-    // MARK: Plone  Invalidating a token (@logout) can not be called
-    // Plone API Document: https://plonerestapi.readthedocs.io/en/latest/authentication.html
+    struct Logout: PortalUserAPITargetType {
+        
+        typealias ResponseType = PloneAuthToken
+        
+        var headers: [String: String]? {
+            return ["Accept": "application/json",
+                    "Authorization" : "Bearer" + " " + token
+            ]
+        }
+        
+        var path: String {
+            return "/@logout"
+        }
+        
+        var method: Method {
+            return .post
+        }
+        
+        var task: Task {
+            return .requestParameters(parameters: [:], encoding: JSONEncoding.default)
+        }
+        
+        let user: PloneUser?
+        let token: String
+        
+        init(user: PloneUser?) {
+            self.user = user
+            self.token = user?.token ?? ""
+        }
+    }
 }

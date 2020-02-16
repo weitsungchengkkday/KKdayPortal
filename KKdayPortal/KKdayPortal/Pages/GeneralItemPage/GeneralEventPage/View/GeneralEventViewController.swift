@@ -36,6 +36,7 @@ final class GeneralEventViewController: UIViewController {
     
     lazy var descriptionTextView: GeneralItemDescriptionTextView = {
         let txv = GeneralItemDescriptionTextView()
+        txv.isScrollEnabled = false
         return txv
     }()
     
@@ -45,6 +46,7 @@ final class GeneralEventViewController: UIViewController {
         txv.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         txv.isEditable = false
         txv.isSelectable = false
+        txv.isScrollEnabled = false
         return txv
     }()
     
@@ -54,6 +56,7 @@ final class GeneralEventViewController: UIViewController {
         txv.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         txv.isEditable = false
         txv.isSelectable = false
+        txv.isScrollEnabled = false
         return txv
     }()
     
@@ -110,10 +113,6 @@ final class GeneralEventViewController: UIViewController {
         
         setupUI()
         bindViewModel()
-        
-        generalTextObjectTableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
         viewModel.getPortalData()
     }
     
@@ -155,28 +154,23 @@ final class GeneralEventViewController: UIViewController {
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
-            maker.height.equalTo(50)
         }
         
         contactTextView.snp.makeConstraints { maker in
             maker.top.equalTo(descriptionTextView.snp.bottom)
-            maker.height.equalTo(60)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }
         
         eventTextView.snp.makeConstraints { maker in
             maker.top.equalTo(contactTextView.snp.bottom)
-            maker.height.equalTo(100)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }
         
         generalTextObjectTableView.snp.makeConstraints { maker in
             maker.top.equalTo(eventTextView.snp.bottom)
-            maker.bottom.equalTo(view.snp.bottomMargin)
-            maker.leading.equalToSuperview()
-            maker.trailing.equalToSuperview()
+            maker.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -220,18 +214,5 @@ final class GeneralEventViewController: UIViewController {
                 self?.generalTextObjectTableView.isHidden = generalTextObjectSections.isEmpty
             }) .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
             .disposed(by: disposeBag)
-    }
-}
-
-extension GeneralEventViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch indexPath.row {
-        case 0:
-            return 200
-        default:
-            return 320
-        }
     }
 }

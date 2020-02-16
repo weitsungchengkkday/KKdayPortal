@@ -43,7 +43,7 @@ final class GeneralTextObjectImageTableViewCell: UITableViewCell {
         textObjectImageWebView.snp.makeConstraints { maker in
             maker.top.equalTo(textObjectImageTitleLabel.snp.bottom)
             maker.bottom.leading.trailing.equalToSuperview()
-            maker.height.equalTo(400)
+            maker.height.equalTo(350)
         }
     }
     

@@ -134,7 +134,7 @@ final class GeneralFileViewController: UIViewController {
         
         downloadFileButton.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.bottom.equalToSuperview().offset(-8)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide).offset(-8)
             maker.width.equalToSuperview().offset(-30)
             maker.height.equalTo(44)
         }
