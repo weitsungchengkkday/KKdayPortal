@@ -34,12 +34,19 @@ final class GeneralNewsViewController: UIViewController {
         return lbl
     }()
     
+    lazy var topStackView: UIStackView = {
+        let stv = UIStackView()
+        stv.axis = .vertical
+        stv.distribution = .fill
+        return stv
+    }()
+    
     lazy var descriptionTextView: GeneralItemDescriptionTextView = {
         let txv = GeneralItemDescriptionTextView()
         return txv
     }()
     
-    lazy var stackView: UIStackView = {
+    lazy var bottomStackView: UIStackView = {
         let stv = UIStackView()
         stv.distribution = .fill
         stv.axis = .vertical
@@ -122,10 +129,11 @@ final class GeneralNewsViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
-        view.addSubview(descriptionTextView)
-        view.addSubview(stackView)
-        stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(generalTextObjectTableView)
+        view.addSubview(topStackView)
+        topStackView.addArrangedSubview(descriptionTextView)
+        view.addSubview(bottomStackView)
+        bottomStackView.addArrangedSubview(imageView)
+        bottomStackView.addArrangedSubview(generalTextObjectTableView)
         
         logoImageView.snp.makeConstraints { maker in
             maker.width.equalTo(140)
@@ -141,14 +149,13 @@ final class GeneralNewsViewController: UIViewController {
             maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
         
-        descriptionTextView.snp.makeConstraints { maker in
+        topStackView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
-            maker.height.equalTo(50)
         }
         
-        stackView.snp.makeConstraints { maker in
+        bottomStackView.snp.makeConstraints { maker in
             maker.top.equalTo(descriptionTextView.snp.bottom)
             maker.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }

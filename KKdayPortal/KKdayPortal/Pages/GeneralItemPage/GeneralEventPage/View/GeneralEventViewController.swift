@@ -34,6 +34,13 @@ final class GeneralEventViewController: UIViewController {
         return lbl
     }()
     
+    lazy var topStackView: UIStackView = {
+        let stv = UIStackView()
+        stv.axis = .vertical
+        stv.distribution = .fill
+        return stv
+    }()
+    
     lazy var descriptionTextView: GeneralItemDescriptionTextView = {
         let txv = GeneralItemDescriptionTextView()
         txv.isScrollEnabled = false
@@ -131,9 +138,10 @@ final class GeneralEventViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
-        view.addSubview(descriptionTextView)
-        view.addSubview(contactTextView)
-        view.addSubview(eventTextView)
+        view.addSubview(topStackView)
+        topStackView.addArrangedSubview(descriptionTextView)
+        topStackView.addArrangedSubview(contactTextView)
+        topStackView.addArrangedSubview(eventTextView)
         view.addSubview(generalTextObjectTableView)
         
         logoImageView.snp.makeConstraints { maker in
@@ -150,20 +158,8 @@ final class GeneralEventViewController: UIViewController {
             maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
         
-        descriptionTextView.snp.makeConstraints { maker in
+        topStackView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
-            maker.leading.equalToSuperview()
-            maker.trailing.equalToSuperview()
-        }
-        
-        contactTextView.snp.makeConstraints { maker in
-            maker.top.equalTo(descriptionTextView.snp.bottom)
-            maker.leading.equalToSuperview()
-            maker.trailing.equalToSuperview()
-        }
-        
-        eventTextView.snp.makeConstraints { maker in
-            maker.top.equalTo(contactTextView.snp.bottom)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }

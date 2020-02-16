@@ -20,6 +20,7 @@ final class SettingViewController: UIViewController {
         btn.setTitleColor(.white, for: .normal)
         btn.layer.cornerRadius = 8
         btn.isEnabled = false
+        btn.isHidden = true
         return btn
     }()
     

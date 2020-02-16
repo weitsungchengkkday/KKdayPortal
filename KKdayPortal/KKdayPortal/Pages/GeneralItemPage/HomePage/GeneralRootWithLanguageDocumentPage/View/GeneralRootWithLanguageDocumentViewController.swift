@@ -30,6 +30,13 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController, Gen
         return imv
     }()
     
+    lazy var topStackView: UIStackView = {
+        let stv = UIStackView()
+        stv.axis = .vertical
+        stv.distribution = .fill
+        return stv
+    }()
+    
     lazy var topTitleLabel: GeneralItemTopTitleLabel = {
         let lbl = GeneralItemTopTitleLabel()
         return lbl
@@ -111,8 +118,9 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController, Gen
         self.navigationController?.title = "Home"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
+        view.addSubview(topStackView)
         view.addSubview(topTitleLabel)
-        view.addSubview(descriptionTextView)
+        topStackView.addArrangedSubview(descriptionTextView)
         view.addSubview(generalTextObjectTableView)
         
         logoImageView.snp.makeConstraints { maker in
@@ -129,7 +137,7 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController, Gen
             maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
         
-        descriptionTextView.snp.makeConstraints { maker in
+        topStackView.snp.makeConstraints { maker in
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
