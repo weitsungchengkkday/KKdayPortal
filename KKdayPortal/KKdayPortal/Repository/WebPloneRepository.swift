@@ -17,10 +17,7 @@ final class WebPloneRepository: RepositoryManageable {
     
     static var baseURL: URL {
         
-#if TEST_VERSION
-        let url = URL(string: "http://localhost:8080/pikaPika")!
-        
-#elseif SIT_VERSION
+#if TEST_VERSION || SIT_VERSION
         let url = URL(string: "https://sit.eip.kkday.net/Plone")!
         
 #elseif PRODUCTION_VERSION

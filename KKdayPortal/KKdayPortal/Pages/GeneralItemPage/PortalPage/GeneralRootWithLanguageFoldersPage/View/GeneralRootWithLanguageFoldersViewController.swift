@@ -157,18 +157,15 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
                         
                         let BPMString: String
                         
-                        #if TEST_VERSION
+#if TEST_VERSION || SIT_VERSION
                         BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
                         
-                        #elseif SIT_VERSION
-                        BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
-                        
-                        #elseif PRODUCTION_VERSION
+#elseif PRODUCTION_VERSION
                         BPMString = "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
                         
-                        #else
+#else
                         
-                        #endif
+#endif
                         
                         
                         if source == URL(string: BPMString) {

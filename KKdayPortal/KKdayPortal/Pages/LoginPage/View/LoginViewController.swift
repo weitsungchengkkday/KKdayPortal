@@ -89,18 +89,18 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func login() {
-#if TEST_VERSION
-        directlyGoMainViewController()
-     
-#elseif SIT_VERSION
+        
+#if TEST_VERSION || SIT_VERSION
         goPloneSSOPage()
         
 #elseif PRODUCTION_VERSION
         goPloneSSOPage()
         
 #else
+      
         
 #endif
+        
     }
     
     private func goPloneSSOPage() {

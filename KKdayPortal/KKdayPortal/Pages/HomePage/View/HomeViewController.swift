@@ -56,13 +56,7 @@ class HomeViewController: UIViewController, Localizable {
         
         let rootURL: URL
         
-        #if TEST_VERSION
-        guard let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw") else {
-            print("❌, not valid root url")
-            return
-        }
-        
-        #elseif SIT_VERSION
+        #if TEST_VERSION || SIT_VERSION
         guard let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw") else {
             print("❌, not valid root url")
             return
