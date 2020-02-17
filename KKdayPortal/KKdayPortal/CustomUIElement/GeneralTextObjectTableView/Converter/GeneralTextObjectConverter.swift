@@ -106,7 +106,6 @@ extension GeneralTextObjectConverter {
             }
             
             // Handle double layers tag(img is inner tag), <p><img alt="..." src="..." class="..."></p>
-            
             do {
                 let imageArray = try doc.select("img").array()
                 

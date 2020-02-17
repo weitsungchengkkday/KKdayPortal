@@ -23,6 +23,9 @@ class MainViewController: UITabBarController {
         homeVC.tabBarItem = homeItem
         
         let homeNav = UINavigationController(rootViewController: homeVC)
+        let homeBarbuttonItem = UIBarButtonItem()
+        homeBarbuttonItem.title = ""
+        homeNav.navigationBar.topItem?.backBarButtonItem = homeBarbuttonItem
         homeNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         homeNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
@@ -31,6 +34,9 @@ class MainViewController: UITabBarController {
         portalVC.tabBarItem = portalItem
     
         let portalNav = UINavigationController(rootViewController: portalVC)
+        let portalBarbuttonItem = UIBarButtonItem()
+        portalBarbuttonItem.title = ""
+        portalNav.navigationBar.topItem?.backBarButtonItem = portalBarbuttonItem
         portalNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         portalNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
@@ -39,16 +45,21 @@ class MainViewController: UITabBarController {
         settingVC.tabBarItem = settingItem
         
         let settingNav = UINavigationController(rootViewController: settingVC)
+        let settingBarbuttonItem = UIBarButtonItem()
+        settingBarbuttonItem.title = ""
+        settingNav.navigationBar.topItem?.backBarButtonItem = settingBarbuttonItem
         settingNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         settingNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         let applicationsEntryVC = ApplicationsEntryViewController(nibName: nil, bundle: nil)
-        
         let image = UIImage(systemName: "rectangle.grid.2x2")
         let applicationsEntryItem = UITabBarItem(title: "Service Links", image: image, selectedImage: image)
         applicationsEntryVC.tabBarItem = applicationsEntryItem
         
         let applicationsEntryNav = UINavigationController(rootViewController: applicationsEntryVC)
+        let applicationsButtonItem = UIBarButtonItem()
+        applicationsButtonItem.title = ""
+        applicationsEntryNav.navigationBar.topItem?.backBarButtonItem = applicationsButtonItem
         applicationsEntryNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         applicationsEntryNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         

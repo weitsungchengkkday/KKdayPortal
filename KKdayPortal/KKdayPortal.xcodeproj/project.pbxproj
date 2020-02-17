@@ -473,10 +473,10 @@
 		F45740D923CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift */; };
 		F45740DA23CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift */; };
 		F45740DB23CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift */; };
-		F45740DF23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
-		F45740E023D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
-		F45740E123D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
-		F45740E223D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */; };
+		F45740DF23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */; };
+		F45740E023D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */; };
+		F45740E123D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */; };
+		F45740E223D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */; };
 		F45740E423D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E323D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift */; };
 		F45740E623D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift */; };
 		F45740E723D13A2B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift */; };
@@ -760,7 +760,7 @@
 		F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationTypeExtension.swift; sourceTree = "<group>"; };
 		F45740D123CEED6100FB5EEC /* ContentListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListSection.swift; sourceTree = "<group>"; };
 		F45740D723CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIndexSideBarCoordinator.swift; sourceTree = "<group>"; };
+		F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDetailPageCoordinator.swift; sourceTree = "<group>"; };
 		F45740E323D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F45740E523D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListSectionItem.swift; sourceTree = "<group>"; };
@@ -1502,7 +1502,7 @@
 		F4544824239CA3E3001B8D31 /* GeneralItemProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */,
+				F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */,
 				F4544845239D01C8001B8D31 /* PortalControllable.swift */,
 			);
 			path = GeneralItemProtocol;
@@ -2637,7 +2637,7 @@
 				F453953723BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F44E8CC723B88AA30032C6BE /* GeneralFolderViewController.swift in Sources */,
 				F457416823D5463E00FB5EEC /* ConfigModel.swift in Sources */,
-				F45740E023D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */,
+				F45740E023D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
 				F44E8CC923B88AA30032C6BE /* APIManager.swift in Sources */,
 				F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */,
@@ -2786,7 +2786,7 @@
 				F453953823BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F44E8D3D23B88AFA0032C6BE /* GeneralFolderViewController.swift in Sources */,
 				F457416923D5463E00FB5EEC /* ConfigModel.swift in Sources */,
-				F45740E123D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */,
+				F45740E123D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F44E8D3E23B88AFA0032C6BE /* GeneralNewsViewController.swift in Sources */,
 				F44E8D3F23B88AFA0032C6BE /* APIManager.swift in Sources */,
 				F44E8D4223B88AFA0032C6BE /* PloneDocument.swift in Sources */,
@@ -2935,7 +2935,7 @@
 				F453953923BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F44E8DB323B88AFC0032C6BE /* GeneralFolderViewController.swift in Sources */,
 				F457416A23D5463E00FB5EEC /* ConfigModel.swift in Sources */,
-				F45740E223D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */,
+				F45740E223D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F44E8DB423B88AFC0032C6BE /* GeneralNewsViewController.swift in Sources */,
 				F44E8DB523B88AFC0032C6BE /* APIManager.swift in Sources */,
 				F44E8DB823B88AFC0032C6BE /* PloneDocument.swift in Sources */,
@@ -3081,7 +3081,7 @@
 				F45446FA238F70DF001B8D31 /* PloneImage.swift in Sources */,
 				F42039B223C78ED4000480EF /* ApplicationsEntryTableViewCell.swift in Sources */,
 				F45740D223CEED6100FB5EEC /* ContentListSection.swift in Sources */,
-				F45740DF23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift in Sources */,
+				F45740DF23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */,
 				F45446F8238F706C001B8D31 /* PloneEvent.swift in Sources */,
 				F4FC41A4238D35AA00AC7315 /* PortalItemAPITargetType.swift in Sources */,

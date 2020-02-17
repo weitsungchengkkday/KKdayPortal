@@ -112,8 +112,6 @@ extension PloneSSOViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
     
         print("📮 Navigation Response: \(navigationResponse.response)")
-        
-        
         guard let response = navigationResponse.response as? HTTPURLResponse else {
             return
         }

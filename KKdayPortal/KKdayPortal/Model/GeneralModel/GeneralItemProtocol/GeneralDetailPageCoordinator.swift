@@ -1,5 +1,5 @@
 //
-//  GeneralIndexSideBarCoordinator.swift
+//  GeneralDetailPageCoordinator.swift
 //  KKdayPortal
 //
 //  Created by WEI-TSUNG CHENG on 2020/1/16.
@@ -16,14 +16,18 @@ protocol GeneralDetailPageCoordinator where Self: UIViewController {
 }
 
 extension GeneralDetailPageCoordinator {
+    
     func openDetailPage(route: URL, type: GeneralItemType) {
         
+        let barButtonItem = UIBarButtonItem()
+        barButtonItem.title = ""
+        navigationController?.navigationBar.topItem?.backBarButtonItem  = barButtonItem
         debugPrint("🏷 GoDetail: rout: \(route), type: \(type)")
+        
         switch type {
         case .root:
             let pushViewController = GeneralRootWithLanguageDocumentViewController(viewModel: GeneralRootWithLanguageDocumentViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
-            
             
         case .root_with_language:
             let pushViewController = GeneralRootViewController(viewModel: GeneralRootViewModel(source: route))

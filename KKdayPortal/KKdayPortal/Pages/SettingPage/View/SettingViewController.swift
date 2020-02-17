@@ -92,8 +92,7 @@ final class SettingViewController: UIViewController {
         }
         
         logoutButton.snp.makeConstraints { maker in
-            maker.top.equalTo(renewTokenButton.snp.bottom).offset(50)
-            maker.centerX.equalToSuperview()
+            maker.centerX.centerY.equalToSuperview()
             maker.height.equalTo(60)
             maker.width.equalToSuperview().offset(-200)
         }
