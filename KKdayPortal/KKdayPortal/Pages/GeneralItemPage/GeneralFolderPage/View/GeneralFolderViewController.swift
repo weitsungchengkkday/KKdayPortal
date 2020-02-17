@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class GeneralFolderViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralFolderViewController: UIViewController, GeneralDetailPageCoordinator {
     
     private static var CellName: String {
         return "FolderCell"
@@ -143,7 +143,14 @@ final class GeneralFolderViewController: UIViewController, GeneralItemCoordinato
                     let source = generalItem.source else {
                         return
                 }
-                self?.goDetailPage(route: source, type: type)
+                
+                switch type {
+                case .root_with_language, .root, .folder, .collection, .image, .document, .news, .event, .file:
+                    self?.openDetailPage(route: source, type: type)
+                    
+                case .link:
+                    self?.openOutSiteLink(url: source)
+                }
             })
             .disposed(by: disposeBag)
     }

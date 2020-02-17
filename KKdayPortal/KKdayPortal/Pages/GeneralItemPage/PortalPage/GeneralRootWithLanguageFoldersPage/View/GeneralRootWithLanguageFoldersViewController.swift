@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 import RxDataSources
 
-final class GeneralRootWithLanguageFoldersViewController: UIViewController, GeneralIndexSideBarCoordinator {
+final class GeneralRootWithLanguageFoldersViewController: UIViewController, GeneralDetailPageCoordinator {
     
     private static var NormalCellName: String {
         return "GeneralRootWithLanguageFoldersNormalCell"
@@ -151,7 +151,7 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
                     switch type {
                     case .root_with_language, .root, .folder, .collection, .image, .document, .news, .event, .file:
                         
-                        self?.goDetailIndexPage(route: source, type: type)
+                        self?.openDetailPage(route: source, type: type)
                         
                     case .link:
                         
@@ -167,26 +167,13 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
                         
 #endif
                         
-                        
                         if source == URL(string: BPMString) {
-                            
                             // If link is BPM open website in APP
                             self?.tabBarController?.selectedIndex = 2
                             
                         } else {
-                            
                             // Others jump out from APP
-                            let alertController = UIAlertController(title: "Warning", message: "Will Jump Out APP", preferredStyle: .actionSheet)
-                            let confirmAlertAction = UIAlertAction(title: "Confirm", style: .default) { _ in
-                                if UIApplication.shared.canOpenURL(source) {
-                                    UIApplication.shared.open(source, options: [:], completionHandler: nil)
-                                }
-                            }
-                            let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                            
-                            alertController.addAction(confirmAlertAction)
-                            alertController.addAction(cancelAlertAction)
-                            self?.present(alertController, animated: true, completion: nil)
+                            self?.openOutSiteLink(url: source)
                         }
                     }
                     
@@ -194,6 +181,7 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
             })
             .disposed(by: disposeBag)
     }
+    
 }
 
 extension GeneralRootWithLanguageFoldersViewController: UITableViewDelegate {

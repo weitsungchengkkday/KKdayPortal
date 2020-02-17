@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-final class GeneralRootViewController: UIViewController, GeneralItemCoordinator {
+final class GeneralRootViewController: UIViewController {
     
     private let viewModel: GeneralRootViewModel
     private let disposeBag = DisposeBag()

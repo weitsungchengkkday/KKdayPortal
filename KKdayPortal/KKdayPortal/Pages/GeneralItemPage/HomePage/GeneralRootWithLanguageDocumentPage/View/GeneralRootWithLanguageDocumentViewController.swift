@@ -14,7 +14,7 @@ import WebKit
 import SwiftSoup
 import RxDataSources
 
-final class GeneralRootWithLanguageDocumentViewController: UIViewController, GeneralIndexSideBarCoordinator {
+final class GeneralRootWithLanguageDocumentViewController: UIViewController {
     
     // generalTextObject cell
     struct GeneralTextObjectCellName {

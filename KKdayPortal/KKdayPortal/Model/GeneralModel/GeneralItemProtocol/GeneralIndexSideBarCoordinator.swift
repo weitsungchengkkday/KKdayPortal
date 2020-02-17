@@ -9,15 +9,16 @@
 import Foundation
 import UIKit
 
-protocol GeneralIndexSideBarCoordinator where Self: UIViewController {
-    func goDetailIndexPage(route: URL, type: GeneralItemType)
+protocol GeneralDetailPageCoordinator where Self: UIViewController {
+    func openDetailPage(route: URL, type: GeneralItemType)
+    func openOutSiteLink(url: URL)
+    
 }
 
-extension GeneralIndexSideBarCoordinator {
-    func goDetailIndexPage(route: URL, type: GeneralItemType) {
+extension GeneralDetailPageCoordinator {
+    func openDetailPage(route: URL, type: GeneralItemType) {
         
-        debugPrint("GoDetail: rout: \(route), type: \(type)")
-
+        debugPrint("🏷 GoDetail: rout: \(route), type: \(type)")
         switch type {
         case .root:
             let pushViewController = GeneralRootWithLanguageDocumentViewController(viewModel: GeneralRootWithLanguageDocumentViewModel(source: route))
@@ -60,4 +61,20 @@ extension GeneralIndexSideBarCoordinator {
             break
         }
     }
+    
+    func openOutSiteLink(url: URL) {
+        
+        let alertController = UIAlertController(title: "Warning", message: "Will Jump Out APP", preferredStyle: .actionSheet)
+        let confirmAlertAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(confirmAlertAction)
+        alertController.addAction(cancelAlertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }

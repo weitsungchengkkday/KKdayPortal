@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 import RxDataSources
 
-class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator {
+class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordinator {
     
     // items cell
     private static var CellName: String {
@@ -211,7 +211,13 @@ class GeneralCollectionViewController: UIViewController, GeneralItemCoordinator 
                             let source = generalItem.source else {
                                 return
                         }
-                        self.goDetailPage(route: source, type: type)
+                        switch type {
+                        case .root_with_language, .root, .folder, .collection, .image, .document, .news, .event, .file:
+                            self.openDetailPage(route: source, type: type)
+                            
+                        case .link:
+                            self.openOutSiteLink(url: source)
+                        }
                     })
                     .disposed(by: cell.disposeBag)
         }

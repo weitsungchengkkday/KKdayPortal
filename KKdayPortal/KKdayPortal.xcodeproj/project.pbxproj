@@ -162,7 +162,6 @@
 		F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
 		F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
 		F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
-		F44E8CB423B88AA30032C6BE /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
 		F44E8CB523B88AA30032C6BE /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
 		F44E8CB623B88AA30032C6BE /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486D23A20EF9001B8D31 /* LanguageSettingViewController.swift */; };
 		F44E8CB723B88AA30032C6BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
@@ -256,7 +255,6 @@
 		F44E8D2723B88AFA0032C6BE /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
 		F44E8D2823B88AFA0032C6BE /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
 		F44E8D2923B88AFA0032C6BE /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
-		F44E8D2A23B88AFA0032C6BE /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
 		F44E8D2B23B88AFA0032C6BE /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
 		F44E8D2C23B88AFA0032C6BE /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486D23A20EF9001B8D31 /* LanguageSettingViewController.swift */; };
 		F44E8D2D23B88AFA0032C6BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
@@ -350,7 +348,6 @@
 		F44E8D9D23B88AFC0032C6BE /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
 		F44E8D9E23B88AFC0032C6BE /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
 		F44E8D9F23B88AFC0032C6BE /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
-		F44E8DA023B88AFC0032C6BE /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
 		F44E8DA123B88AFC0032C6BE /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
 		F44E8DA223B88AFC0032C6BE /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486D23A20EF9001B8D31 /* LanguageSettingViewController.swift */; };
 		F44E8DA323B88AFC0032C6BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
@@ -430,7 +427,6 @@
 		F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
 		F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
 		F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
-		F4544826239CA4AC001B8D31 /* GeneralItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */; };
 		F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
 		F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
 		F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
@@ -718,7 +714,6 @@
 		F45447FD239BB577001B8D31 /* ModelLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoadable.swift; sourceTree = "<group>"; };
 		F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewModel.swift; sourceTree = "<group>"; };
 		F454481F239C040F001B8D31 /* GeneralRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewController.swift; sourceTree = "<group>"; };
-		F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemCoordinator.swift; sourceTree = "<group>"; };
 		F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewModel.swift; sourceTree = "<group>"; };
 		F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewController.swift; sourceTree = "<group>"; };
 		F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDocumentViewModel.swift; sourceTree = "<group>"; };
@@ -1508,7 +1503,6 @@
 			isa = PBXGroup;
 			children = (
 				F45740DE23D0362100FB5EEC /* GeneralIndexSideBarCoordinator.swift */,
-				F4544825239CA4AC001B8D31 /* GeneralItemCoordinator.swift */,
 				F4544845239D01C8001B8D31 /* PortalControllable.swift */,
 			);
 			path = GeneralItemProtocol;
@@ -2622,7 +2616,6 @@
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */,
-				F44E8CB423B88AA30032C6BE /* GeneralItemCoordinator.swift in Sources */,
 				F44E8CB523B88AA30032C6BE /* ApplicationsEntryViewModel.swift in Sources */,
 				F44E8CB623B88AA30032C6BE /* LanguageSettingViewController.swift in Sources */,
 				F44E8CB723B88AA30032C6BE /* SettingViewController.swift in Sources */,
@@ -2772,7 +2765,6 @@
 				F45C2C4923BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8D2823B88AFA0032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8D2923B88AFA0032C6BE /* GeneralEventViewController.swift in Sources */,
-				F44E8D2A23B88AFA0032C6BE /* GeneralItemCoordinator.swift in Sources */,
 				F44E8D2B23B88AFA0032C6BE /* ApplicationsEntryViewModel.swift in Sources */,
 				F44E8D2C23B88AFA0032C6BE /* LanguageSettingViewController.swift in Sources */,
 				F44E8D2D23B88AFA0032C6BE /* SettingViewController.swift in Sources */,
@@ -2922,7 +2914,6 @@
 				F45C2C4A23BCD8C300A1E769 /* Utilities.swift in Sources */,
 				F44E8D9E23B88AFC0032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8D9F23B88AFC0032C6BE /* GeneralEventViewController.swift in Sources */,
-				F44E8DA023B88AFC0032C6BE /* GeneralItemCoordinator.swift in Sources */,
 				F44E8DA123B88AFC0032C6BE /* ApplicationsEntryViewModel.swift in Sources */,
 				F44E8DA223B88AFC0032C6BE /* LanguageSettingViewController.swift in Sources */,
 				F44E8DA323B88AFC0032C6BE /* SettingViewController.swift in Sources */,
@@ -3080,7 +3071,6 @@
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
 				F4B3BCB623F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
-				F4544826239CA4AC001B8D31 /* GeneralItemCoordinator.swift in Sources */,
 				F45448AD23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift in Sources */,
 				F454486E23A20EF9001B8D31 /* LanguageSettingViewController.swift in Sources */,
 				F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */,
@@ -3179,7 +3169,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3201,7 +3191,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -3223,7 +3213,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.stage;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3245,7 +3235,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.stage;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -3267,7 +3257,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.test;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3289,7 +3279,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.test;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -3470,7 +3460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.sit;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3492,7 +3482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.sit;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
