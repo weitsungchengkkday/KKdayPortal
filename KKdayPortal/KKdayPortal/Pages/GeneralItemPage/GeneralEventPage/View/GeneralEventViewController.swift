@@ -25,7 +25,7 @@ final class GeneralEventViewController: UIViewController {
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
         let imv = UIImageView()
-        imv.image = #imageLiteral(resourceName: "icKKdayLogo")
+        imv.image = PloneResourceManager.shared.currentLogoImage
         return imv
     }()
     

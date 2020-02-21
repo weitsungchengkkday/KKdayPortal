@@ -51,7 +51,7 @@ final class LoginInfoViewController: UIViewController {
     
     lazy var clsoeButton: UIButton = {
         let btn = UIButton()
-        btn.setImage(#imageLiteral(resourceName: "icMenuClosePrimary"), for: .normal)
+        btn.setImage(#imageLiteral(resourceName: "icCrossWhite"), for: .normal)
         return btn
     }()
     
@@ -68,20 +68,22 @@ final class LoginInfoViewController: UIViewController {
         let stv = UIStackView()
         stv.axis = .vertical
         stv.distribution = .fill
-        stv.alignment = .center
+        stv.alignment = .leading
         return stv
     }()
     
     lazy var ploneURLLabel: UILabel = {
         let lbl = UILabel()
+        lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         lbl.text = "Please enter plone URL"
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
     }()
     
     lazy var ploneURLTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
-        txf.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .URL
         txf.layer.cornerRadius = 12
         return txf
@@ -91,20 +93,22 @@ final class LoginInfoViewController: UIViewController {
         let stv = UIStackView()
         stv.axis = .vertical
         stv.distribution = .fill
-        stv.alignment = .center
+        stv.alignment = .leading
         return stv
     }()
     
     lazy var accountLabel: UILabel = {
         let lbl = UILabel()
+        lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         lbl.text = "Please enter your account (optional)"
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
     }()
     
     lazy var accountTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
-        txf.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .emailAddress
         txf.layer.cornerRadius = 12
         return txf
@@ -114,20 +118,22 @@ final class LoginInfoViewController: UIViewController {
         let stv = UIStackView()
         stv.axis = .vertical
         stv.distribution = .fill
-        stv.alignment = .center
+        stv.alignment = .leading
         return stv
     }()
     
     lazy var passwordLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textAlignment = .left
+        lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         lbl.text = "Please enter your password (optional)"
+        lbl.adjustsFontSizeToFitWidth = true
+        lbl.textAlignment = .left
         return lbl
     }()
     
     lazy var passwordTextFiled: TogglePasswordTextField = {
         let txf = TogglePasswordTextField()
-        txf.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .default
         txf.layer.cornerRadius = 12
         return txf
@@ -135,6 +141,7 @@ final class LoginInfoViewController: UIViewController {
     
     lazy var memoTextView: UITextView = {
         let txv = UITextView()
+        txv.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         txv.isScrollEnabled = false
         txv.text = "If plone website support login as vister, you do not need to enter account and password"
         txv.isEditable = false
@@ -143,8 +150,9 @@ final class LoginInfoViewController: UIViewController {
     
     lazy var comfirmButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Confirm", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        btn.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+        btn.setTitle("Login", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         btn.layer.cornerRadius = 5
         btn.isEnabled = false
         return btn
@@ -210,14 +218,14 @@ final class LoginInfoViewController: UIViewController {
                 break
             }
         } else {
-            print("⚠️ First time login or logout")
+            print("🎯 First time login or logout")
         }
         
     }
     
     // 🎨 draw UI
     private func setupUI() {
-        self.view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
         self.view.addSubview(clsoeButton)
         self.view.addSubview(inputStackView)
         
@@ -271,7 +279,7 @@ final class LoginInfoViewController: UIViewController {
         }
         
         memoTextView.snp.makeConstraints { maker in
-            maker.width.equalTo(view.snp.width).offset(-160)
+            maker.width.equalTo(view.snp.width).offset(-110)
         }
         
         comfirmButton.snp.makeConstraints { maker in

@@ -45,7 +45,7 @@ final class SettingViewController: UIViewController {
     
     lazy var logoWithTextImageView: UIImageView = {
         let imv = UIImageView()
-        imv.image = #imageLiteral(resourceName: "icKkdayLogoWithText")
+        imv.image = #imageLiteral(resourceName: "icApplicationItem")
         imv.isUserInteractionEnabled = true
         return imv
     }()
@@ -59,6 +59,7 @@ final class SettingViewController: UIViewController {
     }()
     
     private let viewModel = SettingViewModel()
+    let testingModeIsOpen: Bool = false
     private let testingModeTapRequired: Int = 10
     
     override func viewDidLoad() {
@@ -146,8 +147,10 @@ final class SettingViewController: UIViewController {
     }
     
     @objc private func goTestingPage() {
-        let presentViewController = TestingViewController(viewModel: TestingViewModel())
-        present(presentViewController, animated: true, completion: nil)
+        if testingModeIsOpen {
+            let presentViewController = TestingViewController(viewModel: TestingViewModel())
+            present(presentViewController, animated: true, completion: nil)
+        }
     }
     
     // ⛓ bind viewModel

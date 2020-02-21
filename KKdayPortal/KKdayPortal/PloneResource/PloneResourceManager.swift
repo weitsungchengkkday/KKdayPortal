@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class PloneResourceManager {
     
@@ -26,6 +27,20 @@ final class PloneResourceManager {
         }
         
     }
+    
+    lazy var currentLogoImage: UIImage = {
+        let image: UIImage
+        switch resourceType {
+        case .kkMember:
+            image = #imageLiteral(resourceName: "icKKdayLogo")
+        case .normal(_):
+            image = #imageLiteral(resourceName: "icApplicationItem")
+        case .none:
+            image = #imageLiteral(resourceName: "icPicture")
+        }
+        
+        return image
+    }()
     
     private init() {}
 }

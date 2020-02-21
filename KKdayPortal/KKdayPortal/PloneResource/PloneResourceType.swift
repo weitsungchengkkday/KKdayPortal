@@ -46,14 +46,15 @@ extension PloneResourceType: Codable {
             default:
                 self = .none
             }
-            
-        } else {
-            
-            if let value = try? container.decode(U.self, forKey: .normal) {
-                self = .normal(value)
-            } else {
-                self = .none
-            }
+            return
         }
+        
+        if let value = try? container.decode(U.self, forKey: .normal) {
+            self = .normal(value)
+            return
+        }
+        
+        self = .none
+        return
     }
 }
