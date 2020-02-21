@@ -34,7 +34,11 @@ final class PloneSSOViewController: UIViewController {
         setAction()
         bindViewModel()
         
-#if TEST_VERSION || SIT_VERSION
+#if TEST_VERSION
+        let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
+        SSOwebView.load(URLRequest(url: url))
+        
+#elseif SIT_VERSION
         let url = URL(string: "https://sit.eip.kkday.net/Plone/@@app_login")!
         SSOwebView.load(URLRequest(url: url))
   
@@ -83,7 +87,7 @@ extension PloneSSOViewController: WKScriptMessageHandler {
                 let account = body["id"] as? String,
                 let token = body["token"] as? String {
                 
-                debugPrint("👥 Get Token 💎PLONE TOKEN: \(token)")
+                debugPrint("👥 SSO Login, Get Token 💎PLONE TOKEN: \(token)")
                 let user = GeneralUser(account: account, token: token)
                 StorageManager.shared.saveObject(for: .generalUser, value: user)
                 

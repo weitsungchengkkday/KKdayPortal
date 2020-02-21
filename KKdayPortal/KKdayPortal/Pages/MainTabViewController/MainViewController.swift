@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
+final class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,21 @@ class MainViewController: UITabBarController {
         
         self.tabBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         self.tabBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.viewControllers = [homeNav, portalNav, applicationsEntryNav, settingNav]
+        
+        let resourceType = PloneResourceManager.shared.resourceType
+        
+        switch resourceType {
+        case .kkMember:
+             self.viewControllers = [homeNav, portalNav, applicationsEntryNav, settingNav]
+            
+        case .normal(url: _):
+             self.viewControllers = [homeNav, portalNav, settingNav]
+            
+        case .none:
+            self.viewControllers = []
+            print("❌, resourceType must be defined")
+        }
+        
         self.selectedViewController = homeNav
     }
 }

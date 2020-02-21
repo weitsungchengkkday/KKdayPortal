@@ -14,6 +14,10 @@ final class StorageManager {
 
     /// Storage Key
     enum StorageKeys: String {
+        
+        // Plone
+        case ploneResourceType
+        
         // Portal
         case generalUser
         

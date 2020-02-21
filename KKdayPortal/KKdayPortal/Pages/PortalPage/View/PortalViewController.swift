@@ -55,25 +55,30 @@ final class PortalViewController: UIViewController, Localizable {
     private func addChildViewController() {
         
         let rootURL: URL
+        let resourceType = PloneResourceManager.shared.resourceType
         
-#if TEST_VERSION || SIT_VERSION
-        guard let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw") else {
-            print("❌, not valid root url")
-            return
-        }
+        switch resourceType {
+        case .kkMember:
+#if TEST_VERSION
+        rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
+
+#elseif SIT_VERSION
+        rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
         
 #elseif PRODUCTION_VERSION
-        guard let url = URL(string: "https://eip.kkday.net/Plone/zh-tw") else {
-            print("❌, not valid root url")
-            return
-        }
-    
+        rootURL = URL(string: "https://eip.kkday.net/Plone/zh-tw")!
+
 #else
         
-        
-#endif
 
-        rootURL = url
+#endif
+        case .normal(url: let url):
+            rootURL = URL(string: url.absoluteString + "/zh-tw")!
+            print(rootURL)
+        case .none:
+            print("❌, resourceType must be defined")
+            return
+        }
         
         let viewModel = GeneralRootWithLanguageFoldersViewModel(source: rootURL)
         let childViewController = GeneralRootWithLanguageFoldersViewController(viewModel: viewModel)

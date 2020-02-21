@@ -11,25 +11,8 @@ protocol PortalUserAPITargetType: CodableResponseType {
 }
 
 extension PortalUserAPITargetType {
-    var baseURL: URL {
-        
-#if TEST_VERSION || SIT_VERSION
-        let baseURLString = "https://sit.eip.kkday.net/Plone"
-        
-#elseif PRODUCTION_VERSION
-        let baseURLString = "https://eip.kkday.net/Plone"
-    
-#else
-        
-#endif
-        
-        return URL(string: baseURLString)!
-    }
     
     var sampleData: Data {
         return Data()
     }
 }
-
-
-

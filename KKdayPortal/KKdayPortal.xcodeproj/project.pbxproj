@@ -534,6 +534,30 @@
 		F46180BA23F9722F00D303F8 /* PloneEmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180B823F9722F00D303F8 /* PloneEmptyData.swift */; };
 		F46180BB23F9722F00D303F8 /* PloneEmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180B823F9722F00D303F8 /* PloneEmptyData.swift */; };
 		F46180BC23F9722F00D303F8 /* PloneEmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180B823F9722F00D303F8 /* PloneEmptyData.swift */; };
+		F46180C123FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */; };
+		F46180C223FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */; };
+		F46180C323FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */; };
+		F46180C423FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */; };
+		F46180C623FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */; };
+		F46180C723FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */; };
+		F46180C823FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */; };
+		F46180C923FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */; };
+		F46180CD23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */; };
+		F46180CE23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */; };
+		F46180CF23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */; };
+		F46180D023FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */; };
+		F46180D123FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */; };
+		F46180D223FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */; };
+		F46180D323FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */; };
+		F46180D423FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */; };
+		F46180D723FE3DB200D303F8 /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
+		F46180D823FE3DB200D303F8 /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
+		F46180D923FE3DB200D303F8 /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
+		F46180DA23FE3DB200D303F8 /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
+		F46180DC23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
+		F46180DD23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
+		F46180DE23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
+		F46180DF23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
 		F4B3BC8223F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8323F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8423F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
@@ -776,6 +800,12 @@
 		F45C2C4323BCD8AD00A1E769 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		F4603C4F23C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersNormalTableViewCell.swift; sourceTree = "<group>"; };
 		F46180B823F9722F00D303F8 /* PloneEmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneEmptyData.swift; sourceTree = "<group>"; };
+		F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
+		F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewModel.swift; sourceTree = "<group>"; };
+		F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanButtonTextField.swift; sourceTree = "<group>"; };
+		F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogglePasswordTextField.swift; sourceTree = "<group>"; };
+		F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceManager.swift; sourceTree = "<group>"; };
+		F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceType.swift; sourceTree = "<group>"; };
 		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Sit-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC8A23F0F576009699E5 /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Stage-Info.plist"; sourceTree = "<group>"; };
@@ -904,6 +934,7 @@
 		F426FEB823F4F7E600BFDA3B /* CustomUIElement */ = {
 			isa = PBXGroup;
 			children = (
+				F46180CA23FCDB3A00D303F8 /* UITextField */,
 				F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */,
 				F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */,
 				F43AFC4423E87D6D0050C851 /* GeneralTextObjectTableView */,
@@ -1840,6 +1871,49 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F46180BD23FBEC5600D303F8 /* LoginInfoPage */ = {
+			isa = PBXGroup;
+			children = (
+				F46180BF23FBECB600D303F8 /* ViewModel */,
+				F46180BE23FBECAE00D303F8 /* View */,
+			);
+			path = LoginInfoPage;
+			sourceTree = "<group>";
+		};
+		F46180BE23FBECAE00D303F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F46180BF23FBECB600D303F8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F46180CA23FCDB3A00D303F8 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */,
+				F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		F46180D523FE3CC900D303F8 /* PloneResource */ = {
+			isa = PBXGroup;
+			children = (
+				F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */,
+				F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */,
+			);
+			path = PloneResource;
+			sourceTree = "<group>";
+		};
 		F4B3BC7523F0F507009699E5 /* InfoPlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -1904,6 +1978,7 @@
 			isa = PBXGroup;
 			children = (
 				F426FEB823F4F7E600BFDA3B /* CustomUIElement */,
+				F46180D523FE3CC900D303F8 /* PloneResource */,
 				F45447DF23996298001B8D31 /* Repository */,
 				F4B3F3242387C15B00657CDF /* Network */,
 				F4544763239602FD001B8D31 /* Extension */,
@@ -1934,6 +2009,7 @@
 			children = (
 				F457417623D55E8C00FB5EEC /* TestingPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
+				F46180BD23FBEC5600D303F8 /* LoginInfoPage */,
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				F45448A723A9F951001B8D31 /* ApplicationsEntryPage */,
@@ -2535,6 +2611,7 @@
 				F43AFC5623E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
+				F46180C723FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
 				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */,
@@ -2546,8 +2623,10 @@
 				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
 				F45740D323CEED6100FB5EEC /* ContentListSection.swift in Sources */,
 				F44E8C7F23B88AA30032C6BE /* PloneLink.swift in Sources */,
+				F46180D823FE3DB200D303F8 /* PloneResourceManager.swift in Sources */,
 				F44E8C8023B88AA30032C6BE /* MainViewController.swift in Sources */,
 				F457417223D5525F00FB5EEC /* ServerType.swift in Sources */,
+				F46180C223FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */,
 				F44E8C8123B88AA30032C6BE /* SettingViewModel.swift in Sources */,
 				F44E8C8223B88AA30032C6BE /* SecureStoreQueryable.swift in Sources */,
 				F43AFC5E23E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
@@ -2589,6 +2668,7 @@
 				F426FEE023F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
 				F44A199423C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
 				F4B3BC9B23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
+				F46180D223FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F44E8CA223B88AA30032C6BE /* PloneItem.swift in Sources */,
 				F4B3BCBC23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F44E8CA323B88AA30032C6BE /* PloneSSOViewController.swift in Sources */,
@@ -2596,6 +2676,7 @@
 				F44E8CA523B88AA30032C6BE /* PortalItemAPITarget.swift in Sources */,
 				F43AFC5A23E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F453952B23BAE21400136E6D /* LoadingViewController.swift in Sources */,
+				F46180CE23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F457416323D5462C00FB5EEC /* ConfigManager.swift in Sources */,
 				F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */,
 				F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */,
@@ -2652,6 +2733,7 @@
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
 				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
+				F46180DD23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F44E8CD423B88AA30032C6BE /* ApplicationsContentViewController.swift in Sources */,
 				F43AFC6A23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F45740ED23D13A3400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
@@ -2684,6 +2766,7 @@
 				F43AFC5723E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8CEE23B88AFA0032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8CEF23B88AFA0032C6BE /* PloneFileObject.swift in Sources */,
+				F46180C823FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
 				F453952723BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4D8DE1223EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F4DDFDC623D69F3F00B5802B /* TestingSection.swift in Sources */,
@@ -2695,8 +2778,10 @@
 				F44E8CF423B88AFA0032C6BE /* GeneralImageObject.swift in Sources */,
 				F45740D423CEED6100FB5EEC /* ContentListSection.swift in Sources */,
 				F44E8CF523B88AFA0032C6BE /* PloneLink.swift in Sources */,
+				F46180D923FE3DB200D303F8 /* PloneResourceManager.swift in Sources */,
 				F44E8CF623B88AFA0032C6BE /* MainViewController.swift in Sources */,
 				F457417323D5525F00FB5EEC /* ServerType.swift in Sources */,
+				F46180C323FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */,
 				F44E8CF723B88AFA0032C6BE /* SettingViewModel.swift in Sources */,
 				F44E8CF823B88AFA0032C6BE /* SecureStoreQueryable.swift in Sources */,
 				F43AFC5F23E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
@@ -2738,6 +2823,7 @@
 				F426FEE123F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
 				F44A199523C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
 				F4B3BC9C23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
+				F46180D323FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F44E8D1823B88AFA0032C6BE /* PloneItem.swift in Sources */,
 				F4B3BCBD23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F44E8D1923B88AFA0032C6BE /* PloneSSOViewController.swift in Sources */,
@@ -2745,6 +2831,7 @@
 				F44E8D1B23B88AFA0032C6BE /* PortalItemAPITarget.swift in Sources */,
 				F43AFC5B23E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F453952C23BAE21400136E6D /* LoadingViewController.swift in Sources */,
+				F46180CF23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F457416423D5462C00FB5EEC /* ConfigManager.swift in Sources */,
 				F44E8D1C23B88AFA0032C6BE /* PloneFile.swift in Sources */,
 				F44E8D1D23B88AFA0032C6BE /* StringExtension.swift in Sources */,
@@ -2801,6 +2888,7 @@
 				F44E8D4723B88AFA0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8D4823B88AFA0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8D4923B88AFA0032C6BE /* GeneralFolderViewModel.swift in Sources */,
+				F46180DE23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F44E8D4A23B88AFA0032C6BE /* ApplicationsContentViewController.swift in Sources */,
 				F43AFC6B23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F45740EE23D13A3500FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
@@ -2833,6 +2921,7 @@
 				F43AFC5823E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8D6423B88AFC0032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8D6523B88AFC0032C6BE /* PloneFileObject.swift in Sources */,
+				F46180C923FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
 				F453952823BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4D8DE1323EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F4DDFDC723D69F3F00B5802B /* TestingSection.swift in Sources */,
@@ -2844,8 +2933,10 @@
 				F44E8D6A23B88AFC0032C6BE /* GeneralImageObject.swift in Sources */,
 				F45740D523CEED6100FB5EEC /* ContentListSection.swift in Sources */,
 				F44E8D6B23B88AFC0032C6BE /* PloneLink.swift in Sources */,
+				F46180DA23FE3DB200D303F8 /* PloneResourceManager.swift in Sources */,
 				F44E8D6C23B88AFC0032C6BE /* MainViewController.swift in Sources */,
 				F457417423D5525F00FB5EEC /* ServerType.swift in Sources */,
+				F46180C423FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */,
 				F44E8D6D23B88AFC0032C6BE /* SettingViewModel.swift in Sources */,
 				F44E8D6E23B88AFC0032C6BE /* SecureStoreQueryable.swift in Sources */,
 				F43AFC6023E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
@@ -2887,6 +2978,7 @@
 				F426FEE223F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
 				F44A199623C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
 				F4B3BC9D23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
+				F46180D423FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F44E8D8E23B88AFC0032C6BE /* PloneItem.swift in Sources */,
 				F4B3BCBE23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F44E8D8F23B88AFC0032C6BE /* PloneSSOViewController.swift in Sources */,
@@ -2894,6 +2986,7 @@
 				F44E8D9123B88AFC0032C6BE /* PortalItemAPITarget.swift in Sources */,
 				F43AFC5C23E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F453952D23BAE21400136E6D /* LoadingViewController.swift in Sources */,
+				F46180D023FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F457416523D5462C00FB5EEC /* ConfigManager.swift in Sources */,
 				F44E8D9223B88AFC0032C6BE /* PloneFile.swift in Sources */,
 				F44E8D9323B88AFC0032C6BE /* StringExtension.swift in Sources */,
@@ -2950,6 +3043,7 @@
 				F44E8DBD23B88AFC0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8DBE23B88AFC0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8DBF23B88AFC0032C6BE /* GeneralFolderViewModel.swift in Sources */,
+				F46180DF23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F44E8DC023B88AFC0032C6BE /* ApplicationsContentViewController.swift in Sources */,
 				F43AFC6C23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F45740EF23D13A3500FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
@@ -2990,6 +3084,7 @@
 				F43AFC8123E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
+				F46180C623FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
 				F4B3F3202386F53400657CDF /* InternetAuthenticationType.swift in Sources */,
 				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
@@ -3001,8 +3096,10 @@
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
 				F457418623D593C600FB5EEC /* TestingTableViewCell.swift in Sources */,
 				F45740E623D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
+				F46180D723FE3DB200D303F8 /* PloneResourceManager.swift in Sources */,
 				F457416223D5462C00FB5EEC /* ConfigManager.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
+				F46180C123FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
 				F43AFC8723E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */,
@@ -3044,6 +3141,7 @@
 				F44A199323C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
 				F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */,
 				F426FEDF23F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
+				F46180D123FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F45740E423D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
 				F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
@@ -3051,6 +3149,7 @@
 				F4B3BCBB23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F457419123D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */,
 				F453952A23BAE21400136E6D /* LoadingViewController.swift in Sources */,
+				F46180CD23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
 				F43AFC5D23E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
 				F4B3BC9A23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
@@ -3107,6 +3206,7 @@
 				F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */,
 				F4B3F3342387CD1F00657CDF /* PortalUserAPITarget.swift in Sources */,
 				F454487623A32F92001B8D31 /* LanguageManager.swift in Sources */,
+				F46180DC23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
 				F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */,
 				F45448B623AA3156001B8D31 /* ApplicationsContentViewController.swift in Sources */,
@@ -3166,7 +3266,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3188,7 +3288,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal.production;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

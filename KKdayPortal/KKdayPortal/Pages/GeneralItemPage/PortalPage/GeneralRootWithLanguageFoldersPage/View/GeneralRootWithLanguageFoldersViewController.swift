@@ -155,26 +155,41 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
                         
                     case .link:
                         
-                        let BPMString: String
+                        let resourceType = PloneResourceManager.shared.resourceType
                         
-#if TEST_VERSION || SIT_VERSION
-                        BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
-                        
-#elseif PRODUCTION_VERSION
-                        BPMString = "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
-                        
-#else
-                        
-#endif
-                        
-                        if source == URL(string: BPMString) {
-                            // If link is BPM open website in APP
-                            self?.tabBarController?.selectedIndex = 2
+                        switch resourceType {
+                        case .kkMember:
                             
-                        } else {
-                            // Others jump out from APP
-                            self?.openOutSiteLink(url: source)
+                            let BPMString: String
+#if TEST_VERSION
+                            BPMString = ""
+                            
+#elseif SIT_VERSION
+                            BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
+                            
+#elseif PRODUCTION_VERSION
+                            BPMString = "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
+
+#else
+                                
+
+#endif
+                            if source == URL(string: BPMString) {
+                                // If link is BPM open website in APP
+                                self?.tabBarController?.selectedIndex = 2
+                            } else {
+                                // Others jump out from APP
+                                self?.openOutSiteLink(url: source)
+                            }
+                            
+                        case .normal(url: let url):
+                            self?.openOutSiteLink(url: url)
+                            
+                        case .none:
+                            print("❌, resourceType must be defined")
+                            return
                         }
+                        
                     }
                     
                 }

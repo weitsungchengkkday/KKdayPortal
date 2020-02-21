@@ -13,6 +13,10 @@ enum PortalUser {
     struct Login: PortalUserAPITargetType {
         typealias ResponseType = PloneAuthToken
         
+        var baseURL: URL {
+            return route
+        }
+        
         var headers: [String: String]? {
             return ["Accept": "application/json",
                     "Content-Type": "application/json"
@@ -37,11 +41,16 @@ enum PortalUser {
         
         let account: String
         let password: String
+        let route: URL
     }
     
     struct RenewToken: PortalUserAPITargetType {
         
         typealias ResponseType = PloneAuthToken
+        
+        var baseURL: URL {
+            return route
+        }
         
         var headers: [String: String]? {
             
@@ -64,10 +73,12 @@ enum PortalUser {
         }
         
         let user: PloneUser?
+        let route: URL
         let token: String
         
-        init(user: PloneUser?) {
+        init(user: PloneUser?, route: URL) {
             self.user = user
+            self.route = route
             self.token = user?.token ?? ""
         }
     }
@@ -75,6 +86,10 @@ enum PortalUser {
     struct Logout: PortalUserAPITargetType {
         
         typealias ResponseType = PloneEmptyData
+        
+        var baseURL: URL {
+            return route
+        }
         
         var headers: [String: String]? {
             return ["Accept": "application/json",
@@ -95,10 +110,12 @@ enum PortalUser {
         }
         
         let user: PloneUser?
+        let route: URL
         let token: String
         
-        init(user: PloneUser?) {
+        init(user: PloneUser?, route: URL) {
             self.user = user
+            self.route = route
             self.token = user?.token ?? ""
         }
     }

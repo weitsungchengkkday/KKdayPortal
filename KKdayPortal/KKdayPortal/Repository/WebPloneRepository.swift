@@ -17,17 +17,27 @@ final class WebPloneRepository: RepositoryManageable {
     
     static var baseURL: URL {
         
-#if TEST_VERSION || SIT_VERSION
-        let url = URL(string: "https://sit.eip.kkday.net/Plone")!
+        let resourceType = PloneResourceManager.shared.resourceType
         
+        switch resourceType {
+        case .kkMember:
+
+#if TEST_VERSION
+        return URL(string: "https://sit.eip.kkday.net/Plone")!
+
+#elseif SIT_VERSION
+        return URL(string: "https://sit.eip.kkday.net/Plone")!
+                          
 #elseif PRODUCTION_VERSION
-        let url = URL(string: "https://eip.kkday.net/Plone")!
-        
-#else
-        
+        return URL(string: "https://eip.kkday.net/Plone")!
+
 #endif
-        
-        return url
+            
+        case .normal(url: let url):
+            return url
+        case .none:
+            fatalError("🚨 No baseURL exist")
+        }
     }
     
     private let apiManager = APIManager.default
@@ -56,7 +66,7 @@ final class WebPloneRepository: RepositoryManageable {
     
     func login(account: String, password: String) -> Single<User> {
         
-        let signInRequest = PortalUser.Login(account: account, password: password)
+        let signInRequest = PortalUser.Login(account: account, password: password, route: source)
         let response = apiManager
             .request(signInRequest)
             .map { ploneAuthToken -> User in
@@ -72,7 +82,7 @@ final class WebPloneRepository: RepositoryManageable {
         let renewGeneralUser: User? = user
         let renewPloneUser: PloneUser? = ploneUser
         
-        let renewTokenRequest = PortalUser.RenewToken(user: renewPloneUser)
+        let renewTokenRequest = PortalUser.RenewToken(user: renewPloneUser, route: source)
         let response = apiManager.request(renewTokenRequest)
             .map { ploneAuthToken -> User? in
                 
@@ -90,7 +100,7 @@ final class WebPloneRepository: RepositoryManageable {
     func logout() -> Single<User?> {
        
         let logoutGeneralUser: User? = user
-        let logoutRequest = PortalUser.Logout(user: ploneUser)
+        let logoutRequest = PortalUser.Logout(user: ploneUser, route: source)
         
         return apiManager.request(logoutRequest)
             .map { ploneNoInfo -> User? in
@@ -195,3 +205,5 @@ final class WebPloneRepository: RepositoryManageable {
     func update(item: Item) {}
     func delete(item: Item) {}
 }
+
+

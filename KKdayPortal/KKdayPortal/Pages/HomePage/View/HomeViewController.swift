@@ -56,24 +56,32 @@ class HomeViewController: UIViewController, Localizable {
         
         let rootURL: URL
         
-        #if TEST_VERSION || SIT_VERSION
-        guard let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw") else {
-            print("❌, not valid root url")
+        let resourceType = PloneResourceManager.shared.resourceType
+        
+        switch resourceType {
+        case .kkMember:
+
+#if TEST_VERSION
+            rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
+
+#elseif SIT_VERSION
+            rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
+            
+#elseif PRODUCTION_VERSION
+            rootURL = URL(string: "https://eip.kkday.net/Plone/zh-tw")!
+
+#else
+            
+            
+#endif
+        case .normal(url: let url):
+            rootURL = URL(string: url.absoluteString + "/zh-tw")!
+            
+        case .none:
+            print("❌, resourceType must be defined")
             return
         }
         
-        #elseif PRODUCTION_VERSION
-        guard let url = URL(string: "https://eip.kkday.net/Plone/zh-tw") else {
-            print("❌, not valid root url")
-            return
-        }
-        
-        #else
-        
-        
-        #endif
-        
-        rootURL = url
         
         let viewModel = GeneralRootWithLanguageDocumentViewModel(source: rootURL)
         let childViewController = GeneralRootWithLanguageDocumentViewController(viewModel: viewModel)

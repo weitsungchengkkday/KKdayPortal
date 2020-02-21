@@ -64,7 +64,7 @@ final class CustomWKWebView: WKWebView {
 }
 
 extension CustomWKWebView: WKNavigationDelegate {
-    
+
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         startLoadingAnimation()
     }

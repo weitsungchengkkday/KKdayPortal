@@ -14,7 +14,7 @@ final class LoginViewController: UIViewController {
     lazy var loginTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        lbl.text = "Welcome to KKday\nEnterprise Information Portal"
+        lbl.text = "Welcome to KKPortal"
         lbl.font = UIFont.boldSystemFont(ofSize: 26)
         lbl.textAlignment = .center
         lbl.numberOfLines = 2
@@ -29,11 +29,20 @@ final class LoginViewController: UIViewController {
         return imv
     }()
     
-    lazy var ploneRestfulTokenButton: UIButton = {
+    lazy var loginStackView: UIStackView = {
+        let stv: UIStackView = UIStackView()
+        stv.axis = .vertical
+        stv.alignment = .center
+        stv.distribution = .fill
+        stv.spacing = 50
+        return stv
+    }()
+    
+    lazy var enterLoginInfoButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Login", for: .normal)
+        btn.setTitle("Please Enter Login Information", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        btn.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
         btn.layer.cornerRadius = 8
         return btn
     }()
@@ -61,7 +70,8 @@ final class LoginViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         view.addSubview(backgroundImageVeiw)
         view.addSubview(loginTitleLabel)
-        view.addSubview(ploneRestfulTokenButton)
+        view.addSubview(loginStackView)
+        loginStackView.addArrangedSubview(enterLoginInfoButton)
         
         backgroundImageVeiw.snp.makeConstraints { maker in
             maker.top.equalTo(view.snp.topMargin)
@@ -75,42 +85,25 @@ final class LoginViewController: UIViewController {
             maker.leading.equalToSuperview().offset(10)
         }
         
-        ploneRestfulTokenButton.snp.makeConstraints { maker in
+        loginStackView.snp.makeConstraints { maker in
+            maker.centerX.centerY.equalToSuperview()
+        }
+        
+        enterLoginInfoButton.snp.makeConstraints { maker in
             maker.height.equalTo(60)
             maker.width.equalToSuperview().offset(-120)
-            maker.bottom.equalTo(view.snp.bottomMargin).offset(-44)
-            maker.centerX.equalToSuperview()
         }
+        
     }
     
     // 🎬 set action
     private func setAction() {
-        ploneRestfulTokenButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        enterLoginInfoButton.addTarget(self, action: #selector(enterLoginInfo), for: .touchUpInside)
     }
     
-    @objc private func login() {
-        
-#if TEST_VERSION || SIT_VERSION
-        goPloneSSOPage()
-        
-#elseif PRODUCTION_VERSION
-        goPloneSSOPage()
-        
-#else
-      
-        
-#endif
-        
-    }
-    
-    private func goPloneSSOPage() {
-        let presentViewController = PloneSSOViewController()
-        present(presentViewController, animated: true, completion: nil)
-    }
-    
-    private func directlyGoMainViewController() {
-        let presentViewController = MainViewController()
-        presentViewController.modalPresentationStyle = .fullScreen
+    @objc private func enterLoginInfo() {
+        let viewModel = LoginInfoViewModel()
+        let presentViewController = LoginInfoViewController(viewModel: viewModel)
         present(presentViewController, animated: true, completion: nil)
     }
     
