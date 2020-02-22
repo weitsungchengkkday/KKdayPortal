@@ -9,42 +9,6 @@
 import UIKit
 import RxSwift
 
-protocol LoginDelegate: AnyObject {
-    func loginSuccess(_ loginer: Loginer, generalUser info: GeneralUser)
-    func loginFailed(_ loginer: Loginer, loginError error: Error)
-}
-
-final class Loginer {
-    
-    weak var delegate: LoginDelegate?
-    let disposeBag: DisposeBag = DisposeBag()
-    
-    func login(url: URL, account: String, password: String) {
-        ModelLoader.PortalLoader()
-            .login(account: account, password: password)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalUser in
-                
-                guard let strongSelf = self else {
-                    return
-                }
-                strongSelf.delegate?.loginSuccess(strongSelf, generalUser: generalUser)
-                
-            }, onError: { [weak self] error in
-                
-                guard let strongSelf = self else {
-                    return
-                }
-                strongSelf.delegate?.loginFailed(strongSelf, loginError: error)
-            })
-        .disposed(by: disposeBag)
-       
-    }
-    
-    
-}
-
-
 final class LoginInfoViewController: UIViewController {
     
     // 🏞 UI element
@@ -161,6 +125,7 @@ final class LoginInfoViewController: UIViewController {
     private let viewModel: LoginInfoViewModel
     private let disposeBag = DisposeBag()
     private let loginer = Loginer()
+    private var singleTapGestureRecognizer: UITapGestureRecognizer!
     
     init(viewModel: LoginInfoViewModel) {
         self.viewModel = viewModel
@@ -175,6 +140,12 @@ final class LoginInfoViewController: UIViewController {
         super.viewDidLoad()
         
         loginer.delegate = self
+        
+        ploneURLTextField.delegate = self
+        accountTextField.delegate = self
+        passwordTextFiled.delegate = self
+        createGestureRecognizer()
+        
         setupUI()
         setAction()
         bindViewModel()
@@ -220,7 +191,6 @@ final class LoginInfoViewController: UIViewController {
         } else {
             print("🎯 First time login or logout")
         }
-        
     }
     
     // 🎨 draw UI
@@ -291,6 +261,17 @@ final class LoginInfoViewController: UIViewController {
     
     // 🧾 localization
     private func localizedText() {}
+    
+    private func createGestureRecognizer() {
+        singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handerSingleTap))
+        self.view.addGestureRecognizer(singleTapGestureRecognizer)
+    }
+
+    @objc func handerSingleTap() {
+        self.ploneURLTextField.resignFirstResponder()
+        self.accountTextField.resignFirstResponder()
+        self.passwordTextFiled.resignFirstResponder()
+    }
     
     // 🎬 set action
     private func setAction() {
@@ -388,4 +369,25 @@ extension LoginInfoViewController: LoginDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
+}
+
+extension LoginInfoViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case ploneURLTextField:
+            textField.resignFirstResponder()
+            accountTextField.becomeFirstResponder()
+        case accountTextField:
+            textField.resignFirstResponder()
+            passwordTextFiled.becomeFirstResponder()
+        case passwordTextFiled:
+            textField.resignFirstResponder()
+            login()
+        default:
+            break
+        }
+        return true
+    }
 }
