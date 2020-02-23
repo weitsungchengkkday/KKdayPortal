@@ -13,7 +13,7 @@ final class LoginInfoViewController: UIViewController {
     
     // 🏞 UI element
     
-    lazy var clsoeButton: UIButton = {
+    lazy var closeButton: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "icCrossWhite"), for: .normal)
         return btn
@@ -196,7 +196,7 @@ final class LoginInfoViewController: UIViewController {
     // 🎨 draw UI
     private func setupUI() {
         self.view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        self.view.addSubview(clsoeButton)
+        self.view.addSubview(closeButton)
         self.view.addSubview(inputStackView)
         
         inputStackView.addArrangedSubview(ploneURLStackView)
@@ -214,7 +214,7 @@ final class LoginInfoViewController: UIViewController {
         inputStackView.addArrangedSubview(memoTextView)
         inputStackView.addArrangedSubview(comfirmButton)
         
-        clsoeButton.snp.makeConstraints { maker in
+        closeButton.snp.makeConstraints { maker in
             maker.width.height.equalTo(20)
             maker.top.equalToSuperview().offset(10)
             maker.trailing.equalToSuperview().offset(-10)
@@ -275,7 +275,7 @@ final class LoginInfoViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        clsoeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         comfirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         
     }

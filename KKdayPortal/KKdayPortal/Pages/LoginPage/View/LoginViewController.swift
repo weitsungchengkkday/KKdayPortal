@@ -47,6 +47,14 @@ final class LoginViewController: UIViewController {
         return btn
     }()
     
+    lazy var instructionButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Usage Notice", for: .normal)
+        btn.setTitleColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        return btn
+    }()
+    
     private let viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel) {
@@ -71,7 +79,10 @@ final class LoginViewController: UIViewController {
         view.addSubview(backgroundImageVeiw)
         view.addSubview(loginTitleLabel)
         view.addSubview(loginStackView)
+        
         loginStackView.addArrangedSubview(enterLoginInfoButton)
+        
+        loginStackView.addArrangedSubview(instructionButton)
         
         backgroundImageVeiw.snp.makeConstraints { maker in
             maker.top.equalTo(view.snp.topMargin)
@@ -98,12 +109,19 @@ final class LoginViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        enterLoginInfoButton.addTarget(self, action: #selector(enterLoginInfo), for: .touchUpInside)
+        enterLoginInfoButton.addTarget(self, action: #selector(goLoginInfoPage), for: .touchUpInside)
+        instructionButton.addTarget(self, action: #selector(goIntroductionPage), for: .touchUpInside)
+        
     }
     
-    @objc private func enterLoginInfo() {
+    @objc private func goLoginInfoPage() {
         let viewModel = LoginInfoViewModel()
         let presentViewController = LoginInfoViewController(viewModel: viewModel)
+        present(presentViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func goIntroductionPage() {
+        let presentViewController = IntroductionViewController()
         present(presentViewController, animated: true, completion: nil)
     }
     

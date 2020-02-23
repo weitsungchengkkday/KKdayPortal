@@ -42,7 +42,7 @@ final class CustomWKWebView: WKWebView {
             maker.centerX.equalToSuperview()
             maker.centerY.equalToSuperview()
             maker.width.equalTo(60)
-            maker.height.equalTo(00)
+            maker.height.equalTo(60)
         }
         
     }

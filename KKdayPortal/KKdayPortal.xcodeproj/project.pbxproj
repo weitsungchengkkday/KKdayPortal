@@ -562,6 +562,10 @@
 		F46180E723FFEF1C00D303F8 /* Loginer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180E523FFEF1C00D303F8 /* Loginer.swift */; };
 		F46180E823FFEF1C00D303F8 /* Loginer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180E523FFEF1C00D303F8 /* Loginer.swift */; };
 		F46180E923FFEF1C00D303F8 /* Loginer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180E523FFEF1C00D303F8 /* Loginer.swift */; };
+		F46180EE2402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
+		F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
+		F46180F02402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
+		F46180F12402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
 		F4B3BC8223F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8323F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8423F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
@@ -811,6 +815,7 @@
 		F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceManager.swift; sourceTree = "<group>"; };
 		F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceType.swift; sourceTree = "<group>"; };
 		F46180E523FFEF1C00D303F8 /* Loginer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loginer.swift; sourceTree = "<group>"; };
+		F46180ED2402968100D303F8 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Sit-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC8A23F0F576009699E5 /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Stage-Info.plist"; sourceTree = "<group>"; };
@@ -1920,6 +1925,22 @@
 			path = PloneResource;
 			sourceTree = "<group>";
 		};
+		F46180EA2402961100D303F8 /* IntroductionPage */ = {
+			isa = PBXGroup;
+			children = (
+				F46180EB2402962700D303F8 /* View */,
+			);
+			path = IntroductionPage;
+			sourceTree = "<group>";
+		};
+		F46180EB2402962700D303F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F46180ED2402968100D303F8 /* IntroductionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F4B3BC7523F0F507009699E5 /* InfoPlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -2016,6 +2037,7 @@
 				F457417623D55E8C00FB5EEC /* TestingPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
 				F46180BD23FBEC5600D303F8 /* LoginInfoPage */,
+				F46180EA2402961100D303F8 /* IntroductionPage */,
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				F45448A723A9F951001B8D31 /* ApplicationsEntryPage */,
@@ -2643,6 +2665,7 @@
 				F44E8C8623B88AA30032C6BE /* GeneralRootViewController.swift in Sources */,
 				F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */,
 				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
+				F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */,
 				F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */,
 				F44E8C8C23B88AA30032C6BE /* AccountOperatingError.swift in Sources */,
@@ -2799,6 +2822,7 @@
 				F44E8CFC23B88AFA0032C6BE /* GeneralRootViewController.swift in Sources */,
 				F44E8CFD23B88AFA0032C6BE /* GeneralImageViewModel.swift in Sources */,
 				F44E8CFE23B88AFA0032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
+				F46180F02402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F44E8CFF23B88AFA0032C6BE /* PloneCollection.swift in Sources */,
 				F44E8D0023B88AFA0032C6BE /* GeneralDocumentViewModel.swift in Sources */,
 				F44E8D0223B88AFA0032C6BE /* AccountOperatingError.swift in Sources */,
@@ -2955,6 +2979,7 @@
 				F44E8D7223B88AFC0032C6BE /* GeneralRootViewController.swift in Sources */,
 				F44E8D7323B88AFC0032C6BE /* GeneralImageViewModel.swift in Sources */,
 				F44E8D7423B88AFC0032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
+				F46180F12402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F44E8D7523B88AFC0032C6BE /* PloneCollection.swift in Sources */,
 				F44E8D7623B88AFC0032C6BE /* GeneralDocumentViewModel.swift in Sources */,
 				F44E8D7823B88AFC0032C6BE /* AccountOperatingError.swift in Sources */,
@@ -3119,6 +3144,7 @@
 				F43AFC6923E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
+				F46180EE2402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F43AFC7923E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
 				F4544865239FA9D5001B8D31 /* AccountOperatingError.swift in Sources */,
 				F454487C23A337D3001B8D31 /* Region.swift in Sources */,
