@@ -14,7 +14,7 @@ final class IntroductionViewController: UIViewController {
     
     lazy var backgroundImageVeiw: UIImageView = {
         let imv = UIImageView()
-        imv.image = #imageLiteral(resourceName: "icLoginPageBackground-two")
+        imv.image = #imageLiteral(resourceName: "icIntroductionPageBackground")
         imv.contentMode = .scaleAspectFill
         return imv
     }()
@@ -33,25 +33,40 @@ final class IntroductionViewController: UIViewController {
         txv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
         txv.layer.cornerRadius = 20
         txv.font = UIFont.boldSystemFont(ofSize: 16)
-        txv.text = """
+        txv.textColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
+        txv.isEditable = false
+        
+        let text = """
         Notice
         
-        0. KKPortal is a iOS APP for present Plone Website Content
-        
         1. Support Plone Version:
-            Plone 5.1.6
-            CMF 2.2.13
-            Zope 2.13.29
-            Python 2.7.12
-            PIL 6.1.0
+            . Plone 5.1.6
+            . CMF 2.2.13
+            . Zope 2.13.29
+            . Python 2.7.12
+            . PIL 6.1.0
         
-        2. Must support Plone Expansion Module:
-            a. plone.restapi (RESTful hypermedia API for Plone. – (plone.restapi 5.1.0))
-            b. Multilingual Support(Multi-language module function – (plone.app.multilingual 5.2.3)
+        2. Must install Plone Expansion Module:
+            . plone.restapi (RESTful hypermedia API for Plone. – (plone.restapi 5.1.0))
+            . Multilingual Support(Multi-language module function – (plone.app.multilingual 5.2.3)
                
         3. Current Support Plone Language:
-            zh-tw
+            . zh-tw (繁體中文)
         """
+        let nsText = NSString(string: text)
+        let contentRange = nsText.range(of: text)
+        let titleRange = nsText.range(of: "Notice")
+        
+        let attriText = NSMutableAttributedString(string: text)
+        attriText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: contentRange)
+        attriText.addAttribute(.foregroundColor, value: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), range: contentRange)
+        attriText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 20), range: titleRange)
+        attriText.addAttribute(.foregroundColor, value: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), range: titleRange)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        attriText.addAttribute(.paragraphStyle, value: paragraphStyle, range: titleRange)
+        
+        txv.attributedText = attriText
         return txv
     }()
     

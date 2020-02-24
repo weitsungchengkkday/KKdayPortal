@@ -42,6 +42,8 @@ final class LoginViewController: UIViewController {
         let btn = UIButton()
         btn.setTitle("Please Enter Login Information", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true
         btn.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         btn.layer.cornerRadius = 8
         return btn
@@ -102,7 +104,7 @@ final class LoginViewController: UIViewController {
         
         enterLoginInfoButton.snp.makeConstraints { maker in
             maker.height.equalTo(60)
-            maker.width.equalToSuperview().offset(-120)
+            maker.width.equalToSuperview()
         }
         
     }

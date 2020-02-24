@@ -566,6 +566,14 @@
 		F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
 		F46180F02402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
 		F46180F12402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
+		F46180F82403797200D303F8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
+		F46180F92403797200D303F8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
+		F46180FA2403797200D303F8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
+		F46180FB2403797200D303F8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
+		F46180FF2403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
+		F46181002403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
+		F46181012403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
+		F46181022403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
 		F4B3BC8223F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8323F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8423F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
@@ -816,6 +824,8 @@
 		F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceType.swift; sourceTree = "<group>"; };
 		F46180E523FFEF1C00D303F8 /* Loginer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loginer.swift; sourceTree = "<group>"; };
 		F46180ED2402968100D303F8 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		F46180F72403797200D303F8 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		F46180FE2403806D00D303F8 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Sit-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC8A23F0F576009699E5 /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Stage-Info.plist"; sourceTree = "<group>"; };
@@ -1201,6 +1211,7 @@
 			isa = PBXGroup;
 			children = (
 				F453953523BAE5A200136E6D /* UIImageExtension.swift */,
+				F46180F72403797200D303F8 /* UITextFieldExtension.swift */,
 			);
 			path = UIKitExtension;
 			sourceTree = "<group>";
@@ -1941,6 +1952,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F46180FC24037F1C00D303F8 /* AboutPage */ = {
+			isa = PBXGroup;
+			children = (
+				F46180FD24037F5200D303F8 /* View */,
+			);
+			path = AboutPage;
+			sourceTree = "<group>";
+		};
+		F46180FD24037F5200D303F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F46180FE2403806D00D303F8 /* AboutViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F4B3BC7523F0F507009699E5 /* InfoPlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -2047,6 +2074,7 @@
 				F45447FF239BF63A001B8D31 /* GeneralItemPage */,
 				F4B3F2FF2386372400657CDF /* SettingPage */,
 				F454486823A20E7E001B8D31 /* LanguageSettingPage */,
+				F46180FC24037F1C00D303F8 /* AboutPage */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -2635,6 +2663,7 @@
 				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
 				F4B3BCA123F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740E723D13A2B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
+				F46180F92403797200D303F8 /* UITextFieldExtension.swift in Sources */,
 				F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F43AFC5623E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */,
@@ -2760,6 +2789,7 @@
 				F426FEDB23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				F44E8CD023B88AA30032C6BE /* PortalUserAPITarget.swift in Sources */,
 				F4B3BCB723F31052009699E5 /* AlertEventInfo.swift in Sources */,
+				F46181002403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
 				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
@@ -2792,6 +2822,7 @@
 				F44E8CED23B88AFA0032C6BE /* LocaleExtension.swift in Sources */,
 				F4B3BCA223F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740E823D13A2B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
+				F46180FA2403797200D303F8 /* UITextFieldExtension.swift in Sources */,
 				F453953223BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F43AFC5723E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8CEE23B88AFA0032C6BE /* PloneSiteItem.swift in Sources */,
@@ -2917,6 +2948,7 @@
 				F426FEDC23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				F44E8D4623B88AFA0032C6BE /* PortalUserAPITarget.swift in Sources */,
 				F4B3BCB823F31052009699E5 /* AlertEventInfo.swift in Sources */,
+				F46181012403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F44E8D4723B88AFA0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8D4823B88AFA0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8D4923B88AFA0032C6BE /* GeneralFolderViewModel.swift in Sources */,
@@ -2949,6 +2981,7 @@
 				F44E8D6323B88AFC0032C6BE /* LocaleExtension.swift in Sources */,
 				F4B3BCA323F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740E923D13A2C00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
+				F46180FB2403797200D303F8 /* UITextFieldExtension.swift in Sources */,
 				F453953323BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F43AFC5823E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8D6423B88AFC0032C6BE /* PloneSiteItem.swift in Sources */,
@@ -3074,6 +3107,7 @@
 				F426FEDD23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				F44E8DBC23B88AFC0032C6BE /* PortalUserAPITarget.swift in Sources */,
 				F4B3BCB923F31052009699E5 /* AlertEventInfo.swift in Sources */,
+				F46181022403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F44E8DBD23B88AFC0032C6BE /* LanguageManager.swift in Sources */,
 				F44E8DBE23B88AFC0032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8DBF23B88AFC0032C6BE /* GeneralFolderViewModel.swift in Sources */,
@@ -3114,6 +3148,7 @@
 				F45446FE238F74DF001B8D31 /* PloneFileObject.swift in Sources */,
 				F45C2C4423BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F453952523BAE0FC00136E6D /* LoadingManager.swift in Sources */,
+				F46180F82403797200D303F8 /* UITextFieldExtension.swift in Sources */,
 				F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */,
 				F43AFC8123E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
@@ -3239,6 +3274,7 @@
 				F426FEDA23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				F4B3F3122386EE1300657CDF /* CrashlyticsEventRecord.swift in Sources */,
 				F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */,
+				F46180FF2403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */,
 				F4B3F3342387CD1F00657CDF /* PortalUserAPITarget.swift in Sources */,
 				F454487623A32F92001B8D31 /* LanguageManager.swift in Sources */,
@@ -3293,7 +3329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = production;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3315,7 +3351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = production;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3337,7 +3373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Stage";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = stage;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Stage-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3359,7 +3395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Stage";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = stage;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Stage-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3381,7 +3417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Test";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = test;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3403,7 +3439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Test";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = test;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3584,7 +3620,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Sit";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = dev;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Sit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3606,7 +3642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Sit";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = dev;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HA9F856YHB;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Sit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
