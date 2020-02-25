@@ -35,6 +35,7 @@ final class AboutViewController: UIViewController {
         txv.font = UIFont.boldSystemFont(ofSize: 16)
         txv.textColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
         txv.isEditable = false
+        txv.delegate = self
         
         let text = """
         About
@@ -133,4 +134,12 @@ final class AboutViewController: UIViewController {
     
     // ⛓ bind viewModel
     private func bindViewModel() {}
+}
+
+extension AboutViewController: UITextViewDelegate {
+        
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL)
+        return false
+    }
 }

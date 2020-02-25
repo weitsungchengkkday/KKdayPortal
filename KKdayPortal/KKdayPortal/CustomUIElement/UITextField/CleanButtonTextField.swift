@@ -36,6 +36,9 @@ class CleanButtonTextField: UITextField {
         rightViewMode = .whileEditing
         leftView = paddingView
         leftViewMode = .always
+        
+        autocapitalizationType = .none
+        autocorrectionType = .no
     }
 
     @objc func handler(sender: UITextField) {

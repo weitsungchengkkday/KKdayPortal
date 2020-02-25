@@ -34,6 +34,7 @@ class TogglePasswordTextField: UITextField {
     }
 
     private func setUp() {
+   
         isSee = false
         
         togglePasswordButton.imageView?.contentMode = .scaleAspectFit
@@ -47,6 +48,9 @@ class TogglePasswordTextField: UITextField {
         rightViewMode = .whileEditing
         leftView = paddingView
         leftViewMode = .always
+        
+        autocapitalizationType = .none
+        autocorrectionType = .no
     }
 
     @objc func togglePasswordHandler(sender: UIButton) {

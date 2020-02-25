@@ -47,6 +47,7 @@ final class LoginInfoViewController: UIViewController {
     
     lazy var ploneURLTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
+        txf.placeholder = "https://"
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .URL
         txf.layer.cornerRadius = 12
@@ -73,7 +74,7 @@ final class LoginInfoViewController: UIViewController {
     lazy var accountTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        txf.keyboardType = .emailAddress
+        txf.keyboardType = .default
         txf.layer.cornerRadius = 12
         return txf
     }()
@@ -116,7 +117,7 @@ final class LoginInfoViewController: UIViewController {
         let btn = UIButton()
         btn.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
         btn.setTitle("Login", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        btn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         btn.layer.cornerRadius = 5
         btn.isEnabled = false
         return btn
@@ -159,6 +160,7 @@ final class LoginInfoViewController: UIViewController {
         accountTextField.text = "will"
         passwordTextFiled.text = "12345"
         comfirmButton.isEnabled = true
+        
 
 #elseif SIT_VERSION
         ploneURLTextField.text = "https://sit.eip.kkday.net/Plone"
@@ -184,13 +186,20 @@ final class LoginInfoViewController: UIViewController {
                 accountTextField.text = ""
                 passwordTextFiled.text = ""
                 comfirmButton.isEnabled = true
+                // if user login as KKMember before, trigger login automatically
+                login()
                 
             case .none:
                 break
             }
+            
+            setComfirmButtonState()
+            
         } else {
             print("🎯 First time login or logout")
         }
+        
+
     }
     
     // 🎨 draw UI
@@ -256,7 +265,6 @@ final class LoginInfoViewController: UIViewController {
             maker.width.equalTo(view.snp.width).offset(-180)
             maker.height.equalTo(50)
         }
-        
     }
     
     // 🧾 localization
@@ -290,7 +298,7 @@ final class LoginInfoViewController: UIViewController {
     
     private func login() {
         
-        guard let urlString = ploneURLTextField.text, !urlString.isEmpty else {
+        guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return
         }
         
@@ -328,7 +336,7 @@ final class LoginInfoViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {
         ploneURLTextField.rx.text.subscribe(onNext: { [weak self] text in
-            self?.comfirmButton.isEnabled = !(text?.isEmpty ?? true)
+            self?.setComfirmButtonState()
         })
             .disposed(by: disposeBag)
     }
@@ -342,6 +350,11 @@ final class LoginInfoViewController: UIViewController {
         let presentViewController = MainViewController()
         presentViewController.modalPresentationStyle = .fullScreen
         present(presentViewController, animated: true, completion: nil)
+    }
+    
+    private func setComfirmButtonState() {
+        comfirmButton.isEnabled = !(ploneURLTextField.text?.isEmpty ?? true)
+        comfirmButton.backgroundColor = !(ploneURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
 }
 
