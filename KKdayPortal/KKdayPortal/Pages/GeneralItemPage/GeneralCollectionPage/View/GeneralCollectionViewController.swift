@@ -211,13 +211,7 @@ class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordi
                             let source = generalItem.source else {
                                 return
                         }
-                        switch type {
-                        case .root_with_language, .root, .folder, .collection, .image, .document, .news, .event, .file:
-                            self.openDetailPage(route: source, type: type)
-                            
-                        case .link:
-                            self.openOutSiteLink(url: source)
-                        }
+                        self.openDetailPage(route: source, type: type)
                     })
                     .disposed(by: cell.disposeBag)
         }

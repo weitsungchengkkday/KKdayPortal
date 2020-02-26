@@ -29,6 +29,7 @@ final class GeneralLinkViewModel: RXViewModelType, PortalControllable {
     var source: URL
     private let disposeBag = DisposeBag()
     var generalItem: PortalContent?
+    var linkURL: URL?
     
     init(source: URL) {
         self.source = source
@@ -55,7 +56,9 @@ final class GeneralLinkViewModel: RXViewModelType, PortalControllable {
                 if let title = generalItem.title {
                     self?.titleSubject.onNext(title)
                 }
-                
+        
+                self?.linkURL = generalItem.linkObject?.url
+        
             }) { error in
                 
                 LoadingManager.shared.setState(state: .normal(value: false))

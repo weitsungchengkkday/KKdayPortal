@@ -113,7 +113,7 @@ final class LoginInfoViewController: UIViewController {
         return txv
     }()
     
-    lazy var comfirmButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let btn = UIButton()
         btn.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
         btn.setTitle("Login", for: .normal)
@@ -159,14 +159,14 @@ final class LoginInfoViewController: UIViewController {
         ploneURLTextField.text = "https://eip.kkday.net/Plone"
         accountTextField.text = "will"
         passwordTextFiled.text = "12345"
-        comfirmButton.isEnabled = true
+        loginButton.isEnabled = true
         
 
 #elseif SIT_VERSION
         ploneURLTextField.text = "https://sit.eip.kkday.net/Plone"
         accountTextField.text = "forwindsun"
         passwordTextFiled.text = "1234"
-        comfirmButton.isEnabled = true
+        loginButton.isEnabled = true
               
 #elseif PRODUCTION_VERSION
 
@@ -179,13 +179,13 @@ final class LoginInfoViewController: UIViewController {
             case .normal(let url):
                 ploneURLTextField.text = url.absoluteString
                 accountTextField.text = user.account
-                comfirmButton.isEnabled = true
+                loginButton.isEnabled = true
                 
             case .kkMember:
                 ploneURLTextField.text = "KKPlone"
                 accountTextField.text = ""
                 passwordTextFiled.text = ""
-                comfirmButton.isEnabled = true
+                loginButton.isEnabled = true
                 // if user login as KKMember before, trigger login automatically
                 login()
                 
@@ -221,7 +221,7 @@ final class LoginInfoViewController: UIViewController {
         passwordStackView.addArrangedSubview(passwordTextFiled)
         
         inputStackView.addArrangedSubview(memoTextView)
-        inputStackView.addArrangedSubview(comfirmButton)
+        inputStackView.addArrangedSubview(loginButton)
         
         closeButton.snp.makeConstraints { maker in
             maker.width.height.equalTo(20)
@@ -261,7 +261,7 @@ final class LoginInfoViewController: UIViewController {
             maker.width.equalTo(view.snp.width).offset(-110)
         }
         
-        comfirmButton.snp.makeConstraints { maker in
+        loginButton.snp.makeConstraints { maker in
             maker.width.equalTo(view.snp.width).offset(-180)
             maker.height.equalTo(50)
         }
@@ -284,7 +284,7 @@ final class LoginInfoViewController: UIViewController {
     // 🎬 set action
     private func setAction() {
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
-        comfirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         
     }
     
@@ -297,6 +297,9 @@ final class LoginInfoViewController: UIViewController {
     }
     
     private func login() {
+        
+        print("⏳")
+        print(loginButton.bounds.maxY)
         
         guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return
@@ -353,8 +356,8 @@ final class LoginInfoViewController: UIViewController {
     }
     
     private func setComfirmButtonState() {
-        comfirmButton.isEnabled = !(ploneURLTextField.text?.isEmpty ?? true)
-        comfirmButton.backgroundColor = !(ploneURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        loginButton.isEnabled = !(ploneURLTextField.text?.isEmpty ?? true)
+        loginButton.backgroundColor = !(ploneURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
 }
 

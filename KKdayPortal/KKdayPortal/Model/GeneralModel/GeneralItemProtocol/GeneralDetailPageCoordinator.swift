@@ -62,7 +62,46 @@ extension GeneralDetailPageCoordinator {
             navigationController?.pushViewController(pushViewController, animated: false)
             
         case .link:
-            break
+            
+            let resourceType = PloneResourceManager.shared.resourceType
+                   
+            switch resourceType {
+            case .kkMember:
+                
+                let BPMString: String
+                #if TEST_VERSION
+                BPMString = ""
+                
+                #elseif SIT_VERSION
+                BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
+                
+                #elseif PRODUCTION_VERSION
+                BPMString = "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
+                
+                #else
+                
+                
+                #endif
+                
+                if route == URL(string: BPMString) {
+                    // If link is BPM open website in APP
+                    self.tabBarController?.selectedIndex = 2
+                    return
+                } else {
+                    break
+                }
+                
+            case .normal(_):
+                break
+                
+            case .none:
+                print("❌, resourceType must be defined")
+                return
+            }
+            
+            let pushViewController = GeneralLinkViewController(viewModel: GeneralLinkViewModel(source: route))
+            navigationController?.pushViewController(pushViewController, animated: false)
+            
         }
     }
     

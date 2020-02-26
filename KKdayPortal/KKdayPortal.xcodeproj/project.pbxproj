@@ -574,6 +574,10 @@
 		F46181002403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
 		F46181012403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
 		F46181022403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
+		F46181042405050900D303F8 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
+		F46181052405050900D303F8 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
+		F46181062405050900D303F8 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
+		F46181072405050900D303F8 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
 		F4B3BC8223F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8323F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
 		F4B3BC8423F0F507009699E5 /* KKdayPortal-Sit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */; };
@@ -826,6 +830,7 @@
 		F46180ED2402968100D303F8 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		F46180F72403797200D303F8 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		F46180FE2403806D00D303F8 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F46181032405050900D303F8 /* Keyboarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboarder.swift; sourceTree = "<group>"; };
 		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4B3BC7823F0F507009699E5 /* KKdayPortal-Sit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Sit-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC8A23F0F576009699E5 /* KKdayPortal-Stage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Stage-Info.plist"; sourceTree = "<group>"; };
@@ -1872,6 +1877,7 @@
 				F45C2C4023BCD60C00A1E769 /* Utilities.swift */,
 				F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */,
 				F46180E523FFEF1C00D303F8 /* Loginer.swift */,
+				F46181032405050900D303F8 /* Keyboarder.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -2730,6 +2736,7 @@
 				F46180D223FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F44E8CA223B88AA30032C6BE /* PloneItem.swift in Sources */,
 				F4B3BCBC23F310C6009699E5 /* ErrorManageable.swift in Sources */,
+				F46181052405050900D303F8 /* Keyboarder.swift in Sources */,
 				F44E8CA323B88AA30032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8CA423B88AA30032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8CA523B88AA30032C6BE /* PortalItemAPITarget.swift in Sources */,
@@ -2889,6 +2896,7 @@
 				F46180D323FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F44E8D1823B88AFA0032C6BE /* PloneItem.swift in Sources */,
 				F4B3BCBD23F310C6009699E5 /* ErrorManageable.swift in Sources */,
+				F46181062405050900D303F8 /* Keyboarder.swift in Sources */,
 				F44E8D1923B88AFA0032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8D1A23B88AFA0032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8D1B23B88AFA0032C6BE /* PortalItemAPITarget.swift in Sources */,
@@ -3048,6 +3056,7 @@
 				F46180D423FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F44E8D8E23B88AFC0032C6BE /* PloneItem.swift in Sources */,
 				F4B3BCBE23F310C6009699E5 /* ErrorManageable.swift in Sources */,
+				F46181072405050900D303F8 /* Keyboarder.swift in Sources */,
 				F44E8D8F23B88AFC0032C6BE /* PloneSSOViewController.swift in Sources */,
 				F44E8D9023B88AFC0032C6BE /* InternetProtocol.swift in Sources */,
 				F44E8D9123B88AFC0032C6BE /* PortalItemAPITarget.swift in Sources */,
@@ -3215,6 +3224,7 @@
 				F46180D123FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F45740E423D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
 				F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */,
+				F46181042405050900D303F8 /* Keyboarder.swift in Sources */,
 				F4B3F31F2386F53400657CDF /* InternetProtocol.swift in Sources */,
 				F4FC41A2238D358A00AC7315 /* PortalItemAPITarget.swift in Sources */,
 				F4B3BCBB23F310C6009699E5 /* ErrorManageable.swift in Sources */,

@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 import SafariServices
 
-final class GeneralLinkViewController: UIViewController {
+final class GeneralLinkViewController: UIViewController, GeneralDetailPageCoordinator {
     
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
@@ -24,6 +24,15 @@ final class GeneralLinkViewController: UIViewController {
     lazy var topTitleLabel: GeneralItemTopTitleLabel = {
         let lbl = GeneralItemTopTitleLabel()
         return lbl
+    }()
+    
+    lazy var openLinkButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("OpenLink", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        btn.layer.cornerRadius = 8
+        return btn
     }()
     
     private let viewModel: GeneralLinkViewModel
@@ -63,6 +72,7 @@ final class GeneralLinkViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topTitleLabel)
+        view.addSubview(openLinkButton)
         
         logoImageView.snp.makeConstraints { maker in
             maker.width.equalTo(140)
@@ -77,11 +87,25 @@ final class GeneralLinkViewController: UIViewController {
             maker.top.equalTo(view.safeAreaLayoutGuide).offset(5)
             maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
+        
+        openLinkButton.snp.makeConstraints { maker in
+            maker.centerX.centerY.equalToSuperview()
+            maker.height.equalTo(44)
+            maker.width.equalToSuperview().offset(-60)
+        }
     }
     
     // 🎬 set action
     private func setAction() {
+        openLinkButton.addTarget(self, action: #selector(openLink), for: .touchUpInside)
+    }
+    
+    @objc private func openLink() {
         
+        guard let url = viewModel.linkURL else {
+            return
+        }
+        openOutSiteLink(url: url)
     }
     
     // ⛓ bind viewModel

@@ -148,50 +148,7 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
                             return
                     }
                     
-                    switch type {
-                    case .root_with_language, .root, .folder, .collection, .image, .document, .news, .event, .file:
-                        
-                        self?.openDetailPage(route: source, type: type)
-                        
-                    case .link:
-                        
-                        let resourceType = PloneResourceManager.shared.resourceType
-                        
-                        switch resourceType {
-                        case .kkMember:
-                            
-                            let BPMString: String
-#if TEST_VERSION
-                            BPMString = ""
-                            
-#elseif SIT_VERSION
-                            BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
-                            
-#elseif PRODUCTION_VERSION
-                            BPMString = "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
-
-#else
-                                
-
-#endif
-                            if source == URL(string: BPMString) {
-                                // If link is BPM open website in APP
-                                self?.tabBarController?.selectedIndex = 2
-                            } else {
-                                // Others jump out from APP
-                                self?.openOutSiteLink(url: source)
-                            }
-                            
-                        case .normal(url: let url):
-                            self?.openOutSiteLink(url: url)
-                            
-                        case .none:
-                            print("❌, resourceType must be defined")
-                            return
-                        }
-                        
-                    }
-                    
+                    self?.openDetailPage(route: source, type: type)
                 }
             })
             .disposed(by: disposeBag)
