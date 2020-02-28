@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-final class LoginInfoViewController: UIViewController {
+final class LoginInfoViewController: UIViewController, Keyboarder {
     
     // 🏞 UI element
     
@@ -17,6 +17,16 @@ final class LoginInfoViewController: UIViewController {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "icCrossWhite"), for: .normal)
         return btn
+    }()
+    
+    lazy var scrollView: UIScrollView? = {
+        let srv = UIScrollView()
+        return srv
+    }()
+    
+    lazy var container: UIView = {
+        let view = UIView()
+        return view
     }()
     
     lazy var inputStackView: UIStackView = {
@@ -39,7 +49,7 @@ final class LoginInfoViewController: UIViewController {
     lazy var ploneURLLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        lbl.text = "Please enter plone URL"
+        lbl.text = "Please enter your plone website URL"
         lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
@@ -123,6 +133,33 @@ final class LoginInfoViewController: UIViewController {
         return btn
     }()
     
+    lazy var testLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        lbl.text = "testLabel"
+        lbl.adjustsFontSizeToFitWidth = true
+        lbl.textAlignment = .left
+        return lbl
+    }()
+    
+    // Keyboarder
+    
+    var isKeyboardShown: Bool = false
+    
+    var scrollViewOriginalContentInset: UIEdgeInsets = .zero
+    
+    var observerForKeyboardWillShowNotification: NSObjectProtocol?
+    
+    var observerForKeyboardDidShowNotification: NSObjectProtocol?
+    
+    var observerForKeyboardWillHideNotification: NSObjectProtocol?
+    
+    var observerForKeyboardDidHideNotification: NSObjectProtocol?
+    
+    var observerForKeyboardWillChangeFrameNotification: NSObjectProtocol?
+    
+    var observerForKeyboardDidChangeFrameNotification: NSObjectProtocol?
+    
     private let viewModel: LoginInfoViewModel
     private let disposeBag = DisposeBag()
     private let loginer = Loginer()
@@ -150,6 +187,8 @@ final class LoginInfoViewController: UIViewController {
         setupUI()
         setAction()
         bindViewModel()
+        
+        registerKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -198,16 +237,24 @@ final class LoginInfoViewController: UIViewController {
         } else {
             print("🎯 First time login or logout")
         }
-        
-
+    }
+    
+    deinit {
+        unRegisterKeyboard()
     }
     
     // 🎨 draw UI
     private func setupUI() {
         self.view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        self.view.addSubview(closeButton)
-        self.view.addSubview(inputStackView)
         
+        guard let scrollView = scrollView else {
+            return
+        }
+        self.view.addSubview(scrollView)
+        scrollView.addSubview(container)
+        container.addSubview(inputStackView)
+        container.addSubview(closeButton)
+
         inputStackView.addArrangedSubview(ploneURLStackView)
         ploneURLStackView.addArrangedSubview(ploneURLLabel)
         ploneURLStackView.addArrangedSubview(ploneURLTextField)
@@ -223,10 +270,14 @@ final class LoginInfoViewController: UIViewController {
         inputStackView.addArrangedSubview(memoTextView)
         inputStackView.addArrangedSubview(loginButton)
         
-        closeButton.snp.makeConstraints { maker in
-            maker.width.height.equalTo(20)
-            maker.top.equalToSuperview().offset(10)
-            maker.trailing.equalToSuperview().offset(-10)
+        scrollView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
+        
+        container.snp.makeConstraints { maker in
+            maker.edges.equalTo(self.scrollView!)
+            maker.height.equalTo(view.snp.height)
+            maker.width.equalTo(view.snp.width)
         }
         
         inputStackView.snp.makeConstraints { maker in
@@ -236,6 +287,7 @@ final class LoginInfoViewController: UIViewController {
         ploneURLLabel.snp.makeConstraints { maker in
             maker.width.equalTo(view.snp.width).offset(-120)
         }
+        
         ploneURLTextField.snp.makeConstraints { maker in
             maker.width.equalTo(view.snp.width).offset(-100)
             maker.height.equalTo(44)
@@ -264,6 +316,12 @@ final class LoginInfoViewController: UIViewController {
         loginButton.snp.makeConstraints { maker in
             maker.width.equalTo(view.snp.width).offset(-180)
             maker.height.equalTo(50)
+        }
+        
+        closeButton.snp.makeConstraints { maker in
+            maker.width.height.equalTo(20)
+            maker.top.equalToSuperview().offset(10)
+            maker.trailing.equalToSuperview().offset(-10)
         }
     }
     
@@ -297,9 +355,6 @@ final class LoginInfoViewController: UIViewController {
     }
     
     private func login() {
-        
-        print("⏳")
-        print(loginButton.bounds.maxY)
         
         guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return

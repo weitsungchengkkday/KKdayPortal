@@ -48,7 +48,7 @@ final class ConfigManager {
         if let serverConfig: String = StorageManager.shared.load(for: .serverType),
             let type: ServerTypes = ServerTypes(rawValue: serverConfig) {
             serverType = type
-            print("⌨️ load SSO Plone server: \(serverType.rawValue)")
+            print("🎆 load SSO Plone server: \(serverType.rawValue)")
         
         } else {
             
@@ -66,7 +66,7 @@ final class ConfigManager {
             
 #endif
             StorageManager.shared.save(for: .serverType, value: serverType.rawValue)
-            print("⌨️ set up SSO Plone login server: \(serverType.rawValue)")
+            print("🎇 Set up SSO Plone login server: \(serverType.rawValue)")
         }
 
         
