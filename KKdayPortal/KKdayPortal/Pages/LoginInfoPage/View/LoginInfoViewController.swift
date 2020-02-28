@@ -119,7 +119,6 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         txv.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         txv.isScrollEnabled = false
         txv.text = "If plone website support login as vister, you do not need to enter account and password"
-        txv.isEditable = false
         return txv
     }()
     
@@ -193,6 +192,8 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    
+        scrollViewOriginalContentInset.bottom = 20
         
 #if TEST_VERSION
         ploneURLTextField.text = "https://eip.kkday.net/Plone"
