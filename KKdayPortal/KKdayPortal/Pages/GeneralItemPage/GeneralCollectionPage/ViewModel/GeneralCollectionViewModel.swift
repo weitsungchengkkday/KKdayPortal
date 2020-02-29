@@ -9,7 +9,6 @@
 import RxSwift
 import RxCocoa
 import SwiftSoup
-import HTMLString
 
 final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
     

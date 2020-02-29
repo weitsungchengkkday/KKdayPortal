@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftSoup
+import HTMLString
 
 struct GeneralTextObjectConverter {
     
@@ -26,7 +27,9 @@ extension GeneralTextObjectConverter {
             print("❌ switch self-closing-tag to normal-closing-tag fail")
             return []
         }
+        // HTMLString remove extra HTML Entites
         let htmlString = normalClosingTagTextObjectText.removingHTMLEntities
+        // SwiftSoup analysis htmlString
         let sectionItems =  configureGeneralTextObjectSectionItems(htmlText: htmlString)
         
         var normalSectionItem: [GeneralTextObjectSectionItem] = []
