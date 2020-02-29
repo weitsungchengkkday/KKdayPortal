@@ -119,6 +119,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         txv.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         txv.isScrollEnabled = false
         txv.text = "If plone website support login as vister, you do not need to enter account and password"
+        txv.isEditable = false
         return txv
     }()
     
@@ -194,7 +195,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         super.viewWillAppear(animated)
     
         scrollViewOriginalContentInset.bottom = 20
-        
+
 #if TEST_VERSION
         ploneURLTextField.text = "https://eip.kkday.net/Plone"
         accountTextField.text = "will"
@@ -254,7 +255,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         self.view.addSubview(scrollView)
         scrollView.addSubview(container)
         container.addSubview(inputStackView)
-        container.addSubview(closeButton)
+        self.view.addSubview(closeButton)
 
         inputStackView.addArrangedSubview(ploneURLStackView)
         ploneURLStackView.addArrangedSubview(ploneURLLabel)
@@ -277,8 +278,8 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         
         container.snp.makeConstraints { maker in
             maker.edges.equalTo(self.scrollView!)
-            maker.height.equalTo(view.snp.height)
-            maker.width.equalTo(view.snp.width)
+            maker.height.equalToSuperview()
+            maker.width.equalToSuperview()
         }
         
         inputStackView.snp.makeConstraints { maker in
