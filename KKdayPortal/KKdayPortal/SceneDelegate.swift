@@ -19,14 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScence.coordinateSpace.bounds)
         window?.windowScene = windowScence
         
-        // 🏗 set TabBarViewController as rootViewController
-        // TabBarViewController -> homeNav, settingNav
-        // homeNav -> HomeViewController
-        // settingNav -> SettingViewControlle
-        
-        
         let loginController = LoginViewController(viewModel: LoginViewModel())
-        
         window?.rootViewController = loginController
         window?.makeKeyAndVisible()
     }
