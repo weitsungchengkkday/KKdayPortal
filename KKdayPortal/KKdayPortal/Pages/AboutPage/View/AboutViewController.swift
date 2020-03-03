@@ -36,6 +36,7 @@ final class AboutViewController: UIViewController {
         txv.textColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
         txv.isEditable = false
         txv.delegate = self
+        let privacyPorlicyURL: URL = URL(string: "https://sites.google.com/kkday.com/privacy-porlicy-kkportal/kk-portal-app-privacy-policy")!
         
         let text = """
         About
@@ -47,13 +48,12 @@ final class AboutViewController: UIViewController {
         
         Support Plone Version: 5.1.6
         
-        Privacy policy: https://daodu.tech/
+        Privacy policy: \(privacyPorlicyURL.absoluteString)
         """
-        
         let nsText = NSString(string: text)
         let contentRange = nsText.range(of: text)
         let titleRange = nsText.range(of: "About")
-        let linkRange = nsText.range(of: "https://daodu.tech/")
+        let linkRange = nsText.range(of: privacyPorlicyURL.absoluteString)
         let noteRange = nsText.range(of: "(Not support video and audio file presenting by now)")
         
         let attriText = NSMutableAttributedString(string: text)
@@ -66,7 +66,7 @@ final class AboutViewController: UIViewController {
         paragraphStyle.alignment = .center
         attriText.addAttribute(.paragraphStyle, value: paragraphStyle, range: titleRange)
         
-        attriText.addAttribute(.link, value: "https://daodu.tech/", range: linkRange)
+        attriText.addAttribute(.link, value: privacyPorlicyURL.absoluteString, range: linkRange)
         attriText.addAttribute(.foregroundColor, value: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1), range: noteRange)
         
         txv.attributedText = attriText
