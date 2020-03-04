@@ -40,7 +40,7 @@ final class LoginViewController: UIViewController {
     
     lazy var enterLoginInfoButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Please Enter Login Information", for: .normal)
+        btn.setTitle("Enter Login Information", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -51,7 +51,29 @@ final class LoginViewController: UIViewController {
     
     lazy var instructionButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Usage Notice", for: .normal)
+        btn.setTitle("""
+        Usage Notice (check format,
+        if you already have Plone website)
+        """, for: .normal)
+        btn.titleLabel?.numberOfLines = 0
+        btn.titleLabel?.textAlignment = .center
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        btn.setTitleColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        return btn
+    }()
+    
+    
+    lazy var ploneIntroButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("""
+        Create a Plone Website
+        (open official docuement,
+        if you don't have Plone website)
+        """, for: .normal)
+        btn.titleLabel?.numberOfLines = 0
+        btn.titleLabel?.textAlignment = .center
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true
         btn.setTitleColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: .normal)
         btn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         return btn
@@ -83,8 +105,8 @@ final class LoginViewController: UIViewController {
         view.addSubview(loginStackView)
         
         loginStackView.addArrangedSubview(enterLoginInfoButton)
-        
         loginStackView.addArrangedSubview(instructionButton)
+        loginStackView.addArrangedSubview(ploneIntroButton)
         
         backgroundImageVeiw.snp.makeConstraints { maker in
             maker.top.equalTo(view.snp.topMargin)
@@ -104,7 +126,7 @@ final class LoginViewController: UIViewController {
         
         enterLoginInfoButton.snp.makeConstraints { maker in
             maker.height.equalTo(60)
-            maker.width.equalToSuperview()
+            maker.width.equalTo(view.snp.width).offset(-100)
         }
         
     }
@@ -113,7 +135,7 @@ final class LoginViewController: UIViewController {
     private func setAction() {
         enterLoginInfoButton.addTarget(self, action: #selector(goLoginInfoPage), for: .touchUpInside)
         instructionButton.addTarget(self, action: #selector(goIntroductionPage), for: .touchUpInside)
-        
+        ploneIntroButton.addTarget(self, action: #selector(goPloneIntroductionPage), for: .touchUpInside)
     }
     
     @objc private func goLoginInfoPage() {
@@ -124,6 +146,11 @@ final class LoginViewController: UIViewController {
     
     @objc private func goIntroductionPage() {
         let presentViewController = IntroductionViewController()
+        present(presentViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func goPloneIntroductionPage() {
+        let presentViewController = PloneIntroductionViewController()
         present(presentViewController, animated: true, completion: nil)
     }
     
