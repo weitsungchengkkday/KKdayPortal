@@ -3338,9 +3338,10 @@
 			baseConfigurationReference = ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = HA9F856YHB;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q26KHN883C;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3350,6 +3351,7 @@
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
+				PROVISIONING_PROFILE_SPECIFIER = "KKPortal-Provisioning-Profile-dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3360,9 +3362,10 @@
 			baseConfigurationReference = 3A270F6966498D4554C4517E /* Pods-KKdayPortal-Production.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = HA9F856YHB;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q26KHN883C;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3372,6 +3375,7 @@
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
+				PROVISIONING_PROFILE_SPECIFIER = "KKPortal-Provisioning-Profile-p";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
