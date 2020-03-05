@@ -67,7 +67,7 @@ final class LoginViewController: UIViewController {
     lazy var ploneIntroButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("""
-        Create a Plone Website
+        How to build your own Plone Website
         (open official docuement,
         if you don't have Plone website)
         """, for: .normal)

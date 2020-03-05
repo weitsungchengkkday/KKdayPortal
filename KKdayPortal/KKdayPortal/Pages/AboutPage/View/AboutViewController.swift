@@ -36,7 +36,7 @@ final class AboutViewController: UIViewController {
         txv.textColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
         txv.isEditable = false
         txv.delegate = self
-        let privacyPorlicyURL: URL = URL(string: "https://sites.google.com/kkday.com/privacy-porlicy-kkportal/kk-portal-app-privacy-policy")!
+        let privacyPorlicyURL: URL = URL(string: "https://sites.google.com/kkday.com/privacy-porlicy-kkportal/%E9%9A%B1%E7%A7%81%E6%AC%8A%E6%94%BF%E7%AD%96")!
         
         let text = """
         About

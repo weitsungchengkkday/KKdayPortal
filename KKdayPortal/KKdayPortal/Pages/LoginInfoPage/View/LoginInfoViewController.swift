@@ -21,6 +21,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     
     lazy var scrollView: UIScrollView? = {
         let srv = UIScrollView()
+        srv.keyboardDismissMode = .onDrag
         return srv
     }()
     
@@ -118,7 +119,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         txv.isScrollEnabled = false
-        txv.text = "If plone website support login as vister, you do not need to enter account and password"
+        txv.text = "If plone website support login as visitor, you do not need to enter account and password"
         txv.isEditable = false
         return txv
     }()
