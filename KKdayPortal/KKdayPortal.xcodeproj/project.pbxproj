@@ -101,6 +101,14 @@
 		F44A199923C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */; };
 		F44A199A23C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */; };
 		F44A199B23C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */; };
+		F44CD6CE24162C2200A35808 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6CD24162C2200A35808 /* FilesManager.swift */; };
+		F44CD6CF24162C2200A35808 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6CD24162C2200A35808 /* FilesManager.swift */; };
+		F44CD6D024162C2200A35808 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6CD24162C2200A35808 /* FilesManager.swift */; };
+		F44CD6D124162C2200A35808 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6CD24162C2200A35808 /* FilesManager.swift */; };
+		F44CD6D324162E2500A35808 /* FileNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6D224162E2500A35808 /* FileNameProtocol.swift */; };
+		F44CD6D424162E2500A35808 /* FileNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6D224162E2500A35808 /* FileNameProtocol.swift */; };
+		F44CD6D524162E2500A35808 /* FileNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6D224162E2500A35808 /* FileNameProtocol.swift */; };
+		F44CD6D624162E2500A35808 /* FileNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6D224162E2500A35808 /* FileNameProtocol.swift */; };
 		F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
 		F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
 		F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
@@ -729,6 +737,8 @@
 		F44A198A23C48BF000B35976 /* PloneLRF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneLRF.swift; sourceTree = "<group>"; };
 		F44A199223C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageDocumentViewModel.swift; sourceTree = "<group>"; };
 		F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageDocumentViewController.swift; sourceTree = "<group>"; };
+		F44CD6CD24162C2200A35808 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
+		F44CD6D224162E2500A35808 /* FileNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNameProtocol.swift; sourceTree = "<group>"; };
 		F44E8CE323B88AA30032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44E8D5923B88AFA0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44E8DCF23B88AFC0032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1288,6 +1298,7 @@
 			children = (
 				F454474B23924F38001B8D31 /* RXViewModelType.swift */,
 				F454488B23A55017001B8D31 /* Localizable.swift */,
+				F44CD6D224162E2500A35808 /* FileNameProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2149,6 +2160,7 @@
 				F4B3F3132386EE9100657CDF /* NetStatusManager.swift */,
 				F4B3F32F2387CB7100657CDF /* StorageManager.swift */,
 				F454487523A32F92001B8D31 /* LanguageManager.swift */,
+				F44CD6CD24162C2200A35808 /* FilesManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -2774,8 +2786,10 @@
 				F453952B23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F46180CE23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F457416323D5462C00FB5EEC /* ConfigManager.swift in Sources */,
+				F44CD6D424162E2500A35808 /* FileNameProtocol.swift in Sources */,
 				F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */,
 				F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */,
+				F44CD6CF24162C2200A35808 /* FilesManager.swift in Sources */,
 				F44E8CA823B88AA30032C6BE /* Language.swift in Sources */,
 				F44E8CA923B88AA30032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */,
@@ -2936,8 +2950,10 @@
 				F453952C23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F46180CF23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F457416423D5462C00FB5EEC /* ConfigManager.swift in Sources */,
+				F44CD6D524162E2500A35808 /* FileNameProtocol.swift in Sources */,
 				F44E8D1C23B88AFA0032C6BE /* PloneFile.swift in Sources */,
 				F44E8D1D23B88AFA0032C6BE /* StringExtension.swift in Sources */,
+				F44CD6D024162C2200A35808 /* FilesManager.swift in Sources */,
 				F44E8D1E23B88AFA0032C6BE /* Language.swift in Sources */,
 				F44E8D1F23B88AFA0032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8D2023B88AFA0032C6BE /* ItemConverter.swift in Sources */,
@@ -3098,8 +3114,10 @@
 				F453952D23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F46180D023FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F457416523D5462C00FB5EEC /* ConfigManager.swift in Sources */,
+				F44CD6D624162E2500A35808 /* FileNameProtocol.swift in Sources */,
 				F44E8D9223B88AFC0032C6BE /* PloneFile.swift in Sources */,
 				F44E8D9323B88AFC0032C6BE /* StringExtension.swift in Sources */,
+				F44CD6D124162C2200A35808 /* FilesManager.swift in Sources */,
 				F44E8D9423B88AFC0032C6BE /* Language.swift in Sources */,
 				F44E8D9523B88AFC0032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8D9623B88AFC0032C6BE /* ItemConverter.swift in Sources */,
@@ -3268,8 +3286,10 @@
 				F453952A23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F46180CD23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
+				F44CD6D324162E2500A35808 /* FileNameProtocol.swift in Sources */,
 				F43AFC5D23E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
 				F4B3BC9A23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
+				F44CD6CE24162C2200A35808 /* FilesManager.swift in Sources */,
 				F43AFC6D23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
 				F454476523960669001B8D31 /* StringExtension.swift in Sources */,
 				F454487423A235B4001B8D31 /* Language.swift in Sources */,
