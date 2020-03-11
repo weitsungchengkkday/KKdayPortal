@@ -66,7 +66,7 @@ struct FilesManager {
             return
         }
         
-        guard let data: Data = Data(base64Encoded: base64, options: [Data.Base64DecodingOptions.ignoreUnknownCharacters]) else {
+        guard let data: Data = base64.base64StringToData else {
             return
         }
         

@@ -8,8 +8,52 @@
 
 import Foundation
 import SwiftSoup
+import UIKit
 
 extension String {
+    
+    /**
+     * Base64
+     */
+    
+    // Text to Base64
+    
+    var toBase64String: String? {
+        let text = self
+        let data = text.data(using: .utf8)
+        let base64 = data?.base64EncodedString(options: .init(rawValue: 0))
+        return base64
+    }
+    
+    // Text to decode Base64
+    
+    var toDecodeBase64String: String? {
+        let text = self
+        let xorString: String?
+        if let decodeData = Data(base64Encoded: text, options: .init(rawValue: 0)) {
+            xorString = String(data: decodeData, encoding: .utf8)
+            return xorString
+        }
+        return nil
+    }
+   
+    // Base64 String to Data
+    
+    var base64StringToData: Data? {
+        return Data(base64Encoded: self, options: .init(rawValue: 0))
+    }
+    
+    // Base64 String to Image
+    
+    var toPNGImage: UIImage? {
+        let base64 = self
+        var image: UIImage?
+        if let pngData = Data(base64Encoded: base64, options: .init(rawValue: 0)) {
+            image = UIImage(data: pngData)
+            return image
+        }
+        return nil
+    }
     
     func localize(_ comment: String = "", defaultValue: String = "") -> String {
         return LanguageManager.shared.currentLanguage.localizeForLanguage(key: self, defaultValue: defaultValue, storyboardName: "", comment: comment)
