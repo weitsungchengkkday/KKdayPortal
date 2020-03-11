@@ -107,8 +107,4 @@ final class TestingViewController: UIViewController {
 
 extension TestingViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
-    }
-    
 }

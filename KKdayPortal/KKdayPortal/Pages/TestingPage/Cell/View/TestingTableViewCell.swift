@@ -38,7 +38,8 @@ final class TestingTableViewCell: UITableViewCell {
         self.contentView.addSubview(selectedButton)
         
         titleLabel.snp.makeConstraints { maker in
-            maker.centerY.equalToSuperview()
+            maker.top.equalTo(10)
+            maker.bottom.equalTo(10)
             maker.left.equalToSuperview().offset(15)
         }
         
