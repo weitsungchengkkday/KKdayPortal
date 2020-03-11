@@ -61,10 +61,7 @@ class HomeViewController: UIViewController, Localizable {
         switch resourceType {
         case .kkMember:
 
-#if TEST_VERSION
-            rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
-
-#elseif SIT_VERSION
+#if SIT_VERSION
             rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
             
 #elseif PRODUCTION_VERSION

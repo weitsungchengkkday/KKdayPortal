@@ -22,10 +22,7 @@ final class WebPloneRepository: RepositoryManageable {
         switch resourceType {
         case .kkMember:
 
-#if TEST_VERSION
-        return URL(string: "https://sit.eip.kkday.net/Plone")!
-
-#elseif SIT_VERSION
+#if SIT_VERSION
         return URL(string: "https://sit.eip.kkday.net/Plone")!
                           
 #elseif PRODUCTION_VERSION

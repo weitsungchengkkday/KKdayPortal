@@ -13,22 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-#if TEST_VERSION
-    print("1️⃣ test_version")
-    
-#elseif SIT_VERSION
-    print("2️⃣ sit_version")
-    
-#elseif STAGE_VERSION
-    print("3️⃣ stage_version")
+#if SIT_VERSION
+    print("1️⃣ sit_version")
     
 #elseif PRODUCTION_VERSION
-    print("4️⃣ production_version")
+    print("2️⃣ production_version")
     
-    #else
+#else
     print("❗️target not exist")
     
-    #endif
+#endif
     
 #if DEBUG
     print("🐛 Debug")

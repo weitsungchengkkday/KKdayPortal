@@ -31,10 +31,7 @@ final class ApplicationsEntryViewModel: RXViewModelType {
     
     var generalItemsURL: [URL] = {
 
-#if TEST_VERSION
-        let urls: [URL] = []
-        
-#elseif SIT_VERSION
+#if SIT_VERSION
         let urls = [ URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")! ]
 
 #elseif PRODUCTION_VERSION

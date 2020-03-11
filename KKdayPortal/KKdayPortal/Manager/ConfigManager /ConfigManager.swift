@@ -52,10 +52,7 @@ final class ConfigManager {
         
         } else {
             
-#if TEST_VERSION
-            serverType = .sit
-            
-#elseif SIT_VERSION
+#if SIT_VERSION
             serverType = .sit
             
 #elseif PRODUCTION_VERSION

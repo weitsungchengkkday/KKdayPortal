@@ -69,10 +69,8 @@ extension GeneralDetailPageCoordinator {
             case .kkMember:
                 
                 let BPMString: String
-                #if TEST_VERSION
-                BPMString = ""
                 
-                #elseif SIT_VERSION
+                #if SIT_VERSION
                 BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
                 
                 #elseif PRODUCTION_VERSION
