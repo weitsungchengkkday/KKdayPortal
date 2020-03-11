@@ -62,6 +62,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .URL
         txf.layer.cornerRadius = 12
+        txf.returnKeyType = .next
         return txf
     }()
     
@@ -87,6 +88,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .default
         txf.layer.cornerRadius = 12
+        txf.returnKeyType = .next
         return txf
     }()
     
@@ -112,6 +114,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .default
         txf.layer.cornerRadius = 12
+        txf.returnKeyType = .go
         return txf
     }()
     
