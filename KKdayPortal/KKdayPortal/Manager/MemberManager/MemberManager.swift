@@ -60,18 +60,11 @@ final class MemberManager {
         ModelLoader.PortalLoader()
             .logout()
             .subscribe(onSuccess: { [weak self] generalUser in
-                
                 debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
-                // 👶🏻 Restart from login page
-                let loginController = LoginViewController(viewModel: LoginViewModel())
-                Utilities.appDelegateWindow?.rootViewController = loginController
                 self?.logoutHandler()
+    
             }) { [weak self] error in
-                
                 debugPrint("🚨 logout -> error is \(error)")
-                // 👶🏻 Restart from login page
-                let loginController = LoginViewController(viewModel: LoginViewModel())
-                Utilities.appDelegateWindow?.rootViewController = loginController
                 self?.logoutHandler()
         }
         .disposed(by: disposeBag)
@@ -79,12 +72,18 @@ final class MemberManager {
     
     // Must clear UserDefualt after logout request finishing, or it might cause logout error
     private func logoutHandler() {
+
+        // 👶🏻 Restart from login page
+        let loginController = LoginViewController(viewModel: LoginViewModel())
+        Utilities.appDelegateWindow?.rootViewController = loginController
+        
         // Clear UserDefault
         StorageManager.shared.removeAll()
+        
         // Clear WebCache
         WebCacheCleaner.clean()
         
-        // reset serverType & language after clear UserDefault
+        // Reset serverType & language after clear UserDefault
         ConfigManager.shared.setup()
         LanguageManager.shared.setup()
     }
@@ -94,34 +93,33 @@ final class MemberManager {
         // Logout from Plone
         ModelLoader.PortalLoader()
             .logout()
-            .subscribe(onSuccess: { generalUser in
-                
+            .subscribe(onSuccess: { [weak self] generalUser in
                 debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
-                // 👶🏻 Restart from login page
-                let loginController = LoginViewController(viewModel: LoginViewModel())
-                Utilities.appDelegateWindow?.rootViewController = loginController
+                self?.logoutForSwitchServerHandler()
                 
-                // Clear UserDefault
-                StorageManager.shared.remove(for: .generalUser)
-                StorageManager.shared.remove(for: .ploneResourceType)
-               
-                // Clear WebCache
-                WebCacheCleaner.clean()
-                
-            }) { error in
-                
+            }) { [weak self] error in
                 debugPrint("🚨 logout -> error is \(error)")
-                // 👶🏻 Restart from login page
-                let loginController = LoginViewController(viewModel: LoginViewModel())
-                Utilities.appDelegateWindow?.rootViewController = loginController
-                
-                // Clear UserDefault(keep language, Region & serverType)
-                StorageManager.shared.remove(for: .generalUser)
-                StorageManager.shared.remove(for: .ploneResourceType)
-                // Clear WebCache
-                WebCacheCleaner.clean()
+                self?.logoutForSwitchServerHandler()
         }
         .disposed(by: disposeBag)
         
+    }
+    
+    private func logoutForSwitchServerHandler() {
+        
+        // 👶🏻 Restart from login page
+        let loginController = LoginViewController(viewModel: LoginViewModel())
+        Utilities.appDelegateWindow?.rootViewController = loginController
+        
+        // Clear UserDefault(keep language, Region & serverType)
+        // Should not clear StorageKeys .serverType, or changed serverType info would disappear.
+        StorageManager.shared.remove(for: .generalUser)
+        StorageManager.shared.remove(for: .ploneResourceType)
+        
+        // Clear WebCache
+        WebCacheCleaner.clean()
+        
+        // Must setup after logout, or it would logout wrong server
+        ConfigManager.shared.setup()
     }
 }

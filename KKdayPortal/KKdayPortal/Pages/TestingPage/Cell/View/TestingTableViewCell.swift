@@ -66,7 +66,6 @@ final class TestingTableViewCell: UITableViewCell {
                 
                 if cellViewModel.serverType.rawValue != StorageManager.shared.load(for: .serverType) {
                     StorageManager.shared.save(for: .serverType, value: cellViewModel.serverType.rawValue)
-                    ConfigManager.shared.setup()
                 } else {
                     print("⚠️ Save same serverType")
                 }
