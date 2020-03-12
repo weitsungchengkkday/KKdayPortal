@@ -26,6 +26,7 @@ final class WebPloneRepository: RepositoryManageable {
         case .normal(url: let url):
             return url
         case .none:
+            print("⚠️ Warning, without resourceType")
             return URL(string: "https://www.kkday.com")!
         }
     }

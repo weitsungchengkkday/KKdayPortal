@@ -210,10 +210,10 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
 //        passwordTextFiled.text = "1234"
 //        loginButton.isEnabled = true
         
-//        ploneURLTextField.text = "https://eip.kkday.net/Plone"
-//        accountTextField.text = "will"
-//        passwordTextFiled.text = "12345"
-//        loginButton.isEnabled = true
+        ploneURLTextField.text = "https://eip.kkday.net/Plone"
+        accountTextField.text = "will"
+        passwordTextFiled.text = "12345"
+        loginButton.isEnabled = true
         
 #endif
         

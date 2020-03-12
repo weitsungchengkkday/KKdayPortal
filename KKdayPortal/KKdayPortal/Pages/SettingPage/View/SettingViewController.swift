@@ -87,7 +87,16 @@ final class SettingViewController: UIViewController {
     }()
     
     private let viewModel = SettingViewModel()
-    let testingModeIsOpen: Bool = true
+    var testingModeIsOpen: Bool {
+        switch PloneResourceManager.shared.resourceType {
+        case .kkMember:
+            return true
+        case .normal(_):
+            return false
+        case .none:
+            return false
+        }
+    }
     private let testingModeTapRequired: Int = 10
     
     override func viewDidLoad() {

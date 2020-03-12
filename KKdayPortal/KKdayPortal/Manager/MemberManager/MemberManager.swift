@@ -59,23 +59,26 @@ final class MemberManager {
         // Logout from Plone
         ModelLoader.PortalLoader()
             .logout()
-            .subscribe(onSuccess: { generalUser in
+            .subscribe(onSuccess: { [weak self] generalUser in
                 
                 debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
                 // 👶🏻 Restart from login page
                 let loginController = LoginViewController(viewModel: LoginViewModel())
                 Utilities.appDelegateWindow?.rootViewController = loginController
-                
-            }) { error in
+                self?.logoutHandler()
+            }) { [weak self] error in
                 
                 debugPrint("🚨 logout -> error is \(error)")
                 // 👶🏻 Restart from login page
                 let loginController = LoginViewController(viewModel: LoginViewModel())
                 Utilities.appDelegateWindow?.rootViewController = loginController
-                
+                self?.logoutHandler()
         }
         .disposed(by: disposeBag)
-        
+    }
+    
+    // Must clear UserDefualt after logout request finishing, or it might cause logout error
+    private func logoutHandler() {
         // Clear UserDefault
         StorageManager.shared.removeAll()
         // Clear WebCache
@@ -85,7 +88,6 @@ final class MemberManager {
         ConfigManager.shared.setup()
         LanguageManager.shared.setup()
     }
-    
     
     func logoutForSwitchServer(disposeBag: DisposeBag) {
         
