@@ -68,18 +68,7 @@ extension GeneralDetailPageCoordinator {
             switch resourceType {
             case .kkMember:
                 
-                let BPMString: String
-                
-                #if SIT_VERSION
-                BPMString = "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
-                
-                #elseif PRODUCTION_VERSION
-                BPMString = "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm"
-                
-                #else
-                
-                
-                #endif
+                let BPMString: String = ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm"
                 
                 if route == URL(string: BPMString) {
                     // If link is BPM open website in APP

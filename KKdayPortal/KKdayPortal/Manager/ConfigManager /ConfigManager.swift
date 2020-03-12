@@ -49,7 +49,7 @@ final class ConfigManager {
             let type: ServerTypes = ServerTypes(rawValue: serverConfig) {
             serverType = type
             print("🎆 load SSO Plone server: \(serverType.rawValue)")
-        
+            
         } else {
             
 #if SIT_VERSION
@@ -70,10 +70,10 @@ final class ConfigManager {
         switch serverType {
         case .sit:
             model.host = model.sitServer
-            model.token = model.sitToken
+            model.BPM = model.sitBPM
         case .production:
             model.host = model.productionServer
-            model.token = model.productionToken
+            model.BPM = model.productionBPM
         }
 
     }

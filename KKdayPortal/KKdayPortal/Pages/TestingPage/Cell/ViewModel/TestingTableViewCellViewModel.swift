@@ -37,6 +37,4 @@ extension TestingTableViewCellViewModel: IdentifiableType, Equatable {
         return lhs.identity == rhs.identity
     }
     
-    
-    
 }

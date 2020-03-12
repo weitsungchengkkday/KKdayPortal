@@ -21,19 +21,12 @@ final class WebPloneRepository: RepositoryManageable {
         
         switch resourceType {
         case .kkMember:
+            return URL(string: ConfigManager.shared.model.host + "/Plone")!
 
-#if SIT_VERSION
-        return URL(string: "https://sit.eip.kkday.net/Plone")!
-                          
-#elseif PRODUCTION_VERSION
-        return URL(string: "https://eip.kkday.net/Plone")!
-
-#endif
-            
         case .normal(url: let url):
             return url
         case .none:
-            fatalError("🚨 No baseURL exist")
+            return URL(string: "https://www.kkday.com")!
         }
     }
     

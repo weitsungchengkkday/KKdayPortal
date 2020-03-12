@@ -30,16 +30,8 @@ final class ApplicationsEntryViewModel: RXViewModelType {
     private let isLoadingSubject = PublishSubject<Bool>()
     
     var generalItemsURL: [URL] = {
-
-#if SIT_VERSION
-        let urls = [ URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")! ]
-
-#elseif PRODUCTION_VERSION
-        let urls = [ URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm")! ]
-        
-#else
-        
-#endif
+        let urls = [ URL(string: ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm")!]
+      
         return urls
     }()
     

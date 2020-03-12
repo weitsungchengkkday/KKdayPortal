@@ -42,9 +42,6 @@ final class TestingViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tbv = UITableView()
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        tbv.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
         
         tbv.register(TestingTableViewCell.self, forCellReuseIdentifier: TestingViewController.CellName)
         tbv.tableFooterView = UIView()
@@ -91,11 +88,20 @@ final class TestingViewController: UIViewController {
         buttonClicked
             .asDriver(onErrorJustReturn: false)
             .drive(onNext: { [weak self] bool -> Void in
+             
+                guard let strongSelf = self else { return }
+                strongSelf.viewModel.nextCellViewModelEvent()
                 
-                self?.viewModel.nextCellViewModelEvent()
                 if bool == false {
-                    self?.dismiss(animated: true, completion: nil)
+                    guard let vc = self?.presentingViewController as? MainViewController else {
+                        return
+                    }
+                    
+                    strongSelf.dismiss(animated: true) {
+                        vc.logout()
+                    }
                 }
+                
             })
             .disposed(by: disposeBag)
         
@@ -103,8 +109,4 @@ final class TestingViewController: UIViewController {
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
-}
-
-extension TestingViewController: UITableViewDelegate {
-    
 }

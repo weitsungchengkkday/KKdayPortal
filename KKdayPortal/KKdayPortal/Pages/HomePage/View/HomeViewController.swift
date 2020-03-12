@@ -60,17 +60,8 @@ class HomeViewController: UIViewController, Localizable {
         
         switch resourceType {
         case .kkMember:
-
-#if SIT_VERSION
-            rootURL = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw")!
+            rootURL = URL(string: ConfigManager.shared.model.host + "/Plone" + "/zh-tw")!
             
-#elseif PRODUCTION_VERSION
-            rootURL = URL(string: "https://eip.kkday.net/Plone/zh-tw")!
-
-#else
-            
-            
-#endif
         case .normal(url: let url):
             rootURL = URL(string: url.absoluteString + "/zh-tw")!
             

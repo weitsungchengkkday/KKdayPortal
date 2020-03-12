@@ -10,13 +10,13 @@ final class ConfigModel: Codable {
     
     // current connecting host
     var host: String = ""
-    var token: String = ""
+    var BPM: String = ""
     
     // sit
     var sitServer: String = ""
-    var sitToken: String = ""
+    var sitBPM: String = ""
     
     // production
     var productionServer: String = ""
-    var productionToken: String = ""
+    var productionBPM: String = ""
 }

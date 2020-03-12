@@ -72,6 +72,7 @@ final class MemberManager {
                 // 👶🏻 Restart from login page
                 let loginController = LoginViewController(viewModel: LoginViewModel())
                 Utilities.appDelegateWindow?.rootViewController = loginController
+                
         }
         .disposed(by: disposeBag)
         
@@ -79,6 +80,46 @@ final class MemberManager {
         StorageManager.shared.removeAll()
         // Clear WebCache
         WebCacheCleaner.clean()
+        
+        // reset serverType & language after clear UserDefault
+        ConfigManager.shared.setup()
+        LanguageManager.shared.setup()
+    }
+    
+    
+    func logoutForSwitchServer(disposeBag: DisposeBag) {
+        
+        // Logout from Plone
+        ModelLoader.PortalLoader()
+            .logout()
+            .subscribe(onSuccess: { generalUser in
+                
+                debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
+                // 👶🏻 Restart from login page
+                let loginController = LoginViewController(viewModel: LoginViewModel())
+                Utilities.appDelegateWindow?.rootViewController = loginController
+                
+                // Clear UserDefault
+                StorageManager.shared.remove(for: .generalUser)
+                StorageManager.shared.remove(for: .ploneResourceType)
+               
+                // Clear WebCache
+                WebCacheCleaner.clean()
+                
+            }) { error in
+                
+                debugPrint("🚨 logout -> error is \(error)")
+                // 👶🏻 Restart from login page
+                let loginController = LoginViewController(viewModel: LoginViewModel())
+                Utilities.appDelegateWindow?.rootViewController = loginController
+                
+                // Clear UserDefault(keep language, Region & serverType)
+                StorageManager.shared.remove(for: .generalUser)
+                StorageManager.shared.remove(for: .ploneResourceType)
+                // Clear WebCache
+                WebCacheCleaner.clean()
+        }
+        .disposed(by: disposeBag)
         
     }
 }

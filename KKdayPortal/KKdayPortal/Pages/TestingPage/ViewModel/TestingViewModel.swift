@@ -25,6 +25,7 @@ final class TestingViewModel: RXViewModelType {
     }
     
     private let cellViewModelsSubject = PublishSubject<[TestingSection]>()
+    private let disposeBag = DisposeBag()
     
     init() {
         self.input = Input(cellViewModels: cellViewModelsSubject.asObserver())
@@ -49,4 +50,5 @@ final class TestingViewModel: RXViewModelType {
         
         return [TestingSection(header: "Testing", items: testingTableViewCellViewModels)]
     }
+    
 }

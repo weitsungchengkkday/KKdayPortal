@@ -45,46 +45,21 @@ final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
     
     func getPortalData() {
         
-#if SIT_VERSION
-            let url = URL(string: "https://sit.eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!
+        let url = URL(string: ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm")!
         
-            if self.source == url {
-                guard let generalUser: GeneralUser = StorageManager.shared.loadObject(for: .generalUser)
+        if self.source == url {
+            guard let generalUser: GeneralUser = StorageManager.shared.loadObject(for: .generalUser)
                 else {
                     return
-                }
-                let account = generalUser.account
-
-                let redirectUrl = URL(string: "http://sit.bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(account)")!
-                
-                self.titleSubject.onNext("sit-BPM")
-                self.loadWebViewSubject.onNext(redirectUrl)
-                
-                return
             }
-         
-#elseif PRODUCTION_VERSION
-        
-            let url = URL(string: "https://eip.kkday.net/Plone/zh-tw/02-all-services/bpm")!
-        
-            if self.source == url {
-                guard let generalUser: GeneralUser = StorageManager.shared.loadObject(for: .generalUser)
-                    else {
-                        return
-                }
-                let account = generalUser.account
-                
-                let redirectUrl = URL(string: "http://bpm.eip.kkday.net/WebAgenda/sso_index1.jsp?SearchableText=\(account)")!
-                
-                self.titleSubject.onNext("BPM")
-                self.loadWebViewSubject.onNext(redirectUrl)
-                
-                return
-            }
-        
-#else
-        
-#endif
+            let account = generalUser.account
+            
+            let redirectUrl: URL = URL(string: ConfigManager.shared.model.BPM + "/WebAgenda/sso_index1.jsp?SearchableText=\(account)")!
+            self.titleSubject.onNext("BPM (\(ConfigManager.shared.model.BPM))")
+            self.loadWebViewSubject.onNext(redirectUrl)
+            
+            return
+        }
         
         ModelLoader.PortalLoader()
             .getItem(source: source, type: .link)

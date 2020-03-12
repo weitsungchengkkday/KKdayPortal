@@ -39,7 +39,7 @@ final class TestingTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints { maker in
             maker.top.equalTo(10)
-            maker.bottom.equalTo(10)
+            maker.bottom.equalTo(-10)
             maker.left.equalToSuperview().offset(15)
         }
         
@@ -64,8 +64,13 @@ final class TestingTableViewCell: UITableViewCell {
                 
                 self?.selectedButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
                 
-                  StorageManager.shared.save(for: .serverType, value: cellViewModel.serverType.rawValue)
-                  ConfigManager.shared.setup()
+                if cellViewModel.serverType.rawValue != StorageManager.shared.load(for: .serverType) {
+                    StorageManager.shared.save(for: .serverType, value: cellViewModel.serverType.rawValue)
+                    ConfigManager.shared.setup()
+                } else {
+                    print("⚠️ Save same serverType")
+                }
+                
             })
             .disposed(by: disposeBag)
         

@@ -200,21 +200,20 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     
         scrollViewOriginalContentInset.bottom = 20
 
-#if TEST_VERSION
-        ploneURLTextField.text = "https://eip.kkday.net/Plone"
-        accountTextField.text = "will"
-        passwordTextFiled.text = "12345"
-        loginButton.isEnabled = true
         
-
-#elseif SIT_VERSION
-        ploneURLTextField.text = "https://sit.eip.kkday.net/Plone"
-        accountTextField.text = "forwindsun"
-        passwordTextFiled.text = "1234"
-        loginButton.isEnabled = true
-              
-#elseif PRODUCTION_VERSION
-
+       print(ConfigManager.shared.model.host)
+       
+       
+#if DEBUG
+//        ploneURLTextField.text = "https://sit.eip.kkday.net/Plone"
+//        accountTextField.text = "forwindsun"
+//        passwordTextFiled.text = "1234"
+//        loginButton.isEnabled = true
+        
+//        ploneURLTextField.text = "https://eip.kkday.net/Plone"
+//        accountTextField.text = "will"
+//        passwordTextFiled.text = "12345"
+//        loginButton.isEnabled = true
         
 #endif
         
@@ -362,6 +361,8 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     
     private func login() {
         
+        print("📯 Current Host is \(ConfigManager.shared.model.host)")
+
         guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return
         }

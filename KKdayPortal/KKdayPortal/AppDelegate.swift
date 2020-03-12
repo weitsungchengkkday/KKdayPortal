@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 #if SIT_VERSION
     print("1️⃣ sit_version")
-    
+        
 #elseif PRODUCTION_VERSION
     print("2️⃣ production_version")
     
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("❗️target not exist")
     
 #endif
-    
+  
 #if DEBUG
     print("🐛 Debug")
     
@@ -36,15 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #endif
     
     ConfigManager.shared.setup()
+    LanguageManager.shared.setup()
     // assign WebAPIManager as APIManager's errorhandler
     APIManager.default.httpErrorHandler = WebAPIManager.shared
-    setupLanguage()
     
     return true
-    }
-    
-    private func setupLanguage() {
-        LanguageManager.shared.setup()
     }
     
     // MARK: UISceneSession Lifecycle
