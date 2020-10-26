@@ -27,31 +27,24 @@ def shared
   
 end
 
+
 target 'KKdayPortal-Sit' do
   project 'KKdayPortal.xcodeproj'
   shared
-
-  target 'KKdayPortal-SitTests' do
-    inherit! :search_paths
-  end
 end
 
-target 'KKdayPortal-Stage' do
-  project 'KKdayPortal.xcodeproj'
-  shared
-
-end
-
-target 'KKdayPortal-Test' do
-  project 'KKdayPortal.xcodeproj'
-  shared
-
-end
 
 target 'KKdayPortal-Production' do
   project 'KKdayPortal.xcodeproj'
   shared
+end
 
+post_install do |pi|
+    pi.pods_project.targets.each do |t|
+      t.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
 end
 
 

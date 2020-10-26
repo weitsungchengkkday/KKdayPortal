@@ -62,19 +62,19 @@ final class ConfigManager {
        
             
 #endif
-            StorageManager.shared.save(for: .serverType, value: serverType.rawValue)
-            print("🎇 Set up SSO Plone login server: \(serverType.rawValue)")
+//            StorageManager.shared.save(for: .serverType, value: serverType.rawValue)
+//            print("🎇 Set up SSO Plone login server: \(serverType.rawValue)")
         }
 
         
-        switch serverType {
-        case .sit:
-            model.host = model.sitServer
-            model.BPM = model.sitBPM
-        case .production:
-            model.host = model.productionServer
-            model.BPM = model.productionBPM
-        }
+//        switch serverType {
+//        case .sit:
+//            model.host = model.sitServer
+//            model.BPM = model.sitBPM
+//        case .production:
+//            model.host = model.productionServer
+//            model.BPM = model.productionBPM
+//        }
 
     }
     
