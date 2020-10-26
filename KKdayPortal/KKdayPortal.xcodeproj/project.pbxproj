@@ -288,8 +288,6 @@
 		F46181002403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
 		F46181042405050900D303F8 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
 		F46181052405050900D303F8 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
-		F4B3BC9523F0F57D009699E5 /* KKdayPortal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC9423F0F57C009699E5 /* KKdayPortal-Info.plist */; };
-		F4B3BC9623F0F57D009699E5 /* KKdayPortal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4B3BC9423F0F57C009699E5 /* KKdayPortal-Info.plist */; };
 		F4B3BC9A23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
 		F4B3BC9B23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
 		F4B3BCA023F15A53009699E5 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9F23F15A53009699E5 /* HTTPError.swift */; };
@@ -1986,7 +1984,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "WEI-TSUNG CHENG";
 				TargetAttributes = {
 					F453951723BA2A1F00136E6D = {
@@ -2032,7 +2030,6 @@
 				F457415D23D53EEB00FB5EEC /* ConfigModel.json in Resources */,
 				F44E8CDC23B88AA30032C6BE /* Localizable.strings in Resources */,
 				F44E8CDD23B88AA30032C6BE /* Assets.xcassets in Resources */,
-				F4B3BC9623F0F57D009699E5 /* KKdayPortal-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2053,7 +2050,6 @@
 				F457415C23D53EEB00FB5EEC /* ConfigModel.json in Resources */,
 				F454488723A54D2D001B8D31 /* Localizable.strings in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
-				F4B3BC9523F0F57D009699E5 /* KKdayPortal-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2652,6 +2648,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2713,6 +2710,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
