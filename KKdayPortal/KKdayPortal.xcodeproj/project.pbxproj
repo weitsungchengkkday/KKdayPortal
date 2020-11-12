@@ -315,6 +315,10 @@
 		F4D06810255CCFFD00F7B3F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0680F255CCFFD00F7B3F8 /* SnapKit */; };
 		F4D06838255CD2AB00F7B3F8 /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = F4D06837255CD2AB00F7B3F8 /* DolphinHTTP */; };
 		F4D0683C255CD2D500F7B3F8 /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0683B255CD2D500F7B3F8 /* DolphinHTTP */; };
+		F4D06877255D1A4800F7B3F8 /* PloneEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */; };
+		F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */; };
+		F4D06879255D1A4800F7B3F8 /* PloneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */; };
+		F4D0687A255D1A4800F7B3F8 /* PloneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */; };
 		F4D8DE1023EBB81A0091A51A /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
 		F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
 		F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
@@ -508,6 +512,8 @@
 		F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneAuthToken.swift; sourceTree = "<group>"; };
 		F4B3F33F238BC60D00657CDF /* PloneFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFolder.swift; sourceTree = "<group>"; };
 		F4B3F343238BDF0900657CDF /* PloneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneItem.swift; sourceTree = "<group>"; };
+		F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloneEnv.swift; sourceTree = "<group>"; };
+		F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloneAPI.swift; sourceTree = "<group>"; };
 		F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		F4DDFDC323D69F3F00B5802B /* TestingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSection.swift; sourceTree = "<group>"; };
 		F4FC419C238CCA7D00AC7315 /* PloneUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneUser.swift; sourceTree = "<group>"; };
@@ -1670,6 +1676,7 @@
 		F4B3F2CC23862B3000657CDF /* KKdayPortal */ = {
 			isa = PBXGroup;
 			children = (
+				F4D06873255D1A4800F7B3F8 /* HTTPLayer */,
 				F4B3F3242387C15B00657CDF /* Network */,
 				F426FEB823F4F7E600BFDA3B /* CustomUIElement */,
 				F46180D523FE3CC900D303F8 /* PloneResource */,
@@ -1807,6 +1814,23 @@
 				F4FC41A5238E75FB00AC7315 /* PloneContent */,
 			);
 			path = PloneItem;
+			sourceTree = "<group>";
+		};
+		F4D06873255D1A4800F7B3F8 /* HTTPLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F4D06874255D1A4800F7B3F8 /* PloneAPI */,
+			);
+			path = HTTPLayer;
+			sourceTree = "<group>";
+		};
+		F4D06874255D1A4800F7B3F8 /* PloneAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */,
+				F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */,
+			);
+			path = PloneAPI;
 			sourceTree = "<group>";
 		};
 		F4DDFDC223D69C5700B5802B /* Model */ = {
@@ -2070,6 +2094,7 @@
 				F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
 				F46180C723FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
+				F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
 				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */,
@@ -2152,6 +2177,7 @@
 				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
 				F43AFC7A23E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
 				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
+				F4D0687A255D1A4800F7B3F8 /* PloneAPI.swift in Sources */,
 				F44E8CB023B88AA30032C6BE /* ModelLoadable.swift in Sources */,
 				F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */,
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
@@ -2227,6 +2253,7 @@
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
 				F46180C623FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
+				F4D06877255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
 				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
@@ -2309,6 +2336,7 @@
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
 				F454486C23A20EE3001B8D31 /* LanguageViewModel.swift in Sources */,
+				F4D06879255D1A4800F7B3F8 /* PloneAPI.swift in Sources */,
 				F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */,
 				F4544846239D01C8001B8D31 /* PortalControllable.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
@@ -2401,7 +2429,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "-D PRODUCTION_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2425,7 +2453,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "-D PRODUCTION_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				PROVISIONING_PROFILE_SPECIFIER = "KKPortal-Provisioning-Profile-p";
@@ -2568,7 +2596,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "-D SIT_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2591,7 +2619,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "-D SIT_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;
