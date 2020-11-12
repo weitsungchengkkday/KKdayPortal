@@ -5,13 +5,6 @@ use_frameworks!
 workspace 'KKdayPortal.xcworkspace'
 
 def shared
-  # UI
-  pod 'SnapKit', '~> 5.0.1'
-
-  # Firebase 
-  pod 'Firebase/Core', '~> 6.13.0'
-  pod 'Fabric', '~> 1.10.2'
-  pod 'Crashlytics', '~> 3.14.0'
 
   # Rx
   pod 'RxCocoa', '~> 4.5.0'
@@ -23,7 +16,6 @@ def shared
   # HTML Parsing
   pod 'SwiftSoup', '~> 2.3.0'
   pod 'HTMLString', '~> 5.0.0'
-  
   
 end
 

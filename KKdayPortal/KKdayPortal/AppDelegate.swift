@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("❗️target not exist")
     
 #endif
-  
+
 #if DEBUG
     print("🐛 Debug")
     

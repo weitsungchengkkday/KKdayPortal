@@ -17,7 +17,7 @@ struct GeneralTextObjectConverter {
 extension GeneralTextObjectConverter {
     
     static func generalTextObjectToGeneralTextObjectSectionArray(textObject: GeneralTextObject) -> [GeneralTextObjectSection] {
-        
+
         guard let textObjectText = textObject.text else {
             return []
         }
