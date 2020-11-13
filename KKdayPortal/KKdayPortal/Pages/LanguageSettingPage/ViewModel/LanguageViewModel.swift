@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class LanguageViewModel: RXViewModelType {
+final class LanguageViewModel: ViewModelType {
     
     typealias CellViewModel = LanguageSettingTableViewCellViewModel
        

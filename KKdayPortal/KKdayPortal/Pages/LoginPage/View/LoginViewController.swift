@@ -139,8 +139,8 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func goLoginInfoPage() {
-        let viewModel = LoginInfoViewModel()
-        let presentViewController = LoginInfoViewController(viewModel: viewModel)
+        let viewModel = SigninInfoViewModel()
+        let presentViewController = SigninInfoViewController(viewModel: viewModel)
         present(presentViewController, animated: true, completion: nil)
     }
     

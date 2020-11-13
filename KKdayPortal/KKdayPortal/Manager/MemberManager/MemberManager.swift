@@ -73,7 +73,7 @@ final class MemberManager {
     // Must clear UserDefualt after logout request finishing, or it might cause logout error
     private func logoutHandler() {
 
-        // 👶🏻 Restart from login page
+        // 👶🏻 Restart from signin page
         let loginController = LoginViewController(viewModel: LoginViewModel())
         Utilities.appDelegateWindow?.rootViewController = loginController
         
@@ -107,7 +107,7 @@ final class MemberManager {
     
     private func logoutForSwitchServerHandler() {
         
-        // 👶🏻 Restart from login page
+        // 👶🏻 Restart from signin page
         let loginController = LoginViewController(viewModel: LoginViewModel())
         Utilities.appDelegateWindow?.rootViewController = loginController
         

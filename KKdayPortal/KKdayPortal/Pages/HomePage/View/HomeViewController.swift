@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, Localizable {
             rootURL = URL(string: ConfigManager.shared.model.host + "/Plone" + "/zh-tw")!
             
         case .normal(url: let url):
-            rootURL = URL(string: url.absoluteString + "/zh-tw")!
+            rootURL = URL(string: "https://" + url.absoluteString + "/Plone/zh-tw")!
             
         case .none:
             print("❌, resourceType must be defined")

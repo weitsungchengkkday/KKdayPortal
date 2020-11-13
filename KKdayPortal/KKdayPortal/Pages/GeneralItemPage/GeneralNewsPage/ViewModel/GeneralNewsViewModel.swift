@@ -9,7 +9,7 @@ import RxSwift
 import RxCocoa
 import Alamofire
 
-final class GeneralNewsViewModel: RXViewModelType, PortalControllable {
+final class GeneralNewsViewModel: ViewModelType, PortalControllable {
     
     typealias PortalContent = GeneralItem
     

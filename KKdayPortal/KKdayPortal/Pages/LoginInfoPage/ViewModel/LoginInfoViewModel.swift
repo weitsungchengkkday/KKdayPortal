@@ -6,29 +6,29 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
-import Foundation
-
-final class LoginInfoViewModel: RXViewModelType {
-    
-    private let disposeBag = DisposeBag()
-    
-    var input: LoginInfoViewModel.Input
-    var output: LoginInfoViewModel.Output
-    
-    struct Input {
-        let isEnterTextCorrect: AnyObserver<Bool>
-    }
-    
-    struct Output {
-        let showIsEnterTextCorrect: Driver<Bool>
-    }
-    
-    let isEnterTextCorrectSubject = PublishSubject<Bool>()
-    
-    init() {
-        self.input = Input(isEnterTextCorrect: isEnterTextCorrectSubject.asObserver())
-        self.output = Output(showIsEnterTextCorrect: isEnterTextCorrectSubject.asDriver(onErrorJustReturn: false))
-    }
-}
+//import RxSwift
+//import RxCocoa
+//import Foundation
+//
+//final class LoginInfoViewModel: ViewModelType {
+//    
+//    private let disposeBag = DisposeBag()
+//    
+//    var input: LoginInfoViewModel.Input
+//    var output: LoginInfoViewModel.Output
+//    
+//    struct Input {
+//        let isEnterTextCorrect: AnyObserver<Bool>
+//    }
+//    
+//    struct Output {
+//        let showIsEnterTextCorrect: Driver<Bool>
+//    }
+//    
+//    let isEnterTextCorrectSubject = PublishSubject<Bool>()
+//    
+//    init() {
+//        self.input = Input(isEnterTextCorrect: isEnterTextCorrectSubject.asObserver())
+//        self.output = Output(showIsEnterTextCorrect: isEnterTextCorrectSubject.asDriver(onErrorJustReturn: false))
+//    }
+//}

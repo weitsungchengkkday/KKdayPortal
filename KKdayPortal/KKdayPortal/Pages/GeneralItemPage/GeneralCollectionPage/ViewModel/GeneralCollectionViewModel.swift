@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import SwiftSoup
 
-final class GeneralCollectionViewModel: RXViewModelType, PortalControllable {
+final class GeneralCollectionViewModel: ViewModelType, PortalControllable {
     
     typealias PortalContent = GeneralItem
     

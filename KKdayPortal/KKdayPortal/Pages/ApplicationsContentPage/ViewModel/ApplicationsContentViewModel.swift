@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class ApplicationsContentViewModel: RXViewModelType, PortalControllable {
+final class ApplicationsContentViewModel: ViewModelType, PortalControllable {
     
     typealias PortalContent = GeneralItem
     

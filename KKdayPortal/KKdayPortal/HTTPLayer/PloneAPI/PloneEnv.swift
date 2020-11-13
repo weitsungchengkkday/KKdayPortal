@@ -16,6 +16,4 @@ extension ServerEnvironment {
     
     static let PlonePro = ServerEnvironment(host: "eip.kkday.net", pathPrefix: "/Plone", headers: ["Accept" : "application/json", "Content-Type": "application/json"], query: [])
     
-    
-    
 }

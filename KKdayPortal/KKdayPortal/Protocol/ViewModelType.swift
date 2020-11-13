@@ -6,7 +6,7 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-protocol RXViewModelType {
+protocol ViewModelType {
     associatedtype Input
     associatedtype Output
     
