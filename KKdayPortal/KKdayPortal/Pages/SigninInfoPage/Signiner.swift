@@ -21,7 +21,7 @@ final class Signiner {
     func signin(url: URL, account: String, password: String) {
 
         let sessionLoader = URLSessionLoader()
-        let api = PloneAPI(loader: sessionLoader)
+        let api = PloneUserAPI(loader: sessionLoader)
         
         api.signin(url: url, account: account, password: password) { [weak self] generalUserResult in
             

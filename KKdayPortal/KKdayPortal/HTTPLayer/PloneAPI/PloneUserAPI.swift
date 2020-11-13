@@ -9,7 +9,7 @@
 import Foundation
 import DolphinHTTP
 
-final class PloneAPI {
+final class PloneUserAPI {
     
     private let loader: HTTPLoader
     
@@ -85,15 +85,22 @@ final class PloneAPI {
         
     }
     
-    func logout() {
-        var r = HTTPRequest()
-        r.path = "/@logout"
-        r.method = .post
-      
+    // Plone Logout API Not Work
+    // Just Clear Plone related Data in APP
+    func signout(account: String, token: String, completion: @escaping (Result<GeneralUser, DolphinHTTP.HTTPError>) -> Void) {
+        
+        let user: GeneralUser? = StorageManager.shared.load(for: .generalUser)
+        let r = HTTPRequest()
+        
+        guard let genernalUser = user else {
+            let error = DolphinHTTP.HTTPError(code: .invalidResponse, request: r, response: nil, underlyingError: nil)
+            completion(.failure(error))
+            return
+        }
+
+        completion(.success(genernalUser))
     }
     
-    func getPloneItem(compeletion: (GeneralItem)->  Void) {
-           
-        
-    }
 }
+
+

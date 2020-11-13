@@ -56,13 +56,17 @@ final class MemberManager {
     
     func logout(disposeBag: DisposeBag) {
         
+//        debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
+//        logoutHandler()
+        
+        
         // Logout from Plone
         ModelLoader.PortalLoader()
             .logout()
             .subscribe(onSuccess: { [weak self] generalUser in
                 debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
                 self?.logoutHandler()
-    
+
             }) { [weak self] error in
                 debugPrint("🚨 logout -> error is \(error)")
                 self?.logoutHandler()

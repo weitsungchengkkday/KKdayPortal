@@ -70,7 +70,6 @@ class HomeViewController: UIViewController, Localizable {
             return
         }
         
-        
         let viewModel = GeneralRootWithLanguageDocumentViewModel(source: rootURL)
         let childViewController = GeneralRootWithLanguageDocumentViewController(viewModel: viewModel)
         addChild(childViewController)

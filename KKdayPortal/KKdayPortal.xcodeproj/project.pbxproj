@@ -257,10 +257,6 @@
 		F4603C5023C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift */; };
 		F46180B923F9722F00D303F8 /* PloneEmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180B823F9722F00D303F8 /* PloneEmptyData.swift */; };
 		F46180BA23F9722F00D303F8 /* PloneEmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180B823F9722F00D303F8 /* PloneEmptyData.swift */; };
-		F46180C123FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */; };
-		F46180C223FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */; };
-		F46180C623FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */; };
-		F46180C723FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */; };
 		F46180CD23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */; };
 		F46180CE23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */; };
 		F46180D123FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */; };
@@ -269,8 +265,6 @@
 		F46180D823FE3DB200D303F8 /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
 		F46180DC23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
 		F46180DD23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
-		F46180E623FFEF1C00D303F8 /* Loginer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180E523FFEF1C00D303F8 /* Loginer.swift */; };
-		F46180E723FFEF1C00D303F8 /* Loginer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180E523FFEF1C00D303F8 /* Loginer.swift */; };
 		F46180EE2402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
 		F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
 		F46180F82403797200D303F8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
@@ -311,14 +305,16 @@
 		F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
 		F4B3F340238BC60D00657CDF /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
 		F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneItem.swift */; };
+		F4C4FCE2255E9732001ADF72 /* PloneItemsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */; };
+		F4C4FCE3255E9732001ADF72 /* PloneItemsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */; };
 		F4D0680C255CCFF000F7B3F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0680B255CCFF000F7B3F8 /* SnapKit */; };
 		F4D06810255CCFFD00F7B3F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0680F255CCFFD00F7B3F8 /* SnapKit */; };
 		F4D06838255CD2AB00F7B3F8 /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = F4D06837255CD2AB00F7B3F8 /* DolphinHTTP */; };
 		F4D0683C255CD2D500F7B3F8 /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0683B255CD2D500F7B3F8 /* DolphinHTTP */; };
 		F4D06877255D1A4800F7B3F8 /* PloneEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */; };
 		F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */; };
-		F4D06879255D1A4800F7B3F8 /* PloneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */; };
-		F4D0687A255D1A4800F7B3F8 /* PloneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */; };
+		F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */; };
+		F4D0687A255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */; };
 		F4D06882255D24B200F7B3F8 /* Signiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06881255D24B200F7B3F8 /* Signiner.swift */; };
 		F4D06883255D24B200F7B3F8 /* Signiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06881255D24B200F7B3F8 /* Signiner.swift */; };
 		F4D068A3255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */; };
@@ -481,13 +477,10 @@
 		F45C2C4323BCD8AD00A1E769 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		F4603C4F23C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersNormalTableViewCell.swift; sourceTree = "<group>"; };
 		F46180B823F9722F00D303F8 /* PloneEmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneEmptyData.swift; sourceTree = "<group>"; };
-		F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
-		F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewModel.swift; sourceTree = "<group>"; };
 		F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanButtonTextField.swift; sourceTree = "<group>"; };
 		F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogglePasswordTextField.swift; sourceTree = "<group>"; };
 		F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceManager.swift; sourceTree = "<group>"; };
 		F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceType.swift; sourceTree = "<group>"; };
-		F46180E523FFEF1C00D303F8 /* Loginer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loginer.swift; sourceTree = "<group>"; };
 		F46180ED2402968100D303F8 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		F46180F72403797200D303F8 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		F46180FE2403806D00D303F8 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -518,8 +511,9 @@
 		F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneAuthToken.swift; sourceTree = "<group>"; };
 		F4B3F33F238BC60D00657CDF /* PloneFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFolder.swift; sourceTree = "<group>"; };
 		F4B3F343238BDF0900657CDF /* PloneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneItem.swift; sourceTree = "<group>"; };
+		F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneItemsAPI.swift; sourceTree = "<group>"; };
 		F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloneEnv.swift; sourceTree = "<group>"; };
-		F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloneAPI.swift; sourceTree = "<group>"; };
+		F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloneUserAPI.swift; sourceTree = "<group>"; };
 		F4D06881255D24B200F7B3F8 /* Signiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signiner.swift; sourceTree = "<group>"; };
 		F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninInfoViewModel.swift; sourceTree = "<group>"; };
 		F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninInfoViewController.swift; sourceTree = "<group>"; };
@@ -1552,32 +1546,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F46180BD23FBEC5600D303F8 /* LoginInfoPage */ = {
-			isa = PBXGroup;
-			children = (
-				F46180E523FFEF1C00D303F8 /* Loginer.swift */,
-				F46180BF23FBECB600D303F8 /* ViewModel */,
-				F46180BE23FBECAE00D303F8 /* View */,
-			);
-			path = LoginInfoPage;
-			sourceTree = "<group>";
-		};
-		F46180BE23FBECAE00D303F8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F46180C023FBECEE00D303F8 /* LoginInfoViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F46180BF23FBECB600D303F8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F46180C523FBED2100D303F8 /* LoginInfoViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		F46180CA23FCDB3A00D303F8 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1718,7 +1686,6 @@
 				F457417623D55E8C00FB5EEC /* TestingPage */,
 				F4B3F30423863C9100657CDF /* LoginPage */,
 				F4D06888255D306C00F7B3F8 /* SigninInfoPage */,
-				F46180BD23FBEC5600D303F8 /* LoginInfoPage */,
 				F46180EA2402961100D303F8 /* IntroductionPage */,
 				F454DF1B240F8C0200C05CF9 /* PloneIntroductionPage */,
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
@@ -1837,7 +1804,8 @@
 		F4D06874255D1A4800F7B3F8 /* PloneAPI */ = {
 			isa = PBXGroup;
 			children = (
-				F4D06876255D1A4800F7B3F8 /* PloneAPI.swift */,
+				F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */,
+				F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */,
 				F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */,
 			);
 			path = PloneAPI;
@@ -2129,7 +2097,6 @@
 				F43AFC5623E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */,
 				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
-				F46180C723FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
 				F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
 				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */,
@@ -2146,7 +2113,6 @@
 				F46180D823FE3DB200D303F8 /* PloneResourceManager.swift in Sources */,
 				F44E8C8023B88AA30032C6BE /* MainViewController.swift in Sources */,
 				F457417223D5525F00FB5EEC /* ServerType.swift in Sources */,
-				F46180C223FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */,
 				F44E8C8123B88AA30032C6BE /* SettingViewModel.swift in Sources */,
 				F43AFC5E23E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
 				F44E8C8323B88AA30032C6BE /* PloneNews.swift in Sources */,
@@ -2180,7 +2146,6 @@
 				F44E8C9923B88AA30032C6BE /* CodableResponseType.swift in Sources */,
 				F44E8C9A23B88AA30032C6BE /* ApplicationsEntryViewController.swift in Sources */,
 				F43AFC8823E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
-				F46180E723FFEF1C00D303F8 /* Loginer.swift in Sources */,
 				F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */,
@@ -2216,7 +2181,7 @@
 				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
 				F43AFC7A23E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
 				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
-				F4D0687A255D1A4800F7B3F8 /* PloneAPI.swift in Sources */,
+				F4D0687A255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F44E8CB023B88AA30032C6BE /* ModelLoadable.swift in Sources */,
 				F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */,
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
@@ -2241,6 +2206,7 @@
 				F44E8CC623B88AA30032C6BE /* GeneralLinkViewController.swift in Sources */,
 				F453953723BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F44E8CC723B88AA30032C6BE /* GeneralFolderViewController.swift in Sources */,
+				F4C4FCE3255E9732001ADF72 /* PloneItemsAPI.swift in Sources */,
 				F457416823D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				F45740E023D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
@@ -2291,7 +2257,6 @@
 				F43AFC8123E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
-				F46180C623FBED2100D303F8 /* LoginInfoViewModel.swift in Sources */,
 				F4D06877255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
 				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
@@ -2307,7 +2272,6 @@
 				F4D06882255D24B200F7B3F8 /* Signiner.swift in Sources */,
 				F457416223D5462C00FB5EEC /* ConfigManager.swift in Sources */,
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
-				F46180C123FBECEE00D303F8 /* LoginInfoViewController.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
 				F43AFC8723E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */,
@@ -2342,7 +2306,6 @@
 				F45447E12399632E001B8D31 /* RepositoryManageable.swift in Sources */,
 				F4B3F3012386386900657CDF /* PortalViewController.swift in Sources */,
 				F4B3F3292387C16D00657CDF /* CodableResponseType.swift in Sources */,
-				F46180E623FFEF1C00D303F8 /* Loginer.swift in Sources */,
 				F45448AB23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift in Sources */,
 				F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */,
 				F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */,
@@ -2378,7 +2341,7 @@
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
 				F454486C23A20EE3001B8D31 /* LanguageViewModel.swift in Sources */,
-				F4D06879255D1A4800F7B3F8 /* PloneAPI.swift in Sources */,
+				F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */,
 				F4544846239D01C8001B8D31 /* PortalControllable.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
@@ -2403,6 +2366,7 @@
 				F454487F23A39956001B8D31 /* LanguageCellViewModel.swift in Sources */,
 				F45447F0239AB75D001B8D31 /* GeneralTextObject.swift in Sources */,
 				F4544840239CADE4001B8D31 /* GeneralLinkViewController.swift in Sources */,
+				F4C4FCE2255E9732001ADF72 /* PloneItemsAPI.swift in Sources */,
 				F44A198B23C48BF000B35976 /* PloneLRF.swift in Sources */,
 				F453953623BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */,
