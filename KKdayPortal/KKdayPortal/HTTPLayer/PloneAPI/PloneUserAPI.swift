@@ -37,7 +37,6 @@ final class PloneUserAPI {
         r.body = DataBody(jsonData)
         r.method = .post
       
-       
         loader.load(request: r) { result in
             
             switch result {
@@ -68,7 +67,6 @@ final class PloneUserAPI {
                     }
                     
                 default:
-                    print(response.status)
                     let error =  DolphinHTTP.HTTPError(code: DolphinHTTP.HTTPError.Code.invalidResponse, request: r, response: nil, underlyingError: nil)
                     completion(.failure(error))
                 }

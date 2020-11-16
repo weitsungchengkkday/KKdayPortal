@@ -50,86 +50,158 @@ final class GeneralRootWithLanguageDocumentViewModel: ViewModelType {
     }
     
     
-//    func loadPortalData() {
-//
-//    }
-//
-    
-    func getPortalData() {
-        
+    func loadPortalData() {
         LoadingManager.shared.setState(state: .normal(value: true))
         
         ModelLoader.PortalLoader()
-            .getItem(source: source, type: .root_with_language)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
+            .loadItem(source: source, type: .root_with_language) { [weak self] result in
                 
-                LoadingManager.shared.setState(state: .normal(value: false))
-                
-                guard let generalItem = generalItem as? GeneralList else {
-                    return
-                }
-                
-                self?.generalItem = generalItem
-                
-                if let items = generalItem.items {
-                    let documentItem = items.filter ({ $0.type == .document })
+                switch result {
+                case .success(let generalItem):
                     
-                    self?.generalItemDocument = documentItem.first
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                    
+                    guard let generalItem = generalItem as? GeneralList else {
+                        return
+                    }
+                    
+                    self?.generalItem = generalItem
+                    
+                    if let items = generalItem.items {
+                        let documentItem = items.filter ({ $0.type == .document })
+                        
+                        self?.generalItemDocument = documentItem.first
+                    }
+                    self?.loadPortalDocumentData()
+                    
+                case .failure(let error):
+                    
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    LoadingManager.shared.setState(state: .normal(value: false))
                 }
-                self?.getPortalDocumentData()
-                
-            }) { error in
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-                
-                LoadingManager.shared.setState(state: .normal(value: false))
-        }
-        .disposed(by: disposeBag)
+            }
     }
     
-    private func getPortalDocumentData() {
-        
+    private func loadPortalDocumentData() {
         guard let source = generalItemDocument?.source else {
             return
         }
         
-        LoadingManager.shared.setState(state: .normal(value: true))
-        
         ModelLoader.PortalLoader()
-            .getItem(source: source, type: .document)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
+            .loadItem(source: source, type: .document) { [weak self] result in
                 
-                LoadingManager.shared.setState(state: .normal(value: false))
+                LoadingManager.shared.setState(state: .normal(value: true))
                 
-                if let generalItemSource = generalItem.source,
-                    let generalItemDocumentSource = self?.generalItemDocument?.source,
-                    generalItemSource == generalItemDocumentSource {
+                switch result {
+                case .success(let generalItem):
+                    LoadingManager.shared.setState(state: .normal(value: false))
                     
-                    self?.generalItemDocument = generalItem
-                    
-                    if let title = generalItem.title {
-                        self?.documentTitleSubject.onNext(title)
-                    }
-                    
-                    if let description = generalItem.description {
-                        self?.documentDescriptionSubject.onNext(description)
-                    }
-                    
-                    if let textObject = generalItem.textObject {
+                    if let generalItemSource = generalItem.source,
+                        let generalItemDocumentSource = self?.generalItemDocument?.source,
+                        generalItemSource == generalItemDocumentSource {
                         
-                        let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
-                        self?.documentGeneralTextObjectItemsSubject.onNext(generalTextObjectSections)
+                        self?.generalItemDocument = generalItem
+                        
+                        if let title = generalItem.title {
+                            self?.documentTitleSubject.onNext(title)
+                        }
+                        
+                        if let description = generalItem.description {
+                            self?.documentDescriptionSubject.onNext(description)
+                        }
+                        
+                        if let textObject = generalItem.textObject {
+                            
+                            let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+                            self?.documentGeneralTextObjectItemsSubject.onNext(generalTextObjectSections)
+                        }
                     }
-                }
-                
-            }) { error in
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-                
-                LoadingManager.shared.setState(state: .normal(value: false))
+                case .failure(let error):
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    
+                    LoadingManager.shared.setState(state: .normal(value: false))
+            }
         }
-        .disposed(by: disposeBag)
+        
     }
+    
+//    func getPortalData() {
+//
+//        LoadingManager.shared.setState(state: .normal(value: true))
+//
+//        ModelLoader.PortalLoader()
+//            .getItem(source: source, type: .root_with_language)
+//            .subscribeOn(MainScheduler.instance)
+//            .subscribe(onSuccess: { [weak self] generalItem in
+//
+//                LoadingManager.shared.setState(state: .normal(value: false))
+//
+//                guard let generalItem = generalItem as? GeneralList else {
+//                    return
+//                }
+//
+//                self?.generalItem = generalItem
+//
+//                if let items = generalItem.items {
+//                    let documentItem = items.filter ({ $0.type == .document })
+//
+//                    self?.generalItemDocument = documentItem.first
+//                }
+//                self?.getPortalDocumentData()
+//
+//            }) { error in
+//                print("🚨 Func: \(#file),\(#function)")
+//                print("Error: \(error)")
+//
+//                LoadingManager.shared.setState(state: .normal(value: false))
+//        }
+//        .disposed(by: disposeBag)
+//    }
+    
+//    private func getPortalDocumentData() {
+//
+//        guard let source = generalItemDocument?.source else {
+//            return
+//        }
+//
+//        LoadingManager.shared.setState(state: .normal(value: true))
+//
+//        ModelLoader.PortalLoader()
+//            .getItem(source: source, type: .document)
+//            .subscribeOn(MainScheduler.instance)
+//            .subscribe(onSuccess: { [weak self] generalItem in
+//
+//                LoadingManager.shared.setState(state: .normal(value: false))
+//
+//                if let generalItemSource = generalItem.source,
+//                    let generalItemDocumentSource = self?.generalItemDocument?.source,
+//                    generalItemSource == generalItemDocumentSource {
+//
+//                    self?.generalItemDocument = generalItem
+//
+//                    if let title = generalItem.title {
+//                        self?.documentTitleSubject.onNext(title)
+//                    }
+//
+//                    if let description = generalItem.description {
+//                        self?.documentDescriptionSubject.onNext(description)
+//                    }
+//
+//                    if let textObject = generalItem.textObject {
+//
+//                        let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+//                        self?.documentGeneralTextObjectItemsSubject.onNext(generalTextObjectSections)
+//                    }
+//                }
+//
+//            }) { error in
+//                print("🚨 Func: \(#file),\(#function)")
+//                print("Error: \(error)")
+//
+//                LoadingManager.shared.setState(state: .normal(value: false))
+//        }
+//        .disposed(by: disposeBag)
+//    }
 }

@@ -100,7 +100,7 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
         
         setupUI()
         bindViewModel()
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
