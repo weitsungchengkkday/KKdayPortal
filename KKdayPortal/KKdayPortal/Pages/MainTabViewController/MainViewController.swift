@@ -87,6 +87,6 @@ final class MainViewController: UITabBarController {
     }
     
     func logout() {
-        MemberManager.shared.logoutForSwitchServer(disposeBag: disposeBag)
+        MemberManager.shared.logoutForSwitchServer()
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import DolphinHTTP
 
 enum ModelLoader {
     
@@ -16,20 +17,14 @@ enum ModelLoader {
         
         typealias Repository = WebPloneRepository
         
-        func login(account: String, password: String) -> Single<Repository.User> {
-            return Repository().login(account: account, password: password)
-        }
-        
-        func renewToken() -> Single<Repository.User?> {
-            return Repository().renewToken()
-        }
-        
-        func logout() -> Single<Repository.User?> {
-            return Repository().logout()
+        func loadItem(source: URL, type: GeneralItemType, completion: @escaping (Result<GeneralItem, DolphinHTTP.HTTPError>) -> Void) {
+            return Repository(source: source).loadItem(generalItemType: type, completion: completion)
         }
         
         func getItem(source: URL, type: GeneralItemType) -> Single<Repository.Item> {
             return Repository(source: source).getItem(generalItemType: type)
         }
+        
+        
     }
 }

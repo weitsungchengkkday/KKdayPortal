@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import DolphinHTTP
 
 protocol RepositoryManageable {
     
@@ -16,14 +17,8 @@ protocol RepositoryManageable {
     associatedtype Item
     static var baseURL: URL { get }
     
-    // 👤 Authentication
-    func login(account: String, password: String) -> Single<User>
-    func renewToken() -> Single<User?>
-    func logout() -> Single<User?>
-     
-    // 🎛 CRUD
     func getItem(generalItemType: GeneralItemType) -> Single<Item>
-    func create()
-    func update(item: Item)
-    func delete(item: Item)
+    
+    func loadItem(generalItemType: GeneralItemType, completion: @escaping (Result<Item, DolphinHTTP.HTTPError>) -> Void)
+
 }

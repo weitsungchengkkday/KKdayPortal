@@ -43,7 +43,7 @@ final class MemberManager {
             if let error = alertErrorInfo.error as? HTTPError {
                 switch error {
                 case .unauthorized, .forbidden, .notFound, .clientError:
-                    self?.logout(disposeBag: disposeBag)
+                    self?.logout()
                 default:
                     break
                 }
@@ -54,24 +54,10 @@ final class MemberManager {
         presentedViewController.present(alertControlloer, animated: true, completion: nil)
     }
     
-    func logout(disposeBag: DisposeBag) {
+    func logout() {
         
-//        debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
-//        logoutHandler()
-        
-        
-        // Logout from Plone
-        ModelLoader.PortalLoader()
-            .logout()
-            .subscribe(onSuccess: { [weak self] generalUser in
-                debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
-                self?.logoutHandler()
-
-            }) { [weak self] error in
-                debugPrint("🚨 logout -> error is \(error)")
-                self?.logoutHandler()
-        }
-        .disposed(by: disposeBag)
+        logoutHandler()
+ 
     }
     
     // Must clear UserDefualt after logout request finishing, or it might cause logout error
@@ -92,20 +78,9 @@ final class MemberManager {
         LanguageManager.shared.setup()
     }
     
-    func logoutForSwitchServer(disposeBag: DisposeBag) {
+    func logoutForSwitchServer() {
         
-        // Logout from Plone
-        ModelLoader.PortalLoader()
-            .logout()
-            .subscribe(onSuccess: { [weak self] generalUser in
-                debugPrint("👥 Logout -> General User: \(String(describing: generalUser))")
-                self?.logoutForSwitchServerHandler()
-                
-            }) { [weak self] error in
-                debugPrint("🚨 logout -> error is \(error)")
-                self?.logoutForSwitchServerHandler()
-        }
-        .disposed(by: disposeBag)
+        logoutForSwitchServerHandler()
         
     }
     

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import DolphinHTTP
 
 final class WebPloneRepository: RepositoryManageable {
     
@@ -55,54 +56,98 @@ final class WebPloneRepository: RepositoryManageable {
         self.source = source
     }
     
-    func login(account: String, password: String) -> Single<User> {
-        
-        let signInRequest = PortalUser.Login(account: account, password: password, route: source)
-        let response = apiManager
-            .request(signInRequest)
-            .map { ploneAuthToken -> User in
-                
-                return User(account: account,
-                            token: ploneAuthToken.token)
-        }
-        return response
-    }
     
-    func renewToken() -> Single<User?> {
-        
-        let renewGeneralUser: User? = user
-        let renewPloneUser: PloneUser? = ploneUser
-        
-        let renewTokenRequest = PortalUser.RenewToken(user: renewPloneUser, route: source)
-        let response = apiManager.request(renewTokenRequest)
-            .map { ploneAuthToken -> User? in
-                
-                guard let renewGeneralUser = renewGeneralUser else {
-                    return nil
-                }
-                
-                return User(account: renewGeneralUser.account,
-                            token: ploneAuthToken.token)
-        }
-        
-        return response
-    }
-    
-    func logout() -> Single<User?> {
-       
-        let logoutGeneralUser: User? = user
-        let logoutRequest = PortalUser.Logout(user: ploneUser, route: source)
-        
-        return apiManager.request(logoutRequest)
-            .map { ploneNoInfo -> User? in
+    func loadItem(generalItemType: GeneralItemType, completion: @escaping (Result<GeneralItem, DolphinHTTP.HTTPError>) -> Void) {
 
-                guard let logoutGeneralUser = logoutGeneralUser else {
-                    return nil
-                }
-                
-                return User(account: logoutGeneralUser.account,
-                            token: "")
-        }
+        let ploneItemType = ItemConverter.typeTransfer(generalItemType: generalItemType)
+        
+//        switch ploneItemType {
+//        case .lrf:
+//
+//            let api = PloneItemsAPI().getPloneItem(user: <#T##PloneUser#>, route: <#T##URL#>, compeletion: <#T##(PloneItem) -> Void#>)
+//
+//
+//            let ploneLrfRequest = PortalItem.Item<PloneLRF>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneLrfRequest)
+//            return response
+//                .map({ ploneLrf -> GeneralItem in
+//                              return ItemConverter.ploneItemToGeneralItem(item: ploneLrf)
+//                          })
+//
+//        case .ploneSite:
+//            let ploneRootRequest = PortalItem.Item<PloneSiteItem>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneRootRequest)
+//            return response
+//                .map({ ploneRoot -> GeneralItem in
+//                    return ItemConverter.ploneItemToGeneralItem(item: ploneRoot)
+//                })
+//
+//        case .folder:
+//            let ploneFolderRequest = PortalItem.Item<PloneFolder>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneFolderRequest)
+//            return response
+//                .map({ ploneFolder -> GeneralItem in
+//                    ItemConverter.ploneItemToGeneralItem(item: ploneFolder)
+//                })
+//
+//        case .document:
+//            let ploneDocumentRequest = PortalItem.Item<PloneDocument>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneDocumentRequest)
+//            return response
+//                .map({ ploneDocument -> GeneralItem in
+//                    ItemConverter.ploneItemToGeneralItem(item: ploneDocument)
+//                })
+//
+//        case .news:
+//            let ploneNewsRequest = PortalItem.Item<PloneNews>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneNewsRequest)
+//            return response
+//                .map({ ploneNews -> GeneralItem in
+//                    ItemConverter.ploneItemToGeneralItem(item: ploneNews)
+//                })
+//
+//        case .event:
+//            let ploneEventRequest = PortalItem.Item<PloneEvent>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneEventRequest)
+//            return response
+//                .map({ ploneEvent -> GeneralItem in
+//                    ItemConverter.ploneItemToGeneralItem(item: ploneEvent)
+//                })
+//
+//        case .image:
+//            let ploneImageRequest = PortalItem.Item<PloneImage>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneImageRequest)
+//            return response
+//                .map({ ploneImage -> GeneralItem in
+//                    ItemConverter.ploneItemToGeneralItem(item: ploneImage)
+//                })
+//
+//        case .file:
+//            let ploneFileRequest = PortalItem.Item<PloneFile>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneFileRequest)
+//            return response
+//                .map({ ploneFile -> GeneralItem in
+//                    return ItemConverter.ploneItemToGeneralItem(item: ploneFile)
+//                })
+//
+//        case .link:
+//            let ploneLinkRequest = PortalItem.Item<PloneLink>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneLinkRequest)
+//            return response
+//                .map({ ploneLink -> GeneralItem in
+//                    ItemConverter.ploneItemToGeneralItem(item: ploneLink)
+//                })
+//
+//        case .collection:
+//            let ploneCollectionRequest = PortalItem.Item<PloneCollection>(user: ploneUser, route: source)
+//            let response = apiManager.request(ploneCollectionRequest)
+//            return response
+//                .map({ ploneCollection -> GeneralItem in
+//                    ItemConverter.ploneItemToGeneralItem(item: ploneCollection)
+//                })
+//        }
+//        
+        
     }
     
     func getItem(generalItemType: GeneralItemType) -> Single<Item> {
@@ -191,10 +236,6 @@ final class WebPloneRepository: RepositoryManageable {
                 })
         }
     }
-    
-    func create() {}
-    func update(item: Item) {}
-    func delete(item: Item) {}
 }
 
 

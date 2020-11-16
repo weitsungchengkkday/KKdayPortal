@@ -9,9 +9,9 @@
 import Foundation
 
 final class PloneItemsAPI {
-
-    func getPloneItem(compeletion: (GeneralItem)->  Void) {
- 
+    
+    func getPloneItem(user: PloneUser, route: URL, compeletion: (PloneItem)->  Void) {
+        
     }
     
 }

@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import DolphinHTTP
 
 final class GeneralRootWithLanguageDocumentViewModel: ViewModelType {
     
@@ -47,6 +48,12 @@ final class GeneralRootWithLanguageDocumentViewModel: ViewModelType {
         
         self.output = Output(showDocumentTitle: documentTitleSubject.asDriver(onErrorJustReturn: ""), showDocumentDescription: documentDescriptionSubject.asDriver(onErrorJustReturn: ""), showDocumentGeneralTextObjectItems: documentGeneralTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
     }
+    
+    
+//    func loadPortalData() {
+//
+//    }
+//
     
     func getPortalData() {
         
