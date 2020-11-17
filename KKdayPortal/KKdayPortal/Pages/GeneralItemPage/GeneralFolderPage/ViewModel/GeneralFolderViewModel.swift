@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class GeneralFolderViewModel: ViewModelType, PortalControllable {
+final class GeneralFolderViewModel {
     
     typealias PortalContent = GeneralItem
  

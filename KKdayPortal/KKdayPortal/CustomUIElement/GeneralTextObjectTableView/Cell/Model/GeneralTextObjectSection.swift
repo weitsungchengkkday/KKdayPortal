@@ -10,19 +10,7 @@ import RxDataSources
 
 struct GeneralTextObjectSection {
     let header: String
-    var items: [Item]
+    var items: [GeneralTextObjectSectionItem]
 }
 
-extension GeneralTextObjectSection: SectionModelType {
-    
-    typealias Item = GeneralTextObjectSectionItem
-    var identity: String {
-        return header
-    }
-    
-    init(original: Self, items: [Self.Item]) {
-        self = original
-        self.items = items
-    }
-}
 

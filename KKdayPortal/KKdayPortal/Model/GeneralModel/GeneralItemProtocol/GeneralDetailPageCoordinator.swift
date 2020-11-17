@@ -17,7 +17,7 @@ protocol GeneralDetailPageCoordinator where Self: UIViewController {
 
 extension GeneralDetailPageCoordinator {
     
-    func openDetailPage(route: URL, type: GeneralItemType) {
+   func openDetailPage(route: URL, type: GeneralItemType) {
         
         let barButtonItem = UIBarButtonItem()
         barButtonItem.title = ""

@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 import WebKit
 import SwiftSoup
-import RxDataSources
 
 final class GeneralRootWithLanguageDocumentViewController: UIViewController {
     
@@ -49,6 +46,10 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
     
     lazy var generalTextObjectTableView: UITableView = {
         let tbv = UITableView()
+        
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tbv.register(GeneralTextObjectNormalTableViewCell.self, forCellReuseIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.normal)
         tbv.register(GeneralTextObjectIFrameTableViewCell.self, forCellReuseIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.iframe)
@@ -58,32 +59,6 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
     }()
     
     private let viewModel: GeneralRootWithLanguageDocumentViewModel
-    private let disposeBag = DisposeBag()
-    
-    private lazy var generalTextObjectDataSource = {
-        return RxTableViewSectionedReloadDataSource<GeneralTextObjectSection>(configureCell: { [weak self] dataSource, tableView, indexPath, sectionItem in
-            
-            switch sectionItem {
-            case .normal(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
-                
-                cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
-                return cell
-                
-            case .iframe(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
-                cell.iframeTitleLabel.text = cellViewModel.title
-                cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
-                return cell
-                
-            case .image(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
-                cell.textObjectImageTitleLabel.text = cellViewModel.title
-                cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
-                return cell
-            }
-        })
-    }()
     
     init(viewModel: GeneralRootWithLanguageDocumentViewModel) {
         self.viewModel = viewModel
@@ -105,7 +80,7 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+          //  MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     
@@ -151,39 +126,57 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
         }
     }
     
-    // 🎬 set action
-    private func setAction() {
-        
-    }
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        
-        viewModel.output.showDocumentTitle
-            .do(onNext: { [weak self] text in
-                self?.topTitleLabel.isHidden = text.isEmpty
-            })
-            .drive(onNext: { [weak self] text in
-                self?.topTitleLabel.text = text
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showDocumentDescription
-            .do(onNext: { [weak self] text in
-                self?.descriptionTextView.isHidden = text.isEmpty
-            })
-            .drive(onNext: { [weak self] text in
-                self?.descriptionTextView.text = text
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showDocumentGeneralTextObjectItems
-            .do(onNext: { [weak self] generalItems in
-                self?.generalTextObjectTableView.isHidden = generalItems.isEmpty
-            })
-            .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
-            .disposed(by: disposeBag)
+        viewModel.updateDocumentContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateDocumentContent(viewModel: weakSelf.viewModel)
+        }
     }
+    
+    private func updateDocumentContent(viewModel: GeneralRootWithLanguageDocumentViewModel) {
+        self.topTitleLabel.text = viewModel.documentTitle
+        self.descriptionTextView.text = viewModel.documentDescription
+        self.generalTextObjectTableView.reloadData()
+    }
+    
 }
+ 
+extension GeneralRootWithLanguageDocumentViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return viewModel.documentGeneralTextObjectItems[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let section = viewModel.documentGeneralTextObjectItems[indexPath.section]
+        let items = section.items[indexPath.row]
+        
+        switch items {
+        case .normal(cellViewModel: let cellViewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
+            
+            cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
+            return cell
+            
+        case .iframe(cellViewModel: let cellViewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
+            cell.iframeTitleLabel.text = cellViewModel.title
+            cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
+            return cell
+            
+        case .image(cellViewModel: let cellViewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
+            cell.textObjectImageTitleLabel.text = cellViewModel.title
+            cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
+            return cell
+            
+        }
+    }
 
+}

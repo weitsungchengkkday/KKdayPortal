@@ -7,14 +7,10 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 import WebKit
 
 final class GeneralTextObjectIFrameTableViewCell: UITableViewCell {
-    
-    private(set) var disposeBag = DisposeBag()
     
     lazy var iframeTitleLabel: UILabel = {
         let lbl = UILabel()
@@ -50,8 +46,5 @@ final class GeneralTextObjectIFrameTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func prepareForReuse() {
-        disposeBag = DisposeBag()
-    }
+
 }

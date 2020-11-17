@@ -7,13 +7,9 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class GeneralTextObjectNormalTableViewCell: UITableViewCell {
-    
-    private(set) var disposeBag = DisposeBag()
     
     lazy var normalContentTextView: UITextView = {
         let txv = UITextView()
@@ -38,7 +34,4 @@ final class GeneralTextObjectNormalTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func prepareForReuse() {
-        disposeBag = DisposeBag()
-    }
 }

@@ -111,7 +111,6 @@
 		F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
 		F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
 		F44E8CB023B88AA30032C6BE /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
-		F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
 		F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
 		F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
 		F44E8CB523B88AA30032C6BE /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
@@ -194,7 +193,6 @@
 		F4544840239CADE4001B8D31 /* GeneralLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */; };
 		F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
 		F4544844239CAE04001B8D31 /* GeneralFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */; };
-		F4544846239D01C8001B8D31 /* PortalControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544845239D01C8001B8D31 /* PortalControllable.swift */; };
 		F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
 		F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */; };
 		F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
@@ -426,7 +424,6 @@
 		F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralLinkViewController.swift; sourceTree = "<group>"; };
 		F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFileViewModel.swift; sourceTree = "<group>"; };
 		F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFileViewController.swift; sourceTree = "<group>"; };
-		F4544845239D01C8001B8D31 /* PortalControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalControllable.swift; sourceTree = "<group>"; };
 		F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFolderViewModel.swift; sourceTree = "<group>"; };
 		F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFolderViewController.swift; sourceTree = "<group>"; };
 		F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFolderTableViewCell.swift; sourceTree = "<group>"; };
@@ -1192,7 +1189,6 @@
 			isa = PBXGroup;
 			children = (
 				F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */,
-				F4544845239D01C8001B8D31 /* PortalControllable.swift */,
 			);
 			path = GeneralItemProtocol;
 			sourceTree = "<group>";
@@ -2183,7 +2179,6 @@
 				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
 				F4D0687A255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F44E8CB023B88AA30032C6BE /* ModelLoadable.swift in Sources */,
-				F44E8CB123B88AA30032C6BE /* PortalControllable.swift in Sources */,
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */,
@@ -2343,7 +2338,6 @@
 				F454486C23A20EE3001B8D31 /* LanguageViewModel.swift in Sources */,
 				F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */,
-				F4544846239D01C8001B8D31 /* PortalControllable.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
 				F4B3BCB623F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
