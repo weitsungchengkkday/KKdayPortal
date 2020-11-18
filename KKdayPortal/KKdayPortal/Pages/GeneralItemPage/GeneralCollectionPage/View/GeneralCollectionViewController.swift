@@ -61,7 +61,6 @@ class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordi
         
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralCollectionTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.CellName)
-        tbv.tableFooterView = UIView()
         return tbv
     }()
     
@@ -74,7 +73,6 @@ class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordi
         tbv.register(GeneralTextObjectNormalTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.normal)
         tbv.register(GeneralTextObjectIFrameTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.iframe)
         tbv.register(GeneralTextObjectImageTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.image)
-        tbv.tableFooterView = UIView()
         return tbv
     }()
     
@@ -194,10 +192,20 @@ extension GeneralCollectionViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView == generalTextObjectTableView {
-            return viewModel.collectionGeneralTextObjectItems[section].items.count
+            
+            if viewModel.collectionGeneralTextObjectItems.isEmpty {
+                return 0
+            } else {
+                return viewModel.collectionGeneralTextObjectItems[section].items.count
+            }
             
         } else if tableView == itemsTableView {
-            return viewModel.generalItemsSubject.count
+            
+            if viewModel.generalItemsSubject.isEmpty {
+                return 0
+            } else {
+                return viewModel.generalItemsSubject.count
+            }
             
         } else {
             return 0
@@ -208,9 +216,9 @@ extension GeneralCollectionViewController: UITableViewDelegate, UITableViewDataS
         
         if tableView == generalTextObjectTableView {
             let section = viewModel.collectionGeneralTextObjectItems[indexPath.section]
-            let items = section.items[indexPath.row]
+            let item = section.items[indexPath.row]
             
-            switch items {
+            switch item {
             case .normal(let cellViewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
                 

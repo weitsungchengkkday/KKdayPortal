@@ -46,7 +46,6 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
     
     lazy var generalTextObjectTableView: UITableView = {
         let tbv = UITableView()
-        
         tbv.delegate = self
         tbv.dataSource = self
         
@@ -124,6 +123,7 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }
+        
     }
     
     
@@ -148,16 +148,21 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
 extension GeneralRootWithLanguageDocumentViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+   
+        if viewModel.documentGeneralTextObjectItems.count == 0 {
+            return 0
+        }
+     
         return viewModel.documentGeneralTextObjectItems[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+       
         let section = viewModel.documentGeneralTextObjectItems[indexPath.section]
-        let items = section.items[indexPath.row]
-        
-        switch items {
+        print(section)
+        let item = section.items[indexPath.row]
+        print(item)
+        switch item {
         case .normal(cellViewModel: let cellViewModel):
             let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageDocumentViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
             

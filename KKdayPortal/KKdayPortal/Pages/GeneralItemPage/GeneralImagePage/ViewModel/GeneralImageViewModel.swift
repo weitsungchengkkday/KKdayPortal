@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Alamofire
 
-final class GeneralImageViewModel: ViewModelType, PortalControllable {
+final class GeneralImageViewModel {
     
     typealias PortalContent = GeneralItem
     

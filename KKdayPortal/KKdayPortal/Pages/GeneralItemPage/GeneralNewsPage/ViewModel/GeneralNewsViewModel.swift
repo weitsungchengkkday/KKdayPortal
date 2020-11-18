@@ -5,90 +5,69 @@
 //  Created by WEI-TSUNG CHENG on 2019/12/8.
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
-import RxSwift
-import RxCocoa
+
+import Foundation
 import Alamofire
 
-final class GeneralNewsViewModel: ViewModelType, PortalControllable {
+final class GeneralNewsViewModel {
     
     typealias PortalContent = GeneralItem
     
-    var input: GeneralNewsViewModel.Input
-    var output: GeneralNewsViewModel.Output
+    var generalItem: PortalContent?
     
-    struct Input {
-        let title: AnyObserver<String>
-        let description: AnyObserver<String>
-        let image: AnyObserver<UIImage>
-        let generalTextObjectItems: AnyObserver<[GeneralTextObjectSection]>
-    }
+    private(set) var newsTitle: String = ""
+    private(set) var newsDescription: String = ""
+    private(set) var newsImage: UIImage = UIImage()
+    private(set) var newsGeneralTextObjectItems: [GeneralTextObjectSection] = []
     
-    struct Output {
-        let showTitle: Driver<String>
-        let showDescription: Driver<String>
-        let showImage: Driver<UIImage>
-        let showGeneralTextObjectItems: Driver<[GeneralTextObjectSection]>
-    }
-    
-    private let titleSubject = PublishSubject<String>()
-    private let descriptionSubject = PublishSubject<String>()
-    private let imageViewSubject = PublishSubject<UIImage>()
-    private let generalTextObjectItemsSubject = PublishSubject<[GeneralTextObjectSection]>()
+    var updateContent: () -> Void = {}
     
     var source: URL
-    private let disposeBag = DisposeBag()
-    var generalItem: PortalContent?
     
     init(source: URL) {
         self.source = source
-        
-        self.input = Input(title: titleSubject.asObserver(),
-                           description: descriptionSubject.asObserver(),
-                           image: imageViewSubject.asObserver(),
-                           generalTextObjectItems: generalTextObjectItemsSubject.asObserver())
-        
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "News"),
-                             showDescription: descriptionSubject.asDriver(onErrorJustReturn: ""),
-                             showImage: imageViewSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")),
-                             showGeneralTextObjectItems: generalTextObjectItemsSubject.asDriver(onErrorJustReturn: []))
     }
     
-    func getPortalData() {
+    func loadPortalData() {
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
         ModelLoader.PortalLoader()
-            .getItem(source: source, type: .news)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
-                LoadingManager.shared.setState(state: .normal(value: false))
+            .loadItem(source: source, type: .news) { [weak self] result in
                 
-                self?.generalItem = generalItem
-                if let title = generalItem.title {
-                    self?.titleSubject.onNext(title)
-                }
-                
-                if let description = generalItem.description {
-                    self?.descriptionSubject.onNext(description)
-                }
-                
-                if let imageURL = generalItem.imageObject?.url {
-                    self?.dowloadImage(url: imageURL)
-                }
-                
-                if let textObject = generalItem.textObject {
+                switch result {
+                case .success(let generalItem):
+                    LoadingManager.shared.setState(state: .normal(value: false))
                     
-                    let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
-                    self?.generalTextObjectItemsSubject.onNext(generalTextObjectSections)
+                    self?.generalItem = generalItem
+                  
+                    if let title = generalItem.title {
+                        self?.newsTitle = title
+                    }
+                    
+                    if let description = generalItem.description {
+                        self?.newsDescription = description
+                    }
+                    
+                    if let imageURL = generalItem.imageObject?.url {
+                        self?.dowloadImage(url: imageURL)
+                    }
+                    
+                    if let textObject = generalItem.textObject {
+                        
+                        let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+                        self?.newsGeneralTextObjectItems = generalTextObjectSections
+                    }
+                    
+                case .failure(let error):
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                    
                 }
                 
-            }) { error in
-                LoadingManager.shared.setState(state: .normal(value: false))
-                
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-        }
-        .disposed(by: disposeBag)
+                self?.updateContent()
+            }
     }
     
     private func dowloadImage(url: URL) {
@@ -111,12 +90,12 @@ final class GeneralNewsViewModel: ViewModelType, PortalControllable {
                     
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
-                            self?.imageViewSubject.onNext(image)
+                            self?.newsImage = image
                         }
                     } else {
                         DispatchQueue.main.async {
                             let image = UIImage(systemName: "xmark.rectangle")!
-                            self?.imageViewSubject.onNext(image)
+                            self?.newsImage = image
                         }
                     }
                 }

@@ -14,12 +14,7 @@ final class GeneralRootWithLanguageDocumentViewModel {
     typealias PortalContent = GeneralItem
     typealias PortalContentList = GeneralList
     
-    var generalItem: PortalContentList? {
-        didSet {
-            updateDocumentContent()
-        }
-    }
-    
+    var generalItem: PortalContentList?
     var generalItemDocument: PortalContent?
     
     private(set) var documentTitle: String = ""
@@ -97,6 +92,8 @@ final class GeneralRootWithLanguageDocumentViewModel {
                         
                         if let textObject = generalItem.textObject {
                             let generalTextObjectSections = GeneralTextObjectConverter.generalTextObjectToGeneralTextObjectSectionArray(textObject: textObject)
+                            
+                            print(generalTextObjectSections.count)
                             self?.documentGeneralTextObjectItems = generalTextObjectSections
                         }
                         
@@ -106,8 +103,10 @@ final class GeneralRootWithLanguageDocumentViewModel {
                     print("Error: \(error)")
                     LoadingManager.shared.setState(state: .normal(value: false))
                 }
+                
+                self?.updateDocumentContent()
+                
             }
-        
     }
     
 }

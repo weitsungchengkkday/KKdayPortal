@@ -14,11 +14,7 @@ final class GeneralCollectionViewModel {
     
     typealias PortalContent = GeneralItem
     
-    var generalItem: PortalContent? {
-        didSet {
-            updateContent()
-        }
-    }
+    var generalItem: PortalContent?
     
     private(set) var collectionTitle: String = ""
     private(set) var collectionDescription: String = ""
@@ -75,6 +71,8 @@ final class GeneralCollectionViewModel {
                     print("Error: \(error)")
                     LoadingManager.shared.setState(state: .normal(value: false))
                 }
+                
+                self?.updateContent()
             }
     }
 
