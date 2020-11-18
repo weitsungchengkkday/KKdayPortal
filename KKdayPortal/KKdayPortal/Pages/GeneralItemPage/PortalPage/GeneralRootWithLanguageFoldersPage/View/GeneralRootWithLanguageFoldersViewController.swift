@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
-import RxDataSources
 
 final class GeneralRootWithLanguageFoldersViewController: UIViewController, GeneralDetailPageCoordinator {
     
@@ -26,6 +23,9 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
     
     lazy var tableView: UITableView = {
         let tbv = UITableView()
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralRootWithLanguageFoldersHeaderTableViewCell.self, forCellReuseIdentifier: GeneralRootWithLanguageFoldersViewController.HeaderCellName)
         tbv.register(GeneralRootWithLanguageFoldersNormalTableViewCell.self, forCellReuseIdentifier: GeneralRootWithLanguageFoldersViewController.NormalCellName)
@@ -34,33 +34,32 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
     }()
     
     private let viewModel: GeneralRootWithLanguageFoldersViewModel
-    private let disposeBag = DisposeBag()
     
-    private lazy var dataSource = {
-        return RxTableViewSectionedReloadDataSource<ContentListSection> (configureCell: { dataSource, tableView, indexPath, sectionItem in
-            
-            switch sectionItem {
-                
-            case .header(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageFoldersViewController.HeaderCellName, for: indexPath) as! GeneralRootWithLanguageFoldersHeaderTableViewCell
-                cell.titleLabel.text = cellViewModel.generalItem.title
-                
-                let isOpen: Bool = cellViewModel.isOpen
-                cell.pullDownImageView.image = isOpen ? UIImage(systemName: "arrowtriangle.up.fill") : UIImage(systemName: "arrowtriangle.down.fill")
-                cell.contentView.backgroundColor = isOpen ? #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                return cell
-                
-            case .normal(let viewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageFoldersViewController.NormalCellName, for: indexPath) as! GeneralRootWithLanguageFoldersNormalTableViewCell
-                cell.titleLabel.text = viewModel.generalItem.title
-                cell.typeImageView.image = viewModel.generalItem.type?.image
-                
-                return cell
-            }
-            
-        })
-        
-    }()
+//    private lazy var dataSource = {
+//        return RxTableViewSectionedReloadDataSource<ContentListSection> (configureCell: { dataSource, tableView, indexPath, sectionItem in
+//
+//            switch sectionItem {
+//
+//            case .header(let cellViewModel):
+//                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageFoldersViewController.HeaderCellName, for: indexPath) as! GeneralRootWithLanguageFoldersHeaderTableViewCell
+//                cell.titleLabel.text = cellViewModel.generalItem.title
+//
+//                let isOpen: Bool = cellViewModel.isOpen
+//                cell.pullDownImageView.image = isOpen ? UIImage(systemName: "arrowtriangle.up.fill") : UIImage(systemName: "arrowtriangle.down.fill")
+//                cell.contentView.backgroundColor = isOpen ? #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//                return cell
+//
+//            case .normal(let viewModel):
+//                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralRootWithLanguageFoldersViewController.NormalCellName, for: indexPath) as! GeneralRootWithLanguageFoldersNormalTableViewCell
+//                cell.titleLabel.text = viewModel.generalItem.title
+//                cell.typeImageView.image = viewModel.generalItem.type?.image
+//
+//                return cell
+//            }
+//
+//        })
+//
+//    }()
     
     init(viewModel: GeneralRootWithLanguageFoldersViewModel) {
         self.viewModel = viewModel
@@ -77,9 +76,6 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
         setupUI()
         setAction()
         bindViewModel()
-        tableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
         viewModel.getPortalData()
     }
     
@@ -104,63 +100,73 @@ final class GeneralRootWithLanguageFoldersViewController: UIViewController, Gene
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showGeneralItems
-            .map({ contentListSections -> [ContentListSection] in
-
-                var sections: [ContentListSection] = []
-
-                for contentListSection in contentListSections {
-                    var section = contentListSection
-
-                    if case let .header(cellViewModel: cellViewModel) = section.items.first {
-                        if cellViewModel.isOpen == false {
-                            section.items = [.header(cellViewModel: cellViewModel)]
-                        }
-                        sections.append(section)
-                    } else {
-                        sections.append(section)
-                    }
-                }
-
-                return sections
-            })
-            .drive(tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-        
-        tableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                if indexPath.row == 0 {
-                    self?.viewModel.switchSectionIsOpen(at: indexPath.section)
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        tableView.rx.modelSelected(ContentListSectionItem.self)
-            .subscribe(onNext: { [weak self] sectionItem in
-                
-                switch sectionItem {
-                case .header:
-                    break
-                case .normal(cellViewModel: let cellViewModel):
-                    
-                    guard let type = cellViewModel.generalItem.type,
-                        let source = cellViewModel.generalItem.source else {
-                            return
-                    }
-                    
-                    self?.openDetailPage(route: source, type: type)
-                }
-            })
-            .disposed(by: disposeBag)
     }
-    
+//
+//        viewModel.output.showGeneralItems
+//            .map({ contentListSections -> [ContentListSection] in
+//
+//                var sections: [ContentListSection] = []
+//
+//                for contentListSection in contentListSections {
+//                    var section = contentListSection
+//
+//                    if case let .header(cellViewModel: cellViewModel) = section.items.first {
+//                        if cellViewModel.isOpen == false {
+//                            section.items = [.header(cellViewModel: cellViewModel)]
+//                        }
+//                        sections.append(section)
+//                    } else {
+//                        sections.append(section)
+//                    }
+//                }
+//
+//                return sections
+//            })
+//            .drive(tableView.rx.items(dataSource: dataSource))
+//            .disposed(by: disposeBag)
+//
+//        tableView.rx.itemSelected
+//            .subscribe(onNext: { [weak self] indexPath in
+//                if indexPath.row == 0 {
+//                    self?.viewModel.switchSectionIsOpen(at: indexPath.section)
+//                }
+//            })
+//            .disposed(by: disposeBag)
+//
+//        tableView.rx.modelSelected(ContentListSectionItem.self)
+//            .subscribe(onNext: { [weak self] sectionItem in
+//
+//                switch sectionItem {
+//                case .header:
+//                    break
+//                case .normal(cellViewModel: let cellViewModel):
+//
+//                    guard let type = cellViewModel.generalItem.type,
+//                        let source = cellViewModel.generalItem.source else {
+//                            return
+//                    }
+//
+//                    self?.openDetailPage(route: source, type: type)
+//                }
+//            })
+//            .disposed(by: disposeBag)
+ 
 }
 
-extension GeneralRootWithLanguageFoldersViewController: UITableViewDelegate {
+extension GeneralRootWithLanguageFoldersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
 }
 
 

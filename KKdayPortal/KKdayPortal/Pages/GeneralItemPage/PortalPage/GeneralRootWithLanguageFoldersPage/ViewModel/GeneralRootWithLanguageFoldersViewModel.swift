@@ -6,93 +6,112 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
+import Foundation
 
-final class GeneralRootWithLanguageFoldersViewModel: ViewModelType {
+final class GeneralRootWithLanguageFoldersViewModel {
     
     typealias PortalContent = GeneralItem
     typealias PortalContentList = GeneralList
     
-    var input: GeneralRootWithLanguageFoldersViewModel.Input
-    var output: GeneralRootWithLanguageFoldersViewModel.Output
+//    var input: GeneralRootWithLanguageFoldersViewModel.Input
+//    var output: GeneralRootWithLanguageFoldersViewModel.Output
+//
+//    struct Input {
+//        let generalItems: AnyObserver<[ContentListSection]>
+    //    }
+    //
+    //    struct Output {
+    //        let showGeneralItems: Driver<[ContentListSection]>
+    //    }
+    //
+    //    private let generalItemsSubject = PublishSubject<[ContentListSection]>()
     
-    struct Input {
-        let generalItems: AnyObserver<[ContentListSection]>
-    }
-    
-    struct Output {
-        let showGeneralItems: Driver<[ContentListSection]>
-    }
-    
-    private let generalItemsSubject = PublishSubject<[ContentListSection]>()
-    
-    private var generalItem: PortalContentList?
-    private var generalItemFolders: [PortalContentList] = []
-    private var contentListSections: [ContentListSection] = []
+    private(set) var generalItem: PortalContentList?
+    private(set) var generalItemFolders: [PortalContentList] = []
+    private(set) var contentListSections: [ContentListSection] = []
     
     var source: URL
-    private let disposeBag = DisposeBag()
     
     init(source: URL) {
         self.source = source
-        
-        self.input = Input(generalItems: generalItemsSubject.asObserver())
-        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []))
+        //
+        //        self.input = Input(generalItems: generalItemsSubject.asObserver())
+        //        self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []))
     }
     
-    func getPortalData() {
-        
+    func loadPortalData() {
         LoadingManager.shared.setState(state: .normal(value: true))
         
         ModelLoader.PortalLoader()
-            .getItem(source: source, type: .root_with_language)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
+            .loadItem(source: source, type: .event) { [weak self] result in
                 
-                LoadingManager.shared.setState(state: .normal(value: false))
-                
-                guard let generalItem = generalItem as? GeneralList else {
-                    return
-                }
-                
-                self?.generalItem = generalItem
-                
-                if let items = generalItem.items {
+                switch result {
+                case .success(let generalItem):
+                    LoadingManager.shared.setState(state: .normal(value: true))
                     
-                    
-                    // Folders
-                    let foldersItems = items
-                        .filter({ $0.type == .folder })
-                        .map { generalItem -> GeneralList in
-                            
-                            return GeneralList(type: generalItem.type,
-                                               title: generalItem.title,
-                                               description: generalItem.title,
-                                               parent: generalItem.parent,
-                                               id: generalItem.id,
-                                               UID: generalItem.UID,
-                                               source: generalItem.source,
-                                               imageObject: generalItem.imageObject,
-                                               textObject: generalItem.textObject,
-                                               eventObject: generalItem.eventObject,
-                                               fileObject: generalItem.fileObject,
-                                               linkObject: generalItem.linkObject,
-                                               items: nil)
+                    guard let generalItem = generalItem as? GeneralList else {
+                        return
                     }
-                    self?.generalItemFolders  = foldersItems
+                    
+                    self?.generalItem = generalItem
+                    if let items = generalItem.items {
+                        
+                        // Folders
+                        let foldersItems = items
+                            .filter({ $0.type == .folder })
+                            .map { generalItem -> GeneralList in
+                                
+                                return GeneralList(type: generalItem.type,
+                                                   title: generalItem.title,
+                                                   description: generalItem.title,
+                                                   parent: generalItem.parent,
+                                                   id: generalItem.id,
+                                                   UID: generalItem.UID,
+                                                   source: generalItem.source,
+                                                   imageObject: generalItem.imageObject,
+                                                   textObject: generalItem.textObject,
+                                                   eventObject: generalItem.eventObject,
+                                                   fileObject: generalItem.fileObject,
+                                                   linkObject: generalItem.linkObject,
+                                                   items: nil)
+                            }
+                        self?.generalItemFolders  = foldersItems
+                    }
+                    
+                    self?.getPortalFoldersData()
+                    
+                case .failure(let error):
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                }
+            }
+    }
+    
+          
+    private func getSSSData() {
+        
+        LoadingManager.shared.setState(state: .normal(value: true))
+       
+        for folder in generalItemFolders {
+            if let source = folder.source {
+                
+                ModelLoader.PortalLoader()
+                    .loadItem(source: source, type: .folder) { [weak self] result in
+                    
+                    
                 }
                 
-                self?.getPortalFoldersData()
-                
-            }) { error in
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-                
-                LoadingManager.shared.setState(state: .normal(value: false))
+            }
+            
         }
-        .disposed(by: disposeBag)
+        
+        
     }
+        
+        
+    
     
     private func getPortalFoldersData() {
         
@@ -107,6 +126,10 @@ final class GeneralRootWithLanguageFoldersViewModel: ViewModelType {
         }
         
         LoadingManager.shared.setState(state: .normal(value: true))
+        
+        
+        
+        
         
         Observable.combineLatest(generalItemObservables)
             .subscribeOn(MainScheduler.instance)
