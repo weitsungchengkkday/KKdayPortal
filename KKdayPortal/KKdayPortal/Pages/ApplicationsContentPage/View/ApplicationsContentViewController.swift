@@ -150,10 +150,9 @@ extension ApplicationsContentViewController: WKNavigationDelegate {
         case -1100:
             print("\(#function) error is 'URL not be found on server'")
         default:
-            ()
+            print(error)
         }
         
-        print(error)
         showActivityInicator(false)
     }
     

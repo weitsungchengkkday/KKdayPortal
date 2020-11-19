@@ -9,7 +9,7 @@
 import RxCocoa
 import RxSwift
 
-final class TestingViewModel: ViewModelType {
+final class TestingViewModel {
     
     typealias CellViewModel = TestingTableViewCellViewModel
     

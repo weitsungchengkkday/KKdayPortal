@@ -61,26 +61,26 @@ final class ApplicationsContentViewModel {
             return
         }
         
-        ModelLoader.PortalLoader()
-            .getItem(source: source, type: .link)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
-                
-                self?.generalItem = generalItem
-                if let title = generalItem.title {
-                    self?.titleSubject.onNext(title)
-                }
-                
-                if let linkObject = generalItem.linkObject {
-                    let url = linkObject.url
-                    self?.loadWebViewSubject.onNext(url)
-                }
-                
-            }) { error in
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-        }
-        .disposed(by: disposeBag)
+//        ModelLoader.PortalLoader()
+//            .getItem(source: source, type: .link)
+//            .subscribeOn(MainScheduler.instance)
+//            .subscribe(onSuccess: { [weak self] generalItem in
+//                
+//                self?.generalItem = generalItem
+//                if let title = generalItem.title {
+//                    self?.titleSubject.onNext(title)
+//                }
+//                
+//                if let linkObject = generalItem.linkObject {
+//                    let url = linkObject.url
+//                    self?.loadWebViewSubject.onNext(url)
+//                }
+//                
+//            }) { error in
+//                print("🚨 Func: \(#file),\(#function)")
+//                print("Error: \(error)")
+//        }
+//        .disposed(by: disposeBag)
     }
     
 }

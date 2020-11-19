@@ -61,7 +61,6 @@
 		F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
 		F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
 		F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
-		F44E8C7523B88AA30032C6BE /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* ViewModelType.swift */; };
 		F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
 		F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneSiteItem.swift */; };
 		F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
@@ -154,7 +153,6 @@
 		F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FB238F749A001B8D31 /* PloneFile.swift */; };
 		F45446FE238F74DF001B8D31 /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
 		F4544700238F787A001B8D31 /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
-		F454474C23924F38001B8D31 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454474B23924F38001B8D31 /* ViewModelType.swift */; };
 		F454476523960669001B8D31 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
 		F4544769239609E5001B8D31 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
 		F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
@@ -375,7 +373,6 @@
 		F45446FB238F749A001B8D31 /* PloneFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFile.swift; sourceTree = "<group>"; };
 		F45446FD238F74DF001B8D31 /* PloneFileObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileObject.swift; sourceTree = "<group>"; };
 		F45446FF238F787A001B8D31 /* PloneLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneLink.swift; sourceTree = "<group>"; };
-		F454474B23924F38001B8D31 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		F454476423960669001B8D31 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F4544768239609E5001B8D31 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		F45447E6239AA1AC001B8D31 /* GeneralItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItem.swift; sourceTree = "<group>"; };
@@ -862,7 +859,6 @@
 		F454475423926725001B8D31 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				F454474B23924F38001B8D31 /* ViewModelType.swift */,
 				F454488B23A55017001B8D31 /* Localizable.swift */,
 				F44CD6D224162E2500A35808 /* FileNameProtocol.swift */,
 			);
@@ -1988,7 +1984,6 @@
 				F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */,
 				F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */,
 				F43AFC6623E87D6D0050C851 /* GeneralTextObjectNormalTableViewCell.swift in Sources */,
-				F44E8C7523B88AA30032C6BE /* ViewModelType.swift in Sources */,
 				F43AFC6223E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F426FEC123F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */,
 				F43AFC6E23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
@@ -2140,7 +2135,6 @@
 				F43AFC6123E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F4544769239609E5001B8D31 /* DateFormatterExtension.swift in Sources */,
 				F426FEC023F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */,
-				F454474C23924F38001B8D31 /* ViewModelType.swift in Sources */,
 				F44A199823C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
 				F43AFC6523E87D6D0050C851 /* GeneralTextObjectNormalTableViewCell.swift in Sources */,
 				F454487A23A336D6001B8D31 /* LocaleExtension.swift in Sources */,

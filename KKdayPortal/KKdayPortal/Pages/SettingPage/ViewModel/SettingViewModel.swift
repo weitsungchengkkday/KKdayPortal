@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import WebKit
 
-final class SettingViewModel: ViewModelType {
+final class SettingViewModel {
     
     private let disposeBag = DisposeBag()
     

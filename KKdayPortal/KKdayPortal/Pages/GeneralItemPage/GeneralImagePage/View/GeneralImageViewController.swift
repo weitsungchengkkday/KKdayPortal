@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class GeneralImageViewController: UIViewController {
@@ -33,7 +31,6 @@ final class GeneralImageViewController: UIViewController {
     }()
     
     private let viewModel: GeneralImageViewModel
-    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralImageViewModel) {
         self.viewModel = viewModel
@@ -56,7 +53,7 @@ final class GeneralImageViewController: UIViewController {
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+           // MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     

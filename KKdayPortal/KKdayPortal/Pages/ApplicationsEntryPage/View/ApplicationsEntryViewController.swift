@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class ApplicationsEntryViewController: UIViewController {
@@ -20,6 +18,10 @@ final class ApplicationsEntryViewController: UIViewController {
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
+        
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
         tbv.tableFooterView = UIView()
@@ -42,8 +44,6 @@ final class ApplicationsEntryViewController: UIViewController {
     
     private let viewModel = ApplicationsEntryViewModel()
     
-    private let disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,11 +51,7 @@ final class ApplicationsEntryViewController: UIViewController {
         setAction()
         bindViewModel()
         
-        tableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     // 🎨 draw UI
@@ -97,26 +93,36 @@ final class ApplicationsEntryViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showGeneralItemsURL
-            .drive(tableView.rx.items(cellIdentifier: ApplicationsEntryViewController.CellName, cellType: ApplicationsEntryTableViewCell.self)) { (row, url, cell) in
-            
-                cell.titleLabel.text = "BPM"
-                cell.descriptionLabel.text = "簽核系統"
-        }
-        .disposed(by: disposeBag)
-        
-        viewModel.output.showIsLoading
-            .map { !$0 }
-            .drive(loadingActivityIndicatorContainerView.rx.isHidden)
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showIsLoading
-            .drive(loadingActivityIndicatorView.rx.isAnimating)
-            .disposed(by: disposeBag)
     }
+//        viewModel.output.showGeneralItemsURL
+//            .drive(tableView.rx.items(cellIdentifier: ApplicationsEntryViewController.CellName, cellType: ApplicationsEntryTableViewCell.self)) { (row, url, cell) in
+//
+//                cell.titleLabel.text = "BPM"
+//                cell.descriptionLabel.text = "簽核系統"
+//        }
+//        .disposed(by: disposeBag)
+//
+//        viewModel.output.showIsLoading
+//            .map { !$0 }
+//            .drive(loadingActivityIndicatorContainerView.rx.isHidden)
+//            .disposed(by: disposeBag)
+//
+//        viewModel.output.showIsLoading
+//            .drive(loadingActivityIndicatorView.rx.isAnimating)
+//            .disposed(by: disposeBag)
+//    }
 }
 
-extension ApplicationsEntryViewController: UITableViewDelegate {
+extension ApplicationsEntryViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return viewMode.
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let URLs = viewModel.generalItemsURL
@@ -128,4 +134,6 @@ extension ApplicationsEntryViewController: UITableViewDelegate {
         let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: route))
         navigationController?.pushViewController(pushViewController, animated: false)
     }
+    
+    
 }

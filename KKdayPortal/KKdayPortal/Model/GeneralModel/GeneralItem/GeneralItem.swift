@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+import UIKit
 
 enum GeneralItemType {
     case root
