@@ -6,7 +6,6 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
-
 final class GeneralRootWithLanguageFoldersNormalTableViewCellViewModel {
     
     let generalItem: GeneralItem
