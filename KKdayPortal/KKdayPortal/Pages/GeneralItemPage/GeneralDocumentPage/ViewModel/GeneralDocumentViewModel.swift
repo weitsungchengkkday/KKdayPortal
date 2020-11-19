@@ -17,9 +17,7 @@ final class GeneralDocumentViewModel {
     private(set) var documentGeneralTextObjectItems: [GeneralTextObjectSection] = []
     
     var generalItem: PortalContent?
-    
     var upateContent: () -> Void = {}
-    
     var source: URL
     
     init(source: URL) {
