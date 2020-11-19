@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 import SafariServices
 
@@ -36,7 +34,6 @@ final class GeneralLinkViewController: UIViewController, GeneralDetailPageCoordi
     }()
     
     private let viewModel: GeneralLinkViewModel
-    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralLinkViewModel) {
         self.viewModel = viewModel
@@ -54,12 +51,12 @@ final class GeneralLinkViewController: UIViewController, GeneralDetailPageCoordi
         setupUI()
         setAction()
         bindViewModel()
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+//            MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     
@@ -110,10 +107,16 @@ final class GeneralLinkViewController: UIViewController, GeneralDetailPageCoordi
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.topTitleLabel.text = title
-            })
-            .disposed(by: disposeBag)
+        
+        viewModel.updateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateLink(viewModel: weakSelf.viewModel)
+        }
+    }
+    
+    private func updateLink(viewModel: GeneralLinkViewModel) {
+        self.topTitleLabel.text = viewModel.linkTitle
     }
 }

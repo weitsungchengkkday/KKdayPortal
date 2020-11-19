@@ -6,67 +6,50 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
+import Foundation
 
 final class GeneralLinkViewModel {
     
     typealias PortalContent = GeneralItem
     
-    var input: GeneralLinkViewModel.Input
-    var output: GeneralLinkViewModel.Output
+    private(set) var linkTitle: String = ""
     
-    struct Input {
-        let title: AnyObserver<String>
-    }
-    
-    struct Output {
-        let showTitle: Driver<String>
-    }
-    
-    private let titleSubject = PublishSubject<String>()
-    
-    var source: URL
-    private let disposeBag = DisposeBag()
     var generalItem: PortalContent?
     var linkURL: URL?
+    var updateContent: () -> Void = {}
+    
+    var source: URL
     
     init(source: URL) {
         self.source = source
-        
-        self.input = Input(title: titleSubject.asObserver()
-        )
-        
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Link")
-        )
     }
     
-    func getPortalData() {
-        
+    func loadPortalData() {
         LoadingManager.shared.setState(state: .normal(value: true))
         
         ModelLoader.PortalLoader()
-            .getItem(source: source, type: .link)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
+            .loadItem(source: source, type: .link) { [weak self] result in
                 
-                LoadingManager.shared.setState(state: .normal(value: false))
-                
-                self?.generalItem = generalItem
-                if let title = generalItem.title {
-                    self?.titleSubject.onNext(title)
+                switch result {
+                case .success(let generalItem):
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                    self?.generalItem = generalItem
+                    if let title = generalItem.title {
+                        self?.linkTitle = title
+                    }
+                    
+                    self?.linkURL = generalItem.linkObject?.url
+                    
+                    
+                case .failure(let error):
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    LoadingManager.shared.setState(state: .normal(value: false))
                 }
-        
-                self?.linkURL = generalItem.linkObject?.url
-        
-            }) { error in
                 
-                LoadingManager.shared.setState(state: .normal(value: false))
-                
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-        }
-        .disposed(by: disposeBag)
+                self?.updateContent()
+            }
+        
     }
     
 }
