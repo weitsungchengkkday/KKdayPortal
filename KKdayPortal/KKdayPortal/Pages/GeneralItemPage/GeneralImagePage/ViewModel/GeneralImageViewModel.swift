@@ -6,71 +6,54 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
 import Alamofire
 
 final class GeneralImageViewModel {
     
     typealias PortalContent = GeneralItem
     
-    var input: GeneralImageViewModel.Input
-    var output: GeneralImageViewModel.Output
+    private(set) var imageTitle: String = ""
+    private(set) var image: UIImage = #imageLiteral(resourceName: "icPicture")
     
-    struct Input {
-        let title: AnyObserver<String>
-        let image: AnyObserver<UIImage>
-    }
+    var generalItem: PortalContent?
     
-    struct Output {
-        let showTitle: Driver<String>
-        let showImage: Driver<UIImage>
-    }
-    
-    private let titleSubject = PublishSubject<String>()
-    private let imageViewSubject = PublishSubject<UIImage>()
+    var updateContent: () -> Void = {}
     
     var source: URL
-    private let disposeBag = DisposeBag()
-    var generalItem: PortalContent?
     
     init(source: URL) {
         self.source = source
-        self.input = Input(title: titleSubject.asObserver(), image: imageViewSubject.asObserver())
-        
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "Image"), showImage: imageViewSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")))
     }
     
-    func getPortalData() {
-        
+    func loadPortalData() {
         LoadingManager.shared.setState(state: .normal(value: true))
         
         ModelLoader.PortalLoader()
-            .getItem(source: source, type: .image)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
+            .loadItem(source: source, type: .image) { [weak self] result in
                 
-                LoadingManager.shared.setState(state: .normal(value: false))
+                switch result {
+                case .success(let generalItem):
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                    self?.generalItem = generalItem
+                    
+                    if let title = generalItem.title {
+                        self?.imageTitle = title
+                    }
+                    
+                    if let imageURL = generalItem.imageObject?.url {
+    
+                        self?.dowloadImage(url: imageURL)
+                    }
                 
-                self?.generalItem = generalItem
-                if let title = generalItem.title {
-                    self?.titleSubject.onNext(title)
+                case .failure(let error):
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    LoadingManager.shared.setState(state: .normal(value: false))
                 }
-                
-                guard let imageURL = generalItem.imageObject?.url else {
-                    return
-                }
-                self?.dowloadImage(url: imageURL)
-                
-            }) { error in
-                
-                LoadingManager.shared.setState(state: .normal(value: false))
-                
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-        }
-        .disposed(by: disposeBag)
+                self?.updateContent()
+            }
     }
+
     
     private func dowloadImage(url: URL) {
         
@@ -89,19 +72,21 @@ final class GeneralImageViewModel {
             
             DispatchQueue.global().async { [weak self] in
                 if let data = dataResponse.data {
-                
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self?.imageViewSubject.onNext(image)
-                        }
-                    } else {
-                        DispatchQueue.main.async {
+                    
+                    DispatchQueue.main.async {
+                        if let image = UIImage(data: data) {
+                            self?.image = image
+                            
+                        } else {
                             let image = UIImage(systemName: "xmark.rectangle")!
-                            self?.imageViewSubject.onNext(image)
+                            self?.image = image
                         }
+                        self?.updateContent()
                     }
                 }
+                
             }
+            
         }
     }
     
