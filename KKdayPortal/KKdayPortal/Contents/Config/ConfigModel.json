@@ -5,6 +5,6 @@
     "sitServer": "https://sit.eip.kkday.net",
     "productionServer": "https://eip.kkday.net",
     
-    "sitBPM": "http://sit.bpm.eip.kkday.net",
+    "sitBPM": "http://sit-bpm.eip.kkday.net",
     "productionBPM": "http://bpm.eip.kkday.net"
 }

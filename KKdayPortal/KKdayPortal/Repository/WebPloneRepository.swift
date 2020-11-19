@@ -7,14 +7,9 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
 import DolphinHTTP
 
-final class WebPloneRepository: RepositoryManageable {
-    
-    private let apiManager = APIManager.default
-    private let disposeBag = DisposeBag()
+final class WebPloneRepository {
     
     typealias User = GeneralUser
     typealias Item = GeneralItem
@@ -205,94 +200,7 @@ final class WebPloneRepository: RepositoryManageable {
         }
     }
     
-    func getItem(generalItemType: GeneralItemType) -> Single<Item> {
-        
-        let ploneItemType = ItemConverter.typeTransfer(generalItemType: generalItemType)
-      
-        switch ploneItemType {
-        case .lrf:
-            print(source)
-            let ploneLrfRequest = PortalItem.Item<PloneLRF>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneLrfRequest)
-            return response
-                .map({ ploneLrf -> GeneralItem in
-                              return ItemConverter.ploneItemToGeneralItem(item: ploneLrf)
-                          })
-            
-        case .ploneSite:
-            let ploneRootRequest = PortalItem.Item<PloneSiteItem>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneRootRequest)
-            return response
-                .map({ ploneRoot -> GeneralItem in
-                    return ItemConverter.ploneItemToGeneralItem(item: ploneRoot)
-                })
-            
-        case .folder:
-            let ploneFolderRequest = PortalItem.Item<PloneFolder>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneFolderRequest)
-            return response
-                .map({ ploneFolder -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneFolder)
-                })
-            
-        case .document:
-            print(source)
-            let ploneDocumentRequest = PortalItem.Item<PloneDocument>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneDocumentRequest)
-            return response
-                .map({ ploneDocument -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneDocument)
-                })
-            
-        case .news:
-            let ploneNewsRequest = PortalItem.Item<PloneNews>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneNewsRequest)
-            return response
-                .map({ ploneNews -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneNews)
-                })
-            
-        case .event:
-            let ploneEventRequest = PortalItem.Item<PloneEvent>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneEventRequest)
-            return response
-                .map({ ploneEvent -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneEvent)
-                })
-            
-        case .image:
-            let ploneImageRequest = PortalItem.Item<PloneImage>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneImageRequest)
-            return response
-                .map({ ploneImage -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneImage)
-                })
-            
-        case .file:
-            let ploneFileRequest = PortalItem.Item<PloneFile>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneFileRequest)
-            return response
-                .map({ ploneFile -> GeneralItem in
-                    return ItemConverter.ploneItemToGeneralItem(item: ploneFile)
-                })
-            
-        case .link:
-            let ploneLinkRequest = PortalItem.Item<PloneLink>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneLinkRequest)
-            return response
-                .map({ ploneLink -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneLink)
-                })
-            
-        case .collection:
-            let ploneCollectionRequest = PortalItem.Item<PloneCollection>(user: ploneUser, route: source)
-            let response = apiManager.request(ploneCollectionRequest)
-            return response
-                .map({ ploneCollection -> GeneralItem in
-                    ItemConverter.ploneItemToGeneralItem(item: ploneCollection)
-                })
-        }
-    }
+    
 }
 
 

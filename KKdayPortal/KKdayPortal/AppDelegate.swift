@@ -31,8 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     ConfigManager.shared.setup()
     LanguageManager.shared.setup()
-    // assign WebAPIManager as APIManager's errorhandler
-    APIManager.default.httpErrorHandler = WebAPIManager.shared
     
     return true
     }

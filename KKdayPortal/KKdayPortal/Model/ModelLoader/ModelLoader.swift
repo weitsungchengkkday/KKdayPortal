@@ -7,24 +7,17 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
 import DolphinHTTP
 
 enum ModelLoader {
     
-    struct PortalLoader: ModelLoadable {
+    struct PortalLoader {
         
         typealias Repository = WebPloneRepository
         
         func loadItem(source: URL, type: GeneralItemType, completion: @escaping (Result<GeneralItem, DolphinHTTP.HTTPError>) -> Void) {
             return Repository(source: source).loadItem(generalItemType: type, completion: completion)
         }
-        
-        func getItem(source: URL, type: GeneralItemType) -> Single<Repository.Item> {
-            return Repository(source: source).getItem(generalItemType: type)
-        }
-        
-        
+
     }
 }

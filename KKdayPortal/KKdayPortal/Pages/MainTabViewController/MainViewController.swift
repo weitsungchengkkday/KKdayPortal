@@ -7,15 +7,11 @@
 //
 
 import UIKit
-import RxSwift
 
 final class MainViewController: UITabBarController {
-
-    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupTabBarItems()
     }
     
