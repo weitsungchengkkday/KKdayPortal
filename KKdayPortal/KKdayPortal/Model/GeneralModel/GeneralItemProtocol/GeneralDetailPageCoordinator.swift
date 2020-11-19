@@ -30,8 +30,7 @@ extension GeneralDetailPageCoordinator {
             navigationController?.pushViewController(pushViewController, animated: false)
             
         case .root_with_language:
-            let pushViewController = GeneralRootViewController(viewModel: GeneralRootViewModel(source: route))
-            navigationController?.pushViewController(pushViewController, animated: false)
+            break
             
         case .folder:
             let pushViewController = GeneralFolderViewController(viewModel: GeneralFolderViewModel(source: route))

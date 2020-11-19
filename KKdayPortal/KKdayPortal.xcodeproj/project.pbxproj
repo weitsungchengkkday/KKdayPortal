@@ -74,7 +74,6 @@
 		F44E8C8323B88AA30032C6BE /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
 		F44E8C8423B88AA30032C6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F44E8C8523B88AA30032C6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
-		F44E8C8623B88AA30032C6BE /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
 		F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
 		F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
 		F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
@@ -103,7 +102,6 @@
 		F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FB238F749A001B8D31 /* PloneFile.swift */; };
 		F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
 		F44E8CA823B88AA30032C6BE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487323A235B4001B8D31 /* Language.swift */; };
-		F44E8CA923B88AA30032C6BE /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
 		F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
 		F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
 		F44E8CAC23B88AA30032C6BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
@@ -179,8 +177,6 @@
 		F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
 		F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
 		F45447FE239BB577001B8D31 /* ModelLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FD239BB577001B8D31 /* ModelLoadable.swift */; };
-		F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */; };
-		F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454481F239C040F001B8D31 /* GeneralRootViewController.swift */; };
 		F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
 		F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
 		F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
@@ -410,8 +406,6 @@
 		F45447F8239AB8D6001B8D31 /* ItemConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemConverter.swift; sourceTree = "<group>"; };
 		F45447FB239BB4D6001B8D31 /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
 		F45447FD239BB577001B8D31 /* ModelLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoadable.swift; sourceTree = "<group>"; };
-		F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewModel.swift; sourceTree = "<group>"; };
-		F454481F239C040F001B8D31 /* GeneralRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootViewController.swift; sourceTree = "<group>"; };
 		F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewModel.swift; sourceTree = "<group>"; };
 		F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralImageViewController.swift; sourceTree = "<group>"; };
 		F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDocumentViewModel.swift; sourceTree = "<group>"; };
@@ -997,7 +991,6 @@
 			children = (
 				F426FED223F6795C00BFDA3B /* HomePage */,
 				F426FED123F64ECB00BFDA3B /* PortalPage */,
-				F4544800239BF688001B8D31 /* GeneralRootPage */,
 				F4544847239DF041001B8D31 /* GeneralFolderPage */,
 				F43AFC7123E87DD10050C851 /* GeneralCollectionPage */,
 				F4544806239BF6C9001B8D31 /* GeneralImagePage */,
@@ -1008,15 +1001,6 @@
 				F4544803239BF6BF001B8D31 /* GeneralLinkPage */,
 			);
 			path = GeneralItemPage;
-			sourceTree = "<group>";
-		};
-		F4544800239BF688001B8D31 /* GeneralRootPage */ = {
-			isa = PBXGroup;
-			children = (
-				F4544809239C02A2001B8D31 /* ViewModel */,
-				F4544808239C02A0001B8D31 /* View */,
-			);
-			path = GeneralRootPage;
 			sourceTree = "<group>";
 		};
 		F4544801239BF6B2001B8D31 /* GeneralEventPage */ = {
@@ -1071,22 +1055,6 @@
 				F454480B239C02A8001B8D31 /* View */,
 			);
 			path = GeneralImagePage;
-			sourceTree = "<group>";
-		};
-		F4544808239C02A0001B8D31 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F454481F239C040F001B8D31 /* GeneralRootViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F4544809239C02A2001B8D31 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F454481D239C0395001B8D31 /* GeneralRootViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F454480B239C02A8001B8D31 /* View */ = {
@@ -2115,7 +2083,6 @@
 				F44E8C8423B88AA30032C6BE /* AppDelegate.swift in Sources */,
 				F457418023D58F4E00FB5EEC /* TestingViewModel.swift in Sources */,
 				F44E8C8523B88AA30032C6BE /* SceneDelegate.swift in Sources */,
-				F44E8C8623B88AA30032C6BE /* GeneralRootViewController.swift in Sources */,
 				F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */,
 				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F45408362413746600796B66 /* UIKitExtension.swift in Sources */,
@@ -2166,7 +2133,6 @@
 				F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */,
 				F44CD6CF24162C2200A35808 /* FilesManager.swift in Sources */,
 				F44E8CA823B88AA30032C6BE /* Language.swift in Sources */,
-				F44E8CA923B88AA30032C6BE /* GeneralRootViewModel.swift in Sources */,
 				F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */,
 				F43AFC5223E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				F426FEC623F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
@@ -2269,7 +2235,6 @@
 				F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */,
 				F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */,
 				F43AFC8723E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
-				F4544820239C040F001B8D31 /* GeneralRootViewController.swift in Sources */,
 				F454482E239CAB08001B8D31 /* GeneralImageViewModel.swift in Sources */,
 				F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */,
 				F45740D823CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
@@ -2327,7 +2292,6 @@
 				F43AFC6D23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
 				F454476523960669001B8D31 /* StringExtension.swift in Sources */,
 				F454487423A235B4001B8D31 /* Language.swift in Sources */,
-				F454481E239C0395001B8D31 /* GeneralRootViewModel.swift in Sources */,
 				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
 				F426FEC523F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */,
