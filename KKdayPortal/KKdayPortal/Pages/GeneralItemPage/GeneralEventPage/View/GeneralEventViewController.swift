@@ -186,7 +186,7 @@ extension GeneralEventViewController: UITableViewDelegate, UITableViewDataSource
         
         let section = viewModel.eventGeneralTextObjectItems[indexPath.section]
         let item = section.items[indexPath.row]
-        
+    
         switch item {
         case .normal(let cellViewModel):
             let cell = tableView.dequeueReusableCell(withIdentifier: GeneralEventViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell

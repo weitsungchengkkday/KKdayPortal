@@ -7,13 +7,9 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class GeneralRootWithLanguageFoldersHeaderTableViewCell: UITableViewCell {
-    
-    private(set) var disposeBag = DisposeBag()
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -48,10 +44,6 @@ final class GeneralRootWithLanguageFoldersHeaderTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func prepareForReuse() {
-        disposeBag = DisposeBag()
     }
     
 }
