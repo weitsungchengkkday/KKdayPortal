@@ -7,13 +7,9 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class GeneralFolderTableViewCell: UITableViewCell {
-    
-    private(set) var disposeBag = DisposeBag()
     
     lazy var typeImageView: UIImageView = {
         let imv = UIImageView()
@@ -63,10 +59,6 @@ final class GeneralFolderTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func prepareForReuse() {
-        disposeBag = DisposeBag()
     }
     
 }

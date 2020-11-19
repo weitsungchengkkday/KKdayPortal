@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class GeneralFolderViewController: UIViewController, GeneralDetailPageCoordinator {
@@ -30,7 +28,11 @@ final class GeneralFolderViewController: UIViewController, GeneralDetailPageCoor
     }()
     
     lazy var tableView: UITableView = {
+        
         let tbv = UITableView()
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralFolderTableViewCell.self, forCellReuseIdentifier: GeneralFolderViewController.CellName)
         tbv.tableFooterView = UIView()
@@ -38,7 +40,6 @@ final class GeneralFolderViewController: UIViewController, GeneralDetailPageCoor
     }()
     
     private let viewModel: GeneralFolderViewModel
-    private let disposeBag = DisposeBag()
     private var isAlertNeeded: Bool = false
     
     init(viewModel: GeneralFolderViewModel) {
@@ -57,17 +58,12 @@ final class GeneralFolderViewController: UIViewController, GeneralDetailPageCoor
         
         setupUI()
         bindViewModel()
-        
-        self.tableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+          //  MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     
@@ -112,48 +108,70 @@ final class GeneralFolderViewController: UIViewController, GeneralDetailPageCoor
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.topTitleLabel.text = title
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showGeneralItems
-            .do(onNext: { [weak self] generalItems in
-                if generalItems.count == 0 {
-                    self?.tableView.backgroundView?.contentMode = .center
-                    self?.tableView.backgroundView = NoInformationLabel()
-                    
-                } else {
-                    self?.tableView.backgroundView = nil
-                }
-            })
-            .drive(tableView.rx.items(cellIdentifier: GeneralFolderViewController.CellName, cellType: GeneralFolderTableViewCell.self)) { (row, generalItem, cell) in
-                
-                cell.typeImageView.image = generalItem.type?.image
-                cell.titleLabel.text = generalItem.title
+        viewModel.updateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateFolder(viewModel: weakSelf.viewModel)
         }
-        .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(GeneralItem.self)
-            .subscribe(onNext: { [weak self] generalItem in
-                
-                guard let type = generalItem.type,
-                    let source = generalItem.source else {
-                        return
-                }
- 
-                self?.openDetailPage(route: source, type: type)
-            })
-            .disposed(by: disposeBag)
+    }
+    
+    private func updateFolder(viewModel: GeneralFolderViewModel) {
+        self.topTitleLabel.text = viewModel.folderTitle
+        self.tableView.reloadData()
+        
     }
 
 }
 
-extension GeneralFolderViewController: UITableViewDelegate {
+extension GeneralFolderViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        if viewModel.generalItems.count == 0 {
+//            tableView.backgroundView?.contentMode = .center
+//            tableView.backgroundView = NoInformationLabel()
+            return 0
+        } else {
+          //  tableView.backgroundView = nil
+            return viewModel.generalItems.count
+        }
+
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = viewModel.generalItems[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: GeneralFolderViewController.CellName, for: indexPath) as! GeneralFolderTableViewCell
+       
+        cell.typeImageView.image = item.type?.image
+        cell.titleLabel.text = item.title
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let item = viewModel.generalItems[indexPath.row]
+        
+        guard let type = item.type,
+              let source =  item.source else {
+            return
+        }
+        
+        self.openDetailPage(route: source, type: type)
+        
+        return
+    }
+    
 }

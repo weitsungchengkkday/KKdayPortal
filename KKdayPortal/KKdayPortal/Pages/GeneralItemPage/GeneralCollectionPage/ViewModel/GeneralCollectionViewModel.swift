@@ -6,8 +6,6 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
 import SwiftSoup
 
 final class GeneralCollectionViewModel {
