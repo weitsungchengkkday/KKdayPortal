@@ -52,7 +52,7 @@ final class WebPloneRepository {
         self.source = source
     }
     
-    func loadItem(generalItemType: GeneralItemType, completion: @escaping (Result<GeneralItem, DolphinHTTP.HTTPError>) -> Void) {
+    func loadItem(generalItemType: GeneralItemType, completion: @escaping (Result<GeneralItem, HTTPError>) -> Void) {
         
         let ploneItemType = ItemConverter.typeTransfer(generalItemType: generalItemType)
         

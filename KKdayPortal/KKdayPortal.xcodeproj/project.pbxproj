@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		77E5FB8106E4538F986E0785 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */; };
 		7F644BB20AD6E8ABC36BA339 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569478EC36DD5FD37783A5F8 /* Pods_KKdayPortal_Sit.framework */; };
+		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
+		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		F42039B223C78ED4000480EF /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
 		F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEB523F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
@@ -230,8 +232,6 @@
 		F457418023D58F4E00FB5EEC /* TestingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417E23D58F4E00FB5EEC /* TestingViewModel.swift */; };
 		F457418623D593C600FB5EEC /* TestingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457418523D593C600FB5EEC /* TestingTableViewCell.swift */; };
 		F457418723D593C600FB5EEC /* TestingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457418523D593C600FB5EEC /* TestingTableViewCell.swift */; };
-		F457419123D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457419023D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift */; };
-		F457419223D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457419023D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift */; };
 		F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
 		F45C2C4423BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
 		F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
@@ -257,8 +257,6 @@
 		F46181052405050900D303F8 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
 		F4B3BC9A23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
 		F4B3BC9B23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
-		F4B3BCA023F15A53009699E5 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9F23F15A53009699E5 /* HTTPError.swift */; };
-		F4B3BCA123F15A53009699E5 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9F23F15A53009699E5 /* HTTPError.swift */; };
 		F4B3BCA523F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
 		F4B3BCA623F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
 		F4B3BCAA23F30F6D009699E5 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
@@ -330,6 +328,7 @@
 		B4118F5E5FC3FE5AD7CF2FD8 /* Pods-KKdayPortalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C07DF91F421AE8C2F87756E8 /* Pods-KKdayPortal-SitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-SitTests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-SitTests/Pods-KKdayPortal-SitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryTableViewCell.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
@@ -442,7 +441,6 @@
 		F457417923D55FB400FB5EEC /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		F457417E23D58F4E00FB5EEC /* TestingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewModel.swift; sourceTree = "<group>"; };
 		F457418523D593C600FB5EEC /* TestingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCell.swift; sourceTree = "<group>"; };
-		F457419023D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F45C2C4023BCD60C00A1E769 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F45C2C4323BCD8AD00A1E769 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		F4603C4F23C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersNormalTableViewCell.swift; sourceTree = "<group>"; };
@@ -458,7 +456,6 @@
 		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4B3BC9423F0F57C009699E5 /* KKdayPortal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
-		F4B3BC9F23F15A53009699E5 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
 		F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
@@ -548,6 +545,14 @@
 				1472025D5D403B45FD200C5C /* Pods-KKdayPortal-SitTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C6A578252567D21D0049D700 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F426FEB823F4F7E600BFDA3B /* CustomUIElement */ = {
@@ -1420,7 +1425,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DDFDC223D69C5700B5802B /* Model */,
-				F457418A23D5B56000FB5EEC /* ViewModel */,
+				C6A578252567D21D0049D700 /* ViewModel */,
 				F457418423D590AD00FB5EEC /* View */,
 			);
 			path = Cell;
@@ -1432,14 +1437,6 @@
 				F457418523D593C600FB5EEC /* TestingTableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F457418A23D5B56000FB5EEC /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F457419023D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F45C2C3F23BCD50600A1E769 /* Helper */ = {
@@ -1525,14 +1522,6 @@
 				F4B3BC9423F0F57C009699E5 /* KKdayPortal-Info.plist */,
 			);
 			path = InfoPlist;
-			sourceTree = "<group>";
-		};
-		F4B3BC9E23F15A0C009699E5 /* HTTPError */ = {
-			isa = PBXGroup;
-			children = (
-				F4B3BC9F23F15A53009699E5 /* HTTPError.swift */,
-			);
-			path = HTTPError;
 			sourceTree = "<group>";
 		};
 		F4B3BCB323F3100F009699E5 /* MemberManager */ = {
@@ -1668,7 +1657,6 @@
 		F4B3F3242387C15B00657CDF /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F4B3BC9E23F15A0C009699E5 /* HTTPError */,
 				F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */,
 			);
 			path = Network;
@@ -1993,7 +1981,6 @@
 				F44A199923C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
 				F45C2C4523BCD8AD00A1E769 /* UIState.swift in Sources */,
 				F44E8C7723B88AA30032C6BE /* LocaleExtension.swift in Sources */,
-				F4B3BCA123F15A53009699E5 /* HTTPError.swift in Sources */,
 				F45740E723D13A2B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
 				F46180F92403797200D303F8 /* UITextFieldExtension.swift in Sources */,
 				F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
@@ -2056,6 +2043,7 @@
 				F44A199423C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
 				F4B3BC9B23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
 				F46180D223FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
+				C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */,
 				F44E8CA223B88AA30032C6BE /* PloneItem.swift in Sources */,
 				F4B3BCBC23F310C6009699E5 /* ErrorManageable.swift in Sources */,
 				F46181052405050900D303F8 /* Keyboarder.swift in Sources */,
@@ -2073,7 +2061,6 @@
 				F43AFC5223E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				F426FEC623F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */,
-				F457419223D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */,
 				F44E8CAC23B88AA30032C6BE /* LoginViewController.swift in Sources */,
 				F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */,
 				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
@@ -2203,12 +2190,12 @@
 				F44A199323C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
 				F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */,
 				F426FEDF23F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
+				C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */,
 				F46180D123FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				F45740E423D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
 				F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */,
 				F46181042405050900D303F8 /* Keyboarder.swift in Sources */,
 				F4B3BCBB23F310C6009699E5 /* ErrorManageable.swift in Sources */,
-				F457419123D5B5C300FB5EEC /* TestingTableViewCellViewModel.swift in Sources */,
 				F453952A23BAE21400136E6D /* LoadingViewController.swift in Sources */,
 				F46180CD23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
@@ -2222,7 +2209,6 @@
 				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
 				F426FEC523F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */,
-				F4B3BCA023F15A53009699E5 /* HTTPError.swift in Sources */,
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,

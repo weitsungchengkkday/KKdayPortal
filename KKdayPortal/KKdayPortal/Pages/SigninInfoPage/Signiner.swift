@@ -11,7 +11,7 @@ import DolphinHTTP
 
 protocol SigninDelegate: AnyObject {
     func signinSuccess(_ signiner: Signiner, generalUser user: GeneralUser)
-    func signinFailed(_ signiner: Signiner, signinError error: DolphinHTTP.HTTPError)
+    func signinFailed(_ signiner: Signiner, signinError error: HTTPError)
 }
 
 final class Signiner {

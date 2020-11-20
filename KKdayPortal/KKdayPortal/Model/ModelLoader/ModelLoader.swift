@@ -15,7 +15,7 @@ enum ModelLoader {
         
         typealias Repository = WebPloneRepository
         
-        func loadItem(source: URL, type: GeneralItemType, completion: @escaping (Result<GeneralItem, DolphinHTTP.HTTPError>) -> Void) {
+        func loadItem(source: URL, type: GeneralItemType, completion: @escaping (Result<GeneralItem, HTTPError>) -> Void) {
             return Repository(source: source).loadItem(generalItemType: type, completion: completion)
         }
 

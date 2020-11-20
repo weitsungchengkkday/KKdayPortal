@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DolphinHTTP
 
 final class MemberManager {
     
@@ -20,7 +21,7 @@ final class MemberManager {
         
         if let error = error as? HTTPError {
             self.alertErrorInfo = AlertEventInfo(error: error,
-                                                 message: error.message)
+                                                 message: error.localizedDescription)
         } else {
             self.alertErrorInfo = AlertEventInfo(error: error, message: error.localizedDescription)
         }
@@ -40,13 +41,9 @@ final class MemberManager {
         
         let okAlertAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
             if let error = alertErrorInfo.error as? HTTPError {
-                switch error {
-                case .unauthorized, .forbidden, .notFound, .clientError:
-                    self?.logout()
-                default:
-                    break
-                }
+                print(error)
             }
+            self?.logout()
         }
         
         alertControlloer.addAction(okAlertAction)

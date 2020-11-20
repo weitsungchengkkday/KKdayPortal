@@ -17,7 +17,7 @@ final class PloneItemsAPI {
     }()
     
     
-    func getPloneItem<T> (user: PloneUser?, route: URL, ploneType: T.Type, compeletion: @escaping (Result<PloneItem, DolphinHTTP.HTTPError>) ->  Void) where T: PloneItem {
+    func getPloneItem<T> (user: PloneUser?, route: URL, ploneType: T.Type, compeletion: @escaping (Result<PloneItem, HTTPError>) ->  Void) where T: PloneItem {
         
         var r = HTTPRequest()
         r.host = route.host
@@ -29,7 +29,7 @@ final class PloneItemsAPI {
         let generalUser: GeneralUser? = StorageManager.shared.loadObject(for: .generalUser)
         
         guard let user = generalUser else {
-            let error = DolphinHTTP.HTTPError(code: .invalidRequest, request: r, response: nil, underlyingError: nil)
+            let error = HTTPError(code: .invalidRequest, request: r, response: nil, underlyingError: nil)
             compeletion(.failure(error))
             return
         }
@@ -55,20 +55,20 @@ final class PloneItemsAPI {
                             compeletion(.success(ploneItem))
                             
                         } catch(let error) {
-                            let error = DolphinHTTP.HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
+                            let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
                             compeletion(.failure(error))
                         }
                     }
                     
                 default:
                     print(response.status)
-                    let error = DolphinHTTP.HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: nil)
+                    let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: nil)
                     compeletion(.failure(error))
                 }
                 
             case .failure(let error):
                 print(error)
-                let error = DolphinHTTP.HTTPError(code: .invalidResponse, request: r, response: nil, underlyingError: error)
+                let error = HTTPError(code: .invalidResponse, request: r, response: nil, underlyingError: error)
                 compeletion(.failure(error))
             }
             

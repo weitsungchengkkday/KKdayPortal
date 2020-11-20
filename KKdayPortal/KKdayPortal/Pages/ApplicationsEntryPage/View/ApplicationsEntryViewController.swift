@@ -28,20 +28,6 @@ final class ApplicationsEntryViewController: UIViewController {
         return tbv 
     }()
     
-    //    private lazy var loadingActivityIndicatorContainerView: UIView = {
-    //        let view = UIView()
-    //        view.layer.cornerRadius = 5
-    //        view.clipsToBounds = true
-    //        view.isHidden = true
-    //        return view
-    //    }()
-    //
-    //    private lazy var loadingActivityIndicatorView: UIActivityIndicatorView = {
-    //        let idv = UIActivityIndicatorView(style: .large)
-    //        idv.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-    //        return idv
-    //    }()
-    //
     private let viewModel = ApplicationsEntryViewModel()
     
     override func viewDidLoad() {
@@ -56,29 +42,14 @@ final class ApplicationsEntryViewController: UIViewController {
         self.title = "Service Links"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(tableView)
-        //        view.addSubview(loadingActivityIndicatorContainerView)
-        //        loadingActivityIndicatorContainerView.addSubview(loadingActivityIndicatorView)
-        //
+   
         tableView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        //        loadingActivityIndicatorContainerView.snp.makeConstraints { maker in
-        //            maker.centerX.equalToSuperview()
-        //            maker.centerY.equalToSuperview()
-        //            maker.width.equalTo(65)
-        //            maker.height.equalTo(65)
-        //        }
-        //
-        //        loadingActivityIndicatorView.snp.makeConstraints { maker in
-        //            maker.centerX.equalToSuperview()
-        //            maker.centerY.equalToSuperview()
-        //            maker.width.equalTo(60)
-        //            maker.height.equalTo(00)
-        //        }
-        
+   
     }
     
     // ⛓ bind viewModel

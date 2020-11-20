@@ -17,7 +17,7 @@ final class PloneUserAPI {
         self.loader = loader
     }
     
-    func signin(url: URL, account: String, password: String, completion: @escaping (Result<GeneralUser, DolphinHTTP.HTTPError>) -> Void) {
+    func signin(url: URL, account: String, password: String, completion: @escaping (Result<GeneralUser, HTTPError>) -> Void) {
         var r = HTTPRequest()
         r.host = url.absoluteString
         r.path = "/Plone/@login"
@@ -51,7 +51,7 @@ final class PloneUserAPI {
                             
                             guard let data = jsonData as? [String : String],
                                   let token = data["token"] else {
-                                let error = DolphinHTTP.HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: nil)
+                                let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: nil)
                                 completion(.failure(error))
                                 return
                             }
@@ -61,20 +61,20 @@ final class PloneUserAPI {
                             
                         } catch(let error){
                             
-                            let error = DolphinHTTP.HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
+                            let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
                             completion(.failure(error))
                         }
                     }
                     
                 default:
-                    let error =  DolphinHTTP.HTTPError(code: DolphinHTTP.HTTPError.Code.invalidResponse, request: r, response: nil, underlyingError: nil)
+                    let error = HTTPError(code: HTTPError.Code.invalidResponse, request: r, response: nil, underlyingError: nil)
                     completion(.failure(error))
                 }
                 
                 return
                 
             case .failure(let error):
-                let error =  DolphinHTTP.HTTPError(code: DolphinHTTP.HTTPError.Code.invalidResponse, request: r, response: nil, underlyingError: error)
+                let error = HTTPError(code: HTTPError.Code.invalidResponse, request: r, response: nil, underlyingError: error)
                 completion(.failure(error))
                 
                 return
@@ -85,13 +85,13 @@ final class PloneUserAPI {
     
     // Plone Logout API Not Work
     // Just Clear Plone related Data in APP
-    func signout(account: String, token: String, completion: @escaping (Result<GeneralUser, DolphinHTTP.HTTPError>) -> Void) {
+    func signout(account: String, token: String, completion: @escaping (Result<GeneralUser, HTTPError>) -> Void) {
         
         let user: GeneralUser? = StorageManager.shared.load(for: .generalUser)
         let r = HTTPRequest()
         
         guard let genernalUser = user else {
-            let error = DolphinHTTP.HTTPError(code: .invalidResponse, request: r, response: nil, underlyingError: nil)
+            let error = HTTPError(code: .invalidResponse, request: r, response: nil, underlyingError: nil)
             completion(.failure(error))
             return
         }

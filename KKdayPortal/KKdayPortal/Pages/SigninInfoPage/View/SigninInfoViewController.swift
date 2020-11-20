@@ -405,7 +405,7 @@ extension SigninInfoViewController: SigninDelegate {
         directlyGoMainViewController()
     }
     
-    func signinFailed(_ signiner: Signiner, signinError error: DolphinHTTP.HTTPError) {
+    func signinFailed(_ signiner: Signiner, signinError error: HTTPError) {
         
         debugPrint("🚨 Normal Login, Get Error: \(error)")
        
