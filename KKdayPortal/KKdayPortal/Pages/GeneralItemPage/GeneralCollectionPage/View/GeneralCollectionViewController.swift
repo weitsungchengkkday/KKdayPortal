@@ -176,6 +176,10 @@ class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordi
 
 extension GeneralCollectionViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.collectionGeneralTextObjectItems.count
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          
         if tableView == generalTextObjectTableView {

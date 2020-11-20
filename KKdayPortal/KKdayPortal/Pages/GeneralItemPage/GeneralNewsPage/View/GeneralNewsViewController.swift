@@ -161,6 +161,10 @@ final class GeneralNewsViewController: UIViewController {
 
 extension GeneralNewsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.newsGeneralTextObjectItems.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if viewModel.newsGeneralTextObjectItems.isEmpty {

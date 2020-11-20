@@ -12,37 +12,32 @@ final class ApplicationsEntryViewModel {
     
     typealias PortalContent = GeneralItem
     
-    private(set) var generalItemURL: [URL] = []
+    private(set) var linkObjects: [ApplicationLinkObject] = []
     private(set) var isLoading: Bool = false
     
-//    var input: ApplicationsEntryViewModel.Input
-//    var output: ApplicationsEntryViewModel.Output
-//
-//    struct Input {
-//        let generalItemsURL: AnyObserver<[URL]>
-//        let isLoading: AnyObserver<Bool>
-//    }
-//
-//    struct Output {
-//        let showGeneralItemsURL: Driver<[URL]>
-//        let showIsLoading: Driver<Bool>
-//    }
-    
-//    private let generalItemsURLSubject = PublishSubject<[URL]>()
-//    private let isLoadingSubject = PublishSubject<Bool>()
-//
-    var generalItemsURL: [URL] = {
-        let urls = [ URL(string: ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm")!]
-      
+    private var defaultLinkObjects: [ApplicationLinkObject] = {
+        let urls = [
+            ApplicationLinkObject(name: "BPM", description: "簽核系統", url: URL(string: ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm")!)
+        ]
+               
         return urls
     }()
     
-
+    var updateContent: () -> Void = {}
     
     init() { }
     
     func loadPortalData() {
-        generalItemsURLSubject.onNext(generalItemsURL)
+        self.linkObjects += defaultLinkObjects
+        updateContent()
     }
     
 }
+
+struct ApplicationLinkObject {
+    
+    let name: String
+    let description: String
+    let url: URL
+}
+

@@ -153,6 +153,11 @@ final class GeneralDocumentViewController: UIViewController {
 
 
 extension GeneralDocumentViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.viewModel.documentGeneralTextObjectItems.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if viewModel.documentGeneralTextObjectItems.isEmpty {

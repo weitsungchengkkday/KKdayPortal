@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 import WebKit
 
@@ -37,7 +35,6 @@ final class ApplicationsContentViewController: UIViewController {
     }()
     
     private let viewModel: ApplicationsContentViewModel
-    private let disposeBag = DisposeBag()
     
     init(viewModel: ApplicationsContentViewModel) {
         self.viewModel = viewModel
@@ -54,7 +51,7 @@ final class ApplicationsContentViewController: UIViewController {
         setupUI()
         setAction()
         bindViewModel()
-        viewModel.getPortalData()
+        loadWebsite()
     }
         
     // 🎨 draw UI
@@ -91,22 +88,11 @@ final class ApplicationsContentViewController: UIViewController {
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                
-                self?.title = title
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showLoadWebView
-            .drive(onNext: { [weak self] url in
-                guard let url = url else {
-                    return
-                }
-                self?.webView.load(URLRequest(url: url))
-            })
-            .disposed(by: disposeBag)
+    }
+    
+    private func loadWebsite() {
+        let url = viewModel.source
+        self.webView.load(URLRequest(url: url))
     }
 }
 

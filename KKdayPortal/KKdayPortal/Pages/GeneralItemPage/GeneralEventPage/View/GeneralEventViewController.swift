@@ -173,6 +173,10 @@ final class GeneralEventViewController: UIViewController {
 
 extension GeneralEventViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.eventGeneralTextObjectItems.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if viewModel.eventGeneralTextObjectItems.isEmpty {

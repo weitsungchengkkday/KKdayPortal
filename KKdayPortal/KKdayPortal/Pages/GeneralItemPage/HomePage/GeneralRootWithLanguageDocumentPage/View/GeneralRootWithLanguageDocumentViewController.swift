@@ -146,6 +146,10 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
 }
  
 extension GeneralRootWithLanguageDocumentViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.documentGeneralTextObjectItems.count
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
    
