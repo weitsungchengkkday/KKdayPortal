@@ -2315,7 +2315,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "-D PRODUCTION";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D PRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2339,7 +2339,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "-D PRODUCTION";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D PRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				PROVISIONING_PROFILE_SPECIFIER = "KKPortal-Provisioning-Profile-p";
@@ -2482,7 +2482,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "-D SIT";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D SIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2505,7 +2505,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "-D SIT";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D SIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
 				SWIFT_VERSION = 5.0;

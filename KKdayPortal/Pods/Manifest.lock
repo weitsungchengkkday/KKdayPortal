@@ -1,65 +1,24 @@
 PODS:
   - Alamofire (4.9.1)
-  - Differentiator (3.1.0)
   - HTMLString (5.0.0)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Moya/RxSwift (13.0.1):
-    - Moya/Core
-    - RxSwift (~> 4.0)
-  - Result (4.1.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxDataSources (3.1.0):
-    - Differentiator (~> 3.0)
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxGesture (2.2.0):
-    - RxCocoa (~> 4.5)
-    - RxSwift (~> 4.5)
-  - RxKeyboard (0.9.0):
-    - RxCocoa (>= 4.3.1)
-    - RxSwift (>= 4.3.1)
-  - RxSwift (4.5.0)
   - SwiftSoup (2.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.9.1)
   - HTMLString (~> 5.0.0)
-  - Moya/RxSwift (~> 13.0.1)
-  - RxCocoa (~> 4.5.0)
-  - RxDataSources (~> 3.1.0)
-  - RxGesture (~> 2.2.0)
-  - RxKeyboard (~> 0.9.0)
   - SwiftSoup (~> 2.3.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Differentiator
     - HTMLString
-    - Moya
-    - Result
-    - RxCocoa
-    - RxDataSources
-    - RxGesture
-    - RxKeyboard
-    - RxSwift
     - SwiftSoup
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   HTMLString: 20374dc0195423d02569e87561f01153fca0c364
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
-  RxGesture: c1b7bf17166b0ef9d642a9510f8bac5785f18990
-  RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
 
-PODFILE CHECKSUM: 3d2d93e583e6b84d422a4083e9398b79eeeae56b
+PODFILE CHECKSUM: 37f4fd49f385da73be4103c8748a2fe357184e92
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

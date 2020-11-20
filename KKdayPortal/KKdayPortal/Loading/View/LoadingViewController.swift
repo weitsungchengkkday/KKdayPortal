@@ -8,8 +8,6 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
 final class LoadingViewController: UIViewController {
 
@@ -42,7 +40,6 @@ final class LoadingViewController: UIViewController {
     }()
     
     private let viewModel: LoadingViewModel
-    private let disposeBag = DisposeBag()
     
     init(viewModel: LoadingViewModel) {
         self.viewModel = viewModel
@@ -59,7 +56,6 @@ final class LoadingViewController: UIViewController {
         setupUI()
         setAction()
         bindViewModel()
-        viewModel.loadImageAndTitle()
     }
     
     // 🎨 draw UI
@@ -98,19 +94,19 @@ final class LoadingViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showLoadingImage
-            .drive(onNext: { [weak self] image in
-                self?.imageView.image = image
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showLoadingTitle
-            .drive(onNext: { [weak self] (text, isHidden) in
-                self?.titleLabel.text = text
-                self?.titleLabel.isHidden = isHidden
-            })
-            .disposed(by: disposeBag)
+        viewModel.updateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateLoading(viewModel: weakSelf.viewModel)
+        }
     }
-
+    
+    private func updateLoading(viewModel: LoadingViewModel) {
+        
+        self.imageView.image = viewModel.image
+        self.titleLabel.text = viewModel.title.0
+        self.titleLabel.isHidden = viewModel.title.1
+    }
     
 }

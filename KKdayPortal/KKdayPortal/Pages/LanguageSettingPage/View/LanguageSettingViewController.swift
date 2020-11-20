@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
-import RxDataSources
 
 final class LanguageSettingViewController: UIViewController {
     
@@ -18,35 +15,34 @@ final class LanguageSettingViewController: UIViewController {
         return "LanguageCell"
     }
 
-    private let buttonClicked = PublishSubject<Bool>()
+//    private let buttonClicked = PublishSubject<Bool>()
     
-    private lazy var dataSource = {
-        return RxTableViewSectionedReloadDataSource<LanguageSection> (
-            configureCell: { [unowned self] dataSource, tableView, indexPath, item in
-              
-                if let cell = tableView.dequeueReusableCell(withIdentifier: LanguageSettingViewController.CellName, for: indexPath) as? LanguageSettingTableViewCell {
-                    
-                    cell.titleLabel.text = item.selectedLanguage.name
-                    let image = item.isSelected ? #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
-                    cell.selectCellButton.setImage(image, for: .normal)
-                    cell.bindViewModel(cellViewModel: item, selectButtonClicked: self.buttonClicked.asObserver())
-                    return cell
-                }
-                
-                return UITableViewCell()
-        },
-            titleForHeaderInSection: { dataSource, section in
-                return dataSource.sectionModels[section].header
-        })
-    }()
+//    private lazy var dataSource = {
+//        return RxTableViewSectionedReloadDataSource<LanguageSection> (
+//            configureCell: { [unowned self] dataSource, tableView, indexPath, item in
+//
+//                if let cell = tableView.dequeueReusableCell(withIdentifier: LanguageSettingViewController.CellName, for: indexPath) as? LanguageSettingTableViewCell {
+//
+//                    cell.titleLabel.text = item.selectedLanguage.name
+//                    let image = item.isSelected ? #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
+//                    cell.selectCellButton.setImage(image, for: .normal)
+//                    cell.bindViewModel(cellViewModel: item, selectButtonClicked: self.buttonClicked.asObserver())
+//                    return cell
+//                }
+//
+//                return UITableViewCell()
+//        },
+//            titleForHeaderInSection: { dataSource, section in
+//                return dataSource.sectionModels[section].header
+//        })
+//    }()
     
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        tbv.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
+        tbv.delegate = self
+        tbv.dataSource = self
         
         tbv.register(LanguageSettingTableViewCell.self, forCellReuseIdentifier: LanguageSettingViewController.CellName)
         tbv.tableFooterView = UIView()
@@ -54,7 +50,6 @@ final class LanguageSettingViewController: UIViewController {
     }()
     
     private let viewModel: LanguageViewModel
-    private let disposeBag = DisposeBag()
     
     init(viewModel: LanguageViewModel) {
         self.viewModel = viewModel
@@ -71,7 +66,7 @@ final class LanguageSettingViewController: UIViewController {
         setupUI()
         setAction()
         bindViewModel()
-        viewModel.nextCellViewModelsEvent()
+        viewModel.loadLanguageItems()
     }
     
     // 🎨 draw UI
@@ -91,23 +86,32 @@ final class LanguageSettingViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        buttonClicked
-            .asDriver(onErrorJustReturn: false)
-            .drive(onNext: { [weak self] bool -> Void in
-                self?.viewModel.nextCellViewModelsEvent()
-                if bool == false {
-                    self?.dismiss(animated: true, completion: nil)
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showLanguageItems
-            .drive(tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
+//        buttonClicked
+//            .asDriver(onErrorJustReturn: false)
+//            .drive(onNext: { [weak self] bool -> Void in
+//                self?.viewModel.nextCellViewModelsEvent()
+//                if bool == false {
+//                    self?.dismiss(animated: true, completion: nil)
+//                }
+//            })
+//            .disposed(by: disposeBag)
+//
+//        viewModel.output.showLanguageItems
+//            .drive(tableView.rx.items(dataSource: dataSource))
+//            .disposed(by: disposeBag)
     }
 }
 
-extension LanguageSettingViewController: UITableViewDelegate {
+extension LanguageSettingViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40

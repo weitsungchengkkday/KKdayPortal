@@ -6,8 +6,6 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
-//import RxDataSources
-
 enum GeneralTextObjectSectionItem {
     case normal(cellViewModel: GeneralTextObjectNormalTableViewCellViewModel)
     case iframe(cellViewModel: GeneralTextObjectIFrameTableViewCellViewModel)

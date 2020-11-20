@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import RxSwift
 
 final class MemberManager {
     
@@ -29,7 +28,7 @@ final class MemberManager {
         NotificationCenter.default.post(name: Notification.Name.alertEvent, object: self, userInfo: userInfo)
     }
     
-    func showAlertController(_ presentedViewController: UIViewController, with disposeBag: DisposeBag) {
+    func showAlertController(_ presentedViewController: UIViewController) {
         
         guard let alertErrorInfo = self.alertErrorInfo else {
             return

@@ -7,15 +7,9 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class TestingTableViewCell: UITableViewCell {
-    
-    typealias CellViewModel = TestingTableViewCellViewModel
-    
-    private(set) var disposeBag = DisposeBag()
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -53,29 +47,27 @@ final class TestingTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func prepareForReuse() {
-        disposeBag = DisposeBag()
-    }
     
-    func bindViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
-        
-        selectedButton.rx.tap
-            .subscribe(onNext: { [weak self] _ in
-                
-                self?.selectedButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
-                
-                if cellViewModel.serverType.rawValue != StorageManager.shared.load(for: .serverType) {
-                    StorageManager.shared.save(for: .serverType, value: cellViewModel.serverType.rawValue)
-                } else {
-                    print("⚠️ Save same serverType")
-                }
-                
-            })
-            .disposed(by: disposeBag)
-        
-        selectedButton.rx.tap
-            .map { cellViewModel.isSelected }
-            .bind(to: selectButtonClicked)
-            .disposed(by: disposeBag)
-    }
+    
+//    func bindViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
+//
+//        selectedButton.rx.tap
+//            .subscribe(onNext: { [weak self] _ in
+//
+//                self?.selectedButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
+//
+//                if cellViewModel.serverType.rawValue != StorageManager.shared.load(for: .serverType) {
+//                    StorageManager.shared.save(for: .serverType, value: cellViewModel.serverType.rawValue)
+//                } else {
+//                    print("⚠️ Save same serverType")
+//                }
+//
+//            })
+//            .disposed(by: disposeBag)
+//
+//        selectedButton.rx.tap
+//            .map { cellViewModel.isSelected }
+//            .bind(to: selectButtonClicked)
+//            .disposed(by: disposeBag)
+//    }
 }

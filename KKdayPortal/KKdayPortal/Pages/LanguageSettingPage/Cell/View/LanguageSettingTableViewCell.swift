@@ -7,15 +7,11 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class LanguageSettingTableViewCell: UITableViewCell {
     
     typealias CellViewModel = LanguageSettingTableViewCellViewModel
-    
-    private(set) var disposeBag = DisposeBag()
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -90,25 +86,22 @@ final class LanguageSettingTableViewCell: UITableViewCell {
            fatalError("init(coder:) has not been implemented")
        }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-         disposeBag = DisposeBag()
-     }
-    
-    func bindViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
-        
-        selectCellButton.rx.tap
-            .subscribe(onNext: { [weak self] _ in
-        
-                self?.selectCellButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
-                Language.isUserSelectedLanguage = true
-                LanguageManager.shared.currentLanguage = cellViewModel.selectedLanguage
-            })
-            .disposed(by: disposeBag)
-        
-        selectCellButton.rx.tap
-            .map { cellViewModel.isSelected }
-            .bind(to: selectButtonClicked)
-            .disposed(by: disposeBag)
-    }
+  
+//
+//    func bindViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
+//
+//        selectCellButton.rx.tap
+//            .subscribe(onNext: { [weak self] _ in
+//
+//                self?.selectCellButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
+//                Language.isUserSelectedLanguage = true
+//                LanguageManager.shared.currentLanguage = cellViewModel.selectedLanguage
+//            })
+//            .disposed(by: disposeBag)
+//
+//        selectCellButton.rx.tap
+//            .map { cellViewModel.isSelected }
+//            .bind(to: selectButtonClicked)
+//            .disposed(by: disposeBag)
+//    }
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxDataSources
-
 struct GeneralTextObjectSection {
     let header: String
     var items: [GeneralTextObjectSectionItem]

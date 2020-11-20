@@ -6,10 +6,6 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
-import RxDataSources
-
 final class TestingTableViewCellViewModel {
     
     var name: String
@@ -23,18 +19,4 @@ final class TestingTableViewCellViewModel {
         self.serverType = serverType
         self.isSelected = isSelected
     }
-}
-
-extension TestingTableViewCellViewModel: IdentifiableType, Equatable {
-    
-    typealias Identity = String
-    
-    var identity: Identity {
-        return serverType.identity
-    }
-    
-    static func == (lhs: TestingTableViewCellViewModel, rhs: TestingTableViewCellViewModel) -> Bool {
-        return lhs.identity == rhs.identity
-    }
-    
 }

@@ -6,37 +6,27 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxCocoa
-import RxSwift
-
 final class TestingViewModel {
     
     typealias CellViewModel = TestingTableViewCellViewModel
     
-    var input: TestingViewModel.Input
-    var output: TestingViewModel.Output
+    private(set) var testingItems: [TestingSection] = []
     
-    struct Input {
-        let cellViewModels: AnyObserver<[TestingSection]>
-    }
+    var updateContent: () -> Void = {}
     
-    struct Output {
-        let showTestingItems: Driver<[TestingSection]>
-    }
-    
-    private let cellViewModelsSubject = PublishSubject<[TestingSection]>()
-    private let disposeBag = DisposeBag()
     
     init() {
-        self.input = Input(cellViewModels: cellViewModelsSubject.asObserver())
-        self.output = Output(showTestingItems: cellViewModelsSubject.asDriver(onErrorJustReturn: []))
+//        self.input = Input(cellViewModels: cellViewModelsSubject.asObserver())
+//        self.output = Output(showTestingItems: cellViewModelsSubject.asDriver(onErrorJustReturn: []))
     }
     
     func nextCellViewModelEvent() {
-        cellViewModelsSubject.onNext(getCellViewModels())
+     //   cellViewModelsSubject.onNext(getCellViewModels())
     }
     
-    func getCellViewModels() -> [TestingSection] {
+ 
+    
+    func loadTestingItems() {
         
         var testingTableViewCellViewModels: [TestingTableViewCellViewModel] = []
         
@@ -48,7 +38,9 @@ final class TestingViewModel {
         testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Sit Server", host: sitServer, serverType: .sit, isSelected: sitServer == currentServer))
         testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Production", host: productionServer, serverType: .production, isSelected: productionServer == currentServer))
         
-        return [TestingSection(header: "Testing", items: testingTableViewCellViewModels)]
+        self.testingItems = [TestingSection(header: "Testing", items: testingTableViewCellViewModels)]
+        
+        updateContent()
     }
     
 }

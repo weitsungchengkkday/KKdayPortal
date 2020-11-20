@@ -6,10 +6,6 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
-import RxDataSources
-
 final class LanguageSettingTableViewCellViewModel {
     
     var isSelected: Bool
@@ -21,16 +17,4 @@ final class LanguageSettingTableViewCellViewModel {
     }
 }
 
-extension LanguageSettingTableViewCellViewModel: IdentifiableType, Equatable {
-    
-    typealias Identity = String
-    
-    var identity: Identity {
-        return selectedLanguage.identity
-    }
-    
-    static func == (lhs: LanguageSettingTableViewCellViewModel, rhs: LanguageSettingTableViewCellViewModel) -> Bool {
-        
-        return lhs.identity == rhs.identity
-    }
-}
+

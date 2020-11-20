@@ -138,11 +138,11 @@ extension GeneralFolderViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if viewModel.generalItems.count == 0 {
-//            tableView.backgroundView?.contentMode = .center
-//            tableView.backgroundView = NoInformationLabel()
+            tableView.backgroundView?.contentMode = .center
+            tableView.backgroundView = NoInformationLabel()
             return 0
         } else {
-          //  tableView.backgroundView = nil
+            tableView.backgroundView = nil
             return viewModel.generalItems.count
         }
 

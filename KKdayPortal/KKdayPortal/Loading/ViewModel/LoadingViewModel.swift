@@ -5,14 +5,10 @@
 //  Created by WEI-TSUNG CHENG on 2019/12/31.
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
-
-import RxSwift
-import RxCocoa
+import UIKit
 import Foundation
 
 final class LoadingViewModel {
-    
-    private let disposeBag = DisposeBag()
     
     var loadingImage: UIImage = {
         return UIImage.gifImageWithName("/Gif/cycle_loading/cycle_loading", isUseImageRetinaString: true, duration: 1500)!
@@ -27,26 +23,14 @@ final class LoadingViewModel {
     private let successImage: UIImage = #imageLiteral(resourceName: "icSucess")
     private let failImage: UIImage = #imageLiteral(resourceName: "icError")
     
-    var input: LoadingViewModel.Input
-    var output: LoadingViewModel.Output
     
-    struct Input {
-        let loadingImage: AnyObserver<UIImage>
-        let loadingTitle: AnyObserver<(String, Bool)>
-    }
+    private(set) var image: UIImage = #imageLiteral(resourceName: "icPicture")
+    private(set) var title: (String, Bool) = ("Loading", true)
     
-    struct Output {
-        let showLoadingImage: Driver<UIImage>
-        let showLoadingTitle: Driver<(String, Bool)>
-    }
-    
-    private let loadingImageSubject = PublishSubject<UIImage>()
-    private let loadingTitleSubject = PublishSubject<(String, Bool)>()
-    
+    var updateContent: () -> Void = {}
+
     init(state: UIState<Bool>) {
-        self.input = Input(loadingImage: loadingImageSubject.asObserver(), loadingTitle: loadingTitleSubject.asObserver())
-        self.output = Output(showLoadingImage: loadingImageSubject.asDriver(onErrorJustReturn: #imageLiteral(resourceName: "icPicture")),
-                             showLoadingTitle: loadingTitleSubject.asDriver(onErrorJustReturn: ("Loading", true)))
+
         self.state = state
     }
     
@@ -54,17 +38,19 @@ final class LoadingViewModel {
     
         switch state {
         case .normal:
-            loadingImageSubject.onNext(loadingImage)
-            loadingTitleSubject.onNext(("", true))
+            image = loadingImage
+            title = ("", true)
             
         case .success(value: _, message: let message, duration: _, completion: _):
-            loadingImageSubject.onNext(successImage)
-            loadingTitleSubject.onNext((message, false))
+            image = successImage
+            title = (message, false)
             
         case .error(value: _, message: let message, duration: _, completion: _):
-            loadingImageSubject.onNext(failImage)
-            loadingTitleSubject.onNext((message, false))
+           image = failImage
+            title = (message, false)
         }
+        
+        updateContent()
     }
 }
  

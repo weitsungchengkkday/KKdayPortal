@@ -209,11 +209,6 @@ final class SettingViewController: UIViewController {
         }
     }
     
-    // ⛓ bind viewModel
-    private func bindViewModel() {
-        
-    }
-    
 }
 
 extension SettingViewController: MFMailComposeViewControllerDelegate {
