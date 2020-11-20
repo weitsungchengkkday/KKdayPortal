@@ -7,15 +7,11 @@
 //
 
 import UIKit
-import RxSwift
 
 final class MainViewController: UITabBarController {
-
-    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupTabBarItems()
     }
     
@@ -87,6 +83,6 @@ final class MainViewController: UITabBarController {
     }
     
     func logout() {
-        MemberManager.shared.logoutForSwitchServer(disposeBag: disposeBag)
+        MemberManager.shared.logoutForSwitchServer()
     }
 }

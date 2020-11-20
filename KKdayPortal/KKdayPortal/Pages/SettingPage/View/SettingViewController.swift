@@ -34,16 +34,6 @@ final class SettingViewController: UIViewController {
         return btn
     }()
     
-    lazy var renewTokenButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("RenewToken", for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        btn.layer.cornerRadius = 8
-        btn.isHidden = true
-        return btn
-    }()
-    
     lazy var aboutButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("About KKPlone", for: .normal)
@@ -112,7 +102,6 @@ final class SettingViewController: UIViewController {
         
         view.addSubview(settingStackView)
         settingStackView.addArrangedSubview(languageButton)
-        settingStackView.addArrangedSubview(renewTokenButton)
         settingStackView.addArrangedSubview(aboutButton)
         settingStackView.addArrangedSubview(contactMeButton)
         settingStackView.addArrangedSubview(logoutButton)
@@ -126,11 +115,6 @@ final class SettingViewController: UIViewController {
         }
         
         languageButton.snp.makeConstraints { maker in
-            maker.height.equalTo(44)
-            maker.width.equalToSuperview().offset(-60)
-        }
-        
-        renewTokenButton.snp.makeConstraints { maker in
             maker.height.equalTo(44)
             maker.width.equalToSuperview().offset(-60)
         }
@@ -166,7 +150,6 @@ final class SettingViewController: UIViewController {
     // 🎬 set action
     private func setAction() {
         languageButton.addTarget(self, action: #selector(goLanguagePage), for: .touchUpInside)
-        renewTokenButton.addTarget(self, action: #selector(renewToken), for: .touchUpInside)
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
         aboutButton.addTarget(self, action: #selector(goAboutPage), for: .touchUpInside)
         contactMeButton.addTarget(self, action: #selector(sendEmail), for: .touchUpInside)
@@ -180,10 +163,6 @@ final class SettingViewController: UIViewController {
     @objc private func goLanguagePage() {
         let presentViewController = LanguageSettingViewController(viewModel: LanguageViewModel())
         present(presentViewController, animated: true, completion: nil)
-    }
-    
-    @objc private func renewToken() {
-        viewModel.renewToken()
     }
     
     @objc private func logout() {

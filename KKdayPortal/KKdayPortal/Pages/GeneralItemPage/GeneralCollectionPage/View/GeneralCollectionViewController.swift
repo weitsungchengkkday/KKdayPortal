@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
-import RxDataSources
 
 class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordinator {
     
@@ -59,49 +56,27 @@ class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordi
     
     lazy var itemsTableView: UITableView = {
         let tbv = UITableView()
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(GeneralCollectionTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.CellName)
-        tbv.tableFooterView = UIView()
         return tbv
     }()
     
     lazy var generalTextObjectTableView: UITableView = {
         let tbv = UITableView()
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tbv.register(GeneralTextObjectNormalTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.normal)
         tbv.register(GeneralTextObjectIFrameTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.iframe)
         tbv.register(GeneralTextObjectImageTableViewCell.self, forCellReuseIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.image)
-        tbv.tableFooterView = UIView()
         return tbv
     }()
     
     private let viewModel: GeneralCollectionViewModel
-    private let disposeBag = DisposeBag()
-    
-    private lazy var generalTextObjectDataSource = {
-        return RxTableViewSectionedReloadDataSource<GeneralTextObjectSection>(configureCell: { [weak self] dataSource, tableView, indexPath, sectionItem in
-            
-            switch sectionItem {
-            case .normal(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
-                
-                cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
-                return cell
-                
-            case .iframe(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
-                cell.iframeTitleLabel.text = cellViewModel.title
-                cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
-                return cell
-                
-            case .image(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
-                cell.textObjectImageTitleLabel.text = cellViewModel.title
-                cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
-                return cell
-            }
-        })
-    }()
     
     init(viewModel: GeneralCollectionViewModel) {
         self.viewModel = viewModel
@@ -118,16 +93,12 @@ class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordi
         
         setupUI()
         bindViewModel()
-        itemsTableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+//            MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     
@@ -180,55 +151,128 @@ class GeneralCollectionViewController: UIViewController, GeneralDetailPageCoordi
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.topTitleLabel.text = title
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showDescription
-            .do(onNext: { [weak self] text in
-                self?.descriptionTextView.isHidden = text.isEmpty
-            })
-            .drive(onNext: { [weak self] text in
-                self?.descriptionTextView.text = text
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showGeneralItems
-            .do(onNext: { [weak self] generalItems in
-                self?.itemsTableView.isHidden = generalItems.isEmpty
-            })
-            .drive(itemsTableView.rx.items(cellIdentifier: GeneralCollectionViewController.CellName, cellType: GeneralCollectionTableViewCell.self)) { (row, generalItem, cell) in
-                
-                cell.titleLabel.text = generalItem.title
-                cell.descriptionLabel.text = generalItem.description
-                
-                cell.selectCellButton.rx.tap.asObservable()
-                    .subscribe({ [unowned self] _ in
-                        
-                        guard let type = generalItem.type,
-                            let source = generalItem.source else {
-                                return
-                        }
-                        self.openDetailPage(route: source, type: type)
-                    })
-                    .disposed(by: cell.disposeBag)
+        viewModel.updateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateCollection(viewModel: weakSelf.viewModel)
         }
-        .disposed(by: disposeBag)
+    }
+    
+    private func updateCollection(viewModel: GeneralCollectionViewModel) {
+        self.topTitleLabel.text = viewModel.collectionTitle
         
-        viewModel.output.showGeneralTextObjectItems
-            .do(onNext: { [weak self] generalTextObjectSections in
-                self?.generalTextObjectTableView.isHidden = generalTextObjectSections.isEmpty
-            })
-            .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
-            .disposed(by: disposeBag)
+        self.descriptionTextView.text = viewModel.collectionDescription
+        self.descriptionTextView.isHidden = viewModel.collectionDescription.isEmpty
+    
+        self.itemsTableView.reloadData()
+        self.itemsTableView.isHidden = viewModel.generalItemsSubject.isEmpty
+    
+        self.generalTextObjectTableView.reloadData()
+        
     }
 }
 
-extension GeneralCollectionViewController: UITableViewDelegate {
+
+extension GeneralCollectionViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.collectionGeneralTextObjectItems.count
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+         
+        if tableView == generalTextObjectTableView {
+            return UITableView.automaticDimension
+            
+        } else if tableView == itemsTableView {
+            return 60
+            
+        } else {
+            return .zero
+        }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == generalTextObjectTableView {
+            
+            if viewModel.collectionGeneralTextObjectItems.isEmpty {
+                return 0
+            } else {
+                return viewModel.collectionGeneralTextObjectItems[section].items.count
+            }
+            
+        } else if tableView == itemsTableView {
+            
+            if viewModel.generalItemsSubject.isEmpty {
+                return 0
+            } else {
+                return viewModel.generalItemsSubject.count
+            }
+            
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if tableView == generalTextObjectTableView {
+            let section = viewModel.collectionGeneralTextObjectItems[indexPath.section]
+            let item = section.items[indexPath.row]
+            
+            switch item {
+            case .normal(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
+                
+                cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
+                return cell
+                
+            case .iframe(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
+                cell.iframeTitleLabel.text = cellViewModel.title
+                cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
+                return cell
+                
+            case .image(let cellViewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
+                cell.textObjectImageTitleLabel.text = cellViewModel.title
+                cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
+                return cell
+            }
+            
+        } else if tableView == itemsTableView {
+            
+            let item = viewModel.generalItemsSubject[indexPath.row]
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralCollectionViewController.CellName, for: indexPath) as! GeneralCollectionTableViewCell
+            
+            cell.titleLabel.text = item.title
+            cell.descriptionLabel.text = item.description
+            cell.selectCellButton.tag = indexPath.row
+            cell.selectCellButton.addTarget(self, action: #selector (self.openPage), for: .touchUpInside)
+            
+            return cell
+            
+        } else {
+            return UITableViewCell()
+        }
+        
+    }
+    
+    
+    @objc func openPage(sender: UIButton) {
+        let row = sender.tag
+        
+        let item = viewModel.generalItemsSubject[row]
+        
+        if let type = item.type,
+           let source = item.source {
+            openDetailPage(route: source, type: type)
+        }
+    }
+    
 }
+
+

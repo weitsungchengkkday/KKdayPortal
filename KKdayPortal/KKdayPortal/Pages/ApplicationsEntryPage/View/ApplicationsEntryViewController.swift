@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class ApplicationsEntryViewController: UIViewController {
@@ -20,42 +18,37 @@ final class ApplicationsEntryViewController: UIViewController {
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
+        
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tbv.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
         tbv.tableFooterView = UIView()
         return tbv 
     }()
     
-    private lazy var loadingActivityIndicatorContainerView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 5
-        view.clipsToBounds = true
-        view.isHidden = true
-        return view
-    }()
-    
-    private lazy var loadingActivityIndicatorView: UIActivityIndicatorView = {
-        let idv = UIActivityIndicatorView(style: .large)
-        idv.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        return idv
-    }()
-    
+    //    private lazy var loadingActivityIndicatorContainerView: UIView = {
+    //        let view = UIView()
+    //        view.layer.cornerRadius = 5
+    //        view.clipsToBounds = true
+    //        view.isHidden = true
+    //        return view
+    //    }()
+    //
+    //    private lazy var loadingActivityIndicatorView: UIActivityIndicatorView = {
+    //        let idv = UIActivityIndicatorView(style: .large)
+    //        idv.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    //        return idv
+    //    }()
+    //
     private let viewModel = ApplicationsEntryViewModel()
-    
-    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        setAction()
         bindViewModel()
-        
-        tableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     // 🎨 draw UI
@@ -63,69 +56,80 @@ final class ApplicationsEntryViewController: UIViewController {
         self.title = "Service Links"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(tableView)
-        view.addSubview(loadingActivityIndicatorContainerView)
-        loadingActivityIndicatorContainerView.addSubview(loadingActivityIndicatorView)
-        
+        //        view.addSubview(loadingActivityIndicatorContainerView)
+        //        loadingActivityIndicatorContainerView.addSubview(loadingActivityIndicatorView)
+        //
         tableView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        loadingActivityIndicatorContainerView.snp.makeConstraints { maker in
-            maker.centerX.equalToSuperview()
-            maker.centerY.equalToSuperview()
-            maker.width.equalTo(65)
-            maker.height.equalTo(65)
-        }
-        
-        loadingActivityIndicatorView.snp.makeConstraints { maker in
-            maker.centerX.equalToSuperview()
-            maker.centerY.equalToSuperview()
-            maker.width.equalTo(60)
-            maker.height.equalTo(00)
-        }
+        //        loadingActivityIndicatorContainerView.snp.makeConstraints { maker in
+        //            maker.centerX.equalToSuperview()
+        //            maker.centerY.equalToSuperview()
+        //            maker.width.equalTo(65)
+        //            maker.height.equalTo(65)
+        //        }
+        //
+        //        loadingActivityIndicatorView.snp.makeConstraints { maker in
+        //            maker.centerX.equalToSuperview()
+        //            maker.centerY.equalToSuperview()
+        //            maker.width.equalTo(60)
+        //            maker.height.equalTo(00)
+        //        }
         
     }
-    
-    // 🧾 localization
-    private func localizedText() {}
-    
-    // 🎬 set action
-    private func setAction() {}
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        
-        viewModel.output.showGeneralItemsURL
-            .drive(tableView.rx.items(cellIdentifier: ApplicationsEntryViewController.CellName, cellType: ApplicationsEntryTableViewCell.self)) { (row, url, cell) in
-            
-                cell.titleLabel.text = "BPM"
-                cell.descriptionLabel.text = "簽核系統"
+        viewModel.updateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateApplicationEntry(viewModel: weakSelf.viewModel)
         }
-        .disposed(by: disposeBag)
-        
-        viewModel.output.showIsLoading
-            .map { !$0 }
-            .drive(loadingActivityIndicatorContainerView.rx.isHidden)
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showIsLoading
-            .drive(loadingActivityIndicatorView.rx.isAnimating)
-            .disposed(by: disposeBag)
+    }
+    
+    private func updateApplicationEntry(viewModel: ApplicationsEntryViewModel) {
+        tableView.reloadData()
     }
 }
 
-extension ApplicationsEntryViewController: UITableViewDelegate {
+extension ApplicationsEntryViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return viewModel.linkObjects.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = viewModel.linkObjects[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ApplicationsEntryViewController.CellName, for: indexPath) as! ApplicationsEntryTableViewCell
+        cell.titleLabel.text = item.name
+        cell.descriptionLabel.text = item.description
+        
+        return cell
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let URLs = viewModel.generalItemsURL
-        let route = URLs[indexPath.row]
-        goDetailPageInWebView(route: route)
+        
+        let linkObject = viewModel.linkObjects[indexPath.row]
+        goDetailPageInWebView(url: linkObject.url)
     }
     
-    private func goDetailPageInWebView(route: URL) {
-        let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: route))
+    private func goDetailPageInWebView(url: URL) {
+        
+        let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: url))
         navigationController?.pushViewController(pushViewController, animated: false)
     }
+    
 }

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 final class GeneralImageViewController: UIViewController {
@@ -33,7 +31,6 @@ final class GeneralImageViewController: UIViewController {
     }()
     
     private let viewModel: GeneralImageViewModel
-    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralImageViewModel) {
         self.viewModel = viewModel
@@ -51,12 +48,12 @@ final class GeneralImageViewController: UIViewController {
         setupUI()
         bindViewModel()
         
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+           // MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     
@@ -101,16 +98,17 @@ final class GeneralImageViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.topTitleLabel.text = title
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showImage
-            .drive(onNext: { [weak self] image in
-                self?.imageView.image = image
-            })
-            .disposed(by: disposeBag)
+        viewModel.updateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateImage(viewModel: weakSelf.viewModel)
+        }
     }
+    
+    private func updateImage(viewModel: GeneralImageViewModel) {
+        self.topTitleLabel.text = viewModel.imageTitle
+        self.imageView.image = viewModel.image
+    }
+    
 }

@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 import WebKit
-import RxDataSources
 
 final class GeneralDocumentViewController: UIViewController {
     
@@ -47,7 +44,11 @@ final class GeneralDocumentViewController: UIViewController {
     }()
     
     lazy var generalTextObjectTableView: UITableView = {
+       
         let tbv = UITableView()
+        tbv.delegate = self
+        tbv.dataSource = self
+        
         tbv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tbv.register(GeneralTextObjectNormalTableViewCell.self, forCellReuseIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.normal)
         tbv.register(GeneralTextObjectIFrameTableViewCell.self, forCellReuseIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.iframe)
@@ -57,32 +58,6 @@ final class GeneralDocumentViewController: UIViewController {
     }()
     
     private let viewModel: GeneralDocumentViewModel
-    private let disposeBag = DisposeBag()
-    
-    private lazy var generalTextObjectDataSource = {
-        return RxTableViewSectionedReloadDataSource<GeneralTextObjectSection>(configureCell: { [weak self] dataSource, tableView, indexPath, sectionItem in
-            
-            switch sectionItem {
-            case .normal(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
-                
-                cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
-                return cell
-                
-            case .iframe(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
-                cell.iframeTitleLabel.text = cellViewModel.title
-                cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
-                return cell
-                
-            case .image(let cellViewModel):
-                let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
-                cell.textObjectImageTitleLabel.text = cellViewModel.title
-                cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
-                return cell
-            }
-        })
-    }()
     
     init(viewModel: GeneralDocumentViewModel) {
         self.viewModel = viewModel
@@ -99,12 +74,12 @@ final class GeneralDocumentViewController: UIViewController {
         
         setupUI()
         bindViewModel()
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+//            MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     
@@ -156,26 +131,67 @@ final class GeneralDocumentViewController: UIViewController {
     
     // ⛓ bind viewModel
     private func bindViewModel() {
-        
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.topTitleLabel.text = title
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showDescription
-            .do(onNext: { [weak self] text in
-                self?.descriptionTextView.isHidden = text.isEmpty
-            })
-            .drive(onNext: { [weak self] text in
-                self?.descriptionTextView.text = text
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.showGeneralTextObjectItems
-            .do(onNext: { [weak self] generalTextObjectSections in
-                self?.generalTextObjectTableView.isHidden = generalTextObjectSections.isEmpty
-            }) .drive(generalTextObjectTableView.rx.items(dataSource: generalTextObjectDataSource))
-            .disposed(by: disposeBag)
+        viewModel.upateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateDocument(viewModel: weakSelf.viewModel)
+        }
     }
+    
+    private func updateDocument(viewModel: GeneralDocumentViewModel) {
+        self.topTitleLabel.text = viewModel.documentTitle
+        
+        let text = viewModel.documentDescription
+        self.descriptionTextView.isHidden = text.isEmpty
+        self.descriptionTextView.text = text
+       
+        self.generalTextObjectTableView.reloadData()
+    }
+    
+}
+
+
+extension GeneralDocumentViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.viewModel.documentGeneralTextObjectItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if viewModel.documentGeneralTextObjectItems.isEmpty {
+            return 0
+        }
+        
+        return self.viewModel.documentGeneralTextObjectItems[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let section = viewModel.documentGeneralTextObjectItems[indexPath.section]
+        let item = section.items[indexPath.row]
+        
+        switch item {
+        case .normal(let cellViewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.normal, for: indexPath) as! GeneralTextObjectNormalTableViewCell
+            
+            cell.normalContentTextView.attributedText = cellViewModel.text.htmlStringTransferToNSAttributedString()
+            return cell
+            
+        case .iframe(let cellViewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.iframe, for: indexPath) as! GeneralTextObjectIFrameTableViewCell
+            cell.iframeTitleLabel.text = cellViewModel.title
+            cell.iframeWKWebView.load(URLRequest(url: cellViewModel.url))
+            return cell
+            
+        case .image(let cellViewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralDocumentViewController.GeneralTextObjectCellName.image, for: indexPath) as! GeneralTextObjectImageTableViewCell
+            cell.textObjectImageTitleLabel.text = cellViewModel.title
+            cell.textObjectImageWebView.load(URLRequest(url:cellViewModel.url))
+            return cell
+        }
+        
+    }
+    
 }

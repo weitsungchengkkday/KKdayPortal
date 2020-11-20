@@ -12,5 +12,5 @@ protocol PortalControllable {
     associatedtype PortalContent
     
     var generalItem: PortalContent? { get set }
-    func getPortalData()
+    func loadPortalData()
 }

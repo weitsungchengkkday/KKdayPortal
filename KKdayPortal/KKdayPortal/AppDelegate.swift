@@ -13,32 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-#if SIT_VERSION
-    print("1️⃣ sit_version")
-        
-#elseif PRODUCTION_VERSION
-    print("2️⃣ production_version")
-    
+#if SIT
+    print("1️⃣ sit")
+#elseif PRODUCTION
+    print("2️⃣ production")
 #else
     print("❗️target not exist")
-    
 #endif
 
 #if DEBUG
     print("🐛 Debug")
-    
 #elseif RELEASE
     print("🦋 Release")
-    
 #else
     print("❗️configuration not exist")
-    
 #endif
     
     ConfigManager.shared.setup()
     LanguageManager.shared.setup()
-    // assign WebAPIManager as APIManager's errorhandler
-    APIManager.default.httpErrorHandler = WebAPIManager.shared
     
     return true
     }

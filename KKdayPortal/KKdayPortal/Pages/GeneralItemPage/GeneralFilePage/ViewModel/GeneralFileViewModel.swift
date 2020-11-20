@@ -6,75 +6,53 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
 import Alamofire
+import Foundation
 
-final class GeneralFileViewModel: RXViewModelType, PortalControllable {
+final class GeneralFileViewModel {
     
     typealias PortalContent = GeneralItem
     
-    var input: GeneralFileViewModel.Input
-    var output: GeneralFileViewModel.Output
+    private(set) var fileTitle: String = ""
+    private(set) var generalFileObject: GeneralFileObject?
     
-    struct Input {
-        let title: AnyObserver<String>
-        let generalFileObject: AnyObserver<GeneralFileObject?>
-        let fileLocalURL: AnyObserver<URL?>
-    }
+    private(set) var fileLocalURL: URL!
     
-    struct Output {
-        let showTitle: Driver<String>
-        let showGeneralFileObject: Driver<GeneralFileObject?>
-        let showLocalURL: Driver<URL?>
-    }
-    
-    private let titleSubject = PublishSubject<String>()
-    private let generalFileObjectSubject = PublishSubject<GeneralFileObject?>()
-    private let localURLSubject = PublishSubject<URL?>()
+    var updateContent: () -> Void = {}
+    var downloadFile: () -> Void = {}
     
     var source: URL
-    private let disposeBag = DisposeBag()
     var generalItem: PortalContent?
-    private var generalFileObject: GeneralFileObject?
     
     init(source: URL) {
         self.source = source
-        self.input = Input(title: titleSubject.asObserver(),
-                           generalFileObject: generalFileObjectSubject.asObserver(),
-                           fileLocalURL: localURLSubject.asObserver())
-        
-        self.output = Output(showTitle: titleSubject.asDriver(onErrorJustReturn: "File"),
-                             showGeneralFileObject: generalFileObjectSubject.asDriver(onErrorJustReturn: nil),
-                             showLocalURL: localURLSubject.asDriver(onErrorJustReturn: nil))
     }
     
-    func getPortalData() {
-        
+    func loadPortalData() {
         LoadingManager.shared.setState(state: .normal(value: true))
         
         ModelLoader.PortalLoader()
-            .getItem(source: source, type: .file)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
-                LoadingManager.shared.setState(state: .normal(value: false))
+            .loadItem(source: source, type: .file) { [weak self] result in
                 
-                self?.generalItem = generalItem
-                if let title = generalItem.title {
-                    self?.titleSubject.onNext(title)
+                switch result {
+                case .success(let generalItem):
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                    
+                    self?.generalItem = generalItem
+                    if let title = generalItem.title {
+                        self?.fileTitle = title
+                    }
+                    
+                    self?.generalFileObject = generalItem.fileObject
+                    
+                case .failure(let error):
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    LoadingManager.shared.setState(state: .normal(value: false))
                 }
                 
-                self?.generalFileObject = generalItem.fileObject
-                if let fileObject = generalItem.fileObject {
-                    self?.generalFileObjectSubject.onNext(fileObject)
-                }
-                
-            }) { error in
-                LoadingManager.shared.setState(state: .normal(value: false))
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-        }
-        .disposed(by: disposeBag)
+                self?.updateContent()
+            }
     }
     
     func storeAndShare() {
@@ -113,9 +91,10 @@ final class GeneralFileViewModel: RXViewModelType, PortalControllable {
                 print("❌ write to temp URL failed")
             }
             
-            self?.localURLSubject.onNext(tmpURL)
+            self?.fileLocalURL = tmpURL
+            
+            self?.downloadFile()
         }
     }
+    
 }
-
-

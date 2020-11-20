@@ -6,47 +6,38 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
+import Foundation
 
-final class ApplicationsEntryViewModel: RXViewModelType {
+final class ApplicationsEntryViewModel {
     
     typealias PortalContent = GeneralItem
     
-    var input: ApplicationsEntryViewModel.Input
-    var output: ApplicationsEntryViewModel.Output
+    private(set) var linkObjects: [ApplicationLinkObject] = []
+    private(set) var isLoading: Bool = false
     
-    struct Input {
-        let generalItemsURL: AnyObserver<[URL]>
-        let isLoading: AnyObserver<Bool>
-    }
-    
-    struct Output {
-        let showGeneralItemsURL: Driver<[URL]>
-        let showIsLoading: Driver<Bool>
-    }
-    
-    private let generalItemsURLSubject = PublishSubject<[URL]>()
-    private let isLoadingSubject = PublishSubject<Bool>()
-    
-    var generalItemsURL: [URL] = {
-        let urls = [ URL(string: ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm")!]
-      
+    private var defaultLinkObjects: [ApplicationLinkObject] = {
+        let urls = [
+            ApplicationLinkObject(name: "BPM", description: "簽核系統", url: URL(string: ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm")!)
+        ]
+               
         return urls
     }()
     
-    let disposeBag = DisposeBag()
+    var updateContent: () -> Void = {}
     
-    init() {
-        self.input = Input(generalItemsURL: generalItemsURLSubject.asObserver()
-            , isLoading: isLoadingSubject.asObserver())
-        
-        self.output = Output(showGeneralItemsURL: generalItemsURLSubject.asDriver(onErrorJustReturn: []),
-                             showIsLoading: isLoadingSubject.asDriver(onErrorJustReturn: false))
-    }
+    init() { }
     
-    func getPortalData() {
-        generalItemsURLSubject.onNext(generalItemsURL)
+    func loadPortalData() {
+        self.linkObjects += defaultLinkObjects
+        updateContent()
     }
     
 }
+
+struct ApplicationLinkObject {
+    
+    let name: String
+    let description: String
+    let url: URL
+}
+

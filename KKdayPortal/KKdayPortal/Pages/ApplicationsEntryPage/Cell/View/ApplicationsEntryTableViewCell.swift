@@ -7,13 +7,9 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
 class ApplicationsEntryTableViewCell: UITableViewCell {
-
-    private(set) var disposeBag = DisposeBag()
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -75,10 +71,6 @@ class ApplicationsEntryTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func prepareForReuse() {
-        disposeBag = DisposeBag()
     }
 
 }

@@ -1,15 +1,15 @@
 //
-//  LoginInfoViewController.swift
+//  SigninInfoViewController.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2020/2/18.
+//  Created by WEI-TSUNG CHENG on 2020/11/12.
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
-import RxSwift
+import DolphinHTTP
 
-final class LoginInfoViewController: UIViewController, Keyboarder {
+final class SigninInfoViewController: UIViewController, Keyboarder {
     
     // 🏞 UI element
     
@@ -122,7 +122,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         txv.isScrollEnabled = false
-        txv.text = "If plone website support login as visitor, you do not need to enter account and password"
+        txv.text = "If plone website support signin as visitor, you do not need to enter account and password"
         txv.isEditable = false
         return txv
     }()
@@ -146,7 +146,7 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         return lbl
     }()
     
-    // Keyboarder
+    // ⌨️ Keyboarder
     
     var isKeyboardShown: Bool = false
     
@@ -164,12 +164,12 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     
     var observerForKeyboardDidChangeFrameNotification: NSObjectProtocol?
     
-    private let viewModel: LoginInfoViewModel
-    private let disposeBag = DisposeBag()
-    private let loginer = Loginer()
+    private var viewModel: SigninInfoViewModel!
+    
+    private let signiner = Signiner()
     private var singleTapGestureRecognizer: UITapGestureRecognizer!
     
-    init(viewModel: LoginInfoViewModel) {
+    init(viewModel: SigninInfoViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -180,68 +180,39 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        viewModel = SigninInfoViewModel()
         
-        loginer.delegate = self
-        
-        ploneURLTextField.delegate = self
-        accountTextField.delegate = self
-        passwordTextFiled.delegate = self
-        createGestureRecognizer()
+        signiner.delegate = self
         
         setupUI()
+        setupUIDelegate()
+        createGestureRecognizer()
         setAction()
-        bindViewModel()
-        
         registerKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    
         scrollViewOriginalContentInset.bottom = 20
-
         
-       print(ConfigManager.shared.model.host)
-       
-       
-#if DEBUG
-//        ploneURLTextField.text = "https://sit.eip.kkday.net/Plone"
-//        accountTextField.text = "forwindsun"
-//        passwordTextFiled.text = "1234"
-//        loginButton.isEnabled = true
+        #if DEBUG
         
-        ploneURLTextField.text = "https://eip.kkday.net/Plone"
-        accountTextField.text = "will"
-        passwordTextFiled.text = "12345"
-        loginButton.isEnabled = true
-        
-#endif
-        
-        if let resourceType: PloneResourceType<URL> = StorageManager.shared.loadObject(for: .ploneResourceType), let user: GeneralUser = StorageManager.shared.loadObject(for: .generalUser) {
-            
-            switch resourceType {
-            case .normal(let url):
-                ploneURLTextField.text = url.absoluteString
-                accountTextField.text = user.account
-                loginButton.isEnabled = true
-                
-            case .kkMember:
-                ploneURLTextField.text = "KKPlone"
-                accountTextField.text = ""
-                passwordTextFiled.text = ""
-                loginButton.isEnabled = true
-                // if user login as KKMember before, trigger login automatically
-                login()
-                
-            case .none:
-                break
-            }
-            
+            #if SIT
+            ploneURLTextField.text = "sit.eip.kkday.net"
+            accountTextField.text = "forwindsun"
+            passwordTextFiled.text = "1234"
             setComfirmButtonState()
+                
+            #elseif PRODUCTION
+            ploneURLTextField.text = "eip.kkday.net"
+            accountTextField.text = "will"
+            passwordTextFiled.text = "12345"
             
-        } else {
-            print("🎯 First time login or logout")
-        }
+            #endif
+        
+        #endif
+        
+
     }
     
     deinit {
@@ -328,10 +299,14 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
             maker.top.equalToSuperview().offset(10)
             maker.trailing.equalToSuperview().offset(-10)
         }
+        
     }
     
-    // 🧾 localization
-    private func localizedText() {}
+    func setupUIDelegate() {
+        ploneURLTextField.delegate = self
+        accountTextField.delegate = self
+        passwordTextFiled.delegate = self
+    }
     
     private func createGestureRecognizer() {
         singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handerSingleTap))
@@ -348,7 +323,6 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     private func setAction() {
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
-        
     }
     
     @objc private func close() {
@@ -356,11 +330,10 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
     }
     
     @objc private func confirm() {
-        login()
+        signin()
     }
     
-    private func login() {
-        
+    private func signin() {
         print("📯 Current Host is \(ConfigManager.shared.model.host)")
 
         guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
@@ -369,11 +342,11 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         
         switch urlString {
         case "KKPlone":
-            print("✈️ KK Member login")
+            print("✈️ KK Member signin")
             PloneResourceManager.shared.resourceType = .kkMember
             
         default:
-            print("🗺 normal login")
+            print("🗺 normal signin")
             guard let url = URL(string: urlString) else {
                 let alertController = UIAlertController(title: "Warning", message: "Not valid URL, please check", preferredStyle: .alert)
                 let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -391,19 +364,11 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         case .kkMember:
             goPloneSSOPage()
         case .normal(url: let url):
-            loginer.login(url: url, account: accountTextField.text ?? "", password: passwordTextFiled.text ?? "")
+            signiner.signin(url: url, account: accountTextField.text ?? "", password: passwordTextFiled.text ?? "")
         case .none:
             print("❌, resourceType not be defined")
         }
         
-    }
-    
-    // ⛓ bind viewModel
-    private func bindViewModel() {
-        ploneURLTextField.rx.text.subscribe(onNext: { [weak self] text in
-            self?.setComfirmButtonState()
-        })
-            .disposed(by: disposeBag)
     }
     
     private func goPloneSSOPage() {
@@ -421,11 +386,14 @@ final class LoginInfoViewController: UIViewController, Keyboarder {
         loginButton.isEnabled = !(ploneURLTextField.text?.isEmpty ?? true)
         loginButton.backgroundColor = !(ploneURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
+    
+
 }
 
-extension LoginInfoViewController: LoginDelegate {
+extension SigninInfoViewController: SigninDelegate {
     
-    func loginSuccess(_ loginer: Loginer, generalUser user: GeneralUser) {
+    
+    func signinSuccess(_ signiner: Signiner, generalUser user: GeneralUser) {
         
         let token = user.token
         let account = user.account
@@ -437,19 +405,28 @@ extension LoginInfoViewController: LoginDelegate {
         directlyGoMainViewController()
     }
     
-    func loginFailed(_ loginer: Loginer, loginError error: Error) {
+    func signinFailed(_ signiner: Signiner, signinError error: DolphinHTTP.HTTPError) {
         
         debugPrint("🚨 Normal Login, Get Error: \(error)")
        
         let alertController = UIAlertController(title: "Warning", message: "Login Failed, Please Check your ploneURL, account, and password", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(alertAction)
+        
         present(alertController, animated: true, completion: nil)
     }
     
 }
 
-extension LoginInfoViewController: UITextFieldDelegate {
+
+extension SigninInfoViewController: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        if textField == ploneURLTextField {
+            setComfirmButtonState()
+        }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -462,10 +439,11 @@ extension LoginInfoViewController: UITextFieldDelegate {
             passwordTextFiled.becomeFirstResponder()
         case passwordTextFiled:
             textField.resignFirstResponder()
-            login()
+            signin()
         default:
             break
         }
         return true
     }
+
 }

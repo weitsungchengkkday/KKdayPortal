@@ -6,73 +6,55 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
+import Foundation
 
-final class GeneralFolderViewModel: RXViewModelType, PortalControllable {
+final class GeneralFolderViewModel {
     
     typealias PortalContent = GeneralItem
- 
-    var input: GeneralFolderViewModel.Input
-    var output: GeneralFolderViewModel.Output
     
-    struct Input {
-        let generalItems: AnyObserver<[PortalContent]>
-        let title: AnyObserver<String>
-    }
-    
-    struct Output {
-        let showGeneralItems: Driver<[PortalContent]>
-        let showTitle: Driver<String>
-    }
-    
-    private let generalItemsSubject = PublishSubject<[PortalContent]>()
-       private let titleSubject = PublishSubject<String>()
+    private(set) var folderTitle: String = ""
+    private(set) var generalItems: [PortalContent] = []
     
     var generalItem: PortalContent?
+    
+    var updateContent: () -> Void = {}
     var source: URL
-    let disposeBag = DisposeBag()
     
     init(source: URL) {
         self.source = source
-          
-          self.input = Input(generalItems: generalItemsSubject.asObserver(),
-                             title: titleSubject.asObserver()
-          )
-          
-          self.output = Output(showGeneralItems: generalItemsSubject.asDriver(onErrorJustReturn: []),
-                               showTitle: titleSubject.asDriver(onErrorJustReturn: "Folder")
-          )
-      }
-   
-    func getPortalData() {
+    }
+    
+    func loadPortalData() {
         
         LoadingManager.shared.setState(state: .normal(value: true))
         
-        ModelLoader.PortalLoader().getItem(source: source, type: .folder)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] generalItem in
+        ModelLoader.PortalLoader()
+            .loadItem(source: source, type: .folder) { [weak self] result in
                 
-                LoadingManager.shared.setState(state: .normal(value: false))
-                
-                guard let generalItem = generalItem as? GeneralList else {
-                    return
+                switch result {
+                case .success(let generalItem):
+                    LoadingManager.shared.setState(state: .normal(value: false))
+                    
+                    guard let generalItem = generalItem as? GeneralList else {
+                        return
+                    }
+                    
+                    if let title = generalItem.title {
+                        self?.folderTitle = title
+                    }
+                    
+                    if let items = generalItem.items {
+                        self?.generalItems = items
+                    }
+                    
+                    
+                case .failure(let error):
+                    print("🚨 Func: \(#file),\(#function)")
+                    print("Error: \(error)")
+                    LoadingManager.shared.setState(state: .normal(value: false))
                 }
                 
-                self?.generalItem = generalItem
-                if let items = generalItem.items {
-                    self?.generalItemsSubject.onNext(items)
-                }
-                if let title = generalItem.title {
-                    self?.titleSubject.onNext(title)
-                }
-                
-            }) { error in
-                print("🚨 Func: \(#file),\(#function)")
-                print("Error: \(error)")
-                
-                LoadingManager.shared.setState(state: .normal(value: false))
-        }
-        .disposed(by: disposeBag)
+                self?.updateContent()
+            }
     }
 }

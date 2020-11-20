@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import WebKit
 
-final class SettingViewModel: RXViewModelType {
+final class SettingViewModel {
     
     private let disposeBag = DisposeBag()
     
@@ -29,23 +29,9 @@ final class SettingViewModel: RXViewModelType {
         self.input = Input()
         self.output = Output()
     }
-    
-    func renewToken() {
-        ModelLoader.PortalLoader()
-            .renewToken()
-            .subscribeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { generalUser in
-                guard let generalUser = generalUser else {
-                    return
-                }
-                debugPrint("👥 Renew Token -> General User: \(generalUser)")
-                
-            }) { error in
-                debugPrint("🚨 Renew Token -> error is \(error)")}
-            .disposed(by: disposeBag)
-    }
+
     
     func logout() {
-        MemberManager.shared.logout(disposeBag: disposeBag)
+        MemberManager.shared.logout()
     }
 }

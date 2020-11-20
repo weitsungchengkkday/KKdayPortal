@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 import WebKit
 
@@ -58,7 +56,6 @@ final class GeneralFileViewController: UIViewController {
     }()
     
     private let viewModel: GeneralFileViewModel
-    private let disposeBag = DisposeBag()
     
     init(viewModel: GeneralFileViewModel) {
         self.viewModel = viewModel
@@ -76,12 +73,12 @@ final class GeneralFileViewController: UIViewController {
         setupUI()
         setAction()
         bindViewModel()
-        viewModel.getPortalData()
+        viewModel.loadPortalData()
     }
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            MemberManager.shared.showAlertController(self, with: disposeBag)
+         //   MemberManager.shared.showAlertController(self, with: disposeBag)
         }
     }
     
@@ -152,34 +149,40 @@ final class GeneralFileViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-        viewModel.output.showTitle
-            .drive(onNext: { [weak self] title in
-                self?.topTitleLabel.text = title
-            })
-            .disposed(by: disposeBag)
+        viewModel.updateContent = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.updateFile(viewModel: weakSelf.viewModel)
+        }
         
-        viewModel.output.showGeneralFileObject
-            .drive(onNext: { [weak self] generalFileObject in
-                
-                guard let generalFileObject = generalFileObject else {
-                    print("❌, No generalFileObject")
-                    return
-                }
-                self?.displayFileWebView.load(URLRequest(url: generalFileObject.url))
-            })
-            .disposed(by: disposeBag)
+        viewModel.downloadFile = { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.getFile(viewModel: weakSelf.viewModel)
+        }
         
-        viewModel.output.showLocalURL
-            .drive(onNext: { [weak self] tmpURL in
-                guard let tmpURL = tmpURL else {
-                    return
-                }
-                
-                let activity = UIActivityViewController(activityItems: [tmpURL], applicationActivities: nil)
-                self?.present(activity, animated: true, completion: nil)
-            })
-            .disposed(by: disposeBag)
     }
+    
+    private func updateFile(viewModel: GeneralFileViewModel) {
+        self.topTitleLabel.text = viewModel.fileTitle
+        guard let generalFileObject = viewModel.generalFileObject else {
+            print("❌, No generalFileObject")
+            return
+        }
+        
+        self.displayFileWebView.load(URLRequest(url: generalFileObject.url))
+              
+    }
+    
+    private func getFile(viewModel: GeneralFileViewModel) {
+        if let tmpURL = viewModel.fileLocalURL {
+            let activity = UIActivityViewController(activityItems: [tmpURL], applicationActivities: nil)
+            present(activity, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension GeneralFileViewController: WKNavigationDelegate {
@@ -224,10 +227,6 @@ extension GeneralFileViewController: WKNavigationDelegate {
         }
     }
 }
-
-
-
-
 
 
 extension URL {
