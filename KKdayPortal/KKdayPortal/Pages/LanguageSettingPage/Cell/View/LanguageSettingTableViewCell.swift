@@ -44,6 +44,8 @@ final class LanguageSettingTableViewCell: UITableViewCell {
         return lbl
     }()
     
+    var selectedBtnAction: (() -> Void)?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
          super.init(style: style, reuseIdentifier: reuseIdentifier)
     
@@ -80,28 +82,14 @@ final class LanguageSettingTableViewCell: UITableViewCell {
              maker.right.equalToSuperview().offset(-15)
              maker.bottom.equalToSuperview().offset(-20)
          }
+        
+        selectCellButton.addTarget(self, action: #selector(updateSelectedBtn), for: .touchUpInside)
      }
     
     required init?(coder aDecoder: NSCoder) {
            fatalError("init(coder:) has not been implemented")
        }
-    
-  
-//
-//    func bindViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
-//
-//        selectCellButton.rx.tap
-//            .subscribe(onNext: { [weak self] _ in
-//
-//                self?.selectCellButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
-//                Language.isUserSelectedLanguage = true
-//                LanguageManager.shared.currentLanguage = cellViewModel.selectedLanguage
-//            })
-//            .disposed(by: disposeBag)
-//
-//        selectCellButton.rx.tap
-//            .map { cellViewModel.isSelected }
-//            .bind(to: selectButtonClicked)
-//            .disposed(by: disposeBag)
-//    }
+    @objc func updateSelectedBtn() {
+        selectedBtnAction?()
+    }
 }

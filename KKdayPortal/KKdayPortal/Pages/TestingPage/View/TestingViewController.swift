@@ -94,19 +94,14 @@ extension TestingViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectedBtnAction = { [unowned self] in
             
             let items = viewModel.testingItems[indexPath.section].items
-            
             items.forEach { item in
-                let image = !item.isSelected ?  #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
                 item.isSelected = !item.isSelected
-                cell.selectedButton.setImage(image, for: .normal)
             }
-            
-            tableView.reloadData()
             
             // Change Storage server
             let currentServerType: ServerTypes = items[indexPath.row].serverType
             
-            if currentServerType != StorageManager.shared.load(for: .serverType) {
+            if currentServerType.rawValue != StorageManager.shared.load(for: .serverType) {
                 StorageManager.shared.save(for: .serverType, value: currentServerType.rawValue)
             } else {
                 print("⚠️ Save same serverType")
@@ -120,6 +115,8 @@ extension TestingViewController: UITableViewDelegate, UITableViewDataSource {
             self.dismiss(animated: true) {
                 vc.logout()
             }
+            
+            tableView.reloadData()
         }
         
         return cell

@@ -14,28 +14,6 @@ final class LanguageSettingViewController: UIViewController {
     private static var CellName: String {
         return "LanguageCell"
     }
-
-//    private let buttonClicked = PublishSubject<Bool>()
-    
-//    private lazy var dataSource = {
-//        return RxTableViewSectionedReloadDataSource<LanguageSection> (
-//            configureCell: { [unowned self] dataSource, tableView, indexPath, item in
-//
-//                if let cell = tableView.dequeueReusableCell(withIdentifier: LanguageSettingViewController.CellName, for: indexPath) as? LanguageSettingTableViewCell {
-//
-//                    cell.titleLabel.text = item.selectedLanguage.name
-//                    let image = item.isSelected ? #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
-//                    cell.selectCellButton.setImage(image, for: .normal)
-//                    cell.bindViewModel(cellViewModel: item, selectButtonClicked: self.buttonClicked.asObserver())
-//                    return cell
-//                }
-//
-//                return UITableViewCell()
-//        },
-//            titleForHeaderInSection: { dataSource, section in
-//                return dataSource.sectionModels[section].header
-//        })
-//    }()
     
     // 🏞 UI element
     lazy var tableView: UITableView = {
@@ -62,7 +40,7 @@ final class LanguageSettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         setupUI()
         setAction()
         bindViewModel()
@@ -86,36 +64,60 @@ final class LanguageSettingViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {
         
-//        buttonClicked
-//            .asDriver(onErrorJustReturn: false)
-//            .drive(onNext: { [weak self] bool -> Void in
-//                self?.viewModel.nextCellViewModelsEvent()
-//                if bool == false {
-//                    self?.dismiss(animated: true, completion: nil)
-//                }
-//            })
-//            .disposed(by: disposeBag)
-//
-//        viewModel.output.showLanguageItems
-//            .drive(tableView.rx.items(dataSource: dataSource))
-//            .disposed(by: disposeBag)
     }
 }
 
 extension LanguageSettingViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return viewModel.languageItems.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        return viewModel.languageItems[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let items = viewModel.languageItems[indexPath.section]
+        let item = items.items[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: LanguageSettingViewController.CellName, for: indexPath) as! LanguageSettingTableViewCell
+        
+        cell.titleLabel.text = item.selectedLanguage.name
+        let image = item.isSelected ? #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
+        cell.selectCellButton.setImage(image, for: .normal)
+        
+        return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let items  = viewModel.languageItems[indexPath.section].items
+        items.forEach { item in
+            item.isSelected = !item.isSelected
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        // Change Storage server
+        let currentLanguage: Language = items[indexPath.row].selectedLanguage
+        
+        if currentLanguage.rawValue != StorageManager.shared.load(for: .selectedLanguageKey) {
+            
+            Language.isUserSelectedLanguage = true
+            LanguageManager.shared.currentLanguage = currentLanguage
+        } else {
+            print("⚠️ Save same Language")
+        }
+        
+        tableView.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-
+    
 }
 
