@@ -23,7 +23,6 @@ final class ConfigManager {
                 do {
                     let data = try Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
                     
-                    
                     let decoder = JSONDecoder()
                     _model = try decoder.decode(ConfigModel.self, from: data)
                 } catch let error {

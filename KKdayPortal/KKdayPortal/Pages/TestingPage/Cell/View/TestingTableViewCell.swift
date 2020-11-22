@@ -24,6 +24,8 @@ final class TestingTableViewCell: UITableViewCell {
         return btn
     }()
     
+    var selectedBtnAction: (() -> Void)?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -41,33 +43,16 @@ final class TestingTableViewCell: UITableViewCell {
             maker.centerY.equalToSuperview()
             maker.right.equalToSuperview().offset(-17.5)
         }
+        
+        selectedButton.addTarget(self, action: #selector(updateSelectedBtn), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-//    func bindViewModel<O>(cellViewModel: CellViewModel, selectButtonClicked: O) where O: ObserverType, O.E == Bool {
-//
-//        selectedButton.rx.tap
-//            .subscribe(onNext: { [weak self] _ in
-//
-//                self?.selectedButton.setImage(#imageLiteral(resourceName: "icCheckedCircle"), for: .normal)
-//
-//                if cellViewModel.serverType.rawValue != StorageManager.shared.load(for: .serverType) {
-//                    StorageManager.shared.save(for: .serverType, value: cellViewModel.serverType.rawValue)
-//                } else {
-//                    print("⚠️ Save same serverType")
-//                }
-//
-//            })
-//            .disposed(by: disposeBag)
-//
-//        selectedButton.rx.tap
-//            .map { cellViewModel.isSelected }
-//            .bind(to: selectButtonClicked)
-//            .disposed(by: disposeBag)
-//    }
+    @objc func updateSelectedBtn() {
+        selectedBtnAction?()
+    }
+
 }

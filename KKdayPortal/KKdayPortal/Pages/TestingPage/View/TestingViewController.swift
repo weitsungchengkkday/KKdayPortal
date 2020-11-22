@@ -14,27 +14,7 @@ final class TestingViewController: UIViewController {
     private static var CellName: String {
         return "TestingCellName"
     }
-    
-    // private let buttonClicked = PublishSubject<Bool>()
-    
-//    private lazy var dataSource = {
-//        return RxTableViewSectionedReloadDataSource<TestingSection> (configureCell: { [unowned self] dataSource, tableView, indexPath, item in
-//
-//            if let cell = tableView.dequeueReusableCell(withIdentifier: TestingViewController.CellName, for: indexPath) as? TestingTableViewCell {
-//                cell.titleLabel.text = item.name
-//
-//                let image = item.isSelected ?  #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
-//                cell.selectedButton.setImage(image, for: .normal)
-//
-               
-//
-//                return cell
-//            }
-//
-//            return UITableViewCell()
-//        })
-//    }()
-    
+
     // 🏞 UI element
     lazy var tableView: UITableView = {
         let tbv = UITableView()
@@ -84,36 +64,12 @@ final class TestingViewController: UIViewController {
             self?.tableView.reloadData()
             
         }
-        
-//        buttonClicked
-//            .asDriver(onErrorJustReturn: false)
-//            .drive(onNext: { [weak self] bool -> Void in
-//
-//                guard let strongSelf = self else { return }
-//                strongSelf.viewModel.nextCellViewModelEvent()
-//
-//                if bool == false {
-//                    guard let vc = self?.presentingViewController as? MainViewController else {
-//                        return
-//                    }
-//
-//                    strongSelf.dismiss(animated: true) {
-//                        vc.logout()
-//                    }
-//                }
-//
-//            })
-//            .disposed(by: disposeBag)
-//
-//        viewModel.output.showTestingItems
-//            .drive(tableView.rx.items(dataSource: dataSource))
-//            .disposed(by: disposeBag)
     }
 }
 
 extension TestingViewController: UITableViewDelegate, UITableViewDataSource {
     
-   
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return viewModel.testingItems.count
@@ -128,44 +84,45 @@ extension TestingViewController: UITableViewDelegate, UITableViewDataSource {
         
         let section = viewModel.testingItems[indexPath.section]
         let item = section.items[indexPath.row]
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: TestingViewController.CellName, for: indexPath) as! TestingTableViewCell
         
-        
+        cell.titleLabel.text = item.name
         let image = item.isSelected ?  #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
         cell.selectedButton.setImage(image, for: .normal)
         
-        
-    
-//        cell.bindViewModel(cellViewModel: item, selectButtonClicked: self.buttonClicked.asObserver())
+        cell.selectedBtnAction = { [unowned self] in
+            
+            let items = viewModel.testingItems[indexPath.section].items
+            
+            items.forEach { item in
+                let image = !item.isSelected ?  #imageLiteral(resourceName: "icCheckedCircle") : #imageLiteral(resourceName: "icCircleNonchecked")
+                item.isSelected = !item.isSelected
+                cell.selectedButton.setImage(image, for: .normal)
+            }
+            
+            tableView.reloadData()
+            
+            // Change Storage server
+            let currentServerType: ServerTypes = items[indexPath.row].serverType
+            
+            if currentServerType != StorageManager.shared.load(for: .serverType) {
+                StorageManager.shared.save(for: .serverType, value: currentServerType.rawValue)
+            } else {
+                print("⚠️ Save same serverType")
+            }
+            
+            // Logout after change server
+            guard let vc = self.presentingViewController as? MainViewController else {
+                return
+            }
+            
+            self.dismiss(animated: true) {
+                vc.logout()
+            }
+        }
         
         return cell
     }
-    
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-    
-        let cell = tableView.dequeueReusableCell(withIdentifier: TestingViewController.CellName, for: indexPath) as! TestingTableViewCell
-       
-     //   cell.indexPath = indexPath
-        
-        
-        cell.selectedButton.addTarget(self, action: #selector(act), for: .touchUpInside)
-        
-    }
-    
-    
-    @objc private func act(sender: UIButton) {
-        
-        
-//        let section = viewModel.testingItems[indexPath.section]
-//        
-//        
-//        let item = section.items[indexPath.row]
-       
-        
-    }
-    
-    
     
 }

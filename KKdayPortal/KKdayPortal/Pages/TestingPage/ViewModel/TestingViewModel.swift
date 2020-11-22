@@ -14,18 +14,8 @@ final class TestingViewModel {
     
     var updateContent: () -> Void = {}
     
-    
-    init() {
-//        self.input = Input(cellViewModels: cellViewModelsSubject.asObserver())
-//        self.output = Output(showTestingItems: cellViewModelsSubject.asDriver(onErrorJustReturn: []))
-    }
-    
-    func nextCellViewModelEvent() {
-     //   cellViewModelsSubject.onNext(getCellViewModels())
-    }
-    
+    init() {}
  
-    
     func loadTestingItems() {
         
         var testingTableViewCellViewModels: [TestingTableViewCellViewModel] = []
@@ -35,6 +25,7 @@ final class TestingViewModel {
         let currentServer: String = configModel.host
         let sitServer: String = configModel.sitServer
         let productionServer: String = configModel.productionServer
+        
         testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Sit Server", host: sitServer, serverType: .sit, isSelected: sitServer == currentServer))
         testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Production", host: productionServer, serverType: .production, isSelected: productionServer == currentServer))
         
