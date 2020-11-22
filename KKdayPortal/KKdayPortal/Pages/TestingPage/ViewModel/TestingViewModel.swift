@@ -12,8 +12,6 @@ final class TestingViewModel {
     
     private(set) var testingItems: [TestingSection] = []
     
-    var updateContent: () -> Void = {}
-    
     init() {}
  
     func loadTestingItems() {
@@ -30,8 +28,6 @@ final class TestingViewModel {
         testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Production", host: productionServer, serverType: .production, isSelected: productionServer == currentServer))
         
         self.testingItems = [TestingSection(header: "Testing", items: testingTableViewCellViewModels)]
-        
-        updateContent()
     }
     
 }

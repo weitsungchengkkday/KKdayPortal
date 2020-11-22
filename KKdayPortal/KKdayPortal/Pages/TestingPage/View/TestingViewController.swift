@@ -42,8 +42,6 @@ final class TestingViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        setAction()
-        bindViewModel()
         viewModel.loadTestingItems()
     }
     // 🎨 draw UI
@@ -54,17 +52,7 @@ final class TestingViewController: UIViewController {
             maker.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
-    // 🎬 set action
-    private func setAction() {}
-    
-    // ⛓ bind viewModel
-    private func bindViewModel() {
-        viewModel.updateContent = { [weak self] in
-            self?.tableView.reloadData()
-            
-        }
-    }
+  
 }
 
 extension TestingViewController: UITableViewDelegate, UITableViewDataSource {

@@ -42,8 +42,6 @@ final class LanguageSettingViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        setAction()
-        bindViewModel()
         viewModel.loadLanguageItems()
     }
     
@@ -57,14 +55,7 @@ final class LanguageSettingViewController: UIViewController {
         }
     }
     
-    // 🎬 set action
-    private func setAction() {}
     
-    
-    // ⛓ bind viewModel
-    private func bindViewModel() {
-        
-    }
 }
 
 extension LanguageSettingViewController: UITableViewDelegate, UITableViewDataSource {
