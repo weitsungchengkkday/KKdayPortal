@@ -1,28 +1,19 @@
 # KKdayPortal
 
-![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/master/Plone_SAML_Flow.png)
+## 簡介
+對外, 做為開源軟體 Plone 的使用介面, 供外部使用者讀取個人 Plone 網站資源 
+對內, 作為公司內部入口APP, 讀取公司 Plone  網站資源, 與連接不同服務系統
 
 ## 登入流程
 
-因為Mobile APP 無法直接使用 SAML, 所以APP端登入將分成兩個部分, PartI 使用WKWebView 完成SAML 登入的流程, PartII iOS APP 藉由 WKWebView 將 Web 上獲得的 Plone Restful API token 取回
+### 一般使用者
+輸入登入的 Plone 網頁 Host 名稱, 與登入帳號與密碼, 即可登入
 
-### PartI WKWebView SAML Flow
+### KKday 同仁
+在輸入網頁的欄位中輸入 KKPlone , 即可藉由 Google SAML 流程登入 
 
-step1. Client 和SP 要資源
+由於 Mobile APP 無法直接使用 Google SAML 服務, 所以 APP SAML 登入將透過 WKWebView 完成, 以取得的 SAML Token。 再透過 SAML Token 和 Plone 後台換得 Plone Restful API token。
 
-step2. SP 經由 Client 端 Redirect 到 IDP
+SAML 登入流程圖:
+![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/master/Plone_SAML_Flow.png)
 
-step3. IDP 要求Client 端登入以驗證身份
-
-step4. IDP 產生 SMAL Token, 經由 Client 端 Redirect 傳給 SP
-(SMAL Token 為 SAML Assertion 是一個 XML document)
-
-step5. SP 藉由 SMAL Token 確認用戶身份, 使用者登入
-
-### PartII iOS APP 取得Plone資源
-
-step a. Load Plone website by WKWebView
-
-step b. Plone server 用 SAML Token 換  Restful API token
-
-step c. Plone server 發出通知 , WKWebView 取得 Restful API token
