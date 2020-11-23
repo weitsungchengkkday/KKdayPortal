@@ -1,6 +1,6 @@
 # KKdayPortal
 
-![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/master/Plone_SAML_Flow.jpeg)
+![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/master/Plone_SAML_Flow.png)
 
 ## 登入流程
 
