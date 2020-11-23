@@ -57,7 +57,7 @@ final class ConfigManager {
 #elseif PRODUCTION
             serverType = .production
 #else
-            serverType = .sit
+            fatalError("Server Type not exist")
 #endif
             StorageManager.shared.save(for: .serverType, value: serverType.rawValue)
             print("🎇 Set up SSO Plone signin server: \(serverType.rawValue)")

@@ -50,7 +50,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     lazy var ploneURLLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        lbl.text = "Please enter your plone website URL"
+        lbl.text = "Please enter your plone website URL Host"
         lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
@@ -58,7 +58,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     
     lazy var ploneURLTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
-        txf.placeholder = "https://"
+        txf.placeholder = "e.g. = sit.eip.kkday.net"
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .URL
         txf.layer.cornerRadius = 12
