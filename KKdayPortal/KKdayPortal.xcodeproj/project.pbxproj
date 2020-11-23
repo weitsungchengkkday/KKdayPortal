@@ -2291,7 +2291,7 @@
 			baseConfigurationReference = ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Production";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = Q26KHN883C;
@@ -2304,7 +2304,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D PRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
-				PROVISIONING_PROFILE_SPECIFIER = "KKPortal-Production";
+				PROVISIONING_PROFILE_SPECIFIER = "KKdayPortal.KKdayPortal-dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2482,7 +2482,7 @@
 			baseConfigurationReference = 11DD8E7E8B24C258A4E26EF7 /* Pods-KKdayPortal-Sit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Sit";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = sit;
 				DEVELOPMENT_TEAM = Q26KHN883C;
@@ -2495,7 +2495,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D SIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
 				PRODUCT_NAME = KKdayPortal;
-				PROVISIONING_PROFILE_SPECIFIER = "KKdayPortal.KKdayPortal-dev";
+				PROVISIONING_PROFILE_SPECIFIER = "KKPortal-Production";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
