@@ -16,17 +16,36 @@ final class ApplicationsEntryViewController: UIViewController {
     }
     
     // 🏞 UI element
-    lazy var tableView: UITableView = {
-        let tbv = UITableView()
+    lazy var collectionView: UICollectionView = {
         
-        tbv.delegate = self
-        tbv.dataSource = self
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+        flowLayout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        flowLayout.itemSize = CGSize(width: 120, height: 160)
         
-        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        tbv.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
-        tbv.tableFooterView = UIView()
-        return tbv 
+        let clv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        
+        clv.delegate = self
+        clv.dataSource = self
+        
+        clv.register(ApplicationsEntryCollectionViewCell.self, forCellWithReuseIdentifier: ApplicationsEntryViewController.CellName)
+        clv.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        
+        return clv
     }()
+        
+        
+//    lazy var tableView: UITableView = {
+//        let tbv = UITableView()
+//
+//        tbv.delegate = self
+//        tbv.dataSource = self
+//
+//        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        tbv.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
+//        tbv.tableFooterView = UIView()
+//        return tbv
+//    }()
     
     private let viewModel = ApplicationsEntryViewModel()
     
@@ -41,14 +60,23 @@ final class ApplicationsEntryViewController: UIViewController {
     private func setupUI() {
         self.title = "Service Links"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        view.addSubview(tableView)
-   
-        tableView.snp.makeConstraints { maker in
+        
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide)
             maker.leading.equalTo(view.safeAreaLayoutGuide)
             maker.trailing.equalTo(view.safeAreaLayoutGuide)
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+        
+//        view.addSubview(tableView)
+//
+//        tableView.snp.makeConstraints { maker in
+//            maker.top.equalTo(view.safeAreaLayoutGuide)
+//            maker.leading.equalTo(view.safeAreaLayoutGuide)
+//            maker.trailing.equalTo(view.safeAreaLayoutGuide)
+//            maker.bottom.equalTo(view.safeAreaLayoutGuide)
+//        }
    
     }
     
@@ -63,44 +91,69 @@ final class ApplicationsEntryViewController: UIViewController {
     }
     
     private func updateApplicationEntry(viewModel: ApplicationsEntryViewModel) {
-        tableView.reloadData()
+    //    tableView.reloadData()
     }
 }
 
-extension ApplicationsEntryViewController: UITableViewDelegate, UITableViewDataSource {
+extension ApplicationsEntryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       
         return viewModel.linkObjects.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let item = viewModel.linkObjects[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: ApplicationsEntryViewController.CellName, for: indexPath) as! ApplicationsEntryTableViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ApplicationsEntryViewController.CellName, for: indexPath) as! ApplicationsEntryCollectionViewCell
         cell.titleLabel.text = item.name
-        cell.descriptionLabel.text = item.description
+     //   cell.applicationImageView.image = item.applicationImage
         
         return cell
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let linkObject = viewModel.linkObjects[indexPath.row]
-        goDetailPageInWebView(url: linkObject.url)
-    }
-    
-    private func goDetailPageInWebView(url: URL) {
-        
-        let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: url))
-        navigationController?.pushViewController(pushViewController, animated: false)
-    }
-    
 }
+//
+//extension ApplicationsEntryViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//
+//        return 1
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//        return viewModel.linkObjects.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let item = viewModel.linkObjects[indexPath.row]
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: ApplicationsEntryViewController.CellName, for: indexPath) as! ApplicationsEntryTableViewCell
+//        cell.titleLabel.text = item.name
+//        cell.descriptionLabel.text = item.description
+//
+//        return cell
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        let linkObject = viewModel.linkObjects[indexPath.row]
+//        goDetailPageInWebView(url: linkObject.url)
+//    }
+//
+//    private func goDetailPageInWebView(url: URL) {
+//
+//        let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: url))
+//        navigationController?.pushViewController(pushViewController, animated: false)
+//    }
+//
+//}

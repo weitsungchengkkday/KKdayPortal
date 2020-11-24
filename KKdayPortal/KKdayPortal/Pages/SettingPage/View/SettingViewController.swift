@@ -187,8 +187,11 @@ final class SettingViewController: UIViewController {
     }
     
     @objc private func goAboutPage() {
-        let presentViewController = AboutViewController()
-        present(presentViewController, animated: true, completion: nil)
+        
+        let p = PhoneViewController()
+        present(p, animated: true, completion: nil)
+//        let presentViewController = AboutViewController()
+//        present(presentViewController, animated: true, completion: nil)
     }
     
     @objc private func sendEmail() {

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		77E5FB8106E4538F986E0785 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */; };
 		7F644BB20AD6E8ABC36BA339 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569478EC36DD5FD37783A5F8 /* Pods_KKdayPortal_Sit.framework */; };
+		C63BC1C7256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */; };
+		C63BC1C8256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */; };
+		C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
+		C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
+		C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
+		C63BC24D256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
+		C63BC253256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
+		C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		F42039B223C78ED4000480EF /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
@@ -328,6 +336,10 @@
 		B4118F5E5FC3FE5AD7CF2FD8 /* Pods-KKdayPortalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C07DF91F421AE8C2F87756E8 /* Pods-KKdayPortal-SitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-SitTests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-SitTests/Pods-KKdayPortal-SitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryCollectionViewCell.swift; sourceTree = "<group>"; };
+		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
+		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryTableViewCell.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
@@ -547,6 +559,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C63BC245256CA87400D5C46A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */,
+				C63BC24B256CE3EB00D5C46A /* PhoneView.swift */,
+				C63BC252256CEA5300D5C46A /* PhoneViewController.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		C6A578252567D21D0049D700 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +580,7 @@
 		F426FEB823F4F7E600BFDA3B /* CustomUIElement */ = {
 			isa = PBXGroup;
 			children = (
+				C63BC245256CA87400D5C46A /* UIView */,
 				F46180CA23FCDB3A00D303F8 /* UITextField */,
 				F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */,
 				F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */,
@@ -1299,6 +1322,7 @@
 			isa = PBXGroup;
 			children = (
 				F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */,
+				C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1994,6 +2018,7 @@
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417B23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
+				C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
 				F454DF1F240F901F00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
@@ -2012,6 +2037,7 @@
 				F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */,
 				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F45408362413746600796B66 /* UIKitExtension.swift in Sources */,
+				C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */,
 				F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */,
 				F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */,
@@ -2065,6 +2091,7 @@
 				F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */,
 				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
 				F43AFC7A23E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
+				C63BC24D256CE3EB00D5C46A /* PhoneView.swift in Sources */,
 				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
 				F4D0687A255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
@@ -2097,6 +2124,7 @@
 				F44E8CCF23B88AA30032C6BE /* PloneTextObject.swift in Sources */,
 				F45740D923CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
 				F426FEDB23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
+				C63BC1C8256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */,
 				F4B3BCB723F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F46181002403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
@@ -2141,6 +2169,7 @@
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
 				F4D8DE1023EBB81A0091A51A /* FileDownloader.swift in Sources */,
+				C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
 				F454DF1E240F8C6A00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
@@ -2159,6 +2188,7 @@
 				F43AFC6923E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
+				C63BC253256CEA5300D5C46A /* PhoneViewController.swift in Sources */,
 				F45408352413746600796B66 /* UIKitExtension.swift in Sources */,
 				F46180EE2402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F43AFC7923E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
@@ -2212,6 +2242,7 @@
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
+				C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */,
 				F454486C23A20EE3001B8D31 /* LanguageViewModel.swift in Sources */,
 				F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
@@ -2244,6 +2275,7 @@
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F43AFC7D23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
+				C63BC1C7256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */,
 				F426FEDA23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */,
 				F46180FF2403806D00D303F8 /* AboutViewController.swift in Sources */,
