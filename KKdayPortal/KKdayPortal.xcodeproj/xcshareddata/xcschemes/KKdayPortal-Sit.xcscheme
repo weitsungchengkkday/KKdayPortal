@@ -42,26 +42,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F45394F523B9CCC100136E6D"
-               BuildableName = "KKdayPortalUITests.xctest"
-               BlueprintName = "KKdayPortalUITests"
-               ReferencedContainer = "container:KKdayPortal.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F453951723BA2A1F00136E6D"
-               BuildableName = "KKdayPortal-SitTests.xctest"
-               BlueprintName = "KKdayPortal-SitTests"
-               ReferencedContainer = "container:KKdayPortal.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
