@@ -318,23 +318,14 @@
 /* Begin PBXFileReference section */
 		11C095C59F1F19D5D92E5B25 /* Pods_KKdayPortal_Stage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Stage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DD8E7E8B24C258A4E26EF7 /* Pods-KKdayPortal-Sit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.release.xcconfig"; sourceTree = "<group>"; };
-		1472025D5D403B45FD200C5C /* Pods-KKdayPortal-SitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-SitTests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-SitTests/Pods-KKdayPortal-SitTests.release.xcconfig"; sourceTree = "<group>"; };
-		1625D737ED2CF74E038ED0EE /* Pods-KKdayPortal-Stage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Stage.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Stage/Pods-KKdayPortal-Stage.release.xcconfig"; sourceTree = "<group>"; };
 		26E28182104343E874E2CEF6 /* Pods_KKdayPortal_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B15E99981334FA9FCA5A57 /* Pods_KKdayPortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A270F6966498D4554C4517E /* Pods-KKdayPortal-Production.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.release.xcconfig"; sourceTree = "<group>"; };
 		3C412AA9C482EDAC3828F8FC /* Pods_KKdayPortal_SitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_SitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalTests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalTests/Pods-KKdayPortalTests.release.xcconfig"; sourceTree = "<group>"; };
 		569478EC36DD5FD37783A5F8 /* Pods_KKdayPortal_Sit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Sit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5831A246CF2307F25F1B941B /* Pods-KKdayPortal-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Test.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Test/Pods-KKdayPortal-Test.release.xcconfig"; sourceTree = "<group>"; };
-		70A474D9518B833C6ABA8237 /* Pods-KKdayPortal-Stage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Stage.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Stage/Pods-KKdayPortal-Stage.debug.xcconfig"; sourceTree = "<group>"; };
 		8C73ED13DE5C2C3FA9E7C052 /* Pods-KKdayPortal-Sit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.debug.xcconfig"; sourceTree = "<group>"; };
-		9D5BCE32A794404ABFB6840C /* Pods-KKdayPortal-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Test.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Test/Pods-KKdayPortal-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.debug.xcconfig"; sourceTree = "<group>"; };
-		B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalTests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortalTests/Pods-KKdayPortalTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B4118F5E5FC3FE5AD7CF2FD8 /* Pods-KKdayPortalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C07DF91F421AE8C2F87756E8 /* Pods-KKdayPortal-SitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-SitTests.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-SitTests/Pods-KKdayPortal-SitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
@@ -465,7 +456,6 @@
 		F46180F72403797200D303F8 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		F46180FE2403806D00D303F8 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F46181032405050900D303F8 /* Keyboarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboarder.swift; sourceTree = "<group>"; };
-		F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortalUITests.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortalUITests/Pods-KKdayPortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4B3BC9423F0F57C009699E5 /* KKdayPortal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKdayPortal-Info.plist"; sourceTree = "<group>"; };
 		F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
 		F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
@@ -541,20 +531,10 @@
 		9FCD06F76BBA93E310024506 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B077EF77439441D22C1A1DCD /* Pods-KKdayPortalTests.debug.xcconfig */,
-				52EA813E75F925891771ACDB /* Pods-KKdayPortalTests.release.xcconfig */,
 				8C73ED13DE5C2C3FA9E7C052 /* Pods-KKdayPortal-Sit.debug.xcconfig */,
 				11DD8E7E8B24C258A4E26EF7 /* Pods-KKdayPortal-Sit.release.xcconfig */,
-				B4118F5E5FC3FE5AD7CF2FD8 /* Pods-KKdayPortalUITests.debug.xcconfig */,
-				F49A4525ADD661CF13078BAB /* Pods-KKdayPortalUITests.release.xcconfig */,
 				ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */,
 				3A270F6966498D4554C4517E /* Pods-KKdayPortal-Production.release.xcconfig */,
-				70A474D9518B833C6ABA8237 /* Pods-KKdayPortal-Stage.debug.xcconfig */,
-				1625D737ED2CF74E038ED0EE /* Pods-KKdayPortal-Stage.release.xcconfig */,
-				9D5BCE32A794404ABFB6840C /* Pods-KKdayPortal-Test.debug.xcconfig */,
-				5831A246CF2307F25F1B941B /* Pods-KKdayPortal-Test.release.xcconfig */,
-				C07DF91F421AE8C2F87756E8 /* Pods-KKdayPortal-SitTests.debug.xcconfig */,
-				1472025D5D403B45FD200C5C /* Pods-KKdayPortal-SitTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
