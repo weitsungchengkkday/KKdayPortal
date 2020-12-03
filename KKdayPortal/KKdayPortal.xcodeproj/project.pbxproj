@@ -19,6 +19,10 @@
 		C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
+		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
+		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
+		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
+		C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* DolphinHTTP */; };
 		F42039B223C78ED4000480EF /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
 		F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEB523F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
@@ -291,10 +295,6 @@
 		F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneItem.swift */; };
 		F4C4FCE2255E9732001ADF72 /* PloneItemsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */; };
 		F4C4FCE3255E9732001ADF72 /* PloneItemsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */; };
-		F4D0680C255CCFF000F7B3F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0680B255CCFF000F7B3F8 /* SnapKit */; };
-		F4D06810255CCFFD00F7B3F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0680F255CCFFD00F7B3F8 /* SnapKit */; };
-		F4D06838255CD2AB00F7B3F8 /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = F4D06837255CD2AB00F7B3F8 /* DolphinHTTP */; };
-		F4D0683C255CD2D500F7B3F8 /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = F4D0683B255CD2D500F7B3F8 /* DolphinHTTP */; };
 		F4D06877255D1A4800F7B3F8 /* PloneEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */; };
 		F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */; };
 		F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */; };
@@ -505,9 +505,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D0683C255CD2D500F7B3F8 /* DolphinHTTP in Frameworks */,
+				C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */,
 				77E5FB8106E4538F986E0785 /* Pods_KKdayPortal_Production.framework in Frameworks */,
-				F4D06810255CCFFD00F7B3F8 /* SnapKit in Frameworks */,
+				C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,9 +515,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D06838255CD2AB00F7B3F8 /* DolphinHTTP in Frameworks */,
+				C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */,
 				7F644BB20AD6E8ABC36BA339 /* Pods_KKdayPortal_Sit.framework in Frameworks */,
-				F4D0680C255CCFF000F7B3F8 /* SnapKit in Frameworks */,
+				C6E217042578EE67000AAAFA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1806,8 +1806,8 @@
 			);
 			name = "KKdayPortal-Production";
 			packageProductDependencies = (
-				F4D0680F255CCFFD00F7B3F8 /* SnapKit */,
-				F4D0683B255CD2D500F7B3F8 /* DolphinHTTP */,
+				C6E2170C2578EF4C000AAAFA /* SnapKit */,
+				C6E2170E2578EF51000AAAFA /* DolphinHTTP */,
 			);
 			productName = KKdayPortal;
 			productReference = F44E8CE323B88AA30032C6BE /* KKdayPortal.app */;
@@ -1829,8 +1829,8 @@
 			);
 			name = "KKdayPortal-Sit";
 			packageProductDependencies = (
-				F4D0680B255CCFF000F7B3F8 /* SnapKit */,
-				F4D06837255CD2AB00F7B3F8 /* DolphinHTTP */,
+				C6E217032578EE67000AAAFA /* SnapKit */,
+				C6E217082578EEB5000AAAFA /* DolphinHTTP */,
 			);
 			productName = KKdayPortal;
 			productReference = F4B3F2CA23862B3000657CDF /* KKdayPortal.app */;
@@ -1864,8 +1864,8 @@
 			);
 			mainGroup = F4B3F2C123862B3000657CDF;
 			packageReferences = (
-				F4D0680A255CCFF000F7B3F8 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				F4D06836255CD2AB00F7B3F8 /* XCRemoteSwiftPackageReference "DolphinHTTP" */,
+				C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */,
 			);
 			productRefGroup = F4B3F2CB23862B3000657CDF /* Products */;
 			projectDirPath = "";
@@ -2566,7 +2566,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F4D0680A255CCFF000F7B3F8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
 			requirement = {
@@ -2574,9 +2574,9 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		F4D06836255CD2AB00F7B3F8 /* XCRemoteSwiftPackageReference "DolphinHTTP" */ = {
+		C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WeiTsungCheng/DolphinHTTP.git";
+			repositoryURL = "git@github.com:WeiTsungCheng/DolphinHTTP.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.1;
@@ -2585,24 +2585,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F4D0680B255CCFF000F7B3F8 /* SnapKit */ = {
+		C6E217032578EE67000AAAFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F4D0680A255CCFF000F7B3F8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		F4D0680F255CCFFD00F7B3F8 /* SnapKit */ = {
+		C6E217082578EEB5000AAAFA /* DolphinHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F4D0680A255CCFF000F7B3F8 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		F4D06837255CD2AB00F7B3F8 /* DolphinHTTP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4D06836255CD2AB00F7B3F8 /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
+			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
 			productName = DolphinHTTP;
 		};
-		F4D0683B255CD2D500F7B3F8 /* DolphinHTTP */ = {
+		C6E2170C2578EF4C000AAAFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F4D06836255CD2AB00F7B3F8 /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
+			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		C6E2170E2578EF51000AAAFA /* DolphinHTTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
 			productName = DolphinHTTP;
 		};
 /* End XCSwiftPackageProductDependency section */

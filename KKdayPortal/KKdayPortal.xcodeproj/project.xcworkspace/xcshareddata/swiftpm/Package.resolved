@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "DolphinHTTP",
-        "repositoryURL": "git@github.com:WeiTsungCheng/DolphinHTTP.git",
-        "state": {
-          "branch": null,
-          "revision": "fbc1124824f9461d9e5c3c78c215b549180b7196",
-          "version": "1.0.1"
-        }
-      },
-      {
         "package": "SnapKit",
         "repositoryURL": "git@github.com:SnapKit/SnapKit.git",
         "state": {
