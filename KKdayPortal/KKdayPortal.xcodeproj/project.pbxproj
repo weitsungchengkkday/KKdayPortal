@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77E5FB8106E4538F986E0785 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */; };
-		7F644BB20AD6E8ABC36BA339 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569478EC36DD5FD37783A5F8 /* Pods_KKdayPortal_Sit.framework */; };
+		163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */; };
+		B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */; };
 		C63BC1C7256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */; };
 		C63BC1C8256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */; };
 		C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
@@ -19,10 +19,10 @@
 		C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
-		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
-		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
-		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
-		C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* DolphinHTTP */; };
+		C6E217042578EE67000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */; };
+		C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */; };
+		C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */; };
+		C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */; };
 		F42039B223C78ED4000480EF /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
 		F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEB523F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
@@ -316,17 +316,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11C095C59F1F19D5D92E5B25 /* Pods_KKdayPortal_Stage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Stage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DD8E7E8B24C258A4E26EF7 /* Pods-KKdayPortal-Sit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.release.xcconfig"; sourceTree = "<group>"; };
-		26E28182104343E874E2CEF6 /* Pods_KKdayPortal_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30B15E99981334FA9FCA5A57 /* Pods_KKdayPortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A270F6966498D4554C4517E /* Pods-KKdayPortal-Production.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.release.xcconfig"; sourceTree = "<group>"; };
-		3C412AA9C482EDAC3828F8FC /* Pods_KKdayPortal_SitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_SitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		569478EC36DD5FD37783A5F8 /* Pods_KKdayPortal_Sit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Sit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Sit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C73ED13DE5C2C3FA9E7C052 /* Pods-KKdayPortal-Sit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.debug.xcconfig"; sourceTree = "<group>"; };
 		ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.debug.xcconfig"; sourceTree = "<group>"; };
-		C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
@@ -495,9 +490,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */,
-				77E5FB8106E4538F986E0785 /* Pods_KKdayPortal_Production.framework in Frameworks */,
-				C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */,
+				C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */,
+				C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */,
+				163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,9 +500,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */,
-				7F644BB20AD6E8ABC36BA339 /* Pods_KKdayPortal_Sit.framework in Frameworks */,
-				C6E217042578EE67000AAAFA /* SnapKit in Frameworks */,
+				C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */,
+				C6E217042578EE67000AAAFA /* BuildFile in Frameworks */,
+				B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,13 +512,8 @@
 		8D7EAA3CFA3FD11945DE76EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43F5F0B15E8B40F354CEF419 /* Pods_KKdayPortalTests.framework */,
-				569478EC36DD5FD37783A5F8 /* Pods_KKdayPortal_Sit.framework */,
-				30B15E99981334FA9FCA5A57 /* Pods_KKdayPortalUITests.framework */,
-				C1738A518081466B516180CA /* Pods_KKdayPortal_Production.framework */,
-				11C095C59F1F19D5D92E5B25 /* Pods_KKdayPortal_Stage.framework */,
-				26E28182104343E874E2CEF6 /* Pods_KKdayPortal_Test.framework */,
-				3C412AA9C482EDAC3828F8FC /* Pods_KKdayPortal_SitTests.framework */,
+				72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */,
+				71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1786,8 +1776,8 @@
 			);
 			name = "KKdayPortal-Production";
 			packageProductDependencies = (
-				C6E2170C2578EF4C000AAAFA /* SnapKit */,
-				C6E2170E2578EF51000AAAFA /* DolphinHTTP */,
+				C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */,
+				C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */,
 			);
 			productName = KKdayPortal;
 			productReference = F44E8CE323B88AA30032C6BE /* KKdayPortal.app */;
@@ -1809,8 +1799,8 @@
 			);
 			name = "KKdayPortal-Sit";
 			packageProductDependencies = (
-				C6E217032578EE67000AAAFA /* SnapKit */,
-				C6E217082578EEB5000AAAFA /* DolphinHTTP */,
+				C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */,
+				C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */,
 			);
 			productName = KKdayPortal;
 			productReference = F4B3F2CA23862B3000657CDF /* KKdayPortal.app */;
@@ -1844,8 +1834,8 @@
 			);
 			mainGroup = F4B3F2C123862B3000657CDF;
 			packageReferences = (
-				C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */,
-				C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */,
+				C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */,
+				C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = F4B3F2CB23862B3000657CDF /* Products */;
 			projectDirPath = "";
@@ -2546,7 +2536,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
 			requirement = {
@@ -2554,7 +2544,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */ = {
+		C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:WeiTsungCheng/DolphinHTTP.git";
 			requirement = {
@@ -2565,24 +2555,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C6E217032578EE67000AAAFA /* SnapKit */ = {
+		C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
-		C6E217082578EEB5000AAAFA /* DolphinHTTP */ = {
+		C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
+			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
 			productName = DolphinHTTP;
 		};
-		C6E2170C2578EF4C000AAAFA /* SnapKit */ = {
+		C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
-		C6E2170E2578EF51000AAAFA /* DolphinHTTP */ = {
+		C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
+			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
 			productName = DolphinHTTP;
 		};
 /* End XCSwiftPackageProductDependency section */
