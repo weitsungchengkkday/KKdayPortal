@@ -16,69 +16,89 @@ final class ApplicationsEntryViewController: UIViewController {
     }
     
     // 🏞 UI element
-    lazy var collectionView: UICollectionView = {
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
-        flowLayout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
-        flowLayout.itemSize = CGSize(width: 120, height: 160)
-        
-        let clv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        
-        clv.delegate = self
-        clv.dataSource = self
-        
-        clv.register(ApplicationsEntryCollectionViewCell.self, forCellWithReuseIdentifier: ApplicationsEntryViewController.CellName)
-        clv.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        
-        return clv
+    lazy var applicationsStackView: UIStackView = {
+        let stv: UIStackView = UIStackView()
+        stv.axis = .vertical
+        stv.alignment = .center
+        stv.distribution = .fill
+        stv.spacing = 50
+        return stv
     }()
-        
-        
-//    lazy var tableView: UITableView = {
-//        let tbv = UITableView()
-//
-//        tbv.delegate = self
-//        tbv.dataSource = self
-//
-//        tbv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//        tbv.register(ApplicationsEntryTableViewCell.self, forCellReuseIdentifier: ApplicationsEntryViewController.CellName)
-//        tbv.tableFooterView = UIView()
-//        return tbv
-//    }()
+    
+    lazy var bpmButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("BPM", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        btn.setTitleColor(.white, for: .normal)
+        btn.layer.cornerRadius = 8
+        return btn
+    }()
+    
+    lazy var twilioButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Call Center", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        btn.layer.cornerRadius = 8
+        return btn
+    }()
     
     private let viewModel = ApplicationsEntryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setAction()
         bindViewModel()
         viewModel.loadPortalData()
     }
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Service Links"
+        self.title = "Service List"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
-        view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide)
-            maker.leading.equalTo(view.safeAreaLayoutGuide)
-            maker.trailing.equalTo(view.safeAreaLayoutGuide)
-            maker.bottom.equalTo(view.safeAreaLayoutGuide)
+        view.addSubview(applicationsStackView)
+        applicationsStackView.addArrangedSubview(bpmButton)
+        applicationsStackView.addArrangedSubview(twilioButton)
+        
+        applicationsStackView.snp.makeConstraints { maker in
+            maker.width.equalToSuperview()
+            maker.centerX.centerY.equalToSuperview()
         }
         
-//        view.addSubview(tableView)
-//
-//        tableView.snp.makeConstraints { maker in
-//            maker.top.equalTo(view.safeAreaLayoutGuide)
-//            maker.leading.equalTo(view.safeAreaLayoutGuide)
-//            maker.trailing.equalTo(view.safeAreaLayoutGuide)
-//            maker.bottom.equalTo(view.safeAreaLayoutGuide)
-//        }
-   
+        bpmButton.snp.makeConstraints { maker in
+            maker.height.equalTo(44)
+            maker.width.equalToSuperview().offset(-60)
+        }
+        
+        twilioButton.snp.makeConstraints { maker in
+            maker.height.equalTo(44)
+            maker.width.equalToSuperview().offset(-60)
+        }
     }
+    
+    // 🎬 set action
+    private func setAction() {
+        bpmButton.addTarget(self, action: #selector(goBPM), for: .touchUpInside)
+        twilioButton.addTarget(self, action: #selector(goTwilio), for: .touchUpInside)
+    }
+    
+    @objc private func goBPM() {
+        let bpmURL = URL(string: ConfigManager.shared.model.BPM + "/WebAgenda/")!
+        let vm = ApplicationsContentViewModel(source: bpmURL)
+        let presentVC = ApplicationsContentViewController(viewModel: vm)
+        
+        present(presentVC, animated: true, completion: nil)
+    }
+    
+    @objc private func goTwilio() {
+        
+        
+        
+    }
+    
     
     // ⛓ bind viewModel
     private func bindViewModel() {
@@ -91,69 +111,6 @@ final class ApplicationsEntryViewController: UIViewController {
     }
     
     private func updateApplicationEntry(viewModel: ApplicationsEntryViewModel) {
-    //    tableView.reloadData()
+  
     }
 }
-
-extension ApplicationsEntryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
-        return viewModel.linkObjects.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let item = viewModel.linkObjects[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ApplicationsEntryViewController.CellName, for: indexPath) as! ApplicationsEntryCollectionViewCell
-        cell.titleLabel.text = item.name
-     //   cell.applicationImageView.image = item.applicationImage
-        
-        return cell
-    }
-    
-    
-}
-//
-//extension ApplicationsEntryViewController: UITableViewDelegate, UITableViewDataSource {
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return viewModel.linkObjects.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let item = viewModel.linkObjects[indexPath.row]
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: ApplicationsEntryViewController.CellName, for: indexPath) as! ApplicationsEntryTableViewCell
-//        cell.titleLabel.text = item.name
-//        cell.descriptionLabel.text = item.description
-//
-//        return cell
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        let linkObject = viewModel.linkObjects[indexPath.row]
-//        goDetailPageInWebView(url: linkObject.url)
-//    }
-//
-//    private func goDetailPageInWebView(url: URL) {
-//
-//        let pushViewController = ApplicationsContentViewController(viewModel: ApplicationsContentViewModel(source: url))
-//        navigationController?.pushViewController(pushViewController, animated: false)
-//    }
-//
-//}

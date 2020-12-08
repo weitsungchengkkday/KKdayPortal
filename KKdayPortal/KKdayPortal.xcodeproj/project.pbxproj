@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */; };
 		B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */; };
-		C63BC1C7256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */; };
-		C63BC1C8256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */; };
 		C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
@@ -19,11 +17,10 @@
 		C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
-		C6E217042578EE67000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */; };
-		C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */; };
-		C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */; };
-		C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */; };
-		F42039B223C78ED4000480EF /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
+		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
+		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
+		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
+		C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* DolphinHTTP */; };
 		F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEB523F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEBA23F5181600BFDA3B /* GeneralItemTopTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */; };
@@ -279,7 +276,6 @@
 		F4B3BCB723F31052009699E5 /* AlertEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */; };
 		F4B3BCBB23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
 		F4B3BCBC23F310C6009699E5 /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
-		F4B3BCBF23F3A417009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */; };
 		F4B3BCC223F3A42C009699E5 /* ContentListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */; };
 		F4B3F2CE23862B3000657CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
 		F4B3F2D023862B3000657CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
@@ -322,12 +318,10 @@
 		72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C73ED13DE5C2C3FA9E7C052 /* Pods-KKdayPortal-Sit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.debug.xcconfig"; sourceTree = "<group>"; };
 		ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.debug.xcconfig"; sourceTree = "<group>"; };
-		C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEntryTableViewCell.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
 		F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemDescriptionTextView.swift; sourceTree = "<group>"; };
@@ -490,8 +484,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */,
-				C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */,
+				C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */,
+				C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */,
 				163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,8 +494,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */,
-				C6E217042578EE67000AAAFA /* BuildFile in Frameworks */,
+				C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */,
+				C6E217042578EE67000AAAFA /* SnapKit in Frameworks */,
 				B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1259,7 +1253,6 @@
 			children = (
 				F45448A923A9F974001B8D31 /* ViewModel */,
 				F45448A823A9F96C001B8D31 /* View */,
-				F45448AE23AA0131001B8D31 /* Cell */,
 			);
 			path = ApplicationsEntryPage;
 			sourceTree = "<group>";
@@ -1278,23 +1271,6 @@
 				F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F45448AE23AA0131001B8D31 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F45448AF23AA014C001B8D31 /* View */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		F45448AF23AA014C001B8D31 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F42039B123C78ED4000480EF /* ApplicationsEntryTableViewCell.swift */,
-				C63BC1C6256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F45448B223AA301B001B8D31 /* ApplicationsContentPage */ = {
@@ -1776,8 +1752,8 @@
 			);
 			name = "KKdayPortal-Production";
 			packageProductDependencies = (
-				C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */,
-				C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */,
+				C6E2170C2578EF4C000AAAFA /* SnapKit */,
+				C6E2170E2578EF51000AAAFA /* DolphinHTTP */,
 			);
 			productName = KKdayPortal;
 			productReference = F44E8CE323B88AA30032C6BE /* KKdayPortal.app */;
@@ -1799,8 +1775,8 @@
 			);
 			name = "KKdayPortal-Sit";
 			packageProductDependencies = (
-				C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */,
-				C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */,
+				C6E217032578EE67000AAAFA /* SnapKit */,
+				C6E217082578EEB5000AAAFA /* DolphinHTTP */,
 			);
 			productName = KKdayPortal;
 			productReference = F4B3F2CA23862B3000657CDF /* KKdayPortal.app */;
@@ -1834,8 +1810,8 @@
 			);
 			mainGroup = F4B3F2C123862B3000657CDF;
 			packageReferences = (
-				C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */,
-				C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */,
+				C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */,
 			);
 			productRefGroup = F4B3F2CB23862B3000657CDF /* Products */;
 			projectDirPath = "";
@@ -1969,7 +1945,6 @@
 				F43AFC6223E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F426FEC123F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */,
 				F43AFC6E23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
-				F4B3BCBF23F3A417009699E5 /* ApplicationsEntryTableViewCell.swift in Sources */,
 				F43AFC8223E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EA23D13A3100FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */,
 				F44A199923C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
@@ -2094,7 +2069,6 @@
 				F44E8CCF23B88AA30032C6BE /* PloneTextObject.swift in Sources */,
 				F45740D923CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
 				F426FEDB23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
-				C63BC1C8256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */,
 				F4B3BCB723F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F46181002403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
@@ -2225,7 +2199,6 @@
 				F4544844239CAE04001B8D31 /* GeneralFileViewController.swift in Sources */,
 				F457417123D5525F00FB5EEC /* ServerType.swift in Sources */,
 				F45446FA238F70DF001B8D31 /* PloneImage.swift in Sources */,
-				F42039B223C78ED4000480EF /* ApplicationsEntryTableViewCell.swift in Sources */,
 				F45740D223CEED6100FB5EEC /* ContentListSection.swift in Sources */,
 				F45740DF23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */,
@@ -2245,7 +2218,6 @@
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F43AFC7D23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,
-				C63BC1C7256BB93A00D5C46A /* ApplicationsEntryCollectionViewCell.swift in Sources */,
 				F426FEDA23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */,
 				F46180FF2403806D00D303F8 /* AboutViewController.swift in Sources */,
@@ -2536,7 +2508,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */ = {
+		C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
 			requirement = {
@@ -2544,7 +2516,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */ = {
+		C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:WeiTsungCheng/DolphinHTTP.git";
 			requirement = {
@@ -2555,24 +2527,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E217032578EE67000AAAFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E217082578EEB5000AAAFA /* DolphinHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
 			productName = DolphinHTTP;
 		};
-		C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E2170C2578EF4C000AAAFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E2170E2578EF51000AAAFA /* DolphinHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
 			productName = DolphinHTTP;
 		};
 /* End XCSwiftPackageProductDependency section */

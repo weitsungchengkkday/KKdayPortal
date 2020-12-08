@@ -51,7 +51,7 @@ final class MainViewController: UITabBarController {
         settingNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         let applicationsEntryVC = ApplicationsEntryViewController(nibName: nil, bundle: nil)
-        let image = UIImage(systemName: "rectangle.grid.2x2")
+        let image = UIImage(systemName: "signpost.right")
         let applicationsEntryItem = UITabBarItem(title: "Service Links", image: image, selectedImage: image)
         applicationsEntryVC.tabBarItem = applicationsEntryItem
         
