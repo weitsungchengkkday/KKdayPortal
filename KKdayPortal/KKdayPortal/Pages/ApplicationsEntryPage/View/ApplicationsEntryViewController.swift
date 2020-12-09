@@ -94,8 +94,8 @@ final class ApplicationsEntryViewController: UIViewController {
     }
     
     @objc private func goTwilio() {
-        
-        
+        let presentVC = TwilioServiceViewController()
+        present(presentVC, animated: true, completion: nil)
         
     }
     
