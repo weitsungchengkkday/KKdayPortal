@@ -13,6 +13,10 @@ def shared
   # HTML Parsing
   pod 'SwiftSoup', '~> 2.3.0'
   pod 'HTMLString', '~> 5.0.0'
+
+
+  # Twilio
+  pod 'TwilioVoice', '~> 6.0.2'
   
 end
 

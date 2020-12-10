@@ -2,23 +2,27 @@ PODS:
   - Alamofire (4.9.1)
   - HTMLString (5.0.0)
   - SwiftSoup (2.3.0)
+  - TwilioVoice (6.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - HTMLString (~> 5.0.0)
   - SwiftSoup (~> 2.3.0)
+  - TwilioVoice (~> 6.0.2)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - HTMLString
     - SwiftSoup
+    - TwilioVoice
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   HTMLString: 20374dc0195423d02569e87561f01153fca0c364
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
+  TwilioVoice: 89efb8621aa14860ec4282d2d04e987058eb0b7a
 
-PODFILE CHECKSUM: 37f4fd49f385da73be4103c8748a2fe357184e92
+PODFILE CHECKSUM: f433019a1fb1ec8b52a607c0cabad288ff3308eb
 
 COCOAPODS: 1.10.0
