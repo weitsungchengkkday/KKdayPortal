@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import CallKit
+import AVFoundation
 
 final class TwilioServiceViewController: UIViewController {
 
@@ -89,12 +91,72 @@ final class TwilioServiceViewController: UIViewController {
         return lbl
     }()
     
+    // ODOO Server (for creating accessToken)
+    private var baseURLString: String {
+        
+      //  let url = ConfigManager.shared.model.host
+      //  return url
+        
+        return "https://94195be30686.ngrok.io"
+    }
+    
+    private let accessTokenEndpoint = "/accessToken"
+    private let identity = "defualt identity"
+    private let twimlParamTo = "to"
+    
+    var callKitProvider: CXProvider?
+    let callKitCallController = CXCallController()
+    var userInitiatedDisconnect: Bool = false
+    
+    var myUUID = UUID()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        setUIElementDelegate()
         setAction()
+        setCallKit()
+        
+        
+        reportIncomingCall(from: "Bob", uuid: myUUID)
+      //  performStartCallAction(uuid: myUUID, handle: "William Calling")
+    }
+    
+    deinit {
+        if let provider = callKitProvider {
+            provider.invalidate()
+        }
+    }
+    
+    private func setCallKit() {
+        // iOS 14 CXProviderConfiguration()
+        let configuration = CXProviderConfiguration(localizedName: "Twilio Voice")
+        configuration.maximumCallGroups = 1
+        configuration.maximumCallsPerCallGroup = 1
+        callKitProvider = CXProvider(configuration: configuration)
+        if let provider = callKitProvider {
+            provider.setDelegate(self, queue: nil)
+        }
+        
+        
+//        let update = CXCallUpdate()
+//        update.remoteHandle = CXHandle(type: .generic, value: "I am calling you!")
+//        callKitProvider!.reportNewIncomingCall(with: UUID(), update: update, completion: { error in })
+//
+        
+        
+//        let uuid = UUID()
+//        let update = CXCallUpdate()
+//        let controller = CXCallController()
+//        let action = CXStartCallAction(call: uuid, handle: CXHandle(type: .generic, value: "Calling Someone"))
+//        let transaction = CXTransaction(action: action)
+//
+//        controller.request(transaction) { error in
+//
+//            self.callKitProvider?.reportCall(with: uuid, updated: update)
+//        }
+        
     }
     
     
@@ -176,6 +238,10 @@ final class TwilioServiceViewController: UIViewController {
         
     }
     
+    private func setUIElementDelegate() {
+        outgoingValue.delegate = self
+    }
+    
     private func setAction() {
         placeCallButton.addTarget(self, action: #selector(mainButtonPressed), for: .touchUpInside)
         
@@ -185,6 +251,8 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     @objc private func mainButtonPressed(sender: UIButton) {
+        performEndCallAction(uuid: myUUID)
+//        performStartCallAction
         
     }
     
@@ -197,7 +265,128 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     
+
+}
+
+
+// MARK: - CXProviderDelegate
+
+extension TwilioServiceViewController: CXProviderDelegate {
     
+    func providerDidReset(_ provider: CXProvider) {
+        print("☎️ providerDidReset:")
+    }
+    
+    func providerDidBegin(_ provider: CXProvider) {
+        print("☎️ providerDidBegin")
+    }
+    
+    func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
+        print("☎️ provider:didActivateAudioSession:")
+      
+    }
+    
+    func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
+        print("☎️provider:didDeactivateAudioSession:")
+        
+    }
+    
+    func provider(_ provider: CXProvider, timedOutPerforming action: CXAction) {
+        print("☎️provider:timedOutPerformingAction:")
+    }
+
+    func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
+        print("☎️ provider:performStartCallAction:")
+    }
+    
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+        print("☎️ provider:performAnswerCallAction:")
+        action.fulfill()
+    }
+    
+    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+        print("☎️ provider:performEndCallAction:")
+        action.fulfill()
+    }
+    
+    // MARK: Call Kit Actions
+    func performStartCallAction(uuid: UUID, handle: String) {
+        guard let provider = callKitProvider else {
+            print("☎️⚠️ CallKit provider not available")
+            return
+        }
+        
+        let callHandle = CXHandle(type: .generic, value: handle)
+        let starCallAction = CXStartCallAction(call: uuid, handle: callHandle)
+        let transaction = CXTransaction(action: starCallAction)
+        
+        callKitCallController.request(transaction) { error in
+            if let error = error {
+                print("☎️⚠️ StartCallAction transaction request failed: \(error.localizedDescription)")
+                return
+            }
+            
+            print("☎️✅ StartCallAction transaction request successful")
+            
+            let callUpdate = CXCallUpdate()
+            
+            callUpdate.remoteHandle = callHandle
+            callUpdate.supportsDTMF = true
+            callUpdate.supportsHolding = true
+            callUpdate.supportsGrouping = false
+            callUpdate.supportsUngrouping = false
+            callUpdate.hasVideo = false
+
+            provider.reportCall(with: uuid, updated: callUpdate)
+            
+        }
+    }
+    
+    func reportIncomingCall(from: String, uuid: UUID) {
+        guard let provider = callKitProvider else {
+            print("☎️⚠️ CallKit provider not available")
+            return
+        }
+        
+        let callHandle = CXHandle(type: .generic, value: from)
+        let callUpdate = CXCallUpdate()
+        
+        callUpdate.remoteHandle = callHandle
+        callUpdate.supportsDTMF = true
+        callUpdate.supportsHolding = true
+        callUpdate.supportsGrouping = false
+        callUpdate.supportsUngrouping = false
+        callUpdate.hasVideo = false
+        
+        provider.reportNewIncomingCall(with: uuid, update: callUpdate) { error in
+            if let error = error {
+                print("☎️⚠️ Failed to report incoming call successfully: \(error.localizedDescription).")
+            } else {
+                print("☎️✅ Incoming call successfully reported.")
+            }
+        }
+        
+    }
+    
+    func performEndCallAction(uuid: UUID) {
+        
+        let endCallAction = CXEndCallAction(call: uuid)
+        let transaction = CXTransaction(action: endCallAction)
+        
+        callKitCallController.request(transaction) { error in
+            if let error = error {
+                print("☎️⚠️ EndCallAction transaction request failed: \(error.localizedDescription).")
+            } else {
+                print("☎️✅ EndCallAction transaction request successful")
+            }
+        }
+    }
+    
+    func performVoiceCall(uuid: UUID, client: String?, completionHandler: @escaping (Bool) -> Void) {
+    }
+}
 
 
+extension TwilioServiceViewController: UITextFieldDelegate {
+    
 }
