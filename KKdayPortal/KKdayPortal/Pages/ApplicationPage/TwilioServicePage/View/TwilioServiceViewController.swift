@@ -40,7 +40,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var outgoingValue: UITextField = {
         let txf = UITextField()
         txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        txf.keyboardType = .phonePad
+        txf.keyboardType = .namePhonePad
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
@@ -79,6 +79,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var speakerSwitch: UISwitch = {
         let swh = UISwitch()
         swh.isEnabled = true
+        swh.isOn = true
         return swh
     }()
     
@@ -108,7 +109,7 @@ final class TwilioServiceViewController: UIViewController {
     let callKitCallController = CXCallController()
     var userInitiatedDisconnect: Bool = false
     
-    var myUUID = UUID()
+//    var myUUID = UUID()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,9 +120,54 @@ final class TwilioServiceViewController: UIViewController {
         setCallKit()
         
         
-        reportIncomingCall(from: "Bob", uuid: myUUID)
+     //   reportIncomingCall(from: "Bob", uuid: myUUID)
       //  performStartCallAction(uuid: myUUID, handle: "William Calling")
     }
+    
+    func fetchAccessToken() -> String? {
+        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identity)
+        
+        guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
+        
+        return try? String(contentsOf: accessTokenURL, encoding: .utf8)
+    }
+    
+    func toggleUIState(isEnabled: Bool, showCallControl: Bool) {
+        placeCallButton.isEnabled = isEnabled
+        
+        if showCallControl {
+            callControlView.isHidden = false
+            muteSwitch.isOn = false
+            speakerSwitch.isOn = true
+        } else {
+            callControlView.isHidden = true
+        }
+    }
+    
+    func showMicrophoneAccessRequest(_ uuid: UUID, _ handle: String) {
+        let alertController = UIAlertController(title: "KKday Voice",
+                                                message: "Microphone permission not granted",
+                                                preferredStyle: .alert)
+        
+        let continueWithoutMic = UIAlertAction(title: "Continue without microphone", style: .default) { [weak self] _ in
+            self?.performStartCallAction(uuid: uuid, handle: handle)
+        }
+        
+        let goToSettings = UIAlertAction(title: "Settings", style: .default) { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                      options: [UIApplication.OpenExternalURLOptionsKey.universalLinksOnly: false],
+                                      completionHandler: nil)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+            self?.toggleUIState(isEnabled: true, showCallControl: false)
+        }
+        
+        [continueWithoutMic, goToSettings, cancel].forEach { alertController.addAction($0) }
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     
     deinit {
         if let provider = callKitProvider {
@@ -145,7 +191,7 @@ final class TwilioServiceViewController: UIViewController {
 //        callKitProvider!.reportNewIncomingCall(with: UUID(), update: update, completion: { error in })
 //
         
-        
+//
 //        let uuid = UUID()
 //        let update = CXCallUpdate()
 //        let controller = CXCallController()
@@ -153,10 +199,10 @@ final class TwilioServiceViewController: UIViewController {
 //        let transaction = CXTransaction(action: action)
 //
 //        controller.request(transaction) { error in
+//            self.callKitProvider?.reportOutgoingCall(with: uuid, connectedAt: nil)
 //
-//            self.callKitProvider?.reportCall(with: uuid, updated: update)
 //        }
-        
+//
     }
     
     
@@ -185,7 +231,7 @@ final class TwilioServiceViewController: UIViewController {
         
         iconView.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.centerY.equalToSuperview().offset(-97.5)
+            maker.centerY.equalToSuperview().offset(-150)
             maker.width.equalTo(240)
             maker.height.equalTo(240)
         }
@@ -251,10 +297,39 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     @objc private func mainButtonPressed(sender: UIButton) {
-        performEndCallAction(uuid: myUUID)
+        
+//        performEndCallAction(uuid: myUUID)
 //        performStartCallAction
+        checkRecordPermission { [weak self] permissionGranted in
+            let uuid = UUID()
+            let handle = "William Call"
+            
+            guard !permissionGranted else {
+                self?.performStartCallAction(uuid: uuid, handle: handle)
+                return
+            }
+            
+            self?.showMicrophoneAccessRequest(uuid, handle)
+        }
+        
         
     }
+    
+    private func checkRecordPermission(completion: @escaping (_ permissionGranted: Bool) -> Void) {
+        let permissionStatus = AVAudioSession.sharedInstance().recordPermission
+        
+        switch permissionStatus {
+        case .granted:
+            completion(true)
+        case .denied:
+            completion(false)
+        case .undetermined:
+            AVAudioSession.sharedInstance().requestRecordPermission { granted in completion(granted) }
+        default:
+            completion(false)
+        }
+    }
+    
     
     @objc private func muteSwitchToggled(sender: UISwitch) {
         
@@ -386,7 +461,13 @@ extension TwilioServiceViewController: CXProviderDelegate {
     }
 }
 
+// MARK: - UITextFieldDelegate
 
 extension TwilioServiceViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        outgoingValue.resignFirstResponder()
+        return true
+    }
     
+
 }
