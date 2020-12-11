@@ -17,6 +17,8 @@
 		C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
 		C63D277D257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
 		C63D277E257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
+		C63D279925830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
+		C63D279A25830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
@@ -324,6 +326,7 @@
 		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceViewController.swift; sourceTree = "<group>"; };
+		C63D279825830ECB00CFF8A8 /* ringtone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtone.wav; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
@@ -567,6 +570,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C63D279725830E9200CFF8A8 /* ringtone */ = {
+			isa = PBXGroup;
+			children = (
+				C63D279825830ECB00CFF8A8 /* ringtone.wav */,
+			);
+			path = ringtone;
 			sourceTree = "<group>";
 		};
 		C6A578252567D21D0049D700 /* ViewModel */ = {
@@ -1591,6 +1602,7 @@
 				F4B3F2CD23862B3000657CDF /* AppDelegate.swift */,
 				F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */,
 				F4B3F2D623862B3100657CDF /* Assets.xcassets */,
+				C63D279725830E9200CFF8A8 /* ringtone */,
 				F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */,
 				F454488923A54D2D001B8D31 /* Localizable.strings */,
 				F45448A123A88636001B8D31 /* credentials.plist */,
@@ -1864,6 +1876,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63D279A25830ECB00CFF8A8 /* ringtone.wav in Resources */,
 				F453943723B8B44300136E6D /* Gif in Resources */,
 				F44E8CDA23B88AA30032C6BE /* LaunchScreen.storyboard in Resources */,
 				F44E8CDB23B88AA30032C6BE /* credentials.plist in Resources */,
@@ -1877,6 +1890,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63D279925830ECB00CFF8A8 /* ringtone.wav in Resources */,
 				F453943623B8B44300136E6D /* Gif in Resources */,
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
 				F45448A223A88636001B8D31 /* credentials.plist in Resources */,

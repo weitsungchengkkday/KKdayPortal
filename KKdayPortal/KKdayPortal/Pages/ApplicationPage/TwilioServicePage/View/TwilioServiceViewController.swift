@@ -6,13 +6,18 @@
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
 
+// 📳 => TwilioVoice
+// ☎️ => CallKit
+// 📻 => AVFoundation
+
 import UIKit
 import SnapKit
 import CallKit
 import AVFoundation
+import TwilioVoice
 
 final class TwilioServiceViewController: UIViewController {
-
+    
     // 🏞 UI element
     
     lazy var qualityWarningsToaster: UILabel = {
@@ -33,7 +38,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var iconView: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(systemName: "headphones.circle.fill")
-       
+        
         return img
     }()
     
@@ -43,7 +48,7 @@ final class TwilioServiceViewController: UIViewController {
         txf.keyboardType = .namePhonePad
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-    
+        
         return txf
     }()
     
@@ -75,7 +80,7 @@ final class TwilioServiceViewController: UIViewController {
         
         return lbl
     }()
-     
+    
     lazy var speakerSwitch: UISwitch = {
         let swh = UISwitch()
         swh.isEnabled = true
@@ -95,22 +100,33 @@ final class TwilioServiceViewController: UIViewController {
     // ODOO Server (for creating accessToken)
     private var baseURLString: String {
         
-      //  let url = ConfigManager.shared.model.host
-      //  return url
+        //  let url = ConfigManager.shared.model.host
+        //  return url
         
         return "https://94195be30686.ngrok.io"
     }
     
+    // CallKit
+    private var callKitProvider: CXProvider?
+    private let callKitCallController = CXCallController()
+    private var userInitiatedDisconnect: Bool = false
+    
+    private var callKitCompletionCallBack: ((Bool) -> Void)? = nil
+    
+    // TwilioVoice
     private let accessTokenEndpoint = "/accessToken"
     private let identity = "defualt identity"
     private let twimlParamTo = "to"
     
-    var callKitProvider: CXProvider?
-    let callKitCallController = CXCallController()
-    var userInitiatedDisconnect: Bool = false
+    private var activeCall: Call? = nil
+    private var activeCalls: [String: Call] = [:]
+    private var activeCallInvites: [String: CallInvite] = [:]
     
-//    var myUUID = UUID()
+    private var audioDevice: DefaultAudioDevice = DefaultAudioDevice()
+    // AVAudio
+    private var ringtonePlayer: AVAudioPlayer? = nil
     
+    //    var myUUID = UUID()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -119,9 +135,8 @@ final class TwilioServiceViewController: UIViewController {
         setAction()
         setCallKit()
         
-        
-     //   reportIncomingCall(from: "Bob", uuid: myUUID)
-      //  performStartCallAction(uuid: myUUID, handle: "William Calling")
+        //   reportIncomingCall(from: "Bob", uuid: myUUID)
+        //  performStartCallAction(uuid: myUUID, handle: "William Calling")
     }
     
     func fetchAccessToken() -> String? {
@@ -186,23 +201,23 @@ final class TwilioServiceViewController: UIViewController {
         }
         
         
-//        let update = CXCallUpdate()
-//        update.remoteHandle = CXHandle(type: .generic, value: "I am calling you!")
-//        callKitProvider!.reportNewIncomingCall(with: UUID(), update: update, completion: { error in })
-//
+        //        let update = CXCallUpdate()
+        //        update.remoteHandle = CXHandle(type: .generic, value: "I am calling you!")
+        //        callKitProvider!.reportNewIncomingCall(with: UUID(), update: update, completion: { error in })
+        //
         
-//
-//        let uuid = UUID()
-//        let update = CXCallUpdate()
-//        let controller = CXCallController()
-//        let action = CXStartCallAction(call: uuid, handle: CXHandle(type: .generic, value: "Calling Someone"))
-//        let transaction = CXTransaction(action: action)
-//
-//        controller.request(transaction) { error in
-//            self.callKitProvider?.reportOutgoingCall(with: uuid, connectedAt: nil)
-//
-//        }
-//
+        //
+        //        let uuid = UUID()
+        //        let update = CXCallUpdate()
+        //        let controller = CXCallController()
+        //        let action = CXStartCallAction(call: uuid, handle: CXHandle(type: .generic, value: "Calling Someone"))
+        //        let transaction = CXTransaction(action: action)
+        //
+        //        controller.request(transaction) { error in
+        //            self.callKitProvider?.reportOutgoingCall(with: uuid, connectedAt: nil)
+        //
+        //        }
+        //
     }
     
     
@@ -297,9 +312,17 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     @objc private func mainButtonPressed(sender: UIButton) {
+        //        performEndCallAction(uuid: myUUID)
+        //        performStartCallAction
         
-//        performEndCallAction(uuid: myUUID)
-//        performStartCallAction
+        guard activeCall == nil else {
+            userInitiatedDisconnect = true
+            performEndCallAction(uuid: activeCall!.uuid!)
+            toggleUIState(isEnabled: false, showCallControl: false)
+            
+            return
+        }
+        
         checkRecordPermission { [weak self] permissionGranted in
             let uuid = UUID()
             let handle = "William Call"
@@ -332,15 +355,53 @@ final class TwilioServiceViewController: UIViewController {
     
     
     @objc private func muteSwitchToggled(sender: UISwitch) {
+        guard let activeCall = activeCall else {
+            return
+        }
         
+        activeCall.isMuted = sender.isOn
     }
     
     @objc private func speakerSwitchToggled(sender: UISwitch) {
-        
+        toggleAudioRoute(toSpeaker: sender.isOn)
     }
     
+    // MARK: AudioSession
+    func toggleAudioRoute(toSpeaker: Bool) {
+        audioDevice.block = {
+            do {
+                if toSpeaker {
+                    try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+                } else {
+                    try AVAudioSession.sharedInstance().overrideOutputAudioPort(.none)
+                }
+            } catch {
+                print("📻⚠️ error.localizedDescription")
+            }
+        }
+    }
     
-
+    // MARK: Ringtone
+    private func playRingback() {
+        let ringtonePath = URL(fileURLWithPath: Bundle.main.path(forResource: "ringtone", ofType: "wav")!)
+        
+        do {
+            ringtonePlayer = try AVAudioPlayer(contentsOf: ringtonePath)
+            ringtonePlayer?.delegate = self
+            ringtonePlayer?.numberOfLoops = -1
+            
+            ringtonePlayer?.volume = 1.0
+            ringtonePlayer?.play()
+        } catch {
+            print("📻 Failed to initialize audio player")
+        }
+    }
+    
+    private func stopRingback() {
+        guard let ringtonePlayer = ringtonePlayer, ringtonePlayer.isPlaying else { return }
+        
+        ringtonePlayer.stop()
+    }
 }
 
 
@@ -350,6 +411,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
     
     func providerDidReset(_ provider: CXProvider) {
         print("☎️ providerDidReset:")
+        audioDevice.isEnabled = false
     }
     
     func providerDidBegin(_ provider: CXProvider) {
@@ -358,30 +420,89 @@ extension TwilioServiceViewController: CXProviderDelegate {
     
     func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
         print("☎️ provider:didActivateAudioSession:")
-      
+        audioDevice.isEnabled = true
     }
     
     func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
         print("☎️provider:didDeactivateAudioSession:")
-        
+        audioDevice.isEnabled = false
     }
     
     func provider(_ provider: CXProvider, timedOutPerforming action: CXAction) {
         print("☎️provider:timedOutPerformingAction:")
     }
-
+    
     func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
         print("☎️ provider:performStartCallAction:")
+        
+        toggleUIState(isEnabled: false, showCallControl: false)
+        
+        provider.reportOutgoingCall(with: action.callUUID, startedConnectingAt: Date())
+        
+        performVoiceCall(uuid: action.callUUID, client: "") { success in
+            if success {
+                print("📳✅ performVoiceCall() successful")
+                provider.reportOutgoingCall(with: action.callUUID, connectedAt: Date())
+            } else {
+                print("📳⚠️ performVoiceCall() failed")
+            }
+        }
+        
+        action.fulfill()
+        
     }
     
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         print("☎️ provider:performAnswerCallAction:")
+        
+        performAnswerVoiceCall(uuid: action.callUUID) { success in
+            if success {
+                print("📳✅ performAnswerVoiceCall() successful")
+            } else {
+                print("📳⚠️ performAnswerVoiceCall() failed")
+            }
+        }
+        
         action.fulfill()
     }
     
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
         print("☎️ provider:performEndCallAction:")
+        
+        if let invite = activeCallInvites[action.callUUID.uuidString] {
+            invite.reject()
+            activeCallInvites.removeValue(forKey: action.callUUID.uuidString)
+        } else if let call = activeCalls[action.callUUID.uuidString] {
+            call.disconnect()
+        } else {
+            print("📳⚠️ Unknown UUID to perform end-call action with")
+        }
+        
         action.fulfill()
+    }
+    
+    // 目前未使用
+    func provider(_ provider: CXProvider, perform action: CXSetHeldCallAction) {
+        print("☎️ provider:performSetHeldAction:")
+        
+        if let call = activeCalls[action.callUUID.uuidString] {
+            call.isOnHold = action.isOnHold
+            action.fulfill()
+        } else {
+            action.fail()
+        }
+    }
+    
+    // 目前未使用
+    func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
+        print("☎️ provider:performSetMutedAction:")
+        
+        if let call = activeCalls[action.callUUID.uuidString] {
+            call.isMuted = action.isMuted
+            action.fulfill()
+        } else {
+            action.fail()
+        }
     }
     
     // MARK: Call Kit Actions
@@ -411,13 +532,14 @@ extension TwilioServiceViewController: CXProviderDelegate {
             callUpdate.supportsGrouping = false
             callUpdate.supportsUngrouping = false
             callUpdate.hasVideo = false
-
+            
             provider.reportCall(with: uuid, updated: callUpdate)
             
         }
     }
     
     func reportIncomingCall(from: String, uuid: UUID) {
+        
         guard let provider = callKitProvider else {
             print("☎️⚠️ CallKit provider not available")
             return
@@ -434,6 +556,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
         callUpdate.hasVideo = false
         
         provider.reportNewIncomingCall(with: uuid, update: callUpdate) { error in
+            
             if let error = error {
                 print("☎️⚠️ Failed to report incoming call successfully: \(error.localizedDescription).")
             } else {
@@ -457,17 +580,93 @@ extension TwilioServiceViewController: CXProviderDelegate {
         }
     }
     
+    // MARK: Twilio Voice Call
     func performVoiceCall(uuid: UUID, client: String?, completionHandler: @escaping (Bool) -> Void) {
+        
+        guard let accessToken = fetchAccessToken() else {
+            completionHandler(false)
+            print("📳⚠️ Can't get accessToken")
+            return
+        }
+        
+        print("📳 Start making a voice call")
+        let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
+            builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""]
+            builder.uuid = uuid
+        }
+        
+        // Connect with Twilio Platform here !
+        let call = TwilioVoice.connect(options: connectOptions, delegate: self)
+        activeCall = call
+        activeCalls[call.uuid!.uuidString] = call
+        callKitCompletionCallBack = completionHandler
+        
+    }
+    
+    func performAnswerVoiceCall(uuid: UUID, completionHandler: @escaping (Bool) -> Void) {
+        
+        guard let callInvite = activeCallInvites[uuid.uuidString] else {
+            print("📳⚠️ No CallInvite matches the UUID")
+            return
+        }
+        
+        print("📳 Start answer a voice call")
+        let acceptOptions = AcceptOptions(callInvite: callInvite) { builder in
+            builder.uuid = callInvite.uuid
+        }
+        
+        let call = callInvite.accept(options: acceptOptions, delegate: self)
+        activeCall = call
+        activeCalls[call.uuid!.uuidString] = call
+        callKitCompletionCallBack = completionHandler
+        
+        activeCallInvites.removeValue(forKey: uuid.uuidString)
+        
     }
 }
 
 // MARK: - UITextFieldDelegate
-
 extension TwilioServiceViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         outgoingValue.resignFirstResponder()
+        
         return true
     }
-    
+}
 
+// MARK: - AVAudioPlayerDelegate
+extension TwilioServiceViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            print("📻✅ Audio player finished playing successfully");
+        } else {
+            print("📻⚠️ Audio player finished playing with some error");
+        }
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        if let error = error {
+            print("📻⚠️ Decode error occurred: \(error.localizedDescription)")
+        }
+    }
+}
+
+// MARK: - Twilio  TVOCallDelegate
+extension TwilioServiceViewController: CallDelegate {
+    
+    func callDidConnect(call: Call) {
+        
+    }
+    
+    func callDidFailToConnect(call: Call, error: Error) {
+        
+    }
+    
+    func callDidDisconnect(call: Call, error: Error?) {
+        
+    }
+    
+    func callDidStartRinging(call: Call) {
+        
+    }
 }
