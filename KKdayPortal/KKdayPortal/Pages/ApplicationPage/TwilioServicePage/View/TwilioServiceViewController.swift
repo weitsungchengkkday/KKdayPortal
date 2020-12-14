@@ -123,8 +123,10 @@ final class TwilioServiceViewController: UIViewController {
     private var activeCallInvites: [String: CallInvite] = [:]
     
     private var audioDevice: DefaultAudioDevice = DefaultAudioDevice()
+    
     // AVAudio
     private var ringtonePlayer: AVAudioPlayer? = nil
+    private var playCustomRingback = false
     
     //    var myUUID = UUID()
     override func viewDidLoad() {
@@ -139,7 +141,7 @@ final class TwilioServiceViewController: UIViewController {
         //  performStartCallAction(uuid: myUUID, handle: "William Calling")
     }
     
-    func fetchAccessToken() -> String? {
+    private func fetchAccessToken() -> String? {
         let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identity)
         
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
@@ -147,7 +149,7 @@ final class TwilioServiceViewController: UIViewController {
         return try? String(contentsOf: accessTokenURL, encoding: .utf8)
     }
     
-    func toggleUIState(isEnabled: Bool, showCallControl: Bool) {
+    private func toggleUIState(isEnabled: Bool, showCallControl: Bool) {
         placeCallButton.isEnabled = isEnabled
         
         if showCallControl {
@@ -159,7 +161,7 @@ final class TwilioServiceViewController: UIViewController {
         }
     }
     
-    func showMicrophoneAccessRequest(_ uuid: UUID, _ handle: String) {
+    private func showMicrophoneAccessRequest(_ uuid: UUID, _ handle: String) {
         let alertController = UIAlertController(title: "KKday Voice",
                                                 message: "Microphone permission not granted",
                                                 preferredStyle: .alert)
@@ -367,7 +369,7 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     // MARK: AudioSession
-    func toggleAudioRoute(toSpeaker: Bool) {
+    private func toggleAudioRoute(toSpeaker: Bool) {
         audioDevice.block = {
             do {
                 if toSpeaker {
@@ -376,7 +378,7 @@ final class TwilioServiceViewController: UIViewController {
                     try AVAudioSession.sharedInstance().overrideOutputAudioPort(.none)
                 }
             } catch {
-                print("📻⚠️ error.localizedDescription")
+                print("📻⚠️ \(error).localizedDescription")
             }
         }
     }
@@ -406,8 +408,9 @@ final class TwilioServiceViewController: UIViewController {
 
 
 // MARK: - CXProviderDelegate
-
 extension TwilioServiceViewController: CXProviderDelegate {
+    
+    // MARK: Delegate funcitons
     
     func providerDidReset(_ provider: CXProvider) {
         print("☎️ providerDidReset:")
@@ -580,8 +583,8 @@ extension TwilioServiceViewController: CXProviderDelegate {
         }
     }
     
-    // MARK: Twilio Voice Call
-    func performVoiceCall(uuid: UUID, client: String?, completionHandler: @escaping (Bool) -> Void) {
+    // MARK: Perform Twilio Voice Call
+    private func performVoiceCall(uuid: UUID, client: String?, completionHandler: @escaping (Bool) -> Void) {
         
         guard let accessToken = fetchAccessToken() else {
             completionHandler(false)
@@ -599,11 +602,13 @@ extension TwilioServiceViewController: CXProviderDelegate {
         let call = TwilioVoice.connect(options: connectOptions, delegate: self)
         activeCall = call
         activeCalls[call.uuid!.uuidString] = call
+        
+        // Pass completionHandler to outside variable callKitCompletionCallBack
         callKitCompletionCallBack = completionHandler
         
     }
     
-    func performAnswerVoiceCall(uuid: UUID, completionHandler: @escaping (Bool) -> Void) {
+    private func performAnswerVoiceCall(uuid: UUID, completionHandler: @escaping (Bool) -> Void) {
         
         guard let callInvite = activeCallInvites[uuid.uuidString] else {
             print("📳⚠️ No CallInvite matches the UUID")
@@ -624,6 +629,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
         
     }
 }
+
 
 // MARK: - UITextFieldDelegate
 extension TwilioServiceViewController: UITextFieldDelegate {
@@ -654,19 +660,168 @@ extension TwilioServiceViewController: AVAudioPlayerDelegate {
 // MARK: - Twilio  TVOCallDelegate
 extension TwilioServiceViewController: CallDelegate {
     
+    // MARK: Delegate functions
     func callDidConnect(call: Call) {
+        print("📳 CallDidConnect")
+        
+        if playCustomRingback {
+            stopRingback()
+        }
+        
+        if let completion = callKitCompletionCallBack {
+            completion(true)
+        }
+         
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.down.fill"), for: .normal)
+        toggleUIState(isEnabled: true, showCallControl: true)
+        
+        toggleAudioRoute(toSpeaker: true)
+    }
+    
+    func call(call: Call, isReconnectingWithError error: Error) {
+        print("📳 call:isReconnectingWithError:\(error.localizedDescription)")
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.connection")!, for: .normal)
+        toggleUIState(isEnabled: false, showCallControl: false)
         
     }
     
+    func callDidReconnect(call: Call) {
+        print("📳 callDidReconnect:")
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.down.fill"), for: .normal)
+        toggleUIState(isEnabled: true, showCallControl: true)
+    }
+    
+    
     func callDidFailToConnect(call: Call, error: Error) {
+        print("📳⚠️ Call fialed to connect: \(error.localizedDescription)")
         
+        if let completion = callKitCompletionCallBack {
+            completion(false)
+        }
+        
+        if let provider = callKitProvider {
+            // tell CallKit provider call failed
+            provider.reportCall(with: call.uuid!, endedAt: Date(), reason: CXCallEndedReason.failed)
+        }
+        
+        callDisconnected(call: call)
     }
     
     func callDidDisconnect(call: Call, error: Error?) {
+        if let error = error {
+            print("📳⚠️ Call failed: \(error.localizedDescription)")
+        } else {
+            print("📳 Call did disconnected")
+        }
         
+        if !userInitiatedDisconnect {
+            var reason = CXCallEndedReason.remoteEnded
+            
+            if error != nil {
+                reason = .failed
+            }
+            
+            if let provider = callKitProvider {
+                provider.reportCall(with: call.uuid!, endedAt: Date(), reason: reason)
+            }
+        }
+        
+        callDisconnected(call: call)
+   
     }
     
     func callDidStartRinging(call: Call) {
+        print("📳 callDidStartRinging:")
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.fill.connection")!, for: .normal)
+        
+        if playCustomRingback {
+            playRingback()
+        }
+    }
+    
+    func callDidReceiveQualityWarnings(call: Call, currentWarnings: Set<NSNumber>, previousWarnings: Set<NSNumber>) {
+        
+        var warningsIntersection: Set<NSNumber> = currentWarnings
+        warningsIntersection = warningsIntersection.intersection(previousWarnings)
+        
+        var newWarnings: Set<NSNumber> = currentWarnings
+        newWarnings.subtract(warningsIntersection)
+        
+        if newWarnings.count > 0 {
+            qualityWarningsUpdatePopup(newWarnings, isCleared: false)
+        }
+        
+        var clearWarnings: Set<NSNumber> = previousWarnings
+        clearWarnings.subtract(warningsIntersection)
+        
+        if clearWarnings.count > 0 {
+            qualityWarningsUpdatePopup(clearWarnings, isCleared: false)
+        }
         
     }
+    
+    // Handle call connect state
+    private func callDisconnected(call: Call) {
+        if call == activeCall {
+            activeCall = nil
+        }
+        
+        activeCalls.removeValue(forKey: call.uuid!.uuidString)
+        userInitiatedDisconnect = false
+        
+        if playCustomRingback {
+            stopRingback()
+        }
+        
+        toggleUIState(isEnabled: true, showCallControl: false)
+        // set button backgroundImage to origin
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right")!, for: .normal)
+    }
+    
+    // Handle quality warnings message (qualityWarningsToaster label)
+    private func qualityWarningsUpdatePopup(_ warnings: Set<NSNumber>, isCleared: Bool) {
+        var popupMessage: String = "Warnings detected: "
+        if isCleared {
+            popupMessage = "Warnings cleared: "
+        }
+        
+        let mappedWarnings: [String] = warnings.map { number -> String in
+            warningString(Call.QualityWarning(rawValue: number.uintValue)!)
+        }
+        
+        popupMessage += mappedWarnings.joined(separator: ", ")
+        
+        qualityWarningsToaster.alpha = 0.0
+        qualityWarningsToaster.text = popupMessage
+       
+        UIView.animate(withDuration: 1.0) {
+            self.qualityWarningsToaster.isHidden = false
+            
+            
+        } completion: { [weak self] finish in
+            guard let strongSelf = self else { return }
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(5)) {
+                
+                UIView.animate(withDuration: 1.0) {
+                    strongSelf.qualityWarningsToaster.alpha = 0.0
+                } completion: { finished in
+                    strongSelf.qualityWarningsToaster.isHidden = true
+                }
+            }
+        }
+    }
+    
+    private func warningString(_ warning: Call.QualityWarning) -> String {
+        switch warning {
+        case .highRtt: return "high-rtt"
+        case .highJitter: return "high-jitter"
+        case .highPacketsLostFraction: return "high-packets-lost-fraction"
+        case .lowMos: return "low-mos"
+        case .constantAudioInputLevel: return "constant-audio-input-level"
+        default: return "Unknown warning"
+        }
+    }
+    
+    
 }
