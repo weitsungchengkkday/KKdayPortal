@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import PushKit
+
+protocol PushKitEventDelegate: AnyObject {
+    func credentialsUpdated(credentials: PKPushCredentials) -> Void
+    func credentialsInvalidated() -> Void
+    func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) -> Void
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
+    weak var pushKitEventDelegate: PushKitEventDelegate?
+    var voipRegistry = PKPushRegistry(queue: DispatchQueue.main)
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
 #if SIT
     print("1️⃣ sit")
 #elseif PRODUCTION
@@ -29,10 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("❗️configuration not exist")
 #endif
     
-    ConfigManager.shared.setup()
-    LanguageManager.shared.setup()
-    
-    return true
+        ConfigManager.shared.setup()
+        LanguageManager.shared.setup()
+        
+        // Initialize PushKit
+        voipRegistry.delegate = self
+        voipRegistry.desiredPushTypes = Set([PKPushType.voIP])
+        
+        return true
     }
     
     // MARK: UISceneSession Lifecycle
@@ -43,5 +57,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
+    
 }
 
+
+
+
+
+extension AppDelegate: PKPushRegistryDelegate {
+    
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
+        print("〽️ pushRegistry:didUpdatePushCredentials:forType:")
+        
+        if let delegate = self.pushKitEventDelegate {
+            delegate.credentialsUpdated(credentials: pushCredentials)
+        } else {
+            print("〽️⚠️ pushKitEventDelegate is not set")
+        }
+        
+    }
+    
+    func pushRegistry(_ registry: PKPushRegistry, didInvalidatePushTokenFor type: PKPushType) {
+        print("〽️ pushRegistry:didInvalidatePushTokenForType:")
+        
+        if let delegate = self.pushKitEventDelegate {
+            delegate.credentialsInvalidated()
+        } else {
+            print("〽️⚠️ pushKitEventDelegate is not set")
+        }
+    }
+    
+    
+    func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
+        print("〽️ pushRegistry:didReceiveIncomingPushWithPayload:forType:completion:")
+        
+        if let delegate = self.pushKitEventDelegate {
+            delegate.incomingPushReceived(payload: payload, completion: completion)
+        } else {
+            print("〽️⚠️ pushKitEventDelegate is not set")
+        }
+        
+        completion()
+    }
+    
+    
+    
+}
