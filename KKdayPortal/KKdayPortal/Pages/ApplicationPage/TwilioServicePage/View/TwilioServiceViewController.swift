@@ -137,10 +137,6 @@ final class TwilioServiceViewController: UIViewController {
     private static let kCachedDeviceToken = "CachedDeviceToken"
     private static let kCachedBindingDate = "CachedBindingDate"
     
-    // User
-    private var user: GeneralUser!
-    
-    //    var myUUID = UUID()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -808,7 +804,7 @@ extension TwilioServiceViewController: CallDelegate {
 }
 
 
-// PushEventDelegate
+// MARK: - PushEventDelegate
 extension TwilioServiceViewController: PushKitEventDelegate {
     
     // MARK: Delegate funcitons
