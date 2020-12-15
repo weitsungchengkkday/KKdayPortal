@@ -60,10 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-
-
-
-
+// MARK: PKPushRegistryDelegate
 extension AppDelegate: PKPushRegistryDelegate {
     
     func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
@@ -87,7 +84,6 @@ extension AppDelegate: PKPushRegistryDelegate {
         }
     }
     
-    
     func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
         print("〽️ pushRegistry:didReceiveIncomingPushWithPayload:forType:completion:")
         
@@ -99,7 +95,5 @@ extension AppDelegate: PKPushRegistryDelegate {
         
         completion()
     }
-    
-    
     
 }

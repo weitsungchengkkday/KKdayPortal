@@ -9,12 +9,16 @@
 // 📳 => TwilioVoice
 // ☎️ => CallKit
 // 📻 => AVFoundation
+// 〽️ => PushKit
+
+// 🍕 => set delegate
 
 import UIKit
 import SnapKit
 import CallKit
 import AVFoundation
 import TwilioVoice
+import PushKit
 
 final class TwilioServiceViewController: UIViewController {
     
@@ -99,10 +103,8 @@ final class TwilioServiceViewController: UIViewController {
     
     // ODOO Server (for creating accessToken)
     private var baseURLString: String {
-        
         //  let url = ConfigManager.shared.model.host
         //  return url
-        
         return "https://94195be30686.ngrok.io"
     }
     
@@ -127,6 +129,13 @@ final class TwilioServiceViewController: UIViewController {
     // AVAudio
     private var ringtonePlayer: AVAudioPlayer? = nil
     private var playCustomRingback = false
+    
+    // Device register Time-to-live(TTL) days
+    private static let kRegistrationTTLInDays = 365
+    
+    // Twilio User Default Key
+    private static let kCachedDeviceToken = "CachedDeviceToken"
+    private static let kCachedBindingDate = "CachedBindingDate"
     
     //    var myUUID = UUID()
     override func viewDidLoad() {
@@ -199,6 +208,7 @@ final class TwilioServiceViewController: UIViewController {
         configuration.maximumCallsPerCallGroup = 1
         callKitProvider = CXProvider(configuration: configuration)
         if let provider = callKitProvider {
+            // 🍕 set CXProviderDelegate to TwilioServiceViewController
             provider.setDelegate(self, queue: nil)
         }
         
@@ -302,6 +312,7 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     private func setUIElementDelegate() {
+        // 🍕 set TextFieldDelegate to TwilioServiceViewController
         outgoingValue.delegate = self
     }
     
@@ -389,6 +400,7 @@ final class TwilioServiceViewController: UIViewController {
         
         do {
             ringtonePlayer = try AVAudioPlayer(contentsOf: ringtonePath)
+            // 🍕 set AVAudioPlayerDelegate to TwilioServiceViewController
             ringtonePlayer?.delegate = self
             ringtonePlayer?.numberOfLoops = -1
             
@@ -407,7 +419,7 @@ final class TwilioServiceViewController: UIViewController {
 }
 
 
-// MARK: - CXProviderDelegate
+// MARK: - CXProviderDelegate 
 extension TwilioServiceViewController: CXProviderDelegate {
     
     // MARK: Delegate funcitons
@@ -598,7 +610,8 @@ extension TwilioServiceViewController: CXProviderDelegate {
             builder.uuid = uuid
         }
         
-        // Connect with Twilio Platform here !
+        // Connect with Twilio Platform here!
+        // 🍕 set TVOCallDelegate to TwilioServiceViewController
         let call = TwilioVoice.connect(options: connectOptions, delegate: self)
         activeCall = call
         activeCalls[call.uuid!.uuidString] = call
@@ -620,6 +633,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
             builder.uuid = callInvite.uuid
         }
         
+        // 🍕 set TVOCallDelegate to TwilioServiceViewController
         let call = callInvite.accept(options: acceptOptions, delegate: self)
         activeCall = call
         activeCalls[call.uuid!.uuidString] = call
@@ -640,6 +654,7 @@ extension TwilioServiceViewController: UITextFieldDelegate {
     }
 }
 
+
 // MARK: - AVAudioPlayerDelegate
 extension TwilioServiceViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -656,6 +671,7 @@ extension TwilioServiceViewController: AVAudioPlayerDelegate {
         }
     }
 }
+
 
 // MARK: - Twilio  TVOCallDelegate
 extension TwilioServiceViewController: CallDelegate {
@@ -823,5 +839,85 @@ extension TwilioServiceViewController: CallDelegate {
         }
     }
     
+}
+
+
+// PushEventDelegate
+extension TwilioServiceViewController: PushKitEventDelegate {
+    
+    // MARK: Delegate funcitons
+    
+    func credentialsUpdated(credentials: PKPushCredentials) {
+        guard registrationRequired() || (UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken) != credentials.token),
+        let accessToken = fetchAccessToken() else {
+            return
+        }
+        
+        let cachedDeviceToken = credentials.token
+        
+        TwilioVoice.register(accessToken: accessToken, deviceToken: cachedDeviceToken) { error in
+            if let error = error {
+                print("〽️⚠️ An error occurred while registering: \(error.localizedDescription)")
+            } else {
+                print("〽️✅ Successfully registered for VoIP push notifications.")
+
+                UserDefaults.standard.set(cachedDeviceToken, forKey: TwilioServiceViewController.kCachedDeviceToken)
+                UserDefaults.standard.set(Date(), forKey: TwilioServiceViewController.kCachedBindingDate)
+            }
+        }
+        
+    }
+    
+    func credentialsInvalidated() {
+        guard let deviceToken = UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken), let accessToken = fetchAccessToken() else {
+            return
+        }
+        
+        TwilioVoice.unregister(accessToken: accessToken, deviceToken: deviceToken) { error in
+            if let error = error {
+                print("〽️⚠️ An error occurred while unregistering: \(error.localizedDescription)")
+            } else {
+                print("〽️✅ Successfully unregistered from VoIP push notifications.")
+            }
+        }
+        
+        UserDefaults.standard.removeObject(forKey: TwilioServiceViewController.kCachedDeviceToken)
+        UserDefaults.standard.removeObject(forKey: TwilioServiceViewController.kCachedBindingDate)
+        
+    }
+    
+    func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) {
+        // 🍕 set NotificationDelegate to TwilioServiceViewController
+        TwilioVoice.handleNotification(payload.dictionaryPayload, delegate: self, delegateQueue: nil)
+        
+    }
+    
+    // MARK: check regisrtration function and push handled function
+    private func registrationRequired() -> Bool {
+        guard let lastBindCreated = UserDefaults.standard.object(forKey: TwilioServiceViewController.kCachedBindingDate)  else {
+            return true
+        }
+        
+        let date = Date()
+        var compoents = DateComponents()
+        compoents.setValue(TwilioServiceViewController.kRegistrationTTLInDays/2, for: .day)
+        let expirationDate = Calendar.current.date(byAdding: compoents, to: lastBindCreated as! Date)!
+        if expirationDate.compare(date) == ComparisonResult.orderedDescending {
+            return false
+        }
+        return true
+    }
+    
+}
+
+extension TwilioServiceViewController: NotificationDelegate {
+    
+    func callInviteReceived(callInvite: CallInvite) {
+        
+    }
+    
+    func cancelledCallInviteReceived(cancelledCallInvite: CancelledCallInvite, error: Error) {
+        
+    }
     
 }
