@@ -95,10 +95,13 @@ final class ApplicationsEntryViewController: UIViewController {
     
     @objc private func goTwilio() {
         let presentVC = TwilioServiceViewController()
-        present(presentVC, animated: true, completion: nil)
+
+        // 🍕 set PushKitEventDelegate to TwilioServiceViewController
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        delegate.pushKitEventDelegate = presentVC
         
+        present(presentVC, animated: true, completion: nil)
     }
-    
     
     // ⛓ bind viewModel
     private func bindViewModel() {

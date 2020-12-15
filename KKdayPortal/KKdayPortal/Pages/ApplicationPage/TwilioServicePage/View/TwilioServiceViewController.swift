@@ -122,7 +122,7 @@ final class TwilioServiceViewController: UIViewController {
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
-    private var activeCallInvites: [String: CallInvite] = [:]
+    private var activeCallInvites: [String: CallInvite]!
     
     private var audioDevice: DefaultAudioDevice = DefaultAudioDevice()
     
@@ -419,7 +419,7 @@ final class TwilioServiceViewController: UIViewController {
 }
 
 
-// MARK: - CXProviderDelegate 
+// MARK: - CXProviderDelegate
 extension TwilioServiceViewController: CXProviderDelegate {
     
     // MARK: Delegate funcitons
@@ -611,7 +611,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
         }
         
         // Connect with Twilio Platform here!
-        // 🍕 set TVOCallDelegate to TwilioServiceViewController
+        // 🍕 TVOCallDelegate to TwilioServiceViewController
         let call = TwilioVoice.connect(options: connectOptions, delegate: self)
         activeCall = call
         activeCalls[call.uuid!.uuidString] = call
@@ -633,7 +633,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
             builder.uuid = callInvite.uuid
         }
         
-        // 🍕 set TVOCallDelegate to TwilioServiceViewController
+        // 🍕 TVOCallDelegate to TwilioServiceViewController
         let call = callInvite.accept(options: acceptOptions, delegate: self)
         activeCall = call
         activeCalls[call.uuid!.uuidString] = call
@@ -673,7 +673,7 @@ extension TwilioServiceViewController: AVAudioPlayerDelegate {
 }
 
 
-// MARK: - Twilio  TVOCallDelegate
+// MARK: - Twilio TVOCallDelegate
 extension TwilioServiceViewController: CallDelegate {
     
     // MARK: Delegate functions
@@ -887,7 +887,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
     }
     
     func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) {
-        // 🍕 set NotificationDelegate to TwilioServiceViewController
+        // 🍕 NotificationDelegate to TwilioServiceViewController
         TwilioVoice.handleNotification(payload.dictionaryPayload, delegate: self, delegateQueue: nil)
         
     }
@@ -910,14 +910,45 @@ extension TwilioServiceViewController: PushKitEventDelegate {
     
 }
 
+
+// MARK: - Twilio NotificationDelegate
 extension TwilioServiceViewController: NotificationDelegate {
     
     func callInviteReceived(callInvite: CallInvite) {
+        print("📳 kCachedBindingDate")
         
+        UserDefaults.standard.set(Date(), forKey: TwilioServiceViewController.kCachedBindingDate)
+        
+        let callerInfo: TVOCallerInfo = callInvite.callerInfo
+        if let verified: NSNumber = callerInfo.verified {
+            if verified.boolValue {
+                print("📳 Call invite received from verified caller number!")
+            }
+        }
+        
+        let form = (callInvite.from ?? "default caller").replacingOccurrences(of: "client:", with: "")
+        
+        // Report to CallKit
+        reportIncomingCall(from: form, uuid: callInvite.uuid)
+        activeCallInvites[callInvite.uuid.uuidString] = callInvite
     }
     
     func cancelledCallInviteReceived(cancelledCallInvite: CancelledCallInvite, error: Error) {
+        print("📳⚠️ cancelledCallInviteCanceled:error:, error: \(error.localizedDescription)")
         
+        guard let activeCallInvites = activeCallInvites, !activeCallInvites.isEmpty else {
+            print("📳⚠️ No pending call invite")
+            return
+        }
+        
+        let callInvite = activeCallInvites.values.first { invite -> Bool in
+            return invite.callSid == cancelledCallInvite.callSid
+        }
+        
+        if let callInvite = callInvite {
+            performEndCallAction(uuid: callInvite.uuid)
+        }
+      
     }
     
 }
