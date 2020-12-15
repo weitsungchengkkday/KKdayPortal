@@ -137,6 +137,9 @@ final class TwilioServiceViewController: UIViewController {
     private static let kCachedDeviceToken = "CachedDeviceToken"
     private static let kCachedBindingDate = "CachedBindingDate"
     
+    // User
+    private var user: GeneralUser!
+    
     //    var myUUID = UUID()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,55 +148,7 @@ final class TwilioServiceViewController: UIViewController {
         setUIElementDelegate()
         setAction()
         setCallKit()
-        
-        //   reportIncomingCall(from: "Bob", uuid: myUUID)
-        //  performStartCallAction(uuid: myUUID, handle: "William Calling")
     }
-    
-    private func fetchAccessToken() -> String? {
-        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identity)
-        
-        guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
-        
-        return try? String(contentsOf: accessTokenURL, encoding: .utf8)
-    }
-    
-    private func toggleUIState(isEnabled: Bool, showCallControl: Bool) {
-        placeCallButton.isEnabled = isEnabled
-        
-        if showCallControl {
-            callControlView.isHidden = false
-            muteSwitch.isOn = false
-            speakerSwitch.isOn = true
-        } else {
-            callControlView.isHidden = true
-        }
-    }
-    
-    private func showMicrophoneAccessRequest(_ uuid: UUID, _ handle: String) {
-        let alertController = UIAlertController(title: "KKday Voice",
-                                                message: "Microphone permission not granted",
-                                                preferredStyle: .alert)
-        
-        let continueWithoutMic = UIAlertAction(title: "Continue without microphone", style: .default) { [weak self] _ in
-            self?.performStartCallAction(uuid: uuid, handle: handle)
-        }
-        
-        let goToSettings = UIAlertAction(title: "Settings", style: .default) { _ in
-            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
-                                      options: [UIApplication.OpenExternalURLOptionsKey.universalLinksOnly: false],
-                                      completionHandler: nil)
-        }
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
-            self?.toggleUIState(isEnabled: true, showCallControl: false)
-        }
-        
-        [continueWithoutMic, goToSettings, cancel].forEach { alertController.addAction($0) }
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
     
     deinit {
         if let provider = callKitProvider {
@@ -201,40 +156,7 @@ final class TwilioServiceViewController: UIViewController {
         }
     }
     
-    private func setCallKit() {
-        // iOS 14 CXProviderConfiguration()
-        let configuration = CXProviderConfiguration(localizedName: "Twilio Voice")
-        configuration.maximumCallGroups = 1
-        configuration.maximumCallsPerCallGroup = 1
-        callKitProvider = CXProvider(configuration: configuration)
-        if let provider = callKitProvider {
-            // 🍕 set CXProviderDelegate to TwilioServiceViewController
-            provider.setDelegate(self, queue: nil)
-        }
-        
-        
-        //        let update = CXCallUpdate()
-        //        update.remoteHandle = CXHandle(type: .generic, value: "I am calling you!")
-        //        callKitProvider!.reportNewIncomingCall(with: UUID(), update: update, completion: { error in })
-        //
-        
-        //
-        //        let uuid = UUID()
-        //        let update = CXCallUpdate()
-        //        let controller = CXCallController()
-        //        let action = CXStartCallAction(call: uuid, handle: CXHandle(type: .generic, value: "Calling Someone"))
-        //        let transaction = CXTransaction(action: action)
-        //
-        //        controller.request(transaction) { error in
-        //            self.callKitProvider?.reportOutgoingCall(with: uuid, connectedAt: nil)
-        //
-        //        }
-        //
-    }
-    
-    
     private func setupUI() {
-        
         self.view.addSubview(qualityWarningsToaster)
         self.view.addSubview(iconView)
         self.view.addSubview(outgoingValue)
@@ -308,7 +230,6 @@ final class TwilioServiceViewController: UIViewController {
             maker.centerX.equalTo(speakerSwitch)
             maker.top.equalTo(speakerSwitch.snp.bottom).offset(10)
         }
-        
     }
     
     private func setUIElementDelegate() {
@@ -318,16 +239,24 @@ final class TwilioServiceViewController: UIViewController {
     
     private func setAction() {
         placeCallButton.addTarget(self, action: #selector(mainButtonPressed), for: .touchUpInside)
-        
         muteSwitch.addTarget(self, action: #selector(muteSwitchToggled), for: .valueChanged)
-        
         speakerSwitch.addTarget(self, action: #selector(speakerSwitchToggled), for: .valueChanged)
+        
+    }
+    
+    private func setCallKit() {
+        // iOS 14 CXProviderConfiguration(localizedName: "Twilio Voice") ->  CXProviderConfiguration()
+        let configuration = CXProviderConfiguration(localizedName: "Twilio Voice")
+        configuration.maximumCallGroups = 1
+        configuration.maximumCallsPerCallGroup = 1
+        callKitProvider = CXProvider(configuration: configuration)
+        if let provider = callKitProvider {
+            // 🍕 set CXProviderDelegate to TwilioServiceViewController
+            provider.setDelegate(self, queue: nil)
+        }
     }
     
     @objc private func mainButtonPressed(sender: UIButton) {
-        //        performEndCallAction(uuid: myUUID)
-        //        performStartCallAction
-        
         guard activeCall == nil else {
             userInitiatedDisconnect = true
             performEndCallAction(uuid: activeCall!.uuid!)
@@ -342,13 +271,12 @@ final class TwilioServiceViewController: UIViewController {
             
             guard !permissionGranted else {
                 self?.performStartCallAction(uuid: uuid, handle: handle)
+                
                 return
             }
             
             self?.showMicrophoneAccessRequest(uuid, handle)
         }
-        
-        
     }
     
     private func checkRecordPermission(completion: @escaping (_ permissionGranted: Bool) -> Void) {
@@ -366,7 +294,6 @@ final class TwilioServiceViewController: UIViewController {
         }
     }
     
-    
     @objc private func muteSwitchToggled(sender: UISwitch) {
         guard let activeCall = activeCall else {
             return
@@ -377,6 +304,50 @@ final class TwilioServiceViewController: UIViewController {
     
     @objc private func speakerSwitchToggled(sender: UISwitch) {
         toggleAudioRoute(toSpeaker: sender.isOn)
+    }
+    
+    private func toggleUIState(isEnabled: Bool, showCallControl: Bool) {
+        placeCallButton.isEnabled = isEnabled
+        
+        if showCallControl {
+            callControlView.isHidden = false
+            muteSwitch.isOn = false
+            speakerSwitch.isOn = true
+        } else {
+            callControlView.isHidden = true
+        }
+    }
+    
+    private func showMicrophoneAccessRequest(_ uuid: UUID, _ handle: String) {
+        let alertController = UIAlertController(title: "KKday Voice",
+                                                message: "Microphone permission not granted",
+                                                preferredStyle: .alert)
+        
+        let continueWithoutMic = UIAlertAction(title: "Continue without microphone", style: .default) { [weak self] _ in
+            self?.performStartCallAction(uuid: uuid, handle: handle)
+        }
+        
+        let goToSettings = UIAlertAction(title: "Settings", style: .default) { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                      options: [UIApplication.OpenExternalURLOptionsKey.universalLinksOnly: false],
+                                      completionHandler: nil)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+            self?.toggleUIState(isEnabled: true, showCallControl: false)
+        }
+        
+        [continueWithoutMic, goToSettings, cancel].forEach { alertController.addAction($0) }
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: Fetch AccesToken
+    private func fetchAccessToken() -> String? {
+        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identity)
+        guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
+        
+        return try? String(contentsOf: accessTokenURL, encoding: .utf8)
     }
     
     // MARK: AudioSession
@@ -423,7 +394,6 @@ final class TwilioServiceViewController: UIViewController {
 extension TwilioServiceViewController: CXProviderDelegate {
     
     // MARK: Delegate funcitons
-    
     func providerDidReset(_ provider: CXProvider) {
         print("☎️ providerDidReset:")
         audioDevice.isEnabled = false
@@ -554,7 +524,6 @@ extension TwilioServiceViewController: CXProviderDelegate {
     }
     
     func reportIncomingCall(from: String, uuid: UUID) {
-        
         guard let provider = callKitProvider else {
             print("☎️⚠️ CallKit provider not available")
             return
@@ -582,7 +551,6 @@ extension TwilioServiceViewController: CXProviderDelegate {
     }
     
     func performEndCallAction(uuid: UUID) {
-        
         let endCallAction = CXEndCallAction(call: uuid)
         let transaction = CXTransaction(action: endCallAction)
         
@@ -597,7 +565,6 @@ extension TwilioServiceViewController: CXProviderDelegate {
     
     // MARK: Perform Twilio Voice Call
     private func performVoiceCall(uuid: UUID, client: String?, completionHandler: @escaping (Bool) -> Void) {
-        
         guard let accessToken = fetchAccessToken() else {
             completionHandler(false)
             print("📳⚠️ Can't get accessToken")
@@ -622,7 +589,6 @@ extension TwilioServiceViewController: CXProviderDelegate {
     }
     
     private func performAnswerVoiceCall(uuid: UUID, completionHandler: @escaping (Bool) -> Void) {
-        
         guard let callInvite = activeCallInvites[uuid.uuidString] else {
             print("📳⚠️ No CallInvite matches the UUID")
             return
@@ -647,6 +613,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
 
 // MARK: - UITextFieldDelegate
 extension TwilioServiceViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         outgoingValue.resignFirstResponder()
         
@@ -657,6 +624,7 @@ extension TwilioServiceViewController: UITextFieldDelegate {
 
 // MARK: - AVAudioPlayerDelegate
 extension TwilioServiceViewController: AVAudioPlayerDelegate {
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             print("📻✅ Audio player finished playing successfully");
@@ -679,7 +647,6 @@ extension TwilioServiceViewController: CallDelegate {
     // MARK: Delegate functions
     func callDidConnect(call: Call) {
         print("📳 CallDidConnect")
-        
         if playCustomRingback {
             stopRingback()
         }
@@ -687,7 +654,7 @@ extension TwilioServiceViewController: CallDelegate {
         if let completion = callKitCompletionCallBack {
             completion(true)
         }
-         
+        
         placeCallButton.setBackgroundImage(UIImage(systemName: "phone.down.fill"), for: .normal)
         toggleUIState(isEnabled: true, showCallControl: true)
         
@@ -743,7 +710,7 @@ extension TwilioServiceViewController: CallDelegate {
         }
         
         callDisconnected(call: call)
-   
+        
     }
     
     func callDidStartRinging(call: Call) {
@@ -756,7 +723,6 @@ extension TwilioServiceViewController: CallDelegate {
     }
     
     func callDidReceiveQualityWarnings(call: Call, currentWarnings: Set<NSNumber>, previousWarnings: Set<NSNumber>) {
-        
         var warningsIntersection: Set<NSNumber> = currentWarnings
         warningsIntersection = warningsIntersection.intersection(previousWarnings)
         
@@ -809,7 +775,7 @@ extension TwilioServiceViewController: CallDelegate {
         
         qualityWarningsToaster.alpha = 0.0
         qualityWarningsToaster.text = popupMessage
-       
+        
         UIView.animate(withDuration: 1.0) {
             self.qualityWarningsToaster.isHidden = false
             
@@ -846,10 +812,9 @@ extension TwilioServiceViewController: CallDelegate {
 extension TwilioServiceViewController: PushKitEventDelegate {
     
     // MARK: Delegate funcitons
-    
     func credentialsUpdated(credentials: PKPushCredentials) {
         guard registrationRequired() || (UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken) != credentials.token),
-        let accessToken = fetchAccessToken() else {
+              let accessToken = fetchAccessToken() else {
             return
         }
         
@@ -860,7 +825,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
                 print("〽️⚠️ An error occurred while registering: \(error.localizedDescription)")
             } else {
                 print("〽️✅ Successfully registered for VoIP push notifications.")
-
+                
                 UserDefaults.standard.set(cachedDeviceToken, forKey: TwilioServiceViewController.kCachedDeviceToken)
                 UserDefaults.standard.set(Date(), forKey: TwilioServiceViewController.kCachedBindingDate)
             }
@@ -948,7 +913,7 @@ extension TwilioServiceViewController: NotificationDelegate {
         if let callInvite = callInvite {
             performEndCallAction(uuid: callInvite.uuid)
         }
-      
+        
     }
     
 }
