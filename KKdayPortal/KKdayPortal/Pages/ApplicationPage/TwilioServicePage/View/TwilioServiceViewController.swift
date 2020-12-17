@@ -23,7 +23,6 @@ import PushKit
 final class TwilioServiceViewController: UIViewController {
     
     // 🏞 UI element
-    
     lazy var qualityWarningsToaster: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -105,7 +104,7 @@ final class TwilioServiceViewController: UIViewController {
     private var baseURLString: String {
         //  let url = ConfigManager.shared.model.host
         //  return url
-        return "https://94195be30686.ngrok.io"
+        return "https://ba8c5317a6e5.ngrok.io"
     }
     
     // CallKit
@@ -117,12 +116,12 @@ final class TwilioServiceViewController: UIViewController {
     
     // TwilioVoice
     private let accessTokenEndpoint = "/accessToken"
-    private let identity = "defualt identity"
-    private let twimlParamTo = "to"
+    private let identity = "KKdayPhone"
+    private let twimlParamTo = "To"
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
-    private var activeCallInvites: [String: CallInvite]!
+    private var activeCallInvites: [String: CallInvite] = [:]
     
     private var audioDevice: DefaultAudioDevice = DefaultAudioDevice()
     
@@ -139,11 +138,14 @@ final class TwilioServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
+        toggleUIState(isEnabled: true, showCallControl: false)
         setUIElementDelegate()
         setAction()
         setCallKit()
+        
+        // TVOAudioDevice must be set before performing any other actions with the SDK
+        TwilioVoice.audioDevice = audioDevice
     }
     
     deinit {
@@ -253,24 +255,25 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     @objc private func mainButtonPressed(sender: UIButton) {
+        
         guard activeCall == nil else {
             userInitiatedDisconnect = true
             performEndCallAction(uuid: activeCall!.uuid!)
             toggleUIState(isEnabled: false, showCallControl: false)
-            
+
             return
         }
-        
+
         checkRecordPermission { [weak self] permissionGranted in
             let uuid = UUID()
             let handle = "William Call"
-            
+
             guard !permissionGranted else {
                 self?.performStartCallAction(uuid: uuid, handle: handle)
-                
+
                 return
             }
-            
+
             self?.showMicrophoneAccessRequest(uuid, handle)
         }
     }
@@ -349,6 +352,8 @@ final class TwilioServiceViewController: UIViewController {
     // MARK: AudioSession
     private func toggleAudioRoute(toSpeaker: Bool) {
         audioDevice.block = {
+            
+            DefaultAudioDevice.DefaultAVAudioSessionConfigurationBlock()
             do {
                 if toSpeaker {
                     try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
@@ -359,6 +364,8 @@ final class TwilioServiceViewController: UIViewController {
                 print("📻⚠️ \(error).localizedDescription")
             }
         }
+        
+        audioDevice.block()
     }
     
     // MARK: Ringtone
@@ -897,7 +904,7 @@ extension TwilioServiceViewController: NotificationDelegate {
     func cancelledCallInviteReceived(cancelledCallInvite: CancelledCallInvite, error: Error) {
         print("📳⚠️ cancelledCallInviteCanceled:error:, error: \(error.localizedDescription)")
         
-        guard let activeCallInvites = activeCallInvites, !activeCallInvites.isEmpty else {
+        guard !activeCallInvites.isEmpty else {
             print("📳⚠️ No pending call invite")
             return
         }
