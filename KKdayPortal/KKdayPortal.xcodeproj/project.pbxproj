@@ -19,6 +19,8 @@
 		C63D277E257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
 		C63D279925830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
 		C63D279A25830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
+		C63D27D42590411500CFF8A8 /* FileAdministrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27D32590411500CFF8A8 /* FileAdministrator.swift */; };
+		C63D27D52590411500CFF8A8 /* FileAdministrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27D32590411500CFF8A8 /* FileAdministrator.swift */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
@@ -69,8 +71,6 @@
 		F44A199423C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199223C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift */; };
 		F44A199823C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */; };
 		F44A199923C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */; };
-		F44CD6CE24162C2200A35808 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6CD24162C2200A35808 /* FilesManager.swift */; };
-		F44CD6CF24162C2200A35808 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6CD24162C2200A35808 /* FilesManager.swift */; };
 		F44CD6D324162E2500A35808 /* FileNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6D224162E2500A35808 /* FileNameProtocol.swift */; };
 		F44CD6D424162E2500A35808 /* FileNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6D224162E2500A35808 /* FileNameProtocol.swift */; };
 		F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
@@ -327,6 +327,7 @@
 		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceViewController.swift; sourceTree = "<group>"; };
 		C63D279825830ECB00CFF8A8 /* ringtone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtone.wav; sourceTree = "<group>"; };
+		C63D27D32590411500CFF8A8 /* FileAdministrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAdministrator.swift; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
@@ -350,7 +351,6 @@
 		F44A198A23C48BF000B35976 /* PloneLRF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneLRF.swift; sourceTree = "<group>"; };
 		F44A199223C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageDocumentViewModel.swift; sourceTree = "<group>"; };
 		F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageDocumentViewController.swift; sourceTree = "<group>"; };
-		F44CD6CD24162C2200A35808 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
 		F44CD6D224162E2500A35808 /* FileNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNameProtocol.swift; sourceTree = "<group>"; };
 		F44E8CE323B88AA30032C6BE /* KKdayPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKdayPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F453943523B8B44300136E6D /* Gif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gif; sourceTree = "<group>"; };
@@ -1667,7 +1667,7 @@
 				F4B3F3132386EE9100657CDF /* NetStatusManager.swift */,
 				F4B3F32F2387CB7100657CDF /* StorageManager.swift */,
 				F454487523A32F92001B8D31 /* LanguageManager.swift */,
-				F44CD6CD24162C2200A35808 /* FilesManager.swift */,
+				C63D27D32590411500CFF8A8 /* FileAdministrator.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1991,6 +1991,7 @@
 				F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */,
 				F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */,
 				F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */,
+				C63D27D52590411500CFF8A8 /* FileAdministrator.swift in Sources */,
 				F43AFC6623E87D6D0050C851 /* GeneralTextObjectNormalTableViewCell.swift in Sources */,
 				F43AFC6223E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F426FEC123F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */,
@@ -2077,7 +2078,6 @@
 				F44CD6D424162E2500A35808 /* FileNameProtocol.swift in Sources */,
 				F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */,
 				F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */,
-				F44CD6CF24162C2200A35808 /* FilesManager.swift in Sources */,
 				F44E8CA823B88AA30032C6BE /* Language.swift in Sources */,
 				F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */,
 				F43AFC5223E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
@@ -2141,6 +2141,7 @@
 				F457417F23D58F4E00FB5EEC /* TestingViewModel.swift in Sources */,
 				F45446F6238F6B04001B8D31 /* PloneImageObject.swift in Sources */,
 				F457416723D5463E00FB5EEC /* ConfigModel.swift in Sources */,
+				C63D27D42590411500CFF8A8 /* FileAdministrator.swift in Sources */,
 				F4544862239F447C001B8D31 /* GeneralUser.swift in Sources */,
 				F43AFC6123E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F4544769239609E5001B8D31 /* DateFormatterExtension.swift in Sources */,
@@ -2228,7 +2229,6 @@
 				F44CD6D324162E2500A35808 /* FileNameProtocol.swift in Sources */,
 				F43AFC5D23E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
 				F4B3BC9A23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
-				F44CD6CE24162C2200A35808 /* FilesManager.swift in Sources */,
 				F43AFC6D23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
 				F454476523960669001B8D31 /* StringExtension.swift in Sources */,
 				F454487423A235B4001B8D31 /* Language.swift in Sources */,
