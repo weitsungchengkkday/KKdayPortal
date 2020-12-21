@@ -33,14 +33,14 @@ final class TwilioServiceViewController: UIViewController {
     
     lazy var placeCallButton: UIButton = {
         let btn: UIButton = UIButton()
-        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right")!, for: .normal)
+        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
         
         return btn
     }()
     
     lazy var iconView: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(systemName: "headphones.circle.fill")
+        img.image = UIImage(systemName: "headphones.circle.fill") ?? #imageLiteral(resourceName: "icPicture")
         
         return img
     }()
@@ -48,7 +48,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var outgoingValue: UITextField = {
         let txf = UITextField()
         txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        txf.keyboardType = .namePhonePad
+        txf.keyboardType = .phonePad
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
@@ -104,7 +104,7 @@ final class TwilioServiceViewController: UIViewController {
     private var baseURLString: String {
         //  let url = ConfigManager.shared.model.host
         //  return url
-        return "https://ba8c5317a6e5.ngrok.io"
+        return "https://c585a74d7843.ngrok.io"
     }
     
     // CallKit
@@ -136,12 +136,16 @@ final class TwilioServiceViewController: UIViewController {
     private static let kCachedDeviceToken = "CachedDeviceToken"
     private static let kCachedBindingDate = "CachedBindingDate"
     
+    
+    private var singleTapGestureRecognizer: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         toggleUIState(isEnabled: true, showCallControl: false)
         setUIElementDelegate()
         setAction()
+        createGestureRecognizer()
         setCallKit()
         
         // TVOAudioDevice must be set before performing any other actions with the SDK
@@ -242,6 +246,15 @@ final class TwilioServiceViewController: UIViewController {
         
     }
     
+    private func createGestureRecognizer() {
+        singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handerSingleTap))
+        self.view.addGestureRecognizer(singleTapGestureRecognizer)
+    }
+    
+    @objc func handerSingleTap() {
+        self.outgoingValue.resignFirstResponder()
+    }
+    
     private func setCallKit() {
         // iOS 14 CXProviderConfiguration(localizedName: "Twilio Voice") ->  CXProviderConfiguration()
         let configuration = CXProviderConfiguration(localizedName: "Twilio Voice")
@@ -266,7 +279,7 @@ final class TwilioServiceViewController: UIViewController {
 
         checkRecordPermission { [weak self] permissionGranted in
             let uuid = UUID()
-            let handle = "William Call"
+            let handle = "KKTwilio Phone Call"
 
             guard !permissionGranted else {
                 self?.performStartCallAction(uuid: uuid, handle: handle)
@@ -658,7 +671,7 @@ extension TwilioServiceViewController: CallDelegate {
             completion(true)
         }
         
-        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.down.fill"), for: .normal)
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.down.fill") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
         toggleUIState(isEnabled: true, showCallControl: true)
         
         toggleAudioRoute(toSpeaker: true)
@@ -666,14 +679,14 @@ extension TwilioServiceViewController: CallDelegate {
     
     func call(call: Call, isReconnectingWithError error: Error) {
         print("📳 call:isReconnectingWithError:\(error.localizedDescription)")
-        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.connection")!, for: .normal)
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.connection") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
         toggleUIState(isEnabled: false, showCallControl: false)
         
     }
     
     func callDidReconnect(call: Call) {
         print("📳 callDidReconnect:")
-        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.down.fill"), for: .normal)
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.down.fill") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
         toggleUIState(isEnabled: true, showCallControl: true)
     }
     
@@ -718,7 +731,7 @@ extension TwilioServiceViewController: CallDelegate {
     
     func callDidStartRinging(call: Call) {
         print("📳 callDidStartRinging:")
-        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.fill.connection")!, for: .normal)
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.fill.connection") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
         
         if playCustomRingback {
             playRingback()
@@ -760,7 +773,7 @@ extension TwilioServiceViewController: CallDelegate {
         
         toggleUIState(isEnabled: true, showCallControl: false)
         // set button backgroundImage to origin
-        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right")!, for: .normal)
+        placeCallButton.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
     }
     
     // Handle quality warnings message (qualityWarningsToaster label)

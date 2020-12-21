@@ -78,7 +78,7 @@ final class GeneralImageViewModel {
                             self?.image = image
                             
                         } else {
-                            let image = UIImage(systemName: "xmark.rectangle")!
+                            let image = UIImage(systemName: "xmark.rectangle") ?? #imageLiteral(resourceName: "icPicture")
                             self?.image = image
                         }
                         self?.updateContent()

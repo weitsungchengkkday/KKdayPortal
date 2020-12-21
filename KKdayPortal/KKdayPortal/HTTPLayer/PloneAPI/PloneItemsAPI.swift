@@ -16,21 +16,19 @@ final class PloneItemsAPI {
         return loader
     }()
     
-    
-    func getPloneItem<T> (user: PloneUser?, route: URL, ploneType: T.Type, compeletion: @escaping (Result<PloneItem, HTTPError>) ->  Void) where T: PloneItem {
+
+    func getPloneItem<T> (user: PloneUser?, route: URL, ploneType: T.Type, completion: @escaping (Result<PloneItem, HTTPError>) ->  Void) where T: PloneItem {
         
         var r = HTTPRequest()
         r.host = route.host
         r.path = route.path
-        
-        
         r.method = .get
         
         let generalUser: GeneralUser? = StorageManager.shared.loadObject(for: .generalUser)
         
         guard let user = generalUser else {
             let error = HTTPError(code: .invalidRequest, request: r, response: nil, underlyingError: nil)
-            compeletion(.failure(error))
+            completion(.failure(error))
             return
         }
         
@@ -52,24 +50,24 @@ final class PloneItemsAPI {
                     if let body = response.body {
                         do {
                             let ploneItem: T = try JSONDecoder().decode(T.self, from: body)
-                            compeletion(.success(ploneItem))
+                            completion(.success(ploneItem))
                             
                         } catch(let error) {
                             let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
-                            compeletion(.failure(error))
+                            completion(.failure(error))
                         }
                     }
                     
                 default:
                     print(response.status)
                     let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: nil)
-                    compeletion(.failure(error))
+                    completion(.failure(error))
                 }
                 
             case .failure(let error):
                 print(error)
                 let error = HTTPError(code: .invalidResponse, request: r, response: nil, underlyingError: error)
-                compeletion(.failure(error))
+                completion(.failure(error))
             }
             
         }

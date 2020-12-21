@@ -150,7 +150,7 @@ extension GeneralRootWithLanguageFoldersViewController: UITableViewDelegate, UIT
             cell.titleLabel.text = cellViewModel.generalItem.title
             
             let isOpen: Bool = cellViewModel.isOpen
-            cell.pullDownImageView.image = isOpen ? UIImage(systemName: "arrowtriangle.up.fill") : UIImage(systemName: "arrowtriangle.down.fill")
+            cell.pullDownImageView.image = isOpen ? UIImage(systemName: "arrowtriangle.up.fill") ?? #imageLiteral(resourceName: "icPicture") : UIImage(systemName: "arrowtriangle.down.fill") ?? #imageLiteral(resourceName: "icPicture")
             cell.contentView.backgroundColor = isOpen ? #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             return cell
             

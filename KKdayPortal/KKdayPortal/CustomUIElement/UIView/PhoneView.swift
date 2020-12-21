@@ -13,23 +13,23 @@ final class PhoneView: UIView {
     var numberLabel: UILabel = UILabel()
     
     private let oneView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "1.circle.fill")!)
-    let twoView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "2.circle.fill")!)
-    let threeView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "3.circle.fill")!)
+    let twoView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "2.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
+    let threeView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "3.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
     let numStackViewOne: UIStackView = UIStackView()
     
-    let fourView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "4.circle.fill")!)
-    let fiveView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "5.circle.fill")!)
+    let fourView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "4.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
+    let fiveView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "5.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
     let sixView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "6.circle.fill")!)
     let numStackViewTwo: UIStackView = UIStackView()
     
-    let sevenView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "7.circle.fill")!)
-    let eightView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "8.circle.fill")!)
-    let nineView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "9.circle.fill")!)
+    let sevenView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "7.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
+    let eightView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "8.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
+    let nineView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "9.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
     let numStackViewThree: UIStackView = UIStackView()
     
-    let asteriskView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "staroflife.circle.fill")!)
-    let zeroView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "0.circle.fill")!)
-    let poundSignView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "number.circle.fill")!)
+    let asteriskView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "staroflife.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
+    let zeroView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "0.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
+    let poundSignView: PhoneNumberView = PhoneNumberView(image: UIImage(systemName: "number.circle.fill") ?? #imageLiteral(resourceName: "icPicture"))
     let numStackVuewFour: UIStackView = UIStackView()
     
     let numStackView: UIStackView = UIStackView()

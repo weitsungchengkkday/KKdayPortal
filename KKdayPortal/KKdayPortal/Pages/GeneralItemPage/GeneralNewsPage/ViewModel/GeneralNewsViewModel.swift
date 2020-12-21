@@ -94,7 +94,7 @@ final class GeneralNewsViewModel {
                         }
                     } else {
                         DispatchQueue.main.async {
-                            let image = UIImage(systemName: "xmark.rectangle")!
+                            let image = UIImage(systemName: "xmark.rectangle") ?? #imageLiteral(resourceName: "icPicture")
                             self?.newsImage = image
                         }
                     }

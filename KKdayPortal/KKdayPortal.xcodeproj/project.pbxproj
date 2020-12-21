@@ -21,6 +21,8 @@
 		C63D279A25830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
 		C63D27D42590411500CFF8A8 /* FileAdministrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27D32590411500CFF8A8 /* FileAdministrator.swift */; };
 		C63D27D52590411500CFF8A8 /* FileAdministrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27D32590411500CFF8A8 /* FileAdministrator.swift */; };
+		C63D27DF259049D700CFF8A8 /* PortalApplicationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27DE259049D700CFF8A8 /* PortalApplicationsAPI.swift */; };
+		C63D27E0259049D700CFF8A8 /* PortalApplicationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27DE259049D700CFF8A8 /* PortalApplicationsAPI.swift */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
@@ -328,6 +330,7 @@
 		C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceViewController.swift; sourceTree = "<group>"; };
 		C63D279825830ECB00CFF8A8 /* ringtone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtone.wav; sourceTree = "<group>"; };
 		C63D27D32590411500CFF8A8 /* FileAdministrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAdministrator.swift; sourceTree = "<group>"; };
+		C63D27DE259049D700CFF8A8 /* PortalApplicationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalApplicationsAPI.swift; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
@@ -578,6 +581,21 @@
 				C63D279825830ECB00CFF8A8 /* ringtone.wav */,
 			);
 			path = ringtone;
+			sourceTree = "<group>";
+		};
+		C63D27DA2590441500CFF8A8 /* OdooAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C63D27DE259049D700CFF8A8 /* PortalApplicationsAPI.swift */,
+			);
+			path = OdooAPI;
+			sourceTree = "<group>";
+		};
+		C63D27DB2590486100CFF8A8 /* Odoo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Odoo;
 			sourceTree = "<group>";
 		};
 		C6A578252567D21D0049D700 /* ViewModel */ = {
@@ -928,6 +946,7 @@
 		F45447E2239AA0C2001B8D31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C63D27DB2590486100CFF8A8 /* Odoo */,
 				F4544863239FA8E7001B8D31 /* Error */,
 				F45447FA239BB2EB001B8D31 /* ModelLoader */,
 				F45447E4239AA10E001B8D31 /* GeneralModel */,
@@ -1706,6 +1725,7 @@
 		F4D06873255D1A4800F7B3F8 /* HTTPLayer */ = {
 			isa = PBXGroup;
 			children = (
+				C63D27DA2590441500CFF8A8 /* OdooAPI */,
 				F4D06874255D1A4800F7B3F8 /* PloneAPI */,
 			);
 			path = HTTPLayer;
@@ -2125,6 +2145,7 @@
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
 				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
+				C63D27E0259049D700CFF8A8 /* PortalApplicationsAPI.swift in Sources */,
 				F46180DD23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F44E8CD423B88AA30032C6BE /* ApplicationsContentViewController.swift in Sources */,
 				F43AFC6A23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
@@ -2275,6 +2296,7 @@
 				F46180FF2403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */,
 				F454487623A32F92001B8D31 /* LanguageManager.swift in Sources */,
+				C63D27DF259049D700CFF8A8 /* PortalApplicationsAPI.swift in Sources */,
 				F46180DC23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
 				F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */,

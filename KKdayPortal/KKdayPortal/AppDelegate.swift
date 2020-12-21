@@ -8,6 +8,7 @@
 
 import UIKit
 import PushKit
+import DolphinHTTP
 
 protocol PushKitEventDelegate: AnyObject {
     func credentialsUpdated(credentials: PKPushCredentials) -> Void
@@ -39,6 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("❗️configuration not exist")
 #endif
     
+        PortalApplicationsAPI(loader: URLSessionLoader()).loadApplicationServers { s in
+            print(s)
+
+        }
+        
         ConfigManager.shared.setup()
         LanguageManager.shared.setup()
         
