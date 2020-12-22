@@ -29,8 +29,12 @@ final class StorageManager {
         case regionIsSelected
         case selectedRegionKey
         
-        // ServerType
+        /// ServerType
+        // Odoo
         case serverType
+        // BPM
+        case bpmServerType
+        
     }
 
     private init() {

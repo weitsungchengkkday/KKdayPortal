@@ -66,10 +66,10 @@ final class ConfigManager {
         switch serverType {
         case .sit:
             model.host = model.sitServer
-            model.BPM = model.sitBPM
+         
         case .production:
             model.host = model.productionServer
-            model.BPM = model.productionBPM
+          
         }
 
     }

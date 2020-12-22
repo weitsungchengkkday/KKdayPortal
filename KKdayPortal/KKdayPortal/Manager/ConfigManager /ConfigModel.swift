@@ -7,16 +7,8 @@
 //
 
 final class ConfigModel: Codable {
-    
     // current connecting host
     var host: String = ""
-    var BPM: String = ""
-    
-    // sit
     var sitServer: String = ""
-    var sitBPM: String = ""
-    
-    // production
     var productionServer: String = ""
-    var productionBPM: String = ""
 }

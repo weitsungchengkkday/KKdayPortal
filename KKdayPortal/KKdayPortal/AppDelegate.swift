@@ -40,12 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("❗️configuration not exist")
 #endif
     
-        PortalApplicationsAPI(loader: URLSessionLoader()).loadApplicationServers { s in
-            print(s)
-
-        }
-        
         ConfigManager.shared.setup()
+        
+        // Note must after ConfigManager.shared.setup(), because Odoo host most be decided first
+        PortalApplicationsAPI(loader: URLSessionLoader()).loadApplicationServers()
+        
         LanguageManager.shared.setup()
         
         // Initialize PushKit

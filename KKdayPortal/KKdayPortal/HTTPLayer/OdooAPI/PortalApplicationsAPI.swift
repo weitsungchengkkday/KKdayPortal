@@ -9,8 +9,6 @@
 import Foundation
 import DolphinHTTP
 
-// https://c585a74d7843.ngrok.io/portal_applications
-
 final class PortalApplicationsAPI {
     
     lazy var loader: HTTPLoader = {
@@ -22,9 +20,9 @@ final class PortalApplicationsAPI {
         self.loader = loader
     }
     
-    func loadApplicationServers(completion: @escaping (Result<[ApplicationSever], HTTPError>) -> Void) {
+    func loadApplicationServers() {
         var r = HTTPRequest()
-        r.host = "c585a74d7843.ngrok.io"
+        r.host = "54a1af81583a.ngrok.io"
         r.path = "/portal_applications"
         
         loader.load(request: r) { result in
@@ -36,36 +34,31 @@ final class PortalApplicationsAPI {
                     if let body = response.body {
                         do {
                         
-                        // 1
-//                            if let jsonString = try JSONSerialization.jsonObject(with: body, options: []) as? [[String: Any]] {
-//
-//                                if let fileAdministrator = FileAdministrator(path: "portal"), fileAdministrator.writeTextFile(withName: "application_servers.json", fileContent: String(describing: jsonString), canOverwrite: false)  {
-////
-//                                      print("✏️ Save Data Success")
-//                                }
-//                            }
-                               
-                       // 2
                             let applicationSevers = try JSONDecoder().decode([ApplicationSever].self, from: body)
-    
-                            completion(.success(applicationSevers))
-
+ 
+                            for server in applicationSevers {
+                                switch server.host {
+                                case "BPM":
+                                    StorageManager.shared.saveObject(for: .bpmServerType, value: server)
+                                default:
+                                    return
+                                }
+                            }
+                            
                         } catch(let error) {
                             let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
-                            completion(.failure(error))
+                            print("❌ Save BPM decode error: \(error)")
                         }
                     }
 
                 default:
-                    print(response.status)
                     let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: nil)
-                    completion(.failure(error))
+                    print("❌ Save BPM HTTP error: \(error)")
                 }
 
             case .failure(let error):
-                print(error)
                 let error = HTTPError(code: .invalidResponse, request: r, response: nil, underlyingError: error)
-                completion(.failure(error))
+                print("❌ Save BPM error: \(error)")
             }
         }
     }
@@ -73,14 +66,4 @@ final class PortalApplicationsAPI {
 }
 
 
-struct ApplicationSever {
-    let id: Int
-    let name: String
-    let local_server_url: String
-    let stage_server_url: String
-    let production_server_url: String
-}
 
-extension ApplicationSever: Decodable {
-    
-}

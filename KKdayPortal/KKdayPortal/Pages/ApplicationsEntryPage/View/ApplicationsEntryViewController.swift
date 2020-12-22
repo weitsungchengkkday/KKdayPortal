@@ -86,7 +86,17 @@ final class ApplicationsEntryViewController: UIViewController {
     }
     
     @objc private func goBPM() {
-        let bpmURL = URL(string: ConfigManager.shared.model.BPM + "/WebAgenda/")!
+        
+        guard let bpm: ApplicationSever = StorageManager.shared.loadObject(for: .bpmServerType) else {
+            print("❌ Can't find BPM server URL in Storage Manager")
+            return
+        }
+        
+        guard let bpmURL = URL(string: bpm.server_url + "/WebAgenda/") else {
+            print("❌ Invalid BPM server URL")
+            return
+        }
+        
         let vm = ApplicationsContentViewModel(source: bpmURL)
         let presentVC = ApplicationsContentViewController(viewModel: vm)
         
