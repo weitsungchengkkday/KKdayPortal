@@ -20,7 +20,7 @@ final class WebPloneRepository {
         
         switch resourceType {
         case .kkMember:
-            return URL(string: ConfigManager.shared.model.host + "/Plone")!
+            return URL(string: ConfigManager.shared.ploneModel.host + "/Plone")!
             
         case .normal(url: let url):
             return url

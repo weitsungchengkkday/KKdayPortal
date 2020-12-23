@@ -11,11 +11,12 @@ import Foundation
 final class ConfigManager {
     static let shared: ConfigManager = ConfigManager()
     
-    fileprivate var _model: ConfigModel!
+    fileprivate var _odooModel: ConfigModel!
+    fileprivate var _ploneModel: ConfigModel!
     
-    var model: ConfigModel {
+    var odooModel: ConfigModel {
         get {
-            if _model == nil {
+            if _odooModel == nil {
                 let name = "\(ConfigModel.self)"
                 let path = Bundle.main.path(forResource: name, ofType: "json")!
                 let url = URL(fileURLWithPath: path)
@@ -24,17 +25,44 @@ final class ConfigManager {
                     let data = try Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
                     
                     let decoder = JSONDecoder()
-                    _model = try decoder.decode(ConfigModel.self, from: data)
+                    
+                    _odooModel = try decoder.decode([ConfigModel].self, from: data)[1]
+                    
                 } catch let error {
                     print(error.localizedDescription)
                 }
             }
             
-            return _model
+            return _odooModel
         }
         
         set {
-            _model = newValue
+            _odooModel = newValue
+        }
+    }
+    
+    var ploneModel: ConfigModel {
+        get {
+            if _ploneModel == nil {
+                let name = "\(ConfigModel.self)"
+                let path = Bundle.main.path(forResource: name, ofType: "json")!
+                let url = URL(fileURLWithPath: path)
+                
+                do {
+                    let data = try Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
+                    
+                    let decoder = JSONDecoder()
+                    _ploneModel = try decoder.decode([ConfigModel].self, from: data)[0]
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+            }
+            
+            return _ploneModel
+        }
+        
+        set {
+            _ploneModel = newValue
         }
     }
     
@@ -65,10 +93,12 @@ final class ConfigManager {
         
         switch serverType {
         case .sit:
-            model.host = model.sitServer
-         
+            odooModel.host = odooModel.sitServer
+            ploneModel.host = ploneModel.sitServer
+             
         case .production:
-            model.host = model.productionServer
+            odooModel.host = odooModel.productionServer
+            ploneModel.host = ploneModel.productionServer
           
         }
 

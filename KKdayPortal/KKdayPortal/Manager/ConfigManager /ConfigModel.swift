@@ -8,6 +8,7 @@
 
 final class ConfigModel: Codable {
     // current connecting host
+    var name: String = ""
     var host: String = ""
     var sitServer: String = ""
     var productionServer: String = ""

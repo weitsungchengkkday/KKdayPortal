@@ -18,7 +18,7 @@ final class TestingViewModel {
         
         var testingTableViewCellViewModels: [TestingTableViewCellViewModel] = []
         
-        let configModel: ConfigModel = ConfigManager.shared.model
+        let configModel: ConfigModel = ConfigManager.shared.ploneModel
         
         let currentServer: String = configModel.host
         let sitServer: String = configModel.sitServer

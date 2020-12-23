@@ -32,7 +32,7 @@ final class PloneSSOViewController: UIViewController {
         setAction()
         bindViewModel()
         
-        let urlString = ConfigManager.shared.model.host + "/Plone/@@app_login"
+        let urlString = ConfigManager.shared.ploneModel.host + "/Plone/@@app_login"
         let url = URL(string: urlString)!
         SSOwebView.load(URLRequest(url: url))
     }

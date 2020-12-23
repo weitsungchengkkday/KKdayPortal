@@ -335,7 +335,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
     
     private func signin() {
-        print("📯 Current Host is \(ConfigManager.shared.model.host)")
+        print("📯 Current Host is \(ConfigManager.shared.ploneModel.host)")
 
         guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return

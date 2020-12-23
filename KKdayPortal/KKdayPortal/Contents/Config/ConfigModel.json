@@ -1,5 +1,16 @@
-{
-    "host": "odoo",
-    "sitServer": "https://sit.eip.kkday.net",
-    "productionServer": "https://eip.kkday.net",
-}
+
+[
+    {
+        "name": "plone",
+        "host": "",
+        "sitServer": "https://sit.eip.kkday.net",
+        "productionServer": "https://eip.kkday.net"
+    },
+    {
+        "name": "odoo",
+        "host": "",
+        "sitServer": "https://sit-odoo.eip.kkday.net",
+        "productionServer": "https://odoo.eip.kkday.net"
+    }
+]
+

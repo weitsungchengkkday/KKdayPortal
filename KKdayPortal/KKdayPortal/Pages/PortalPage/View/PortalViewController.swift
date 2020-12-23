@@ -57,7 +57,7 @@ final class PortalViewController: UIViewController, Localizable {
         
         switch resourceType {
         case .kkMember:
-            rootURL = URL(string: ConfigManager.shared.model.host + "/Plone" + "/zh-tw")!
+            rootURL = URL(string: ConfigManager.shared.ploneModel.host + "/Plone" + "/zh-tw")!
         case .normal(url: let url):
             rootURL = URL(string: "https://" + url.absoluteString + "/Plone/zh-tw")!
             print(rootURL)

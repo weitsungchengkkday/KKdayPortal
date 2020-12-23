@@ -102,9 +102,8 @@ final class TwilioServiceViewController: UIViewController {
     
     // ODOO Server (for creating accessToken)
     private var baseURLString: String {
-        //  let url = ConfigManager.shared.model.host
-        //  return url
-        return "https://c585a74d7843.ngrok.io"
+        let host = ConfigManager.shared.odooModel.host
+        return host
     }
     
     // CallKit
@@ -586,7 +585,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
             print("📳⚠️ Can't get accessToken")
             return
         }
-        
+        print("✅ Get accessToken")
         print("📳 Start making a voice call")
         let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
             builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""]
@@ -833,6 +832,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
               let accessToken = fetchAccessToken() else {
             return
         }
+        print("✅ Get accessToken")
         
         let cachedDeviceToken = credentials.token
         
@@ -853,6 +853,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
         guard let deviceToken = UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken), let accessToken = fetchAccessToken() else {
             return
         }
+        print("✅ Get accessToken")
         
         TwilioVoice.unregister(accessToken: accessToken, deviceToken: deviceToken) { error in
             if let error = error {
