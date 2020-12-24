@@ -235,8 +235,8 @@
 		F45740EA23D13A3100FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift */; };
 		F45740ED23D13A3400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E323D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift */; };
 		F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */; };
-		F457415C23D53EEB00FB5EEC /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = F457415B23D53EEB00FB5EEC /* ConfigModel.json */; };
-		F457415D23D53EEB00FB5EEC /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = F457415B23D53EEB00FB5EEC /* ConfigModel.json */; };
+		F457415C23D53EEB00FB5EEC /*  ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = F457415B23D53EEB00FB5EEC /*  ConfigModel.json */; };
+		F457415D23D53EEB00FB5EEC /*  ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = F457415B23D53EEB00FB5EEC /*  ConfigModel.json */; };
 		F457416223D5462C00FB5EEC /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416123D5462C00FB5EEC /* ConfigManager.swift */; };
 		F457416323D5462C00FB5EEC /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416123D5462C00FB5EEC /* ConfigManager.swift */; };
 		F457416723D5463E00FB5EEC /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416623D5463E00FB5EEC /* ConfigModel.swift */; };
@@ -438,7 +438,7 @@
 		F45740E323D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F45740E523D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListSectionItem.swift; sourceTree = "<group>"; };
-		F457415B23D53EEB00FB5EEC /* ConfigModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ConfigModel.json; sourceTree = "<group>"; };
+		F457415B23D53EEB00FB5EEC /*  ConfigModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = " ConfigModel.json"; sourceTree = "<group>"; };
 		F457416123D5462C00FB5EEC /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		F457416623D5463E00FB5EEC /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
 		F457417023D5525F00FB5EEC /* ServerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerType.swift; sourceTree = "<group>"; };
@@ -1430,7 +1430,7 @@
 		F457417523D55A0800FB5EEC /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				F457415B23D53EEB00FB5EEC /* ConfigModel.json */,
+				F457415B23D53EEB00FB5EEC /*  ConfigModel.json */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1904,7 +1904,7 @@
 				F453943723B8B44300136E6D /* Gif in Resources */,
 				F44E8CDA23B88AA30032C6BE /* LaunchScreen.storyboard in Resources */,
 				F44E8CDB23B88AA30032C6BE /* credentials.plist in Resources */,
-				F457415D23D53EEB00FB5EEC /* ConfigModel.json in Resources */,
+				F457415D23D53EEB00FB5EEC /*  ConfigModel.json in Resources */,
 				F44E8CDC23B88AA30032C6BE /* Localizable.strings in Resources */,
 				F44E8CDD23B88AA30032C6BE /* Assets.xcassets in Resources */,
 			);
@@ -1918,7 +1918,7 @@
 				F453943623B8B44300136E6D /* Gif in Resources */,
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
 				F45448A223A88636001B8D31 /* credentials.plist in Resources */,
-				F457415C23D53EEB00FB5EEC /* ConfigModel.json in Resources */,
+				F457415C23D53EEB00FB5EEC /*  ConfigModel.json in Resources */,
 				F454488723A54D2D001B8D31 /* Localizable.strings in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
 			);
