@@ -22,7 +22,9 @@ final class PortalApplicationsAPI {
     
     func loadApplicationServers() {
         var r = HTTPRequest()
-        r.host = "54a1af81583a.ngrok.io"
+    
+        r.host = ConfigManager.shared.odooModel.host.replacingOccurrences(of: "https://", with: "")
+        
         r.path = "/portal_applications"
         
         loader.load(request: r) { result in
