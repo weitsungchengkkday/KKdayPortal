@@ -44,14 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Note must after ConfigManager.shared.setup(), because Odoo host most be decided first
         PortalApplicationsAPI(loader: URLSessionLoader()).loadApplicationServers()
-        
         LanguageManager.shared.setup()
         
-        // Initialize PushKit
+        return true
+    }
+    
+    func initializePushKit() {
         voipRegistry.delegate = self
         voipRegistry.desiredPushTypes = Set([PKPushType.voIP])
-        
-        return true
     }
     
     // MARK: UISceneSession Lifecycle
@@ -72,6 +72,7 @@ extension AppDelegate: PKPushRegistryDelegate {
         print("〽️ pushRegistry:didUpdatePushCredentials:forType:")
         
         if let delegate = self.pushKitEventDelegate {
+            print("〽️update push credentials")
             delegate.credentialsUpdated(credentials: pushCredentials)
         } else {
             print("〽️⚠️ pushKitEventDelegate is not set")
@@ -83,6 +84,7 @@ extension AppDelegate: PKPushRegistryDelegate {
         print("〽️ pushRegistry:didInvalidatePushTokenForType:")
         
         if let delegate = self.pushKitEventDelegate {
+            print("〽️⚠️ Invalidate Push Token")
             delegate.credentialsInvalidated()
         } else {
             print("〽️⚠️ pushKitEventDelegate is not set")
@@ -93,7 +95,9 @@ extension AppDelegate: PKPushRegistryDelegate {
         print("〽️ pushRegistry:didReceiveIncomingPushWithPayload:forType:completion:")
         
         if let delegate = self.pushKitEventDelegate {
+            print("〽️recieve payload: \(payload) ")
             delegate.incomingPushReceived(payload: payload, completion: completion)
+            
         } else {
             print("〽️⚠️ pushKitEventDelegate is not set")
         }

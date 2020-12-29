@@ -48,7 +48,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var outgoingValue: UITextField = {
         let txf = UITextField()
         txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        txf.keyboardType = .phonePad
+        txf.keyboardType = .default
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
@@ -103,7 +103,7 @@ final class TwilioServiceViewController: UIViewController {
     // ODOO Server (for creating accessToken)
     private var baseURLString: String {
      //   let host = ConfigManager.shared.odooModel.host
-        let host = "https://f78497650096.ngrok.io"
+        let host = "https://7b92cc46cbd7.ngrok.io"
         return host
     }
     
@@ -124,8 +124,8 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     private var currentMethodEndpoint: TwiMLmethodEndpoint = TwiMLmethodEndpoint.studio
-    
-    private let identity = "KKdayPhone"
+    // Alice Bob
+    private let identity = "peter"
     private let twimlParamTo = "To"
     
     private var activeCall: Call? = nil
@@ -847,7 +847,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
         guard registrationRequired() || (UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken) != credentials.token),
               let accessToken = fetchAccessToken() else {
             
-            print("📳⚠️ Get accessToken Fail")
+            print("📳⚠️ Get accessToken Fail Or registrationRequired == false")
             return
         }
         print("📳✅ Get accessToken")
