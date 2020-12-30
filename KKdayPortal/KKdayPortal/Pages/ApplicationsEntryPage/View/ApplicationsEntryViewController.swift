@@ -105,12 +105,6 @@ final class ApplicationsEntryViewController: UIViewController {
     
     @objc private func goTwilio() {
         let presentVC = TwilioServiceViewController()
-
-        // 🍕 set PushKitEventDelegate to TwilioServiceViewController
-        guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        delegate.pushKitEventDelegate = presentVC
-        delegate.initializePushKit()
-        print("〽️ Set pushKitEventDelegate to TwilioServiceViewController")
         present(presentVC, animated: true, completion: nil)
     }
     

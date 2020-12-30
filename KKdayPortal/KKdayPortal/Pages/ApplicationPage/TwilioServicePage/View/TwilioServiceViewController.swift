@@ -103,7 +103,7 @@ final class TwilioServiceViewController: UIViewController {
     // ODOO Server (for creating accessToken)
     private var baseURLString: String {
      //   let host = ConfigManager.shared.odooModel.host
-        let host = "https://7b92cc46cbd7.ngrok.io"
+        let host = "https://4fcf900677f6.ngrok.io"
         return host
     }
     
@@ -125,7 +125,7 @@ final class TwilioServiceViewController: UIViewController {
     
     private var currentMethodEndpoint: TwiMLmethodEndpoint = TwiMLmethodEndpoint.studio
     // Alice Bob
-    private let identity = "peter"
+    private let identity = "alice"
     private let twimlParamTo = "To"
     
     private var activeCall: Call? = nil
@@ -150,6 +150,11 @@ final class TwilioServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 🍕 set PushKitEventDelegate to TwilioServiceViewController
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        delegate.pushKitEventDelegate = self
+        delegate.initializePushKit()
         
         // Test
         currentMethodEndpoint = .makeCall
@@ -844,9 +849,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
     
     // MARK: Delegate funcitons
     func credentialsUpdated(credentials: PKPushCredentials) {
-        guard registrationRequired() || (UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken) != credentials.token),
-              let accessToken = fetchAccessToken() else {
-            
+        guard registrationRequired() || (UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken) != credentials.token), let accessToken = fetchAccessToken() else {
             print("📳⚠️ Get accessToken Fail Or registrationRequired == false")
             return
         }
