@@ -8,6 +8,7 @@
 
 import UIKit
 import PushKit
+import TwilioVoice
 import DolphinHTTP
 
 protocol PushKitEventDelegate: AnyObject {
@@ -19,7 +20,7 @@ protocol PushKitEventDelegate: AnyObject {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    weak var pushKitEventDelegate: PushKitEventDelegate?
+    var pushKitEventDelegate: PushKitEventDelegate?
     var voipRegistry = PKPushRegistry(queue: DispatchQueue.main)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -39,13 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #else
     print("❗️configuration not exist")
 #endif
-    
+        // Get Plone andc Odoo Service Host
         ConfigManager.shared.setup()
         
         // Note must after ConfigManager.shared.setup(), because Odoo host most be decided first
         PortalApplicationsAPI(loader: URLSessionLoader()).loadApplicationServers()
-        LanguageManager.shared.setup()
+        
+        // Twilio Call Service
+        self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
         initializePushKit()
+       
+        LanguageManager.shared.setup()
         
         return true
     }
@@ -62,9 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-    }
     
-  
+    }
     
 }
 
@@ -75,7 +79,7 @@ extension AppDelegate: PKPushRegistryDelegate {
         print("〽️ pushRegistry:didUpdatePushCredentials:forType:")
         
         if let delegate = self.pushKitEventDelegate {
-            print("〽️update push credentials")
+            print("〽️ update push credentials")
             delegate.credentialsUpdated(credentials: pushCredentials)
         } else {
             print("〽️⚠️ pushKitEventDelegate is not set")
@@ -92,11 +96,13 @@ extension AppDelegate: PKPushRegistryDelegate {
         } else {
             print("〽️⚠️ pushKitEventDelegate is not set")
         }
+        
     }
     
     func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
         print("〽️ pushRegistry:didReceiveIncomingPushWithPayload:forType:completion:")
-        
+        print(type.rawValue)
+
         if let delegate = self.pushKitEventDelegate {
             print("〽️recieve payload: \(payload) ")
             delegate.incomingPushReceived(payload: payload, completion: completion)
@@ -104,8 +110,7 @@ extension AppDelegate: PKPushRegistryDelegate {
         } else {
             print("〽️⚠️ pushKitEventDelegate is not set")
         }
-        
-        completion()
+
     }
     
 }

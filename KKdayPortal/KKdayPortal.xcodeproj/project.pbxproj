@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */; };
 		B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */; };
+		C60BAF81259C53730074B4B5 /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
+		C60BAF82259C53730074B4B5 /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
 		C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
@@ -326,6 +328,7 @@
 		72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C73ED13DE5C2C3FA9E7C052 /* Pods-KKdayPortal-Sit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.debug.xcconfig"; sourceTree = "<group>"; };
 		ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.debug.xcconfig"; sourceTree = "<group>"; };
+		C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceManager.swift; sourceTree = "<group>"; };
 		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -558,6 +561,7 @@
 		C63D2777257F712A00CFF8A8 /* TwilioServicePage */ = {
 			isa = PBXGroup;
 			children = (
+				C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */,
 				C63D277A257F71B200CFF8A8 /* View */,
 				C63D277B257F720F00CFF8A8 /* ViewModel */,
 			);
@@ -2159,6 +2163,7 @@
 				F45740ED23D13A3400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
 				F44E8CD523B88AA30032C6BE /* PloneFolder.swift in Sources */,
 				F44E8CD623B88AA30032C6BE /* GeneralEventViewModel.swift in Sources */,
+				C60BAF82259C53730074B4B5 /* TwilioServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2311,6 +2316,7 @@
 				F45448B623AA3156001B8D31 /* ApplicationsContentViewController.swift in Sources */,
 				F4B3F340238BC60D00657CDF /* PloneFolder.swift in Sources */,
 				F454483A239CAD3D001B8D31 /* GeneralEventViewModel.swift in Sources */,
+				C60BAF81259C53730074B4B5 /* TwilioServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -102,8 +102,7 @@ final class TwilioServiceViewController: UIViewController {
     
     // ODOO Server (for creating accessToken)
     private var baseURLString: String {
-     //   let host = ConfigManager.shared.odooModel.host
-        let host = "https://4fcf900677f6.ngrok.io"
+          let host = ConfigManager.shared.odooModel.host
         return host
     }
     
@@ -136,7 +135,7 @@ final class TwilioServiceViewController: UIViewController {
     
     // AVAudio
     private var ringtonePlayer: AVAudioPlayer? = nil
-    private var playCustomRingback = false
+    private var playCustomRingback = true
     
     // Device register Time-to-live(TTL) days
     private static let kRegistrationTTLInDays = 365
@@ -148,14 +147,20 @@ final class TwilioServiceViewController: UIViewController {
     
     private var singleTapGestureRecognizer: UITapGestureRecognizer!
     
+    
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.setCallKit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 🍕 set PushKitEventDelegate to TwilioServiceViewController
-        guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        delegate.pushKitEventDelegate = self
-        delegate.initializePushKit()
-        
+
         // Test
         currentMethodEndpoint = .makeCall
         
@@ -164,7 +169,6 @@ final class TwilioServiceViewController: UIViewController {
         setUIElementDelegate()
         setAction()
         createGestureRecognizer()
-        setCallKit()
         
         // TVOAudioDevice must be set before performing any other actions with the SDK
         TwilioVoice.audioDevice = audioDevice
@@ -328,8 +332,8 @@ final class TwilioServiceViewController: UIViewController {
         guard let activeCall = activeCall else {
             return
         }
-        
         activeCall.isMuted = sender.isOn
+        performMuteCallAction(uuid: activeCall.uuid!, muted: sender.isOn)
     }
     
     @objc private func speakerSwitchToggled(sender: UISwitch) {
@@ -514,11 +518,11 @@ extension TwilioServiceViewController: CXProviderDelegate {
         }
     }
     
-    // 目前未使用
     func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
         print("☎️ provider:performSetMutedAction:")
         
         if let call = activeCalls[action.callUUID.uuidString] {
+            print(action.isMuted)
             call.isMuted = action.isMuted
             action.fulfill()
         } else {
@@ -598,6 +602,21 @@ extension TwilioServiceViewController: CXProviderDelegate {
             }
         }
     }
+    
+    // Mute Action
+    func performMuteCallAction(uuid: UUID, muted: Bool) {
+        let muteAction = CXSetMutedCallAction(call: uuid, muted: muted)
+        let transaction = CXTransaction(action: muteAction)
+        
+        callKitCallController.request(transaction) { error in
+            if let error = error {
+                print("☎️⚠️ MuteCallAction transaction request failed: \(error.localizedDescription).")
+            } else {
+                print("☎️✅ MuteCallAction (muted is \(muted)) transaction request successful")
+            }
+        }
+    }
+    
     
     // MARK: Perform Twilio Voice Call
     private func performVoiceCall(uuid: UUID, client: String?, completionHandler: @escaping (Bool) -> Void) {
@@ -849,7 +868,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
     
     // MARK: Delegate funcitons
     func credentialsUpdated(credentials: PKPushCredentials) {
-        guard registrationRequired() || (UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken) != credentials.token), let accessToken = fetchAccessToken() else {
+        guard  (registrationRequired() || UserDefaults.standard.data(forKey: TwilioServiceViewController.kCachedDeviceToken) != credentials.token), let accessToken = fetchAccessToken() else {
             print("📳⚠️ Get accessToken Fail Or registrationRequired == false")
             return
         }
