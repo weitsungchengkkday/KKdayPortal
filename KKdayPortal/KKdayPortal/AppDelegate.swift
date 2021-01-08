@@ -21,9 +21,13 @@ protocol PushKitEventDelegate: AnyObject {
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var pushKitEventDelegate: PushKitEventDelegate?
-    var voipRegistry = PKPushRegistry(queue: DispatchQueue.main)
+    var voipRegistry = PKPushRegistry.init(queue: .main)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Twilio Call Service
+        self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
+        initializePushKit()
         
 #if SIT
     print("1️⃣ sit")
@@ -40,15 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #else
     print("❗️configuration not exist")
 #endif
+        
         // Get Plone andc Odoo Service Host
         ConfigManager.shared.setup()
         
         // Note must after ConfigManager.shared.setup(), because Odoo host most be decided first
         PortalApplicationsAPI(loader: URLSessionLoader()).loadApplicationServers()
-        
-        // Twilio Call Service
-        self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
-        initializePushKit()
        
         LanguageManager.shared.setup()
         
