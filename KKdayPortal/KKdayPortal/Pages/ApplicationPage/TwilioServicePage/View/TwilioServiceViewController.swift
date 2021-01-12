@@ -124,7 +124,7 @@ final class TwilioServiceViewController: UIViewController {
     
     private var currentMethodEndpoint: TwiMLmethodEndpoint = TwiMLmethodEndpoint.studio
     // Alice Bob
-    private let identity = "alice"
+    private let identity = "Rmin"
     private let twimlParamTo = "To"
     
     private var activeCall: Call? = nil
@@ -162,7 +162,7 @@ final class TwilioServiceViewController: UIViewController {
         super.viewDidLoad()
 
         // Test
-        currentMethodEndpoint = .makeCall
+        currentMethodEndpoint = .studio
         
         setupUI()
         toggleUIState(isEnabled: true, showCallControl: false)
