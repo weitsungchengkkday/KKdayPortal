@@ -51,8 +51,8 @@ final class MainViewController: UITabBarController {
         settingNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         let applicationsEntryVC = ApplicationsEntryViewController(nibName: nil, bundle: nil)
-        let image = UIImage(systemName: "signpost.right") ?? #imageLiteral(resourceName: "icPicture")
-        let applicationsEntryItem = UITabBarItem(title: "Service Links", image: image, selectedImage: image)
+        let applicationsEntryImage = UIImage(systemName: "signpost.right") ?? #imageLiteral(resourceName: "icPicture")
+        let applicationsEntryItem = UITabBarItem(title: "Service List", image: applicationsEntryImage, selectedImage: applicationsEntryImage)
         applicationsEntryVC.tabBarItem = applicationsEntryItem
         
         let applicationsEntryNav = UINavigationController(rootViewController: applicationsEntryVC)
@@ -61,6 +61,20 @@ final class MainViewController: UITabBarController {
         applicationsEntryNav.navigationBar.topItem?.backBarButtonItem = applicationsButtonItem
         applicationsEntryNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         applicationsEntryNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
+        
+        let openApplicationsEntryVC = OpenApplicationsEntryViewController(nibName: nil, bundle: nil)
+        let openApplicationsEntryImage = UIImage(systemName: "puzzlepiece") ?? #imageLiteral(resourceName: "icPicture")
+        let openApplicationsEntryItem = UITabBarItem(title: "Service", image: openApplicationsEntryImage, selectedImage: openApplicationsEntryImage)
+        openApplicationsEntryVC.tabBarItem = openApplicationsEntryItem
+        
+        let openApplicationsEntryNav = UINavigationController(rootViewController: openApplicationsEntryVC)
+        let openApplicationsButtonItem = UIBarButtonItem()
+        openApplicationsButtonItem.title = ""
+        openApplicationsEntryNav.navigationBar.topItem?.backBarButtonItem = applicationsButtonItem
+        openApplicationsEntryNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        openApplicationsEntryNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
         
         self.tabBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         self.tabBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -72,7 +86,7 @@ final class MainViewController: UITabBarController {
              self.viewControllers = [homeNav, portalNav, applicationsEntryNav, settingNav]
             
         case .normal(url: _):
-             self.viewControllers = [homeNav, portalNav, settingNav]
+             self.viewControllers = [homeNav, portalNav, openApplicationsEntryNav, settingNav]
             
         case .none:
             self.viewControllers = []

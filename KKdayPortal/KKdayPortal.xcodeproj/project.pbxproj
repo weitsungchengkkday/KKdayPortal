@@ -8,9 +8,172 @@
 
 /* Begin PBXBuildFile section */
 		163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */; };
+		869715DDA37955E1BCDF143C /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907AF64DA9BD7941A92A15AF /* Pods_KKdayPortal_Sit.framework */; };
 		B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */; };
+		C2402CA2048626ABA3021939 /* Pods_KKdayPortal_Open.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90557558CFBDD8E1B7413D51 /* Pods_KKdayPortal_Open.framework */; };
 		C60BAF81259C53730074B4B5 /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
 		C60BAF82259C53730074B4B5 /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
+		C63105F125B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
+		C63105F225B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
+		C63105F825B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
+		C63105F925B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
+		C631060325B57ADA0067F72B /* TestingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417E23D58F4E00FB5EEC /* TestingViewModel.swift */; };
+		C631060425B57ADA0067F72B /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
+		C631060525B57ADA0067F72B /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416623D5463E00FB5EEC /* ConfigModel.swift */; };
+		C631060625B57ADA0067F72B /* FileAdministrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27D32590411500CFF8A8 /* FileAdministrator.swift */; };
+		C631060725B57ADA0067F72B /* GeneralUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544861239F447C001B8D31 /* GeneralUser.swift */; };
+		C631060825B57ADA0067F72B /* GeneralTextObjectSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4C23E87D6D0050C851 /* GeneralTextObjectSectionItem.swift */; };
+		C631060925B57ADA0067F72B /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544768239609E5001B8D31 /* DateFormatterExtension.swift */; };
+		C631060A25B57ADA0067F72B /* GeneralItemDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */; };
+		C631060B25B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199723C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift */; };
+		C631060C25B57ADA0067F72B /* GeneralTextObjectNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4E23E87D6D0050C851 /* GeneralTextObjectNormalTableViewCell.swift */; };
+		C631060D25B57ADA0067F72B /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487923A336D6001B8D31 /* LocaleExtension.swift */; };
+		C631060E25B57ADA0067F72B /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952F23BAE22C00136E6D /* LoadingViewModel.swift */; };
+		C631060F25B57ADA0067F72B /* PloneSiteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneSiteItem.swift */; };
+		C631061025B57ADA0067F72B /* PloneFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FD238F74DF001B8D31 /* PloneFileObject.swift */; };
+		C631061125B57ADA0067F72B /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4323BCD8AD00A1E769 /* UIState.swift */; };
+		C631061225B57ADA0067F72B /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952423BAE0FB00136E6D /* LoadingManager.swift */; };
+		C631061325B57ADA0067F72B /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
+		C631061425B57ADA0067F72B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
+		C631061525B57ADA0067F72B /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7823E87DD10050C851 /* GeneralCollectionViewController.swift */; };
+		C631061625B57ADA0067F72B /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift */; };
+		C631061725B57ADA0067F72B /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
+		C631061825B57ADA0067F72B /* PloneEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06875255D1A4800F7B3F8 /* PloneEnv.swift */; };
+		C631061925B57ADA0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
+		C631061A25B57ADA0067F72B /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
+		C631061B25B57ADA0067F72B /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4723E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift */; };
+		C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
+		C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
+		C631061E25B57ADA0067F72B /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
+		C631061F25B57ADA0067F72B /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
+		C631062025B57ADA0067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
+		C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
+		C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */; };
+		C631062325B57ADA0067F72B /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
+		C631062425B57ADA0067F72B /* TestingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457418523D593C600FB5EEC /* TestingTableViewCell.swift */; };
+		C631062525B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift */; };
+		C631062625B57ADA0067F72B /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
+		C631062725B57ADA0067F72B /* Signiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06881255D24B200F7B3F8 /* Signiner.swift */; };
+		C631062825B57ADA0067F72B /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416123D5462C00FB5EEC /* ConfigManager.swift */; };
+		C631062925B57ADA0067F72B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CD23862B3000657CDF /* AppDelegate.swift */; };
+		C631062A25B57ADA0067F72B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F2CF23862B3000657CDF /* SceneDelegate.swift */; };
+		C631062B25B57ADA0067F72B /* GeneralTextObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC8623E92E4D0050C851 /* GeneralTextObjectConverter.swift */; };
+		C631062C25B57ADA0067F72B /* GeneralImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482D239CAB08001B8D31 /* GeneralImageViewModel.swift */; };
+		C631062D25B57ADA0067F72B /* GeneralFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544855239DF12C001B8D31 /* GeneralFolderTableViewCell.swift */; };
+		C631062E25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift */; };
+		C631062F25B57ADA0067F72B /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
+		C631063025B57ADA0067F72B /* GeneralTextObjectIFrameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4F23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift */; };
+		C631063125B57ADA0067F72B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
+		C631063225B57ADA0067F72B /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
+		C631063325B57ADA0067F72B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
+		C631063425B57ADA0067F72B /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45408342413746600796B66 /* UIKitExtension.swift */; };
+		C631063525B57ADA0067F72B /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
+		C631063625B57ADA0067F72B /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7323E87DD10050C851 /* GeneralCollectionViewModel.swift */; };
+		C631063725B57ADA0067F72B /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
+		C631063825B57ADA0067F72B /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
+		C631063925B57ADA0067F72B /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
+		C631063A25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift */; };
+		C631063B25B57ADA0067F72B /* GeneralItemTopTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */; };
+		C631063C25B57ADA0067F72B /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
+		C631063D25B57ADA0067F72B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
+		C631063E25B57ADA0067F72B /* SigninInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */; };
+		C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */; };
+		C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
+		C631064125B57ADA0067F72B /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
+		C631064225B57ADA0067F72B /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417923D55FB400FB5EEC /* TestingViewController.swift */; };
+		C631064325B57ADA0067F72B /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
+		C631064425B57ADA0067F72B /* PloneEmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180B823F9722F00D303F8 /* PloneEmptyData.swift */; };
+		C631064525B57ADA0067F72B /* SigninInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */; };
+		C631064625B57ADA0067F72B /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
+		C631064725B57ADA0067F72B /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
+		C631064825B57ADA0067F72B /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
+		C631064925B57ADA0067F72B /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
+		C631064A25B57ADA0067F72B /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* PortalViewController.swift */; };
+		C631064B25B57ADA0067F72B /* ApplicationSever.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67012BF2592003500830027 /* ApplicationSever.swift */; };
+		C631064C25B57ADA0067F72B /* ApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift */; };
+		C631064D25B57ADA0067F72B /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
+		C631064E25B57ADA0067F72B /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
+		C631064F25B57ADA0067F72B /* WebPloneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F5239AB816001B8D31 /* WebPloneRepository.swift */; };
+		C631065025B57ADA0067F72B /* GeneralFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F1239AB79A001B8D31 /* GeneralFileObject.swift */; };
+		C631065125B57ADA0067F72B /* PloneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419C238CCA7D00AC7315 /* PloneUser.swift */; };
+		C631065225B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A199223C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift */; };
+		C631065325B57ADA0067F72B /* PloneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F343238BDF0900657CDF /* PloneItem.swift */; };
+		C631065425B57ADA0067F72B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEDE23F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift */; };
+		C631065525B57ADA0067F72B /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
+		C631065625B57ADA0067F72B /* TogglePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */; };
+		C631065725B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E323D0C52B00FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift */; };
+		C631065825B57ADA0067F72B /* PloneSSOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */; };
+		C631065925B57ADA0067F72B /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46181032405050900D303F8 /* Keyboarder.swift */; };
+		C631065A25B57ADA0067F72B /* ErrorManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCBA23F310C6009699E5 /* ErrorManageable.swift */; };
+		C631065B25B57ADA0067F72B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453952923BAE21400136E6D /* LoadingViewController.swift */; };
+		C631065C25B57ADA0067F72B /* CleanButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */; };
+		C631065D25B57ADA0067F72B /* PloneFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FB238F749A001B8D31 /* PloneFile.swift */; };
+		C631065E25B57ADA0067F72B /* FileNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CD6D224162E2500A35808 /* FileNameProtocol.swift */; };
+		C631065F25B57ADA0067F72B /* GeneralTextObjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4B23E87D6D0050C851 /* GeneralTextObjectSection.swift */; };
+		C631066025B57ADA0067F72B /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BC9923F0FD13009699E5 /* WebCacheCleaner.swift */; };
+		C631066125B57ADA0067F72B /* GeneralTextObjectImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC5023E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift */; };
+		C631066225B57ADA0067F72B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454476423960669001B8D31 /* StringExtension.swift */; };
+		C631066325B57ADA0067F72B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487323A235B4001B8D31 /* Language.swift */; };
+		C631066425B57ADA0067F72B /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
+		C631066525B57ADA0067F72B /* NoInformationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */; };
+		C631066625B57ADA0067F72B /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
+		C631066725B57ADA0067F72B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		C631066825B57ADA0067F72B /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
+		C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
+		C631066A25B57ADA0067F72B /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
+		C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
+		C631066C25B57ADA0067F72B /* PloneUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */; };
+		C631066D25B57ADA0067F72B /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
+		C631066E25B57ADA0067F72B /* AlertEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCB523F31052009699E5 /* AlertEventInfo.swift */; };
+		C631066F25B57ADA0067F72B /* GeneralEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483B239CAD58001B8D31 /* GeneralEventViewController.swift */; };
+		C631067025B57ADA0067F72B /* ApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift */; };
+		C631067125B57ADA0067F72B /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486D23A20EF9001B8D31 /* LanguageSettingViewController.swift */; };
+		C631067225B57ADA0067F72B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
+		C631067325B57ADA0067F72B /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4823E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift */; };
+		C631067425B57ADA0067F72B /* GeneralFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544843239CAE04001B8D31 /* GeneralFileViewController.swift */; };
+		C631067525B57ADA0067F72B /* ServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417023D5525F00FB5EEC /* ServerType.swift */; };
+		C631067625B57ADA0067F72B /* PloneImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F9238F70DF001B8D31 /* PloneImage.swift */; };
+		C631067725B57ADA0067F72B /* ContentListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D123CEED6100FB5EEC /* ContentListSection.swift */; };
+		C631067825B57ADA0067F72B /* GeneralDetailPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */; };
+		C631067925B57ADA0067F72B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
+		C631067A25B57ADA0067F72B /* PloneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F7238F706C001B8D31 /* PloneEvent.swift */; };
+		C631067B25B57ADA0067F72B /* GeneralLinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F3239AB7B6001B8D31 /* GeneralLinkObject.swift */; };
+		C631067C25B57ADA0067F72B /* LanguageSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487023A218B0001B8D31 /* LanguageSettingTableViewCell.swift */; };
+		C631067D25B57ADA0067F72B /* LanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487E23A39956001B8D31 /* LanguageCellViewModel.swift */; };
+		C631067E25B57ADA0067F72B /* GeneralTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EF239AB75D001B8D31 /* GeneralTextObject.swift */; };
+		C631067F25B57ADA0067F72B /* GeneralLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483F239CADE4001B8D31 /* GeneralLinkViewController.swift */; };
+		C631068025B57ADA0067F72B /* PloneItemsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */; };
+		C631068125B57ADA0067F72B /* PloneLRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A198A23C48BF000B35976 /* PloneLRF.swift */; };
+		C631068225B57ADA0067F72B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453953523BAE5A200136E6D /* UIImageExtension.swift */; };
+		C631068325B57ADA0067F72B /* GeneralFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544853239DF117001B8D31 /* GeneralFolderViewController.swift */; };
+		C631068425B57ADA0067F72B /* GeneralNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544837239CAD0A001B8D31 /* GeneralNewsViewController.swift */; };
+		C631068525B57ADA0067F72B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FECB23F641CF00BFDA3B /* HomeViewController.swift */; };
+		C631068625B57ADA0067F72B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C2C4023BCD60C00A1E769 /* Utilities.swift */; };
+		C631068725B57ADA0067F72B /* PloneDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446EF238F5A70001B8D31 /* PloneDocument.swift */; };
+		C631068825B57ADA0067F72B /* GeneralCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7623E87DD10050C851 /* GeneralCollectionTableViewCell.swift */; };
+		C631068925B57ADA0067F72B /* GeneralLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454483D239CAD72001B8D31 /* GeneralLinkViewModel.swift */; };
+		C631068A25B57ADA0067F72B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FED923F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift */; };
+		C631068B25B57ADA0067F72B /* ContentListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740F923D1415100FB5EEC /* ContentListSectionItem.swift */; };
+		C631068C25B57ADA0067F72B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
+		C631068D25B57ADA0067F72B /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
+		C631068E25B57ADA0067F72B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487523A32F92001B8D31 /* LanguageManager.swift */; };
+		C631068F25B57ADA0067F72B /* PortalApplicationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27DE259049D700CFF8A8 /* PortalApplicationsAPI.swift */; };
+		C631069025B57ADA0067F72B /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
+		C631069125B57ADA0067F72B /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
+		C631069225B57ADA0067F72B /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
+		C631069325B57ADA0067F72B /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
+		C631069425B57ADA0067F72B /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
+		C631069525B57ADA0067F72B /* GeneralEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */; };
+		C631069625B57ADA0067F72B /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
+		C631069825B57ADA0067F72B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C63105FF25B57ADA0067F72B /* SwiftPackageProductDependency */; };
+		C631069925B57ADA0067F72B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C63105FD25B57ADA0067F72B /* SwiftPackageProductDependency */; };
+		C631069C25B57ADA0067F72B /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
+		C631069D25B57ADA0067F72B /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
+		C631069E25B57ADA0067F72B /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
+		C631069F25B57ADA0067F72B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
+		C63106A025B57ADA0067F72B /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
+		C63106A125B57ADA0067F72B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
+		C63106A225B57ADA0067F72B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
 		C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
@@ -31,10 +194,10 @@
 		C67012E22594300C00830027 /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
-		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
-		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
-		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
-		C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* DolphinHTTP */; };
+		C6E217042578EE67000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */; };
+		C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */; };
+		C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */; };
+		C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */; };
 		F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEB523F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEBA23F5181600BFDA3B /* GeneralItemTopTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */; };
@@ -323,12 +486,18 @@
 
 /* Begin PBXFileReference section */
 		11DD8E7E8B24C258A4E26EF7 /* Pods-KKdayPortal-Sit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.release.xcconfig"; sourceTree = "<group>"; };
+		2A172D34AB34990C965CC055 /* Pods-KKdayPortal-Open.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Open.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Open/Pods-KKdayPortal-Open.debug.xcconfig"; sourceTree = "<group>"; };
 		3A270F6966498D4554C4517E /* Pods-KKdayPortal-Production.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.release.xcconfig"; sourceTree = "<group>"; };
-		71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Sit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F0A28E6A4F10154583996DC /* Pods-KKdayPortal-Open.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Open.release.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Open/Pods-KKdayPortal-Open.release.xcconfig"; sourceTree = "<group>"; };
 		8C73ED13DE5C2C3FA9E7C052 /* Pods-KKdayPortal-Sit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Sit.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Sit/Pods-KKdayPortal-Sit.debug.xcconfig"; sourceTree = "<group>"; };
+		90557558CFBDD8E1B7413D51 /* Pods_KKdayPortal_Open.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Open.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		907AF64DA9BD7941A92A15AF /* Pods_KKdayPortal_Sit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Sit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.debug.xcconfig"; sourceTree = "<group>"; };
 		C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceManager.swift; sourceTree = "<group>"; };
+		C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewController.swift; sourceTree = "<group>"; };
+		C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewModel.swift; sourceTree = "<group>"; };
+		C63106A725B57ADA0067F72B /* KKdayPortal-Open.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KKdayPortal-Open.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -496,12 +665,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C631069725B57ADA0067F72B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C631069825B57ADA0067F72B /* BuildFile in Frameworks */,
+				C631069925B57ADA0067F72B /* BuildFile in Frameworks */,
+				C2402CA2048626ABA3021939 /* Pods_KKdayPortal_Open.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F44E8CD723B88AA30032C6BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */,
-				C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */,
+				C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */,
+				C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */,
 				163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,9 +689,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */,
-				C6E217042578EE67000AAAFA /* SnapKit in Frameworks */,
+				C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */,
+				C6E217042578EE67000AAAFA /* BuildFile in Frameworks */,
 				B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */,
+				869715DDA37955E1BCDF143C /* Pods_KKdayPortal_Sit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +703,8 @@
 			isa = PBXGroup;
 			children = (
 				72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */,
-				71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */,
+				90557558CFBDD8E1B7413D51 /* Pods_KKdayPortal_Open.framework */,
+				907AF64DA9BD7941A92A15AF /* Pods_KKdayPortal_Sit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -535,8 +716,35 @@
 				11DD8E7E8B24C258A4E26EF7 /* Pods-KKdayPortal-Sit.release.xcconfig */,
 				ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */,
 				3A270F6966498D4554C4517E /* Pods-KKdayPortal-Production.release.xcconfig */,
+				2A172D34AB34990C965CC055 /* Pods-KKdayPortal-Open.debug.xcconfig */,
+				7F0A28E6A4F10154583996DC /* Pods-KKdayPortal-Open.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C63105ED25B56A290067F72B /* OpenApplicationsEntryPage */ = {
+			isa = PBXGroup;
+			children = (
+				C63105EE25B56A660067F72B /* ViewModel */,
+				C63105EF25B56A8F0067F72B /* View */,
+			);
+			path = OpenApplicationsEntryPage;
+			sourceTree = "<group>";
+		};
+		C63105EE25B56A660067F72B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C63105EF25B56A8F0067F72B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C63BC245256CA87400D5C46A /* UIView */ = {
@@ -1604,6 +1812,7 @@
 			children = (
 				F4B3F2CA23862B3000657CDF /* KKdayPortal.app */,
 				F44E8CE323B88AA30032C6BE /* KKdayPortal.app */,
+				C63106A725B57ADA0067F72B /* KKdayPortal-Open.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1650,6 +1859,7 @@
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				F45448A723A9F951001B8D31 /* ApplicationsEntryPage */,
+				C63105ED25B56A290067F72B /* OpenApplicationsEntryPage */,
 				C63D2776257F70A900CFF8A8 /* ApplicationPage */,
 				F426FEC923F63D9100BFDA3B /* HomePage */,
 				F4B3F2FE2386371100657CDF /* PortalPage */,
@@ -1814,6 +2024,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C63105FC25B57ADA0067F72B /* KKdayPortal-Open */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C63106A425B57ADA0067F72B /* Build configuration list for PBXNativeTarget "KKdayPortal-Open" */;
+			buildPhases = (
+				C631060125B57ADA0067F72B /* [CP] Check Pods Manifest.lock */,
+				C631060225B57ADA0067F72B /* Sources */,
+				C631069725B57ADA0067F72B /* Frameworks */,
+				C631069B25B57ADA0067F72B /* Resources */,
+				C63106A325B57ADA0067F72B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KKdayPortal-Open";
+			packageProductDependencies = (
+				C63105FD25B57ADA0067F72B /* SwiftPackageProductDependency */,
+				C63105FF25B57ADA0067F72B /* SwiftPackageProductDependency */,
+			);
+			productName = KKdayPortal;
+			productReference = C63106A725B57ADA0067F72B /* KKdayPortal-Open.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F44E8C6F23B88AA30032C6BE /* KKdayPortal-Production */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F44E8CE023B88AA30032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Production" */;
@@ -1830,8 +2063,8 @@
 			);
 			name = "KKdayPortal-Production";
 			packageProductDependencies = (
-				C6E2170C2578EF4C000AAAFA /* SnapKit */,
-				C6E2170E2578EF51000AAAFA /* DolphinHTTP */,
+				C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */,
+				C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */,
 			);
 			productName = KKdayPortal;
 			productReference = F44E8CE323B88AA30032C6BE /* KKdayPortal.app */;
@@ -1853,8 +2086,8 @@
 			);
 			name = "KKdayPortal-Sit";
 			packageProductDependencies = (
-				C6E217032578EE67000AAAFA /* SnapKit */,
-				C6E217082578EEB5000AAAFA /* DolphinHTTP */,
+				C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */,
+				C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */,
 			);
 			productName = KKdayPortal;
 			productReference = F4B3F2CA23862B3000657CDF /* KKdayPortal.app */;
@@ -1888,13 +2121,14 @@
 			);
 			mainGroup = F4B3F2C123862B3000657CDF;
 			packageReferences = (
-				C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */,
-				C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */,
+				C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */,
+				C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = F4B3F2CB23862B3000657CDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				C63105FC25B57ADA0067F72B /* KKdayPortal-Open */,
 				F4B3F2C923862B3000657CDF /* KKdayPortal-Sit */,
 				F44E8C6F23B88AA30032C6BE /* KKdayPortal-Production */,
 			);
@@ -1902,6 +2136,20 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C631069B25B57ADA0067F72B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C631069C25B57ADA0067F72B /* ringtone.wav in Resources */,
+				C631069D25B57ADA0067F72B /* Gif in Resources */,
+				C631069E25B57ADA0067F72B /* ConfigModel.json in Resources */,
+				C631069F25B57ADA0067F72B /* LaunchScreen.storyboard in Resources */,
+				C63106A025B57ADA0067F72B /* credentials.plist in Resources */,
+				C63106A125B57ADA0067F72B /* Localizable.strings in Resources */,
+				C63106A225B57ADA0067F72B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F44E8CD923B88AA30032C6BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2011,9 +2259,203 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C631060125B57ADA0067F72B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKdayPortal-Open-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C63106A325B57ADA0067F72B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Open/Pods-KKdayPortal-Open-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Open/Pods-KKdayPortal-Open-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Open/Pods-KKdayPortal-Open-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C631060225B57ADA0067F72B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C631060325B57ADA0067F72B /* TestingViewModel.swift in Sources */,
+				C631060425B57ADA0067F72B /* PloneImageObject.swift in Sources */,
+				C631060525B57ADA0067F72B /* ConfigModel.swift in Sources */,
+				C631060625B57ADA0067F72B /* FileAdministrator.swift in Sources */,
+				C631060725B57ADA0067F72B /* GeneralUser.swift in Sources */,
+				C631060825B57ADA0067F72B /* GeneralTextObjectSectionItem.swift in Sources */,
+				C631060925B57ADA0067F72B /* DateFormatterExtension.swift in Sources */,
+				C631060A25B57ADA0067F72B /* GeneralItemDescriptionTextView.swift in Sources */,
+				C631060B25B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
+				C631060C25B57ADA0067F72B /* GeneralTextObjectNormalTableViewCell.swift in Sources */,
+				C631060D25B57ADA0067F72B /* LocaleExtension.swift in Sources */,
+				C631060E25B57ADA0067F72B /* LoadingViewModel.swift in Sources */,
+				C631060F25B57ADA0067F72B /* PloneSiteItem.swift in Sources */,
+				C631061025B57ADA0067F72B /* PloneFileObject.swift in Sources */,
+				C631061125B57ADA0067F72B /* UIState.swift in Sources */,
+				C631061225B57ADA0067F72B /* LoadingManager.swift in Sources */,
+				C631061325B57ADA0067F72B /* UITextFieldExtension.swift in Sources */,
+				C631061425B57ADA0067F72B /* StorageManager.swift in Sources */,
+				C631061525B57ADA0067F72B /* GeneralCollectionViewController.swift in Sources */,
+				C631061625B57ADA0067F72B /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
+				C631061725B57ADA0067F72B /* GeneralDocumentViewController.swift in Sources */,
+				C631061825B57ADA0067F72B /* PloneEnv.swift in Sources */,
+				C631061925B57ADA0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
+				C631061A25B57ADA0067F72B /* GeneralImageObject.swift in Sources */,
+				C631061B25B57ADA0067F72B /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
+				C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */,
+				C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */,
+				C631061E25B57ADA0067F72B /* FileDownloader.swift in Sources */,
+				C631061F25B57ADA0067F72B /* PhoneNumberView.swift in Sources */,
+				C631062025B57ADA0067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
+				C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */,
+				C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */,
+				C631062325B57ADA0067F72B /* PloneNews.swift in Sources */,
+				C631062425B57ADA0067F72B /* TestingTableViewCell.swift in Sources */,
+				C631062525B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
+				C631062625B57ADA0067F72B /* PloneResourceManager.swift in Sources */,
+				C631062725B57ADA0067F72B /* Signiner.swift in Sources */,
+				C631062825B57ADA0067F72B /* ConfigManager.swift in Sources */,
+				C631062925B57ADA0067F72B /* AppDelegate.swift in Sources */,
+				C631062A25B57ADA0067F72B /* SceneDelegate.swift in Sources */,
+				C631062B25B57ADA0067F72B /* GeneralTextObjectConverter.swift in Sources */,
+				C631062C25B57ADA0067F72B /* GeneralImageViewModel.swift in Sources */,
+				C631062D25B57ADA0067F72B /* GeneralFolderTableViewCell.swift in Sources */,
+				C631062E25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
+				C631062F25B57ADA0067F72B /* PloneCollection.swift in Sources */,
+				C631063025B57ADA0067F72B /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
+				C631063125B57ADA0067F72B /* TestingSection.swift in Sources */,
+				C631063225B57ADA0067F72B /* GeneralDocumentViewModel.swift in Sources */,
+				C631063325B57ADA0067F72B /* PhoneViewController.swift in Sources */,
+				C631063425B57ADA0067F72B /* UIKitExtension.swift in Sources */,
+				C631063525B57ADA0067F72B /* IntroductionViewController.swift in Sources */,
+				C631063625B57ADA0067F72B /* GeneralCollectionViewModel.swift in Sources */,
+				C631063725B57ADA0067F72B /* AccountOperatingError.swift in Sources */,
+				C631063825B57ADA0067F72B /* Region.swift in Sources */,
+				C631063925B57ADA0067F72B /* LanguageSection.swift in Sources */,
+				C631063A25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */,
+				C631063B25B57ADA0067F72B /* GeneralItemTopTitleLabel.swift in Sources */,
+				C631063C25B57ADA0067F72B /* WebAPIManager.swift in Sources */,
+				C631063D25B57ADA0067F72B /* LoginViewModel.swift in Sources */,
+				C631063E25B57ADA0067F72B /* SigninInfoViewController.swift in Sources */,
+				C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */,
+				C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */,
+				C631064125B57ADA0067F72B /* PloneAuthToken.swift in Sources */,
+				C631064225B57ADA0067F72B /* TestingViewController.swift in Sources */,
+				C631064325B57ADA0067F72B /* GeneralItem.swift in Sources */,
+				C631064425B57ADA0067F72B /* PloneEmptyData.swift in Sources */,
+				C631064525B57ADA0067F72B /* SigninInfoViewModel.swift in Sources */,
+				C631064625B57ADA0067F72B /* GeneralList.swift in Sources */,
+				C631064725B57ADA0067F72B /* NotificationNameExtension.swift in Sources */,
+				C631064825B57ADA0067F72B /* TwilioServiceViewController.swift in Sources */,
+				C631064925B57ADA0067F72B /* GeneralImageViewController.swift in Sources */,
+				C631064A25B57ADA0067F72B /* PortalViewController.swift in Sources */,
+				C631064B25B57ADA0067F72B /* ApplicationSever.swift in Sources */,
+				C631064C25B57ADA0067F72B /* ApplicationsEntryViewController.swift in Sources */,
+				C631064D25B57ADA0067F72B /* GeneralFileViewModel.swift in Sources */,
+				C631064E25B57ADA0067F72B /* ApplicationsContentViewModel.swift in Sources */,
+				C631064F25B57ADA0067F72B /* WebPloneRepository.swift in Sources */,
+				C631065025B57ADA0067F72B /* GeneralFileObject.swift in Sources */,
+				C631065125B57ADA0067F72B /* PloneUser.swift in Sources */,
+				C631065225B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
+				C631065325B57ADA0067F72B /* PloneItem.swift in Sources */,
+				C631065425B57ADA0067F72B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
+				C631065525B57ADA0067F72B /* TestingTableViewCellViewModel.swift in Sources */,
+				C631065625B57ADA0067F72B /* TogglePasswordTextField.swift in Sources */,
+				C631065725B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
+				C631065825B57ADA0067F72B /* PloneSSOViewController.swift in Sources */,
+				C631065925B57ADA0067F72B /* Keyboarder.swift in Sources */,
+				C631065A25B57ADA0067F72B /* ErrorManageable.swift in Sources */,
+				C631065B25B57ADA0067F72B /* LoadingViewController.swift in Sources */,
+				C631065C25B57ADA0067F72B /* CleanButtonTextField.swift in Sources */,
+				C631065D25B57ADA0067F72B /* PloneFile.swift in Sources */,
+				C631065E25B57ADA0067F72B /* FileNameProtocol.swift in Sources */,
+				C631065F25B57ADA0067F72B /* GeneralTextObjectSection.swift in Sources */,
+				C631066025B57ADA0067F72B /* WebCacheCleaner.swift in Sources */,
+				C631066125B57ADA0067F72B /* GeneralTextObjectImageTableViewCell.swift in Sources */,
+				C631066225B57ADA0067F72B /* StringExtension.swift in Sources */,
+				C631066325B57ADA0067F72B /* Language.swift in Sources */,
+				C631066425B57ADA0067F72B /* ItemConverter.swift in Sources */,
+				C631066525B57ADA0067F72B /* NoInformationLabel.swift in Sources */,
+				C631066625B57ADA0067F72B /* WKNavigationTypeExtension.swift in Sources */,
+				C631066725B57ADA0067F72B /* LoginViewController.swift in Sources */,
+				C631066825B57ADA0067F72B /* Localizable.swift in Sources */,
+				C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */,
+				C631066A25B57ADA0067F72B /* PhoneView.swift in Sources */,
+				C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */,
+				C631066C25B57ADA0067F72B /* PloneUserAPI.swift in Sources */,
+				C631066D25B57ADA0067F72B /* GeneralEventObject.swift in Sources */,
+				C631066E25B57ADA0067F72B /* AlertEventInfo.swift in Sources */,
+				C631066F25B57ADA0067F72B /* GeneralEventViewController.swift in Sources */,
+				C631067025B57ADA0067F72B /* ApplicationsEntryViewModel.swift in Sources */,
+				C631067125B57ADA0067F72B /* LanguageSettingViewController.swift in Sources */,
+				C631067225B57ADA0067F72B /* SettingViewController.swift in Sources */,
+				C631067325B57ADA0067F72B /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
+				C631067425B57ADA0067F72B /* GeneralFileViewController.swift in Sources */,
+				C631067525B57ADA0067F72B /* ServerType.swift in Sources */,
+				C631067625B57ADA0067F72B /* PloneImage.swift in Sources */,
+				C631067725B57ADA0067F72B /* ContentListSection.swift in Sources */,
+				C631067825B57ADA0067F72B /* GeneralDetailPageCoordinator.swift in Sources */,
+				C631067925B57ADA0067F72B /* CustomWKWebView.swift in Sources */,
+				C631067A25B57ADA0067F72B /* PloneEvent.swift in Sources */,
+				C631067B25B57ADA0067F72B /* GeneralLinkObject.swift in Sources */,
+				C631067C25B57ADA0067F72B /* LanguageSettingTableViewCell.swift in Sources */,
+				C631067D25B57ADA0067F72B /* LanguageCellViewModel.swift in Sources */,
+				C631067E25B57ADA0067F72B /* GeneralTextObject.swift in Sources */,
+				C631067F25B57ADA0067F72B /* GeneralLinkViewController.swift in Sources */,
+				C631068025B57ADA0067F72B /* PloneItemsAPI.swift in Sources */,
+				C631068125B57ADA0067F72B /* PloneLRF.swift in Sources */,
+				C631068225B57ADA0067F72B /* UIImageExtension.swift in Sources */,
+				C631068325B57ADA0067F72B /* GeneralFolderViewController.swift in Sources */,
+				C631068425B57ADA0067F72B /* GeneralNewsViewController.swift in Sources */,
+				C631068525B57ADA0067F72B /* HomeViewController.swift in Sources */,
+				C631068625B57ADA0067F72B /* Utilities.swift in Sources */,
+				C631068725B57ADA0067F72B /* PloneDocument.swift in Sources */,
+				C631068825B57ADA0067F72B /* GeneralCollectionTableViewCell.swift in Sources */,
+				C631068925B57ADA0067F72B /* GeneralLinkViewModel.swift in Sources */,
+				C631068A25B57ADA0067F72B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
+				C631068B25B57ADA0067F72B /* ContentListSectionItem.swift in Sources */,
+				C631068C25B57ADA0067F72B /* AboutViewController.swift in Sources */,
+				C631068D25B57ADA0067F72B /* PloneTextObject.swift in Sources */,
+				C631068E25B57ADA0067F72B /* LanguageManager.swift in Sources */,
+				C631068F25B57ADA0067F72B /* PortalApplicationsAPI.swift in Sources */,
+				C631069025B57ADA0067F72B /* PloneResourceType.swift in Sources */,
+				C631069125B57ADA0067F72B /* NetStatusManager.swift in Sources */,
+				C631069225B57ADA0067F72B /* GeneralFolderViewModel.swift in Sources */,
+				C631069325B57ADA0067F72B /* ApplicationsContentViewController.swift in Sources */,
+				C631069425B57ADA0067F72B /* PloneFolder.swift in Sources */,
+				C631069525B57ADA0067F72B /* GeneralEventViewModel.swift in Sources */,
+				C631069625B57ADA0067F72B /* TwilioServiceManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F44E8C7123B88AA30032C6BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2040,12 +2482,14 @@
 				F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
 				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */,
+				C63105F925B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417B23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
+				C63105F225B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
 				F454DF1F240F901F00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
 				F45740D323CEED6100FB5EEC /* ContentListSection.swift in Sources */,
@@ -2193,12 +2637,14 @@
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
 				F4D06877255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
+				C63105F825B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
 				F4D8DE1023EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
+				C63105F125B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
 				F454DF1E240F8C6A00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
@@ -2348,6 +2794,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C63106A525B57ADA0067F72B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A172D34AB34990C965CC055 /* Pods-KKdayPortal-Open.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Open";
+				CODE_SIGN_ENTITLEMENTS = KKdayPortal.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = open;
+				DEVELOPMENT_TEAM = Q26KHN883C;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D OPEN";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "KKdayPortal.KKdayPortal-dev";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C63106A625B57ADA0067F72B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F0A28E6A4F10154583996DC /* Pods-KKdayPortal-Open.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Open";
+				CODE_SIGN_ENTITLEMENTS = KKdayPortal.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = open;
+				DEVELOPMENT_TEAM = Q26KHN883C;
+				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D OPEN";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weitsungCheng.KKdayPortal.KKdayPortal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "KKPortal-Production";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		F44E8CE123B88AA30032C6BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */;
@@ -2356,7 +2852,7 @@
 				CODE_SIGN_ENTITLEMENTS = KKdayPortal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q26KHN883C;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2381,7 +2877,7 @@
 				CODE_SIGN_ENTITLEMENTS = KKdayPortal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q26KHN883C;
 				INFOPLIST_FILE = "KKdayPortal/InfoPlist/KKdayPortal-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2570,6 +3066,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C63106A425B57ADA0067F72B /* Build configuration list for PBXNativeTarget "KKdayPortal-Open" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C63106A525B57ADA0067F72B /* Debug */,
+				C63106A625B57ADA0067F72B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F44E8CE023B88AA30032C6BE /* Build configuration list for PBXNativeTarget "KKdayPortal-Production" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2600,7 +3105,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		C63105FE25B57ADA0067F72B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
 			requirement = {
@@ -2608,7 +3113,23 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */ = {
+		C631060025B57ADA0067F72B /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:WeiTsungCheng/DolphinHTTP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:WeiTsungCheng/DolphinHTTP.git";
 			requirement = {
@@ -2619,24 +3140,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C6E217032578EE67000AAAFA /* SnapKit */ = {
+		C63105FD25B57ADA0067F72B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C63105FE25B57ADA0067F72B /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
-		C6E217082578EEB5000AAAFA /* DolphinHTTP */ = {
+		C63105FF25B57ADA0067F72B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
+			package = C631060025B57ADA0067F72B /* RemoteSwiftPackageReference */;
 			productName = DolphinHTTP;
 		};
-		C6E2170C2578EF4C000AAAFA /* SnapKit */ = {
+		C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
-		C6E2170E2578EF51000AAAFA /* DolphinHTTP */ = {
+		C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
+			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
+			productName = DolphinHTTP;
+		};
+		C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
+			productName = SnapKit;
+		};
+		C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
 			productName = DolphinHTTP;
 		};
 /* End XCSwiftPackageProductDependency section */

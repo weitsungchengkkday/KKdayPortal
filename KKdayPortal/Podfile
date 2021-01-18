@@ -20,6 +20,11 @@ def shared
   
 end
 
+target 'KKdayPortal-Open' do
+  project 'KKdayPortal.xcodeproj'
+  shared
+end
+
 
 target 'KKdayPortal-Sit' do
   project 'KKdayPortal.xcodeproj'

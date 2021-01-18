@@ -1,15 +1,15 @@
 //
-//  ApplicationsEntryViewController.swift
+//  OpenApplicationsEntryViewController.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2019/12/18.
-//  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
+//  Created by KKday on 2021/1/18.
+//  Copyright © 2021 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-final class ApplicationsEntryViewController: UIViewController {
+class OpenApplicationsEntryViewController: UIViewController {
     
     // 🏞 UI element
     lazy var applicationsStackView: UIStackView = {
@@ -21,16 +21,6 @@ final class ApplicationsEntryViewController: UIViewController {
         return stv
     }()
     
-    lazy var bpmButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("BPM", for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        btn.setTitleColor(.white, for: .normal)
-        btn.layer.cornerRadius = 8
-        return btn
-    }()
-    
     lazy var twilioButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Call Center", for: .normal)
@@ -40,7 +30,7 @@ final class ApplicationsEntryViewController: UIViewController {
         return btn
     }()
     
-    private let viewModel = ApplicationsEntryViewModel()
+    private let viewModel = OpenApplicationsEntryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,21 +42,15 @@ final class ApplicationsEntryViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Service List"
+        self.title = "Service"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         view.addSubview(applicationsStackView)
-        applicationsStackView.addArrangedSubview(bpmButton)
         applicationsStackView.addArrangedSubview(twilioButton)
         
         applicationsStackView.snp.makeConstraints { maker in
             maker.width.equalToSuperview()
             maker.centerX.centerY.equalToSuperview()
-        }
-        
-        bpmButton.snp.makeConstraints { maker in
-            maker.height.equalTo(44)
-            maker.width.equalToSuperview().offset(-60)
         }
         
         twilioButton.snp.makeConstraints { maker in
@@ -77,27 +61,9 @@ final class ApplicationsEntryViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        bpmButton.addTarget(self, action: #selector(goBPM), for: .touchUpInside)
         twilioButton.addTarget(self, action: #selector(goTwilio), for: .touchUpInside)
     }
-    
-    @objc private func goBPM() {
-        
-        guard let bpm: ApplicationSever = StorageManager.shared.loadObject(for: .bpmServerType) else {
-            print("❌ Can't find BPM server URL in Storage Manager")
-            return
-        }
-        
-        guard let bpmURL = URL(string: bpm.server_url + "/WebAgenda/") else {
-            print("❌ Invalid BPM server URL")
-            return
-        }
-        
-        let vm = ApplicationsContentViewModel(source: bpmURL)
-        let presentVC = ApplicationsContentViewController(viewModel: vm)
-        
-        present(presentVC, animated: true, completion: nil)
-    }
+
     
     @objc private func goTwilio() {
         let presentVC = TwilioServiceManager.shared.twiVC
@@ -114,7 +80,9 @@ final class ApplicationsEntryViewController: UIViewController {
         }
     }
     
-    private func updateApplicationEntry(viewModel: ApplicationsEntryViewModel) {
+    private func updateApplicationEntry(viewModel: OpenApplicationsEntryViewModel) {
   
     }
+    
+
 }

@@ -29,7 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
         initializePushKit()
         
-#if SIT
+#if OPEN
+    print("0️⃣ open")
+#elseif SIT
     print("1️⃣ sit")
 #elseif PRODUCTION
     print("2️⃣ production")

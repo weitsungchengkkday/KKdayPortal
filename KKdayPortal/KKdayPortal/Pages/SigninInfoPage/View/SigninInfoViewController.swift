@@ -197,18 +197,20 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         
         #if DEBUG
         
-            #if SIT
-            ploneURLTextField.text = "KKPlone"
-           // ploneURLTextField.text = "sit.eip.kkday.net"
-//            accountTextField.text = "forwindsun"
-//            passwordTextFiled.text = "1234"
+            #if OPEN
+            ploneURLTextField.text = "sit.eip.kkday.net"
+            accountTextField.text = "david"
+            passwordTextFiled.text = "123"
             setComfirmButtonState()
-                
-            #elseif PRODUCTION
-            ploneURLTextField.text = "eip.kkday.net"
-            accountTextField.text = "will"
-            passwordTextFiled.text = "12345"
+
+            #elseif SIT
+            ploneURLTextField.text = "KKPlone"
+            setComfirmButtonState()
             
+            #elseif PRODUCTION
+            ploneURLTextField.text = "KKPlone"
+            setComfirmButtonState()
+
             #endif
         
         #endif
