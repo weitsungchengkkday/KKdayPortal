@@ -25,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Twilio Call Service
-        self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
-        initializePushKit()
+       
         
 #if OPEN
     print("0️⃣ open")
@@ -46,6 +44,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #else
     print("❗️configuration not exist")
 #endif
+        
+        
+        
+#if OPEN
+        
+        
+#elseif SIT
+        // Twilio Call Service
+        self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
+        initializePushKit()
+#elseif PRODUCTION
+        // Twilio Call Service
+        self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
+        initializePushKit()
+#endif
+        
         
         // Get Plone andc Odoo Service Host
         ConfigManager.shared.setup()

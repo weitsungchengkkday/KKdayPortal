@@ -9,14 +9,10 @@
 /* Begin PBXBuildFile section */
 		163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72908919075E0605E13B92ED /* Pods_KKdayPortal_Production.framework */; };
 		869715DDA37955E1BCDF143C /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907AF64DA9BD7941A92A15AF /* Pods_KKdayPortal_Sit.framework */; };
-		B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A98442B7DBF77182DF30EF /* Pods_KKdayPortal_Sit.framework */; };
+		B0368E3A0D47D5D2602B56D6 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		C2402CA2048626ABA3021939 /* Pods_KKdayPortal_Open.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90557558CFBDD8E1B7413D51 /* Pods_KKdayPortal_Open.framework */; };
 		C60BAF81259C53730074B4B5 /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
 		C60BAF82259C53730074B4B5 /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
-		C63105F125B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
-		C63105F225B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
-		C63105F825B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
-		C63105F925B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
 		C631060325B57ADA0067F72B /* TestingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417E23D58F4E00FB5EEC /* TestingViewModel.swift */; };
 		C631060425B57ADA0067F72B /* PloneImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F5238F6B04001B8D31 /* PloneImageObject.swift */; };
 		C631060525B57ADA0067F72B /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457416623D5463E00FB5EEC /* ConfigModel.swift */; };
@@ -165,8 +161,8 @@
 		C631069425B57ADA0067F72B /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
 		C631069525B57ADA0067F72B /* GeneralEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */; };
 		C631069625B57ADA0067F72B /* TwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */; };
-		C631069825B57ADA0067F72B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C63105FF25B57ADA0067F72B /* SwiftPackageProductDependency */; };
-		C631069925B57ADA0067F72B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C63105FD25B57ADA0067F72B /* SwiftPackageProductDependency */; };
+		C631069825B57ADA0067F72B /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C63105FF25B57ADA0067F72B /* DolphinHTTP */; };
+		C631069925B57ADA0067F72B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C63105FD25B57ADA0067F72B /* SnapKit */; };
 		C631069C25B57ADA0067F72B /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
 		C631069D25B57ADA0067F72B /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
 		C631069E25B57ADA0067F72B /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
@@ -174,6 +170,9 @@
 		C63106A025B57ADA0067F72B /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		C63106A125B57ADA0067F72B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
 		C63106A225B57ADA0067F72B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
+		C63106E025B593F00067F72B /* OpenTwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63106DF25B593F00067F72B /* OpenTwilioServiceManager.swift */; };
+		C63106F425B594B00067F72B /* OpenTwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63106F325B594B00067F72B /* OpenTwilioServiceViewController.swift */; };
+		C631070425B59CDC0067F72B /* OpenTwilioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631070325B59CDC0067F72B /* OpenTwilioSettingViewController.swift */; };
 		C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
@@ -194,10 +193,10 @@
 		C67012E22594300C00830027 /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
-		C6E217042578EE67000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */; };
-		C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */; };
-		C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */; };
-		C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */; };
+		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
+		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
+		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
+		C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170E2578EF51000AAAFA /* DolphinHTTP */; };
 		F426FEB423F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEB523F4F45B00BFDA3B /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */; };
 		F426FEBA23F5181600BFDA3B /* GeneralItemTopTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */; };
@@ -498,6 +497,9 @@
 		C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewController.swift; sourceTree = "<group>"; };
 		C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewModel.swift; sourceTree = "<group>"; };
 		C63106A725B57ADA0067F72B /* KKdayPortal-Open.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KKdayPortal-Open.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63106DF25B593F00067F72B /* OpenTwilioServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioServiceManager.swift; sourceTree = "<group>"; };
+		C63106F325B594B00067F72B /* OpenTwilioServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioServiceViewController.swift; sourceTree = "<group>"; };
+		C631070325B59CDC0067F72B /* OpenTwilioSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioSettingViewController.swift; sourceTree = "<group>"; };
 		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -669,8 +671,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C631069825B57ADA0067F72B /* BuildFile in Frameworks */,
-				C631069925B57ADA0067F72B /* BuildFile in Frameworks */,
+				C631069825B57ADA0067F72B /* DolphinHTTP in Frameworks */,
+				C631069925B57ADA0067F72B /* SnapKit in Frameworks */,
 				C2402CA2048626ABA3021939 /* Pods_KKdayPortal_Open.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,8 +681,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E2170F2578EF51000AAAFA /* BuildFile in Frameworks */,
-				C6E2170D2578EF4C000AAAFA /* BuildFile in Frameworks */,
+				C6E2170F2578EF51000AAAFA /* DolphinHTTP in Frameworks */,
+				C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */,
 				163D3555BDD04C02572B3E22 /* Pods_KKdayPortal_Production.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,9 +691,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E217092578EEB5000AAAFA /* BuildFile in Frameworks */,
-				C6E217042578EE67000AAAFA /* BuildFile in Frameworks */,
-				B0368E3A0D47D5D2602B56D6 /* Pods_KKdayPortal_Sit.framework in Frameworks */,
+				C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */,
+				C6E217042578EE67000AAAFA /* SnapKit in Frameworks */,
+				B0368E3A0D47D5D2602B56D6 /* (null) in Frameworks */,
 				869715DDA37955E1BCDF143C /* Pods_KKdayPortal_Sit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +749,48 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C63106DA25B590740067F72B /* OpenApplicationPage */ = {
+			isa = PBXGroup;
+			children = (
+				C63106FB25B596C10067F72B /* OpenTwilioSettingPage */,
+				C63106DB25B590E40067F72B /* OpenTwilioServicePage */,
+			);
+			path = OpenApplicationPage;
+			sourceTree = "<group>";
+		};
+		C63106DB25B590E40067F72B /* OpenTwilioServicePage */ = {
+			isa = PBXGroup;
+			children = (
+				C63106DF25B593F00067F72B /* OpenTwilioServiceManager.swift */,
+				C63106F225B594790067F72B /* View */,
+			);
+			path = OpenTwilioServicePage;
+			sourceTree = "<group>";
+		};
+		C63106F225B594790067F72B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C63106F325B594B00067F72B /* OpenTwilioServiceViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C63106FB25B596C10067F72B /* OpenTwilioSettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				C63106FF25B59B730067F72B /* View */,
+			);
+			path = OpenTwilioSettingPage;
+			sourceTree = "<group>";
+		};
+		C63106FF25B59B730067F72B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C631070325B59CDC0067F72B /* OpenTwilioSettingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C63BC245256CA87400D5C46A /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,7 +815,6 @@
 			children = (
 				C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */,
 				C63D277A257F71B200CFF8A8 /* View */,
-				C63D277B257F720F00CFF8A8 /* ViewModel */,
 			);
 			path = TwilioServicePage;
 			sourceTree = "<group>";
@@ -782,13 +825,6 @@
 				C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C63D277B257F720F00CFF8A8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C63D279725830E9200CFF8A8 /* ringtone */ = {
@@ -1859,8 +1895,9 @@
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				F45448A723A9F951001B8D31 /* ApplicationsEntryPage */,
-				C63105ED25B56A290067F72B /* OpenApplicationsEntryPage */,
 				C63D2776257F70A900CFF8A8 /* ApplicationPage */,
+				C63105ED25B56A290067F72B /* OpenApplicationsEntryPage */,
+				C63106DA25B590740067F72B /* OpenApplicationPage */,
 				F426FEC923F63D9100BFDA3B /* HomePage */,
 				F4B3F2FE2386371100657CDF /* PortalPage */,
 				F45447FF239BF63A001B8D31 /* GeneralItemPage */,
@@ -2040,8 +2077,8 @@
 			);
 			name = "KKdayPortal-Open";
 			packageProductDependencies = (
-				C63105FD25B57ADA0067F72B /* SwiftPackageProductDependency */,
-				C63105FF25B57ADA0067F72B /* SwiftPackageProductDependency */,
+				C63105FD25B57ADA0067F72B /* SnapKit */,
+				C63105FF25B57ADA0067F72B /* DolphinHTTP */,
 			);
 			productName = KKdayPortal;
 			productReference = C63106A725B57ADA0067F72B /* KKdayPortal-Open.app */;
@@ -2063,8 +2100,8 @@
 			);
 			name = "KKdayPortal-Production";
 			packageProductDependencies = (
-				C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */,
-				C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */,
+				C6E2170C2578EF4C000AAAFA /* SnapKit */,
+				C6E2170E2578EF51000AAAFA /* DolphinHTTP */,
 			);
 			productName = KKdayPortal;
 			productReference = F44E8CE323B88AA30032C6BE /* KKdayPortal.app */;
@@ -2086,8 +2123,8 @@
 			);
 			name = "KKdayPortal-Sit";
 			packageProductDependencies = (
-				C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */,
-				C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */,
+				C6E217032578EE67000AAAFA /* SnapKit */,
+				C6E217082578EEB5000AAAFA /* DolphinHTTP */,
 			);
 			productName = KKdayPortal;
 			productReference = F4B3F2CA23862B3000657CDF /* KKdayPortal.app */;
@@ -2121,8 +2158,8 @@
 			);
 			mainGroup = F4B3F2C123862B3000657CDF;
 			packageReferences = (
-				C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */,
-				C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */,
+				C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */,
 			);
 			productRefGroup = F4B3F2CB23862B3000657CDF /* Products */;
 			projectDirPath = "";
@@ -2311,6 +2348,7 @@
 				C631060625B57ADA0067F72B /* FileAdministrator.swift in Sources */,
 				C631060725B57ADA0067F72B /* GeneralUser.swift in Sources */,
 				C631060825B57ADA0067F72B /* GeneralTextObjectSectionItem.swift in Sources */,
+				C63106E025B593F00067F72B /* OpenTwilioServiceManager.swift in Sources */,
 				C631060925B57ADA0067F72B /* DateFormatterExtension.swift in Sources */,
 				C631060A25B57ADA0067F72B /* GeneralItemDescriptionTextView.swift in Sources */,
 				C631060B25B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
@@ -2338,6 +2376,7 @@
 				C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */,
 				C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */,
 				C631062325B57ADA0067F72B /* PloneNews.swift in Sources */,
+				C63106F425B594B00067F72B /* OpenTwilioServiceViewController.swift in Sources */,
 				C631062425B57ADA0067F72B /* TestingTableViewCell.swift in Sources */,
 				C631062525B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
 				C631062625B57ADA0067F72B /* PloneResourceManager.swift in Sources */,
@@ -2351,6 +2390,7 @@
 				C631062E25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
 				C631062F25B57ADA0067F72B /* PloneCollection.swift in Sources */,
 				C631063025B57ADA0067F72B /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
+				C631070425B59CDC0067F72B /* OpenTwilioSettingViewController.swift in Sources */,
 				C631063125B57ADA0067F72B /* TestingSection.swift in Sources */,
 				C631063225B57ADA0067F72B /* GeneralDocumentViewModel.swift in Sources */,
 				C631063325B57ADA0067F72B /* PhoneViewController.swift in Sources */,
@@ -2482,14 +2522,12 @@
 				F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
 				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F4D8DE1123EBB81A0091A51A /* FileDownloader.swift in Sources */,
-				C63105F925B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417B23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
-				C63105F225B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
 				F454DF1F240F901F00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
 				F45740D323CEED6100FB5EEC /* ContentListSection.swift in Sources */,
@@ -2637,14 +2675,12 @@
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
 				F4D06877255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
-				C63105F825B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
 				F4D8DE1023EBB81A0091A51A /* FileDownloader.swift in Sources */,
 				C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
-				C63105F125B56AAF0067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
 				F454DF1E240F8C6A00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
@@ -3105,7 +3141,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C63105FE25B57ADA0067F72B /* RemoteSwiftPackageReference */ = {
+		C63105FE25B57ADA0067F72B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
 			requirement = {
@@ -3113,7 +3149,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		C631060025B57ADA0067F72B /* RemoteSwiftPackageReference */ = {
+		C631060025B57ADA0067F72B /* XCRemoteSwiftPackageReference "DolphinHTTP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:WeiTsungCheng/DolphinHTTP.git";
 			requirement = {
@@ -3121,7 +3157,7 @@
 				minimumVersion = 1.0.1;
 			};
 		};
-		C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */ = {
+		C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
 			requirement = {
@@ -3129,7 +3165,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */ = {
+		C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:WeiTsungCheng/DolphinHTTP.git";
 			requirement = {
@@ -3140,34 +3176,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C63105FD25B57ADA0067F72B /* SwiftPackageProductDependency */ = {
+		C63105FD25B57ADA0067F72B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C63105FE25B57ADA0067F72B /* RemoteSwiftPackageReference */;
+			package = C63105FE25B57ADA0067F72B /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		C63105FF25B57ADA0067F72B /* SwiftPackageProductDependency */ = {
+		C63105FF25B57ADA0067F72B /* DolphinHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C631060025B57ADA0067F72B /* RemoteSwiftPackageReference */;
+			package = C631060025B57ADA0067F72B /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
 			productName = DolphinHTTP;
 		};
-		C6E217032578EE67000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E217032578EE67000AAAFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		C6E217082578EEB5000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E217082578EEB5000AAAFA /* DolphinHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
 			productName = DolphinHTTP;
 		};
-		C6E2170C2578EF4C000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E2170C2578EF4C000AAAFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217022578EE67000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217022578EE67000AAAFA /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		C6E2170E2578EF51000AAAFA /* SwiftPackageProductDependency */ = {
+		C6E2170E2578EF51000AAAFA /* DolphinHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C6E217072578EEB5000AAAFA /* RemoteSwiftPackageReference */;
+			package = C6E217072578EEB5000AAAFA /* XCRemoteSwiftPackageReference "DolphinHTTP" */;
 			productName = DolphinHTTP;
 		};
 /* End XCSwiftPackageProductDependency section */
