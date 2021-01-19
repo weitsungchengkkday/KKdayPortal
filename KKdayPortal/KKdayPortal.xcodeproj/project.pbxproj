@@ -41,7 +41,6 @@
 		C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
 		C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
 		C631061E25B57ADA0067F72B /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8DE0F23EBB81A0091A51A /* FileDownloader.swift */; };
-		C631061F25B57ADA0067F72B /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
 		C631062025B57ADA0067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
 		C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
 		C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */; };
@@ -61,7 +60,6 @@
 		C631063025B57ADA0067F72B /* GeneralTextObjectIFrameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4F23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift */; };
 		C631063125B57ADA0067F72B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		C631063225B57ADA0067F72B /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
-		C631063325B57ADA0067F72B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
 		C631063425B57ADA0067F72B /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45408342413746600796B66 /* UIKitExtension.swift */; };
 		C631063525B57ADA0067F72B /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
 		C631063625B57ADA0067F72B /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7323E87DD10050C851 /* GeneralCollectionViewModel.swift */; };
@@ -116,7 +114,6 @@
 		C631066725B57ADA0067F72B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
 		C631066825B57ADA0067F72B /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
 		C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
-		C631066A25B57ADA0067F72B /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
 		C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
 		C631066C25B57ADA0067F72B /* PloneUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */; };
 		C631066D25B57ADA0067F72B /* GeneralEventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447ED239AB733001B8D31 /* GeneralEventObject.swift */; };
@@ -170,15 +167,19 @@
 		C63106A025B57ADA0067F72B /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		C63106A125B57ADA0067F72B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
 		C63106A225B57ADA0067F72B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
-		C63106E025B593F00067F72B /* OpenTwilioServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63106DF25B593F00067F72B /* OpenTwilioServiceManager.swift */; };
-		C63106F425B594B00067F72B /* OpenTwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63106F325B594B00067F72B /* OpenTwilioServiceViewController.swift */; };
 		C631070425B59CDC0067F72B /* OpenTwilioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631070325B59CDC0067F72B /* OpenTwilioSettingViewController.swift */; };
-		C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
-		C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */; };
-		C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
-		C63BC24D256CE3EB00D5C46A /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC24B256CE3EB00D5C46A /* PhoneView.swift */; };
-		C63BC253256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
-		C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BC252256CEA5300D5C46A /* PhoneViewController.swift */; };
+		C631071B25B673C90067F72B /* OpenTwilioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631070325B59CDC0067F72B /* OpenTwilioSettingViewController.swift */; };
+		C631071F25B673C90067F72B /* OpenTwilioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631070325B59CDC0067F72B /* OpenTwilioSettingViewController.swift */; };
+		C631072325B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
+		C631072725B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
+		C631072B25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
+		C631072F25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
+		C631073B25B690520067F72B /* OpenTwilioSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631073A25B690520067F72B /* OpenTwilioSettingViewModel.swift */; };
+		C631073F25B691040067F72B /* OpenTwilioSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631073A25B690520067F72B /* OpenTwilioSettingViewModel.swift */; };
+		C631074325B691050067F72B /* OpenTwilioSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631073A25B690520067F72B /* OpenTwilioSettingViewModel.swift */; };
+		C631074D25B6CF330067F72B /* OpenTwilioInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631074C25B6CF330067F72B /* OpenTwilioInfoViewController.swift */; };
+		C631074E25B6CF330067F72B /* OpenTwilioInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631074C25B6CF330067F72B /* OpenTwilioInfoViewController.swift */; };
+		C631074F25B6CF330067F72B /* OpenTwilioInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C631074C25B6CF330067F72B /* OpenTwilioInfoViewController.swift */; };
 		C63D277D257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
 		C63D277E257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
 		C63D279925830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
@@ -497,12 +498,9 @@
 		C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewController.swift; sourceTree = "<group>"; };
 		C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewModel.swift; sourceTree = "<group>"; };
 		C63106A725B57ADA0067F72B /* KKdayPortal-Open.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KKdayPortal-Open.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C63106DF25B593F00067F72B /* OpenTwilioServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioServiceManager.swift; sourceTree = "<group>"; };
-		C63106F325B594B00067F72B /* OpenTwilioServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioServiceViewController.swift; sourceTree = "<group>"; };
 		C631070325B59CDC0067F72B /* OpenTwilioSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioSettingViewController.swift; sourceTree = "<group>"; };
-		C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
-		C63BC24B256CE3EB00D5C46A /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
-		C63BC252256CEA5300D5C46A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		C631073A25B690520067F72B /* OpenTwilioSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioSettingViewModel.swift; sourceTree = "<group>"; };
+		C631074C25B6CF330067F72B /* OpenTwilioInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTwilioInfoViewController.swift; sourceTree = "<group>"; };
 		C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceViewController.swift; sourceTree = "<group>"; };
 		C63D279825830ECB00CFF8A8 /* ringtone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtone.wav; sourceTree = "<group>"; };
 		C63D27D32590411500CFF8A8 /* FileAdministrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAdministrator.swift; sourceTree = "<group>"; };
@@ -752,32 +750,16 @@
 		C63106DA25B590740067F72B /* OpenApplicationPage */ = {
 			isa = PBXGroup;
 			children = (
+				C631074A25B6CD4D0067F72B /* OpenTwilioInfoPage */,
 				C63106FB25B596C10067F72B /* OpenTwilioSettingPage */,
-				C63106DB25B590E40067F72B /* OpenTwilioServicePage */,
 			);
 			path = OpenApplicationPage;
-			sourceTree = "<group>";
-		};
-		C63106DB25B590E40067F72B /* OpenTwilioServicePage */ = {
-			isa = PBXGroup;
-			children = (
-				C63106DF25B593F00067F72B /* OpenTwilioServiceManager.swift */,
-				C63106F225B594790067F72B /* View */,
-			);
-			path = OpenTwilioServicePage;
-			sourceTree = "<group>";
-		};
-		C63106F225B594790067F72B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C63106F325B594B00067F72B /* OpenTwilioServiceViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C63106FB25B596C10067F72B /* OpenTwilioSettingPage */ = {
 			isa = PBXGroup;
 			children = (
+				C631073625B6869A0067F72B /* ViewModel */,
 				C63106FF25B59B730067F72B /* View */,
 			);
 			path = OpenTwilioSettingPage;
@@ -791,14 +773,28 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C63BC245256CA87400D5C46A /* UIView */ = {
+		C631073625B6869A0067F72B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C63BC246256CAA1B00D5C46A /* PhoneNumberView.swift */,
-				C63BC24B256CE3EB00D5C46A /* PhoneView.swift */,
-				C63BC252256CEA5300D5C46A /* PhoneViewController.swift */,
+				C631073A25B690520067F72B /* OpenTwilioSettingViewModel.swift */,
 			);
-			path = UIView;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C631074A25B6CD4D0067F72B /* OpenTwilioInfoPage */ = {
+			isa = PBXGroup;
+			children = (
+				C631074B25B6CD9A0067F72B /* View */,
+			);
+			path = OpenTwilioInfoPage;
+			sourceTree = "<group>";
+		};
+		C631074B25B6CD9A0067F72B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C631074C25B6CF330067F72B /* OpenTwilioInfoViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C63D2776257F70A900CFF8A8 /* ApplicationPage */ = {
@@ -862,7 +858,6 @@
 		F426FEB823F4F7E600BFDA3B /* CustomUIElement */ = {
 			isa = PBXGroup;
 			children = (
-				C63BC245256CA87400D5C46A /* UIView */,
 				F46180CA23FCDB3A00D303F8 /* UITextField */,
 				F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */,
 				F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */,
@@ -2348,7 +2343,6 @@
 				C631060625B57ADA0067F72B /* FileAdministrator.swift in Sources */,
 				C631060725B57ADA0067F72B /* GeneralUser.swift in Sources */,
 				C631060825B57ADA0067F72B /* GeneralTextObjectSectionItem.swift in Sources */,
-				C63106E025B593F00067F72B /* OpenTwilioServiceManager.swift in Sources */,
 				C631060925B57ADA0067F72B /* DateFormatterExtension.swift in Sources */,
 				C631060A25B57ADA0067F72B /* GeneralItemDescriptionTextView.swift in Sources */,
 				C631060B25B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
@@ -2361,6 +2355,7 @@
 				C631061225B57ADA0067F72B /* LoadingManager.swift in Sources */,
 				C631061325B57ADA0067F72B /* UITextFieldExtension.swift in Sources */,
 				C631061425B57ADA0067F72B /* StorageManager.swift in Sources */,
+				C631073B25B690520067F72B /* OpenTwilioSettingViewModel.swift in Sources */,
 				C631061525B57ADA0067F72B /* GeneralCollectionViewController.swift in Sources */,
 				C631061625B57ADA0067F72B /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				C631061725B57ADA0067F72B /* GeneralDocumentViewController.swift in Sources */,
@@ -2371,12 +2366,10 @@
 				C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */,
 				C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */,
 				C631061E25B57ADA0067F72B /* FileDownloader.swift in Sources */,
-				C631061F25B57ADA0067F72B /* PhoneNumberView.swift in Sources */,
 				C631062025B57ADA0067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
 				C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */,
 				C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */,
 				C631062325B57ADA0067F72B /* PloneNews.swift in Sources */,
-				C63106F425B594B00067F72B /* OpenTwilioServiceViewController.swift in Sources */,
 				C631062425B57ADA0067F72B /* TestingTableViewCell.swift in Sources */,
 				C631062525B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
 				C631062625B57ADA0067F72B /* PloneResourceManager.swift in Sources */,
@@ -2393,7 +2386,6 @@
 				C631070425B59CDC0067F72B /* OpenTwilioSettingViewController.swift in Sources */,
 				C631063125B57ADA0067F72B /* TestingSection.swift in Sources */,
 				C631063225B57ADA0067F72B /* GeneralDocumentViewModel.swift in Sources */,
-				C631063325B57ADA0067F72B /* PhoneViewController.swift in Sources */,
 				C631063425B57ADA0067F72B /* UIKitExtension.swift in Sources */,
 				C631063525B57ADA0067F72B /* IntroductionViewController.swift in Sources */,
 				C631063625B57ADA0067F72B /* GeneralCollectionViewModel.swift in Sources */,
@@ -2448,10 +2440,10 @@
 				C631066725B57ADA0067F72B /* LoginViewController.swift in Sources */,
 				C631066825B57ADA0067F72B /* Localizable.swift in Sources */,
 				C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */,
-				C631066A25B57ADA0067F72B /* PhoneView.swift in Sources */,
 				C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */,
 				C631066C25B57ADA0067F72B /* PloneUserAPI.swift in Sources */,
 				C631066D25B57ADA0067F72B /* GeneralEventObject.swift in Sources */,
+				C631074D25B6CF330067F72B /* OpenTwilioInfoViewController.swift in Sources */,
 				C631066E25B57ADA0067F72B /* AlertEventInfo.swift in Sources */,
 				C631066F25B57ADA0067F72B /* GeneralEventViewController.swift in Sources */,
 				C631067025B57ADA0067F72B /* ApplicationsEntryViewModel.swift in Sources */,
@@ -2518,6 +2510,7 @@
 				F453953123BAE22C00136E6D /* LoadingViewModel.swift in Sources */,
 				F43AFC5623E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCellViewModel.swift in Sources */,
 				F44E8C7823B88AA30032C6BE /* PloneSiteItem.swift in Sources */,
+				C631074325B691050067F72B /* OpenTwilioSettingViewModel.swift in Sources */,
 				F44E8C7923B88AA30032C6BE /* PloneFileObject.swift in Sources */,
 				F4D06878255D1A4800F7B3F8 /* PloneEnv.swift in Sources */,
 				F453952623BAE0FC00136E6D /* LoadingManager.swift in Sources */,
@@ -2526,7 +2519,6 @@
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417B23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
-				C63BC248256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
 				F454DF1F240F901F00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
@@ -2545,7 +2537,6 @@
 				F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */,
 				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F45408362413746600796B66 /* UIKitExtension.swift in Sources */,
-				C63BC254256CEA5300D5C46A /* PhoneViewController.swift in Sources */,
 				F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */,
 				F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */,
@@ -2574,6 +2565,7 @@
 				F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */,
 				F4B3BCB023F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F44E8CA023B88AA30032C6BE /* GeneralFileObject.swift in Sources */,
+				C631071F25B673C90067F72B /* OpenTwilioSettingViewController.swift in Sources */,
 				F44E8CA123B88AA30032C6BE /* PloneUser.swift in Sources */,
 				F426FEE023F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
 				F44A199423C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
@@ -2600,13 +2592,13 @@
 				F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */,
 				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
 				F43AFC7A23E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
-				C63BC24D256CE3EB00D5C46A /* PhoneView.swift in Sources */,
 				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
 				F4D0687A255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */,
 				F44E8CB523B88AA30032C6BE /* ApplicationsEntryViewModel.swift in Sources */,
+				C631074F25B6CF330067F72B /* OpenTwilioInfoViewController.swift in Sources */,
 				F44E8CB623B88AA30032C6BE /* LanguageSettingViewController.swift in Sources */,
 				F44E8CB723B88AA30032C6BE /* SettingViewController.swift in Sources */,
 				F44E8CB823B88AA30032C6BE /* GeneralFileViewController.swift in Sources */,
@@ -2627,6 +2619,8 @@
 				F457416823D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				F45740E023D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
+				C631072325B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
+				C631072F25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */,
 				F426FECD23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
 				F44E8CCD23B88AA30032C6BE /* GeneralLinkViewModel.swift in Sources */,
@@ -2671,6 +2665,7 @@
 				F453952523BAE0FC00136E6D /* LoadingManager.swift in Sources */,
 				F46180F82403797200D303F8 /* UITextFieldExtension.swift in Sources */,
 				F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */,
+				C631073F25B691040067F72B /* OpenTwilioSettingViewModel.swift in Sources */,
 				F43AFC8123E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F43AFC5923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
@@ -2680,7 +2675,6 @@
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
 				F4D8DE1023EBB81A0091A51A /* FileDownloader.swift in Sources */,
-				C63BC247256CAA1B00D5C46A /* PhoneNumberView.swift in Sources */,
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
 				F454DF1E240F8C6A00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
@@ -2699,7 +2693,6 @@
 				F43AFC6923E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
-				C63BC253256CEA5300D5C46A /* PhoneViewController.swift in Sources */,
 				F45408352413746600796B66 /* UIKitExtension.swift in Sources */,
 				F46180EE2402968100D303F8 /* IntroductionViewController.swift in Sources */,
 				F43AFC7923E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
@@ -2727,6 +2720,7 @@
 				F45448AB23A9F9F3001B8D31 /* ApplicationsEntryViewController.swift in Sources */,
 				F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */,
 				F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */,
+				C631071B25B673C90067F72B /* OpenTwilioSettingViewController.swift in Sources */,
 				F45447F6239AB816001B8D31 /* WebPloneRepository.swift in Sources */,
 				F45447F2239AB79A001B8D31 /* GeneralFileObject.swift in Sources */,
 				F4FC419D238CCA7D00AC7315 /* PloneUser.swift in Sources */,
@@ -2754,12 +2748,12 @@
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
-				C63BC24C256CE3EB00D5C46A /* PhoneView.swift in Sources */,
 				F454486C23A20EE3001B8D31 /* LanguageViewModel.swift in Sources */,
 				F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
 				F4B3BCB623F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
+				C631074E25B6CF330067F72B /* OpenTwilioInfoViewController.swift in Sources */,
 				F45448AD23A9FA1A001B8D31 /* ApplicationsEntryViewModel.swift in Sources */,
 				F454486E23A20EF9001B8D31 /* LanguageSettingViewController.swift in Sources */,
 				F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */,
@@ -2780,6 +2774,8 @@
 				F44A198B23C48BF000B35976 /* PloneLRF.swift in Sources */,
 				F453953623BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */,
+				C631072725B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
+				C631072B25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */,
 				F426FECC23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
 				F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */,

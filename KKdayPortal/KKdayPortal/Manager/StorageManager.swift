@@ -34,7 +34,11 @@ final class StorageManager {
         case serverType
         // BPM
         case bpmServerType
-        
+
+        /// Open Twilio Setting
+        case twilioHost
+        case twilioEndPoint
+        case twilioIdentifier
     }
 
     private init() {

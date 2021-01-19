@@ -67,15 +67,6 @@ extension GeneralDetailPageCoordinator {
             switch resourceType {
             case .kkMember:
                 break
-//                let BPMString: String = ConfigManager.shared.model.host + "/Plone/zh-tw/02-all-services/bpm"
-//
-//                if route == URL(string: BPMString) {
-//                    // If link is BPM open website in APP
-//                    self.tabBarController?.selectedIndex = 2
-//                    return
-//                } else {
-//                    break
-//                }
                 
             case .normal(_):
                 break

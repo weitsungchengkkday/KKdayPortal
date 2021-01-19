@@ -21,11 +21,20 @@ final class OpenApplicationsEntryViewController: UIViewController {
         return stv
     }()
     
-    lazy var twilioSettingButton: UIButton = {
+    lazy var twilioInroButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Call Setting", for: .normal)
+        btn.setTitle("Call Center Info", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        btn.layer.cornerRadius = 8
+        return btn
+    }()
+    
+    lazy var twilioSettingButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Call Center Setting", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         btn.layer.cornerRadius = 8
         return btn
     }()
@@ -42,7 +51,10 @@ final class OpenApplicationsEntryViewController: UIViewController {
     lazy var twilioNoteLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-        lbl.text = "Must set Call Setting before go to Call Center"
+        lbl.text = """
+            1. Must set Call Center Setting before go to Call Center
+            2. More information, please refer to the Call Center Info
+        """
         lbl.numberOfLines = 0
         lbl.lineBreakMode = .byWordWrapping
         return lbl
@@ -66,11 +78,17 @@ final class OpenApplicationsEntryViewController: UIViewController {
         view.addSubview(applicationsStackView)
         applicationsStackView.addArrangedSubview(twilioSettingButton)
         applicationsStackView.addArrangedSubview(twilioButton)
+        applicationsStackView.addArrangedSubview(twilioInroButton)
         view.addSubview(twilioNoteLabel)
         
         applicationsStackView.snp.makeConstraints { maker in
             maker.width.equalToSuperview()
             maker.centerX.centerY.equalToSuperview()
+        }
+        
+        twilioInroButton.snp.makeConstraints { maker in
+            maker.height.equalTo(44)
+            maker.width.equalToSuperview().offset(-60)
         }
         
         twilioSettingButton.snp.makeConstraints { maker in
@@ -93,19 +111,25 @@ final class OpenApplicationsEntryViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
+        twilioInroButton.addTarget(self, action: #selector(goTwilioInfo), for: .touchUpInside)
         twilioButton.addTarget(self, action: #selector(goTwilio), for: .touchUpInside)
         twilioSettingButton.addTarget(self, action: #selector(goTwilioSetting), for: .touchUpInside)
         
     }
-
+    
+    @objc private func goTwilioInfo() {
+        let presentVC = OpenTwilioInfoViewController()
+        present(presentVC, animated: true, completion: nil)
+    }
     
     @objc private func goTwilio() {
-        let presentVC = OpenTwilioServiceManager.shared.twiVC
+        let presentVC = TwilioServiceManager.shared.twiVC
         present(presentVC, animated: true, completion: nil)
     }
     
     @objc private func goTwilioSetting() {
-        let presentVC = OpenTwilioSettingViewController()
+        
+        let presentVC = OpenTwilioSettingViewController(viewModel: OpenTwilioSettingViewModel())
         present(presentVC, animated: true, completion: nil)
     }
     
