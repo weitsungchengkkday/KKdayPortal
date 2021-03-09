@@ -16,7 +16,7 @@ def shared
 
 
   # Twilio
-  pod 'TwilioVoice', '~> 6.0.2'
+  pod 'TwilioVoice', '~> 6.2.1'
   
 end
 

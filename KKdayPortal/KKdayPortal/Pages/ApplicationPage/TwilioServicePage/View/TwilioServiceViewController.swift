@@ -198,7 +198,7 @@ final class TwilioServiceViewController: UIViewController {
         createGestureRecognizer()
         
         // TVOAudioDevice must be set before performing any other actions with the SDK
-        TwilioVoice.audioDevice = audioDevice
+        TwilioVoiceSDK.audioDevice = audioDevice
     }
     
     deinit {
@@ -705,7 +705,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
         
         // Connect with Twilio Platform here!
         // 🍕 TVOCallDelegate to TwilioServiceViewController
-        let call = TwilioVoice.connect(options: connectOptions, delegate: self)
+        let call = TwilioVoiceSDK.connect(options: connectOptions, delegate: self)
         activeCall = call
         activeCalls[call.uuid!.uuidString] = call
         
@@ -947,7 +947,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
         
         let cachedDeviceToken = credentials.token
         
-        TwilioVoice.register(accessToken: accessToken, deviceToken: cachedDeviceToken) { error in
+        TwilioVoiceSDK.register(accessToken: accessToken, deviceToken: cachedDeviceToken) { error in
             if let error = error {
                 print("〽️⚠️ An error occurred while registering: \(error.localizedDescription)")
             } else {
@@ -968,7 +968,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
         }
         print("📳✅ Get accessToken")
         
-        TwilioVoice.unregister(accessToken: accessToken, deviceToken: deviceToken) { error in
+        TwilioVoiceSDK.unregister(accessToken: accessToken, deviceToken: deviceToken) { error in
             if let error = error {
                 print("〽️⚠️ An error occurred while unregistering: \(error.localizedDescription)")
             } else {
@@ -1005,7 +1005,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
 //        }
         ///
         
-        TwilioVoice.handleNotification(payload.dictionaryPayload, delegate: self, delegateQueue: nil)
+        TwilioVoiceSDK.handleNotification(payload.dictionaryPayload, delegate: self, delegateQueue: nil)
         
     }
     

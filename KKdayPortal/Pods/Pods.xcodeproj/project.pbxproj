@@ -9,8 +9,9 @@
 /* Begin PBXAggregateTarget section */
 		73614281932881D538B76C26B92E0193 /* TwilioVoice */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 2884EF198ADEBE9BA3FBEAAF74479B50 /* Build configuration list for PBXAggregateTarget "TwilioVoice" */;
+			buildConfigurationList = AD5BECC6854F314BC68CF81E8B519A85 /* Build configuration list for PBXAggregateTarget "TwilioVoice" */;
 			buildPhases = (
+				0462950C28ADE861CA2173AEA96E6454 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
@@ -213,6 +214,7 @@
 		07F94E4285079D4CF6FC84C7325E9C93 /* Pods-KKdayPortal-Sit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KKdayPortal-Sit.modulemap"; sourceTree = "<group>"; };
 		0926E2E259490964B84A0D5DB65DD2D1 /* DataNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataNode.swift; path = Sources/DataNode.swift; sourceTree = "<group>"; };
 		0B7AAFEC565DC984AB8DB961E31A6B02 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		0CB6D3ED099CBAD510BB0799065C31C6 /* TwilioVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TwilioVoice.release.xcconfig; sourceTree = "<group>"; };
 		0E67165F96780ECFD9666E4B8FDF6E57 /* Pods-KKdayPortal-Sit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KKdayPortal-Sit-dummy.m"; sourceTree = "<group>"; };
 		0F7CD991057BFD56C1A77C081DD73B45 /* Document.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Sources/Document.swift; sourceTree = "<group>"; };
 		12F4A6BD54AEA73E1429DC5D63B29A37 /* TextNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextNode.swift; path = Sources/TextNode.swift; sourceTree = "<group>"; };
@@ -270,17 +272,15 @@
 		68F46B25ABCFD35912CBC7C09B65B668 /* Pods-KKdayPortal-Sit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KKdayPortal-Sit.release.xcconfig"; sourceTree = "<group>"; };
 		68FB4F45E493F51959C7F24C31D62D72 /* FormElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormElement.swift; path = Sources/FormElement.swift; sourceTree = "<group>"; };
 		6A00A3F77CE1DC1699DB3F530ED4996C /* UnicodeScalar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnicodeScalar.swift; path = Sources/UnicodeScalar.swift; sourceTree = "<group>"; };
-		6A63BC85C070C4C1ED25D3404C0B9604 /* TwilioVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TwilioVoice.debug.xcconfig; sourceTree = "<group>"; };
 		6BA56F8959E5AE31BC22EECD018FA9C6 /* HttpStatusException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpStatusException.swift; path = Sources/HttpStatusException.swift; sourceTree = "<group>"; };
+		70939E15270D06898459B572CE84ED92 /* TwilioVoice-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "TwilioVoice-xcframeworks.sh"; sourceTree = "<group>"; };
 		70AEEF89EA1FDAC71EB011FA101D4330 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		70FAC18497A5204BD1C53F68DE4F2F74 /* Pods_KKdayPortal_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KKdayPortal_Production.framework; path = "Pods-KKdayPortal-Production.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		732A72416F45BC2212DB40DA2A535C2D /* HtmlTreeBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HtmlTreeBuilder.swift; path = Sources/HtmlTreeBuilder.swift; sourceTree = "<group>"; };
 		74EE4DD3A8A1E965384FB46AE301B913 /* NSString+HTMLString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSString+HTMLString.swift"; path = "Sources/HTMLString/NSString+HTMLString.swift"; sourceTree = "<group>"; };
 		7529ADCAD1CB37D87F5926DDDE401863 /* Pods-KKdayPortal-Open.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KKdayPortal-Open.modulemap"; sourceTree = "<group>"; };
-		76A5B3DCD7347847A109D1C7CA212A86 /* TwilioVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TwilioVoice.release.xcconfig; sourceTree = "<group>"; };
 		78CA34F4FD533495F8151E877A82A2B3 /* HTMLString-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTMLString-umbrella.h"; sourceTree = "<group>"; };
-		790F664CA6C5305DC8FCFB6D76C9066F /* TwilioVoice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwilioVoice.framework; path = Build/iOS/TwilioVoice.framework; sourceTree = "<group>"; };
 		7990D7CE2361ECFF14C174673B4FC489 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		799F43011E63F19B388327F512327167 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = Sources/String.swift; sourceTree = "<group>"; };
 		7B68F7264C40C56B93EA5CCF3D207606 /* DocumentType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DocumentType.swift; path = Sources/DocumentType.swift; sourceTree = "<group>"; };
@@ -328,9 +328,11 @@
 		D682E18FA173619DCE331E74DE234FD9 /* HtmlTreeBuilderState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HtmlTreeBuilderState.swift; path = Sources/HtmlTreeBuilderState.swift; sourceTree = "<group>"; };
 		DD8AB4FE0D9892ECFA0CDB71C669B063 /* Attributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Attributes.swift; path = Sources/Attributes.swift; sourceTree = "<group>"; };
 		DE74FEA0CC0AC8CB5AB44213AE51EFBF /* Cleaner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cleaner.swift; path = Sources/Cleaner.swift; sourceTree = "<group>"; };
+		E13A77920F9E9898CB0C6CEDED89D1EB /* TwilioVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TwilioVoice.debug.xcconfig; sourceTree = "<group>"; };
 		E1FD66251E2EC32DD05EA9EED8BCB67E /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		E4B045DAC69B2713F453AA24515EDF7E /* Pods-KKdayPortal-Open.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KKdayPortal-Open.release.xcconfig"; sourceTree = "<group>"; };
 		E831040477189AC0FA4A4CF5AD867FFF /* Entities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entities.swift; path = Sources/Entities.swift; sourceTree = "<group>"; };
+		E9BD3E4C3ACA257083C02EFA78DDB39D /* TwilioVoice.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = TwilioVoice.xcframework; sourceTree = "<group>"; };
 		F26BAF418384CFD9FB9AE14293CB95C7 /* Pods-KKdayPortal-Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KKdayPortal-Production.debug.xcconfig"; sourceTree = "<group>"; };
 		F28E8F31E738CF840F0D2CD5125BB438 /* Tokeniser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tokeniser.swift; path = Sources/Tokeniser.swift; sourceTree = "<group>"; };
 		F346BA186358B60C905D33B77B4A9692 /* ParseErrorList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParseErrorList.swift; path = Sources/ParseErrorList.swift; sourceTree = "<group>"; };
@@ -409,14 +411,6 @@
 			path = "Target Support Files/Pods-KKdayPortal-Open";
 			sourceTree = "<group>";
 		};
-		172D2165261D2CD7F9350448D6C95CD2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				790F664CA6C5305DC8FCFB6D76C9066F /* TwilioVoice.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		344C983D62FEC03EFCFB7C970BE12664 /* HTMLString */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +421,17 @@
 			);
 			name = HTMLString;
 			path = HTMLString;
+			sourceTree = "<group>";
+		};
+		3D6DF5EE75B7F2FB4D57C88026B9F492 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				70939E15270D06898459B572CE84ED92 /* TwilioVoice-xcframeworks.sh */,
+				E13A77920F9E9898CB0C6CEDED89D1EB /* TwilioVoice.debug.xcconfig */,
+				0CB6D3ED099CBAD510BB0799065C31C6 /* TwilioVoice.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TwilioVoice";
 			sourceTree = "<group>";
 		};
 		4B897DA69D87B8DE7645DA18687F4113 /* Support Files */ = {
@@ -452,14 +457,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		67963B52DDDCFBCA3523E814F5591602 /* TwilioVoice */ = {
+		5DA65DE20334296C53FD00B3EA08CB30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				172D2165261D2CD7F9350448D6C95CD2 /* Frameworks */,
-				FAB33CADEDCB12BB5AFE5DE86D586C49 /* Support Files */,
+				E9BD3E4C3ACA257083C02EFA78DDB39D /* TwilioVoice.xcframework */,
 			);
-			name = TwilioVoice;
-			path = TwilioVoice;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		712694D90B0225A57D6F624583E57CC3 /* Alamofire */ = {
@@ -566,7 +569,7 @@
 				712694D90B0225A57D6F624583E57CC3 /* Alamofire */,
 				344C983D62FEC03EFCFB7C970BE12664 /* HTMLString */,
 				C87B734E5BC297AF0181089DE9A90EA3 /* SwiftSoup */,
-				67963B52DDDCFBCA3523E814F5591602 /* TwilioVoice */,
+				D46E11E761F8599A6F823D9F0BE2D30E /* TwilioVoice */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -655,6 +658,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D46E11E761F8599A6F823D9F0BE2D30E /* TwilioVoice */ = {
+			isa = PBXGroup;
+			children = (
+				5DA65DE20334296C53FD00B3EA08CB30 /* Frameworks */,
+				3D6DF5EE75B7F2FB4D57C88026B9F492 /* Support Files */,
+			);
+			name = TwilioVoice;
+			path = TwilioVoice;
+			sourceTree = "<group>";
+		};
 		D5CDD0D3C618C4A6020B982A13260F76 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,16 +681,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftSoup";
-			sourceTree = "<group>";
-		};
-		FAB33CADEDCB12BB5AFE5DE86D586C49 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6A63BC85C070C4C1ED25D3404C0B9604 /* TwilioVoice.debug.xcconfig */,
-				76A5B3DCD7347847A109D1C7CA212A86 /* TwilioVoice.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TwilioVoice";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -931,6 +934,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0462950C28ADE861CA2173AEA96E6454 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/TwilioVoice/TwilioVoice-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/TwilioVoice/TwilioVoice-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/TwilioVoice/TwilioVoice-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F1E00152ACF2B5D1DE8CF784FE19019 /* Sources */ = {
@@ -1274,24 +1297,6 @@
 			};
 			name = Debug;
 		};
-		270CBF3F3A8374ACF106EFBFEDE4B2B3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76A5B3DCD7347847A109D1C7CA212A86 /* TwilioVoice.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		2C13A2CA5FCABE1B372A71BD5BBF78FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AA2746609E087628DF012D4BDB3FC9D /* Pods-KKdayPortal-Open.debug.xcconfig */;
@@ -1502,23 +1507,6 @@
 			};
 			name = Release;
 		};
-		87206B666183F1560DC61EA761B411B3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A63BC85C070C4C1ED25D3404C0B9604 /* TwilioVoice.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		8F9EB2DB4BB09D719078DADE69EC9E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5AD328C99E00FEAC130DF7574E72F38 /* Pods-KKdayPortal-Sit.debug.xcconfig */;
@@ -1659,6 +1647,23 @@
 			};
 			name = Release;
 		};
+		A8D4DD8FD5A9696F780AFE12ABB8D39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E13A77920F9E9898CB0C6CEDED89D1EB /* TwilioVoice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		A971E858703335A1E85F8CBC88C59043 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EC8B7B5AAC1952928E32E1685C5738E /* SwiftSoup.debug.xcconfig */;
@@ -1692,6 +1697,24 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		C60B9565D73E842577F92C83CEB00D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CB6D3ED099CBAD510BB0799065C31C6 /* TwilioVoice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		DC9671E0F35CF29D544D3DFEC16BDF8F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1733,15 +1756,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2884EF198ADEBE9BA3FBEAAF74479B50 /* Build configuration list for PBXAggregateTarget "TwilioVoice" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				87206B666183F1560DC61EA761B411B3 /* Debug */,
-				270CBF3F3A8374ACF106EFBFEDE4B2B3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1783,6 +1797,15 @@
 			buildConfigurations = (
 				2C13A2CA5FCABE1B372A71BD5BBF78FA /* Debug */,
 				7E2C732B2C5EBCC86D475FC4BE0A5B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5BECC6854F314BC68CF81E8B519A85 /* Build configuration list for PBXAggregateTarget "TwilioVoice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8D4DD8FD5A9696F780AFE12ABB8D39F /* Debug */,
+				C60B9565D73E842577F92C83CEB00D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
