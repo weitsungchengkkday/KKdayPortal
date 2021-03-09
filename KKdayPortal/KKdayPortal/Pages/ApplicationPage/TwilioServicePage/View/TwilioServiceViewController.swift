@@ -31,6 +31,28 @@ final class TwilioServiceViewController: UIViewController {
         return lbl
     }()
     
+    /// Test
+    
+    lazy var transferValue: UITextField = {
+        let txf = UITextField()
+        txf.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        txf.keyboardType = .default
+        txf.borderStyle = .roundedRect
+        txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        return txf
+    }()
+    
+    
+    lazy var transferCallButton: UIButton = {
+        let btn: UIButton = UIButton()
+        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
+        return btn
+    }()
+    
+    
+    ///
+    
     lazy var placeCallButton: UIButton = {
         let btn: UIButton = UIButton()
         btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
@@ -101,9 +123,11 @@ final class TwilioServiceViewController: UIViewController {
         return lbl
     }()
     
+    
     // ODOO Server (for creating accessToken)
     private var baseURLString: String {
-          let host = ConfigManager.shared.odooModel.host
+        let host = "https://sit-odoo.eip.kkday.net"
+         // let host = ConfigManager.shared.odooModel.host
         return host
     }
     
@@ -127,6 +151,8 @@ final class TwilioServiceViewController: UIViewController {
     // Alice Bob
     private let identity = "KK"
     private let twimlParamTo = "To"
+//
+//    private let twimlParamto = "to"
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
@@ -183,6 +209,13 @@ final class TwilioServiceViewController: UIViewController {
     
     private func setupUI() {
         self.view.addSubview(qualityWarningsToaster)
+        
+        ///
+        self.view.addSubview(transferValue)
+        self.view.addSubview(transferCallButton)
+        
+        ///
+        
         self.view.addSubview(iconView)
         self.view.addSubview(outgoingValue)
         self.view.addSubview(outgoingLabel)
@@ -202,6 +235,23 @@ final class TwilioServiceViewController: UIViewController {
             maker.top.equalTo(self.view.snp.topMargin).offset(16)
             maker.width.equalTo(self.view.snp.width)
         }
+        
+        
+        ///
+        transferValue.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(qualityWarningsToaster.snp.bottom).offset(5)
+            maker.width.equalTo(240)
+        }
+        
+        transferCallButton.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.width.height.equalTo(40)
+            maker.top.equalTo(transferValue.snp.bottom).offset(5)
+        }
+        
+        ///
+        
         
         iconView.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
@@ -263,6 +313,10 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     private func setAction() {
+        ///
+        transferCallButton.addTarget(self, action: #selector(transferButtonPressed), for: .touchUpInside)
+        ///
+        
         placeCallButton.addTarget(self, action: #selector(mainButtonPressed), for: .touchUpInside)
         muteSwitch.addTarget(self, action: #selector(muteSwitchToggled), for: .valueChanged)
         speakerSwitch.addTarget(self, action: #selector(speakerSwitchToggled), for: .valueChanged)
@@ -313,6 +367,17 @@ final class TwilioServiceViewController: UIViewController {
             self?.showMicrophoneAccessRequest(uuid, handle)
         }
     }
+    
+    
+    ///
+    
+    @objc private func transferButtonPressed(sender: UIButton) {
+          
+        
+        print(transferValue.text)
+    }
+    
+    ///
     
     private func checkRecordPermission(completion: @escaping (_ permissionGranted: Bool) -> Void) {
         let permissionStatus = AVAudioSession.sharedInstance().recordPermission
@@ -382,6 +447,7 @@ final class TwilioServiceViewController: UIViewController {
         
         let enpoint = accessTokenEndpoint + currentMethodEndpoint.rawValue
         let endpointWithIdentity = String(format: "%@?identity=%@", enpoint, identity)
+        
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
         
         return try? String(contentsOf: accessTokenURL, encoding: .utf8)
@@ -586,6 +652,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
                 print("☎️⚠️ Failed to report incoming call successfully: \(error.localizedDescription).")
             } else {
                 print("☎️✅ Incoming call successfully reported.")
+            
             }
         }
         
@@ -629,7 +696,10 @@ extension TwilioServiceViewController: CXProviderDelegate {
         print("📳✅ Get accessToken")
         print("📳 Start making a voice call")
         let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
-            builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""]
+            builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""
+//                              ,self.twimlParamto: "+886989233699"
+                             ]
+          
             builder.uuid = uuid
         }
         
@@ -913,6 +983,28 @@ extension TwilioServiceViewController: PushKitEventDelegate {
     
     func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) {
         // 🍕 NotificationDelegate to TwilioServiceViewController
+        
+        ///  TEST 進線的會議室
+//        if let payload_dic = payload.dictionaryPayload as? [String: AnyHashable],
+//            var twiParam = payload_dic["twi_params"] as? String {
+//
+//            print(twiParam)
+//
+//            let decipheredIngredients = twiParam.split(separator: "&").reduce(into: [String: String]()) {
+//              let ingredient = $1.split(separator: "=")
+//
+//              if let key = ingredient.first, let value = ingredient.last {
+//                $0[String(key)] = String(value)
+//              }
+//            }
+//
+//            self.outgoingLabel.text = decipheredIngredients["CONF"]
+//
+//        } else {
+//            return
+//        }
+        ///
+        
         TwilioVoice.handleNotification(payload.dictionaryPayload, delegate: self, delegateQueue: nil)
         
     }

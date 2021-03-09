@@ -110,7 +110,8 @@ extension AppDelegate: PKPushRegistryDelegate {
         print(type.rawValue)
 
         if let delegate = self.pushKitEventDelegate {
-            print("〽️recieve payload: \(payload) ")
+            print("〽️recieve payload: \(payload.dictionaryPayload) ")
+           
             delegate.incomingPushReceived(payload: payload, completion: completion)
             
         } else {
