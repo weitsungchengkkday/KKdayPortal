@@ -151,8 +151,8 @@ final class TwilioServiceViewController: UIViewController {
     // Alice Bob
     private let identity = "KK"
     private let twimlParamTo = "To"
-//
-//    private let twimlParamto = "to"
+
+    private let twimlParamto = "to"
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
@@ -695,11 +695,12 @@ extension TwilioServiceViewController: CXProviderDelegate {
         }
         print("📳✅ Get accessToken")
         print("📳 Start making a voice call")
+        print(self.outgoingValue.text)
+        
         let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
             builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""
-//                              ,self.twimlParamto: "+886989233699"
+                              ,self.twimlParamto: self.transferValue.text ?? ""
                              ]
-          
             builder.uuid = uuid
         }
         
