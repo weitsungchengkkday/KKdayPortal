@@ -1,5 +1,5 @@
 //
-//  OpenApplicationsEntryViewModel.swift
+//  ServiceSettingViewModel.swift
 //  KKdayPortal
 //
 //  Created by KKday on 2021/1/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class OpenApplicationsEntryViewModel {
+final class ServiceSettingViewModel {
     
     var updateContent: () -> Void = {}
     

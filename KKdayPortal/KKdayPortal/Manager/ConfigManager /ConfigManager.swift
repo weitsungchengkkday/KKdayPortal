@@ -41,30 +41,6 @@ final class ConfigManager {
         }
     }
     
-    var ploneModel: ConfigModel {
-        get {
-            if _ploneModel == nil {
-                let name = "\(ConfigModel.self)"
-                let path = Bundle.main.path(forResource: name, ofType: "json")!
-                let url = URL(fileURLWithPath: path)
-                
-                do {
-                    let data = try Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
-                    
-                    let decoder = JSONDecoder()
-                    _ploneModel = try decoder.decode([ConfigModel].self, from: data)[0]
-                } catch let error {
-                    print(error.localizedDescription)
-                }
-            }
-            
-            return _ploneModel
-        }
-        
-        set {
-            _ploneModel = newValue
-        }
-    }
     
     private init() {
         
@@ -88,10 +64,10 @@ final class ConfigManager {
             #elseif PRODUCTION
                         serverType = .production
             #else
-                        fatalError("Server Type not exist")
+                        serverType = .custom
             #endif
         
-  
+            
         
             StorageManager.shared.save(for: .serverType, value: serverType.rawValue)
             print("🎇 Set up SSO Plone signin server: \(serverType.rawValue)")
@@ -100,12 +76,12 @@ final class ConfigManager {
         switch serverType {
         case .sit:
             odooModel.host = odooModel.sitServer
-            ploneModel.host = ploneModel.sitServer
              
         case .production:
             odooModel.host = odooModel.productionServer
-            ploneModel.host = ploneModel.productionServer
-          
+        
+        case .custom:
+            break
         }
 
     }

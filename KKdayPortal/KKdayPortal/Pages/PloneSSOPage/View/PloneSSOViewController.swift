@@ -32,7 +32,14 @@ final class PloneSSOViewController: UIViewController {
         setAction()
         bindViewModel()
         
-        let urlString = ConfigManager.shared.ploneModel.host + "/Plone/@@app_login"
+        let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
+       
+        guard let element = service!.elements.filter({ $0.name == "Website URL"}).first else {
+            print("❌ Can't Get Plone URL")
+            return
+        }
+        
+        let urlString = element.content + "/Plone/@@app_login"
         let url = URL(string: urlString)!
         SSOwebView.load(URLRequest(url: url))
     }

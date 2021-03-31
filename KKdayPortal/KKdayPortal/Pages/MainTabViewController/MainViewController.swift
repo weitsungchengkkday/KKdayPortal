@@ -50,9 +50,9 @@ final class MainViewController: UITabBarController {
         settingNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         settingNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
-        let applicationsEntryVC = ApplicationsEntryViewController(nibName: nil, bundle: nil)
+        let applicationsEntryVC = ServiceListViewController(nibName: nil, bundle: nil)
         let applicationsEntryImage = UIImage(systemName: "signpost.right") ?? #imageLiteral(resourceName: "icPicture")
-        let applicationsEntryItem = UITabBarItem(title: "Service List", image: applicationsEntryImage, selectedImage: applicationsEntryImage)
+        let applicationsEntryItem = UITabBarItem(title: "ServiceList", image: applicationsEntryImage, selectedImage: applicationsEntryImage)
         applicationsEntryVC.tabBarItem = applicationsEntryItem
         
         let applicationsEntryNav = UINavigationController(rootViewController: applicationsEntryVC)
@@ -65,7 +65,7 @@ final class MainViewController: UITabBarController {
         
         let openApplicationsEntryVC = OpenApplicationsEntryViewController(nibName: nil, bundle: nil)
         let openApplicationsEntryImage = UIImage(systemName: "puzzlepiece") ?? #imageLiteral(resourceName: "icPicture")
-        let openApplicationsEntryItem = UITabBarItem(title: "Service", image: openApplicationsEntryImage, selectedImage: openApplicationsEntryImage)
+        let openApplicationsEntryItem = UITabBarItem(title: "ServiceSetting", image: openApplicationsEntryImage, selectedImage: openApplicationsEntryImage)
         openApplicationsEntryVC.tabBarItem = openApplicationsEntryItem
         
         let openApplicationsEntryNav = UINavigationController(rootViewController: openApplicationsEntryVC)
@@ -86,7 +86,7 @@ final class MainViewController: UITabBarController {
              self.viewControllers = [homeNav, portalNav, applicationsEntryNav, settingNav]
             
         case .normal(url: _):
-             self.viewControllers = [homeNav, portalNav, openApplicationsEntryNav, settingNav]
+             self.viewControllers = [homeNav, portalNav, applicationsEntryNav, openApplicationsEntryNav, settingNav]
             
         case .none:
             self.viewControllers = []

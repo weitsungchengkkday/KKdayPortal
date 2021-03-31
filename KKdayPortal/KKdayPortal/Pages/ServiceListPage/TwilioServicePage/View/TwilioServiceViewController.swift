@@ -143,8 +143,6 @@ final class TwilioServiceViewController: UIViewController {
     
     private enum TwiMLmethodEndpoint: String  {
         case studio = "/studio"
-        case makeCall = "/makeCall"
-        case placeCall = "/placeCall"
     }
     
     private var currentMethodEndpoint: TwiMLmethodEndpoint = TwiMLmethodEndpoint.studio
@@ -444,11 +442,34 @@ final class TwilioServiceViewController: UIViewController {
     
     // MARK: Fetch AccesToken
     private func fetchAccessToken() -> String? {
+
+        
+       guard let serverConfig: String = StorageManager.shared.load(for: .serverType),
+            let type: ServerTypes = ServerTypes(rawValue: serverConfig) else {
+            return nil
+        }
+        
+        switch type {
+        case .sit:
+            break
+        case .production:
+            break
+        case .custom:
+            
+            guard let accessTokenURLString: String = StorageManager.shared.load(for: .customTwilioAccessTokenURL), accessTokenURLString != "", let accessTokenURL = URL(string: accessTokenURLString) else {
+                return nil
+            }
+    
+            return try? String(contentsOf: accessTokenURL, encoding: .utf8)
+        }
+        
         
         let enpoint = accessTokenEndpoint + currentMethodEndpoint.rawValue
         let endpointWithIdentity = String(format: "%@?identity=%@", enpoint, identity)
         
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
+        
+        
         
         return try? String(contentsOf: accessTokenURL, encoding: .utf8)
     }

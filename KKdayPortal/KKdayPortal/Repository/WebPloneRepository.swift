@@ -20,7 +20,15 @@ final class WebPloneRepository {
         
         switch resourceType {
         case .kkMember:
-            return URL(string: ConfigManager.shared.ploneModel.host + "/Plone")!
+            
+            let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
+            
+            guard let element = service!.elements.filter({ $0.name == "Website URL"}).first else {
+                print("❌ Can't Get Plone URL")
+                return URL(string: "https://www.kkday.com")!
+            }
+            
+            return URL(string: element.content + "/Plone")!
             
         case .normal(url: let url):
             return url

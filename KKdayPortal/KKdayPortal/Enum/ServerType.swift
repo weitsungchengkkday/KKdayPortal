@@ -9,6 +9,7 @@
 enum ServerTypes: String {
     case sit
     case production
+    case custom
 }
 
 extension ServerTypes {
@@ -18,6 +19,8 @@ extension ServerTypes {
             return "sit"
         case .production:
             return "production"
+        case .custom:
+            return "custom"
         }
     }
 }

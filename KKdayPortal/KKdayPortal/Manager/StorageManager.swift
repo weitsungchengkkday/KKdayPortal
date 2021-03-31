@@ -15,10 +15,13 @@ final class StorageManager {
     /// Storage Key
     enum StorageKeys: String {
         
-        // Plone
+        /// Portal Services
+        case plonePortalService
+
+        // Plone (Object)
         case ploneResourceType
         
-        // Portal
+        // Portal (Object)
         case generalUser
         
         // Language Setting
@@ -32,13 +35,13 @@ final class StorageManager {
         /// ServerType
         // Odoo
         case serverType
-        // BPM
-        case bpmServerType
 
-        /// Open Twilio Setting
-        case twilioHost
-        case twilioEndPoint
-        case twilioIdentifier
+        /// Service Setting
+        case twilioAccessTokenURL
+        
+        /// Custom Service Setting
+        case customTwilioAccessTokenURL
+        
     }
 
     private init() {

@@ -1,5 +1,5 @@
 //
-//  ApplicationsContentViewModel.swift
+//  ServiceWebContentViewModel.swift
 //  KKdayPortal
 //
 //  Created by WEI-TSUNG CHENG on 2019/12/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ApplicationsContentViewModel {
+final class ServiceWebContentViewModel {
     
     typealias PortalContent = GeneralItem
     

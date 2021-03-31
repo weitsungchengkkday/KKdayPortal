@@ -337,7 +337,15 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
     
     private func signin() {
-        print("📯 Current Host is \(ConfigManager.shared.ploneModel.host)")
+        
+        let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
+        
+        guard let element = service!.elements.filter({ $0.name == "Website URL"}).first else {
+            print("❌ Can't Get Plone URL")
+            return
+        }
+        
+        print("📯 Current Host is \(element.content)")
 
         guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return

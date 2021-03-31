@@ -117,8 +117,6 @@ final class GeneralRootWithLanguageFoldersViewModel {
         }
     }
     
-    
-    
     private func transferGeneralListsToContentListSections(generalLists: [GeneralList]) -> [ContentListSection] {
         
         guard generalLists.count > 0 else {

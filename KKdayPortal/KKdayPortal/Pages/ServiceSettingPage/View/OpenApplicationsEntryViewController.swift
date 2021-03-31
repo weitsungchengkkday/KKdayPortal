@@ -1,15 +1,15 @@
 //
-//  ApplicationsEntryViewController.swift
+//  OpenApplicationsEntryViewController.swift
 //  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2019/12/18.
-//  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
+//  Created by KKday on 2021/1/18.
+//  Copyright © 2021 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-final class ApplicationsEntryViewController: UIViewController {
+final class OpenApplicationsEntryViewController: UIViewController {
     
     // 🏞 UI element
     lazy var applicationsStackView: UIStackView = {
@@ -21,26 +21,26 @@ final class ApplicationsEntryViewController: UIViewController {
         return stv
     }()
     
-    lazy var bpmButton: UIButton = {
+    lazy var serviceSettingButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("BPM", for: .normal)
+        btn.setTitle("Service Setting", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         btn.layer.cornerRadius = 8
         return btn
     }()
     
-    lazy var twilioButton: UIButton = {
+    
+    lazy var serviceManaulButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Call Center", for: .normal)
+        btn.setTitle("Service Manaul", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        btn.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         btn.layer.cornerRadius = 8
         return btn
     }()
     
-    private let viewModel = ApplicationsEntryViewModel()
+    private let viewModel = ServiceSettingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,55 +52,47 @@ final class ApplicationsEntryViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Service List"
+        self.title = "Service Setting"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         view.addSubview(applicationsStackView)
-        applicationsStackView.addArrangedSubview(bpmButton)
-        applicationsStackView.addArrangedSubview(twilioButton)
+        applicationsStackView.addArrangedSubview(serviceSettingButton)
+        applicationsStackView.addArrangedSubview(serviceManaulButton)
         
         applicationsStackView.snp.makeConstraints { maker in
             maker.width.equalToSuperview()
             maker.centerX.centerY.equalToSuperview()
         }
         
-        bpmButton.snp.makeConstraints { maker in
+        serviceManaulButton.snp.makeConstraints { maker in
             maker.height.equalTo(44)
             maker.width.equalToSuperview().offset(-60)
         }
         
-        twilioButton.snp.makeConstraints { maker in
+        serviceSettingButton.snp.makeConstraints { maker in
             maker.height.equalTo(44)
             maker.width.equalToSuperview().offset(-60)
         }
+        
     }
     
     // 🎬 set action
     private func setAction() {
-        bpmButton.addTarget(self, action: #selector(goBPM), for: .touchUpInside)
-        twilioButton.addTarget(self, action: #selector(goTwilio), for: .touchUpInside)
+        
+        serviceSettingButton.addTarget(self, action: #selector(goServiceSetting), for: .touchUpInside)
+        
+        serviceManaulButton.addTarget(self, action: #selector(goServiceManaul), for: .touchUpInside)
+        
     }
     
-    @objc private func goBPM() {
-        
-        guard let bpm: ApplicationSever = StorageManager.shared.loadObject(for: .bpmServerType) else {
-            print("❌ Can't find BPM server URL in Storage Manager")
-            return
-        }
-        
-        guard let bpmURL = URL(string: bpm.server_url + "/WebAgenda/") else {
-            print("❌ Invalid BPM server URL")
-            return
-        }
-        
-        let vm = ApplicationsContentViewModel(source: bpmURL)
-        let presentVC = ApplicationsContentViewController(viewModel: vm)
-        
+    
+    @objc private func goServiceSetting() {
+        let presentVC = ServiceSettingViewController()
         present(presentVC, animated: true, completion: nil)
     }
     
-    @objc private func goTwilio() {
-        let presentVC = TwilioServiceManager.shared.twiVC
+    @objc private func goServiceManaul() {
+        let presentVC = ServiceManaulViewController()
         present(presentVC, animated: true, completion: nil)
     }
     
@@ -114,7 +106,9 @@ final class ApplicationsEntryViewController: UIViewController {
         }
     }
     
-    private func updateApplicationEntry(viewModel: ApplicationsEntryViewModel) {
+    private func updateApplicationEntry(viewModel: ServiceSettingViewModel) {
   
     }
+    
+
 }

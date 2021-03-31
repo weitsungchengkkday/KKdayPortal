@@ -34,9 +34,9 @@ final class ApplicationsContentViewController: UIViewController {
         return idv
     }()
     
-    private let viewModel: ApplicationsContentViewModel
+    private let viewModel: ServiceWebContentViewModel
     
-    init(viewModel: ApplicationsContentViewModel) {
+    init(viewModel: ServiceWebContentViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -99,16 +99,6 @@ final class ApplicationsContentViewController: UIViewController {
 extension ApplicationsContentViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        
-        // BPM Redirect
-        if let response = navigationResponse.response as? HTTPURLResponse,
-            let hearders = response.allHeaderFields as? [String : Any],
-            let redirectURL = hearders["kkday_bpm_sso_url"] as? String {
-            
-            print("RedirectURL is: \(redirectURL)")
-            let url = URL(string: redirectURL)!
-            webView.load(URLRequest(url: url))
-        }
         
         decisionHandler(.allow)
     }

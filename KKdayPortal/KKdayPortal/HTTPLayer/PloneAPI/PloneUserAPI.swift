@@ -87,7 +87,7 @@ final class PloneUserAPI {
     // Just Clear Plone related Data in APP
     func signout(account: String, token: String, completion: @escaping (Result<GeneralUser, HTTPError>) -> Void) {
         
-        let user: GeneralUser? = StorageManager.shared.load(for: .generalUser)
+        let user: GeneralUser? = StorageManager.shared.loadObject(for: .generalUser)
         let r = HTTPRequest()
         
         guard let genernalUser = user else {

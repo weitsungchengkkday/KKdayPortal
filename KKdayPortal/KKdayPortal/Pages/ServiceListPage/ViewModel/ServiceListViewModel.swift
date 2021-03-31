@@ -1,5 +1,5 @@
 //
-//  ApplicationsEntryViewModel.swift
+//  ServiceListViewModel.swift
 //  KKdayPortal
 //
 //  Created by WEI-TSUNG CHENG on 2019/12/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ApplicationsEntryViewModel {
+final class ServiceListViewModel {
     
     var updateContent: () -> Void = {}
     

@@ -1,15 +1,16 @@
 //
-//  OpenTwilioInfoViewController.swift
+//  ServiceManaulViewController.swift
 //  KKdayPortal
 //
-//  Created by KKday on 2021/1/19.
+//  Created by KKday on 2021/3/26.
 //  Copyright © 2021 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
+import SnapKit
 
-class OpenTwilioInfoViewController: UIViewController {
-
+class ServiceManaulViewController: UIViewController {
+   
     // 🏞 UI element
     lazy var backgroundImageVeiw: UIImageView = {
         let imv = UIImageView()
@@ -36,12 +37,17 @@ class OpenTwilioInfoViewController: UIViewController {
         txv.isEditable = false
         
         let text = """
-        Notice
+        <Service Manaul>
+
+        ㄧ. Call Center
         
         1. Call Center construction is based on Twilio Service
         
-        2. KKPortal only implement the phone interface, you must implement your own server. Add your server's host,
-        3.
+        2. KKPortal only implement the phone interface, you must implement your own server.
+        3. Your server must provide twilio accessToken API, Response body in JSON format (has key "accessToken" and value is accessToken String e.g. {"accessToken": eyxxxxxxx })
+        
+        4. for more detail, please read Twilio document
+
         """
         let nsText = NSString(string: text)
         let contentRange = nsText.range(of: text)
@@ -64,7 +70,7 @@ class OpenTwilioInfoViewController: UIViewController {
         let btn = UIButton()
         btn.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         btn.setTitle("OK", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 0.5)
+        btn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.4896715177)
         btn.layer.cornerRadius = 5
         return btn
     }()
@@ -121,5 +127,4 @@ class OpenTwilioInfoViewController: UIViewController {
     // ⛓ bind viewModel
     private func bindViewModel() {}
 
-    
 }
