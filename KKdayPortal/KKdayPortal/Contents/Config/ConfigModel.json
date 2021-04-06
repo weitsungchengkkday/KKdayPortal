@@ -1,14 +1,9 @@
 
 [
     {
-        "name": "plone",
-        "host": "",
-        "sitServer": "https://sit.eip.kkday.net",
-        "productionServer": "https://eip.kkday.net"
-    },
-    {
         "name": "odoo",
         "host": "",
+        "localServer": "https://13ec2193fedd.ngrok.io",
         "sitServer": "https://sit-odoo.eip.kkday.net",
         "productionServer": "https://odoo.eip.kkday.net"
     }

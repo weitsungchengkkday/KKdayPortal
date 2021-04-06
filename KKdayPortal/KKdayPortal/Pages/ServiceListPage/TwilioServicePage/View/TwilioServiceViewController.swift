@@ -31,8 +31,6 @@ final class TwilioServiceViewController: UIViewController {
         return lbl
     }()
     
-    /// Test
-    
     lazy var transferValue: UITextField = {
         let txf = UITextField()
         txf.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
@@ -43,15 +41,11 @@ final class TwilioServiceViewController: UIViewController {
         return txf
     }()
     
-    
     lazy var transferCallButton: UIButton = {
         let btn: UIButton = UIButton()
         btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
         return btn
     }()
-    
-    
-    ///
     
     lazy var placeCallButton: UIButton = {
         let btn: UIButton = UIButton()
@@ -123,23 +117,12 @@ final class TwilioServiceViewController: UIViewController {
         return lbl
     }()
     
-    
-    // ODOO Server (for creating accessToken)
-    private var baseURLString: String {
-        let host = "https://sit-odoo.eip.kkday.net"
-         // let host = ConfigManager.shared.odooModel.host
-        return host
-    }
-    
     // CallKit
     private var callKitProvider: CXProvider?
     private let callKitCallController = CXCallController()
     private var userInitiatedDisconnect: Bool = false
     
     private var callKitCompletionCallBack: ((Bool) -> Void)? = nil
-    
-    // TwilioVoice
-    private let accessTokenEndpoint = "/accessToken"
     
     private enum TwiMLmethodEndpoint: String  {
         case studio = "/studio"
@@ -365,17 +348,12 @@ final class TwilioServiceViewController: UIViewController {
             self?.showMicrophoneAccessRequest(uuid, handle)
         }
     }
-    
-    
-    ///
-    
+ 
     @objc private func transferButtonPressed(sender: UIButton) {
           
         
-        print(transferValue.text)
+// print(transferValue.text)
     }
-    
-    ///
     
     private func checkRecordPermission(completion: @escaping (_ permissionGranted: Bool) -> Void) {
         let permissionStatus = AVAudioSession.sharedInstance().recordPermission
@@ -443,35 +421,56 @@ final class TwilioServiceViewController: UIViewController {
     // MARK: Fetch AccesToken
     private func fetchAccessToken() -> String? {
 
-        
-       guard let serverConfig: String = StorageManager.shared.load(for: .serverType),
-            let type: ServerTypes = ServerTypes(rawValue: serverConfig) else {
+        guard let isCustomServer: Bool = StorageManager.shared.load(for: .isCustomServer) else {
             return nil
         }
         
-        switch type {
-        case .sit:
-            break
-        case .production:
-            break
-        case .custom:
+        if isCustomServer {
             
             guard let accessTokenURLString: String = StorageManager.shared.load(for: .customTwilioAccessTokenURL), accessTokenURLString != "", let accessTokenURL = URL(string: accessTokenURLString) else {
+                
+                print("❌ Custom Twilio access token URL does not provide")
                 return nil
             }
-    
-            return try? String(contentsOf: accessTokenURL, encoding: .utf8)
+            
+            do {
+                let token  = try String(contentsOf: accessTokenURL, encoding: .utf8)
+                print("📳✅ CustomServer Get accessToken")
+                
+                return token
+                
+            } catch {
+                print("📳⚠️ CustomServer Get accessToken failed")
+               return nil
+            }
+       
+        } else {
+            
+            let service: PortalService? = StorageManager.shared.loadObject(for: .twilioPortalService)
+            
+            guard let element = service?.elements.filter({ $0.name == "AccessToken URL"}).first, element.content != "" else {
+                print("❌ Can't Get Twilio base URL")
+                return nil
+            }
+            let baseURLString = element.content
+            
+            let enpoint = currentMethodEndpoint.rawValue
+            let endpointWithIdentity = String(format: "%@?identity=%@", enpoint, identity)
+            
+            guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
+            
+            do {
+                let token  = try String(contentsOf: accessTokenURL, encoding: .utf8)
+                print("📳✅ Get accessToken")
+                
+                return token
+                
+            } catch {
+                print("📳⚠️ Get accessToken failed")
+               return nil
+            }
         }
         
-        
-        let enpoint = accessTokenEndpoint + currentMethodEndpoint.rawValue
-        let endpointWithIdentity = String(format: "%@?identity=%@", enpoint, identity)
-        
-        guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
-        
-        
-        
-        return try? String(contentsOf: accessTokenURL, encoding: .utf8)
     }
     
     // MARK: AudioSession
@@ -709,15 +708,10 @@ extension TwilioServiceViewController: CXProviderDelegate {
     
     // MARK: Perform Twilio Voice Call
     private func performVoiceCall(uuid: UUID, client: String?, completionHandler: @escaping (Bool) -> Void) {
-        guard let accessToken = fetchAccessToken() else {
-            completionHandler(false)
-            print("📳⚠️ Can't get accessToken")
-            return
-        }
-        print("📳✅ Get accessToken")
+        let accessToken = fetchAccessToken() ?? ""
+    
         print("📳 Start making a voice call")
-        print(self.outgoingValue.text)
-        
+    
         let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
             builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""
                               ,self.twimlParamto: self.transferValue.text ?? ""
@@ -965,7 +959,6 @@ extension TwilioServiceViewController: PushKitEventDelegate {
             print("📳⚠️ Get accessToken Fail Or registrationRequired == false")
             return
         }
-        print("📳✅ Get accessToken")
         
         let cachedDeviceToken = credentials.token
         
@@ -988,7 +981,6 @@ extension TwilioServiceViewController: PushKitEventDelegate {
             print("📳⚠️ Get accessToken Fail")
             return
         }
-        print("📳✅ Get accessToken")
         
         TwilioVoiceSDK.unregister(accessToken: accessToken, deviceToken: deviceToken) { error in
             if let error = error {

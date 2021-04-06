@@ -60,12 +60,12 @@ final class PortalViewController: UIViewController, Localizable {
             
             let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
             
-            guard let element = service!.elements.filter({ $0.name == "Website URL"}).first else {
+            guard let element = service?.elements.filter({ $0.name == "Website URL"}).first else {
                 print("❌ Can't Get Plone URL")
                 return
             }
             
-            rootURL = URL(string: element.content + "/Plone" + "/zh-tw")!
+            rootURL = URL(string: element.content + "/Plone/zh-tw")!
             
         case .normal(url: let url):
             rootURL = URL(string: "https://" + url.absoluteString + "/Plone/zh-tw")!

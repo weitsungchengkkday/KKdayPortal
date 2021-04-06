@@ -9,7 +9,6 @@
 import UIKit
 import PushKit
 import TwilioVoice
-import DolphinHTTP
 
 protocol PushKitEventDelegate: AnyObject {
     func credentialsUpdated(credentials: PKPushCredentials) -> Void
@@ -24,21 +23,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var voipRegistry = PKPushRegistry.init(queue: .main)
     
-    var portalservices: [PortalService] = []
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-    
         
-        
-#if OPEN
-    print("0️⃣ open")
-#elseif SIT
+#if SIT
     print("1️⃣ sit")
+   
 #elseif PRODUCTION
     print("2️⃣ production")
+
+#elseif OPEN
+    print("0️⃣ open")
+
 #else
     print("❗️target not exist")
+
 #endif
 
 #if DEBUG
@@ -56,74 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Get Plone andc Odoo Service Host
         ConfigManager.shared.setup()
         
-        getPorServices()
-        
         LanguageManager.shared.setup()
         
         return true
     }
     
-    
-    private func getPorServices() {
-        
-        PortalServiceAPI(loader: URLSessionLoader()).loadPortalService { result in
-        
-            switch result {
-            case .success(let services):
-                self.portalservices = services
-                self.getServiceElements()
-                
-            case .failure(let error):
-                print("Load Portal Services Error: \(error)")
-                break
-            }
-            
-        }
-    }
-    
-    private func getServiceElements() {
-        
-        let group = DispatchGroup()
-        
-        for service in self.portalservices {
-            
-            group.enter()
-            PortalServiceElementAPI(loader: URLSessionLoader()).loadPortalServiceElement(serviceID: service.id) { result in
-                
-                switch result {
-                case .success(let response):
-                    let index = self.portalservices.firstIndex { $0.id == service.id }
-                    
-                    if index == nil {
-                        print("❌ cant get portal service index")
-                        return
-                    }
-                    self.portalservices[index!].elements = response
-                    
-                case .failure(let error):
-                    print("❌ get portal service element failed. \(error)")
-                }
-                group.leave()
-            }
-        }
-        
-        group.notify(queue: DispatchQueue.main) {
-            
-            for service in self.portalservices {
-             
-                switch service.name {
-                case "Plone":
-                    StorageManager.shared.saveObject(for: .plonePortalService, value: service)
-                    
-                    let ser: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
-                    print(ser!.elements)
-                default:
-                    break
-                }
-            }
-        }
-        
-    }
     
     
     func initializePushKit() {

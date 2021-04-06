@@ -24,8 +24,8 @@ final class TestingViewModel {
 //        let sitServer: String = configModel.sitServer
 //        let productionServer: String = configModel.productionServer
 //        
-//        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Sit Server", host: sitServer, serverType: .sit, isSelected: sitServer == currentServer))
-//        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Production", host: productionServer, serverType: .production, isSelected: productionServer == currentServer))
+//        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Sit Server", host: sitServer, serverEnv: .sit, isSelected: sitServer == currentServer))
+//        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Production", host: productionServer, serverEnv: .production, isSelected: productionServer == currentServer))
 //        
 //        self.testingItems = [TestingSection(header: "Testing", items: testingTableViewCellViewModels)]
     }

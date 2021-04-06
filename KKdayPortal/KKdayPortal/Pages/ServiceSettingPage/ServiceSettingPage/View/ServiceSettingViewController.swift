@@ -157,7 +157,7 @@ final class ServiceSettingViewController: UIViewController {
     
     private func readCurrentSetting() {
         
-        let twilioAccessTokenURL: String? = StorageManager.shared.load(for: .twilioAccessTokenURL)
+        let twilioAccessTokenURL: String? = StorageManager.shared.load(for: .customTwilioAccessTokenURL)
         currentSettingTextView.text = """
             <Current Service>
             TwilioAccessTokenURL: \(twilioAccessTokenURL ?? "")
@@ -179,12 +179,12 @@ final class ServiceSettingViewController: UIViewController {
     }
     
     @objc private func saveTwilioAccessTokenURL() {
-        StorageManager.shared.save(for: .twilioAccessTokenURL, value: twilioAccessTokenURLTextField.text)
+        StorageManager.shared.save(for: .customTwilioAccessTokenURL, value: twilioAccessTokenURLTextField.text)
         readCurrentSetting()
     }
     
     @objc private func deleteTwilioAccessTokenURL() {
-        StorageManager.shared.save(for: .twilioAccessTokenURL, value: "")
+        StorageManager.shared.save(for: .customTwilioAccessTokenURL, value: "")
         twilioAccessTokenURLTextField.text = ""
         readCurrentSetting()
     }

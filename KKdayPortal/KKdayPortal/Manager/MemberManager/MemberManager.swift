@@ -51,9 +51,7 @@ final class MemberManager {
     }
     
     func logout() {
-        
         logoutHandler()
- 
     }
     
     // Must clear UserDefualt after logout request finishing, or it might cause logout error
@@ -69,7 +67,7 @@ final class MemberManager {
         // Clear WebCache
         WebCacheCleaner.clean()
         
-        // Reset serverType & language after clear UserDefault
+        // Reset serverEnv & language after clear UserDefault
         ConfigManager.shared.setup()
         LanguageManager.shared.setup()
     }
@@ -86,10 +84,9 @@ final class MemberManager {
         let loginController = LoginViewController(viewModel: LoginViewModel())
         Utilities.appDelegateWindow?.rootViewController = loginController
         
-        // Clear UserDefault(keep language, Region & serverType)
-        // Should not clear StorageKeys .serverType, or changed serverType info would disappear.
-        StorageManager.shared.remove(for: .generalUser)
-        StorageManager.shared.remove(for: .ploneResourceType)
+        // Clear UserDefault(keep language, Region & serverEnv)
+        // Should not clear StorageKeys .serverEnv, or changed serverEnv info would disappear.
+        StorageManager.shared.removeAll()
         
         // Clear WebCache
         WebCacheCleaner.clean()

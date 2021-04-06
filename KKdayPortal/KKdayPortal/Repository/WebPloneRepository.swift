@@ -23,7 +23,7 @@ final class WebPloneRepository {
             
             let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
             
-            guard let element = service!.elements.filter({ $0.name == "Website URL"}).first else {
+            guard let element = service?.elements.filter({ $0.name == "Website URL"}).first else {
                 print("❌ Can't Get Plone URL")
                 return URL(string: "https://www.kkday.com")!
             }

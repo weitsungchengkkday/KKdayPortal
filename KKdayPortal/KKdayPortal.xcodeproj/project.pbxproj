@@ -191,6 +191,9 @@
 		C6B213A2260D8A1100981446 /* ServiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */; };
 		C6B213A3260D8A1100981446 /* ServiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */; };
 		C6B213A4260D8A1100981446 /* ServiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */; };
+		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
+		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
+		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
 		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
 		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
@@ -505,6 +508,7 @@
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C6B2139A260D89DD00981446 /* ServiceManaulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManaulViewController.swift; sourceTree = "<group>"; };
 		C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSettingViewController.swift; sourceTree = "<group>"; };
+		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
 		F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemDescriptionTextView.swift; sourceTree = "<group>"; };
@@ -835,6 +839,14 @@
 				C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C6B213CC261C122700981446 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C6B213CD261C128200981446 /* PloneSSOViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F426FEB823F4F7E600BFDA3B /* CustomUIElement */ = {
@@ -1588,6 +1600,7 @@
 		F45448B923AA8644001B8D31 /* PloneSSOPage */ = {
 			isa = PBXGroup;
 			children = (
+				C6B213CC261C122700981446 /* ViewModel */,
 				F45448BA23AA8667001B8D31 /* View */,
 			);
 			path = PloneSSOPage;
@@ -2413,6 +2426,7 @@
 				C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */,
 				C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */,
 				C631066C25B57ADA0067F72B /* PloneUserAPI.swift in Sources */,
+				C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */,
 				C631066D25B57ADA0067F72B /* GeneralEventObject.swift in Sources */,
 				C631066E25B57ADA0067F72B /* AlertEventInfo.swift in Sources */,
 				C631066F25B57ADA0067F72B /* GeneralEventViewController.swift in Sources */,
@@ -2567,6 +2581,7 @@
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */,
 				F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */,
+				C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */,
 				F44E8CB523B88AA30032C6BE /* ServiceListViewModel.swift in Sources */,
 				F44E8CB623B88AA30032C6BE /* LanguageSettingViewController.swift in Sources */,
 				F44E8CB723B88AA30032C6BE /* SettingViewController.swift in Sources */,
@@ -2721,6 +2736,7 @@
 				F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
 				F4B3BCB623F31052009699E5 /* AlertEventInfo.swift in Sources */,
+				C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */,
 				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
 				F45448AD23A9FA1A001B8D31 /* ServiceListViewModel.swift in Sources */,
 				F454486E23A20EF9001B8D31 /* LanguageSettingViewController.swift in Sources */,

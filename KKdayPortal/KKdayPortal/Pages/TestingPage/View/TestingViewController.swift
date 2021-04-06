@@ -87,12 +87,12 @@ extension TestingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             // Change Storage server
-            let currentServerType: ServerTypes = items[indexPath.row].serverType
-            
-            if currentServerType.rawValue != StorageManager.shared.load(for: .serverType) {
-                StorageManager.shared.save(for: .serverType, value: currentServerType.rawValue)
+            let currentServerEnv: ServerEnv = items[indexPath.row].serverEnv
+           
+            if currentServerEnv.rawValue != StorageManager.shared.load(for: .serverEnv) {
+                StorageManager.shared.save(for: .serverEnv, value: currentServerEnv.rawValue)
             } else {
-                print("⚠️ Save same serverType")
+                print("⚠️ Save same serverEnv")
             }
             
             // Logout after change server

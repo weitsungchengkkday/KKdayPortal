@@ -10,13 +10,13 @@ final class TestingTableViewCellViewModel {
     
     var name: String
     var host: String
-    var serverType: ServerTypes
+    var serverEnv: ServerEnv
     var isSelected: Bool
     
-    init(name: String, host: String, serverType: ServerTypes, isSelected: Bool) {
+    init(name: String, host: String, serverEnv: ServerEnv, isSelected: Bool) {
         self.name = name
         self.host = host
-        self.serverType = serverType
+        self.serverEnv = serverEnv
         self.isSelected = isSelected
     }
 }

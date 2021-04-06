@@ -22,10 +22,12 @@ final class PortalServiceAPI {
     
     func loadPortalService(completion: @escaping (Result<[PortalService],HTTPError>) -> Void) {
         var r = HTTPRequest()
-    
+        
         r.host = ConfigManager.shared.odooModel.host.replacingOccurrences(of: "https://", with: "")
-   
+    
         r.path = "/portal_service"
+        
+        print(r)
         
         loader.load(request: r) { result in
             switch result {
@@ -35,7 +37,6 @@ final class PortalServiceAPI {
                 case .success:
                     if let body = response.body {
                         do {
-                            
                             let portalServices = try JSONDecoder().decode([PortalService].self, from: body)
                             completion(Result.success(portalServices))
                             
@@ -77,7 +78,7 @@ final class PortalServiceElementAPI {
         r.host = ConfigManager.shared.odooModel.host.replacingOccurrences(of: "https://", with: "")
    
         r.path = "/portal_service" + "/\(serviceID)" +  "/portal_service_element"
-    
+        
         loader.load(request: r) { result in
             switch result {
             case .success(let response):

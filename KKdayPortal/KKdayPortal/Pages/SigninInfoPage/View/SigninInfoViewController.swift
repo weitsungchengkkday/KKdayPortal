@@ -198,10 +198,12 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         #if DEBUG
         
             #if OPEN
-            ploneURLTextField.text = "sit.eip.kkday.net"
-            accountTextField.text = "david"
-            passwordTextFiled.text = "123"
+            ploneURLTextField.text = "KKPlone"
             setComfirmButtonState()
+//            ploneURLTextField.text = "sit.eip.kkday.net"
+//            accountTextField.text = "david"
+//            passwordTextFiled.text = "123"
+//            setComfirmButtonState()
 
             #elseif SIT
             ploneURLTextField.text = "KKPlone"
@@ -214,7 +216,6 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
             #endif
         
         #endif
-        
 
     }
     
@@ -338,15 +339,6 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     
     private func signin() {
         
-        let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
-        
-        guard let element = service!.elements.filter({ $0.name == "Website URL"}).first else {
-            print("❌ Can't Get Plone URL")
-            return
-        }
-        
-        print("📯 Current Host is \(element.content)")
-
         guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return
         }
@@ -373,8 +365,10 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         
         switch resourceType {
         case .kkMember:
+            StorageManager.shared.save(for: .isCustomServer, value: false)
             goPloneSSOPage()
         case .normal(url: let url):
+            StorageManager.shared.save(for: .isCustomServer, value: true)
             signiner.signin(url: url, account: accountTextField.text ?? "", password: passwordTextFiled.text ?? "")
         case .none:
             print("❌, resourceType not be defined")
@@ -383,7 +377,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
     
     private func goPloneSSOPage() {
-        let presentViewController = PloneSSOViewController()
+        let presentViewController = PloneSSOViewController(viewModel: PloneSSOViewModel())
         present(presentViewController, animated: true, completion: nil)
     }
     

@@ -26,7 +26,7 @@ final class ConfigManager {
                     
                     let decoder = JSONDecoder()
                     
-                    _odooModel = try decoder.decode([ConfigModel].self, from: data)[1]
+                    _odooModel = try decoder.decode([ConfigModel].self, from: data)[0]
                     
                 } catch let error {
                     print(error.localizedDescription)
@@ -47,43 +47,36 @@ final class ConfigManager {
     }
     
     func setup() {
-        let serverType: ServerTypes
-        if let serverConfig: String = StorageManager.shared.load(for: .serverType),
-            let type: ServerTypes = ServerTypes(rawValue: serverConfig) {
-            serverType = type
-            print("🎆 load SSO Plone server: \(serverType.rawValue)")
+        let serverEnv: ServerEnv
+        if let serverConfig: String = StorageManager.shared.load(for: .serverEnv),
+            let env: ServerEnv = ServerEnv(rawValue: serverConfig) {
+            serverEnv = env
+            print("🎆 load SSO Plone server: \(serverEnv.rawValue)")
             
         } else {
             
-           
-        
-            #if OPEN
-                        serverType = .sit
-            #elseif SIT
-                        serverType = .sit
+            #if SIT
+                        serverEnv = .sit
             #elseif PRODUCTION
-                        serverType = .production
+                        serverEnv = .production
             #else
-                        serverType = .custom
+                        serverEnv = .local
             #endif
-        
             
         
-            StorageManager.shared.save(for: .serverType, value: serverType.rawValue)
-            print("🎇 Set up SSO Plone signin server: \(serverType.rawValue)")
+            StorageManager.shared.save(for: .serverEnv, value: serverEnv.rawValue)
+            print("🎇 Set up SSO Plone signin server: \(serverEnv.rawValue)")
         }
         
-        switch serverType {
+        switch serverEnv {
         case .sit:
             odooModel.host = odooModel.sitServer
              
         case .production:
             odooModel.host = odooModel.productionServer
-        
-        case .custom:
-            break
+        case .local:
+            odooModel.host = odooModel.localServer
         }
-
     }
     
 }
