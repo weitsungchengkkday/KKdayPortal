@@ -51,7 +51,9 @@ final class MemberManager {
     }
     
     func logout() {
+        
         logoutHandler()
+ 
     }
     
     // Must clear UserDefualt after logout request finishing, or it might cause logout error
@@ -67,7 +69,7 @@ final class MemberManager {
         // Clear WebCache
         WebCacheCleaner.clean()
         
-        // Reset serverEnv & language after clear UserDefault
+        // Reset serverType & language after clear UserDefault
         ConfigManager.shared.setup()
         LanguageManager.shared.setup()
     }
@@ -84,9 +86,16 @@ final class MemberManager {
         let loginController = LoginViewController(viewModel: LoginViewModel())
         Utilities.appDelegateWindow?.rootViewController = loginController
         
-        // Clear UserDefault(keep language, Region & serverEnv)
+        // Clear UserDefault(keep language, Region)
         // Should not clear StorageKeys .serverEnv, or changed serverEnv info would disappear.
-        StorageManager.shared.removeAll()
+        StorageManager.shared.remove(for: .generalUser)
+        StorageManager.shared.remove(for: .ploneResourceType)
+        
+        StorageManager.shared.remove(for: .plonePortalService)
+        StorageManager.shared.remove(for: .twilioPortalService)
+        StorageManager.shared.remove(for: .twilioPortalService)
+        StorageManager.shared.remove(for: .customTwilioAccessTokenURL)
+        
         
         // Clear WebCache
         WebCacheCleaner.clean()

@@ -15,19 +15,19 @@ final class TestingViewModel {
     init() {}
  
     func loadTestingItems() {
-//        
-//        var testingTableViewCellViewModels: [TestingTableViewCellViewModel] = []
-//        
-//        let configModel: ConfigModel = ConfigManager.shared.ploneModel
-//        
-//        let currentServer: String = configModel.host
-//        let sitServer: String = configModel.sitServer
-//        let productionServer: String = configModel.productionServer
-//        
-//        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Sit Server", host: sitServer, serverEnv: .sit, isSelected: sitServer == currentServer))
-//        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Production", host: productionServer, serverEnv: .production, isSelected: productionServer == currentServer))
-//        
-//        self.testingItems = [TestingSection(header: "Testing", items: testingTableViewCellViewModels)]
+        
+        var testingTableViewCellViewModels: [TestingTableViewCellViewModel] = []
+        
+        let configModel: ConfigModel = ConfigManager.shared.odooModel
+        
+        let currentServer: String = configModel.host
+        let sitServer: String = configModel.sitServer
+        let productionServer: String = configModel.productionServer
+        
+        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Sit Server", host: sitServer, serverEnv: .sit, isSelected: sitServer == currentServer))
+        testingTableViewCellViewModels.append(TestingTableViewCellViewModel(name: "Production Server", host: productionServer, serverEnv: .production, isSelected: productionServer == currentServer))
+        
+        self.testingItems = [TestingSection(header: "Testing", items: testingTableViewCellViewModels)]
     }
     
 }

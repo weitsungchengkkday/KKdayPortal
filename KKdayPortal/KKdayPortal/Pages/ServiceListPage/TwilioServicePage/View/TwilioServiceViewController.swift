@@ -457,7 +457,15 @@ final class TwilioServiceViewController: UIViewController {
             let enpoint = currentMethodEndpoint.rawValue
             let endpointWithIdentity = String(format: "%@?identity=%@", enpoint, identity)
             
-            guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else { return nil }
+            let serverEnv: ServerEnv
+            if let serverConfig: String = StorageManager.shared.load(for: .serverEnv),
+                let env: ServerEnv = ServerEnv(rawValue: serverConfig) {
+                serverEnv = env
+            } else {
+                return nil
+            }
+            
+            guard let accessTokenURL = URL(string: baseURLString + "/\(serverEnv.rawValue)" + endpointWithIdentity) else { return nil }
             
             do {
                 let token  = try String(contentsOf: accessTokenURL, encoding: .utf8)
