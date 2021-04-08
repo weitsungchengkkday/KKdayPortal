@@ -116,6 +116,16 @@ extension String {
         return self.trimmingCharacters(in: .whitespaces)
     }
     
+    // Filename extension
+    
+    func fileNameOnly() -> String {
+        return URL(fileURLWithPath: self).deletingPathExtension().lastPathComponent
+    }
+    
+    func fileNameExtension() -> String {
+        return URL(fileURLWithPath: self).pathExtension
+    }
+    
 }
 
 // SwiftSoup

@@ -6,7 +6,6 @@
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
 
-import Alamofire
 import Foundation
 
 final class GeneralFileViewModel {
@@ -56,45 +55,44 @@ final class GeneralFileViewModel {
     }
     
     func storeAndShare() {
-        
-        guard let user: GeneralUser = StorageManager.shared.loadObject(for: .generalUser) else {
-            print("❌ No generalUser exist")
+
+        guard let fileNameExtension = generalItem?.id?.fileNameExtension() else {
+            print("❌ Without fileName extension")
             return
         }
-        
-        let token = user.token
-        let headers: [String : String] = [
-            "Authorization" : "Bearer" + " " + token
-        ]
-        
-        guard let fileName = generalItem?.id else {
-            print("❌ No generalItem exist")
-            return
-        }
-        
-        guard let remoteURL = generalFileObject?.url else {
+
+        let fullFileName = self.fileTitle + "." + fileNameExtension
+
+        guard let url = generalFileObject?.url else {
             print("❌ No generalFileObject exist")
             return
         }
         
-        Alamofire.request(remoteURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { [weak self] dataResponse in
+        let api = PloneFileAPI()
+        
+        api.getPloneFile(url: url) { result in
             
-            guard let data = dataResponse.data, dataResponse.error == nil else {
-                return
+            switch result {
+            case .success(let data):
+                let tmpURL = FileManager.default.temporaryDirectory.appendingPathComponent(fullFileName)
+                do {
+                    try data.write(to: tmpURL)
+                } catch {
+                    print("❌ write to temp URL failed")
+                }
+                DispatchQueue.main.async {
+                    self.fileLocalURL = tmpURL
+                    self.downloadFile()
+                }
+                
+            case .failure(let error):
+                print("❌ Get Plone File Failed: \(error)")
             }
             
-            let tmpURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
-            
-            do {
-                try data.write(to: tmpURL)
-            } catch {
-                print("❌ write to temp URL failed")
-            }
-            
-            self?.fileLocalURL = tmpURL
-            
-            self?.downloadFile()
         }
+
     }
     
+    
 }
+

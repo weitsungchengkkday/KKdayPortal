@@ -5,8 +5,8 @@
 //  Created by WEI-TSUNG CHENG on 2019/12/8.
 //  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
 //
-
-import Alamofire
+import UIKit
+import Foundation
 
 final class GeneralImageViewModel {
     
@@ -53,41 +53,24 @@ final class GeneralImageViewModel {
                 self?.updateContent()
             }
     }
-
     
     private func dowloadImage(url: URL) {
         
-        guard let user: GeneralUser = StorageManager.shared.loadObject(for: .generalUser) else {
-            print("❌ No generalUser exist")
-            return
-        }
-        
-        let token = user.token
-        let headers: [String : String] = [
-            "Authorization" : "Bearer" + " " + token
-        ]
-        
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { dataResponse
-            in
+        let api = PloneImageAPI()
+        api.getPloneImage(url: url) { result in
             
-            DispatchQueue.global().async { [weak self] in
-                if let data = dataResponse.data {
-                    
-                    DispatchQueue.main.async {
-                        if let image = UIImage(data: data) {
-                            self?.image = image
-                            
-                        } else {
-                            let image = UIImage(systemName: "xmark.rectangle") ?? #imageLiteral(resourceName: "icPicture")
-                            self?.image = image
-                        }
-                        self?.updateContent()
-                    }
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.image = image
+                    self.updateContent()
                 }
-                
+            case .failure(let error):
+                print("❌ Get Plone Image Failed: \(error)")
             }
             
         }
+        
     }
     
 }
