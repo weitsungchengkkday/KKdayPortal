@@ -39,7 +39,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         return stv
     }()
     
-    lazy var ploneURLStackView: UIStackView = {
+    lazy var portalConfigURLStackView: UIStackView = {
         let stv = UIStackView()
         stv.axis = .vertical
         stv.distribution = .fill
@@ -47,25 +47,25 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         return stv
     }()
     
-    lazy var ploneURLLabel: UILabel = {
+    lazy var portalConfigURLLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        lbl.text = "Please enter your plone website URL Host"
+        lbl.text = "Please enter your portal config URL"
         lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
     }()
     
-    lazy var ploneURLTextField: CleanButtonTextField = {
+    lazy var portalConfigURLTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
-        txf.placeholder = "e.g. = sit.eip.kkday.net"
+        txf.placeholder = "https://xyz.abc.com/portal-config"
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .URL
         txf.layer.cornerRadius = 12
         txf.returnKeyType = .next
         return txf
     }()
-    
+
     lazy var accountStackView: UIStackView = {
         let stv = UIStackView()
         stv.axis = .vertical
@@ -137,15 +137,6 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         return btn
     }()
     
-    lazy var testLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        lbl.text = "testLabel"
-        lbl.adjustsFontSizeToFitWidth = true
-        lbl.textAlignment = .left
-        return lbl
-    }()
-    
     // ⌨️ Keyboarder
     
     var isKeyboardShown: Bool = false
@@ -196,24 +187,8 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         scrollViewOriginalContentInset.bottom = 20
         
         #if DEBUG
-        
-            #if OPEN
-            ploneURLTextField.text = "KKPlone"
+            portalConfigURLTextField.text = "KKPortal"
             setComfirmButtonState()
-//            ploneURLTextField.text = "sit.eip.kkday.net"
-//            accountTextField.text = "david"
-//            passwordTextFiled.text = "123"
-//            setComfirmButtonState()
-
-            #elseif SIT
-            ploneURLTextField.text = "KKPlone"
-            setComfirmButtonState()
-            
-            #elseif PRODUCTION
-            ploneURLTextField.text = "KKPlone"
-            setComfirmButtonState()
-
-            #endif
         
         #endif
 
@@ -235,9 +210,9 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         container.addSubview(inputStackView)
         self.view.addSubview(closeButton)
 
-        inputStackView.addArrangedSubview(ploneURLStackView)
-        ploneURLStackView.addArrangedSubview(ploneURLLabel)
-        ploneURLStackView.addArrangedSubview(ploneURLTextField)
+        inputStackView.addArrangedSubview(portalConfigURLStackView)
+        portalConfigURLStackView.addArrangedSubview(portalConfigURLLabel)
+        portalConfigURLStackView.addArrangedSubview(portalConfigURLTextField)
         
         inputStackView.addArrangedSubview(accountStackView)
         accountStackView.addArrangedSubview(accountLabel)
@@ -264,11 +239,11 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
             maker.centerX.centerY.equalToSuperview()
         }
         
-        ploneURLLabel.snp.makeConstraints { maker in
+        portalConfigURLLabel.snp.makeConstraints { maker in
             maker.width.equalTo(view.snp.width).offset(-120)
         }
         
-        ploneURLTextField.snp.makeConstraints { maker in
+        portalConfigURLTextField.snp.makeConstraints { maker in
             maker.width.equalTo(view.snp.width).offset(-100)
             maker.height.equalTo(44)
         }
@@ -307,7 +282,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
     
     func setupUIDelegate() {
-        ploneURLTextField.delegate = self
+        portalConfigURLTextField.delegate = self
         accountTextField.delegate = self
         passwordTextFiled.delegate = self
     }
@@ -318,7 +293,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
 
     @objc func handerSingleTap() {
-        self.ploneURLTextField.resignFirstResponder()
+        self.portalConfigURLTextField.resignFirstResponder()
         self.accountTextField.resignFirstResponder()
         self.passwordTextFiled.resignFirstResponder()
     }
@@ -339,17 +314,34 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     
     private func signin() {
         
-        guard let urlString = ploneURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
+        guard let urlString = portalConfigURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return
         }
         
         switch urlString {
-        case "KKPlone":
+        case "KKPortal":
             print("✈️ KK Member signin")
             PloneResourceManager.shared.resourceType = .kkMember
             
+            viewModel.getKKUserPortalConfig { [weak self] isSuccess in
+                
+                DispatchQueue.main.async {
+                    if isSuccess {
+                            self?.goPloneSSOPage()
+                        
+                    } else {
+                        let alertController = UIAlertController(title: "Warning", message: "Can't get KKUser portal config", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(alertAction)
+                        self?.present(alertController, animated: true, completion: nil)
+                        return
+                    }
+                }
+            }
+            
         default:
-            print("🗺 normal signin")
+            
+            print("🗺 Custom user signin")
             guard let url = URL(string: urlString) else {
                 let alertController = UIAlertController(title: "Warning", message: "Not valid URL, please check", preferredStyle: .alert)
                 let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -358,20 +350,36 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
                 return
             }
             
-            PloneResourceManager.shared.resourceType = .normal(url)
-        }
-        
-        let resourceType = PloneResourceManager.shared.resourceType
-        
-        switch resourceType {
-        case .kkMember:
-            StorageManager.shared.save(for: .isCustomServer, value: false)
-            goPloneSSOPage()
-        case .normal(url: let url):
-            StorageManager.shared.save(for: .isCustomServer, value: true)
-            signiner.signin(url: url, account: accountTextField.text ?? "", password: passwordTextFiled.text ?? "")
-        case .none:
-            print("❌, resourceType not be defined")
+            viewModel.getCustomUserPortalConfig(url: url) { [weak self] result in
+                
+                DispatchQueue.main.async {
+                    
+                    switch result {
+                    case .success(let config):
+                        
+                        PloneResourceManager.shared.resourceType = .normal
+                        
+                        guard let signinURL: URL = URL(string: config.data.login.url) else {
+                            let alertController = UIAlertController(title: "Warning", message: "Plone login URL is invalid", preferredStyle: .alert)
+                            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alertController.addAction(alertAction)
+                            self?.present(alertController, animated: true, completion: nil)
+                            return
+                        }
+                        
+                        self?.signiner.signin(url: signinURL, account: self?.accountTextField.text ?? "", password: self?.passwordTextFiled.text ?? "")
+                        
+                    case .failure(let error):
+                        
+                        print("❌ Error: \(error)")
+                        let alertController = UIAlertController(title: "Warning", message: "Can't get portal config", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(alertAction)
+                        self?.present(alertController, animated: true, completion: nil)
+                        return
+                    }
+                }
+            }
         }
         
     }
@@ -388,15 +396,13 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
     
     private func setComfirmButtonState() {
-        loginButton.isEnabled = !(ploneURLTextField.text?.isEmpty ?? true)
-        loginButton.backgroundColor = !(ploneURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        loginButton.isEnabled = !(portalConfigURLTextField.text?.isEmpty ?? true)
+        loginButton.backgroundColor = !(portalConfigURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
-    
 
 }
 
 extension SigninInfoViewController: SigninDelegate {
-    
     
     func signinSuccess(_ signiner: Signiner, generalUser user: GeneralUser) {
         
@@ -428,7 +434,7 @@ extension SigninInfoViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
-        if textField == ploneURLTextField {
+        if textField == portalConfigURLTextField {
             setComfirmButtonState()
         }
     }
@@ -436,7 +442,7 @@ extension SigninInfoViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         switch textField {
-        case ploneURLTextField:
+        case portalConfigURLTextField:
             textField.resignFirstResponder()
             accountTextField.becomeFirstResponder()
         case accountTextField:

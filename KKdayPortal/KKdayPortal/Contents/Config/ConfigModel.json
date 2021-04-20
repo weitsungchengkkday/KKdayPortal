@@ -3,9 +3,13 @@
     {
         "name": "odoo",
         "host": "",
-        "localServer": "https://13ec2193fedd.ngrok.io",
+        "client": "",
+        "localServer": "http://localhost:8069",
         "sitServer": "https://sit-odoo.eip.kkday.net",
-        "productionServer": "https://odoo.eip.kkday.net"
+        "productionServer": "https://odoo.eip.kkday.net",
+        "localClientID": "OBccIsFMh9EoG5r9n46kYVjiZ7ehqD",
+        "sitClientID": "BI2rIQka9qGztYT3ktpGmCOUpzooly",
+        "productionClientID": "BI2rIQka9qGztYT3ktpGmCOUpzooly"
     }
 ]
 

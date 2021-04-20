@@ -13,7 +13,7 @@ final class TwilioServiceManager {
     
     static let shared = TwilioServiceManager()
     
-    var twiVC: TwilioServiceViewController = TwilioServiceViewController()
+    var twiVC: TwilioServiceViewController = TwilioServiceViewController(viewModel: TwilioServiceViewModel())
     
     private init() {
         

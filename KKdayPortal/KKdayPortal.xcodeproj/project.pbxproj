@@ -34,12 +34,10 @@
 		C631061525B57ADA0067F72B /* GeneralCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7823E87DD10050C851 /* GeneralCollectionViewController.swift */; };
 		C631061625B57ADA0067F72B /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4923E87D6D0050C851 /* GeneralTextObjectNormalTableViewCellViewModel.swift */; };
 		C631061725B57ADA0067F72B /* GeneralDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544833239CABAB001B8D31 /* GeneralDocumentViewController.swift */; };
-		C631061925B57ADA0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
 		C631061A25B57ADA0067F72B /* GeneralImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447EB239AB6F6001B8D31 /* GeneralImageObject.swift */; };
 		C631061B25B57ADA0067F72B /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC4723E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift */; };
 		C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
 		C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
-		C631062025B57ADA0067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
 		C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
 		C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */; };
 		C631062325B57ADA0067F72B /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
@@ -81,7 +79,7 @@
 		C631064825B57ADA0067F72B /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
 		C631064925B57ADA0067F72B /* GeneralImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454482F239CAB2E001B8D31 /* GeneralImageViewController.swift */; };
 		C631064A25B57ADA0067F72B /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* PortalViewController.swift */; };
-		C631064B25B57ADA0067F72B /* PortalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67012BF2592003500830027 /* PortalService.swift */; };
+		C631064B25B57ADA0067F72B /* PortalService1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67012BF2592003500830027 /* PortalService1.swift */; };
 		C631064C25B57ADA0067F72B /* ServiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ServiceListViewController.swift */; };
 		C631064D25B57ADA0067F72B /* GeneralFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544841239CADF6001B8D31 /* GeneralFileViewModel.swift */; };
 		C631064E25B57ADA0067F72B /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
@@ -148,7 +146,6 @@
 		C631068C25B57ADA0067F72B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
 		C631068D25B57ADA0067F72B /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
 		C631068E25B57ADA0067F72B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487523A32F92001B8D31 /* LanguageManager.swift */; };
-		C631068F25B57ADA0067F72B /* PortalServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27DE259049D700CFF8A8 /* PortalServiceAPI.swift */; };
 		C631069025B57ADA0067F72B /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
 		C631069125B57ADA0067F72B /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
 		C631069225B57ADA0067F72B /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
@@ -165,30 +162,18 @@
 		C63106A025B57ADA0067F72B /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		C63106A125B57ADA0067F72B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
 		C63106A225B57ADA0067F72B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
-		C631072325B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
-		C631072725B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */; };
-		C631072B25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
-		C631072F25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */; };
 		C63D277D257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
 		C63D277E257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
 		C63D279925830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
 		C63D279A25830ECB00CFF8A8 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C63D279825830ECB00CFF8A8 /* ringtone.wav */; };
 		C63D27D42590411500CFF8A8 /* FileAdministrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27D32590411500CFF8A8 /* FileAdministrator.swift */; };
 		C63D27D52590411500CFF8A8 /* FileAdministrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27D32590411500CFF8A8 /* FileAdministrator.swift */; };
-		C63D27DF259049D700CFF8A8 /* PortalServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27DE259049D700CFF8A8 /* PortalServiceAPI.swift */; };
-		C63D27E0259049D700CFF8A8 /* PortalServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D27DE259049D700CFF8A8 /* PortalServiceAPI.swift */; };
-		C67012C02592003500830027 /* PortalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67012BF2592003500830027 /* PortalService.swift */; };
-		C67012C12592003500830027 /* PortalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67012BF2592003500830027 /* PortalService.swift */; };
+		C67012C02592003500830027 /* PortalService1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67012BF2592003500830027 /* PortalService1.swift */; };
+		C67012C12592003500830027 /* PortalService1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67012BF2592003500830027 /* PortalService1.swift */; };
 		C67012E12594300C00830027 /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
 		C67012E22594300C00830027 /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
-		C6B2139B260D89DD00981446 /* ServiceManaulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2139A260D89DD00981446 /* ServiceManaulViewController.swift */; };
-		C6B2139C260D89DD00981446 /* ServiceManaulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2139A260D89DD00981446 /* ServiceManaulViewController.swift */; };
-		C6B2139D260D89DD00981446 /* ServiceManaulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2139A260D89DD00981446 /* ServiceManaulViewController.swift */; };
-		C6B213A2260D8A1100981446 /* ServiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */; };
-		C6B213A3260D8A1100981446 /* ServiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */; };
-		C6B213A4260D8A1100981446 /* ServiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */; };
 		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
@@ -198,6 +183,18 @@
 		C6B213F2261EEEDD00981446 /* PloneImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */; };
 		C6B213F3261EEEDD00981446 /* PloneImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */; };
 		C6B213F4261EEEDD00981446 /* PloneImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */; };
+		C6B213FC2620248A00981446 /* PortalConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213FB2620248A00981446 /* PortalConfigAPI.swift */; };
+		C6B213FD2620248A00981446 /* PortalConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213FB2620248A00981446 /* PortalConfigAPI.swift */; };
+		C6B213FE2620248A00981446 /* PortalConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213FB2620248A00981446 /* PortalConfigAPI.swift */; };
+		C6B21426262424AC00981446 /* PortalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B21425262424AC00981446 /* PortalConfig.swift */; };
+		C6B21427262424AC00981446 /* PortalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B21425262424AC00981446 /* PortalConfig.swift */; };
+		C6B21428262424AC00981446 /* PortalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B21425262424AC00981446 /* PortalConfig.swift */; };
+		C6B214312626ED2A00981446 /* TwilioAccessTokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */; };
+		C6B214322626ED2A00981446 /* TwilioAccessTokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */; };
+		C6B214332626ED2A00981446 /* TwilioAccessTokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */; };
+		C6B2143C2626F82000981446 /* TwilioServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */; };
+		C6B2143D2626F82000981446 /* TwilioServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */; };
+		C6B2143E2626F82000981446 /* TwilioServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */; };
 		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
 		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
 		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
@@ -495,22 +492,21 @@
 		907AF64DA9BD7941A92A15AF /* Pods_KKdayPortal_Sit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKdayPortal_Sit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCADBC409C91F42BDC9D426 /* Pods-KKdayPortal-Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKdayPortal-Production.debug.xcconfig"; path = "Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production.debug.xcconfig"; sourceTree = "<group>"; };
 		C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceManager.swift; sourceTree = "<group>"; };
-		C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewController.swift; sourceTree = "<group>"; };
-		C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApplicationsEntryViewModel.swift; sourceTree = "<group>"; };
 		C63106A725B57ADA0067F72B /* KKdayPortal-Open.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KKdayPortal-Open.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceViewController.swift; sourceTree = "<group>"; };
 		C63D279825830ECB00CFF8A8 /* ringtone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtone.wav; sourceTree = "<group>"; };
 		C63D27D32590411500CFF8A8 /* FileAdministrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAdministrator.swift; sourceTree = "<group>"; };
-		C63D27DE259049D700CFF8A8 /* PortalServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalServiceAPI.swift; sourceTree = "<group>"; };
 		C6549C8C2599C51D00B78EC3 /* KKdayPortal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KKdayPortal.entitlements; sourceTree = "<group>"; };
-		C67012BF2592003500830027 /* PortalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalService.swift; sourceTree = "<group>"; };
+		C67012BF2592003500830027 /* PortalService1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalService1.swift; sourceTree = "<group>"; };
 		C67012E02594300C00830027 /* ConfigModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConfigModel.json; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		C6B2139A260D89DD00981446 /* ServiceManaulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManaulViewController.swift; sourceTree = "<group>"; };
-		C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSettingViewController.swift; sourceTree = "<group>"; };
 		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		C6B213E7261EEE6600981446 /* PloneFileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileAPI.swift; sourceTree = "<group>"; };
 		C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneImageAPI.swift; sourceTree = "<group>"; };
+		C6B213FB2620248A00981446 /* PortalConfigAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalConfigAPI.swift; sourceTree = "<group>"; };
+		C6B21425262424AC00981446 /* PortalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalConfig.swift; sourceTree = "<group>"; };
+		C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenAPI.swift; sourceTree = "<group>"; };
+		C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceViewModel.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
 		F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemDescriptionTextView.swift; sourceTree = "<group>"; };
@@ -722,33 +718,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C63105ED25B56A290067F72B /* ServiceSettingPage */ = {
-			isa = PBXGroup;
-			children = (
-				C63105EE25B56A660067F72B /* ViewModel */,
-				C63105EF25B56A8F0067F72B /* View */,
-				C6B21397260D892000981446 /* ServiceManaulPage */,
-				C6B21396260D885400981446 /* ServiceSettingPage */,
-			);
-			path = ServiceSettingPage;
-			sourceTree = "<group>";
-		};
-		C63105EE25B56A660067F72B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C63105F725B56B0D0067F72B /* OpenApplicationsEntryViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		C63105EF25B56A8F0067F72B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C63105F025B56AAF0067F72B /* OpenApplicationsEntryViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		C63D2776257F70A900CFF8A8 /* ServiceListPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +733,7 @@
 			isa = PBXGroup;
 			children = (
 				C60BAF80259C53730074B4B5 /* TwilioServiceManager.swift */,
+				C6B2143A2626F72200981446 /* ViewModel */,
 				C63D277A257F71B200CFF8A8 /* View */,
 			);
 			path = TwilioServicePage;
@@ -788,7 +758,7 @@
 		C63D27DA2590441500CFF8A8 /* OdooAPI */ = {
 			isa = PBXGroup;
 			children = (
-				C63D27DE259049D700CFF8A8 /* PortalServiceAPI.swift */,
+				C6B213FB2620248A00981446 /* PortalConfigAPI.swift */,
 			);
 			path = OdooAPI;
 			sourceTree = "<group>";
@@ -796,7 +766,8 @@
 		C63D27DB2590486100CFF8A8 /* Odoo */ = {
 			isa = PBXGroup;
 			children = (
-				C67012BF2592003500830027 /* PortalService.swift */,
+				C67012BF2592003500830027 /* PortalService1.swift */,
+				C6B21425262424AC00981446 /* PortalConfig.swift */,
 			);
 			path = Odoo;
 			sourceTree = "<group>";
@@ -809,42 +780,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C6B21396260D885400981446 /* ServiceSettingPage */ = {
-			isa = PBXGroup;
-			children = (
-				C6B21399260D898A00981446 /* View */,
-			);
-			path = ServiceSettingPage;
-			sourceTree = "<group>";
-		};
-		C6B21397260D892000981446 /* ServiceManaulPage */ = {
-			isa = PBXGroup;
-			children = (
-				C6B21398260D897800981446 /* View */,
-			);
-			path = ServiceManaulPage;
-			sourceTree = "<group>";
-		};
-		C6B21398260D897800981446 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C6B2139A260D89DD00981446 /* ServiceManaulViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C6B21399260D898A00981446 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C6B213A1260D8A1100981446 /* ServiceSettingViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		C6B213CC261C122700981446 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				C6B213CD261C128200981446 /* PloneSSOViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C6B2142F2626ECA900981446 /* TwilioAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */,
+			);
+			path = TwilioAPI;
+			sourceTree = "<group>";
+		};
+		C6B2143A2626F72200981446 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1875,7 +1830,6 @@
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				C63D2776257F70A900CFF8A8 /* ServiceListPage */,
-				C63105ED25B56A290067F72B /* ServiceSettingPage */,
 				F426FEC923F63D9100BFDA3B /* HomePage */,
 				F4B3F2FE2386371100657CDF /* PortalPage */,
 				F45447FF239BF63A001B8D31 /* GeneralItemPage */,
@@ -1953,6 +1907,7 @@
 			isa = PBXGroup;
 			children = (
 				C63D27DA2590441500CFF8A8 /* OdooAPI */,
+				C6B2142F2626ECA900981446 /* TwilioAPI */,
 				F4D06874255D1A4800F7B3F8 /* PloneAPI */,
 			);
 			path = HTTPLayer;
@@ -2334,12 +2289,10 @@
 				C631061525B57ADA0067F72B /* GeneralCollectionViewController.swift in Sources */,
 				C631061625B57ADA0067F72B /* GeneralTextObjectNormalTableViewCellViewModel.swift in Sources */,
 				C631061725B57ADA0067F72B /* GeneralDocumentViewController.swift in Sources */,
-				C631061925B57ADA0067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				C631061A25B57ADA0067F72B /* GeneralImageObject.swift in Sources */,
 				C631061B25B57ADA0067F72B /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */,
 				C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */,
-				C631062025B57ADA0067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
 				C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */,
 				C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */,
 				C631062325B57ADA0067F72B /* PloneNews.swift in Sources */,
@@ -2353,7 +2306,6 @@
 				C631062B25B57ADA0067F72B /* GeneralTextObjectConverter.swift in Sources */,
 				C631062C25B57ADA0067F72B /* GeneralImageViewModel.swift in Sources */,
 				C631062D25B57ADA0067F72B /* GeneralFolderTableViewCell.swift in Sources */,
-				C6B2139B260D89DD00981446 /* ServiceManaulViewController.swift in Sources */,
 				C631062E25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
 				C631062F25B57ADA0067F72B /* PloneCollection.swift in Sources */,
 				C631063025B57ADA0067F72B /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
@@ -2373,6 +2325,7 @@
 				C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */,
 				C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */,
 				C631064125B57ADA0067F72B /* PloneAuthToken.swift in Sources */,
+				C6B2143C2626F82000981446 /* TwilioServiceViewModel.swift in Sources */,
 				C631064225B57ADA0067F72B /* TestingViewController.swift in Sources */,
 				C631064325B57ADA0067F72B /* GeneralItem.swift in Sources */,
 				C6B213F2261EEEDD00981446 /* PloneImageAPI.swift in Sources */,
@@ -2383,11 +2336,12 @@
 				C631064825B57ADA0067F72B /* TwilioServiceViewController.swift in Sources */,
 				C631064925B57ADA0067F72B /* GeneralImageViewController.swift in Sources */,
 				C631064A25B57ADA0067F72B /* PortalViewController.swift in Sources */,
-				C631064B25B57ADA0067F72B /* PortalService.swift in Sources */,
+				C631064B25B57ADA0067F72B /* PortalService1.swift in Sources */,
 				C631064C25B57ADA0067F72B /* ServiceListViewController.swift in Sources */,
 				C631064D25B57ADA0067F72B /* GeneralFileViewModel.swift in Sources */,
 				C631064E25B57ADA0067F72B /* ApplicationsContentViewModel.swift in Sources */,
 				C631064F25B57ADA0067F72B /* WebPloneRepository.swift in Sources */,
+				C6B214312626ED2A00981446 /* TwilioAccessTokenAPI.swift in Sources */,
 				C631065025B57ADA0067F72B /* GeneralFileObject.swift in Sources */,
 				C631065125B57ADA0067F72B /* PloneUser.swift in Sources */,
 				C631065225B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
@@ -2412,11 +2366,11 @@
 				C631066525B57ADA0067F72B /* NoInformationLabel.swift in Sources */,
 				C6B213E8261EEE6600981446 /* PloneFileAPI.swift in Sources */,
 				C631066625B57ADA0067F72B /* WKNavigationTypeExtension.swift in Sources */,
-				C6B213A2260D8A1100981446 /* ServiceSettingViewController.swift in Sources */,
 				C631066725B57ADA0067F72B /* LoginViewController.swift in Sources */,
 				C631066825B57ADA0067F72B /* Localizable.swift in Sources */,
 				C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */,
 				C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */,
+				C6B213FC2620248A00981446 /* PortalConfigAPI.swift in Sources */,
 				C631066C25B57ADA0067F72B /* PloneUserAPI.swift in Sources */,
 				C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */,
 				C631066D25B57ADA0067F72B /* GeneralEventObject.swift in Sources */,
@@ -2451,9 +2405,9 @@
 				C631068A25B57ADA0067F72B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				C631068B25B57ADA0067F72B /* ContentListSectionItem.swift in Sources */,
 				C631068C25B57ADA0067F72B /* AboutViewController.swift in Sources */,
+				C6B21426262424AC00981446 /* PortalConfig.swift in Sources */,
 				C631068D25B57ADA0067F72B /* PloneTextObject.swift in Sources */,
 				C631068E25B57ADA0067F72B /* LanguageManager.swift in Sources */,
-				C631068F25B57ADA0067F72B /* PortalServiceAPI.swift in Sources */,
 				C631069025B57ADA0067F72B /* PloneResourceType.swift in Sources */,
 				C631069125B57ADA0067F72B /* NetStatusManager.swift in Sources */,
 				C631069225B57ADA0067F72B /* GeneralFolderViewModel.swift in Sources */,
@@ -2508,7 +2462,6 @@
 				F457418023D58F4E00FB5EEC /* TestingViewModel.swift in Sources */,
 				F44E8C8523B88AA30032C6BE /* SceneDelegate.swift in Sources */,
 				F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */,
-				C6B2139D260D89DD00981446 /* ServiceManaulViewController.swift in Sources */,
 				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F45408362413746600796B66 /* UIKitExtension.swift in Sources */,
 				F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */,
@@ -2528,6 +2481,7 @@
 				F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */,
 				F46180BA23F9722F00D303F8 /* PloneEmptyData.swift in Sources */,
 				F4D068A4255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */,
+				C6B2143E2626F82000981446 /* TwilioServiceViewModel.swift in Sources */,
 				F4B3BCAB23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
 				F44E8C9823B88AA30032C6BE /* PortalViewController.swift in Sources */,
 				C6B213F4261EEEDD00981446 /* PloneImageAPI.swift in Sources */,
@@ -2536,13 +2490,14 @@
 				C63D277E257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */,
 				F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */,
-				C67012C12592003500830027 /* PortalService.swift in Sources */,
+				C67012C12592003500830027 /* PortalService1.swift in Sources */,
 				F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */,
 				F4B3BCB023F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F44E8CA023B88AA30032C6BE /* GeneralFileObject.swift in Sources */,
 				F44E8CA123B88AA30032C6BE /* PloneUser.swift in Sources */,
 				F426FEE023F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
 				F44A199423C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
+				C6B214332626ED2A00981446 /* TwilioAccessTokenAPI.swift in Sources */,
 				F4B3BC9B23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
 				F46180D223FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */,
 				C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */,
@@ -2567,11 +2522,11 @@
 				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
 				C6B213EA261EEE6600981446 /* PloneFileAPI.swift in Sources */,
 				F43AFC7A23E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
-				C6B213A4260D8A1100981446 /* ServiceSettingViewController.swift in Sources */,
 				F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */,
 				F4D0687A255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45C2C4823BCD8C200A1E769 /* Utilities.swift in Sources */,
 				F44E8CB223B88AA30032C6BE /* GeneralEventObject.swift in Sources */,
+				C6B213FE2620248A00981446 /* PortalConfigAPI.swift in Sources */,
 				F44E8CB323B88AA30032C6BE /* GeneralEventViewController.swift in Sources */,
 				C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */,
 				F44E8CB523B88AA30032C6BE /* ServiceListViewModel.swift in Sources */,
@@ -2595,8 +2550,6 @@
 				F457416823D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				F45740E023D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
 				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
-				C631072325B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
-				C631072F25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */,
 				F426FECD23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
 				F44E8CCD23B88AA30032C6BE /* GeneralLinkViewModel.swift in Sources */,
@@ -2606,9 +2559,9 @@
 				F4B3BCB723F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				F46181002403806D00D303F8 /* AboutViewController.swift in Sources */,
 				F44E8CD123B88AA30032C6BE /* LanguageManager.swift in Sources */,
+				C6B21428262424AC00981446 /* PortalConfig.swift in Sources */,
 				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
-				C63D27E0259049D700CFF8A8 /* PortalServiceAPI.swift in Sources */,
 				F46180DD23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F44E8CD423B88AA30032C6BE /* ApplicationsContentViewController.swift in Sources */,
 				F43AFC6A23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
@@ -2663,7 +2616,6 @@
 				F4544856239DF12C001B8D31 /* GeneralFolderTableViewCell.swift in Sources */,
 				F45740D823CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
 				F4FC41A7238EB41700AC7315 /* PloneCollection.swift in Sources */,
-				C6B2139C260D89DD00981446 /* ServiceManaulViewController.swift in Sources */,
 				F43AFC6923E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
@@ -2683,6 +2635,7 @@
 				F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */,
 				F457417A23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */,
+				C6B2143D2626F82000981446 /* TwilioServiceViewModel.swift in Sources */,
 				F46180B923F9722F00D303F8 /* PloneEmptyData.swift in Sources */,
 				F4D068A3255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */,
 				C6B213F3261EEEDD00981446 /* PloneImageAPI.swift in Sources */,
@@ -2691,13 +2644,14 @@
 				C63D277D257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */,
 				F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */,
 				F4B3F3012386386900657CDF /* PortalViewController.swift in Sources */,
-				C67012C02592003500830027 /* PortalService.swift in Sources */,
+				C67012C02592003500830027 /* PortalService1.swift in Sources */,
 				F45448AB23A9F9F3001B8D31 /* ServiceListViewController.swift in Sources */,
 				F4544842239CADF6001B8D31 /* GeneralFileViewModel.swift in Sources */,
 				F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */,
 				F45447F6239AB816001B8D31 /* WebPloneRepository.swift in Sources */,
 				F45447F2239AB79A001B8D31 /* GeneralFileObject.swift in Sources */,
 				F4FC419D238CCA7D00AC7315 /* PloneUser.swift in Sources */,
+				C6B214322626ED2A00981446 /* TwilioAccessTokenAPI.swift in Sources */,
 				F44A199323C56CB300B35976 /* GeneralRootWithLanguageDocumentViewModel.swift in Sources */,
 				F4B3F344238BDF0900657CDF /* PloneItem.swift in Sources */,
 				F426FEDF23F67D5900BFDA3B /* GeneralRootWithLanguageFoldersViewController.swift in Sources */,
@@ -2722,11 +2676,11 @@
 				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
 				C6B213E9261EEE6600981446 /* PloneFileAPI.swift in Sources */,
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
-				C6B213A3260D8A1100981446 /* ServiceSettingViewController.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
 				F454486C23A20EE3001B8D31 /* LanguageViewModel.swift in Sources */,
 				F4D06879255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */,
 				F45447EE239AB733001B8D31 /* GeneralEventObject.swift in Sources */,
+				C6B213FD2620248A00981446 /* PortalConfigAPI.swift in Sources */,
 				F4B3BCB623F31052009699E5 /* AlertEventInfo.swift in Sources */,
 				C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */,
 				F454483C239CAD58001B8D31 /* GeneralEventViewController.swift in Sources */,
@@ -2750,8 +2704,6 @@
 				F44A198B23C48BF000B35976 /* PloneLRF.swift in Sources */,
 				F453953623BAE5A200136E6D /* UIImageExtension.swift in Sources */,
 				F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */,
-				C631072725B673D60067F72B /* OpenApplicationsEntryViewController.swift in Sources */,
-				C631072B25B673D90067F72B /* OpenApplicationsEntryViewModel.swift in Sources */,
 				F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */,
 				F426FECC23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
 				F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */,
@@ -2761,9 +2713,9 @@
 				F426FEDA23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
 				F45740FA23D1415100FB5EEC /* ContentListSectionItem.swift in Sources */,
 				F46180FF2403806D00D303F8 /* AboutViewController.swift in Sources */,
+				C6B21427262424AC00981446 /* PortalConfig.swift in Sources */,
 				F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */,
 				F454487623A32F92001B8D31 /* LanguageManager.swift in Sources */,
-				C63D27DF259049D700CFF8A8 /* PortalServiceAPI.swift in Sources */,
 				F46180DC23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
 				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
 				F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */,

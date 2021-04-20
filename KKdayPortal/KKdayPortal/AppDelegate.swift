@@ -52,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
         initializePushKit()
         
-        // Get Plone andc Odoo Service Host
         ConfigManager.shared.setup()
         
         LanguageManager.shared.setup()

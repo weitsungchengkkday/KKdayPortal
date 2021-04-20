@@ -13,16 +13,16 @@ final class PloneResourceManager {
     
     static let shared: PloneResourceManager = PloneResourceManager()
     
-    var resourceType: PloneResourceType<URL> {
+    var resourceType: PloneResourceType {
         get
         {
-            let type: PloneResourceType<URL> = StorageManager.shared.loadObject(for: .ploneResourceType) ?? .none
+            let type: PloneResourceType = StorageManager.shared.loadObject(for: .ploneResourceType) ?? .none
             return type
         }
         
         set
         {
-           let type: PloneResourceType<URL> = newValue
+           let type: PloneResourceType = newValue
            StorageManager.shared.saveObject(for: .ploneResourceType, value: type)
         }
         
@@ -33,7 +33,7 @@ final class PloneResourceManager {
         switch resourceType {
         case .kkMember:
             image = #imageLiteral(resourceName: "icKKdayLogo")
-        case .normal(_):
+        case .normal:
             image = #imageLiteral(resourceName: "icApplicationItem")
         case .none:
             image = #imageLiteral(resourceName: "icPicture")

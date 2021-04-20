@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum PloneResourceType<U: Codable> {
-    case normal(U)
+enum PloneResourceType {
+    case normal
     case kkMember
     case none
     
@@ -25,8 +25,8 @@ extension PloneResourceType: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         switch self {
-        case .normal(url: let value):
-            try container.encode(value, forKey: .normal)
+        case .normal:
+            try container.encode(0, forKey: .normal)
         case .kkMember:
             try container.encode(1, forKey: .rawValue)
         case .none:
@@ -39,6 +39,8 @@ extension PloneResourceType: Codable {
         
         if let rawValue = try? container.decode(Int.self, forKey: .rawValue) {
             switch rawValue {
+            case 0:
+                self = .normal
             case 1:
                 self = .kkMember
             case 2:
@@ -46,11 +48,6 @@ extension PloneResourceType: Codable {
             default:
                 self = .none
             }
-            return
-        }
-        
-        if let value = try? container.decode(U.self, forKey: .normal) {
-            self = .normal(value)
             return
         }
         

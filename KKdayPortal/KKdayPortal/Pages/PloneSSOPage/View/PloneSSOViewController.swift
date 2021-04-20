@@ -43,8 +43,12 @@ final class PloneSSOViewController: UIViewController {
         setupUI()
         setAction()
         bindViewModel()
-        loadPortalServices()
         
+        guard let config: PortalConfig = StorageManager.shared.loadObject(for: .portalConfig), let loginURL = URL(string: config.data.login.url) else {
+             return
+        }
+        
+        self.SSOwebView.load(URLRequest(url: loginURL))
     }
     
     // 🎨 draw UI
@@ -69,97 +73,6 @@ final class PloneSSOViewController: UIViewController {
         let presentViewController = MainViewController()
         presentViewController.modalPresentationStyle = .fullScreen
         present(presentViewController, animated: true, completion: nil)
-    }
-    
-    private func loadPortalServices() {
-
-#if SIT
-    loadPortalServicesRemote()
-   
-#elseif PRODUCTION
-    loadPortalServicesRemote()
-
-#elseif OPEN
-    loadPortalServicesLocal()
-
-#else
-    print("❗️target not exist")
-
-#endif
-        
-    }
-    
-    private func loadPortalServicesRemote() {
-        
-        viewModel.getPortalServicesRemote { errors in
-            
-            if errors.isEmpty {
-                
-                let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
-                
-                guard let element = service?.elements.filter({ $0.name == "Website URL"}).first else {
-                    print("❌ Can't Get Plone URL")
-                    return
-                }
-                
-                let urlString = element.content + "/Plone/@@app_login"
-                
-                let url = URL(string: urlString)!
-                
-                DispatchQueue.main.async {
-                    self.SSOwebView.load(URLRequest(url: url))
-                }
-                
-            } else {
-                let alertController = UIAlertController(title: "Warning", message: "Get Portal Service Failed", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
-                    self.dismiss(animated: true, completion: nil)
-                }
-                
-                alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-                print("❌ Get Portal Services Error \(errors)")
-            }
-        }
-        
-    }
-    
-    private func loadPortalServicesLocal() {
-       
-        viewModel.getPortalServicesLocal { errors in
-            
-            if errors.isEmpty {
-                
-                print(self.viewModel.portalservices)
-                
-                let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
-                
-                guard let element = service?.elements.filter({ $0.name == "Website URL"}).first else {
-                    print("❌ Can't Get Plone URL")
-                    return
-                }
-                
-                let urlString = element.content + "/Plone/@@app_login"
-                
-                let url = URL(string: urlString)!
-                
-                DispatchQueue.main.async {
-                    self.SSOwebView.load(URLRequest(url: url))
-                }
-                
-            } else {
-                let alertController = UIAlertController(title: "Warning", message: "Get Portal Service Failed", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
-                    self.dismiss(animated: true, completion: nil)
-                }
-                
-                alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-                print("❌ Get Portal Services Error \(errors)")
-            }
-        }
     }
     
 }
@@ -194,8 +107,6 @@ extension PloneSSOViewController: WKScriptMessageHandler {
         
         SSOwebView.stopLoading()
     }
-    
-    
     
 }
 

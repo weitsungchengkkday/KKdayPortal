@@ -91,11 +91,7 @@ final class MemberManager {
         StorageManager.shared.remove(for: .generalUser)
         StorageManager.shared.remove(for: .ploneResourceType)
         
-        StorageManager.shared.remove(for: .plonePortalService)
-        StorageManager.shared.remove(for: .twilioPortalService)
-        StorageManager.shared.remove(for: .twilioPortalService)
-        StorageManager.shared.remove(for: .customTwilioAccessTokenURL)
-        
+        StorageManager.shared.remove(for: .portalConfig)
         
         // Clear WebCache
         WebCacheCleaner.clean()

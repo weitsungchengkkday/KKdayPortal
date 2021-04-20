@@ -71,11 +71,15 @@ final class ConfigManager {
         switch serverEnv {
         case .sit:
             odooModel.host = odooModel.sitServer
+            odooModel.client = odooModel.sitClientID
              
         case .production:
             odooModel.host = odooModel.productionServer
+            odooModel.client = odooModel.productionClientID
+            
         case .local:
             odooModel.host = odooModel.localServer
+            odooModel.client = odooModel.localClientID
         }
     }
     

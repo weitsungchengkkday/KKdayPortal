@@ -62,20 +62,6 @@ final class MainViewController: UITabBarController {
         applicationsEntryNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         applicationsEntryNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
-        
-        let openApplicationsEntryVC = OpenApplicationsEntryViewController(nibName: nil, bundle: nil)
-        let openApplicationsEntryImage = UIImage(systemName: "puzzlepiece") ?? #imageLiteral(resourceName: "icPicture")
-        let openApplicationsEntryItem = UITabBarItem(title: "ServiceSetting", image: openApplicationsEntryImage, selectedImage: openApplicationsEntryImage)
-        openApplicationsEntryVC.tabBarItem = openApplicationsEntryItem
-        
-        let openApplicationsEntryNav = UINavigationController(rootViewController: openApplicationsEntryVC)
-        let openApplicationsButtonItem = UIBarButtonItem()
-        openApplicationsButtonItem.title = ""
-        openApplicationsEntryNav.navigationBar.topItem?.backBarButtonItem = applicationsButtonItem
-        openApplicationsEntryNav.navigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        openApplicationsEntryNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        
-        
         self.tabBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         self.tabBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -85,8 +71,8 @@ final class MainViewController: UITabBarController {
         case .kkMember:
              self.viewControllers = [homeNav, portalNav, applicationsEntryNav, settingNav]
             
-        case .normal(url: _):
-             self.viewControllers = [homeNav, portalNav, applicationsEntryNav, openApplicationsEntryNav, settingNav]
+        case .normal:
+             self.viewControllers = [homeNav, portalNav, applicationsEntryNav, settingNav]
             
         case .none:
             self.viewControllers = []

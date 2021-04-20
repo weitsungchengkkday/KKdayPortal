@@ -81,7 +81,7 @@ final class SettingViewController: UIViewController {
         switch PloneResourceManager.shared.resourceType {
         case .kkMember:
             return true
-        case .normal(_):
+        case .normal:
             return false
         case .none:
             return false

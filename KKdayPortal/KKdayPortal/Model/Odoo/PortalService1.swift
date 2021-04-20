@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PortalService: Codable {
+struct PortalService1: Codable {
     let id: Int
     let name: String
     let service_type: String

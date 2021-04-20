@@ -1,0 +1,30 @@
+{
+    "meta": {
+        "data_count": 0,
+        "total_count": 0
+    },
+    "data": {
+        "login": {
+            "url": "https://sit.eip.kkday.net/Plone/@@app_login",
+            "auth_n": "basic",
+            "auth_z": "plone"
+        },
+        "services": [
+            {
+                "name": "twilio",
+                "type": "cti",
+                "url": "https://sit-william-two-5696.twil.io/accessToken"
+            },
+            {
+                "name": "plone",
+                "type": "portal",
+                "url": "https://sit.eip.kkday.net/Plone"
+            }
+        ]
+    },
+    "status": {
+        "code": "0000",
+        "message": "success",
+        "detail": "success"
+    }
+}

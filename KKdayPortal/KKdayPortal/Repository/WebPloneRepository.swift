@@ -16,26 +16,18 @@ final class WebPloneRepository {
     
     static var baseURL: URL {
         
-        let resourceType = PloneResourceManager.shared.resourceType
-        
-        switch resourceType {
-        case .kkMember:
-            
-            let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
-            
-            guard let element = service?.elements.filter({ $0.name == "Website URL"}).first else {
-                print("❌ Can't Get Plone URL")
-                return URL(string: "https://www.kkday.com")!
-            }
-            
-            return URL(string: element.content + "/Plone")!
-            
-        case .normal(url: let url):
-            return url
-        case .none:
-            print("⚠️ Warning, without resourceType")
-            return URL(string: "https://www.kkday.com")!
+        guard let config: PortalConfig = StorageManager.shared.loadObject(for: .portalConfig), let portalService = config.data.services.filter({$0.type == "portal" && $0.name == "plone"}).first else {
+
+            print("❌ Can't get plone portal service in portalConfig")
+            fatalError()
         }
+        
+        guard let url = URL(string: portalService.url) else {
+            print("❌ Portal URL is invalid")
+            fatalError()
+        }
+        
+        return url
     }
     
     private let api = PloneItemsAPI()

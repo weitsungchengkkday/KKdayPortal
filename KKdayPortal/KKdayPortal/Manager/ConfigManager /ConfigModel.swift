@@ -7,10 +7,13 @@
 //
 
 final class ConfigModel: Codable {
-    // current connecting host
     var name: String = ""
     var host: String = ""
-    var localServer: String = "" 
+    var client: String = ""
+    var localServer: String = ""
     var sitServer: String = ""
     var productionServer: String = ""
+    var localClientID: String = ""
+    var sitClientID: String = ""
+    var productionClientID: String = ""
 }

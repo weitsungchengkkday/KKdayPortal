@@ -53,30 +53,16 @@ class HomeViewController: UIViewController, Localizable {
     
     private func addChildViewController() {
         
-        let rootURL: URL
-        
-        let resourceType = PloneResourceManager.shared.resourceType
-        
-        switch resourceType {
-        case .kkMember:
-            
-            let service: PortalService? = StorageManager.shared.loadObject(for: .plonePortalService)
-            
-            guard let element = service?.elements.filter({ $0.name == "Website URL"}).first else {
-                print("❌ Can't Get Plone URL")
-                return
-            }
-            
-            rootURL = URL(string: element.content + "/Plone" + "/zh-tw")!
-            
-        case .normal(url: let url):
-            rootURL = URL(string: "https://" + url.absoluteString + "/Plone/zh-tw")!
-            
-        case .none:
-            print("❌, resourceType must be defined")
+        guard let config: PortalConfig = StorageManager.shared.loadObject(for: .portalConfig), let portalService = config.data.services.filter({$0.type == "portal" && $0.name == "plone"}).first else {
+            print("❌ Can't get plone portal service in portalConfig")
             return
         }
         
+        guard let rootURL = URL(string: portalService.url + "/zh-tw") else {
+            print("❌ Portal root URL is invalid")
+            return
+        }
+       
         let viewModel = GeneralRootWithLanguageDocumentViewModel(source: rootURL)
         let childViewController = GeneralRootWithLanguageDocumentViewController(viewModel: viewModel)
         addChild(childViewController)

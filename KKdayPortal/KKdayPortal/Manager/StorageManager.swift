@@ -15,17 +15,17 @@ final class StorageManager {
     /// Storage Key
     enum StorageKeys: String {
         
+        // Portal Config (Object)
+        case portalConfig
+    
         /// ServerEnv
         // Odoo
         case serverEnv
         
         /// Portal Services
-        case plonePortalService
-        case twilioPortalService
+//        case plonePortalService
+//        case twilioPortalService
         
-        /// Custom Server (Bool)
-        case isCustomServer
-
         // Plone (Object)
         case ploneResourceType
         
@@ -39,9 +39,6 @@ final class StorageManager {
         // Region Setting
         case regionIsSelected
         case selectedRegionKey
-
-        /// Custom Service Setting
-        case customTwilioAccessTokenURL
         
     }
 

@@ -1,33 +1,43 @@
 //
-//  PortalApplicationsAPI.swift
+//  AuthCodeAPI.swift
 //  KKdayPortal
 //
-//  Created by KKday on 2020/12/21.
-//  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
+//  Created by KKday on 2021/4/9.
+//  Copyright © 2021 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import Foundation
 import DolphinHTTP
 
-final class PortalServiceAPI {
+final class PortalConfigAPI {
     
-    lazy var loader: HTTPLoader = {
-        let loader = URLSessionLoader()
-        return loader
-    }()
+    private let loader: HTTPLoader
     
     init(loader: HTTPLoader) {
         self.loader = loader
     }
     
-    func loadPortalService(completion: @escaping (Result<[PortalService],HTTPError>) -> Void) {
-        var r = HTTPRequest()
-        
-        r.host = ConfigManager.shared.odooModel.host.replacingOccurrences(of: "https://", with: "")
+    // Authorization only apply on KKUserPortalConfig
+    private func authorizationFormatter(clientID: String) -> String {
+        let auth = """
+            KKday id="\(clientID)",ts="\(Date().timeIntervalSince1970)",user="oa-api+\(clientID)@kkday.com"
+        """
+      
+        return auth
+    }
     
-        r.path = "/portal_service"
-        
-        print(r)
+    func loadKKUserPortalConfig(clientID: String, completion: @escaping ((Result<PortalConfig, HTTPError>) -> Void )) {
+        var r = HTTPRequest()
+
+        r.host = ConfigManager.shared.odooModel.host.replacingOccurrences(of: "https://", with: "")
+       
+        r.path = "/api/v1/kkportal-config"
+        r.headers = [
+            "KK-Track-SEQ": "0",
+            "KK-Track-ID": "0",
+            "Accept": "application/vnd.api+json",
+            "Authorization": authorizationFormatter(clientID: clientID)
+        ]
         
         loader.load(request: r) { result in
             switch result {
@@ -35,11 +45,12 @@ final class PortalServiceAPI {
                 
                 switch response.status {
                 case .success:
+                   
                     if let body = response.body {
                         do {
-                            let portalServices = try JSONDecoder().decode([PortalService].self, from: body)
-                            completion(Result.success(portalServices))
-                            
+                            let portalConfig = try JSONDecoder().decode(PortalConfig.self, from: body)
+                            completion(Result.success(portalConfig))
+
                         } catch(let error) {
                             let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
                             completion(Result.failure(error))
@@ -56,28 +67,14 @@ final class PortalServiceAPI {
                 completion(Result.failure(error))
             }
         }
-    }
-
-}
-
-
-final class PortalServiceElementAPI {
-    
-    lazy var loader: HTTPLoader = {
-        let loader = URLSessionLoader()
-        return loader
-    }()
-    
-    init(loader: HTTPLoader) {
-        self.loader = loader
+        
     }
     
-    func loadPortalServiceElement(serviceID: Int, completion: @escaping (Result<[PortalServiceElement],HTTPError>) -> Void) {
+    func loadCustomUserPortalConfig(url: URL, completion: @escaping ((Result<PortalConfig, HTTPError>) -> Void )) {
+        
         var r = HTTPRequest()
-    
-        r.host = ConfigManager.shared.odooModel.host.replacingOccurrences(of: "https://", with: "")
-   
-        r.path = "/portal_service" + "/\(serviceID)" +  "/portal_service_element"
+        r.host = url.host
+        r.path = url.path
         
         loader.load(request: r) { result in
             switch result {
@@ -85,11 +82,12 @@ final class PortalServiceElementAPI {
                 
                 switch response.status {
                 case .success:
+                   
                     if let body = response.body {
                         do {
-                            let portalServiceElements = try JSONDecoder().decode([PortalServiceElement].self, from: body)
-                            completion(Result.success(portalServiceElements))
-                            
+                            let portalConfig = try JSONDecoder().decode(PortalConfig.self, from: body)
+                            completion(Result.success(portalConfig))
+
                         } catch(let error) {
                             let error = HTTPError(code: .invalidResponse, request: r, response: response, underlyingError: error)
                             completion(Result.failure(error))
@@ -106,8 +104,9 @@ final class PortalServiceElementAPI {
                 completion(Result.failure(error))
             }
         }
+        
     }
-
+     
 }
 
 

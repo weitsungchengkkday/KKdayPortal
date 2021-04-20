@@ -68,7 +68,7 @@ extension GeneralDetailPageCoordinator {
             case .kkMember:
                 break
                 
-            case .normal(_):
+            case .normal:
                 break
                 
             case .none:
