@@ -17,14 +17,17 @@ final class TwilioAccessTokenAPI {
         self.loader = loader
     }
     
-    func getAccessToken(url: URL, completion: @escaping((Result<String, HTTPError>) -> Void)) {
+    func getAccessToken(url: URL, identity: String, completion: @escaping((Result<String, HTTPError>) -> Void)) {
         var r = HTTPRequest()
         r.method = .post
         r.host = url.host
         r.path = url.path
  
         let jsonString = """
-            { "client_token": "The_shortest_answer_is_doing" }
+        {
+            "client_token": "The_shortest_answer_is_doing",
+            "identity": "\(identity)"
+        }
         """
 
         r.body = DataBody(jsonString.data(using: .utf8)!)

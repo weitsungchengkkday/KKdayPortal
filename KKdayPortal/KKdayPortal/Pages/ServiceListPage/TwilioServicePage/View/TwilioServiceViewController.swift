@@ -124,17 +124,9 @@ final class TwilioServiceViewController: UIViewController {
     private var userInitiatedDisconnect: Bool = false
     
     private var callKitCompletionCallBack: ((Bool) -> Void)? = nil
-    
-    private enum TwiMLmethodEndpoint: String  {
-        case studio = "/studio"
-    }
-    
-    private var currentMethodEndpoint: TwiMLmethodEndpoint = TwiMLmethodEndpoint.studio
-    // Alice Bob
-    private let identity = "KK"
     private let twimlParamTo = "To"
-    
     private let twimlParamto = "to"
+    private let defaultIdentity = "KKPortal"
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
@@ -157,7 +149,17 @@ final class TwilioServiceViewController: UIViewController {
     
     private var accessTokenURL: URL? {
         
-        return URL(string: "https://sit-william-two-5696.twil.io/accessToken")!
+        guard let config: PortalConfig = StorageManager.shared.loadObject(for: .portalConfig), let portalService = config.data.services.filter({$0.type == "cti" && $0.name == "twilio"}).first else {
+            print("❌ Can't get plone portal service in portalConfig")
+            return nil
+        }
+        
+        guard let accessTokenURL = URL(string: portalService.url) else {
+            print("❌ Portal root URL is invalid")
+            return nil
+        }
+    
+        return accessTokenURL
     }
     
     private var viewModel: TwilioServiceViewModel
@@ -174,9 +176,6 @@ final class TwilioServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Test
-        currentMethodEndpoint = .studio
         
         setupUI()
         toggleUIState(isEnabled: true, showCallControl: false)
@@ -200,7 +199,6 @@ final class TwilioServiceViewController: UIViewController {
         ///
         self.view.addSubview(transferValue)
         self.view.addSubview(transferCallButton)
-        
         ///
         
         self.view.addSubview(iconView)
@@ -223,7 +221,6 @@ final class TwilioServiceViewController: UIViewController {
             maker.width.equalTo(self.view.snp.width)
         }
         
-        
         ///
         transferValue.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
@@ -236,9 +233,7 @@ final class TwilioServiceViewController: UIViewController {
             maker.width.height.equalTo(40)
             maker.top.equalTo(transferValue.snp.bottom).offset(5)
         }
-        
         ///
-        
         
         iconView.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
@@ -623,7 +618,6 @@ extension TwilioServiceViewController: CXProviderDelegate {
                 print("☎️⚠️ Failed to report incoming call successfully: \(error.localizedDescription).")
             } else {
                 print("☎️✅ Incoming call successfully reported.")
-                
             }
         }
         
@@ -665,7 +659,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
             return
         }
         
-        viewModel.loadTwilioAccessToken(url: url) { result in
+        viewModel.loadTwilioAccessToken(url: url, identity: defaultIdentity) { result in
             
             switch result {
             case .success(let accessToken):
@@ -935,7 +929,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
             return
         }
         
-        viewModel.loadTwilioAccessToken(url: url) { result in
+        viewModel.loadTwilioAccessToken(url: url, identity: defaultIdentity) { result in
             
             switch result {
             case .success(let accessToken):
@@ -969,7 +963,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
             return
         }
         
-        viewModel.loadTwilioAccessToken(url: url) { result in
+        viewModel.loadTwilioAccessToken(url: url, identity: defaultIdentity) { result in
             
             switch result {
             case .success(let accessToken):
