@@ -39,7 +39,7 @@
 		C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446FF238F787A001B8D31 /* PloneLink.swift */; };
 		C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
 		C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
-		C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */; };
+		C631062225B57ADA0067F72B /* PloneIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroViewController.swift */; };
 		C631062325B57ADA0067F72B /* PloneNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F3238F6A9D001B8D31 /* PloneNews.swift */; };
 		C631062425B57ADA0067F72B /* TestingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457418523D593C600FB5EEC /* TestingTableViewCell.swift */; };
 		C631062525B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740E523D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift */; };
@@ -57,7 +57,7 @@
 		C631063125B57ADA0067F72B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		C631063225B57ADA0067F72B /* GeneralDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544831239CAB6E001B8D31 /* GeneralDocumentViewModel.swift */; };
 		C631063425B57ADA0067F72B /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45408342413746600796B66 /* UIKitExtension.swift */; };
-		C631063525B57ADA0067F72B /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
+		C631063525B57ADA0067F72B /* PloneSpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* PloneSpecViewController.swift */; };
 		C631063625B57ADA0067F72B /* GeneralCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AFC7323E87DD10050C851 /* GeneralCollectionViewModel.swift */; };
 		C631063725B57ADA0067F72B /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
 		C631063825B57ADA0067F72B /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
@@ -65,7 +65,7 @@
 		C631063A25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4603C4F23C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift */; };
 		C631063B25B57ADA0067F72B /* GeneralItemTopTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */; };
 		C631063C25B57ADA0067F72B /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
-		C631063D25B57ADA0067F72B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
+		C631063D25B57ADA0067F72B /* UserGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* UserGuideViewModel.swift */; };
 		C631063E25B57ADA0067F72B /* SigninInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */; };
 		C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */; };
 		C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
@@ -107,7 +107,7 @@
 		C631066425B57ADA0067F72B /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
 		C631066525B57ADA0067F72B /* NoInformationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */; };
 		C631066625B57ADA0067F72B /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
-		C631066725B57ADA0067F72B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		C631066725B57ADA0067F72B /* UserGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* UserGuideViewController.swift */; };
 		C631066825B57ADA0067F72B /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
 		C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
 		C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
@@ -146,7 +146,7 @@
 		C631068C25B57ADA0067F72B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
 		C631068D25B57ADA0067F72B /* PloneTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45446F1238F5BD8001B8D31 /* PloneTextObject.swift */; };
 		C631068E25B57ADA0067F72B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487523A32F92001B8D31 /* LanguageManager.swift */; };
-		C631069025B57ADA0067F72B /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
+		C631069025B57ADA0067F72B /* UserResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* UserResourceType.swift */; };
 		C631069125B57ADA0067F72B /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
 		C631069225B57ADA0067F72B /* GeneralFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544851239DF0F8001B8D31 /* GeneralFolderViewModel.swift */; };
 		C631069325B57ADA0067F72B /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
@@ -195,6 +195,15 @@
 		C6B2143C2626F82000981446 /* TwilioServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */; };
 		C6B2143D2626F82000981446 /* TwilioServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */; };
 		C6B2143E2626F82000981446 /* TwilioServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */; };
+		C6B2146A26300F8E00981446 /* UserGuideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2146926300F8E00981446 /* UserGuideDetailViewController.swift */; };
+		C6B2146B26300F8E00981446 /* UserGuideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2146926300F8E00981446 /* UserGuideDetailViewController.swift */; };
+		C6B2146C26300F8E00981446 /* UserGuideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2146926300F8E00981446 /* UserGuideDetailViewController.swift */; };
+		C6B214742630109300981446 /* UserGuideDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B214732630109300981446 /* UserGuideDetailViewModel.swift */; };
+		C6B214752630109300981446 /* UserGuideDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B214732630109300981446 /* UserGuideDetailViewModel.swift */; };
+		C6B214762630109300981446 /* UserGuideDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B214732630109300981446 /* UserGuideDetailViewModel.swift */; };
+		C6B2148926301FC000981446 /* StartUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2148826301FC000981446 /* StartUseViewController.swift */; };
+		C6B2148A26301FC000981446 /* StartUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2148826301FC000981446 /* StartUseViewController.swift */; };
+		C6B2148B26301FC000981446 /* StartUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2148826301FC000981446 /* StartUseViewController.swift */; };
 		C6E217042578EE67000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217032578EE67000AAAFA /* SnapKit */; };
 		C6E217092578EEB5000AAAFA /* DolphinHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C6E217082578EEB5000AAAFA /* DolphinHTTP */; };
 		C6E2170D2578EF4C000AAAFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6E2170C2578EF4C000AAAFA /* SnapKit */; };
@@ -267,7 +276,7 @@
 		F44E8C8C23B88AA30032C6BE /* AccountOperatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544864239FA9D5001B8D31 /* AccountOperatingError.swift */; };
 		F44E8C8D23B88AA30032C6BE /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487B23A337D3001B8D31 /* Region.swift */; };
 		F44E8C8E23B88AA30032C6BE /* LanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488323A50A1D001B8D31 /* LanguageSection.swift */; };
-		F44E8C9023B88AA30032C6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
+		F44E8C9023B88AA30032C6BE /* UserGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* UserGuideViewModel.swift */; };
 		F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
 		F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
 		F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
@@ -287,7 +296,7 @@
 		F44E8CA823B88AA30032C6BE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454487323A235B4001B8D31 /* Language.swift */; };
 		F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447F8239AB8D6001B8D31 /* ItemConverter.swift */; };
 		F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
-		F44E8CAC23B88AA30032C6BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		F44E8CAC23B88AA30032C6BE /* UserGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* UserGuideViewController.swift */; };
 		F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
 		F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447FB239BB4D6001B8D31 /* ModelLoader.swift */; };
 		F44E8CAF23B88AA30032C6BE /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454486B23A20EE3001B8D31 /* LanguageViewModel.swift */; };
@@ -389,8 +398,8 @@
 		F45448B823AA3178001B8D31 /* ApplicationsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */; };
 		F45448BC23AA869A001B8D31 /* PloneSSOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */; };
 		F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */; };
-		F454DF1E240F8C6A00C05CF9 /* PloneIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */; };
-		F454DF1F240F901F00C05CF9 /* PloneIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */; };
+		F454DF1E240F8C6A00C05CF9 /* PloneIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroViewController.swift */; };
+		F454DF1F240F901F00C05CF9 /* PloneIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454DF1D240F8C6A00C05CF9 /* PloneIntroViewController.swift */; };
 		F45740D223CEED6100FB5EEC /* ContentListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D123CEED6100FB5EEC /* ContentListSection.swift */; };
 		F45740D323CEED6100FB5EEC /* ContentListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D123CEED6100FB5EEC /* ContentListSection.swift */; };
 		F45740D823CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45740D723CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift */; };
@@ -428,10 +437,10 @@
 		F46180D223FCDB3A00D303F8 /* TogglePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */; };
 		F46180D723FE3DB200D303F8 /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
 		F46180D823FE3DB200D303F8 /* PloneResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */; };
-		F46180DC23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
-		F46180DD23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */; };
-		F46180EE2402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
-		F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* IntroductionViewController.swift */; };
+		F46180DC23FE5EAA00D303F8 /* UserResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* UserResourceType.swift */; };
+		F46180DD23FE5EAA00D303F8 /* UserResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180DB23FE5EAA00D303F8 /* UserResourceType.swift */; };
+		F46180EE2402968100D303F8 /* PloneSpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* PloneSpecViewController.swift */; };
+		F46180EF2402968100D303F8 /* PloneSpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180ED2402968100D303F8 /* PloneSpecViewController.swift */; };
 		F46180F82403797200D303F8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
 		F46180F92403797200D303F8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180F72403797200D303F8 /* UITextFieldExtension.swift */; };
 		F46180FF2403806D00D303F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180FE2403806D00D303F8 /* AboutViewController.swift */; };
@@ -457,7 +466,7 @@
 		F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
 		F4B3F3012386386900657CDF /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3002386386900657CDF /* PortalViewController.swift */; };
 		F4B3F303238638A400657CDF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F302238638A400657CDF /* SettingViewController.swift */; };
-		F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* LoginViewController.swift */; };
+		F4B3F3072386608B00657CDF /* UserGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3062386608B00657CDF /* UserGuideViewController.swift */; };
 		F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3132386EE9100657CDF /* NetStatusManager.swift */; };
 		F4B3F3302387CB7100657CDF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F32F2387CB7100657CDF /* StorageManager.swift */; };
 		F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
@@ -476,7 +485,7 @@
 		F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		F4FC419D238CCA7D00AC7315 /* PloneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419C238CCA7D00AC7315 /* PloneUser.swift */; };
-		F4FC419F238CCB6500AC7315 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */; };
+		F4FC419F238CCB6500AC7315 /* UserGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* UserGuideViewModel.swift */; };
 		F4FC41A7238EB41700AC7315 /* PloneCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A6238EB41700AC7315 /* PloneCollection.swift */; };
 		F4FC41A9238EBACC00AC7315 /* PloneSiteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC41A8238EBACC00AC7315 /* PloneSiteItem.swift */; };
 /* End PBXBuildFile section */
@@ -507,6 +516,9 @@
 		C6B21425262424AC00981446 /* PortalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalConfig.swift; sourceTree = "<group>"; };
 		C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenAPI.swift; sourceTree = "<group>"; };
 		C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioServiceViewModel.swift; sourceTree = "<group>"; };
+		C6B2146926300F8E00981446 /* UserGuideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideDetailViewController.swift; sourceTree = "<group>"; };
+		C6B214732630109300981446 /* UserGuideDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideDetailViewModel.swift; sourceTree = "<group>"; };
+		C6B2148826301FC000981446 /* StartUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUseViewController.swift; sourceTree = "<group>"; };
 		F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
 		F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemTopTitleLabel.swift; sourceTree = "<group>"; };
 		F426FEBF23F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemDescriptionTextView.swift; sourceTree = "<group>"; };
@@ -603,7 +615,7 @@
 		F45448B723AA3178001B8D31 /* ApplicationsContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsContentViewModel.swift; sourceTree = "<group>"; };
 		F45448BB23AA869A001B8D31 /* PloneSSOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewController.swift; sourceTree = "<group>"; };
 		F45448BD23AB576E001B8D31 /* WKNavigationTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationTypeExtension.swift; sourceTree = "<group>"; };
-		F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneIntroductionViewController.swift; sourceTree = "<group>"; };
+		F454DF1D240F8C6A00C05CF9 /* PloneIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneIntroViewController.swift; sourceTree = "<group>"; };
 		F45740D123CEED6100FB5EEC /* ContentListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListSection.swift; sourceTree = "<group>"; };
 		F45740D723CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		F45740DE23D0362100FB5EEC /* GeneralDetailPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDetailPageCoordinator.swift; sourceTree = "<group>"; };
@@ -623,8 +635,8 @@
 		F46180CB23FCDB3A00D303F8 /* CleanButtonTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanButtonTextField.swift; sourceTree = "<group>"; };
 		F46180CC23FCDB3A00D303F8 /* TogglePasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogglePasswordTextField.swift; sourceTree = "<group>"; };
 		F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceManager.swift; sourceTree = "<group>"; };
-		F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneResourceType.swift; sourceTree = "<group>"; };
-		F46180ED2402968100D303F8 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		F46180DB23FE5EAA00D303F8 /* UserResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResourceType.swift; sourceTree = "<group>"; };
+		F46180ED2402968100D303F8 /* PloneSpecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSpecViewController.swift; sourceTree = "<group>"; };
 		F46180F72403797200D303F8 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		F46180FE2403806D00D303F8 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F46181032405050900D303F8 /* Keyboarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboarder.swift; sourceTree = "<group>"; };
@@ -642,7 +654,7 @@
 		F4B3F2D923862B3100657CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4B3F3002386386900657CDF /* PortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
 		F4B3F302238638A400657CDF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		F4B3F3062386608B00657CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F4B3F3062386608B00657CDF /* UserGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideViewController.swift; sourceTree = "<group>"; };
 		F4B3F3132386EE9100657CDF /* NetStatusManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetStatusManager.swift; sourceTree = "<group>"; };
 		F4B3F32F2387CB7100657CDF /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneAuthToken.swift; sourceTree = "<group>"; };
@@ -655,7 +667,7 @@
 		F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninInfoViewController.swift; sourceTree = "<group>"; };
 		F4DDFDC323D69F3F00B5802B /* TestingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSection.swift; sourceTree = "<group>"; };
 		F4FC419C238CCA7D00AC7315 /* PloneUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneUser.swift; sourceTree = "<group>"; };
-		F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F4FC419E238CCB6500AC7315 /* UserGuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideViewModel.swift; sourceTree = "<group>"; };
 		F4FC41A6238EB41700AC7315 /* PloneCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneCollection.swift; sourceTree = "<group>"; };
 		F4FC41A8238EBACC00AC7315 /* PloneSiteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSiteItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -802,6 +814,50 @@
 				C6B2143B2626F82000981446 /* TwilioServiceViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C6B2146026300E8700981446 /* UserGuideDetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				C6B2146826300F4600981446 /* ViewModel */,
+				C6B2146726300F2C00981446 /* View */,
+				C6B2148626301E9200981446 /* StartUsePage */,
+				F46180EA2402961100D303F8 /* PloneSpecPage */,
+				F454DF1B240F8C0200C05CF9 /* PloneIntroPage */,
+			);
+			path = UserGuideDetailPage;
+			sourceTree = "<group>";
+		};
+		C6B2146726300F2C00981446 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6B2146926300F8E00981446 /* UserGuideDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C6B2146826300F4600981446 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C6B214732630109300981446 /* UserGuideDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C6B2148626301E9200981446 /* StartUsePage */ = {
+			isa = PBXGroup;
+			children = (
+				C6B2148726301F4D00981446 /* View */,
+			);
+			path = StartUsePage;
+			sourceTree = "<group>";
+		};
+		C6B2148726301F4D00981446 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6B2148826301FC000981446 /* StartUseViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F426FEB823F4F7E600BFDA3B /* CustomUIElement */ = {
@@ -1097,7 +1153,7 @@
 		F454475123926624001B8D31 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F4B3F3062386608B00657CDF /* LoginViewController.swift */,
+				F4B3F3062386608B00657CDF /* UserGuideViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1105,7 +1161,7 @@
 		F45447522392662C001B8D31 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F4FC419E238CCB6500AC7315 /* LoginViewModel.swift */,
+				F4FC419E238CCB6500AC7315 /* UserGuideViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1569,18 +1625,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F454DF1B240F8C0200C05CF9 /* PloneIntroductionPage */ = {
+		F454DF1B240F8C0200C05CF9 /* PloneIntroPage */ = {
 			isa = PBXGroup;
 			children = (
 				F454DF1C240F8C3000C05CF9 /* View */,
 			);
-			path = PloneIntroductionPage;
+			path = PloneIntroPage;
 			sourceTree = "<group>";
 		};
 		F454DF1C240F8C3000C05CF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F454DF1D240F8C6A00C05CF9 /* PloneIntroductionViewController.swift */,
+				F454DF1D240F8C6A00C05CF9 /* PloneIntroViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1704,23 +1760,23 @@
 			isa = PBXGroup;
 			children = (
 				F46180D623FE3DB200D303F8 /* PloneResourceManager.swift */,
-				F46180DB23FE5EAA00D303F8 /* PloneResourceType.swift */,
+				F46180DB23FE5EAA00D303F8 /* UserResourceType.swift */,
 			);
 			path = PloneResource;
 			sourceTree = "<group>";
 		};
-		F46180EA2402961100D303F8 /* IntroductionPage */ = {
+		F46180EA2402961100D303F8 /* PloneSpecPage */ = {
 			isa = PBXGroup;
 			children = (
 				F46180EB2402962700D303F8 /* View */,
 			);
-			path = IntroductionPage;
+			path = PloneSpecPage;
 			sourceTree = "<group>";
 		};
 		F46180EB2402962700D303F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F46180ED2402968100D303F8 /* IntroductionViewController.swift */,
+				F46180ED2402968100D303F8 /* PloneSpecViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1823,10 +1879,9 @@
 			isa = PBXGroup;
 			children = (
 				F457417623D55E8C00FB5EEC /* TestingPage */,
-				F4B3F30423863C9100657CDF /* LoginPage */,
+				F4B3F30423863C9100657CDF /* UserGuidePage */,
+				C6B2146026300E8700981446 /* UserGuideDetailPage */,
 				F4D06888255D306C00F7B3F8 /* SigninInfoPage */,
-				F46180EA2402961100D303F8 /* IntroductionPage */,
-				F454DF1B240F8C0200C05CF9 /* PloneIntroductionPage */,
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				C63D2776257F70A900CFF8A8 /* ServiceListPage */,
@@ -1857,13 +1912,13 @@
 			path = SettingPage;
 			sourceTree = "<group>";
 		};
-		F4B3F30423863C9100657CDF /* LoginPage */ = {
+		F4B3F30423863C9100657CDF /* UserGuidePage */ = {
 			isa = PBXGroup;
 			children = (
 				F45447522392662C001B8D31 /* ViewModel */,
 				F454475123926624001B8D31 /* View */,
 			);
-			path = LoginPage;
+			path = UserGuidePage;
 			sourceTree = "<group>";
 		};
 		F4B3F30B2386EDFA00657CDF /* Manager */ = {
@@ -2294,9 +2349,10 @@
 				C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */,
 				C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */,
 				C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */,
-				C631062225B57ADA0067F72B /* PloneIntroductionViewController.swift in Sources */,
+				C631062225B57ADA0067F72B /* PloneIntroViewController.swift in Sources */,
 				C631062325B57ADA0067F72B /* PloneNews.swift in Sources */,
 				C631062425B57ADA0067F72B /* TestingTableViewCell.swift in Sources */,
+				C6B2146A26300F8E00981446 /* UserGuideDetailViewController.swift in Sources */,
 				C631062525B57ADA0067F72B /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
 				C631062625B57ADA0067F72B /* PloneResourceManager.swift in Sources */,
 				C631062725B57ADA0067F72B /* Signiner.swift in Sources */,
@@ -2312,7 +2368,7 @@
 				C631063125B57ADA0067F72B /* TestingSection.swift in Sources */,
 				C631063225B57ADA0067F72B /* GeneralDocumentViewModel.swift in Sources */,
 				C631063425B57ADA0067F72B /* UIKitExtension.swift in Sources */,
-				C631063525B57ADA0067F72B /* IntroductionViewController.swift in Sources */,
+				C631063525B57ADA0067F72B /* PloneSpecViewController.swift in Sources */,
 				C631063625B57ADA0067F72B /* GeneralCollectionViewModel.swift in Sources */,
 				C631063725B57ADA0067F72B /* AccountOperatingError.swift in Sources */,
 				C631063825B57ADA0067F72B /* Region.swift in Sources */,
@@ -2320,10 +2376,11 @@
 				C631063A25B57ADA0067F72B /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */,
 				C631063B25B57ADA0067F72B /* GeneralItemTopTitleLabel.swift in Sources */,
 				C631063C25B57ADA0067F72B /* WebAPIManager.swift in Sources */,
-				C631063D25B57ADA0067F72B /* LoginViewModel.swift in Sources */,
+				C631063D25B57ADA0067F72B /* UserGuideViewModel.swift in Sources */,
 				C631063E25B57ADA0067F72B /* SigninInfoViewController.swift in Sources */,
 				C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */,
 				C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */,
+				C6B214742630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
 				C631064125B57ADA0067F72B /* PloneAuthToken.swift in Sources */,
 				C6B2143C2626F82000981446 /* TwilioServiceViewModel.swift in Sources */,
 				C631064225B57ADA0067F72B /* TestingViewController.swift in Sources */,
@@ -2357,6 +2414,7 @@
 				C631065C25B57ADA0067F72B /* CleanButtonTextField.swift in Sources */,
 				C631065D25B57ADA0067F72B /* PloneFile.swift in Sources */,
 				C631065E25B57ADA0067F72B /* FileNameProtocol.swift in Sources */,
+				C6B2148926301FC000981446 /* StartUseViewController.swift in Sources */,
 				C631065F25B57ADA0067F72B /* GeneralTextObjectSection.swift in Sources */,
 				C631066025B57ADA0067F72B /* WebCacheCleaner.swift in Sources */,
 				C631066125B57ADA0067F72B /* GeneralTextObjectImageTableViewCell.swift in Sources */,
@@ -2366,7 +2424,7 @@
 				C631066525B57ADA0067F72B /* NoInformationLabel.swift in Sources */,
 				C6B213E8261EEE6600981446 /* PloneFileAPI.swift in Sources */,
 				C631066625B57ADA0067F72B /* WKNavigationTypeExtension.swift in Sources */,
-				C631066725B57ADA0067F72B /* LoginViewController.swift in Sources */,
+				C631066725B57ADA0067F72B /* UserGuideViewController.swift in Sources */,
 				C631066825B57ADA0067F72B /* Localizable.swift in Sources */,
 				C631066925B57ADA0067F72B /* ModelLoader.swift in Sources */,
 				C631066B25B57ADA0067F72B /* LanguageViewModel.swift in Sources */,
@@ -2408,7 +2466,7 @@
 				C6B21426262424AC00981446 /* PortalConfig.swift in Sources */,
 				C631068D25B57ADA0067F72B /* PloneTextObject.swift in Sources */,
 				C631068E25B57ADA0067F72B /* LanguageManager.swift in Sources */,
-				C631069025B57ADA0067F72B /* PloneResourceType.swift in Sources */,
+				C631069025B57ADA0067F72B /* UserResourceType.swift in Sources */,
 				C631069125B57ADA0067F72B /* NetStatusManager.swift in Sources */,
 				C631069225B57ADA0067F72B /* GeneralFolderViewModel.swift in Sources */,
 				C631069325B57ADA0067F72B /* ApplicationsContentViewController.swift in Sources */,
@@ -2447,10 +2505,11 @@
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F457417B23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
-				F454DF1F240F901F00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
+				F454DF1F240F901F00C05CF9 /* PloneIntroViewController.swift in Sources */,
 				F44E8C7E23B88AA30032C6BE /* GeneralImageObject.swift in Sources */,
 				F45740D323CEED6100FB5EEC /* ContentListSection.swift in Sources */,
 				F44E8C7F23B88AA30032C6BE /* PloneLink.swift in Sources */,
+				C6B2146C26300F8E00981446 /* UserGuideDetailViewController.swift in Sources */,
 				F4D06883255D24B200F7B3F8 /* Signiner.swift in Sources */,
 				F46180D823FE3DB200D303F8 /* PloneResourceManager.swift in Sources */,
 				F44E8C8023B88AA30032C6BE /* MainViewController.swift in Sources */,
@@ -2464,20 +2523,21 @@
 				F44E8C8723B88AA30032C6BE /* GeneralImageViewModel.swift in Sources */,
 				F44E8C8823B88AA30032C6BE /* GeneralFolderTableViewCell.swift in Sources */,
 				F45408362413746600796B66 /* UIKitExtension.swift in Sources */,
-				F46180EF2402968100D303F8 /* IntroductionViewController.swift in Sources */,
+				F46180EF2402968100D303F8 /* PloneSpecViewController.swift in Sources */,
 				F44E8C8923B88AA30032C6BE /* PloneCollection.swift in Sources */,
 				F44E8C8A23B88AA30032C6BE /* GeneralDocumentViewModel.swift in Sources */,
 				F44E8C8C23B88AA30032C6BE /* AccountOperatingError.swift in Sources */,
 				F426FEBB23F5181600BFDA3B /* GeneralItemTopTitleLabel.swift in Sources */,
 				F44E8C8D23B88AA30032C6BE /* Region.swift in Sources */,
 				F44E8C8E23B88AA30032C6BE /* LanguageSection.swift in Sources */,
-				F44E8C9023B88AA30032C6BE /* LoginViewModel.swift in Sources */,
+				F44E8C9023B88AA30032C6BE /* UserGuideViewModel.swift in Sources */,
 				F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */,
 				F4D068A9255D413100F7B3F8 /* SigninInfoViewController.swift in Sources */,
 				F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */,
 				F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */,
 				F4B3BCA623F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
 				F44E8C9523B88AA30032C6BE /* GeneralList.swift in Sources */,
+				C6B214762630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
 				F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */,
 				F46180BA23F9722F00D303F8 /* PloneEmptyData.swift in Sources */,
 				F4D068A4255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */,
@@ -2511,13 +2571,14 @@
 				F457416323D5462C00FB5EEC /* ConfigManager.swift in Sources */,
 				F44CD6D424162E2500A35808 /* FileNameProtocol.swift in Sources */,
 				F44E8CA623B88AA30032C6BE /* PloneFile.swift in Sources */,
+				C6B2148B26301FC000981446 /* StartUseViewController.swift in Sources */,
 				F44E8CA723B88AA30032C6BE /* StringExtension.swift in Sources */,
 				F44E8CA823B88AA30032C6BE /* Language.swift in Sources */,
 				F44E8CAA23B88AA30032C6BE /* ItemConverter.swift in Sources */,
 				F43AFC5223E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
 				F426FEC623F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F44E8CAB23B88AA30032C6BE /* WKNavigationTypeExtension.swift in Sources */,
-				F44E8CAC23B88AA30032C6BE /* LoginViewController.swift in Sources */,
+				F44E8CAC23B88AA30032C6BE /* UserGuideViewController.swift in Sources */,
 				F44E8CAD23B88AA30032C6BE /* Localizable.swift in Sources */,
 				F44E8CAE23B88AA30032C6BE /* ModelLoader.swift in Sources */,
 				C6B213EA261EEE6600981446 /* PloneFileAPI.swift in Sources */,
@@ -2562,7 +2623,7 @@
 				C6B21428262424AC00981446 /* PortalConfig.swift in Sources */,
 				F44E8CD223B88AA30032C6BE /* NetStatusManager.swift in Sources */,
 				F44E8CD323B88AA30032C6BE /* GeneralFolderViewModel.swift in Sources */,
-				F46180DD23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
+				F46180DD23FE5EAA00D303F8 /* UserResourceType.swift in Sources */,
 				F44E8CD423B88AA30032C6BE /* ApplicationsContentViewController.swift in Sources */,
 				F43AFC6A23E87D6D0050C851 /* GeneralTextObjectIFrameTableViewCell.swift in Sources */,
 				F45740ED23D13A3400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCell.swift in Sources */,
@@ -2602,9 +2663,10 @@
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
-				F454DF1E240F8C6A00C05CF9 /* PloneIntroductionViewController.swift in Sources */,
+				F454DF1E240F8C6A00C05CF9 /* PloneIntroViewController.swift in Sources */,
 				F45446F4238F6A9D001B8D31 /* PloneNews.swift in Sources */,
 				F457418623D593C600FB5EEC /* TestingTableViewCell.swift in Sources */,
+				C6B2146B26300F8E00981446 /* UserGuideDetailViewController.swift in Sources */,
 				F45740E623D13A2400FB5EEC /* GeneralRootWithLanguageFoldersHeaderTableViewCellViewModel.swift in Sources */,
 				F46180D723FE3DB200D303F8 /* PloneResourceManager.swift in Sources */,
 				F4D06882255D24B200F7B3F8 /* Signiner.swift in Sources */,
@@ -2620,7 +2682,7 @@
 				F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F4544832239CAB6E001B8D31 /* GeneralDocumentViewModel.swift in Sources */,
 				F45408352413746600796B66 /* UIKitExtension.swift in Sources */,
-				F46180EE2402968100D303F8 /* IntroductionViewController.swift in Sources */,
+				F46180EE2402968100D303F8 /* PloneSpecViewController.swift in Sources */,
 				F43AFC7923E87DD10050C851 /* GeneralCollectionViewModel.swift in Sources */,
 				F4544865239FA9D5001B8D31 /* AccountOperatingError.swift in Sources */,
 				F454487C23A337D3001B8D31 /* Region.swift in Sources */,
@@ -2628,10 +2690,11 @@
 				F4603C5023C6F06C00F79BA8 /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */,
 				F426FEBA23F5181600BFDA3B /* GeneralItemTopTitleLabel.swift in Sources */,
 				F4B3BCAA23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
-				F4FC419F238CCB6500AC7315 /* LoginViewModel.swift in Sources */,
+				F4FC419F238CCB6500AC7315 /* UserGuideViewModel.swift in Sources */,
 				F4D068A8255D413100F7B3F8 /* SigninInfoViewController.swift in Sources */,
 				F4B3BCAF23F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
+				C6B214752630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
 				F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */,
 				F457417A23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */,
@@ -2665,6 +2728,7 @@
 				F46180CD23FCDB3A00D303F8 /* CleanButtonTextField.swift in Sources */,
 				F45446FC238F749A001B8D31 /* PloneFile.swift in Sources */,
 				F44CD6D324162E2500A35808 /* FileNameProtocol.swift in Sources */,
+				C6B2148A26301FC000981446 /* StartUseViewController.swift in Sources */,
 				F43AFC5D23E87D6D0050C851 /* GeneralTextObjectSection.swift in Sources */,
 				F4B3BC9A23F0FD13009699E5 /* WebCacheCleaner.swift in Sources */,
 				F43AFC6D23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
@@ -2673,7 +2737,7 @@
 				F45447F9239AB8D6001B8D31 /* ItemConverter.swift in Sources */,
 				F426FEC523F5610800BFDA3B /* NoInformationLabel.swift in Sources */,
 				F45448BE23AB576E001B8D31 /* WKNavigationTypeExtension.swift in Sources */,
-				F4B3F3072386608B00657CDF /* LoginViewController.swift in Sources */,
+				F4B3F3072386608B00657CDF /* UserGuideViewController.swift in Sources */,
 				C6B213E9261EEE6600981446 /* PloneFileAPI.swift in Sources */,
 				F454488C23A55017001B8D31 /* Localizable.swift in Sources */,
 				F45447FC239BB4D6001B8D31 /* ModelLoader.swift in Sources */,
@@ -2716,7 +2780,7 @@
 				C6B21427262424AC00981446 /* PortalConfig.swift in Sources */,
 				F45446F2238F5BD8001B8D31 /* PloneTextObject.swift in Sources */,
 				F454487623A32F92001B8D31 /* LanguageManager.swift in Sources */,
-				F46180DC23FE5EAA00D303F8 /* PloneResourceType.swift in Sources */,
+				F46180DC23FE5EAA00D303F8 /* UserResourceType.swift in Sources */,
 				F4B3F3142386EE9100657CDF /* NetStatusManager.swift in Sources */,
 				F4544852239DF0F8001B8D31 /* GeneralFolderViewModel.swift in Sources */,
 				F45448B623AA3156001B8D31 /* ApplicationsContentViewController.swift in Sources */,

@@ -19,7 +19,7 @@ final class PloneUserAPI {
     
     func signin(url: URL, account: String, password: String, completion: @escaping (Result<GeneralUser, HTTPError>) -> Void) {
         var r = HTTPRequest()
-        r.host = url.absoluteString
+        r.host = url.host
         r.path = "/Plone/@login"
         
         r.headers = [

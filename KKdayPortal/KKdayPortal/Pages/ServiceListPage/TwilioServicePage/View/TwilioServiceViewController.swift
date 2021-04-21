@@ -158,7 +158,7 @@ final class TwilioServiceViewController: UIViewController {
             print("❌ Portal root URL is invalid")
             return nil
         }
-    
+       // https://production-apple-service-4918.twil.io/portalConfig
         return accessTokenURL
     }
     

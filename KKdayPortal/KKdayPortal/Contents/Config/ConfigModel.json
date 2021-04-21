@@ -4,7 +4,7 @@
         "name": "odoo",
         "host": "",
         "client": "",
-        "localServer": "http://localhost:8069",
+        "localServer": "https://f8940df98e35.ngrok.io",
         "sitServer": "https://sit-odoo.eip.kkday.net",
         "productionServer": "https://odoo.eip.kkday.net",
         "localClientID": "OBccIsFMh9EoG5r9n46kYVjiZ7ehqD",

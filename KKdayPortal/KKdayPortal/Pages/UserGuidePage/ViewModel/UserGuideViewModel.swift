@@ -7,6 +7,6 @@
 //
 
 
-final class LoginViewModel {
+final class UserGuideViewModel {
 
 }

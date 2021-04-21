@@ -61,21 +61,6 @@ extension GeneralDetailPageCoordinator {
             navigationController?.pushViewController(pushViewController, animated: false)
             
         case .link:
-            
-            let resourceType = PloneResourceManager.shared.resourceType
-                   
-            switch resourceType {
-            case .kkMember:
-                break
-                
-            case .normal:
-                break
-                
-            case .none:
-                print("❌, resourceType must be defined")
-                return
-            }
-            
             let pushViewController = GeneralLinkViewController(viewModel: GeneralLinkViewModel(source: route))
             navigationController?.pushViewController(pushViewController, animated: false)
             

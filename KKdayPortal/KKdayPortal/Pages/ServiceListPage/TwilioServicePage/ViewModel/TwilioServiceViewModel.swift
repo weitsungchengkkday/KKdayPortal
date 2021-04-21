@@ -17,7 +17,9 @@ final class TwilioServiceViewModel {
         let api = TwilioAccessTokenAPI(loader: URLSessionLoader())
         
         api.getAccessToken(url: url, identity: identity) { result in
-            completion(result)
+            DispatchQueue.main.async {
+                completion(result)
+            }
         }
     }
 }

@@ -14,7 +14,6 @@ final class SigninInfoViewModel {
     func getKKUserPortalConfig(isSuccess: @escaping ((Bool) -> Void)) {
         
         let client = ConfigManager.shared.odooModel.client
-        
         let api = PortalConfigAPI(loader: URLSessionLoader())
         
         api.loadKKUserPortalConfig(clientID: client) { result in

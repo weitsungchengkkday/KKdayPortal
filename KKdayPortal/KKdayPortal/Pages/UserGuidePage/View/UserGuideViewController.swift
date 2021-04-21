@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SnapKit
 
-final class LoginViewController: UIViewController {
+final class UserGuideViewController: UIViewController {
     
     // 🏞 UI element
-    lazy var loginTitleLabel: UILabel = {
+    lazy var userGuideTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         lbl.text = "Welcome to KKPortal"
@@ -38,9 +39,9 @@ final class LoginViewController: UIViewController {
         return stv
     }()
     
-    lazy var enterLoginInfoButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Enter Login Information", for: .normal)
+        btn.setTitle("Login", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -49,39 +50,21 @@ final class LoginViewController: UIViewController {
         return btn
     }()
     
-    lazy var instructionButton: UIButton = {
+    lazy var goUserGuideDetailPageButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("""
-        Usage Notice (check format,
-        if you already have Plone website)
-        """, for: .normal)
+        btn.setTitle("Usage Guide", for: .normal)
         btn.titleLabel?.numberOfLines = 0
         btn.titleLabel?.textAlignment = .center
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
         btn.setTitleColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: .normal)
         btn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        
         return btn
     }()
     
+    private let viewModel: UserGuideViewModel
     
-    lazy var ploneIntroButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("""
-        How to build your own Plone Website
-        (open official docuement,
-        if you don't have Plone website)
-        """, for: .normal)
-        btn.titleLabel?.numberOfLines = 0
-        btn.titleLabel?.textAlignment = .center
-        btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        btn.setTitleColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-        return btn
-    }()
-    
-    private let viewModel: LoginViewModel
-    
-    init(viewModel: LoginViewModel) {
+    init(viewModel: UserGuideViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -92,7 +75,6 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         setAction()
     }
@@ -101,12 +83,11 @@ final class LoginViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         view.addSubview(backgroundImageVeiw)
-        view.addSubview(loginTitleLabel)
+        view.addSubview(userGuideTitleLabel)
         view.addSubview(loginStackView)
         
-        loginStackView.addArrangedSubview(enterLoginInfoButton)
-        loginStackView.addArrangedSubview(instructionButton)
-        loginStackView.addArrangedSubview(ploneIntroButton)
+        loginStackView.addArrangedSubview(loginButton)
+        loginStackView.addArrangedSubview(goUserGuideDetailPageButton)
         
         backgroundImageVeiw.snp.makeConstraints { maker in
             maker.top.equalTo(view.snp.topMargin)
@@ -114,7 +95,7 @@ final class LoginViewController: UIViewController {
             maker.trailing.leading.equalToSuperview()
         }
         
-        loginTitleLabel.snp.makeConstraints { maker in
+        userGuideTitleLabel.snp.makeConstraints { maker in
             maker.top.equalTo(view.snp.topMargin).offset(68)
             maker.trailing.equalToSuperview().offset(-10)
             maker.leading.equalToSuperview().offset(10)
@@ -124,7 +105,7 @@ final class LoginViewController: UIViewController {
             maker.centerX.centerY.equalToSuperview()
         }
         
-        enterLoginInfoButton.snp.makeConstraints { maker in
+        loginButton.snp.makeConstraints { maker in
             maker.height.equalTo(60)
             maker.width.equalTo(view.snp.width).offset(-100)
         }
@@ -133,9 +114,10 @@ final class LoginViewController: UIViewController {
     
     // 🎬 set action
     private func setAction() {
-        enterLoginInfoButton.addTarget(self, action: #selector(goLoginInfoPage), for: .touchUpInside)
-        instructionButton.addTarget(self, action: #selector(goIntroductionPage), for: .touchUpInside)
-        ploneIntroButton.addTarget(self, action: #selector(goPloneIntroductionPage), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(goLoginInfoPage), for: .touchUpInside)
+        
+        goUserGuideDetailPageButton.addTarget(self, action: #selector(goPortalUserGuidePage), for: .touchUpInside)
+      
     }
     
     @objc private func goLoginInfoPage() {
@@ -144,13 +126,8 @@ final class LoginViewController: UIViewController {
         present(presentViewController, animated: true, completion: nil)
     }
     
-    @objc private func goIntroductionPage() {
-        let presentViewController = IntroductionViewController()
-        present(presentViewController, animated: true, completion: nil)
-    }
-    
-    @objc private func goPloneIntroductionPage() {
-        let presentViewController = PloneIntroductionViewController()
+    @objc private func goPortalUserGuidePage() {
+        let presentViewController = UserGuideDetailViewController(viewModel: UserGuideDetailViewModel())
         present(presentViewController, animated: true, completion: nil)
     }
     

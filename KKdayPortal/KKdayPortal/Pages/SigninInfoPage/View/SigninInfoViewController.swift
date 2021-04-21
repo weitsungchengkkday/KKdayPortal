@@ -127,10 +127,10 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         return txv
     }()
     
-    lazy var loginButton: UIButton = {
+    lazy var confirmButton: UIButton = {
         let btn = UIButton()
         btn.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-        btn.setTitle("Login", for: .normal)
+        btn.setTitle("Confirm", for: .normal)
         btn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         btn.layer.cornerRadius = 5
         btn.isEnabled = false
@@ -223,7 +223,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         passwordStackView.addArrangedSubview(passwordTextFiled)
         
         inputStackView.addArrangedSubview(memoTextView)
-        inputStackView.addArrangedSubview(loginButton)
+        inputStackView.addArrangedSubview(confirmButton)
         
         scrollView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
@@ -268,7 +268,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
             maker.width.equalTo(view.snp.width).offset(-110)
         }
         
-        loginButton.snp.makeConstraints { maker in
+        confirmButton.snp.makeConstraints { maker in
             maker.width.equalTo(view.snp.width).offset(-180)
             maker.height.equalTo(50)
         }
@@ -301,7 +301,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     // 🎬 set action
     private func setAction() {
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
-        loginButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
+        confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
     }
     
     @objc private func close() {
@@ -321,12 +321,12 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         switch urlString {
         case "KKPortal":
             print("✈️ KK Member signin")
-            PloneResourceManager.shared.resourceType = .kkMember
-            
             viewModel.getKKUserPortalConfig { [weak self] isSuccess in
                 
                 DispatchQueue.main.async {
+                    
                     if isSuccess {
+                        UserResourceManager.shared.resourceType = .kkMember
                             self?.goPloneSSOPage()
                         
                     } else {
@@ -357,7 +357,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
                     switch result {
                     case .success(let config):
                         
-                        PloneResourceManager.shared.resourceType = .normal
+                        UserResourceManager.shared.resourceType = .custom
                         
                         guard let signinURL: URL = URL(string: config.data.login.url) else {
                             let alertController = UIAlertController(title: "Warning", message: "Plone login URL is invalid", preferredStyle: .alert)
@@ -396,8 +396,8 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
     
     private func setComfirmButtonState() {
-        loginButton.isEnabled = !(portalConfigURLTextField.text?.isEmpty ?? true)
-        loginButton.backgroundColor = !(portalConfigURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        confirmButton.isEnabled = !(portalConfigURLTextField.text?.isEmpty ?? true)
+        confirmButton.backgroundColor = !(portalConfigURLTextField.text?.isEmpty ?? true) ? #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
 
 }

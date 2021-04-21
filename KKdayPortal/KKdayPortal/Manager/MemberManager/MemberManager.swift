@@ -60,7 +60,7 @@ final class MemberManager {
     private func logoutHandler() {
 
         // 👶🏻 Restart from signin page
-        let loginController = LoginViewController(viewModel: LoginViewModel())
+        let loginController = UserGuideViewController(viewModel: UserGuideViewModel())
         Utilities.appDelegateWindow?.rootViewController = loginController
         
         // Clear UserDefault
@@ -83,7 +83,7 @@ final class MemberManager {
     private func logoutForSwitchServerHandler() {
         
         // 👶🏻 Restart from signin page
-        let loginController = LoginViewController(viewModel: LoginViewModel())
+        let loginController = UserGuideViewController(viewModel: UserGuideViewModel())
         Utilities.appDelegateWindow?.rootViewController = loginController
         
         // Clear UserDefault(keep language, Region)

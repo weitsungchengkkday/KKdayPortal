@@ -18,7 +18,7 @@ final class GeneralFolderViewController: UIViewController, GeneralDetailPageCoor
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
         let imv = UIImageView()
-        imv.image = PloneResourceManager.shared.currentLogoImage
+        imv.image = UserResourceManager.shared.currentLogoImage
         return imv
     }()
     

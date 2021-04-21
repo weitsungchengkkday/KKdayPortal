@@ -1,5 +1,5 @@
 //
-//  IntroductionViewController.swift
+//  PloneSpecViewController.swift
 //  KKdayPortal
 //
 //  Created by WEI-TSUNG CHENG on 2020/2/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class IntroductionViewController: UIViewController {
+final class PloneSpecViewController: UIViewController {
 
     // 🏞 UI element
     
@@ -19,7 +19,7 @@ final class IntroductionViewController: UIViewController {
         return imv
     }()
     
-    lazy var noticeStackView: UIStackView = {
+    lazy var specStackView: UIStackView = {
         let stv = UIStackView()
         stv.axis = .vertical
         stv.distribution = .fill
@@ -28,7 +28,7 @@ final class IntroductionViewController: UIViewController {
         return stv
     }()
     
-    lazy var noticeTextField: UITextView = {
+    lazy var specTextField: UITextView = {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
         txv.layer.cornerRadius = 20
@@ -37,7 +37,7 @@ final class IntroductionViewController: UIViewController {
         txv.isEditable = false
         
         let text = """
-        Notice
+        Spec
         
         1. Support Plone Version:
             . Plone 5.1.6
@@ -55,7 +55,7 @@ final class IntroductionViewController: UIViewController {
         """
         let nsText = NSString(string: text)
         let contentRange = nsText.range(of: text)
-        let titleRange = nsText.range(of: "Notice")
+        let titleRange = nsText.range(of: "Spec")
         
         let attriText = NSMutableAttributedString(string: text)
         attriText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: contentRange)
@@ -91,22 +91,22 @@ final class IntroductionViewController: UIViewController {
     private func setupUI() {
         
         self.view.addSubview(backgroundImageVeiw)
-        self.view.addSubview(noticeStackView)
-        noticeStackView.addArrangedSubview(noticeTextField)
-        noticeStackView.addArrangedSubview(comfirmButton)
+        self.view.addSubview(specStackView)
+        specStackView.addArrangedSubview(specTextField)
+        specStackView.addArrangedSubview(comfirmButton)
         
         backgroundImageVeiw.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
         
-        noticeStackView.snp.makeConstraints { maker in
+        specStackView.snp.makeConstraints { maker in
             maker.top.equalToSuperview().offset(60)
             maker.leading.equalToSuperview().offset(30)
             maker.trailing.equalToSuperview().offset(-30)
             maker.bottom.equalToSuperview().offset(-60)
         }
         
-        noticeTextField.snp.makeConstraints { maker in
+        specTextField.snp.makeConstraints { maker in
             maker.width.equalTo(self.view.snp.width).offset(-50)
         }
         

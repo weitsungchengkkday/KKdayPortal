@@ -77,16 +77,16 @@ final class SettingViewController: UIViewController {
     }()
     
     private let viewModel = SettingViewModel()
-    var testingModeIsOpen: Bool {
-        switch PloneResourceManager.shared.resourceType {
+    
+    var isTestingModeOpened: Bool {
+        switch UserResourceManager.shared.resourceType {
         case .kkMember:
             return true
-        case .normal:
-            return false
-        case .none:
+        case .custom:
             return false
         }
     }
+    
     private let testingModeTapRequired: Int = 10
     
     override func viewDidLoad() {
@@ -180,7 +180,7 @@ final class SettingViewController: UIViewController {
     }
     
     @objc private func goTestingPage() {
-        if testingModeIsOpen {
+        if isTestingModeOpened {
             let presentViewController = TestingViewController(viewModel: TestingViewModel())
             present(presentViewController, animated: true, completion: nil)
         }

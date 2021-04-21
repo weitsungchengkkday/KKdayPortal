@@ -22,10 +22,6 @@ final class StorageManager {
         // Odoo
         case serverEnv
         
-        /// Portal Services
-//        case plonePortalService
-//        case twilioPortalService
-        
         // Plone (Object)
         case ploneResourceType
         
@@ -39,7 +35,6 @@ final class StorageManager {
         // Region Setting
         case regionIsSelected
         case selectedRegionKey
-        
     }
 
     private init() {

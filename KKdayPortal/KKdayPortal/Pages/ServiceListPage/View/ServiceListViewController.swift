@@ -46,16 +46,28 @@ final class ServiceListViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         view.addSubview(servicesStackView)
-        servicesStackView.addArrangedSubview(callCenterButton)
+        
+        // Hidden Servicd Button if it is not available
+        guard let config: PortalConfig = StorageManager.shared.loadObject(for: .portalConfig) else {
+            print("❌ NO PortalConfig")
+            fatalError()
+        }
+        
+        let servicesArray: [String] = config.data.services.map { service -> String in
+            return service.type
+        }
+        
+        if servicesArray.contains("cti") {
+            servicesStackView.addArrangedSubview(callCenterButton)
+            callCenterButton.snp.makeConstraints { maker in
+                maker.height.equalTo(44)
+                maker.width.equalToSuperview().offset(-60)
+            }
+        }
         
         servicesStackView.snp.makeConstraints { maker in
             maker.width.equalToSuperview()
             maker.centerX.centerY.equalToSuperview()
-        }
-        
-        callCenterButton.snp.makeConstraints { maker in
-            maker.height.equalTo(44)
-            maker.width.equalToSuperview().offset(-60)
         }
         
     }

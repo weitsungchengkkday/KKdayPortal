@@ -15,7 +15,7 @@ final class GeneralFileViewController: UIViewController {
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
         let imv = UIImageView()
-        imv.image = PloneResourceManager.shared.currentLogoImage
+        imv.image = UserResourceManager.shared.currentLogoImage
         return imv
     }()
     

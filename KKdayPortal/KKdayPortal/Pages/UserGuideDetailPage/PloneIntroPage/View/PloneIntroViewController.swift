@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PloneIntroductionViewController: UIViewController {
+final class PloneIntroViewController: UIViewController {
    
     // 🏞 UI element
     

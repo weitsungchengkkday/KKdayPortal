@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-final class PloneResourceManager {
+final class UserResourceManager {
     
-    static let shared: PloneResourceManager = PloneResourceManager()
+    static let shared: UserResourceManager = UserResourceManager()
     
-    var resourceType: PloneResourceType {
+    var resourceType: UserResourceType {
         get
         {
-            let type: PloneResourceType = StorageManager.shared.loadObject(for: .ploneResourceType) ?? .none
+            let type: UserResourceType = StorageManager.shared.loadObject(for: .ploneResourceType) ?? .custom
             return type
         }
         
         set
         {
-           let type: PloneResourceType = newValue
+           let type: UserResourceType = newValue
            StorageManager.shared.saveObject(for: .ploneResourceType, value: type)
         }
         
@@ -33,10 +33,8 @@ final class PloneResourceManager {
         switch resourceType {
         case .kkMember:
             image = #imageLiteral(resourceName: "icKKdayLogo")
-        case .normal:
+        case .custom:
             image = #imageLiteral(resourceName: "icApplicationItem")
-        case .none:
-            image = #imageLiteral(resourceName: "icPicture")
         }
         
         return image

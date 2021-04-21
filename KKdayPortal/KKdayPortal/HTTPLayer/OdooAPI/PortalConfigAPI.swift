@@ -27,10 +27,21 @@ final class PortalConfigAPI {
     }
     
     func loadKKUserPortalConfig(clientID: String, completion: @escaping ((Result<PortalConfig, HTTPError>) -> Void )) {
-        var r = HTTPRequest()
+        
+        var r: HTTPRequest
+        guard let url = URL(string: ConfigManager.shared.odooModel.host) else {
+            return
+        }
+        
+        if url.scheme == "http" {
+            r = HTTPRequest(scheme: "http")
+            r.port = url.port
+        } else {
+            r = HTTPRequest()
+        }
 
-        r.host = ConfigManager.shared.odooModel.host.replacingOccurrences(of: "https://", with: "")
-       
+        r.host = url.host
+        
         r.path = "/api/v1/kkportal-config"
         r.headers = [
             "KK-Track-SEQ": "0",

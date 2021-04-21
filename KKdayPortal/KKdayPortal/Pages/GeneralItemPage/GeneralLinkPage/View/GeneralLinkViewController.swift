@@ -15,7 +15,7 @@ final class GeneralLinkViewController: UIViewController, GeneralDetailPageCoordi
     // 🏞 UI element
     lazy var logoImageView: UIImageView = {
         let imv = UIImageView()
-        imv.image = PloneResourceManager.shared.currentLogoImage
+        imv.image = UserResourceManager.shared.currentLogoImage
         return imv
     }()
     
