@@ -14,7 +14,7 @@ final class ConfigManager {
     fileprivate var _odooModel: ConfigModel!
     fileprivate var _ploneModel: ConfigModel!
     
-    var odooModel: ConfigModel {
+    private(set) var odooModel: ConfigModel {
         get {
             if _odooModel == nil {
                 let name = "\(ConfigModel.self)"
@@ -41,33 +41,29 @@ final class ConfigManager {
         }
     }
     
+    var serverEnv: ServerEnv {
+        if let serverConfig: String = StorageManager.shared.load(for: .serverEnv),
+            let env: ServerEnv = ServerEnv(rawValue: serverConfig) {
+            return env
+            
+        } else {
+            #if SIT
+            return .sit
+            #elseif PRODUCTION
+            return .production
+            #else
+            return .local
+            #endif
+        }
+    }
     
     private init() {
         
     }
     
     func setup() {
-        let serverEnv: ServerEnv
-        if let serverConfig: String = StorageManager.shared.load(for: .serverEnv),
-            let env: ServerEnv = ServerEnv(rawValue: serverConfig) {
-            serverEnv = env
-            print("🎆 load SSO Plone server: \(serverEnv.rawValue)")
-            
-        } else {
-            
-            #if SIT
-                        serverEnv = .sit
-            #elseif PRODUCTION
-                        serverEnv = .production
-            #else
-                        serverEnv = .local
-            #endif
-            
-        
-            StorageManager.shared.save(for: .serverEnv, value: serverEnv.rawValue)
-            print("🎇 Set up SSO Plone signin server: \(serverEnv.rawValue)")
-        }
-        
+        let serverEnv = self.serverEnv
+    
         switch serverEnv {
         case .sit:
             odooModel.host = odooModel.sitServer

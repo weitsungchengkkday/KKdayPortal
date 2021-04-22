@@ -18,12 +18,11 @@ final class StorageManager {
         // Portal Config (Object)
         case portalConfig
     
-        /// ServerEnv
-        // Odoo
+        // ServerEnv
         case serverEnv
         
-        // Plone (Object)
-        case ploneResourceType
+        // Login User (Object)
+        case userResourceType
         
         // Portal (Object)
         case generalUser

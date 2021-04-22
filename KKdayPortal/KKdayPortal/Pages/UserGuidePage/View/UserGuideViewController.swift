@@ -15,7 +15,7 @@ final class UserGuideViewController: UIViewController {
     lazy var userGuideTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        lbl.text = "Welcome to KKPortal"
+        lbl.text = "Welcome to KKPortal!"
         lbl.font = UIFont.boldSystemFont(ofSize: 26)
         lbl.textAlignment = .center
         lbl.numberOfLines = 2
@@ -62,7 +62,15 @@ final class UserGuideViewController: UIViewController {
         return btn
     }()
     
+    lazy var firstPageLogoImageView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = #imageLiteral(resourceName: "icKKCoolLogo")
+        imv.isUserInteractionEnabled = true
+        return imv
+    }()
+    
     private let viewModel: UserGuideViewModel
+    private let testingModeTapRequired: Int = 10
     
     init(viewModel: UserGuideViewModel) {
         self.viewModel = viewModel
@@ -85,6 +93,7 @@ final class UserGuideViewController: UIViewController {
         view.addSubview(backgroundImageVeiw)
         view.addSubview(userGuideTitleLabel)
         view.addSubview(loginStackView)
+        view.addSubview(firstPageLogoImageView)
         
         loginStackView.addArrangedSubview(loginButton)
         loginStackView.addArrangedSubview(goUserGuideDetailPageButton)
@@ -110,6 +119,12 @@ final class UserGuideViewController: UIViewController {
             maker.width.equalTo(view.snp.width).offset(-100)
         }
         
+        firstPageLogoImageView.snp.makeConstraints { maker in
+            maker.width.equalTo(180)
+            maker.height.equalTo(77.4)
+            maker.centerX.equalToSuperview()
+            maker.bottom.equalTo(view.snp.bottomMargin).offset(-44)
+        }
     }
     
     // 🎬 set action
@@ -117,18 +132,48 @@ final class UserGuideViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(goLoginInfoPage), for: .touchUpInside)
         
         goUserGuideDetailPageButton.addTarget(self, action: #selector(goPortalUserGuidePage), for: .touchUpInside)
-      
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(checkIsKKDeveloper))
+        recognizer.numberOfTapsRequired = testingModeTapRequired
+        firstPageLogoImageView.addGestureRecognizer(recognizer)
     }
     
     @objc private func goLoginInfoPage() {
-        let viewModel = SigninInfoViewModel()
-        let presentViewController = SigninInfoViewController(viewModel: viewModel)
+        let viewModel = LoginViewModel()
+        let presentViewController = LoginViewController(viewModel: viewModel)
         present(presentViewController, animated: true, completion: nil)
     }
     
     @objc private func goPortalUserGuidePage() {
         let presentViewController = UserGuideDetailViewController(viewModel: UserGuideDetailViewModel())
         present(presentViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func checkIsKKDeveloper() {
+        
+        let controller = UIAlertController(title: "進入", message: "請輸入密碼", preferredStyle: .alert)
+        controller.addTextField { textField in
+            textField.placeholder = "密碼"
+        }
+        
+        let confirmAction = UIAlertAction(title: "確認", style: .default) { (_) in
+            let password = controller.textFields?[0].text
+            if password == "david" {
+                self.goTestingPage()
+            }
+        }
+        
+        controller.addAction(confirmAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+        
+    }
+    
+    private func goTestingPage() {
+        let presentViewController = TestingViewController(viewModel: TestingViewModel())
+        present(presentViewController, animated: true, completion: nil)
+        
     }
     
     // ⛓ bind viewModel

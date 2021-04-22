@@ -67,8 +67,4 @@ final class MainViewController: UITabBarController {
         self.viewControllers = [homeNav, portalNav, applicationsEntryNav, settingNav]
         self.selectedViewController = homeNav
     }
-    
-    func logout() {
-        MemberManager.shared.logoutForSwitchServer()
-    }
 }

@@ -13,9 +13,9 @@ final class TestingViewModel {
     private(set) var testingItems: [TestingSection] = []
     
     init() {}
- 
+    
     func loadTestingItems() {
-        
+       
         var testingTableViewCellViewModels: [TestingTableViewCellViewModel] = []
         
         let configModel: ConfigModel = ConfigManager.shared.odooModel

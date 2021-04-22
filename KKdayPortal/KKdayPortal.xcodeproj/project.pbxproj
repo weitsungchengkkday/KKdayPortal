@@ -66,14 +66,14 @@
 		C631063B25B57ADA0067F72B /* GeneralItemTopTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426FEB923F5181600BFDA3B /* GeneralItemTopTitleLabel.swift */; };
 		C631063C25B57ADA0067F72B /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA923F30F6D009699E5 /* WebAPIManager.swift */; };
 		C631063D25B57ADA0067F72B /* UserGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419E238CCB6500AC7315 /* UserGuideViewModel.swift */; };
-		C631063E25B57ADA0067F72B /* SigninInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */; };
+		C631063E25B57ADA0067F72B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* LoginViewController.swift */; };
 		C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCAE23F30FB4009699E5 /* MemberManager.swift */; };
 		C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544835239CACF2001B8D31 /* GeneralNewsViewModel.swift */; };
 		C631064125B57ADA0067F72B /* PloneAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F3372387CE4E00657CDF /* PloneAuthToken.swift */; };
 		C631064225B57ADA0067F72B /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457417923D55FB400FB5EEC /* TestingViewController.swift */; };
 		C631064325B57ADA0067F72B /* GeneralItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E6239AA1AC001B8D31 /* GeneralItem.swift */; };
 		C631064425B57ADA0067F72B /* PloneEmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46180B823F9722F00D303F8 /* PloneEmptyData.swift */; };
-		C631064525B57ADA0067F72B /* SigninInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */; };
+		C631064525B57ADA0067F72B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* LoginViewModel.swift */; };
 		C631064625B57ADA0067F72B /* GeneralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45447E8239AA320001B8D31 /* GeneralList.swift */; };
 		C631064725B57ADA0067F72B /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3BCA423F2BAE4009699E5 /* NotificationNameExtension.swift */; };
 		C631064825B57ADA0067F72B /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
@@ -478,10 +478,10 @@
 		F4D0687A255D1A4800F7B3F8 /* PloneUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */; };
 		F4D06882255D24B200F7B3F8 /* Signiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06881255D24B200F7B3F8 /* Signiner.swift */; };
 		F4D06883255D24B200F7B3F8 /* Signiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D06881255D24B200F7B3F8 /* Signiner.swift */; };
-		F4D068A3255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */; };
-		F4D068A4255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */; };
-		F4D068A8255D413100F7B3F8 /* SigninInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */; };
-		F4D068A9255D413100F7B3F8 /* SigninInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */; };
+		F4D068A3255D3C8500F7B3F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* LoginViewModel.swift */; };
+		F4D068A4255D3C8500F7B3F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A2255D3C8500F7B3F8 /* LoginViewModel.swift */; };
+		F4D068A8255D413100F7B3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* LoginViewController.swift */; };
+		F4D068A9255D413100F7B3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D068A7255D413100F7B3F8 /* LoginViewController.swift */; };
 		F4DDFDC423D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDFDC323D69F3F00B5802B /* TestingSection.swift */; };
 		F4FC419D238CCA7D00AC7315 /* PloneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC419C238CCA7D00AC7315 /* PloneUser.swift */; };
@@ -663,8 +663,8 @@
 		F4C4FCE1255E9732001ADF72 /* PloneItemsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneItemsAPI.swift; sourceTree = "<group>"; };
 		F4D06876255D1A4800F7B3F8 /* PloneUserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloneUserAPI.swift; sourceTree = "<group>"; };
 		F4D06881255D24B200F7B3F8 /* Signiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signiner.swift; sourceTree = "<group>"; };
-		F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninInfoViewModel.swift; sourceTree = "<group>"; };
-		F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninInfoViewController.swift; sourceTree = "<group>"; };
+		F4D068A2255D3C8500F7B3F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F4D068A7255D413100F7B3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4DDFDC323D69F3F00B5802B /* TestingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSection.swift; sourceTree = "<group>"; };
 		F4FC419C238CCA7D00AC7315 /* PloneUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneUser.swift; sourceTree = "<group>"; };
 		F4FC419E238CCB6500AC7315 /* UserGuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideViewModel.swift; sourceTree = "<group>"; };
@@ -1881,7 +1881,7 @@
 				F457417623D55E8C00FB5EEC /* TestingPage */,
 				F4B3F30423863C9100657CDF /* UserGuidePage */,
 				C6B2146026300E8700981446 /* UserGuideDetailPage */,
-				F4D06888255D306C00F7B3F8 /* SigninInfoPage */,
+				F4D06888255D306C00F7B3F8 /* LoginPage */,
 				F45448B923AA8644001B8D31 /* PloneSSOPage */,
 				F454489623A5E004001B8D31 /* MainTabViewController */,
 				C63D2776257F70A900CFF8A8 /* ServiceListPage */,
@@ -1979,20 +1979,20 @@
 			path = PloneAPI;
 			sourceTree = "<group>";
 		};
-		F4D06888255D306C00F7B3F8 /* SigninInfoPage */ = {
+		F4D06888255D306C00F7B3F8 /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
 				F4D06881255D24B200F7B3F8 /* Signiner.swift */,
 				F4D06889255D31BC00F7B3F8 /* ViewModel */,
 				F4D06891255D31E200F7B3F8 /* View */,
 			);
-			path = SigninInfoPage;
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
 		F4D06889255D31BC00F7B3F8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F4D068A2255D3C8500F7B3F8 /* SigninInfoViewModel.swift */,
+				F4D068A2255D3C8500F7B3F8 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2000,7 +2000,7 @@
 		F4D06891255D31E200F7B3F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F4D068A7255D413100F7B3F8 /* SigninInfoViewController.swift */,
+				F4D068A7255D413100F7B3F8 /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2377,7 +2377,7 @@
 				C631063B25B57ADA0067F72B /* GeneralItemTopTitleLabel.swift in Sources */,
 				C631063C25B57ADA0067F72B /* WebAPIManager.swift in Sources */,
 				C631063D25B57ADA0067F72B /* UserGuideViewModel.swift in Sources */,
-				C631063E25B57ADA0067F72B /* SigninInfoViewController.swift in Sources */,
+				C631063E25B57ADA0067F72B /* LoginViewController.swift in Sources */,
 				C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */,
 				C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */,
 				C6B214742630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
@@ -2387,7 +2387,7 @@
 				C631064325B57ADA0067F72B /* GeneralItem.swift in Sources */,
 				C6B213F2261EEEDD00981446 /* PloneImageAPI.swift in Sources */,
 				C631064425B57ADA0067F72B /* PloneEmptyData.swift in Sources */,
-				C631064525B57ADA0067F72B /* SigninInfoViewModel.swift in Sources */,
+				C631064525B57ADA0067F72B /* LoginViewModel.swift in Sources */,
 				C631064625B57ADA0067F72B /* GeneralList.swift in Sources */,
 				C631064725B57ADA0067F72B /* NotificationNameExtension.swift in Sources */,
 				C631064825B57ADA0067F72B /* TwilioServiceViewController.swift in Sources */,
@@ -2532,7 +2532,7 @@
 				F44E8C8E23B88AA30032C6BE /* LanguageSection.swift in Sources */,
 				F44E8C9023B88AA30032C6BE /* UserGuideViewModel.swift in Sources */,
 				F44E8C9123B88AA30032C6BE /* GeneralNewsViewModel.swift in Sources */,
-				F4D068A9255D413100F7B3F8 /* SigninInfoViewController.swift in Sources */,
+				F4D068A9255D413100F7B3F8 /* LoginViewController.swift in Sources */,
 				F44E8C9223B88AA30032C6BE /* PloneAuthToken.swift in Sources */,
 				F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */,
 				F4B3BCA623F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
@@ -2540,7 +2540,7 @@
 				C6B214762630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
 				F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */,
 				F46180BA23F9722F00D303F8 /* PloneEmptyData.swift in Sources */,
-				F4D068A4255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */,
+				F4D068A4255D3C8500F7B3F8 /* LoginViewModel.swift in Sources */,
 				C6B2143E2626F82000981446 /* TwilioServiceViewModel.swift in Sources */,
 				F4B3BCAB23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
 				F44E8C9823B88AA30032C6BE /* PortalViewController.swift in Sources */,
@@ -2691,7 +2691,7 @@
 				F426FEBA23F5181600BFDA3B /* GeneralItemTopTitleLabel.swift in Sources */,
 				F4B3BCAA23F30F6D009699E5 /* WebAPIManager.swift in Sources */,
 				F4FC419F238CCB6500AC7315 /* UserGuideViewModel.swift in Sources */,
-				F4D068A8255D413100F7B3F8 /* SigninInfoViewController.swift in Sources */,
+				F4D068A8255D413100F7B3F8 /* LoginViewController.swift in Sources */,
 				F4B3BCAF23F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
 				C6B214752630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
@@ -2700,7 +2700,7 @@
 				F45447E7239AA1AC001B8D31 /* GeneralItem.swift in Sources */,
 				C6B2143D2626F82000981446 /* TwilioServiceViewModel.swift in Sources */,
 				F46180B923F9722F00D303F8 /* PloneEmptyData.swift in Sources */,
-				F4D068A3255D3C8500F7B3F8 /* SigninInfoViewModel.swift in Sources */,
+				F4D068A3255D3C8500F7B3F8 /* LoginViewModel.swift in Sources */,
 				C6B213F3261EEEDD00981446 /* PloneImageAPI.swift in Sources */,
 				F45447E9239AA320001B8D31 /* GeneralList.swift in Sources */,
 				F4B3BCA523F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,

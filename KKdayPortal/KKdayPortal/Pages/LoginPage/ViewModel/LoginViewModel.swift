@@ -1,5 +1,5 @@
 //
-//  SigninInfoViewModel.swift
+//  LoginViewModel.swift
 //  KKdayPortal
 //
 //  Created by WEI-TSUNG CHENG on 2020/11/12.
@@ -9,7 +9,7 @@
 import Foundation
 import DolphinHTTP
 
-final class SigninInfoViewModel {
+final class LoginViewModel {
     
     func getKKUserPortalConfig(isSuccess: @escaping ((Bool) -> Void)) {
         

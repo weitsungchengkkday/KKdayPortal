@@ -86,7 +86,7 @@ extension TestingViewController: UITableViewDelegate, UITableViewDataSource {
                 item.isSelected = !item.isSelected
             }
             
-            // Change Storage server
+            // Change Storage server environment
             let currentServerEnv: ServerEnv = items[indexPath.row].serverEnv
            
             if currentServerEnv.rawValue != StorageManager.shared.load(for: .serverEnv) {
@@ -95,15 +95,8 @@ extension TestingViewController: UITableViewDelegate, UITableViewDataSource {
                 print("⚠️ Save same serverEnv")
             }
             
-            // Logout after change server
-            guard let vc = self.presentingViewController as? MainViewController else {
-                return
-            }
-            
-            self.dismiss(animated: true) {
-                vc.logout()
-            }
-            
+            // renew current config setting
+            ConfigManager.shared.setup()
             tableView.reloadData()
         }
         

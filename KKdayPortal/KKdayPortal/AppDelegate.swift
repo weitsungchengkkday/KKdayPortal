@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initializePushKit()
         
         ConfigManager.shared.setup()
-        
         LanguageManager.shared.setup()
         
         return true

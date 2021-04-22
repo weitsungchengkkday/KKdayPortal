@@ -13,17 +13,17 @@ final class UserResourceManager {
     
     static let shared: UserResourceManager = UserResourceManager()
     
-    var resourceType: UserResourceType {
+    var resourceType: UserResourceType<URL> {
         get
         {
-            let type: UserResourceType = StorageManager.shared.loadObject(for: .ploneResourceType) ?? .custom
+            let type: UserResourceType<URL> = StorageManager.shared.loadObject(for: .userResourceType)!
             return type
         }
         
         set
         {
            let type: UserResourceType = newValue
-           StorageManager.shared.saveObject(for: .ploneResourceType, value: type)
+           StorageManager.shared.saveObject(for: .userResourceType, value: type)
         }
         
     }

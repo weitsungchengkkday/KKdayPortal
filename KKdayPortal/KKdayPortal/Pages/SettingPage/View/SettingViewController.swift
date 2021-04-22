@@ -71,21 +71,12 @@ final class SettingViewController: UIViewController {
     lazy var versionLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 12)
-        lbl.text = "Version" + " " + Utilities.getCurrentVersion()
+        lbl.text = ConfigManager.shared.serverEnv.identity + " " + "Version" + " " + Utilities.getCurrentVersion()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         return lbl
     }()
     
     private let viewModel = SettingViewModel()
-    
-    var isTestingModeOpened: Bool {
-        switch UserResourceManager.shared.resourceType {
-        case .kkMember:
-            return true
-        case .custom:
-            return false
-        }
-    }
     
     private let testingModeTapRequired: Int = 10
     
@@ -153,11 +144,7 @@ final class SettingViewController: UIViewController {
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
         aboutButton.addTarget(self, action: #selector(goAboutPage), for: .touchUpInside)
         contactMeButton.addTarget(self, action: #selector(sendEmail), for: .touchUpInside)
-        
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(goTestingPage))
-        recognizer.numberOfTapsRequired = testingModeTapRequired
-        logoWithTextImageView.addGestureRecognizer(recognizer)
-        
+
     }
     
     @objc private func goLanguagePage() {
@@ -177,13 +164,6 @@ final class SettingViewController: UIViewController {
         alertController.addAction(confirmAlertAction)
         alertController.addAction(cancelAlertAction)
         present(alertController, animated: true, completion: nil)
-    }
-    
-    @objc private func goTestingPage() {
-        if isTestingModeOpened {
-            let presentViewController = TestingViewController(viewModel: TestingViewModel())
-            present(presentViewController, animated: true, completion: nil)
-        }
     }
     
     @objc private func goAboutPage() {
@@ -217,5 +197,4 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
 }

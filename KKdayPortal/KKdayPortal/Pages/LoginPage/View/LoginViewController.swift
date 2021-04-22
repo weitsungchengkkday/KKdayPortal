@@ -1,5 +1,5 @@
 //
-//  SigninInfoViewController.swift
+//  LoginController.swift
 //  KKdayPortal
 //
 //  Created by WEI-TSUNG CHENG on 2020/11/12.
@@ -9,7 +9,7 @@
 import UIKit
 import DolphinHTTP
 
-final class SigninInfoViewController: UIViewController, Keyboarder {
+final class LoginViewController: UIViewController, Keyboarder {
     
     // 🏞 UI element
     
@@ -122,7 +122,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         txv.isScrollEnabled = false
-        txv.text = "If plone website support signin as visitor, you do not need to enter account and password"
+        txv.text = "If plone website support login as visitor, you do not need to enter account and password"
         txv.isEditable = false
         return txv
     }()
@@ -155,12 +155,12 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     
     var observerForKeyboardDidChangeFrameNotification: NSObjectProtocol?
     
-    private var viewModel: SigninInfoViewModel!
+    private var viewModel: LoginViewModel!
     
     private let signiner = Signiner()
     private var singleTapGestureRecognizer: UITapGestureRecognizer!
     
-    init(viewModel: SigninInfoViewModel) {
+    init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -172,7 +172,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        viewModel = SigninInfoViewModel()
+        viewModel = LoginViewModel()
         
         signiner.delegate = self
         
@@ -186,12 +186,22 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     override func viewWillAppear(_ animated: Bool) {
         scrollViewOriginalContentInset.bottom = 20
         
-        #if DEBUG
-            portalConfigURLTextField.text = "KKPortal"
-            setComfirmButtonState()
+//        #if DEBUG
+//            portalConfigURLTextField.text = "KKPortal"
+//        #endif
         
-        #endif
-
+        // Load Login info, if it is exist
+        if let userResourceType: UserResourceType<URL> = StorageManager.shared.loadObject(for: .userResourceType) {
+            
+            switch userResourceType {
+            case .kkMember:
+                portalConfigURLTextField.text = "KKPortal"
+            case .custom(let url):
+                portalConfigURLTextField.text = url.absoluteString
+            }
+        
+            setComfirmButtonState()
+        }
     }
     
     deinit {
@@ -309,10 +319,10 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
     }
     
     @objc private func confirm() {
-        signin()
+        login()
     }
     
-    private func signin() {
+    private func login() {
         
         guard let urlString = portalConfigURLTextField.text?.trimLeadingAndTrailingWhiteSpace(), !urlString.isEmpty else {
             return
@@ -320,7 +330,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
         
         switch urlString {
         case "KKPortal":
-            print("✈️ KK Member signin")
+            print("✈️ KK Member login")
             viewModel.getKKUserPortalConfig { [weak self] isSuccess in
                 
                 DispatchQueue.main.async {
@@ -341,7 +351,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
             
         default:
             
-            print("🗺 Custom user signin")
+            print("🗺 Custom user login")
             guard let url = URL(string: urlString) else {
                 let alertController = UIAlertController(title: "Warning", message: "Not valid URL, please check", preferredStyle: .alert)
                 let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -357,7 +367,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
                     switch result {
                     case .success(let config):
                         
-                        UserResourceManager.shared.resourceType = .custom
+                        UserResourceManager.shared.resourceType = .custom(url)
                         
                         guard let signinURL: URL = URL(string: config.data.login.url) else {
                             let alertController = UIAlertController(title: "Warning", message: "Plone login URL is invalid", preferredStyle: .alert)
@@ -381,7 +391,6 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
                 }
             }
         }
-        
     }
     
     private func goPloneSSOPage() {
@@ -402,7 +411,7 @@ final class SigninInfoViewController: UIViewController, Keyboarder {
 
 }
 
-extension SigninInfoViewController: SigninDelegate {
+extension LoginViewController: SigninDelegate {
     
     func signinSuccess(_ signiner: Signiner, generalUser user: GeneralUser) {
         
@@ -430,7 +439,7 @@ extension SigninInfoViewController: SigninDelegate {
 }
 
 
-extension SigninInfoViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
@@ -450,7 +459,7 @@ extension SigninInfoViewController: UITextFieldDelegate {
             passwordTextFiled.becomeFirstResponder()
         case passwordTextFiled:
             textField.resignFirstResponder()
-            signin()
+            login()
         default:
             break
         }

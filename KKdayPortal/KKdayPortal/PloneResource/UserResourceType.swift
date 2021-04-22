@@ -8,15 +8,16 @@
 
 import Foundation
 
-enum UserResourceType {
+enum UserResourceType<U: Codable> {
     case kkMember
-    case custom
+    case custom(U)
 }
 
 extension UserResourceType: Codable {
     
     enum Key: CodingKey {
         case rawValue
+        case associatedValue
     }
     
     enum CodingError: Error {
@@ -30,7 +31,9 @@ extension UserResourceType: Codable {
         case 0:
             self = .kkMember
         case 1:
-            self = .custom
+            let value = try container.decode(U.self, forKey: .associatedValue)
+            self = .custom(value)
+            
         default:
             throw CodingError.unknownValue
         }
@@ -43,8 +46,9 @@ extension UserResourceType: Codable {
         switch self {
         case .kkMember:
             try container.encode(0, forKey: .rawValue)
-        case .custom:
+        case .custom(let value):
             try container.encode(1, forKey: .rawValue)
+            try container.encode(value, forKey: .associatedValue)
         }
     }
 }
