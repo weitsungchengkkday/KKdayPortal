@@ -17,6 +17,6 @@
 SAML 登入流程圖:
 ![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/master/Plone_SAML_Flow.png)
 
-## API流程
+## Services 資訊取得流程
 
-![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/feat/phone-page/api_environment.png)
+![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/feat/phone-page/DataLoadFlow.png)
