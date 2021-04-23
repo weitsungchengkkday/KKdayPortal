@@ -51,8 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Twilio Call Service
         self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
         initializePushKit()
-        
-        ConfigManager.shared.setup()
         LanguageManager.shared.setup()
         
         return true

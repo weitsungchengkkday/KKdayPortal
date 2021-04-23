@@ -331,6 +331,9 @@ final class LoginViewController: UIViewController, Keyboarder {
         switch urlString {
         case "KKPortal":
             print("✈️ KK Member login")
+            // load ConfigModel.json file
+            ConfigManager.shared.setup()
+            
             viewModel.getKKUserPortalConfig { [weak self] isSuccess in
                 
                 DispatchQueue.main.async {
