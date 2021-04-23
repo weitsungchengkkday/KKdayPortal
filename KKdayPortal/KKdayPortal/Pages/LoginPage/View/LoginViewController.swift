@@ -58,7 +58,7 @@ final class LoginViewController: UIViewController, Keyboarder {
     
     lazy var portalConfigURLTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
-        txf.placeholder = "https://xyz.abc.com/portal-config"
+        txf.placeholder = "https://ooo.abc.com/portal-config"
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .URL
         txf.layer.cornerRadius = 12
