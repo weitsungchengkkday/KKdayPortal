@@ -19,4 +19,4 @@ SAML 登入流程圖:
 
 ## Services 資訊取得流程
 
-![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/feat/phone-page/DataLoadFlow.png)
+![image](https://github.com/weitsungchengkkday/KKdayPortal/blob/master/DataLoadFlow.png)
