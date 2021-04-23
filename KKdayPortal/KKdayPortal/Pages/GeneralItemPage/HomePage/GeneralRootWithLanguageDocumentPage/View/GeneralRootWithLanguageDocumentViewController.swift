@@ -99,13 +99,12 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
         logoImageView.snp.makeConstraints { maker in
             maker.width.equalTo(140)
             maker.height.equalTo(79)
-            maker.top.equalTo(self.view.snp.topMargin)
+            maker.top.equalToSuperview()
             maker.leading.equalToSuperview()
         }
         
         topTitleLabel.snp.makeConstraints { maker in
             maker.leading.equalTo(logoImageView.snp.trailing)
-            maker.trailing.equalToSuperview().offset(-5)
             maker.top.equalTo(view.safeAreaLayoutGuide).offset(5)
             maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }
@@ -122,9 +121,7 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
         }
-        
     }
-    
     
     // ⛓ bind viewModel
     private func bindViewModel() {

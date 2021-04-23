@@ -52,6 +52,8 @@ final class PloneSpecViewController: UIViewController {
                
         3. Current Support Plone Language:
             . zh-tw (繁體中文)
+
+        When you use KKPortal, you need provide your plone host URL in config data.
         """
         let nsText = NSString(string: text)
         let contentRange = nsText.range(of: text)
@@ -107,12 +109,12 @@ final class PloneSpecViewController: UIViewController {
         }
         
         specTextField.snp.makeConstraints { maker in
-            maker.width.equalTo(self.view.snp.width).offset(-50)
+            maker.width.equalToSuperview().offset(-10)
         }
         
         comfirmButton.snp.makeConstraints { maker in
             maker.height.equalTo(44)
-            maker.width.equalTo(self.view.snp.width).offset(-100)
+            maker.width.equalToSuperview().offset(-40)
         }
     }
     

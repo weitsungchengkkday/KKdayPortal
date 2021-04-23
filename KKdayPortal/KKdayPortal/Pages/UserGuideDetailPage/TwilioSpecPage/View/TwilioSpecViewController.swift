@@ -1,15 +1,15 @@
 //
-//  PloneIntroductionViewController.swift
-//  KKdayPortal-Sit
+//  TwilioSpecViewController.swift
+//  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2020/3/4.
-//  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
+//  Created by KKday on 2021/4/23.
+//  Copyright © 2021 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
 
-final class PloneIntroViewController: UIViewController {
-   
+final class TwilioSpecViewController: UIViewController {
+
     // 🏞 UI element
     
     lazy var backgroundImageVeiw: UIImageView = {
@@ -19,7 +19,7 @@ final class PloneIntroViewController: UIViewController {
         return imv
     }()
     
-    lazy var noticeStackView: UIStackView = {
+    lazy var specStackView: UIStackView = {
         let stv = UIStackView()
         stv.axis = .vertical
         stv.distribution = .fill
@@ -28,38 +28,25 @@ final class PloneIntroViewController: UIViewController {
         return stv
     }()
     
-    lazy var noticeTextField: UITextView = {
+    lazy var specTextField: UITextView = {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
         txv.layer.cornerRadius = 20
         txv.font = UIFont.boldSystemFont(ofSize: 16)
         txv.textColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
         txv.isEditable = false
-        let urlOne: URL = URL(string: "https://docs.plone.org/intro/index.html")!
-        let urlTwo: URL = URL(string: "https://docs.plone.org/quickstart/index.html")!
-        let urlThree: URL = URL(string: "https://docs.plone.org/working-with-content/index.html")!
         
         let text = """
-        Plone Intro
-        
-        Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an "Enterprise CMS" and is commonly used for intranets and as part of the web presence of large organizations. (source : https://zh.wikipedia.org/wiki/Plone)
-        
-        1. What is Plone?:
-        \(urlOne.absoluteString)
-        
-        2. How to quick start Plone Website?:
-           \(urlTwo.absoluteString)
-               
-        3. How to work with Plone content?:
-           \(urlThree.absoluteString)
+        Spec
+
+        1. iOS SDK Version:
+            . TwilioVoice 6.2.1
+
+        When you use KKPortal, you need provide your twilio accessToken URL in config data.
         """
         let nsText = NSString(string: text)
         let contentRange = nsText.range(of: text)
-        let titleRange = nsText.range(of: "Plone Intro")
-        
-        let linkRangeOne = nsText.range(of: urlOne.absoluteString)
-        let linkRangeTwo = nsText.range(of: urlTwo.absoluteString)
-        let linkRangeThree = nsText.range(of: urlThree.absoluteString)
+        let titleRange = nsText.range(of: "Spec")
         
         let attriText = NSMutableAttributedString(string: text)
         attriText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: contentRange)
@@ -70,10 +57,6 @@ final class PloneIntroViewController: UIViewController {
         paragraphStyle.alignment = .center
         attriText.addAttribute(.paragraphStyle, value: paragraphStyle, range: titleRange)
         
-        attriText.addAttribute(.link, value: urlOne.absoluteString, range: linkRangeOne)
-        attriText.addAttribute(.link, value: urlTwo.absoluteString, range: linkRangeTwo)
-        attriText.addAttribute(.link, value: urlThree.absoluteString, range: linkRangeThree)
-        
         txv.attributedText = attriText
         return txv
     }()
@@ -82,7 +65,7 @@ final class PloneIntroViewController: UIViewController {
         let btn = UIButton()
         btn.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         btn.setTitle("OK", for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 0.5)
+        btn.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 0.7506153682)
         btn.layer.cornerRadius = 5
         return btn
     }()
@@ -99,22 +82,22 @@ final class PloneIntroViewController: UIViewController {
     private func setupUI() {
         
         self.view.addSubview(backgroundImageVeiw)
-        self.view.addSubview(noticeStackView)
-        noticeStackView.addArrangedSubview(noticeTextField)
-        noticeStackView.addArrangedSubview(comfirmButton)
+        self.view.addSubview(specStackView)
+        specStackView.addArrangedSubview(specTextField)
+        specStackView.addArrangedSubview(comfirmButton)
         
         backgroundImageVeiw.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
         
-        noticeStackView.snp.makeConstraints { maker in
+        specStackView.snp.makeConstraints { maker in
             maker.top.equalToSuperview().offset(60)
             maker.leading.equalToSuperview().offset(30)
             maker.trailing.equalToSuperview().offset(-30)
             maker.bottom.equalToSuperview().offset(-60)
         }
         
-        noticeTextField.snp.makeConstraints { maker in
+        specTextField.snp.makeConstraints { maker in
             maker.width.equalToSuperview().offset(-10)
         }
         

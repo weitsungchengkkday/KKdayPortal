@@ -31,9 +31,31 @@ final class UserGuideDetailViewController: UIViewController {
         return btn
     }()
     
+    lazy var ploneIntroButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("What is Plone?", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        btn.layer.cornerRadius = 8
+        return btn
+    }()
+    
     lazy var ploneSpecButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Plone Spec", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        btn.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        btn.layer.cornerRadius = 8
+        return btn
+    }()
+    
+    lazy var twilioIntroButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("What is Twilio?", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -42,13 +64,13 @@ final class UserGuideDetailViewController: UIViewController {
         return btn
     }()
     
-    lazy var ploneIntroButton: UIButton = {
+    lazy var twilioSpecButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("What is Plone?", for: .normal)
+        btn.setTitle("Twilio Spec", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        btn.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         btn.layer.cornerRadius = 8
         return btn
     }()
@@ -78,6 +100,8 @@ final class UserGuideDetailViewController: UIViewController {
         userGuideDetailStackView.addArrangedSubview(startToUseButton)
         userGuideDetailStackView.addArrangedSubview(ploneIntroButton)
         userGuideDetailStackView.addArrangedSubview(ploneSpecButton)
+        userGuideDetailStackView.addArrangedSubview(twilioIntroButton)
+        userGuideDetailStackView.addArrangedSubview(twilioSpecButton)
         
         userGuideDetailStackView.snp.makeConstraints { maker in
             maker.centerX.centerY.equalToSuperview()
@@ -88,10 +112,18 @@ final class UserGuideDetailViewController: UIViewController {
         startToUseButton.addTarget(self, action: #selector(goStartUsePage), for: .touchUpInside)
         ploneIntroButton.addTarget(self, action: #selector(goPloneIntroductionPage), for: .touchUpInside)
         ploneSpecButton.addTarget(self, action: #selector(goPloneSpecPage), for: .touchUpInside)
+        twilioIntroButton.addTarget(self, action: #selector(goTwilioIntroductionPage), for: .touchUpInside)
+        twilioSpecButton.addTarget(self, action: #selector(goTwilioSpecPage), for: .touchUpInside)
+
     }
     
     @objc private func goStartUsePage() {
         let presentViewController = StartUseViewController()
+        present(presentViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func goPloneIntroductionPage() {
+        let presentViewController = PloneIntroViewController()
         present(presentViewController, animated: true, completion: nil)
     }
     
@@ -100,8 +132,13 @@ final class UserGuideDetailViewController: UIViewController {
         present(presentViewController, animated: true, completion: nil)
     }
     
-    @objc private func goPloneIntroductionPage() {
-        let presentViewController = PloneIntroViewController()
+    @objc private func goTwilioIntroductionPage() {
+        let presentViewController = TwilioIntroViewController()
+        present(presentViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func goTwilioSpecPage() {
+        let presentViewController = TwilioSpecViewController()
         present(presentViewController, animated: true, completion: nil)
     }
 

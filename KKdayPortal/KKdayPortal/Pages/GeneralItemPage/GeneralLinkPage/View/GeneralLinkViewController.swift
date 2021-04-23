@@ -80,7 +80,6 @@ final class GeneralLinkViewController: UIViewController, GeneralDetailPageCoordi
         
         topTitleLabel.snp.makeConstraints { maker in
             maker.leading.equalTo(logoImageView.snp.trailing)
-            maker.trailing.equalToSuperview().offset(-5)
             maker.top.equalTo(view.safeAreaLayoutGuide).offset(5)
             maker.bottom.equalTo(logoImageView.snp.bottom).offset(-5)
         }

@@ -1,15 +1,15 @@
 //
-//  PloneIntroductionViewController.swift
-//  KKdayPortal-Sit
+//  TwilioIntroViewController.swift
+//  KKdayPortal
 //
-//  Created by WEI-TSUNG CHENG on 2020/3/4.
-//  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
+//  Created by KKday on 2021/4/23.
+//  Copyright © 2021 WEI-TSUNG CHENG. All rights reserved.
 //
 
 import UIKit
 
-final class PloneIntroViewController: UIViewController {
-   
+final class TwilioIntroViewController: UIViewController {
+
     // 🏞 UI element
     
     lazy var backgroundImageVeiw: UIImageView = {
@@ -35,27 +35,27 @@ final class PloneIntroViewController: UIViewController {
         txv.font = UIFont.boldSystemFont(ofSize: 16)
         txv.textColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
         txv.isEditable = false
-        let urlOne: URL = URL(string: "https://docs.plone.org/intro/index.html")!
-        let urlTwo: URL = URL(string: "https://docs.plone.org/quickstart/index.html")!
-        let urlThree: URL = URL(string: "https://docs.plone.org/working-with-content/index.html")!
+        let urlOne: URL = URL(string: "https://www.twilio.com/")!
+        let urlTwo: URL = URL(string: "https://www.twilio.com/docs/chat/create-tokens")!
+        let urlThree: URL = URL(string: "https://www.twilio.com/docs/voice/twiml")!
         
         let text = """
-        Plone Intro
+        Twilio Intro
         
-        Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an "Enterprise CMS" and is commonly used for intranets and as part of the web presence of large organizations. (source : https://zh.wikipedia.org/wiki/Plone)
+        Twilio is a developer platform for communications. We can create our accessToken for connecting client (iOS APP) to Twilio TwiML APP.
         
-        1. What is Plone?:
+        1. What is Twilio?:
         \(urlOne.absoluteString)
         
-        2. How to quick start Plone Website?:
+        2. How to create twilio access token?:
            \(urlTwo.absoluteString)
                
-        3. How to work with Plone content?:
+        3. What is TwiML APP?:
            \(urlThree.absoluteString)
         """
         let nsText = NSString(string: text)
         let contentRange = nsText.range(of: text)
-        let titleRange = nsText.range(of: "Plone Intro")
+        let titleRange = nsText.range(of: "Twilio Intro")
         
         let linkRangeOne = nsText.range(of: urlOne.absoluteString)
         let linkRangeTwo = nsText.range(of: urlTwo.absoluteString)
