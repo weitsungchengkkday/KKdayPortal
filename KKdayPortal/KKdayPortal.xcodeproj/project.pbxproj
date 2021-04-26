@@ -158,7 +158,6 @@
 		C631069D25B57ADA0067F72B /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
 		C631069E25B57ADA0067F72B /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
 		C631069F25B57ADA0067F72B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
-		C63106A025B57ADA0067F72B /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		C63106A125B57ADA0067F72B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
 		C63106A225B57ADA0067F72B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
 		C63D277D257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */; };
@@ -328,7 +327,6 @@
 		F44E8CD523B88AA30032C6BE /* PloneFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3F33F238BC60D00657CDF /* PloneFolder.swift */; };
 		F44E8CD623B88AA30032C6BE /* GeneralEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4544839239CAD3D001B8D31 /* GeneralEventViewModel.swift */; };
 		F44E8CDA23B88AA30032C6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */; };
-		F44E8CDB23B88AA30032C6BE /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		F44E8CDC23B88AA30032C6BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F454488923A54D2D001B8D31 /* Localizable.strings */; };
 		F44E8CDD23B88AA30032C6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B3F2D623862B3100657CDF /* Assets.xcassets */; };
 		F453943623B8B44300136E6D /* Gif in Resources */ = {isa = PBXBuildFile; fileRef = F453943523B8B44300136E6D /* Gif */; };
@@ -394,7 +392,6 @@
 		F454488C23A55017001B8D31 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454488B23A55017001B8D31 /* Localizable.swift */; };
 		F454489823A5E211001B8D31 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489723A5E211001B8D31 /* MainViewController.swift */; };
 		F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454489923A5F611001B8D31 /* SettingViewModel.swift */; };
-		F45448A223A88636001B8D31 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45448A123A88636001B8D31 /* credentials.plist */; };
 		F45448AB23A9F9F3001B8D31 /* ServiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AA23A9F9F3001B8D31 /* ServiceListViewController.swift */; };
 		F45448AD23A9FA1A001B8D31 /* ServiceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448AC23A9FA1A001B8D31 /* ServiceListViewModel.swift */; };
 		F45448B623AA3156001B8D31 /* ApplicationsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */; };
@@ -612,7 +609,6 @@
 		F454489323A556B9001B8D31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F454489723A5E211001B8D31 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F454489923A5F611001B8D31 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		F45448A123A88636001B8D31 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		F45448AA23A9F9F3001B8D31 /* ServiceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListViewController.swift; sourceTree = "<group>"; };
 		F45448AC23A9FA1A001B8D31 /* ServiceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListViewModel.swift; sourceTree = "<group>"; };
 		F45448B523AA3156001B8D31 /* ApplicationsContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsContentViewController.swift; sourceTree = "<group>"; };
@@ -1907,7 +1903,6 @@
 				C63D279725830E9200CFF8A8 /* ringtone */,
 				F4B3F2D823862B3100657CDF /* LaunchScreen.storyboard */,
 				F454488923A54D2D001B8D31 /* Localizable.strings */,
-				F45448A123A88636001B8D31 /* credentials.plist */,
 			);
 			path = KKdayPortal;
 			sourceTree = "<group>";
@@ -2199,7 +2194,6 @@
 				C631069D25B57ADA0067F72B /* Gif in Resources */,
 				C631069E25B57ADA0067F72B /* ConfigModel.json in Resources */,
 				C631069F25B57ADA0067F72B /* LaunchScreen.storyboard in Resources */,
-				C63106A025B57ADA0067F72B /* credentials.plist in Resources */,
 				C63106A125B57ADA0067F72B /* Localizable.strings in Resources */,
 				C63106A225B57ADA0067F72B /* Assets.xcassets in Resources */,
 			);
@@ -2213,7 +2207,6 @@
 				F453943723B8B44300136E6D /* Gif in Resources */,
 				C67012E22594300C00830027 /* ConfigModel.json in Resources */,
 				F44E8CDA23B88AA30032C6BE /* LaunchScreen.storyboard in Resources */,
-				F44E8CDB23B88AA30032C6BE /* credentials.plist in Resources */,
 				F44E8CDC23B88AA30032C6BE /* Localizable.strings in Resources */,
 				F44E8CDD23B88AA30032C6BE /* Assets.xcassets in Resources */,
 			);
@@ -2227,7 +2220,6 @@
 				F453943623B8B44300136E6D /* Gif in Resources */,
 				C67012E12594300C00830027 /* ConfigModel.json in Resources */,
 				F4B3F2DA23862B3100657CDF /* LaunchScreen.storyboard in Resources */,
-				F45448A223A88636001B8D31 /* credentials.plist in Resources */,
 				F454488723A54D2D001B8D31 /* Localizable.strings in Resources */,
 				F4B3F2D723862B3100657CDF /* Assets.xcassets in Resources */,
 			);
