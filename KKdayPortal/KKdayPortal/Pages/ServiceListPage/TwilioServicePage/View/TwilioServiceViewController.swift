@@ -32,22 +32,22 @@ final class TwilioServiceViewController: UIViewController {
         return lbl
     }()
     
-    lazy var transferValue: UITextField = {
-        let txf = UITextField()
-        txf.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-        txf.keyboardType = .default
-        txf.borderStyle = .roundedRect
-        txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        
-        return txf
-    }()
-    
-    lazy var transferCallButton: UIButton = {
-        let btn: UIButton = UIButton()
-        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
-        return btn
-    }()
-    
+//    lazy var transferValue: UITextField = {
+//        let txf = UITextField()
+//        txf.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+//        txf.keyboardType = .default
+//        txf.borderStyle = .roundedRect
+//        txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+//
+//        return txf
+//    }()
+//
+//    lazy var transferCallButton: UIButton = {
+//        let btn: UIButton = UIButton()
+//        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
+//        return btn
+//    }()
+//
     lazy var placeCallButton: UIButton = {
         let btn: UIButton = UIButton()
         btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
@@ -125,8 +125,9 @@ final class TwilioServiceViewController: UIViewController {
     
     private var callKitCompletionCallBack: ((Bool) -> Void)? = nil
     private let twimlParamTo = "To"
-    private let twimlParamto = "to"
+//    private let twimlParamto = "to"
     private let defaultIdentity = "KKPortal"
+//  private let defaultIdentity = "Leo"
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
@@ -197,8 +198,8 @@ final class TwilioServiceViewController: UIViewController {
         self.view.addSubview(qualityWarningsToaster)
         
         ///
-        self.view.addSubview(transferValue)
-        self.view.addSubview(transferCallButton)
+//        self.view.addSubview(transferValue)
+//        self.view.addSubview(transferCallButton)
         ///
         
         self.view.addSubview(iconView)
@@ -222,17 +223,17 @@ final class TwilioServiceViewController: UIViewController {
         }
         
         ///
-        transferValue.snp.makeConstraints { maker in
-            maker.centerX.equalToSuperview()
-            maker.top.equalTo(qualityWarningsToaster.snp.bottom).offset(5)
-            maker.width.equalTo(240)
-        }
-        
-        transferCallButton.snp.makeConstraints { maker in
-            maker.centerX.equalToSuperview()
-            maker.width.height.equalTo(40)
-            maker.top.equalTo(transferValue.snp.bottom).offset(5)
-        }
+//        transferValue.snp.makeConstraints { maker in
+//            maker.centerX.equalToSuperview()
+//            maker.top.equalTo(qualityWarningsToaster.snp.bottom).offset(5)
+//            maker.width.equalTo(240)
+//        }
+//
+//        transferCallButton.snp.makeConstraints { maker in
+//            maker.centerX.equalToSuperview()
+//            maker.width.height.equalTo(40)
+//            maker.top.equalTo(transferValue.snp.bottom).offset(5)
+//        }
         ///
         
         iconView.snp.makeConstraints { maker in
@@ -296,7 +297,7 @@ final class TwilioServiceViewController: UIViewController {
     
     private func setAction() {
         ///
-        transferCallButton.addTarget(self, action: #selector(transferButtonPressed), for: .touchUpInside)
+//        transferCallButton.addTarget(self, action: #selector(transferButtonPressed), for: .touchUpInside)
         ///
         
         placeCallButton.addTarget(self, action: #selector(mainButtonPressed), for: .touchUpInside)
@@ -668,7 +669,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
                 
                 let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
                     builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""
-                                      ,self.twimlParamto: self.transferValue.text ?? ""
+//                                      ,self.twimlParamto: self.transferValue.text ?? ""
                     ]
                     builder.uuid = uuid
                 }

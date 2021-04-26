@@ -12,7 +12,6 @@ import DolphinHTTP
 final class TwilioServiceViewModel {
     
     func loadTwilioAccessToken(url: URL, identity: String, completion: @escaping ((Result<String, HTTPError>) -> Void)) {
-        LoadingManager.shared.setState(state: .normal(value: true))
         
         let api = TwilioAccessTokenAPI(loader: URLSessionLoader())
         
