@@ -6,11 +6,11 @@
 
 ## 登入流程
 
-### 一般使用者
-輸入登入的 Plone 網頁 Host 名稱, 與登入帳號與密碼, 即可登入
+### 外部使用者
+輸入config 檔網址, 讀取 Plone 網頁位置, 與登入帳號與密碼, 即可登入
 
 ### KKday 同仁
-在輸入網頁的欄位中輸入 KKPlone , 即可藉由 Google SAML 流程登入 
+在輸入網頁的欄位中輸入 KKPortal, 即可藉由 Google SAML 流程登入 
 
 由於 Mobile APP 無法直接使用 Google SAML 服務, 所以 APP SAML 登入將透過 WKWebView 完成, 以取得的 SAML Token。 再透過 SAML Token 和 Plone 後台換得 Plone Restful API token。
 
