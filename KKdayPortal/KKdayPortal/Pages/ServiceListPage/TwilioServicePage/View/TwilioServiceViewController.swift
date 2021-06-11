@@ -27,7 +27,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var qualityWarningsToaster: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "Warnings Message"
+        lbl.text = ""
         lbl.textAlignment = .center
         return lbl
     }()
@@ -48,12 +48,7 @@ final class TwilioServiceViewController: UIViewController {
 //        return btn
 //    }()
 //
-    lazy var placeCallButton: UIButton = {
-        let btn: UIButton = UIButton()
-        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
-        
-        return btn
-    }()
+    
     
     lazy var iconView: UIImageView = {
         let img = UIImageView()
@@ -62,12 +57,50 @@ final class TwilioServiceViewController: UIViewController {
         return img
     }()
     
-    lazy var outgoingValue: UITextField = {
+    lazy var countryLabel: UILabel = {
+        let lbl: UILabel = UILabel()
+        lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        lbl.text = "請選擇國碼"
+        lbl.textAlignment = .center
+        
+        return lbl
+    }()
+    
+    lazy var countryCodePickerView: UIPickerView = {
+        let pkv = UIPickerView()
+        
+        return pkv
+    }()
+    
+    lazy var countryCodeTextField: UITextField = {
         let txf = UITextField()
         txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         txf.keyboardType = .default
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        txf.inputView = countryCodePickerView
+        txf.text = countryCodeList.first
+        
+        return txf
+    }()
+    
+    lazy var companyCodeLabel: UILabel = {
+        let lbl: UILabel = UILabel()
+        lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        lbl.text = "請輸入公司代碼"
+        lbl.textAlignment = .center
+        
+        return lbl
+    }()
+    
+    lazy var companyCodeTextField: UITextField = {
+        let txf = UITextField()
+        txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        txf.keyboardType = .default
+        txf.borderStyle = .roundedRect
+        txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        txf.attributedPlaceholder = NSAttributedString(string: "e.g. KKDAY",
+                                                       attributes: [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
         
         return txf
     }()
@@ -75,10 +108,30 @@ final class TwilioServiceViewController: UIViewController {
     lazy var outgoingLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "Input Call Information"
+        lbl.text = "請輸入電話號碼"
         lbl.textAlignment = .center
         
         return lbl
+    }()
+    
+    lazy var outgoingTextField: UITextField = {
+        let txf = UITextField()
+        txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        txf.keyboardType = .default
+        txf.borderStyle = .roundedRect
+        txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        txf.attributedPlaceholder = NSAttributedString(string: "e.g.+886971532770",
+                                                       attributes: [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
+        txf.keyboardType = .phonePad
+        
+        return txf
+    }()
+    
+    lazy var placeCallButton: UIButton = {
+        let btn: UIButton = UIButton()
+        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
+        
+        return btn
     }()
     
     lazy var callControlView: UIView = {
@@ -125,6 +178,9 @@ final class TwilioServiceViewController: UIViewController {
     
     private var callKitCompletionCallBack: ((Bool) -> Void)? = nil
     private let twimlParamTo = "To"
+    // kp = KKday Portal
+    private let twimlParamCompanyCode = "kp_company_code"
+    private let twimlParamCountryCode = "kp_country_code"
 //    private let twimlParamto = "to"
     private let defaultIdentity = "KKPortal"
 //  private let defaultIdentity = "Leo"
@@ -159,9 +215,11 @@ final class TwilioServiceViewController: UIViewController {
             print("❌ Portal root URL is invalid")
             return nil
         }
-       // https://production-apple-service-4918.twil.io/portalConfig
+        // https://production-apple-service-4918.twil.io/portalConfig
         return accessTokenURL
     }
+    
+    private let countryCodeList: [String] = ["+886", "+852", "+86", "+84", "+82", "+81", "+66", "+65", "+63", "+62", "+60", "+44", "+1"]
     
     private var viewModel: TwilioServiceViewModel
     
@@ -179,6 +237,7 @@ final class TwilioServiceViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+    
         toggleUIState(isEnabled: true, showCallControl: false)
         setUIElementDelegate()
         setAction()
@@ -195,6 +254,7 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     private func setupUI() {
+        
         self.view.addSubview(qualityWarningsToaster)
         
         ///
@@ -203,8 +263,12 @@ final class TwilioServiceViewController: UIViewController {
         ///
         
         self.view.addSubview(iconView)
-        self.view.addSubview(outgoingValue)
+        self.view.addSubview(countryLabel)
+        self.view.addSubview(countryCodeTextField)
+        self.view.addSubview(companyCodeLabel)
+        self.view.addSubview(companyCodeTextField)
         self.view.addSubview(outgoingLabel)
+        self.view.addSubview(outgoingTextField)
         self.view.addSubview(placeCallButton)
         
         self.view.addSubview(callControlView)
@@ -213,7 +277,7 @@ final class TwilioServiceViewController: UIViewController {
         self.callControlView.addSubview(speakerSwitch)
         self.callControlView.addSubview(speakerLabel)
         
-        self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         qualityWarningsToaster.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
@@ -234,32 +298,57 @@ final class TwilioServiceViewController: UIViewController {
 //            maker.width.height.equalTo(40)
 //            maker.top.equalTo(transferValue.snp.bottom).offset(5)
 //        }
-        ///
         
         iconView.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.centerY.equalToSuperview().offset(-150)
-            maker.width.equalTo(240)
-            maker.height.equalTo(240)
+            maker.centerY.equalToSuperview().offset(-240)
+            maker.width.equalTo(120)
+            maker.height.equalTo(120)
         }
         
-        outgoingValue.snp.makeConstraints { maker in
+        countryLabel.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.top.equalTo(iconView.snp.bottom).offset(42.5)
+            maker.top.equalTo(iconView.snp.bottom).offset(8)
+            maker.width.equalTo(256)
+            maker.height.equalTo(40)
+        }
+        
+        countryCodeTextField.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(countryLabel.snp.bottom).offset(8)
+            maker.width.equalTo(240)
+        }
+        
+        companyCodeLabel.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(countryCodeTextField.snp.bottom).offset(8)
+            maker.width.equalTo(256)
+            maker.height.equalTo(40)
+        }
+        
+        companyCodeTextField.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(companyCodeLabel.snp.bottom).offset(8)
             maker.width.equalTo(240)
         }
         
         outgoingLabel.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.top.equalTo(outgoingValue.snp.bottom).offset(8)
+            maker.top.equalTo(companyCodeTextField.snp.bottom).offset(8)
             maker.width.equalTo(256)
             maker.height.equalTo(40)
+        }
+        
+        outgoingTextField.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(outgoingLabel.snp.bottom).offset(8)
+            maker.width.equalTo(240)
         }
         
         placeCallButton.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.width.height.equalTo(40)
-            maker.top.equalTo(outgoingLabel.snp.bottom).offset(8)
+            maker.top.equalTo(outgoingTextField.snp.bottom).offset(42.5)
         }
         
         callControlView.snp.makeConstraints { maker in
@@ -292,7 +381,11 @@ final class TwilioServiceViewController: UIViewController {
     
     private func setUIElementDelegate() {
         // 🍕 set TextFieldDelegate to TwilioServiceViewController
-        outgoingValue.delegate = self
+        outgoingTextField.delegate = self
+        // 🍕 set UIPickerViewDelegate, UIPickerViewDataSource
+        countryCodePickerView.delegate = self
+        countryCodePickerView.dataSource = self
+       
     }
     
     private func setAction() {
@@ -312,7 +405,9 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     @objc func handerSingleTap() {
-        self.outgoingValue.resignFirstResponder()
+        self.outgoingTextField.resignFirstResponder()
+        self.countryCodeTextField.resignFirstResponder()
+        self.companyCodeTextField.resignFirstResponder()
     }
     
     private func setCallKit() {
@@ -668,7 +763,9 @@ extension TwilioServiceViewController: CXProviderDelegate {
                 print("📳 Start making a voice call")
                 
                 let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
-                    builder.params = [self.twimlParamTo: self.outgoingValue.text ?? ""
+                    builder.params = [self.twimlParamTo: self.outgoingTextField.text ?? "",
+                                      self.twimlParamCompanyCode: self.companyCodeTextField.text ?? "",
+                                      self.twimlParamCountryCode: self.countryCodeTextField.text ?? ""
 //                                      ,self.twimlParamto: self.transferValue.text ?? ""
                     ]
                     builder.uuid = uuid
@@ -720,7 +817,7 @@ extension TwilioServiceViewController: CXProviderDelegate {
 extension TwilioServiceViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        outgoingValue.resignFirstResponder()
+        outgoingTextField.resignFirstResponder()
         
         return true
     }
@@ -1073,6 +1170,28 @@ extension TwilioServiceViewController: NotificationDelegate {
             performEndCallAction(uuid: callInvite.uuid)
         }
         
+    }
+    
+}
+
+
+extension TwilioServiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryCodeList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countryCodeList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(countryCodeTextField.text)
+        countryCodeTextField.text = countryCodeList[row]
     }
     
 }
