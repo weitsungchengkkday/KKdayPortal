@@ -88,7 +88,7 @@ extension PloneSSOViewController: WKScriptMessageHandler {
                let account = body["id"] as? String,
                let token = body["token"] as? String {
                 
-                debugPrint("👥 SSO Login, Get Token 💎PLONE TOKEN: \(token)")
+                debugPrint("👥 SSO Login, Get Token 💎PLONE TOKEN: \(token) 👦🏼SignInUser: \(account)")
                 let user = GeneralUser(account: account, token: token)
                 StorageManager.shared.saveObject(for: .generalUser, value: user)
                 

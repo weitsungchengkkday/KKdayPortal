@@ -23,7 +23,7 @@ final class ServiceListViewController: UIViewController {
     
     lazy var callCenterButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Call Center", for: .normal)
+        btn.setTitle("KK Phone", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         btn.layer.cornerRadius = 8

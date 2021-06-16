@@ -421,7 +421,7 @@ extension LoginViewController: SigninDelegate {
         let token = user.token
         let account = user.account
         
-        debugPrint("👥 Normal Login, Get Token 💎PLONE TOKEN: \(token)")
+        debugPrint("👥 Normal Login, Get Token 💎PLONE TOKEN: \(token) 👦🏼SignInUser: \(account)")
         
         let user = GeneralUser(account: account, token: token)
         StorageManager.shared.saveObject(for: .generalUser, value: user)

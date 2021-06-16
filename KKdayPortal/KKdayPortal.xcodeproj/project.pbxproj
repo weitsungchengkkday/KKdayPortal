@@ -170,6 +170,9 @@
 		C67012E22594300C00830027 /* ConfigModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C67012E02594300C00830027 /* ConfigModel.json */; };
 		C6A578272567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
 		C6A578282567D2460049D700 /* TestingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */; };
+		C6B1B111267894F400360E1C /* KKdayOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B110267894F400360E1C /* KKdayOffice.swift */; };
+		C6B1B112267894F400360E1C /* KKdayOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B110267894F400360E1C /* KKdayOffice.swift */; };
+		C6B1B113267894F400360E1C /* KKdayOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B110267894F400360E1C /* KKdayOffice.swift */; };
 		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
@@ -508,6 +511,7 @@
 		C6549C8C2599C51D00B78EC3 /* KKdayPortal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KKdayPortal.entitlements; sourceTree = "<group>"; };
 		C67012E02594300C00830027 /* ConfigModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConfigModel.json; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		C6B1B110267894F400360E1C /* KKdayOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayOffice.swift; sourceTree = "<group>"; };
 		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		C6B213E7261EEE6600981446 /* PloneFileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileAPI.swift; sourceTree = "<group>"; };
 		C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneImageAPI.swift; sourceTree = "<group>"; };
@@ -789,6 +793,14 @@
 				C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C6B1B10F2678947C00360E1C /* Twilio */ = {
+			isa = PBXGroup;
+			children = (
+				C6B1B110267894F400360E1C /* KKdayOffice.swift */,
+			);
+			path = Twilio;
 			sourceTree = "<group>";
 		};
 		C6B213CC261C122700981446 /* ViewModel */ = {
@@ -1232,6 +1244,7 @@
 		F45447E2239AA0C2001B8D31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6B1B10F2678947C00360E1C /* Twilio */,
 				C63D27DB2590486100CFF8A8 /* Odoo */,
 				F4544863239FA8E7001B8D31 /* Error */,
 				F45447FA239BB2EB001B8D31 /* ModelLoader */,
@@ -2420,6 +2433,7 @@
 				C631064625B57ADA0067F72B /* GeneralList.swift in Sources */,
 				C631064725B57ADA0067F72B /* NotificationNameExtension.swift in Sources */,
 				C631064825B57ADA0067F72B /* TwilioServiceViewController.swift in Sources */,
+				C6B1B111267894F400360E1C /* KKdayOffice.swift in Sources */,
 				C631064925B57ADA0067F72B /* GeneralImageViewController.swift in Sources */,
 				C631064A25B57ADA0067F72B /* PortalViewController.swift in Sources */,
 				C631064C25B57ADA0067F72B /* ServiceListViewController.swift in Sources */,
@@ -2578,6 +2592,7 @@
 				F44E8C9A23B88AA30032C6BE /* ServiceListViewController.swift in Sources */,
 				F43AFC8823E92E4D0050C851 /* GeneralTextObjectConverter.swift in Sources */,
 				C63D277E257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */,
+				C6B1B113267894F400360E1C /* KKdayOffice.swift in Sources */,
 				F44E8C9B23B88AA30032C6BE /* GeneralFileViewModel.swift in Sources */,
 				F44E8C9C23B88AA30032C6BE /* ApplicationsContentViewModel.swift in Sources */,
 				F44E8C9E23B88AA30032C6BE /* WebPloneRepository.swift in Sources */,
@@ -2736,6 +2751,7 @@
 				F45447E9239AA320001B8D31 /* GeneralList.swift in Sources */,
 				F4B3BCA523F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
 				C63D277D257F724E00CFF8A8 /* TwilioServiceViewController.swift in Sources */,
+				C6B1B112267894F400360E1C /* KKdayOffice.swift in Sources */,
 				F4544830239CAB2E001B8D31 /* GeneralImageViewController.swift in Sources */,
 				F4B3F3012386386900657CDF /* PortalViewController.swift in Sources */,
 				F45448AB23A9F9F3001B8D31 /* ServiceListViewController.swift in Sources */,

@@ -60,7 +60,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var countryLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "請選擇國碼"
+        lbl.text = "Please select office"
         lbl.textAlignment = .center
         
         return lbl
@@ -79,28 +79,34 @@ final class TwilioServiceViewController: UIViewController {
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         txf.inputView = countryCodePickerView
-        txf.text = countryCodeList.first
+        txf.text = kkOfficesInfos.first?.country
         
         return txf
     }()
     
-    lazy var companyCodeLabel: UILabel = {
+    lazy var companyIdentifierLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "請輸入公司代碼"
+        lbl.text = "Please input company identifier"
         lbl.textAlignment = .center
         
         return lbl
     }()
     
-    lazy var companyCodeTextField: UITextField = {
+    lazy var companyIdentifierPickerView: UIPickerView = {
+        let pkv = UIPickerView()
+        
+        return pkv
+    }()
+    
+    lazy var companyIdentifierTextField: UITextField = {
         let txf = UITextField()
         txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         txf.keyboardType = .default
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        txf.attributedPlaceholder = NSAttributedString(string: "e.g. KKDAY",
-                                                       attributes: [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
+        txf.inputView = companyIdentifierPickerView
+        txf.text = kkOfficesInfos.first?.companyIdentifier.first
         
         return txf
     }()
@@ -108,7 +114,7 @@ final class TwilioServiceViewController: UIViewController {
     lazy var outgoingLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "請輸入電話號碼"
+        lbl.text = "Please input callee number"
         lbl.textAlignment = .center
         
         return lbl
@@ -177,13 +183,22 @@ final class TwilioServiceViewController: UIViewController {
     private var userInitiatedDisconnect: Bool = false
     
     private var callKitCompletionCallBack: ((Bool) -> Void)? = nil
+    
     private let twimlParamTo = "To"
+    
     // kp = KKday Portal
-    private let twimlParamCompanyCode = "kp_company_code"
+    private let twimlPlatform = "kp_platform"
+    private let twimlPlatformValue = "ios_kkportal"
+    
+    private let twimlParamCompanyIdentifier = "kp_company_identifier"
     private let twimlParamCountryCode = "kp_country_code"
 //    private let twimlParamto = "to"
-    private let defaultIdentity = "KKPortal"
-//  private let defaultIdentity = "Leo"
+    
+     private let identity: String = "KKPortal"
+//    private let identity: String = {
+//        let user: GeneralUser? = StorageManager.shared.loadObject(for: .generalUser)
+//        return user?.account ?? "KKPortal"
+//    }()
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
@@ -218,8 +233,35 @@ final class TwilioServiceViewController: UIViewController {
         // https://production-apple-service-4918.twil.io/portalConfig
         return accessTokenURL
     }
+
+    private let kkOfficesInfos: [KKOfficesInfo] = [
+        KKOfficesInfo(country: "Taiwan", countryCode: "+886", companyIdentifier: ["KKDAY", "REZIO"]),
+        KKOfficesInfo(country: "Japan", countryCode: "+81", companyIdentifier: ["KKDAY", "JAZIO"])
+    ]
     
-    private let countryCodeList: [String] = ["+886", "+852", "+86", "+84", "+82", "+81", "+66", "+65", "+63", "+62", "+60", "+44", "+1"]
+    
+//    private let KKOfficesJSONString = """
+//        {
+//           "offices":[
+//              {
+//                 "country":"Taiwan",
+//                 "countryCode":"+886",
+//                 "companyIdentifier":[
+//                    "KKDAY",
+//                    "REZIO"
+//                 ]
+//              },
+//              {
+//                 "country":"Japan",
+//                 "countryCode":"+81",
+//                 "companyIdentifier":[
+//                    "KKDAY",
+//                    "J-REZIO"
+//                 ]
+//              }
+//           ]
+//        }
+//    """
     
     private var viewModel: TwilioServiceViewModel
     
@@ -265,8 +307,8 @@ final class TwilioServiceViewController: UIViewController {
         self.view.addSubview(iconView)
         self.view.addSubview(countryLabel)
         self.view.addSubview(countryCodeTextField)
-        self.view.addSubview(companyCodeLabel)
-        self.view.addSubview(companyCodeTextField)
+        self.view.addSubview(companyIdentifierLabel)
+        self.view.addSubview(companyIdentifierTextField)
         self.view.addSubview(outgoingLabel)
         self.view.addSubview(outgoingTextField)
         self.view.addSubview(placeCallButton)
@@ -319,22 +361,22 @@ final class TwilioServiceViewController: UIViewController {
             maker.width.equalTo(240)
         }
         
-        companyCodeLabel.snp.makeConstraints { maker in
+        companyIdentifierLabel.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.top.equalTo(countryCodeTextField.snp.bottom).offset(8)
             maker.width.equalTo(256)
             maker.height.equalTo(40)
         }
         
-        companyCodeTextField.snp.makeConstraints { maker in
+        companyIdentifierTextField.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.top.equalTo(companyCodeLabel.snp.bottom).offset(8)
+            maker.top.equalTo(companyIdentifierLabel.snp.bottom).offset(8)
             maker.width.equalTo(240)
         }
         
         outgoingLabel.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.top.equalTo(companyCodeTextField.snp.bottom).offset(8)
+            maker.top.equalTo(companyIdentifierTextField.snp.bottom).offset(8)
             maker.width.equalTo(256)
             maker.height.equalTo(40)
         }
@@ -382,9 +424,14 @@ final class TwilioServiceViewController: UIViewController {
     private func setUIElementDelegate() {
         // 🍕 set TextFieldDelegate to TwilioServiceViewController
         outgoingTextField.delegate = self
+        companyIdentifierTextField.delegate = self
+        countryCodeTextField.delegate = self
+        
         // 🍕 set UIPickerViewDelegate, UIPickerViewDataSource
         countryCodePickerView.delegate = self
         countryCodePickerView.dataSource = self
+        companyIdentifierPickerView.delegate = self
+        companyIdentifierPickerView.dataSource = self
        
     }
     
@@ -407,7 +454,7 @@ final class TwilioServiceViewController: UIViewController {
     @objc func handerSingleTap() {
         self.outgoingTextField.resignFirstResponder()
         self.countryCodeTextField.resignFirstResponder()
-        self.companyCodeTextField.resignFirstResponder()
+        self.companyIdentifierTextField.resignFirstResponder()
     }
     
     private func setCallKit() {
@@ -755,17 +802,23 @@ extension TwilioServiceViewController: CXProviderDelegate {
             return
         }
         
-        viewModel.loadTwilioAccessToken(url: url, identity: defaultIdentity) { result in
+        viewModel.loadTwilioAccessToken(url: url, identity: identity) { result in
             
             switch result {
             case .success(let accessToken):
                 
                 print("📳 Start making a voice call")
                 
+                let info = self.kkOfficesInfos.filter { info in
+                    return info.country == self.countryCodeTextField.text
+                }.first
+                
+                
                 let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
                     builder.params = [self.twimlParamTo: self.outgoingTextField.text ?? "",
-                                      self.twimlParamCompanyCode: self.companyCodeTextField.text ?? "",
-                                      self.twimlParamCountryCode: self.countryCodeTextField.text ?? ""
+                                      self.twimlPlatform: self.twimlPlatformValue,
+                                      self.twimlParamCompanyIdentifier: self.companyIdentifierTextField.text ?? "",
+                                      self.twimlParamCountryCode: info?.countryCode ?? ""
 //                                      ,self.twimlParamto: self.transferValue.text ?? ""
                     ]
                     builder.uuid = uuid
@@ -815,6 +868,18 @@ extension TwilioServiceViewController: CXProviderDelegate {
 
 // MARK: - UITextFieldDelegate
 extension TwilioServiceViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        switch textField {
+        case countryCodeTextField, companyIdentifierTextField:
+            return false
+        case outgoingTextField:
+            return true
+        default:
+            return true
+        }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         outgoingTextField.resignFirstResponder()
@@ -1027,7 +1092,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
             return
         }
         
-        viewModel.loadTwilioAccessToken(url: url, identity: defaultIdentity) { result in
+        viewModel.loadTwilioAccessToken(url: url, identity: identity) { result in
             
             switch result {
             case .success(let accessToken):
@@ -1037,7 +1102,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
                         print("〽️⚠️ An error occurred while registering: \(error.localizedDescription)")
                     } else {
                         print("〽️✅ Successfully registered for VoIP push notifications.")
-                        
+                    
                         UserDefaults.standard.set(cachedDeviceToken, forKey: TwilioServiceViewController.kCachedDeviceToken)
                         UserDefaults.standard.set(Date(), forKey: TwilioServiceViewController.kCachedBindingDate)
                     }
@@ -1061,7 +1126,7 @@ extension TwilioServiceViewController: PushKitEventDelegate {
             return
         }
         
-        viewModel.loadTwilioAccessToken(url: url, identity: defaultIdentity) { result in
+        viewModel.loadTwilioAccessToken(url: url, identity: identity) { result in
             
             switch result {
             case .success(let accessToken):
@@ -1182,16 +1247,71 @@ extension TwilioServiceViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countryCodeList.count
+        
+        switch pickerView {
+        case countryCodePickerView:
+            return kkOfficesInfos.count
+            
+        case companyIdentifierPickerView:
+            let info = kkOfficesInfos.filter { info in
+                return info.country == countryCodeTextField.text
+            }.first
+            return info?.companyIdentifier.count ?? 1
+            
+        default:
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return countryCodeList[row]
+        
+        switch pickerView {
+        case countryCodePickerView:
+            var infosCountryCode: [String] = []
+            let _ = kkOfficesInfos.map { info in
+                infosCountryCode.append(info.country)
+            }
+            return infosCountryCode[row]
+            
+        case companyIdentifierPickerView:
+        
+            let info = kkOfficesInfos.filter { info in
+                return info.country == countryCodeTextField.text
+            }.first
+            
+            return info?.companyIdentifier[row]
+            
+        default:
+            return nil
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(countryCodeTextField.text)
-        countryCodeTextField.text = countryCodeList[row]
+        
+        switch pickerView {
+        case countryCodePickerView:
+            var infosCountryCode: [String] = []
+            let _ = kkOfficesInfos.map { info in
+                infosCountryCode.append(info.country)
+            }
+            countryCodeTextField.text = infosCountryCode[row]
+    
+            // After countryCode change, set companyIdentifier to first
+            let info = kkOfficesInfos.filter { info in
+                return info.country == infosCountryCode[row]
+            }.first
+            companyIdentifierTextField.text = info?.companyIdentifier.first
+            
+        case companyIdentifierPickerView:
+            let info = kkOfficesInfos.filter { info in
+                return info.country == countryCodeTextField.text
+            }.first
+            companyIdentifierTextField.text = info?.companyIdentifier[row]
+            
+        default:
+            return
+        }
+        
     }
     
 }
