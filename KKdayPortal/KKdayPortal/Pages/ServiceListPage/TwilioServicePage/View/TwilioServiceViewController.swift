@@ -49,7 +49,6 @@ final class TwilioServiceViewController: UIViewController {
 //    }()
 //
     
-    
     lazy var iconView: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(systemName: "headphones.circle.fill") ?? #imageLiteral(resourceName: "icPicture")
@@ -79,7 +78,6 @@ final class TwilioServiceViewController: UIViewController {
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         txf.inputView = countryCodePickerView
-        txf.text = kkOfficesInfos.first?.country
         
         return txf
     }()
@@ -106,7 +104,6 @@ final class TwilioServiceViewController: UIViewController {
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         txf.inputView = companyIdentifierPickerView
-        txf.text = kkOfficesInfos.first?.companyIdentifier.first
         
         return txf
     }()
@@ -120,8 +117,8 @@ final class TwilioServiceViewController: UIViewController {
         return lbl
     }()
     
-    lazy var outgoingTextField: UITextField = {
-        let txf = UITextField()
+    lazy var outgoingTextField: CleanButtonTextField = {
+        let txf = CleanButtonTextField()
         txf.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         txf.keyboardType = .default
         txf.borderStyle = .roundedRect
@@ -188,7 +185,6 @@ final class TwilioServiceViewController: UIViewController {
     
     // kp = KKday Portal
     
-    
     private let twimlPlatform = "kp_platform"
     private let twimlPlatformValue = "ios_kkportal"
     
@@ -223,50 +219,9 @@ final class TwilioServiceViewController: UIViewController {
     
     private var singleTapGestureRecognizer: UITapGestureRecognizer!
     
-    private var accessTokenURL: URL? {
-        
-        guard let config: PortalConfig = StorageManager.shared.loadObject(for: .portalConfig), let portalService = config.data.services.filter({$0.type == "cti" && $0.name == "twilio"}).first else {
-            print("❌ Can't get plone portal service in portalConfig")
-            return nil
-        }
-        
-        guard let accessTokenURL = URL(string: portalService.url) else {
-            print("❌ Portal root URL is invalid")
-            return nil
-        }
-        // https://production-apple-service-4918.twil.io/portalConfig
-        return accessTokenURL
-    }
+    private var accessTokenURL: URL? = nil
 
-    private let kkOfficesInfos: [KKOfficesInfo] = [
-        KKOfficesInfo(country: "Taiwan", countryCode: "+886", companyIdentifier: ["KKDAY", "REZIO"]),
-        KKOfficesInfo(country: "Japan", countryCode: "+81", companyIdentifier: ["KKDAY", "JAZIO"])
-    ]
-    
-    
-//    private let KKOfficesJSONString = """
-//        {
-//           "offices":[
-//              {
-//                 "country":"Taiwan",
-//                 "countryCode":"+886",
-//                 "companyIdentifier":[
-//                    "KKDAY",
-//                    "REZIO"
-//                 ]
-//              },
-//              {
-//                 "country":"Japan",
-//                 "countryCode":"+81",
-//                 "companyIdentifier":[
-//                    "KKDAY",
-//                    "J-REZIO"
-//                 ]
-//              }
-//           ]
-//        }
-//    """
-    
+    private var kkOfficesInfos: [KKOfficesInfo] = []
     private var viewModel: TwilioServiceViewModel
     
     init(viewModel: TwilioServiceViewModel) {
@@ -281,6 +236,8 @@ final class TwilioServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        setupKKPortalTwilioConfig()
         
         setupUI()
     
@@ -296,6 +253,42 @@ final class TwilioServiceViewController: UIViewController {
     deinit {
         if let provider = callKitProvider {
             provider.invalidate()
+        }
+    }
+    
+    //  Load KKPortalTwilioConfig (accessToken URL and kkOfficesInfos)
+    private func setupKKPortalTwilioConfig() {
+        guard let config: PortalConfig = StorageManager.shared.loadObject(for: .portalConfig), let portalService = config.data.services.filter({$0.type == "cti" && $0.name == "twilio"}).first else {
+            print("❌ Can't get plone portal service in portalConfig")
+            return
+        }
+        
+        guard let KKPortalTwilioConfigURL = URL(string: portalService.url) else {
+            print("❌ Portal root URL is invalid")
+            return
+        }
+        
+        viewModel.loadKKPortalTwilioConfig(url: KKPortalTwilioConfigURL) { result in
+            
+            switch result {
+            case .success(let data):
+                do {
+                    let KKPortalTwilioConfig = try JSONDecoder().decode(KKPortalTwilioConfig.self, from: data)
+                    self.accessTokenURL = URL(string: KKPortalTwilioConfig.accessTokenURL)
+                    self.kkOfficesInfos = KKPortalTwilioConfig.KKOfficesInfos
+                    
+                    // setup initail TextField value
+                    self.countryCodeTextField.text = self.kkOfficesInfos.first?.country
+                    
+                    self.companyIdentifierTextField.text = self.kkOfficesInfos.first?.companyIdentifier.first
+                
+                } catch {
+                    print("📄⚠️ \(error).localizedDescription")
+                }
+                
+            case .failure(let error):
+                print("📄⚠️ \(error).localizedDescription")
+            }
         }
     }
     
@@ -1306,6 +1299,7 @@ extension TwilioServiceViewController: UIPickerViewDelegate, UIPickerViewDataSou
                 return info.country == infosCountryCode[row]
             }.first
             companyIdentifierTextField.text = info?.companyIdentifier.first
+            companyIdentifierPickerView.selectRow(0, inComponent: 0, animated: false)
             
         case companyIdentifierPickerView:
             let info = kkOfficesInfos.filter { info in

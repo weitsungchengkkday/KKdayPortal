@@ -173,6 +173,9 @@
 		C6B1B111267894F400360E1C /* KKdayOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B110267894F400360E1C /* KKdayOffice.swift */; };
 		C6B1B112267894F400360E1C /* KKdayOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B110267894F400360E1C /* KKdayOffice.swift */; };
 		C6B1B113267894F400360E1C /* KKdayOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B110267894F400360E1C /* KKdayOffice.swift */; };
+		C6B1B115267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */; };
+		C6B1B116267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */; };
+		C6B1B117267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */; };
 		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
@@ -512,6 +515,7 @@
 		C67012E02594300C00830027 /* ConfigModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConfigModel.json; sourceTree = "<group>"; };
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C6B1B110267894F400360E1C /* KKdayOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayOffice.swift; sourceTree = "<group>"; };
+		C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKPortalTwilioConfigAPI.swift; sourceTree = "<group>"; };
 		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		C6B213E7261EEE6600981446 /* PloneFileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileAPI.swift; sourceTree = "<group>"; };
 		C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneImageAPI.swift; sourceTree = "<group>"; };
@@ -815,6 +819,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */,
+				C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */,
 			);
 			path = TwilioAPI;
 			sourceTree = "<group>";
@@ -2373,6 +2378,7 @@
 				C631060825B57ADA0067F72B /* GeneralTextObjectSectionItem.swift in Sources */,
 				C631060925B57ADA0067F72B /* DateFormatterExtension.swift in Sources */,
 				C631060A25B57ADA0067F72B /* GeneralItemDescriptionTextView.swift in Sources */,
+				C6B1B115267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */,
 				C631060B25B57ADA0067F72B /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
 				C631060C25B57ADA0067F72B /* GeneralTextObjectNormalTableViewCell.swift in Sources */,
 				C631060D25B57ADA0067F72B /* LocaleExtension.swift in Sources */,
@@ -2532,6 +2538,7 @@
 				F43AFC6223E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F426FEC123F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */,
 				F43AFC6E23E87D6D0050C851 /* GeneralTextObjectImageTableViewCell.swift in Sources */,
+				C6B1B117267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */,
 				F43AFC8223E87DD10050C851 /* GeneralCollectionViewController.swift in Sources */,
 				F45740EA23D13A3100FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCell.swift in Sources */,
 				F44A199923C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
@@ -2691,6 +2698,7 @@
 				F43AFC6123E87D6D0050C851 /* GeneralTextObjectSectionItem.swift in Sources */,
 				F4544769239609E5001B8D31 /* DateFormatterExtension.swift in Sources */,
 				F426FEC023F51AB900BFDA3B /* GeneralItemDescriptionTextView.swift in Sources */,
+				C6B1B116267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */,
 				F44A199823C56CC900B35976 /* GeneralRootWithLanguageDocumentViewController.swift in Sources */,
 				F43AFC6523E87D6D0050C851 /* GeneralTextObjectNormalTableViewCell.swift in Sources */,
 				F454487A23A336D6001B8D31 /* LocaleExtension.swift in Sources */,

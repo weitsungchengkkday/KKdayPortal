@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct KKOffices: Codable {
-    let officesInfo: [KKOfficesInfo]
+struct KKPortalTwilioConfig: Codable {
+    let accessTokenURL: String
+    let KKOfficesInfos: [KKOfficesInfo]
 }
 
 struct KKOfficesInfo: Codable {
