@@ -9,6 +9,15 @@
 import UIKit
 import SnapKit
 
+import PushKit
+import TwilioVoice
+
+protocol PushKitEventDelegate: AnyObject {
+    func credentialsUpdated(credentials: PKPushCredentials) -> Void
+    func credentialsInvalidated() -> Void
+    func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) -> Void
+}
+
 class HomeViewController: UIViewController, Localizable {
     
     // 🏞 UI element
@@ -23,17 +32,30 @@ class HomeViewController: UIViewController, Localizable {
         localizedText()
     }
     
+    var pushKitEventDelegate: PushKitEventDelegate?
+    
+    var voipRegistry = PKPushRegistry.init(queue: .main)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Twilio Call Service
+        self.pushKitEventDelegate = TwilioServiceManager.shared.twiVC
+        initializePushKit()
+        
         setupUI()
         setAction()
         reigisterLanguageManager()
         addChildViewController()
-        
     }
     
     deinit {
         unregisterLanguageManager()
+    }
+    
+    private func initializePushKit() {
+        voipRegistry.delegate = self
+        voipRegistry.desiredPushTypes = Set([PKPushType.voIP])
     }
     
     // 🎨 draw UI
@@ -85,6 +107,51 @@ class HomeViewController: UIViewController, Localizable {
     // ⛓ bind viewModel
     private func bindViewModel() {
         
+    }
+    
+}
+
+
+// MARK: PKPushRegistryDelegate
+extension HomeViewController: PKPushRegistryDelegate {
+    
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
+        print("〽️ pushRegistry:didUpdatePushCredentials:forType:")
+        
+        if let delegate = self.pushKitEventDelegate {
+            print("〽️ update push credentials")
+            delegate.credentialsUpdated(credentials: pushCredentials)
+        } else {
+            print("〽️⚠️ pushKitEventDelegate is not set")
+        }
+        
+    }
+    
+    func pushRegistry(_ registry: PKPushRegistry, didInvalidatePushTokenFor type: PKPushType) {
+        print("〽️ pushRegistry:didInvalidatePushTokenForType:")
+        
+        if let delegate = self.pushKitEventDelegate {
+            print("〽️⚠️ Invalidate Push Token")
+            delegate.credentialsInvalidated()
+        } else {
+            print("〽️⚠️ pushKitEventDelegate is not set")
+        }
+        
+    }
+    
+    func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
+        print("〽️ pushRegistry:didReceiveIncomingPushWithPayload:forType:completion:")
+        print(type.rawValue)
+
+        if let delegate = self.pushKitEventDelegate {
+            print("〽️recieve payload: \(payload.dictionaryPayload) ")
+           
+            delegate.incomingPushReceived(payload: payload, completion: completion)
+            
+        } else {
+            print("〽️⚠️ pushKitEventDelegate is not set")
+        }
+
     }
     
 }
