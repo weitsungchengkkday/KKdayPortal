@@ -183,22 +183,19 @@ final class TwilioServiceViewController: UIViewController {
     
     private let twimlParamTo = "To"
     
-    // kp = KKday Portal
-    
-    private let twimlPlatform = "kp_platform"
+    private let twimlPlatform = "p_platform"
     private let twimlPlatformValue = "ios_kkportal"
     
-    private let twimlUser: String = "kp_user"
-    private let twimlUserValue: String = {
-        let user: GeneralUser? = StorageManager.shared.loadObject(for: .generalUser)
-        return user?.account ?? "KKUser"
-    }()
-    
-    private let twimlParamCompanyIdentifier = "kp_company_identifier"
-    private let twimlParamCountryCode = "kp_country_code"
+    private let twimlParamCompanyIdentifier = "p_company_identifier"
+    private let twimlParamCountryCode = "p_country_code"
 //    private let twimlParamto = "to"
     
-    private let identity: String = "KKPortal"
+    private let identity: String = {
+        let user: GeneralUser? = StorageManager.shared.loadObject(for: .generalUser)
+        let userName: String = String(user?.account.split(separator: "@").first ?? "KKUser")
+        
+        return userName
+    }()
     
     private var activeCall: Call? = nil
     private var activeCalls: [String: Call] = [:]
@@ -814,7 +811,6 @@ extension TwilioServiceViewController: CXProviderDelegate {
                 let connectOptions = ConnectOptions(accessToken: accessToken) { builder in
                     builder.params = [self.twimlParamTo: self.outgoingTextField.text ?? "",
                                       self.twimlPlatform: self.twimlPlatformValue,
-                                      self.twimlUser: self.twimlUserValue,
                                       self.twimlParamCompanyIdentifier: self.companyIdentifierTextField.text ?? "",
                                       self.twimlParamCountryCode: info?.countryCode ?? ""
 //                                      ,self.twimlParamto: self.transferValue.text ?? ""
