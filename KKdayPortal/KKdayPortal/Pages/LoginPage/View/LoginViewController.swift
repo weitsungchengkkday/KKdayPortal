@@ -357,7 +357,7 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
                             self?.goPloneSSOPage()
                         
                     } else {
-                        let alertController = UIAlertController(title: "Warning", message: "login_alert_get_portal_config_failed".localize("無法取得 portal config", defaultValue: "Can't get portal config"), preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "login_alert_get_portal_config_failed".localize("無法取得 portal config", defaultValue: "Can't get portal config"), preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self?.present(alertController, animated: true, completion: nil)
@@ -387,7 +387,7 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
                         UserResourceManager.shared.resourceType = .custom(url)
                         
                         guard let signinURL: URL = URL(string: config.data.login.url) else {
-                            let alertController = UIAlertController(title: "Warning", message: "login_alert_plone_URL_invalid".localize("Plone login URL 無效", defaultValue: "Plone login URL is invalid"), preferredStyle: .alert)
+                            let alertController = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "login_alert_plone_URL_invalid".localize("Plone login URL 無效", defaultValue: "Plone login URL is invalid"), preferredStyle: .alert)
                             let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
                             alertController.addAction(alertAction)
                             self?.present(alertController, animated: true, completion: nil)
@@ -399,7 +399,7 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
                     case .failure(let error):
                         
                         print("❌ Error: \(error)")
-                        let alertController = UIAlertController(title: "Warning", message: "login_alert_get_portal_config_failed".localize("無法取得 portal config", defaultValue: "Can't get portal config"), preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "login_alert_get_portal_config_failed".localize("無法取得 portal config", defaultValue: "Can't get portal config"), preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self?.present(alertController, animated: true, completion: nil)
@@ -446,7 +446,7 @@ extension LoginViewController: SigninDelegate {
         
         debugPrint("🚨 Normal Login, Get Error: \(error)")
         
-        let alertController = UIAlertController(title: "Warning", message: "login_alert_login_failed".localize("登入不成功, 請確認您的 Plone 帳號和密碼", defaultValue: "Login Failed, Please Check your Plone account and password"), preferredStyle: .alert)
+        let alertController = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "login_alert_login_failed".localize("登入不成功, 請確認您的 Plone 帳號和密碼", defaultValue: "Login Failed, Please Check your Plone account and password"), preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
         alertController.addAction(alertAction)
         

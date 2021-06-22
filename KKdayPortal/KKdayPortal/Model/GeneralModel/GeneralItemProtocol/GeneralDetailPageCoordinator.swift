@@ -69,13 +69,13 @@ extension GeneralDetailPageCoordinator {
     
     func openOutSiteLink(url: URL) {
         
-        let alertController = UIAlertController(title: "Warning", message: "Will Jump Out APP", preferredStyle: .actionSheet)
-        let confirmAlertAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+        let alertController = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "general_alert_jump_out_message".localize("將離開 APP", defaultValue: "Will Jump Out APP"), preferredStyle: .actionSheet)
+        let confirmAlertAction = UIAlertAction(title: "general_confrim".localize("確認", defaultValue: "Confirm"), style: .default) { _ in
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
-        let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAlertAction = UIAlertAction(title: "general_cancel".localize("取消", defaultValue: "Cancel"), style: .cancel, handler: nil)
         
         alertController.addAction(confirmAlertAction)
         alertController.addAction(cancelAlertAction)

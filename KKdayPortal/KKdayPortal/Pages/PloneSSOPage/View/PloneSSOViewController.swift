@@ -122,9 +122,9 @@ extension PloneSSOViewController: WKNavigationDelegate {
         let statusCode = response.statusCode
         guard statusCode >= 200 && statusCode <= 300 else {
             
-            let alertController =  UIAlertController(title: "Warning", message: "Please use valid email account", preferredStyle: .alert)
+            let alertController =  UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "plone_sso_alert_message".localize("請使用有效的 email account", defaultValue: "Please use valid email account"), preferredStyle: .alert)
             
-            let alertAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default) { [weak self] _ in
                 WebCacheCleaner.clean()
                 self?.dismiss(animated: true, completion: nil)
             }

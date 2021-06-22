@@ -25,3 +25,25 @@
 "general_cancel" = "キャンセル";
 "general_ok" = "いいです";
 "general_warning" = "警告";
+
+"login_label_config_URL" = "ポータル設定のURLを入力してください。";
+"login_label_account" = "あなたのアカウントを入力してください（オプション）";
+"login_label_password" = "（オプション）パスワードを入力してください。";
+"login_textview_memo" = "訪問者としてのPloneサイトのサポートログインした場合は、アカウントとパスワードを入力する必要はありません";
+"login_alert_URL_invalid" = "いない有効なURL、ご確認ください。";
+"login_alert_plone_URL_invalid" = "URLログインPloneは無効です。";
+"login_alert_get_portal_config_failed" = "ポータル設定を取得できません";
+"login_alert_login_failed" = "ログイン失敗、口座番号やパスワードPloneのを確認してください。";
+
+"general_alert_jump_out_message" = "APPは、去ります";
+"plone_sso_alert_message" = "有効な電子メールアカウントを使用してください";
+
+"twilio_service_label_country" = "オフィスの場所を選択してください";
+"twilio_service_label_company_identifier" = "オフィスの番号を選択します";
+"twilio_service_label_outgoing" = "受信者の番号を入力してください。";
+"twilio_service_label_mute" = "ミュート";
+"twilio_service_label_speaker" = "PA";
+"twilio_service_alert_microphone_permission_title" = "KKPortal音";
+"twilio_service_alert_microphone_permission_message" = "マイクを使用することが許可されていません";
+"twilio_service_alert_without_microphone" = "マイクを継続して使用しないでください";
+"twilio_service_alert_settings" = "セットアップ";

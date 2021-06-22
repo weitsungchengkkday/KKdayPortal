@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-final class UserGuideDetailViewController: UIViewController {
+final class UserGuideDetailViewController: UIViewController, Localizable {
     
     lazy var userGuideDetailStackView: UIStackView = {
         let stv: UIStackView = UIStackView()
@@ -22,7 +22,6 @@ final class UserGuideDetailViewController: UIViewController {
     
     lazy var startToUseButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Start to Use KKportal (read me first)", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -33,7 +32,6 @@ final class UserGuideDetailViewController: UIViewController {
     
     lazy var ploneIntroButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("What is Plone?", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -75,6 +73,12 @@ final class UserGuideDetailViewController: UIViewController {
         return btn
     }()
     
+    var observerLanguageChangedNotification: NSObjectProtocol?
+    
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
+    
     private let viewModel: UserGuideDetailViewModel
     
     init(viewModel: UserGuideDetailViewModel) {
@@ -90,11 +94,17 @@ final class UserGuideDetailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setAction()
+        reigisterLanguageManager()
         
+    }
+    
+    deinit {
+        unregisterLanguageManager()
     }
     
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        localizedText()
         view.addSubview(userGuideDetailStackView)
         
         userGuideDetailStackView.addArrangedSubview(startToUseButton)
@@ -106,6 +116,11 @@ final class UserGuideDetailViewController: UIViewController {
         userGuideDetailStackView.snp.makeConstraints { maker in
             maker.centerX.centerY.equalToSuperview()
         }
+    }
+    // 🧾 localization
+    private func localizedText() {
+        startToUseButton.setTitle("Start to Use KKportal (read me first)", for: .normal)
+        ploneIntroButton.setTitle("What is Plone?", for: .normal)
     }
     
     private func setAction() {

@@ -21,7 +21,7 @@ import TwilioVoice
 import PushKit
 import Foundation
 
-final class TwilioServiceViewController: UIViewController {
+final class TwilioServiceViewController: UIViewController, Localizable {
     
     // 🏞 UI element
     lazy var qualityWarningsToaster: UILabel = {
@@ -59,7 +59,6 @@ final class TwilioServiceViewController: UIViewController {
     lazy var countryLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "Please select office location"
         lbl.textAlignment = .center
         lbl.adjustsFontSizeToFitWidth = true
         
@@ -87,7 +86,6 @@ final class TwilioServiceViewController: UIViewController {
     lazy var companyIdentifierLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "Please select company phone number"
         lbl.textAlignment = .center
         lbl.adjustsFontSizeToFitWidth = true
         
@@ -115,7 +113,6 @@ final class TwilioServiceViewController: UIViewController {
     lazy var outgoingLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "Please input callee number"
         lbl.textAlignment = .center
         lbl.adjustsFontSizeToFitWidth = true
         
@@ -159,7 +156,6 @@ final class TwilioServiceViewController: UIViewController {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         lbl.textAlignment = .center
-        lbl.text = "Mute"
         
         return lbl
     }()
@@ -175,10 +171,15 @@ final class TwilioServiceViewController: UIViewController {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         lbl.textAlignment = .center
-        lbl.text = "Speaker"
         
         return lbl
     }()
+    
+    var observerLanguageChangedNotification: NSObjectProtocol?
+    
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
     
     // CallKit
     private var callKitProvider: CXProvider?
@@ -247,6 +248,7 @@ final class TwilioServiceViewController: UIViewController {
         toggleUIState(isEnabled: true, showCallControl: false)
         setUIElementDelegate()
         setAction()
+        reigisterLanguageManager()
         createGestureRecognizer()
         
         // TVOAudioDevice must be set before performing any other actions with the SDK
@@ -254,6 +256,7 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     deinit {
+        unregisterLanguageManager()
         if let provider = callKitProvider {
             provider.invalidate()
         }
@@ -296,7 +299,7 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     private func setupUI() {
-        
+        localizedText()
         self.view.addSubview(qualityWarningsToaster)
         
         ///
@@ -435,6 +438,15 @@ final class TwilioServiceViewController: UIViewController {
        
     }
     
+    // 🧾 localization
+    private func localizedText() {
+        countryLabel.text = "twilio_service_label_country".localize("請選擇辦公室位置", defaultValue: "Please select office location")
+        companyIdentifierLabel.text = "twilio_service_label_company_identifier".localize("請選擇辦公室號碼", defaultValue: "Please select company phone number")
+        outgoingLabel.text = "twilio_service_label_outgoing".localize("請輸入接聽者號碼", defaultValue: "Please input callee number")
+        muteLabel.text = "twilio_service_label_mute".localize("靜音", defaultValue: "Mute")
+        speakerLabel.text = "twilio_service_label_speaker".localize("擴音", defaultValue: "Speaker")
+    }
+    
     private func setAction() {
         ///
 //        transferCallButton.addTarget(self, action: #selector(transferButtonPressed), for: .touchUpInside)
@@ -539,21 +551,21 @@ final class TwilioServiceViewController: UIViewController {
     }
     
     private func showMicrophoneAccessRequest(_ uuid: UUID, _ handle: String) {
-        let alertController = UIAlertController(title: "KKday Voice",
-                                                message: "Microphone permission not granted",
+        let alertController = UIAlertController(title: "twilio_service_alert_microphone_permission_title".localize("KKPortal 聲音", defaultValue: "KKPortal Voice"),
+                                                message: "twilio_service_alert_microphone_permission_message".localize("麥克風未被允許使用", defaultValue: "Microphone permission not granted"),
                                                 preferredStyle: .alert)
         
-        let continueWithoutMic = UIAlertAction(title: "Continue without microphone", style: .default) { [weak self] _ in
+        let continueWithoutMic = UIAlertAction(title: "twilio_service_alert_without_microphone".localize("繼續不使用麥克風", defaultValue: "Continue without microphone"), style: .default) { [weak self] _ in
             self?.performStartCallAction(uuid: uuid, handle: handle)
         }
         
-        let goToSettings = UIAlertAction(title: "Settings", style: .default) { _ in
+        let goToSettings = UIAlertAction(title: "twilio_service_alert_settings".localize("設定", defaultValue: "Settings"), style: .default) { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
                                       options: [UIApplication.OpenExternalURLOptionsKey.universalLinksOnly: false],
                                       completionHandler: nil)
         }
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+        let cancel = UIAlertAction(title: "general_cancel".localize("取消", defaultValue: "Cancel"), style: .cancel) { [weak self] _ in
             self?.toggleUIState(isEnabled: true, showCallControl: false)
         }
         

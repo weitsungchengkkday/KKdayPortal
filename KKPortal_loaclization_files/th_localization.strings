@@ -25,3 +25,25 @@
 "general_cancel" = "Cancel";
 "general_ok" = "OK";
 "general_warning" = "Warning";
+
+"login_label_config_URL" = "Please enter your portal config URL";
+"login_label_account" = "Please enter your account (optional)";
+"login_label_password" = "Please enter your password (optional)";
+"login_textview_memo" = "If plone website support login as visitor, you do not need to enter account and password";
+"login_alert_URL_invalid" = "Not valid URL, please check";
+"login_alert_plone_URL_invalid" = "Plone login URL is invalid";
+"login_alert_get_portal_config_failed" = "Can't get portal config";
+"login_alert_login_failed" = "Login Failed, Please Check your Plone account and password";
+
+"general_alert_jump_out_message" = "Will Jump Out APP";
+"plone_sso_alert_message" = "Please use valid email account";
+
+"twilio_service_label_country" = "Please select office location";
+"twilio_service_label_company_identifier" = "Please select company phone number";
+"twilio_service_label_outgoing" = "Please input callee number";
+"twilio_service_label_mute" = "Mute";
+"twilio_service_label_speaker" = "Speaker";
+"twilio_service_alert_microphone_permission_title" = "KKPortal Voice";
+"twilio_service_alert_microphone_permission_message" = "Microphone permission not granted";
+"twilio_service_alert_without_microphone" = "Continue without microphone";
+"twilio_service_alert_settings" = "Settings";

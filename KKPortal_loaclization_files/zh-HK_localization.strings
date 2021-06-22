@@ -25,3 +25,25 @@
 "general_cancel" = "取消";
 "general_ok" = "好";
 "general_warning" = "警告";
+
+"login_label_config_URL" = "請輸入您的 portal config URL";
+"login_label_account" = "請輸入您的帳號 (可選)";
+"login_label_password" = "請輸入您的密碼 (可選)";
+"login_textview_memo" = "如果網站支援以訪客方式登入, 您不需要輸入帳號和密碼";
+"login_alert_URL_invalid" = "這不是可用的 URL, 請確認";
+"login_alert_plone_URL_invalid" = "Plone login URL 無效";
+"login_alert_get_portal_config_failed" = "無法取得 portal config";
+"login_alert_login_failed" = "登入不成功, 請確認您的 Plone 帳號和密碼";
+
+"general_alert_jump_out_message" = "將離開 APP";
+"plone_sso_alert_message" = "請使用有效的 email account";
+
+"twilio_service_label_country" = "請選擇辦公室位置";
+"twilio_service_label_company_identifier" = "請選擇辦公室號碼";
+"twilio_service_label_outgoing" = "請輸入接聽者號碼";
+"twilio_service_label_mute" = "靜音";
+"twilio_service_label_speaker" = "擴音";
+"twilio_service_alert_microphone_permission_title" = "KKPortal 聲音";
+"twilio_service_alert_microphone_permission_message" = "麥克風未被允許使用";
+"twilio_service_alert_without_microphone" = "繼續不使用麥克風";
+"twilio_service_alert_settings" = "設定";

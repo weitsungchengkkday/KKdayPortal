@@ -37,9 +37,9 @@ final class MemberManager {
         
         self.alertErrorInfo = nil
         
-        let alertControlloer = UIAlertController(title: "Warning", message: alertErrorInfo.message, preferredStyle: .alert)
+        let alertControlloer = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: alertErrorInfo.message, preferredStyle: .alert)
         
-        let okAlertAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+        let okAlertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default) { [weak self] _ in
             if let error = alertErrorInfo.error as? HTTPError {
                 print(error)
             }
