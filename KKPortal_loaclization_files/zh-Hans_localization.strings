@@ -1,0 +1,27 @@
+
+"user_guide_label_title" = "欢迎来到 KKPortal！";
+"user_guide_button_login" = "登录";
+"user_guide_button_usage_guide" = "使用指南";
+
+"home_title" = "主页";
+
+"portal_title" = "入口網站";
+
+"service_list_title" = "服務列表";
+"service_button_phone" = "KK 電話";
+
+"setting_title" = "设定";
+"setting_button_language" = "语言设置";
+"setting_button_about" = "关于 KKPlone";
+"setting_button_contact" = "联络我";
+"setting_button_logout" = "登出";
+
+"general_alert_logout_message" = "登出将会清除您在 KKPortal 上的所有已存的个人资讯";
+"general_alert_email_message" = "请开启您的 email 服务";
+"general_email_subject" = "KKPortal 建议";
+"general_email_message_body" = "我的意见是";
+
+"general_confrim" = "确认";
+"general_cancel" = "取消";
+"general_ok" = "好";
+"general_warning" = "警告";

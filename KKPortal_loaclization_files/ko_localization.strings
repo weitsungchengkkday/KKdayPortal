@@ -1,0 +1,27 @@
+
+"user_guide_label_title" = "Welcome to KKPortal!";
+"user_guide_button_login" = "Login";
+"user_guide_button_usage_guide" = "Usage Guide";
+
+"home_title" = "Home";
+
+"portal_title" = "Portal";
+
+"service_list_title" = "Service List";
+"service_button_phone" = "KK Phone";
+
+"setting_title" = "Setting";
+"setting_button_language" = "Language Setting";
+"setting_button_about" = "About KKPlone";
+"setting_button_contact" = "Contact Me";
+"setting_button_logout" = "Logout";
+
+"general_alert_logout_message" = "Logout will clear all personal information in KKPortal";
+"general_alert_email_message" = "Please open your email service";
+"general_email_subject" = "KKPortal Suggestion";
+"general_email_message_body" = "My opinion is";
+
+"general_confrim" = "Confirm";
+"general_cancel" = "Cancel";
+"general_ok" = "OK";
+"general_warning" = "Warning";

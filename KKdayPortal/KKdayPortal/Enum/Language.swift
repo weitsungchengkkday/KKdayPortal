@@ -24,7 +24,8 @@ extension Language {
     // Get system prefered language (system + APP available)
     public static var systemPreferedLanguage: Language {
         
-        let availableLanguages: [String] = ["en", "zh-Hans", "zh-Hant-TW", "zh-Hant-HK"]
+        // "en", "zh-Hans", "zh-Hant-TW", "zh-Hant-HK", "ja", "ko", "vi", "th"
+        let availableLanguages: [String] = ["en", "zh-Hans", "zh-Hant-TW", "zh-Hant-HK", "ja", "ko", "vi", "th"]
         
         guard let bestMatchedLanguage: String = Bundle.preferredLocalizations(from: availableLanguages).first else {
             return Language.en
@@ -48,6 +49,7 @@ extension Language {
             default:
                 return .zhTW
             }
+            
         default:
             guard let language = Language(rawValue: languageCode) else {
                 return Language.en
@@ -154,6 +156,7 @@ extension Language {
         }
     }
     
+    // 被 languageBundleDirectory 取代
     private var languageBundle: Bundle? {
         guard let path = Bundle.main.path(forResource: bundleName, ofType: "lproj") else {
             return nil
@@ -162,9 +165,20 @@ extension Language {
         return Bundle(path: path)
     }
     
+    // Load 從 web service 取得的翻譯檔
+    private var languageBundleDirectory: Bundle? {
+        
+        let directoryURL = FileManager.documentDirectoryURL
+            .appendingPathComponent("Localization")
+            .appendingPathComponent("\(bundleName)")
+            .appendingPathExtension("lproj")
+        
+        return Bundle(path: directoryURL.path)
+    }
+    
     public func localizeForLanguage(key: String, defaultValue: String = "", storyboardName: String = "", comment: String) -> String {
         
-        guard let bundle = languageBundle else {
+        guard let bundle = languageBundleDirectory else {
             return defaultValue
         }
         
@@ -196,15 +210,4 @@ extension Language {
         }
     }
     
-    // only use on Plone Portal
-    public var portalLang: String? {
-        switch self {
-        case .en:
-            return "en-us"
-        case .zhTW:
-            return "zh-tw"
-        default:
-            return nil
-        }
-    }
 }

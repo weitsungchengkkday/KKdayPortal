@@ -9,13 +9,12 @@
 import UIKit
 import SnapKit
 
-final class UserGuideViewController: UIViewController {
+final class UserGuideViewController: UIViewController, Localizable {
     
     // 🏞 UI element
     lazy var userGuideTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        lbl.text = "Welcome to KKPortal!"
         lbl.font = UIFont.boldSystemFont(ofSize: 26)
         lbl.textAlignment = .center
         lbl.numberOfLines = 2
@@ -41,7 +40,6 @@ final class UserGuideViewController: UIViewController {
     
     lazy var loginButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Login", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -52,7 +50,6 @@ final class UserGuideViewController: UIViewController {
     
     lazy var goUserGuideDetailPageButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Usage Guide", for: .normal)
         btn.titleLabel?.numberOfLines = 0
         btn.titleLabel?.textAlignment = .center
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -72,6 +69,13 @@ final class UserGuideViewController: UIViewController {
     private let viewModel: UserGuideViewModel
     private let testingModeTapRequired: Int = 10
     
+    var observerLanguageChangedNotification: NSObjectProtocol?
+    
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
+
+    
     init(viewModel: UserGuideViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -85,10 +89,17 @@ final class UserGuideViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setAction()
+        reigisterLanguageManager()
+    }
+    
+    deinit {
+        unregisterLanguageManager()
     }
     
     // 🎨 draw UI
     private func setupUI() {
+        localizedText()
+        
         view.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         view.addSubview(backgroundImageVeiw)
         view.addSubview(userGuideTitleLabel)
@@ -125,6 +136,12 @@ final class UserGuideViewController: UIViewController {
             maker.centerX.equalToSuperview()
             maker.bottom.equalTo(view.snp.bottomMargin).offset(-44)
         }
+    }
+    
+    private func localizedText() {
+        userGuideTitleLabel.text = "user_guide_label_title".localize("歡迎使用 KKPortal!", defaultValue: "Welcome to KKPortal!")
+        loginButton.setTitle("user_guide_button_login".localize("登入", defaultValue: "Login"), for: .normal)
+        goUserGuideDetailPageButton.setTitle("user_guide_button_usage_guide".localize("使用說明", defaultValue: "Usage Guide"), for: .normal)
     }
     
     // 🎬 set action

@@ -1,0 +1,27 @@
+
+"user_guide_label_title" = "ようこそ KKPortal!";
+"user_guide_button_login" = "サインイン";
+"user_guide_button_usage_guide" = "使用説明書";
+
+"home_title" = "ホームページ";
+
+"portal_title" = "ポータル";
+
+"service_list_title" = "サービスリスト";
+"service_button_phone" = "KK 電話";
+
+"setting_title" = "セットアップ";
+"setting_button_language" = "言語設定";
+"setting_button_about" = "KKPloneについて";
+"setting_button_contact" = "私に連絡して";
+"setting_button_logout" = "サインアウト";
+
+"general_alert_logout_message" = "ログアウトすると、KKPortalに保存されているすべての個人情報が消去されます";
+"general_alert_email_message" = "メールサービスを開いてください";
+"general_email_subject" = "KKPortalの推奨事項";
+"general_email_message_body" = "私のアドバイスは";
+
+"general_confrim" = "確認";
+"general_cancel" = "キャンセル";
+"general_ok" = "いいです";
+"general_warning" = "警告";

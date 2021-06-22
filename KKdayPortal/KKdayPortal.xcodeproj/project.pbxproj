@@ -176,6 +176,9 @@
 		C6B1B115267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */; };
 		C6B1B116267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */; };
 		C6B1B117267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */; };
+		C6B1B11926806F3400360E1C /* LocalizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B11826806F3300360E1C /* LocalizationAPI.swift */; };
+		C6B1B11A26806F3400360E1C /* LocalizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B11826806F3300360E1C /* LocalizationAPI.swift */; };
+		C6B1B11B26806F3400360E1C /* LocalizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B11826806F3300360E1C /* LocalizationAPI.swift */; };
 		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
@@ -516,6 +519,15 @@
 		C6A578262567D2460049D700 /* TestingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C6B1B110267894F400360E1C /* KKdayOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKdayOffice.swift; sourceTree = "<group>"; };
 		C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKPortalTwilioConfigAPI.swift; sourceTree = "<group>"; };
+		C6B1B11826806F3300360E1C /* LocalizationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationAPI.swift; sourceTree = "<group>"; };
+		C6B1B11C2681072B00360E1C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C6B1B11D2681072B00360E1C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C6B1B11E268107FE00360E1C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C6B1B11F268107FE00360E1C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C6B1B1202681080800360E1C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C6B1B1212681080800360E1C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C6B1B1222681081100360E1C /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C6B1B1232681081100360E1C /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		C6B213E7261EEE6600981446 /* PloneFileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileAPI.swift; sourceTree = "<group>"; };
 		C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneImageAPI.swift; sourceTree = "<group>"; };
@@ -820,6 +832,7 @@
 			children = (
 				C6B214302626ED2A00981446 /* TwilioAccessTokenAPI.swift */,
 				C6B1B114267A4F4200360E1C /* KKPortalTwilioConfigAPI.swift */,
+				C6B1B11826806F3300360E1C /* LocalizationAPI.swift */,
 			);
 			path = TwilioAPI;
 			sourceTree = "<group>";
@@ -2186,6 +2199,10 @@
 				"zh-Hant",
 				"zh-Hans",
 				"zh-HK",
+				ja,
+				ko,
+				vi,
+				th,
 			);
 			mainGroup = F4B3F2C123862B3000657CDF;
 			packageReferences = (
@@ -2503,6 +2520,7 @@
 				C631068025B57ADA0067F72B /* PloneItemsAPI.swift in Sources */,
 				C631068125B57ADA0067F72B /* PloneLRF.swift in Sources */,
 				C631068225B57ADA0067F72B /* UIImageExtension.swift in Sources */,
+				C6B1B11926806F3400360E1C /* LocalizationAPI.swift in Sources */,
 				C631068325B57ADA0067F72B /* GeneralFolderViewController.swift in Sources */,
 				C631068425B57ADA0067F72B /* GeneralNewsViewController.swift in Sources */,
 				C631068525B57ADA0067F72B /* HomeViewController.swift in Sources */,
@@ -2663,6 +2681,7 @@
 				F4C4FCE3255E9732001ADF72 /* PloneItemsAPI.swift in Sources */,
 				F457416823D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				F45740E023D0362100FB5EEC /* GeneralDetailPageCoordinator.swift in Sources */,
+				C6B1B11B26806F3400360E1C /* LocalizationAPI.swift in Sources */,
 				F44E8CC823B88AA30032C6BE /* GeneralNewsViewController.swift in Sources */,
 				F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */,
 				F426FECD23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
@@ -2823,6 +2842,7 @@
 				F4C4FCE2255E9732001ADF72 /* PloneItemsAPI.swift in Sources */,
 				F44A198B23C48BF000B35976 /* PloneLRF.swift in Sources */,
 				F453953623BAE5A200136E6D /* UIImageExtension.swift in Sources */,
+				C6B1B11A26806F3400360E1C /* LocalizationAPI.swift in Sources */,
 				F4544854239DF117001B8D31 /* GeneralFolderViewController.swift in Sources */,
 				F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */,
 				F426FECC23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
@@ -2856,6 +2876,10 @@
 				F454488A23A54D45001B8D31 /* zh-Hant */,
 				F454489123A556AE001B8D31 /* zh-Hans */,
 				F454489323A556B9001B8D31 /* zh-HK */,
+				C6B1B11D2681072B00360E1C /* ja */,
+				C6B1B11F268107FE00360E1C /* ko */,
+				C6B1B1212681080800360E1C /* vi */,
+				C6B1B1232681081100360E1C /* th */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2867,6 +2891,10 @@
 				F454487D23A36FBB001B8D31 /* zh-Hant */,
 				F454489023A556AE001B8D31 /* zh-Hans */,
 				F454489223A556B9001B8D31 /* zh-HK */,
+				C6B1B11C2681072B00360E1C /* ja */,
+				C6B1B11E268107FE00360E1C /* ko */,
+				C6B1B1202681080800360E1C /* vi */,
+				C6B1B1222681081100360E1C /* th */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

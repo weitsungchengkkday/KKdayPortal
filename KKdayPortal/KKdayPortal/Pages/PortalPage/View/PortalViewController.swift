@@ -37,7 +37,6 @@ final class PortalViewController: UIViewController, Localizable {
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Portal"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         localizedText()
         
@@ -74,7 +73,7 @@ final class PortalViewController: UIViewController, Localizable {
     
     // 🧾 localization
     private func localizedText() {
-        
+        self.title = "portal_title".localize("入口網站", defaultValue: "Portal")
     }
     
     // 🎬 set action

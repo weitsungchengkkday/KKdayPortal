@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-final class ServiceListViewController: UIViewController {
+final class ServiceListViewController: UIViewController, Localizable {
     
     // 🏞 UI element
     lazy var servicesStackView: UIStackView = {
@@ -23,12 +23,17 @@ final class ServiceListViewController: UIViewController {
     
     lazy var callCenterButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("KK Phone", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         btn.layer.cornerRadius = 8
         return btn
     }()
+    
+    var observerLanguageChangedNotification: NSObjectProtocol?
+    
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
     
     private let viewModel = ServiceListViewModel()
     
@@ -36,14 +41,19 @@ final class ServiceListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setAction()
+        reigisterLanguageManager()
         bindViewModel()
         viewModel.loadPortalData()
     }
     
+    deinit {
+        unregisterLanguageManager()
+    }
+    
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Service List"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        localizedText()
         
         view.addSubview(servicesStackView)
         
@@ -72,6 +82,13 @@ final class ServiceListViewController: UIViewController {
         
     }
     
+    // 🧾 localization
+    private func localizedText() {
+        self.title = "service_list_title".localize("服務列表", defaultValue: "Service List")
+        
+        callCenterButton.setTitle("service_button_phone".localize("KK 電話", defaultValue: "KK Phone"), for: .normal)
+    }
+    
     // 🎬 set action
     private func setAction() {
         
@@ -94,6 +111,6 @@ final class ServiceListViewController: UIViewController {
     }
     
     private func updateServiceList(viewModel: ServiceListViewModel) {
-  
+        
     }
 }

@@ -47,6 +47,7 @@ class HomeViewController: UIViewController, Localizable {
         setAction()
         reigisterLanguageManager()
         addChildViewController()
+        
     }
     
     deinit {
@@ -60,7 +61,6 @@ class HomeViewController: UIViewController, Localizable {
     
     // 🎨 draw UI
     private func setupUI() {
-        self.title = "Home"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         localizedText()
         
@@ -96,7 +96,7 @@ class HomeViewController: UIViewController, Localizable {
     
     // 🧾 localization
     private func localizedText() {
-        
+        self.title = "home_title".localize("主頁", defaultValue: "Home")
     }
     
     // 🎬 set action

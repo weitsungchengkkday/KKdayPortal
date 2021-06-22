@@ -9,7 +9,7 @@
 import UIKit
 import DolphinHTTP
 
-final class LoginViewController: UIViewController, Keyboarder {
+final class LoginViewController: UIViewController, Keyboarder, Localizable {
     
     // 🏞 UI element
     
@@ -50,7 +50,6 @@ final class LoginViewController: UIViewController, Keyboarder {
     lazy var portalConfigURLLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        lbl.text = "Please enter your portal config URL"
         lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
@@ -58,7 +57,7 @@ final class LoginViewController: UIViewController, Keyboarder {
     
     lazy var portalConfigURLTextField: CleanButtonTextField = {
         let txf = CleanButtonTextField()
-        txf.placeholder = "https://ooo.abc.com/portal-config"
+        txf.placeholder = "https://ooo.xxx.com/portal-config"
         txf.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         txf.keyboardType = .URL
         txf.layer.cornerRadius = 12
@@ -77,7 +76,6 @@ final class LoginViewController: UIViewController, Keyboarder {
     lazy var accountLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        lbl.text = "Please enter your account (optional)"
         lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
@@ -103,7 +101,6 @@ final class LoginViewController: UIViewController, Keyboarder {
     lazy var passwordLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        lbl.text = "Please enter your password (optional)"
         lbl.adjustsFontSizeToFitWidth = true
         lbl.textAlignment = .left
         return lbl
@@ -122,7 +119,6 @@ final class LoginViewController: UIViewController, Keyboarder {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         txv.isScrollEnabled = false
-        txv.text = "If plone website support login as visitor, you do not need to enter account and password"
         txv.isEditable = false
         return txv
     }()
@@ -130,12 +126,17 @@ final class LoginViewController: UIViewController, Keyboarder {
     lazy var confirmButton: UIButton = {
         let btn = UIButton()
         btn.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-        btn.setTitle("Confirm", for: .normal)
         btn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         btn.layer.cornerRadius = 5
         btn.isEnabled = false
         return btn
     }()
+    
+    var observerLanguageChangedNotification: NSObjectProtocol?
+    
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
     
     // ⌨️ Keyboarder
     
@@ -180,6 +181,7 @@ final class LoginViewController: UIViewController, Keyboarder {
         setupUIDelegate()
         createGestureRecognizer()
         setAction()
+        reigisterLanguageManager()
         registerKeyboard()
     }
     
@@ -206,12 +208,13 @@ final class LoginViewController: UIViewController, Keyboarder {
     
     deinit {
         unRegisterKeyboard()
+        unregisterLanguageManager()
     }
     
     // 🎨 draw UI
     private func setupUI() {
         self.view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        
+        localizedText()
         guard let scrollView = scrollView else {
             return
         }
@@ -308,6 +311,17 @@ final class LoginViewController: UIViewController, Keyboarder {
         self.passwordTextFiled.resignFirstResponder()
     }
     
+    // 🧾 localization
+    private func localizedText() {
+        self.title = "home_title".localize("主頁", defaultValue: "Home")
+        confirmButton.setTitle("general_confrim".localize("確認", defaultValue: "Confirm"), for: .normal)
+        
+        portalConfigURLLabel.text = "Please enter your portal config URL".localize("請輸入您的 portal config URL", defaultValue: "Please enter your portal config URL")
+        accountLabel.text = "login_label_account".localize("請輸入您的帳號 (可選)", defaultValue: "Please enter your account (optional)")
+        passwordLabel.text = "login_label_password".localize("請輸入您的密碼 (可選)", defaultValue: "Please enter your password (optional)")
+        memoTextView.text = "login_textview_memo".localize("如果網站支援以訪客方式登入, 您不需要輸入帳號和密碼", defaultValue: "If plone website support login as visitor, you do not need to enter account and password")
+    }
+    
     // 🎬 set action
     private func setAction() {
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
@@ -343,8 +357,8 @@ final class LoginViewController: UIViewController, Keyboarder {
                             self?.goPloneSSOPage()
                         
                     } else {
-                        let alertController = UIAlertController(title: "Warning", message: "Can't get KKUser portal config", preferredStyle: .alert)
-                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let alertController = UIAlertController(title: "Warning", message: "login_alert_get_portal_config_failed".localize("無法取得 portal config", defaultValue: "Can't get portal config"), preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self?.present(alertController, animated: true, completion: nil)
                         return
@@ -356,8 +370,8 @@ final class LoginViewController: UIViewController, Keyboarder {
             
             print("🗺 Custom user login")
             guard let url = URL(string: urlString) else {
-                let alertController = UIAlertController(title: "Warning", message: "Not valid URL, please check", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alertController = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "login_alert_URL_invalid".localize("這不是可用的 URL, 請確認", defaultValue: "Not valid URL, please check"), preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
                 alertController.addAction(alertAction)
                 present(alertController, animated: true, completion: nil)
                 return
@@ -373,8 +387,8 @@ final class LoginViewController: UIViewController, Keyboarder {
                         UserResourceManager.shared.resourceType = .custom(url)
                         
                         guard let signinURL: URL = URL(string: config.data.login.url) else {
-                            let alertController = UIAlertController(title: "Warning", message: "Plone login URL is invalid", preferredStyle: .alert)
-                            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let alertController = UIAlertController(title: "Warning", message: "login_alert_plone_URL_invalid".localize("Plone login URL 無效", defaultValue: "Plone login URL is invalid"), preferredStyle: .alert)
+                            let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
                             alertController.addAction(alertAction)
                             self?.present(alertController, animated: true, completion: nil)
                             return
@@ -385,8 +399,8 @@ final class LoginViewController: UIViewController, Keyboarder {
                     case .failure(let error):
                         
                         print("❌ Error: \(error)")
-                        let alertController = UIAlertController(title: "Warning", message: "Can't get portal config", preferredStyle: .alert)
-                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let alertController = UIAlertController(title: "Warning", message: "login_alert_get_portal_config_failed".localize("無法取得 portal config", defaultValue: "Can't get portal config"), preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self?.present(alertController, animated: true, completion: nil)
                         return
@@ -431,9 +445,9 @@ extension LoginViewController: SigninDelegate {
     func signinFailed(_ signiner: Signiner, signinError error: HTTPError) {
         
         debugPrint("🚨 Normal Login, Get Error: \(error)")
-       
-        let alertController = UIAlertController(title: "Warning", message: "Login Failed, Please Check your ploneURL, account, and password", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        let alertController = UIAlertController(title: "Warning", message: "login_alert_login_failed".localize("登入不成功, 請確認您的 Plone 帳號和密碼", defaultValue: "Login Failed, Please Check your Plone account and password"), preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
         alertController.addAction(alertAction)
         
         present(alertController, animated: true, completion: nil)

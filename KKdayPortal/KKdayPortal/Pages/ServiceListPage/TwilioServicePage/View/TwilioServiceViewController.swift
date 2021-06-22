@@ -59,8 +59,9 @@ final class TwilioServiceViewController: UIViewController {
     lazy var countryLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "Please select office"
+        lbl.text = "Please select office location"
         lbl.textAlignment = .center
+        lbl.adjustsFontSizeToFitWidth = true
         
         return lbl
     }()
@@ -78,6 +79,7 @@ final class TwilioServiceViewController: UIViewController {
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         txf.inputView = countryCodePickerView
+        txf.adjustsFontSizeToFitWidth = true
         
         return txf
     }()
@@ -85,8 +87,9 @@ final class TwilioServiceViewController: UIViewController {
     lazy var companyIdentifierLabel: UILabel = {
         let lbl: UILabel = UILabel()
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        lbl.text = "Please input company identifier"
+        lbl.text = "Please select company phone number"
         lbl.textAlignment = .center
+        lbl.adjustsFontSizeToFitWidth = true
         
         return lbl
     }()
@@ -104,6 +107,7 @@ final class TwilioServiceViewController: UIViewController {
         txf.borderStyle = .roundedRect
         txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         txf.inputView = companyIdentifierPickerView
+        txf.adjustsFontSizeToFitWidth = true
         
         return txf
     }()
@@ -113,6 +117,7 @@ final class TwilioServiceViewController: UIViewController {
         lbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         lbl.text = "Please input callee number"
         lbl.textAlignment = .center
+        lbl.adjustsFontSizeToFitWidth = true
         
         return lbl
     }()
@@ -126,6 +131,7 @@ final class TwilioServiceViewController: UIViewController {
         txf.attributedPlaceholder = NSAttributedString(string: "e.g.+886971532770",
                                                        attributes: [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
         txf.keyboardType = .phonePad
+        txf.adjustsFontSizeToFitWidth = true
         
         return txf
     }()

@@ -18,7 +18,7 @@ final class MainViewController: UITabBarController {
     private func setupTabBarItems() {
         
         let homeVC = HomeViewController(nibName: nil, bundle: nil)
-        let homeItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icTabHomeDafault"), selectedImage: #imageLiteral(resourceName: "icTabHomePrimary"))
+        let homeItem = UITabBarItem(title: "home_title".localize("主頁", defaultValue: "Home"), image: #imageLiteral(resourceName: "icTabHomeDafault"), selectedImage: #imageLiteral(resourceName: "icTabHomePrimary"))
         homeVC.tabBarItem = homeItem
         
         let homeNav = UINavigationController(rootViewController: homeVC)
@@ -29,7 +29,7 @@ final class MainViewController: UITabBarController {
         homeNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         let portalVC = PortalViewController(nibName: nil, bundle: nil)
-        let portalItem = UITabBarItem(title: "Portal", image: #imageLiteral(resourceName: "icListPrimaryDefault"), selectedImage: #imageLiteral(resourceName: "icListPrimary"))
+        let portalItem = UITabBarItem(title: "portal_title".localize("入口網站", defaultValue: "Portal"), image: #imageLiteral(resourceName: "icListPrimaryDefault"), selectedImage: #imageLiteral(resourceName: "icListPrimary"))
         portalVC.tabBarItem = portalItem
     
         let portalNav = UINavigationController(rootViewController: portalVC)
@@ -40,7 +40,7 @@ final class MainViewController: UITabBarController {
         portalNav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         let settingVC = SettingViewController(nibName: nil, bundle: nil)
-        let settingItem = UITabBarItem(title: "Setting", image: #imageLiteral(resourceName: "icTabUserDafault"), selectedImage: #imageLiteral(resourceName: "icTabUserPrimary"))
+        let settingItem = UITabBarItem(title: "setting_title".localize("設定", defaultValue: "Setting"), image: #imageLiteral(resourceName: "icTabUserDafault"), selectedImage: #imageLiteral(resourceName: "icTabUserPrimary"))
         settingVC.tabBarItem = settingItem
         
         let settingNav = UINavigationController(rootViewController: settingVC)
@@ -52,7 +52,7 @@ final class MainViewController: UITabBarController {
         
         let applicationsEntryVC = ServiceListViewController(nibName: nil, bundle: nil)
         let applicationsEntryImage = UIImage(systemName: "signpost.right") ?? #imageLiteral(resourceName: "icPicture")
-        let applicationsEntryItem = UITabBarItem(title: "ServiceList", image: applicationsEntryImage, selectedImage: applicationsEntryImage)
+        let applicationsEntryItem = UITabBarItem(title: "service_list_title".localize("服務列表", defaultValue: "Service List"), image: applicationsEntryImage, selectedImage: applicationsEntryImage)
         applicationsEntryVC.tabBarItem = applicationsEntryItem
         
         let applicationsEntryNav = UINavigationController(rootViewController: applicationsEntryVC)

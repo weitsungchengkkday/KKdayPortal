@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import MessageUI
 
-final class SettingViewController: UIViewController {
+final class SettingViewController: UIViewController, Localizable {
     
     // 🏞 UI element
     
@@ -25,18 +25,15 @@ final class SettingViewController: UIViewController {
     
     lazy var languageButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Language Setting (preparing...)", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         btn.setTitleColor(.white, for: .normal)
         btn.layer.cornerRadius = 8
-        btn.isHidden = true
         return btn
     }()
     
     lazy var aboutButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("About KKPlone", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         btn.layer.cornerRadius = 8
@@ -45,7 +42,6 @@ final class SettingViewController: UIViewController {
     
     lazy var contactMeButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Contact Me", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         btn.layer.cornerRadius = 8
@@ -54,7 +50,6 @@ final class SettingViewController: UIViewController {
     
     lazy var logoutButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Logout", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         btn.layer.cornerRadius = 8
@@ -76,6 +71,12 @@ final class SettingViewController: UIViewController {
         return lbl
     }()
     
+    var observerLanguageChangedNotification: NSObjectProtocol?
+    
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
+    
     private let viewModel = SettingViewModel()
     
     private let testingModeTapRequired: Int = 10
@@ -84,12 +85,17 @@ final class SettingViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setAction()
+        reigisterLanguageManager()
+    }
+    
+    deinit {
+        unregisterLanguageManager()
     }
     
     // 🎨 draw UI
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.title = "Setting"
+        localizedText()
         
         view.addSubview(settingStackView)
         settingStackView.addArrangedSubview(languageButton)
@@ -138,6 +144,16 @@ final class SettingViewController: UIViewController {
         }
     }
     
+    // 🧾 localization
+    private func localizedText() {
+        self.title = "setting_title".localize("設定", defaultValue: "Setting")
+        languageButton.setTitle("setting_button_language".localize("語言設定", defaultValue: "Language Setting"), for: .normal)
+        aboutButton.setTitle("setting_button_about".localize("關於 KKPlone", defaultValue: "About KKPlone"), for: .normal)
+        contactMeButton
+            .setTitle("setting_button_contact".localize("聯絡我", defaultValue: "Contact Me"), for: .normal)
+        logoutButton.setTitle("setting_button_logout".localize("登出", defaultValue: "Logout"), for: .normal)
+    }
+    
     // 🎬 set action
     private func setAction() {
         languageButton.addTarget(self, action: #selector(goLanguagePage), for: .touchUpInside)
@@ -153,13 +169,14 @@ final class SettingViewController: UIViewController {
     }
     
     @objc private func logout() {
-        let alertController =  UIAlertController(title: "Warning", message: "Logout will clear all personal information", preferredStyle: .alert)
         
-        let confirmAlertAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] _ in
+        let alertController =  UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "general_alert_logout_message".localize("登出將會清除您在 KKPortal 上的所有已存的個人資訊", defaultValue: "Logout will clear all personal information in KKPortal"), preferredStyle: .alert)
+        
+        let confirmAlertAction = UIAlertAction(title: "general_confrim".localize("確認", defaultValue: "Confirm"), style: .default) { [weak self] _ in
             self?.viewModel.logout()
         }
         
-        let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAlertAction = UIAlertAction(title: "general_cancel".localize("取消", defaultValue: "Cancel"), style: .cancel, handler: nil)
         
         alertController.addAction(confirmAlertAction)
         alertController.addAction(cancelAlertAction)
@@ -177,14 +194,17 @@ final class SettingViewController: UIViewController {
         if MFMailComposeViewController.canSendMail() {
             let emailVC = MFMailComposeViewController()
             emailVC.mailComposeDelegate = self
-            emailVC.setSubject("KKPortal Suggestion")
+            emailVC.setSubject("general_email_subject".localize("KKPortal 建議", defaultValue: "KKPortal Suggestion"))
             emailVC.setToRecipients(["william.cheng@kkday.com"])
-            emailVC.setMessageBody("<h3>My opinion is:</h3><p>\n</p>", isHTML: true)
+            
+            let bodyMessage = "general_email_message_body".localize("我的意見是", defaultValue: "My opinion")
+            emailVC.setMessageBody("<h3>\(bodyMessage) :</h3><p>\n</p>", isHTML: true)
             present(emailVC, animated: true, completion: nil)
             
         } else {
-            let alertViewController = UIAlertController(title: "Warning", message: "Please open your email service", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            let alertViewController = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: "general_alert_email_message".localize("請開啟您的 email 服務", defaultValue: "Please open your email service"), preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default, handler: nil)
             alertViewController.addAction(alertAction)
             present(alertViewController, animated: true, completion: nil)
         }

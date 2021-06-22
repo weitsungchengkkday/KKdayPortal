@@ -5,142 +5,82 @@
 //  Created by KKday on 2020/12/21.
 //  Copyright © 2020 WEI-TSUNG CHENG. All rights reserved.
 //
-
+//
 import Foundation
+import UIKit
+
+extension FileManager {
+    static var documentDirectoryURL: URL {
+        `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+}
 
 struct FileAdministrator {
-    
-    let baseURL: URL
-    let path: String?
-    
-    private var baseURLPath: URL {
-        var fileURL: URL = baseURL
-        if let path = path {
-            fileURL = fileURL.appendingPathComponent(path)
-        }
-        return fileURL
-    }
-    
-    init?(baseURL: URL? = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first, path: String? = nil) {
-        
-        guard let url = baseURL else {
-            print("🗄❌ init FileAdministrator failed")
-            return nil
-        }
-        self.baseURL = url
-        self.path = path
-    }
-    
-    func createDirectory(withName folderName: String) -> Bool {
-        
-        var fileURL: URL = baseURLPath
-        fileURL = fileURL.appendingPathComponent(folderName)
-        
+    func createDirectoryWithURL(withName documentName: String, withURL directoryURL: URL, withAttribute attributes: [FileAttributeKey: Any]? = nil) -> URL? {
+        let documentURL = directoryURL.appendingPathComponent(documentName, isDirectory: true)
         do {
-            try FileManager.default.createDirectory(at: fileURL, withIntermediateDirectories: true, attributes: nil)
-            return true
+            try FileManager.default.createDirectory(at: documentURL, withIntermediateDirectories: true, attributes: attributes)
+            return documentURL
         } catch {
-            print("🗄⚠️ create directory \(folderName) failed, error: \(error)")
-            return false
-        }
-    }
-    
-    
-    func writeTextFile(withName fileName: String, fileContent: String, canOverwrite: Bool) -> Bool {
-        
-        if checkPathExist(withName: fileName) && !canOverwrite {
-            print("🗄⚠️ file \(fileName) is already exist")
-            return false
-        }
-        
-        var fileURL: URL = baseURLPath
-        fileURL = fileURL.appendingPathComponent(fileName)
-        
-        do {
-            try fileContent.write(to: fileURL, atomically: false, encoding: .utf8)
-            return true
-        } catch {
-            print("🗄⚠️ create textFile \(fileName) failed, error: \(error)")
-            return false
-        }
-    }
-    
-    func readTextFile(withName fileName: String) -> String? {
-        
-        var fileURL: URL = baseURLPath
-        fileURL = fileURL.appendingPathComponent(fileName)
-        
-        do {
-            let text = try String(contentsOf: fileURL)
-            return text
-            
-        } catch {
-            print("🗄⚠️ read textFile \(fileName) failed, error: \(error)")
+            print("🗄⚠️ create directory \(String(describing: documentURL)) failed, error: \(error)")
             return nil
         }
     }
-    
-    func removeFile(withName fileName: String) -> Bool {
-        
-        var fileURL: URL = baseURLPath
-        fileURL = fileURL.appendingPathComponent(fileName)
-        
+    func createDirectoryAtPath(atPath path: String, withAttribute attributes: [FileAttributeKey: Any]? = nil) -> Bool {
+        do {
+            try
+                FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: attributes)
+            return true
+        } catch {
+            print("🗄⚠️ create directory with path \(path) failed, error: \(error)")
+            return false
+        }
+    }
+    func createFileAtPath(atPath path: String, withData data: Data?, withAttribute attributes: [FileAttributeKey: Any]? = nil) {
+        FileManager.default.createFile(atPath: path, contents: data, attributes: attributes)
+    }
+    func removeFileWithURL(withName fileName: String, withExtension fileExtension: String, withURL directoryURL: URL) -> URL? {
+        let fileURL = directoryURL
+            .appendingPathComponent(fileName)
+            .appendingPathExtension(fileExtension)
         do {
             try FileManager.default.removeItem(at: fileURL)
-            return true
+            return fileURL
         } catch {
             print("🗄⚠️ remove file \(fileName) failed, error: \(error)")
+            return nil
+        }
+    }
+    func removeFileAtPath(atPath path: String) -> Bool {
+        do {
+            try FileManager.default.removeItem(atPath: path)
+            return true
+        } catch {
+            print("🗄⚠️ remove file at path \(path) failed, error: \(error)")
             return false
         }
     }
-    
-    func removeDirectory(withName folderName: String) {
-        
-        var fileURL: URL = baseURLPath
-        fileURL = fileURL.appendingPathComponent(folderName)
-       
+    func removeDirectoryWithURL(withName documentName: String, withURL directoryURL: URL) -> URL? {
+        let documentURL: URL = directoryURL.appendingPathComponent(documentName, isDirectory: true)
         do {
-            try FileManager.default.removeItem(at: fileURL)
+            try FileManager.default.removeItem(at: documentURL)
+            return documentURL
         } catch {
-            print("🗄⚠️ remove directory \(folderName) failed, error: \(error)")
-        }
-    }
-    
-    func listFileNames() -> [String]? {
-        
-        let fileURL: URL = baseURLPath
-        
-        do {
-            let fileNames = try FileManager.default.contentsOfDirectory(atPath: fileURL.path)
-            return fileNames
-        } catch {
-            print("🗄⚠️ list file names \(path ?? "document") failed, error: \(error)")
+            print("🗄⚠️ remove directory \(documentName) failed, error: \(error)")
             return nil
         }
     }
-    
-    func getAbsolutePath(withName fileName: String? = nil) -> URL? {
-        
-        if !checkPathExist(withName: fileName) {
-            return nil
+    func removeDirectoryAtPath(atPath path: String) -> Bool {
+        do {
+            try FileManager.default.removeItem(atPath: path)
+            return true
+        } catch {
+            print("🗄⚠️ remove directory at path \(path) failed, error: \(error)")
+            return false
         }
-        
-        var fileURL: URL = baseURLPath
-        if let fileName = fileName {
-            fileURL = fileURL.appendingPathComponent(fileName)
-        }
-        
-        return fileURL
     }
-    
-    func checkPathExist(withName fileName: String? = nil) -> Bool {
-        
-        var fileURL: URL = baseURLPath
-        if let fileName = fileName {
-            fileURL = fileURL.appendingPathComponent(fileName)
-        }
-    
-        if FileManager.default.fileExists(atPath: fileURL.path) {
+    func isFileExistAtPath(atPath path: String) -> Bool {
+        if FileManager.default.fileExists(atPath: path) {
             print("🗄✅ great! path exists")
             return true
         } else {
@@ -148,5 +88,22 @@ struct FileAdministrator {
             return false
         }
     }
-    
+    func contentsOfDirectoryWithURL(withURL directoryURL: URL, withResource resource :[URLResourceKey]? = nil, withOption option: FileManager.DirectoryEnumerationOptions = []) -> [URL]? {
+        do {
+            let fileNames = try FileManager.default.contentsOfDirectory(at: directoryURL, includingPropertiesForKeys: resource, options: option)
+            return fileNames
+        } catch {
+            print("🗄⚠️ list content of directory at URL \(directoryURL) failed, error: \(error)")
+            return nil
+        }
+    }
+    func contentsOfDirectoryAtPath(atPath path: String) -> [String]? {
+        do {
+            let fileNames = try FileManager.default.contentsOfDirectory(atPath: path)
+            return fileNames
+        } catch {
+            print("🗄⚠️ list content of directory at path \(path) failed, error: \(error)")
+            return nil
+        }
+    }
 }
