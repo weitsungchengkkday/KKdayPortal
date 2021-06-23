@@ -42,7 +42,6 @@ final class UserGuideDetailViewController: UIViewController, Localizable {
     
     lazy var ploneSpecButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Plone Spec", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -53,7 +52,6 @@ final class UserGuideDetailViewController: UIViewController, Localizable {
     
     lazy var twilioIntroButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("What is Twilio?", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -64,7 +62,6 @@ final class UserGuideDetailViewController: UIViewController, Localizable {
     
     lazy var twilioSpecButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Twilio Spec", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -94,7 +91,7 @@ final class UserGuideDetailViewController: UIViewController, Localizable {
         super.viewDidLoad()
         setupUI()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
         
     }
     
@@ -119,8 +116,11 @@ final class UserGuideDetailViewController: UIViewController, Localizable {
     }
     // 🧾 localization
     private func localizedText() {
-        startToUseButton.setTitle("Start to Use KKportal (read me first)", for: .normal)
-        ploneIntroButton.setTitle("What is Plone?", for: .normal)
+        startToUseButton.setTitle("user_guide_detail_button_start_kkportal".localize("開始使用 KKportal (請先讀我)", defaultValue: "Start to Use KKportal (read me first)"), for: .normal)
+        ploneIntroButton.setTitle("user_guide_detail_button_plone".localize("什麼是 Plone?", defaultValue: "What is Plone?"), for: .normal)
+        ploneSpecButton.setTitle("user_guide_detail_button_plone_spec".localize("Plone 規格", defaultValue: "Plone Spec"), for: .normal)
+        twilioIntroButton.setTitle("user_guide_detail_button_twilio".localize("什麼是 Twilio?", defaultValue: "What is Twilio?"), for: .normal)
+        twilioSpecButton.setTitle("user_guide_detail_button_twilio_spec".localize("Twilio 規格", defaultValue: "Twilio Spec"), for: .normal)
     }
     
     private func setAction() {

@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol Localizable: class {
+protocol Localizable: AnyObject {
     var observerLanguageChangedNotification: NSObjectProtocol? { get set }
     func refreshLanguage(_ nofification: Notification)
 }
 
 extension Localizable where Self: UIViewController {
 
-    func reigisterLanguageManager() {
+    func registerLanguageManager() {
         let notificationCenter = NotificationCenter.default
 
         observerLanguageChangedNotification = notificationCenter.addObserver(forName: LanguageManager.NotificationChangeLanguageName, object: nil, queue: nil, using: { [weak self] (notification) in

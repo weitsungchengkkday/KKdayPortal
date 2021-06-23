@@ -47,3 +47,53 @@
 "twilio_service_alert_microphone_permission_message" = "マイクを使用することが許可されていません";
 "twilio_service_alert_without_microphone" = "マイクを継続して使用しないでください";
 "twilio_service_alert_settings" = "セットアップ";
+
+"user_guide_detail_button_start_kkportal" = "開始KKportal（私をお読みください）";
+"user_guide_detail_button_plone" = "Ploneは何ですか？";
+"user_guide_detail_button_plone_spec" = "Ploneの仕様";
+"user_guide_detail_button_twilio" = "Twilioは何ですか？";
+"user_guide_detail_button_twilio_spec" = "Twilioの仕様";
+
+"start_use_textview_title" = "使用を開始します";
+"start_use_textview_content_one" = "KKporalは、設定データによって起動され、ユーザーはHTTP [GET]の方法で設定データを取得するためにリンクを提供しなければなりません。応答データは、以下のように文字列をUTF-8デコードすることができなければなりません。";
+"start_use_textview_content_two" = "＃{{....}}の手段は、あなたがあなた自身の情報を提供する必要があります";
+"start_use_textview_content_three" = "注意
+        あなたはPloneのウェブサイトをお持ちでない場合は0 KKPortal制限ユーザーは、Ploneのユーザーである必要があり、それを適用してください。
+
+        あなたのPloneのウェブサイトは、設定リンクを提供するだけでなく、公開されていない場合は、ログインする1. KKPortal利用Ploneの認可は、あなたはまた、ログインページにfilloutアカウントとパスワードを必要とします
+               
+        2. KKPortalはCTIサービス（コール）とポータルサービス（ウェブサーフィン）を提供します
+
+        ポータルサービスを除き3.あなたがそれを必要としない場合、あなたは他の人を削除することができます。 （あなたはCTIサービスを必要としない場合には、例えば)";
+"plone_intro_textview_title" = "Ploneのイントロ";
+"plone_intro_textview_content_one" = "PloneはZopeのアプリケーションサーバ上に構築され、フリーでオープンソースのコンテンツ管理システムです。 Ploneは「エンタープライズCMS」として位置付けされており、一般的にイントラネットのために、大規模な組織のWebプレゼンスの一部として使用されています。 （ソース：https://zh.wikipedia.org/wiki/Plone）";
+"plone_intro_textview_content_two" = "1. Ploneのは何ですか？：";
+"plone_intro_textview_content_three" = "2.迅速なPloneのウェブサイトを開始する方法？：";
+"plone_intro_textview_content_four" = "3.Ploneのコンテンツを操作する？：";
+
+"plone_spec_textview_title" = "スペック";
+"plone_spec_textview_content" = "1.サポートPloneのバージョン：
+            。 Ploneの5.1.6
+            。 CMF 2.2.13
+            。 Zopeの2.13.29
+            。 Pythonの2.7.12
+            。 PIL 6.1.0
+        
+        2. Ploneの拡張モジュールをインストールする必要があります。
+            。 plone.restapi（PloneのためのRESTfulハイパーメディアAPI  - 。（plone.restapi 5.1.0））
+            。多言語サポート（多言語モジュール機能 - （plone.app.multilingual 5.2.3）
+               
+        3.現在サポートPloneの言語：
+            。 ZH-TW（繁體中文）
+
+        あなたがKKPortalを使用するときは、設定データであなたのPloneのホストURLを提供する必要が。";
+"twilio_intro_textview_title" = "Twilioイントロ";
+"twilio_intro_textview_content_one" = "Twilioは、通信のための開発プラットフォームです。私たちは、Twilio TwiML APPへのクライアントを接続するための私たちのaccessToken（のiOS APP）を作成することができます。";
+"twilio_intro_textview_content_two" = "1. Twilioは何ですか？：";
+"twilio_intro_textview_content_three" = "2.twilioアクセストークンを作成する？：";
+"twilio_intro_textview_content_four " = "3. TwiML APPは何ですか？：";
+"twilio_spec_textview_title" = "スペック";
+"twilio_spec_textview_content" = "1. iOSのSDKのバージョン：
+            。 TwilioVoice 6.2.1
+
+        あなたがKKPortalを使用するときは、設定データであなたのtwilio accessToken URLを提供する必要が。";

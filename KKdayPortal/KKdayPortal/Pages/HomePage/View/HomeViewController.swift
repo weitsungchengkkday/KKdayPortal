@@ -45,7 +45,7 @@ class HomeViewController: UIViewController, Localizable {
         
         setupUI()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
         addChildViewController()
         
     }

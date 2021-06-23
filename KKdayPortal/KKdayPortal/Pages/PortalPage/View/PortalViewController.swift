@@ -27,7 +27,7 @@ final class PortalViewController: UIViewController, Localizable {
         super.viewDidLoad()
         setupUI()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
         addChildViewController()
     }
     

@@ -41,7 +41,7 @@ final class ServiceListViewController: UIViewController, Localizable {
         super.viewDidLoad()
         setupUI()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
         bindViewModel()
         viewModel.loadPortalData()
     }

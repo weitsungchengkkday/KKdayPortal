@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class PloneIntroViewController: UIViewController {
-   
+final class PloneIntroViewController: UIViewController, Localizable {
+    
     // 🏞 UI element
     
     lazy var backgroundImageVeiw: UIImageView = {
@@ -28,7 +28,7 @@ final class PloneIntroViewController: UIViewController {
         return stv
     }()
     
-    lazy var noticeTextField: UITextView = {
+    lazy var noticeTextView: UITextView = {
         let txv = UITextView()
         txv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
         txv.layer.cornerRadius = 20
@@ -39,23 +39,33 @@ final class PloneIntroViewController: UIViewController {
         let urlTwo: URL = URL(string: "https://docs.plone.org/quickstart/index.html")!
         let urlThree: URL = URL(string: "https://docs.plone.org/working-with-content/index.html")!
         
-        let text = """
-        Plone Intro
-        
+        let ploneIntroTitle = "plone_intro_textview_title".localize("Plone的介紹", defaultValue: "Plone Intro")
+        let ploneIntroContentOne = "plone_intro_textview_content_one".localize("""
+        Plone的是建立在Zope的應用服務器之上的自由和開放源碼的內容管理系統。 Plone的定位為“企業網站管理系統”，通常用於企業內部網和大型企業的網站存在的一部分。 （來源：https://zh.wikipedia.org/wiki/Plone）
+        """, defaultValue: """
         Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an "Enterprise CMS" and is commonly used for intranets and as part of the web presence of large organizations. (source : https://zh.wikipedia.org/wiki/Plone)
+        """)
+        let ploneIntroContentTwo = "plone_intro_textview_content_two".localize("1.什麼是Plone的？：", defaultValue: "1. What is Plone?:")
+        let ploneIntroContentThree = "plone_intro_textview_content_three".localize("2.如何快速啟動Plone的網站？：", defaultValue: "2. How to quick start Plone Website?:")
+        let ploneIntroContentFour = "plone_intro_textview_content_four".localize("3.如何與Plone的內容合作？：", defaultValue: "3. How to work with Plone content?:")
         
-        1. What is Plone?:
-        \(urlOne.absoluteString)
+        let text = """
+        \(ploneIntroTitle)
         
-        2. How to quick start Plone Website?:
+        \(ploneIntroContentOne)
+        
+        \(ploneIntroContentTwo)
+           \(urlOne.absoluteString)
+        
+        \(ploneIntroContentThree)
            \(urlTwo.absoluteString)
                
-        3. How to work with Plone content?:
+        \(ploneIntroContentFour)
            \(urlThree.absoluteString)
         """
         let nsText = NSString(string: text)
         let contentRange = nsText.range(of: text)
-        let titleRange = nsText.range(of: "Plone Intro")
+        let titleRange = nsText.range(of: ploneIntroTitle)
         
         let linkRangeOne = nsText.range(of: urlOne.absoluteString)
         let linkRangeTwo = nsText.range(of: urlTwo.absoluteString)
@@ -81,26 +91,38 @@ final class PloneIntroViewController: UIViewController {
     lazy var comfirmButton: UIButton = {
         let btn = UIButton()
         btn.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        btn.setTitle("OK", for: .normal)
         btn.backgroundColor = #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 0.5)
         btn.layer.cornerRadius = 5
         return btn
     }()
+    
+    var observerLanguageChangedNotification: NSObjectProtocol?
+    
+    func refreshLanguage(_ nofification: Notification) {
+        localizedText()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setAction()
+        registerLanguageManager()
         bindViewModel()
+    }
+    
+    deinit {
+        unregisterLanguageManager()
     }
     
     // 🎨 draw UI
     private func setupUI() {
         
+        localizedText()
+        
         self.view.addSubview(backgroundImageVeiw)
         self.view.addSubview(noticeStackView)
-        noticeStackView.addArrangedSubview(noticeTextField)
+        noticeStackView.addArrangedSubview(noticeTextView)
         noticeStackView.addArrangedSubview(comfirmButton)
         
         backgroundImageVeiw.snp.makeConstraints { maker in
@@ -114,7 +136,7 @@ final class PloneIntroViewController: UIViewController {
             maker.bottom.equalToSuperview().offset(-60)
         }
         
-        noticeTextField.snp.makeConstraints { maker in
+        noticeTextView.snp.makeConstraints { maker in
             maker.width.equalToSuperview().offset(-10)
         }
         
@@ -125,7 +147,10 @@ final class PloneIntroViewController: UIViewController {
     }
     
     // 🧾 localization
-    private func localizedText() {}
+    private func localizedText() {
+        comfirmButton.setTitle("general_ok".localize("好", defaultValue: "OK"), for: .normal)
+        
+    }
     
     // 🎬 set action
     private func setAction() {

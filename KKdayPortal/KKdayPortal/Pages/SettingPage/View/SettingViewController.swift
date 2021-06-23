@@ -85,7 +85,7 @@ final class SettingViewController: UIViewController, Localizable {
         super.viewDidLoad()
         setupUI()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
     }
     
     deinit {

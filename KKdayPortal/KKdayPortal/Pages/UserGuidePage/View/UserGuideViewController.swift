@@ -89,7 +89,7 @@ final class UserGuideViewController: UIViewController, Localizable {
         super.viewDidLoad()
         setupUI()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
     }
     
     deinit {

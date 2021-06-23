@@ -248,7 +248,7 @@ final class TwilioServiceViewController: UIViewController, Localizable {
         toggleUIState(isEnabled: true, showCallControl: false)
         setUIElementDelegate()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
         createGestureRecognizer()
         
         // TVOAudioDevice must be set before performing any other actions with the SDK

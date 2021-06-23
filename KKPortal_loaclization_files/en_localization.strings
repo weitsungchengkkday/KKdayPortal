@@ -47,3 +47,53 @@
 "twilio_service_alert_microphone_permission_message" = "Microphone permission not granted";
 "twilio_service_alert_without_microphone" = "Continue without microphone";
 "twilio_service_alert_settings" = "Settings";
+
+"user_guide_detail_button_start_kkportal" = "Start to Use KKportal (read me first)";
+"user_guide_detail_button_plone" = "What is Plone?";
+"user_guide_detail_button_plone_spec" = "Plone Spec";
+"user_guide_detail_button_twilio" = "What is Twilio?";
+"user_guide_detail_button_twilio_spec" = "Twilio Spec";
+
+"start_use_textview_title" = "Start to use";
+"start_use_textview_content_one" = "KKporal is start up by config data, user must provide link in order to get config data by HTTP [GET] method. Response data must can be utf-8 decode to String as below:";
+"start_use_textview_content_two" = "# {{ .... }}  means, you need to provide your own Info";
+"start_use_textview_content_three" = "Note
+        0. KKPortal limit user must be a Plone user, if you don't have Plone website, please apply it.
+
+        1. KKPortal use plone authorization to login, if your plone website is not public, besides providing config link you also need to fillout account and password in login page
+               
+        2. KKPortal provide cti service (call) and portal service (web surfing)
+
+        3. Except for portal service, you can remove others if you don't need it. (e.g. if you don‘t need cti service)";
+"plone_intro_textview_title" = "Plone Intro";
+"plone_intro_textview_content_one" = "Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an 'Enterprise CMS' and is commonly used for intranets and as part of the web presence of large organizations. (source : https://zh.wikipedia.org/wiki/Plone)";
+"plone_intro_textview_content_two" = "1. What is Plone?:";
+"plone_intro_textview_content_three" = "2. How to quick start Plone Website?:";
+"plone_intro_textview_content_four" = "3. How to work with Plone content?:";
+
+"plone_spec_textview_title" = "Spec";
+"plone_spec_textview_content" = "1. Support Plone Version:
+            . Plone 5.1.6
+            . CMF 2.2.13
+            . Zope 2.13.29
+            . Python 2.7.12
+            . PIL 6.1.0
+        
+        2. Must install Plone Expansion Module:
+            . plone.restapi (RESTful hypermedia API for Plone. – (plone.restapi 5.1.0))
+            . Multilingual Support(Multi-language module function – (plone.app.multilingual 5.2.3)
+               
+        3. Current Support Plone Language:
+            . zh-tw (繁體中文)
+
+        When you use KKPortal, you need provide your plone host URL in config data.";
+"twilio_intro_textview_title" = "Twilio Intro";
+"twilio_intro_textview_content_one" = "Twilio is a developer platform for communications. We can create our accessToken for connecting client (iOS APP) to Twilio TwiML APP.";
+"twilio_intro_textview_content_two" = "1. What is Twilio?:";
+"twilio_intro_textview_content_three" = "2. How to create twilio access token?:";
+"twilio_intro_textview_content_four " = "3. What is TwiML APP?:";
+"twilio_spec_textview_title" = "Spec";
+"twilio_spec_textview_content" = "1. iOS SDK Version:
+            . TwilioVoice 6.2.1
+
+        When you use KKPortal, you need provide your twilio accessToken URL in config data.";

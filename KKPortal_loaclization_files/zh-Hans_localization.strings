@@ -47,3 +47,53 @@
 "twilio_service_alert_microphone_permission_message" = "麦克风未被允许使用";
 "twilio_service_alert_without_microphone" = "继续不使用麦克风";
 "twilio_service_alert_settings" = "设定";
+
+"user_guide_detail_button_start_kkportal" = "开始使用 KKportal (请先读我)";
+"user_guide_detail_button_plone" = "什么是 Plone?";
+"user_guide_detail_button_plone_spec" = "Plone 规格";
+"user_guide_detail_button_twilio" = "什么是 Twilio?";
+"user_guide_detail_button_twilio_spec" = "Twilio 规格";
+
+"start_use_textview_title" = "开始使用";
+"start_use_textview_content_one" = "KKporal是由配置数据启动时，用户必须在为了通过HTTP [GET]方法来获取配置数据提供链路。响应数据必须可以是UTF-8解码为字符串如下：";
+"start_use_textview_content_two" = "＃{{...}}的手段，您需要提供自己的信息";
+"start_use_textview_content_three" = "笔记
+        0 KKPortal限制用户必须是Plone的用户，如果您还没有Plone的网站，请注意应用。
+
+        1. KKPortal Plone的使用授权登录，如果你的Plone网站是不公开的，除了提供配置链接，您还需要fillout账号和密码在登录页面
+               
+        2. KKPortal提供CTI服务（呼叫）和门户服务（网页浏览）
+
+        3.除门户服务，您可以删除别人，如果你不需要它。 （例如，如果你不需要CTI服务)";
+"plone_intro_textview_title" = "Plone 的介绍";
+"plone_intro_textview_content_one" = "Plone的是建立在Zope的应用服务器之上的自由和开放源码的内容管理系统。 Plone的定位为“企业网站管理系统”，通常用于企业内部网和大型企业的网站存在的一部分。 （来源：https://zh.wikipedia.org/wiki/Plone）";
+"plone_intro_textview_content_two" = "1.什么是Plone的？：";
+"plone_intro_textview_content_three" = "2.如何快速启动Plone的网站？：";
+"plone_intro_textview_content_four" = "3.如何与Plone的内容合作？：";
+
+"plone_spec_textview_title" = "规格";
+"plone_spec_textview_content" = "1.支持Plone的版本：
+            。 Plone的5.1.6
+            。 CMF 2.2.13
+            。 Zope的29年2月13日
+            。 Python的2.7.12
+            。 PIL 6.1.0
+        
+        2.必须安装的Plone扩展模块：
+            。 plone.restapi（REST的超媒体API为Plone  - （plone.restapi 5.1.0））
+            。多语言支持（多语言模块功能 - （plone.app.multilingual 5.2.3）
+               
+        3.当前支持Plone的语言：
+            。 ZH-TW（繁体中文）
+
+        当您使用KKPortal，您需要提供配置数据你的Plone主机URL。";
+"twilio_intro_textview_title" = "Twilio简介";
+"twilio_intro_textview_content_one" = "Twilio是为通信开发平台。我们可以创建连接客户端的accessToken（iOS应用）到Twilio TwiML APP。";
+"twilio_intro_textview_content_two" = "1.什么是Twilio？：";
+"twilio_intro_textview_content_three" = "2.如何创建twilio访问令牌？：";
+"twilio_intro_textview_content_four " = "3.什么是TwiML APP ?:";
+"twilio_spec_textview_title" = "规格";
+"twilio_spec_textview_content" = "1. iOS版SDK版本：
+            。 TwilioVoice 6.2.1
+
+        当您使用KKPortal，您需要提供您的twilio的accessToken URL在配置数据。";

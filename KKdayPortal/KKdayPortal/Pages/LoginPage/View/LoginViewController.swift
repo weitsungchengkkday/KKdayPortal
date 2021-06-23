@@ -181,7 +181,7 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
         setupUIDelegate()
         createGestureRecognizer()
         setAction()
-        reigisterLanguageManager()
+        registerLanguageManager()
         registerKeyboard()
     }
     
