@@ -97,3 +97,12 @@
             . TwilioVoice 6.2.1
 
         When you use KKPortal, you need provide your twilio accessToken URL in config data.";
+
+"about_textview_title" = "About";
+"about_textview_title_content_one" = "KKPortal porvide a way to show plone website content on iOS APP. That means plone subjects (including Collection, Event, File, Folder, Image, Link, News Item, Page) can be shown properly on user's cell phone.";
+"about_textview_title_content_two" = "(Not support video and audio file presenting by now)";
+"about_textview_title_content_three" = " Version: 1.0.0
+        
+        Support Plone Version: 5.1.6
+        
+        Privacy policy:";

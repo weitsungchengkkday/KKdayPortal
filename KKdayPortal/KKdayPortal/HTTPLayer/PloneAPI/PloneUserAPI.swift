@@ -33,8 +33,15 @@ final class PloneUserAPI {
             "password": "\(password)"
         ]
         
-        let jsonData = try! JSONSerialization.data(withJSONObject: json)
-        r.body = DataBody(jsonData)
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: json)
+            r.body = DataBody(jsonData)
+            
+        } catch {
+            let error = HTTPError(code: .invalidRequest, request: r, response: nil, underlyingError: error)
+            completion(.failure(error))
+        }
+        
         r.method = .post
       
         loader.load(request: r) { result in

@@ -97,3 +97,12 @@
             。 TwilioVoice 6.2.1
 
         あなたがKKPortalを使用するときは、設定データであなたのtwilio accessToken URLを提供する必要が。";
+
+"about_textview_title" = "約";
+"about_textview_title_content_one" = "KKPortalは、iOSアプリのPloneのウェブサイトのコンテンツを表示する方法をporvide。 （コレクション、イベント、ファイル、フォルダ、画像、リンク、ニュース項目、ページを含む）ことを意味するPloneの被験者は、ユーザーの携帯電話上で適切に表示することができます。";
+"about_textview_title_content_two" = "（ビデオと今で提示したオーディオファイルをサポートしていません）";
+"about_textview_title_content_three" = " バージョン：1.0.0
+        
+        サポートPloneのバージョン：5.1.6
+        
+        個人情報保護方針：";

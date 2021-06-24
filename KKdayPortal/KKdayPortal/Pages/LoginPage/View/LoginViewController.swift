@@ -316,7 +316,7 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
         self.title = "home_title".localize("主頁", defaultValue: "Home")
         confirmButton.setTitle("general_confrim".localize("確認", defaultValue: "Confirm"), for: .normal)
         
-        portalConfigURLLabel.text = "Please enter your portal config URL".localize("請輸入您的 portal config URL", defaultValue: "Please enter your portal config URL")
+        portalConfigURLLabel.text = "login_label_config_URL".localize("請輸入您的 portal config URL", defaultValue: "Please enter your portal config URL")
         accountLabel.text = "login_label_account".localize("請輸入您的帳號 (可選)", defaultValue: "Please enter your account (optional)")
         passwordLabel.text = "login_label_password".localize("請輸入您的密碼 (可選)", defaultValue: "Please enter your password (optional)")
         memoTextView.text = "login_textview_memo".localize("如果網站支援以訪客方式登入, 您不需要輸入帳號和密碼", defaultValue: "If plone website support login as visitor, you do not need to enter account and password")

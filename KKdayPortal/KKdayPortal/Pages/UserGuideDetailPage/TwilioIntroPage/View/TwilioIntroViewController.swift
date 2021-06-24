@@ -101,7 +101,7 @@ final class TwilioIntroViewController: UIViewController, Localizable {
         let urlTwo: URL = URL(string: "https://www.twilio.com/docs/chat/create-tokens")!
         let urlThree: URL = URL(string: "https://www.twilio.com/docs/voice/twiml")!
         
-        let twilioIntroTitle = "Twilio Intro".localize("Twilio簡介", defaultValue: "Twilio Intro")
+        let twilioIntroTitle = "twilio_intro_textview_title".localize("Twilio簡介", defaultValue: "Twilio Intro")
         let twilioContentOne = "twilio_intro_textview_content_one".localize("Twilio是為通信開發平台。我們可以創建連接客戶端的accessToken（iOS應用）到Twilio TwiML APP。", defaultValue: "Twilio is a developer platform for communications. We can create our accessToken for connecting client (iOS APP) to Twilio TwiML APP.")
         let twilioContentTwo = "twilio_intro_textview_content_two".localize("1.什麼是Twilio？：", defaultValue: "1. What is Twilio?:")
         let twilioContentThree = "twilio_intro_textview_content_three".localize("2.如何創建twilio訪問令牌？：", defaultValue: "2. How to create twilio access token?:")

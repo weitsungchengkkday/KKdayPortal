@@ -66,10 +66,10 @@
 
         3.除門戶服務，您可以刪除別人，如果你不需要它。 （例如，如果你不需要CTI服務)";
 "plone_intro_textview_title" = "Plone的介绍";
-"plone_intro_textview_content_one" = "Plone的是建立在Zope的应用服务器之上的自由和开放源码的内容管理系统。 Plone的定位为“企业网站管理系统”，通常用于企业内部网和大型企业的网站存在的一部分。 （来源：https://zh.wikipedia.org/wiki/Plone）";
-"plone_intro_textview_content_two" = "1.什么是Plone的？：";
-"plone_intro_textview_content_three" = "2.如何快速启动Plone的网站？：";
-"plone_intro_textview_content_four" = "3.如何与Plone的内容合作？：";
+"plone_intro_textview_content_one" = "Plone的是建立在Zope的應用服務器之上的自由和開放源碼的內容管理系統。 Plone的定位為“企業網站管理系統”，通常用於企業內部網和大型企業的網站存在的一部分。 （來源：https://zh.wikipedia.org/wiki/Plone）";
+"plone_intro_textview_content_two" = "1.什麼是Plone的？：";
+"plone_intro_textview_content_three" = "2.如何快速啟動Plone的網站？：";
+"plone_intro_textview_content_four" = "3.如何與Plone的內容合作？：";
 
 "plone_spec_textview_title" = "規格";
 "plone_spec_textview_content" = "1.支持Plone的版本：
@@ -97,3 +97,12 @@
             。 TwilioVoice 6.2.1
 
         當您使用KKPortal，您需要提供您的twilio的accessToken URL在配置數據。";
+
+"about_textview_title" = "關於";
+"about_textview_title_content_one" = "KKPortal porvide的方式展示在iOS APP Plone的網站內容。這意味著Plone的科目（包括收集，事件，文件，文件夾，圖片，鏈接，新聞條目，頁）可以正常顯示用戶的手機上。";
+"about_textview_title_content_two" = "（不支持視頻和音頻文件呈現到現在）";
+"about_textview_title_content_three" = "  版本：1.0.0
+        
+        支持Plone的版本：5.1.6
+        
+        隱私政策：";

@@ -97,3 +97,12 @@
             。 TwilioVoice 6.2.1
 
         当您使用KKPortal，您需要提供您的twilio的accessToken URL在配置数据。";
+
+"about_textview_title" = "关于";
+"about_textview_title_content_one" = "KKPortal porvide的方式展示在iOS APP Plone的网站内容。这意味着Plone的科目（包括收集，事件，文件，文件夹，图片，链接，新闻条目，页）可以正常显示用户的手机上。";
+"about_textview_title_content_two" = "（不支持视频和音频文件呈现到现在）";
+"about_textview_title_content_three" = "版本：1.0.0
+        
+        支持Plone的版本：5.1.6
+        
+        隐私政策：";

@@ -156,7 +156,7 @@ extension Language {
         }
     }
     
-    // 被 languageBundleDirectory 取代
+    // 從 APP Bunble 取得的翻譯檔
     private var languageBundle: Bundle? {
         guard let path = Bundle.main.path(forResource: bundleName, ofType: "lproj") else {
             return nil
@@ -165,9 +165,8 @@ extension Language {
         return Bundle(path: path)
     }
     
-    // Load 從 web service 取得的翻譯檔
-    private var languageBundleDirectory: Bundle? {
-        
+    // 從 Web Service 取得的翻譯檔
+    private var languageBundleFromWebService: Bundle? {
         let directoryURL = FileManager.documentDirectoryURL
             .appendingPathComponent("Localization")
             .appendingPathComponent("\(bundleName)")
@@ -178,11 +177,24 @@ extension Language {
     
     public func localizeForLanguage(key: String, defaultValue: String = "", storyboardName: String = "", comment: String) -> String {
         
-        guard let bundle = languageBundleDirectory else {
+        let bundle: Bundle?
+        
+        if languageBundleFromWebService != nil {
+            print("📖 Translate use WebService file")
+            bundle = languageBundleFromWebService
+        } else if languageBundle != nil {
+            print("📖 Translate use APP Bundle file")
+            bundle = languageBundle
+        } else {
+            print("📖 Translate use default value")
+            bundle = nil
+        }
+        
+        guard let languageBundle = bundle else {
             return defaultValue
         }
         
-        return bundle.localizedString(forKey: key, value: defaultValue, table: storyboardName)
+        return languageBundle.localizedString(forKey: key, value: defaultValue, table: storyboardName)
     }
 }
 

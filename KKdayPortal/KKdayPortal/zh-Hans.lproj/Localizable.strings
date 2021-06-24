@@ -1,8 +1,108 @@
-/* 
-  Localizable.strings
-  KKdayPortal
 
-  Created by WEI-TSUNG CHENG on 2019/12/15.
-  Copyright © 2019 WEI-TSUNG CHENG. All rights reserved.
-*/
+"user_guide_label_title" = "欢迎来到 KKPortal！";
+"user_guide_button_login" = "登录";
+"user_guide_button_usage_guide" = "使用指南";
 
+"home_title" = "主页";
+
+"portal_title" = "入口網站";
+
+"service_list_title" = "服務列表";
+"service_button_phone" = "KK 電話";
+
+"setting_title" = "设定";
+"setting_button_language" = "语言设置";
+"setting_button_about" = "关于 KKPlone";
+"setting_button_contact" = "联络我";
+"setting_button_logout" = "登出";
+
+"general_alert_logout_message" = "登出将会清除您在 KKPortal 上的所有已存的个人资讯";
+"general_alert_email_message" = "请开启您的 email 服务";
+"general_email_subject" = "KKPortal 建议";
+"general_email_message_body" = "我的意见是";
+
+"general_confrim" = "确认";
+"general_cancel" = "取消";
+"general_ok" = "好";
+"general_warning" = "警告";
+
+"login_label_config_URL" = "请输入您的 portal config URL";
+"login_label_account" = "请输入您的帐号 (可选)";
+"login_label_password" = "请输入您的密码 (可选)";
+"login_textview_memo" = "如果网站支援以访客方式登入, 您不需要输入帐号和密码";
+"login_alert_URL_invalid" = "这不是可用的 URL, 请确认";
+"login_alert_plone_URL_invalid" = "Plone login URL 无效";
+"login_alert_get_portal_config_failed" = "无法取得 portal config";
+"login_alert_login_failed" = "登入不成功, 请确认您的 Plone 帐号和密码";
+
+"general_alert_jump_out_message" = "将离开 APP";
+"plone_sso_alert_message" = "请使用有效的 email account";
+
+"twilio_service_label_country" = "请选择办公室位置";
+"twilio_service_label_company_identifier" = "请选择办公室号码";
+"twilio_service_label_outgoing" = "请输入接听者号码";
+"twilio_service_label_mute" = "静音";
+"twilio_service_label_speaker" = "扩音";
+"twilio_service_alert_microphone_permission_title" = "KKPortal 声音";
+"twilio_service_alert_microphone_permission_message" = "麦克风未被允许使用";
+"twilio_service_alert_without_microphone" = "继续不使用麦克风";
+"twilio_service_alert_settings" = "设定";
+
+"user_guide_detail_button_start_kkportal" = "开始使用 KKportal (请先读我)";
+"user_guide_detail_button_plone" = "什么是 Plone?";
+"user_guide_detail_button_plone_spec" = "Plone 规格";
+"user_guide_detail_button_twilio" = "什么是 Twilio?";
+"user_guide_detail_button_twilio_spec" = "Twilio 规格";
+
+"start_use_textview_title" = "开始使用";
+"start_use_textview_content_one" = "KKporal是由配置数据启动时，用户必须在为了通过HTTP [GET]方法来获取配置数据提供链路。响应数据必须可以是UTF-8解码为字符串如下：";
+"start_use_textview_content_two" = "＃{{...}}的手段，您需要提供自己的信息";
+"start_use_textview_content_three" = "笔记
+        0 KKPortal限制用户必须是Plone的用户，如果您还没有Plone的网站，请注意应用。
+
+        1. KKPortal Plone的使用授权登录，如果你的Plone网站是不公开的，除了提供配置链接，您还需要fillout账号和密码在登录页面
+               
+        2. KKPortal提供CTI服务（呼叫）和门户服务（网页浏览）
+
+        3.除门户服务，您可以删除别人，如果你不需要它。 （例如，如果你不需要CTI服务)";
+"plone_intro_textview_title" = "Plone 的介绍";
+"plone_intro_textview_content_one" = "Plone的是建立在Zope的应用服务器之上的自由和开放源码的内容管理系统。 Plone的定位为“企业网站管理系统”，通常用于企业内部网和大型企业的网站存在的一部分。 （来源：https://zh.wikipedia.org/wiki/Plone）";
+"plone_intro_textview_content_two" = "1.什么是Plone的？：";
+"plone_intro_textview_content_three" = "2.如何快速启动Plone的网站？：";
+"plone_intro_textview_content_four" = "3.如何与Plone的内容合作？：";
+
+"plone_spec_textview_title" = "规格";
+"plone_spec_textview_content" = "1.支持Plone的版本：
+            。 Plone的5.1.6
+            。 CMF 2.2.13
+            。 Zope的29年2月13日
+            。 Python的2.7.12
+            。 PIL 6.1.0
+        
+        2.必须安装的Plone扩展模块：
+            。 plone.restapi（REST的超媒体API为Plone  - （plone.restapi 5.1.0））
+            。多语言支持（多语言模块功能 - （plone.app.multilingual 5.2.3）
+               
+        3.当前支持Plone的语言：
+            。 ZH-TW（繁体中文）
+
+        当您使用KKPortal，您需要提供配置数据你的Plone主机URL。";
+"twilio_intro_textview_title" = "Twilio简介";
+"twilio_intro_textview_content_one" = "Twilio是为通信开发平台。我们可以创建连接客户端的accessToken（iOS应用）到Twilio TwiML APP。";
+"twilio_intro_textview_content_two" = "1.什么是Twilio？：";
+"twilio_intro_textview_content_three" = "2.如何创建twilio访问令牌？：";
+"twilio_intro_textview_content_four " = "3.什么是TwiML APP ?:";
+"twilio_spec_textview_title" = "规格";
+"twilio_spec_textview_content" = "1. iOS版SDK版本：
+            。 TwilioVoice 6.2.1
+
+        当您使用KKPortal，您需要提供您的twilio的accessToken URL在配置数据。";
+
+"about_textview_title" = "关于";
+"about_textview_title_content_one" = "KKPortal porvide的方式展示在iOS APP Plone的网站内容。这意味着Plone的科目（包括收集，事件，文件，文件夹，图片，链接，新闻条目，页）可以正常显示用户的手机上。";
+"about_textview_title_content_two" = "（不支持视频和音频文件呈现到现在）";
+"about_textview_title_content_three" = "版本：1.0.0
+        
+        支持Plone的版本：5.1.6
+        
+        隐私政策：";
