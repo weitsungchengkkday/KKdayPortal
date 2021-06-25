@@ -9,7 +9,7 @@
 import UIKit
 import DolphinHTTP
 
-final class LoginViewController: UIViewController, Keyboarder, Localizable {
+final class LoginViewController: UIViewController, Keyboarder, Localizable, NetStatusProtocal {
     
     // 🏞 UI element
     
@@ -138,6 +138,12 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
         localizedText()
     }
     
+    var observerNetStatusChangedNotification: NSObjectProtocol?
+    
+    func noticeNetStatusChanged(_ nofification: Notification) {
+        checkNetStatus()
+    }
+    
     // ⌨️ Keyboarder
     
     var isKeyboardShown: Bool = false
@@ -181,8 +187,13 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
         setupUIDelegate()
         createGestureRecognizer()
         setAction()
+        
+        checkNetStatus()
+        
         registerLanguageManager()
+        registerNetStatusManager()
         registerKeyboard()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -208,7 +219,9 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
     
     deinit {
         unRegisterKeyboard()
+        unregisterNetStatusManager()
         unregisterLanguageManager()
+        
     }
     
     // 🎨 draw UI
@@ -313,7 +326,6 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable {
     
     // 🧾 localization
     private func localizedText() {
-        self.title = "home_title".localize("主頁", defaultValue: "Home")
         confirmButton.setTitle("general_confrim".localize("確認", defaultValue: "Confirm"), for: .normal)
         
         portalConfigURLLabel.text = "login_label_config_URL".localize("請輸入您的 portal config URL", defaultValue: "Please enter your portal config URL")

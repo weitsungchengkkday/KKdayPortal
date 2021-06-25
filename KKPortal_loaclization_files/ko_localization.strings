@@ -106,3 +106,7 @@
         Support Plone Version: 5.1.6
         
         Privacy policy:";
+
+"general_notice" = "Notice";
+"general_alert_no_internet_connection_message" = "The network connection cannot be detected at the moment, please check whether your network environment is normal";
+"general_ignore" = "Ignore";

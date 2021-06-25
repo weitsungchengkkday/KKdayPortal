@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         LanguageManager.shared.setup()
+        NetStatusManager.sharedIntance?.startMonitoring()
 
         loadLocalizationFileFromWebService()
         return true
@@ -73,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 switch result {
                 case .success(let data):
                     
-                    print(FileManager.documentDirectoryURL)
                     let fileAdmin = FileAdministrator()
                     let locationURL = FileManager.documentDirectoryURL
                         .appendingPathComponent("Localization")
@@ -101,9 +101,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         group.notify(queue: DispatchQueue.main) {
-            print("DONE")
-            
-            print(LanguageManager.shared.currentLanguage)
             NotificationCenter.default.post(name: LanguageManager.NotificationChangeLanguageName, object: LanguageManager.shared.currentLanguage, userInfo: nil)
         }
     }

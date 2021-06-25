@@ -106,3 +106,7 @@
         サポートPloneのバージョン：5.1.6
         
         個人情報保護方針：";
+
+"general_notice" = "通知";
+"general_alert_no_internet_connection_message" = "ネットワーク接続は、現時点では検出できない、ネットワーク環境が正常であるかどうかを確認してください";
+"general_ignore" = "無視します";

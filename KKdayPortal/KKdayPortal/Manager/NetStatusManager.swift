@@ -1,53 +1,25 @@
 //
-//  NetStatusManager.swift
-//  KKdayPortal
+//  NetStatus.swift
+//  Network-Framework-Notification-Version
 //
-//  Created by WEI-TSUNG CHENG on 2019/10/30.
-//  Copyright © 2019 com.inventory.kkday.www. All rights reserved.
+//  Created by KKday on 2021/6/25.
 //
+
+import Foundation
 import Network
 
 final class NetStatusManager {
     
-    static let shared = NetStatusManager()
-    
-    var monitor: NWPathMonitor?
-    var isMonitor = false
     var isMonitoring = false
+    var monitor: NWPathMonitor?
     
-    var didStartMonitoringHandler: (() -> Void)?
-    var didStopMonitoringHandler: (() -> Void)?
-    var netStatusChangeHandler: (() -> Void)?
+    static var sharedIntance: NetStatusManager? = NetStatusManager()
+    static var NotificationChangeNetStatusName: Notification.Name {
+        return Notification.Name.init("NetStatusChanged")
+    }
     
     private init() {
         
-    }
-    
-    func startMonitoring() {
-        guard !isMonitoring else {
-            return
-        }
-        
-        monitor = NWPathMonitor()
-        let queue = DispatchQueue(label: "NetStatus_Monitor")
-        monitor?.start(queue: queue)
-        // operate on background thread
-        monitor?.pathUpdateHandler = { _ in
-            self.netStatusChangeHandler?()
-        }
-        
-        isMonitoring = true
-        didStartMonitoringHandler?()
-    }
-    
-    func stopMonitoring() {
-        guard isMonitoring, let monitor = monitor else {
-           return
-        }
-        monitor.cancel()
-        self.monitor = nil
-        isMonitoring = false
-        didStopMonitoringHandler?()
     }
     
     deinit {
@@ -57,30 +29,47 @@ final class NetStatusManager {
     var isConnected: Bool {
         guard let monitor = monitor else {
             return false
+            
         }
+        
         return monitor.currentPath.status == .satisfied
     }
     
     var interfaceType: NWInterface.InterfaceType? {
         guard let monitor = monitor else { return nil }
-    
-        let interfaces: [NWInterface] = monitor.currentPath.availableInterfaces.filter { interface -> Bool in
-            return monitor.currentPath.usesInterfaceType(interface.type)
-        }
-        return interfaces.first?.type
+
+        return monitor.currentPath.availableInterfaces.filter {
+            monitor.currentPath.usesInterfaceType($0.type) }.first?.type
     }
     
     var availableInterfacesTypes: [NWInterface.InterfaceType]? {
         guard let monitor = monitor else { return nil }
-        return monitor.currentPath.availableInterfaces.map { interface -> NWInterface.InterfaceType in
-            return interface.type
-        }
+        return monitor.currentPath.availableInterfaces.map { $0.type }
     }
     
     var isExpensive: Bool {
         return monitor?.currentPath.isExpensive ?? false
     }
+    
+    func startMonitoring() {
+        guard !isMonitoring else { return }
+        monitor = NWPathMonitor()
+        
+        let queue = DispatchQueue(label: "NetStatus_Monitor")
+        monitor?.start(queue: queue)
+        
+        monitor?.pathUpdateHandler = { path in
+            
+            NotificationCenter.default.post(name: NetStatusManager.NotificationChangeNetStatusName, object: path, userInfo: nil)
+        }
+        
+        isMonitoring = true
+    }
+    
+    func stopMonitoring() {
+        guard isMonitoring, let monitor = monitor else { return }
+        monitor.cancel()
+        self.monitor = nil
+        isMonitoring = false
+    }
 }
-
-
-

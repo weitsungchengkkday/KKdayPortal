@@ -179,6 +179,9 @@
 		C6B1B11926806F3400360E1C /* LocalizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B11826806F3300360E1C /* LocalizationAPI.swift */; };
 		C6B1B11A26806F3400360E1C /* LocalizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B11826806F3300360E1C /* LocalizationAPI.swift */; };
 		C6B1B11B26806F3400360E1C /* LocalizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B11826806F3300360E1C /* LocalizationAPI.swift */; };
+		C6B1B1692685CABA00360E1C /* NetStatusProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */; };
+		C6B1B16A2685CABB00360E1C /* NetStatusProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */; };
+		C6B1B16B2685CABB00360E1C /* NetStatusProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */; };
 		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
@@ -528,6 +531,7 @@
 		C6B1B1212681080800360E1C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6B1B1222681081100360E1C /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C6B1B1232681081100360E1C /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatusProtocal.swift; sourceTree = "<group>"; };
 		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		C6B213E7261EEE6600981446 /* PloneFileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileAPI.swift; sourceTree = "<group>"; };
 		C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneImageAPI.swift; sourceTree = "<group>"; };
@@ -1234,6 +1238,7 @@
 			children = (
 				F454488B23A55017001B8D31 /* Localizable.swift */,
 				F44CD6D224162E2500A35808 /* FileNameProtocol.swift */,
+				C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2388,6 +2393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C631060325B57ADA0067F72B /* TestingViewModel.swift in Sources */,
+				C6B1B1692685CABA00360E1C /* NetStatusProtocal.swift in Sources */,
 				C631060425B57ADA0067F72B /* PloneImageObject.swift in Sources */,
 				C631060525B57ADA0067F72B /* ConfigModel.swift in Sources */,
 				C631060625B57ADA0067F72B /* FileAdministrator.swift in Sources */,
@@ -2549,6 +2555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */,
+				C6B1B16B2685CABB00360E1C /* NetStatusProtocal.swift in Sources */,
 				F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */,
 				F44E8C7423B88AA30032C6BE /* DateFormatterExtension.swift in Sources */,
 				C63D27D52590411500CFF8A8 /* FileAdministrator.swift in Sources */,
@@ -2710,6 +2717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F457417F23D58F4E00FB5EEC /* TestingViewModel.swift in Sources */,
+				C6B1B16A2685CABB00360E1C /* NetStatusProtocal.swift in Sources */,
 				F45446F6238F6B04001B8D31 /* PloneImageObject.swift in Sources */,
 				F457416723D5463E00FB5EEC /* ConfigModel.swift in Sources */,
 				C63D27D42590411500CFF8A8 /* FileAdministrator.swift in Sources */,

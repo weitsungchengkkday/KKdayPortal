@@ -106,3 +106,7 @@
         支持Plone的版本：5.1.6
         
         隐私政策：";
+
+"general_notice" = "注意";
+"general_alert_no_internet_connection_message" = "网络连接不能在瞬间被检测到，请检查您的网络环境是否正常";
+"general_ignore" = "忽略";
