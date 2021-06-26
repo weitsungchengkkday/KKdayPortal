@@ -72,6 +72,7 @@ final class UserGuideViewController: UIViewController, Localizable {
     var observerLanguageChangedNotification: NSObjectProtocol?
     
     func refreshLanguage(_ nofification: Notification) {
+        
         localizedText()
     }
 

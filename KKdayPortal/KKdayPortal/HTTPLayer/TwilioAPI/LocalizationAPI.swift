@@ -23,8 +23,7 @@ final class LocalizationAPI {
         r.method = .get
         r.host = url.host
         r.path = "/assets/\(language)" + "_" + "localization" + ".strings"
-        
-        print(r.url)
+    
         loader.load(request: r) { result in
             switch result {
             case .success(let response):
