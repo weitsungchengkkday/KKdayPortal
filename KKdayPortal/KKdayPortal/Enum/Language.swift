@@ -177,11 +177,15 @@ extension Language {
     
     public func localizeForLanguage(key: String, defaultValue: String = "", storyboardName: String = "", comment: String) -> String {
         
-        let bundle: Bundle?
+        var bundle: Bundle? = nil
         
-        if languageBundleFromWebService != nil {
-            print("📖 Translate use WebService file")
-            bundle = languageBundleFromWebService
+        if LanguageManager.shared.webServiceLanguageLoad ?? false {
+            
+            if languageBundleFromWebService != nil {
+                print("📖 Translate use WebService file")
+                bundle = languageBundleFromWebService
+            }
+
         } else if languageBundle != nil {
             print("📖 Translate use APP Bundle file")
             bundle = languageBundle

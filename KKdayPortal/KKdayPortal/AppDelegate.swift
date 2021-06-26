@@ -8,6 +8,7 @@
 
 import UIKit
 import DolphinHTTP
+import Foundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -64,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let group = DispatchGroup()
-        let langs: [String] = ["en", "zh-Hans", "zh-Hant", "zh-HK", "ja", "ko", "vi"]
+        let langs: [String] = ["en", "zh-Hans", "zh-Hant", "zh-HK", "ja", "ko", "vi", "th"]
         
         for lang in langs {
             
@@ -81,15 +82,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     let url = locationURL
                         .appendingPathComponent("\(lang).lproj")
-                        .appendingPathComponent("Localizable")
+                        
+                    print(url)
+                    
+                    let url2 = url.appendingPathComponent("Localizable")
                         .appendingPathExtension("strings")
                     
-                    do {
-                        try data.write(to: url)
-                        
-                    } catch {
-                        print("⚠️ write localization \(lang)  file failed, error: \(error)")
+                    DispatchQueue.main.async {
+                        do {
+                            LanguageManager.shared.webServiceLanguageLoad = true
+                            try data.write(to: url2)
+                            let v1 = Bundle(path: url.path)?.localizedString(forKey: "user_guide_label_title", value: "aaa", table: nil)
+                            print(v1 ?? "")
+                        } catch {
+                            print("⚠️ write localization \(lang)  file failed, error: \(error)")
+                        }
                     }
+                    
+                    
                     
                 case .failure(let error):
                     print("⚠️ get localization \(lang) file failed, error: \(error)")

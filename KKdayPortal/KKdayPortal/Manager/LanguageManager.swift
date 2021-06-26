@@ -25,6 +25,8 @@ final class LanguageManager {
         }
     }
     
+    var webServiceLanguageLoad: Bool? = false
+    
     private init() {
         
     }
