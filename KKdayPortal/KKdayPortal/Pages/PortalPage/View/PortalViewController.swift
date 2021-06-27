@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-final class PortalViewController: UIViewController, Localizable {
+final class PortalViewController: UIViewController, Localizable, NetStatusProtocal {
     
     // 🏞 UI element
     private lazy var portalContainerView: UIView = {
@@ -23,15 +23,27 @@ final class PortalViewController: UIViewController, Localizable {
         localizedText()
     }
     
+    var observerNetStatusChangedNotification: NSObjectProtocol?
+    
+    func noticeNetStatusChanged(_ nofification: Notification) {
+        checkNetStatusSnackBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setAction()
         registerLanguageManager()
+        registerNetStatusManager()
         addChildViewController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        checkNetStatusSnackBar()
+    }
+    
     deinit {
+        unregisterNetStatusManager()
         unregisterLanguageManager()
     }
     

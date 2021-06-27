@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-final class ServiceListViewController: UIViewController, Localizable {
+final class ServiceListViewController: UIViewController, Localizable, NetStatusProtocal {
     
     // 🏞 UI element
     lazy var servicesStackView: UIStackView = {
@@ -37,16 +37,28 @@ final class ServiceListViewController: UIViewController, Localizable {
     
     private let viewModel = ServiceListViewModel()
     
+    var observerNetStatusChangedNotification: NSObjectProtocol?
+    
+    func noticeNetStatusChanged(_ nofification: Notification) {
+        checkNetStatusSnackBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setAction()
         registerLanguageManager()
+        registerNetStatusManager()
         bindViewModel()
         viewModel.loadPortalData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        checkNetStatusSnackBar()
+    }
+    
     deinit {
+        unregisterNetStatusManager()
         unregisterLanguageManager()
     }
     

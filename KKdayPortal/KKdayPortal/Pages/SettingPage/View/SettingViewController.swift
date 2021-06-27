@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import MessageUI
 
-final class SettingViewController: UIViewController, Localizable {
+final class SettingViewController: UIViewController, Localizable, NetStatusProtocal {
     
     // 🏞 UI element
     
@@ -77,6 +77,12 @@ final class SettingViewController: UIViewController, Localizable {
         localizedText()
     }
     
+    var observerNetStatusChangedNotification: NSObjectProtocol?
+    
+    func noticeNetStatusChanged(_ nofification: Notification) {
+        checkNetStatusSnackBar()
+    }
+    
     private let viewModel = SettingViewModel()
     
     private let testingModeTapRequired: Int = 10
@@ -86,9 +92,15 @@ final class SettingViewController: UIViewController, Localizable {
         setupUI()
         setAction()
         registerLanguageManager()
+        registerNetStatusManager()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        checkNetStatusSnackBar()
     }
     
     deinit {
+        unregisterNetStatusManager()
         unregisterLanguageManager()
     }
     

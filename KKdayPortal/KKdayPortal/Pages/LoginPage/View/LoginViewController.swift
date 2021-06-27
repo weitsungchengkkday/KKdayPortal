@@ -141,7 +141,7 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable, NetS
     var observerNetStatusChangedNotification: NSObjectProtocol?
     
     func noticeNetStatusChanged(_ nofification: Notification) {
-        checkNetStatus()
+        checkNetStatusAlert()
     }
     
     // ⌨️ Keyboarder
@@ -176,6 +176,7 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable, NetS
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -188,8 +189,6 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable, NetS
         createGestureRecognizer()
         setAction()
         
-        checkNetStatus()
-        
         registerLanguageManager()
         registerNetStatusManager()
         registerKeyboard()
@@ -197,6 +196,9 @@ final class LoginViewController: UIViewController, Keyboarder, Localizable, NetS
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        checkNetStatusAlert()
+        
         scrollViewOriginalContentInset.bottom = 20
         
 //        #if DEBUG

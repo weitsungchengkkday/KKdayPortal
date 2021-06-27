@@ -18,7 +18,7 @@ protocol PushKitEventDelegate: AnyObject {
     func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) -> Void
 }
 
-class HomeViewController: UIViewController, Localizable {
+class HomeViewController: UIViewController, Localizable, NetStatusProtocal {
     
     // 🏞 UI element
     private lazy var homeContainerView: UIView = {
@@ -36,6 +36,12 @@ class HomeViewController: UIViewController, Localizable {
     
     var voipRegistry = PKPushRegistry.init(queue: .main)
     
+    var observerNetStatusChangedNotification: NSObjectProtocol?
+    
+    func noticeNetStatusChanged(_ nofification: Notification) {
+        checkNetStatusSnackBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,11 +52,20 @@ class HomeViewController: UIViewController, Localizable {
         setupUI()
         setAction()
         registerLanguageManager()
+        checkNetStatusSnackBar()
+        
+        registerLanguageManager()
+        registerNetStatusManager()
         addChildViewController()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        checkNetStatusSnackBar()
+    }
+    
     deinit {
+        unregisterNetStatusManager()
         unregisterLanguageManager()
     }
     

@@ -88,7 +88,6 @@ final class GeneralRootWithLanguageDocumentViewController: UIViewController {
     
     // 🎨 draw UI
     private func setupUI() {
-        self.navigationController?.title = "Home"
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(logoImageView)
         view.addSubview(topStackView)
