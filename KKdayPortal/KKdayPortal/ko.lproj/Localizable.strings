@@ -110,3 +110,6 @@
 "general_notice" = "Notice";
 "general_alert_no_internet_connection_message" = "The network connection cannot be detected at the moment, please check whether your network environment is normal";
 "general_ignore" = "Ignore";
+
+"general_alert_no_internet_connection_label_main" = "Unable to detect network connection";
+"general_alert_no_internet_connection_label_sub" = "Please check your network environment is normal";

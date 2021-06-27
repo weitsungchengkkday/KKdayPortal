@@ -110,3 +110,6 @@
 "general_notice" = "注意";
 "general_alert_no_internet_connection_message" = "目前無法偵測到網路連線, 請檢查您的網路環境是否正常";
 "general_ignore" = "忽略";
+
+"general_alert_no_internet_connection_label_main" = "無法偵測到網路連線";
+"general_alert_no_internet_connection_label_sub" = "請檢查您的網路環境是否正常";

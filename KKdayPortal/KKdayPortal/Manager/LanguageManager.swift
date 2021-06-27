@@ -36,6 +36,7 @@ final class LanguageManager {
         if Language.isUserSelectedLanguage,
             let language: Language = Language.userSelectedLanguage {
             self.currentLanguage = language
+        
         } else {
             self.currentLanguage = Language.systemPreferedLanguage
         }

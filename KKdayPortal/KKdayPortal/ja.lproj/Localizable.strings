@@ -110,3 +110,6 @@
 "general_notice" = "通知";
 "general_alert_no_internet_connection_message" = "ネットワーク接続は、現時点では検出できない、ネットワーク環境が正常であるかどうかを確認してください";
 "general_ignore" = "無視します";
+
+"general_alert_no_internet_connection_label_main" = "ネットワーク接続を検出できません";
+"general_alert_no_internet_connection_label_sub" = "ネットワーク環境が正常であるか確認してください";

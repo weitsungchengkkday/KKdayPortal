@@ -182,6 +182,18 @@
 		C6B1B1692685CABA00360E1C /* NetStatusProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */; };
 		C6B1B16A2685CABB00360E1C /* NetStatusProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */; };
 		C6B1B16B2685CABB00360E1C /* NetStatusProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */; };
+		C6B1B16E26886BBF00360E1C /* SnackBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B16D26886BBF00360E1C /* SnackBarManager.swift */; };
+		C6B1B16F26886BBF00360E1C /* SnackBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B16D26886BBF00360E1C /* SnackBarManager.swift */; };
+		C6B1B17026886BBF00360E1C /* SnackBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B16D26886BBF00360E1C /* SnackBarManager.swift */; };
+		C6B1B17326886C9A00360E1C /* SnackBarMovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17226886C9A00360E1C /* SnackBarMovable.swift */; };
+		C6B1B17426886C9A00360E1C /* SnackBarMovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17226886C9A00360E1C /* SnackBarMovable.swift */; };
+		C6B1B17526886C9A00360E1C /* SnackBarMovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17226886C9A00360E1C /* SnackBarMovable.swift */; };
+		C6B1B17826886CFD00360E1C /* SnackBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17726886CFD00360E1C /* SnackBarViewController.swift */; };
+		C6B1B17926886CFD00360E1C /* SnackBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17726886CFD00360E1C /* SnackBarViewController.swift */; };
+		C6B1B17A26886CFD00360E1C /* SnackBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17726886CFD00360E1C /* SnackBarViewController.swift */; };
+		C6B1B17C268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */; };
+		C6B1B17D268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */; };
+		C6B1B17E268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */; };
 		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
@@ -532,6 +544,10 @@
 		C6B1B1222681081100360E1C /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C6B1B1232681081100360E1C /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6B1B1682685CAB900360E1C /* NetStatusProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatusProtocal.swift; sourceTree = "<group>"; };
+		C6B1B16D26886BBF00360E1C /* SnackBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarManager.swift; sourceTree = "<group>"; };
+		C6B1B17226886C9A00360E1C /* SnackBarMovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarMovable.swift; sourceTree = "<group>"; };
+		C6B1B17726886CFD00360E1C /* SnackBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewController.swift; sourceTree = "<group>"; };
+		C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SnackBarStoryboard.storyboard; sourceTree = "<group>"; };
 		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		C6B213E7261EEE6600981446 /* PloneFileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileAPI.swift; sourceTree = "<group>"; };
 		C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneImageAPI.swift; sourceTree = "<group>"; };
@@ -823,6 +839,25 @@
 			path = Twilio;
 			sourceTree = "<group>";
 		};
+		C6B1B16C26886B7C00360E1C /* SnackBar */ = {
+			isa = PBXGroup;
+			children = (
+				C6B1B16D26886BBF00360E1C /* SnackBarManager.swift */,
+				C6B1B17226886C9A00360E1C /* SnackBarMovable.swift */,
+				C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */,
+				C6B1B17126886C6C00360E1C /* View */,
+			);
+			path = SnackBar;
+			sourceTree = "<group>";
+		};
+		C6B1B17126886C6C00360E1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6B1B17726886CFD00360E1C /* SnackBarViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C6B213CC261C122700981446 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +965,7 @@
 		F426FEB823F4F7E600BFDA3B /* CustomUIElement */ = {
 			isa = PBXGroup;
 			children = (
+				C6B1B16C26886B7C00360E1C /* SnackBar */,
 				F46180CA23FCDB3A00D303F8 /* UITextField */,
 				F426FEB323F4F45B00BFDA3B /* CustomWKWebView.swift */,
 				F426FEC423F5610800BFDA3B /* NoInformationLabel.swift */,
@@ -2230,6 +2266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B1B17C268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */,
 				C631069C25B57ADA0067F72B /* ringtone.wav in Resources */,
 				C631069D25B57ADA0067F72B /* Gif in Resources */,
 				C631069E25B57ADA0067F72B /* ConfigModel.json in Resources */,
@@ -2243,6 +2280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B1B17E268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */,
 				C63D279A25830ECB00CFF8A8 /* ringtone.wav in Resources */,
 				F453943723B8B44300136E6D /* Gif in Resources */,
 				C67012E22594300C00830027 /* ConfigModel.json in Resources */,
@@ -2256,6 +2294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B1B17D268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */,
 				C63D279925830ECB00CFF8A8 /* ringtone.wav in Resources */,
 				F453943623B8B44300136E6D /* Gif in Resources */,
 				C67012E12594300C00830027 /* ConfigModel.json in Resources */,
@@ -2392,6 +2431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B1B16E26886BBF00360E1C /* SnackBarManager.swift in Sources */,
 				C631060325B57ADA0067F72B /* TestingViewModel.swift in Sources */,
 				C6B1B1692685CABA00360E1C /* NetStatusProtocal.swift in Sources */,
 				C631060425B57ADA0067F72B /* PloneImageObject.swift in Sources */,
@@ -2417,6 +2457,7 @@
 				C631061725B57ADA0067F72B /* GeneralDocumentViewController.swift in Sources */,
 				C631061A25B57ADA0067F72B /* GeneralImageObject.swift in Sources */,
 				C631061B25B57ADA0067F72B /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
+				C6B1B17326886C9A00360E1C /* SnackBarMovable.swift in Sources */,
 				C631061C25B57ADA0067F72B /* PloneLink.swift in Sources */,
 				C631061D25B57ADA0067F72B /* MainViewController.swift in Sources */,
 				C631062125B57ADA0067F72B /* SettingViewModel.swift in Sources */,
@@ -2451,6 +2492,7 @@
 				C631063E25B57ADA0067F72B /* LoginViewController.swift in Sources */,
 				C631063F25B57ADA0067F72B /* MemberManager.swift in Sources */,
 				C631064025B57ADA0067F72B /* GeneralNewsViewModel.swift in Sources */,
+				C6B1B17826886CFD00360E1C /* SnackBarViewController.swift in Sources */,
 				C6B214742630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
 				C631064125B57ADA0067F72B /* PloneAuthToken.swift in Sources */,
 				C6B2143C2626F82000981446 /* TwilioServiceViewModel.swift in Sources */,
@@ -2554,6 +2596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B1B17026886BBF00360E1C /* SnackBarManager.swift in Sources */,
 				F44E8C7223B88AA30032C6BE /* PloneImageObject.swift in Sources */,
 				C6B1B16B2685CABB00360E1C /* NetStatusProtocal.swift in Sources */,
 				F44E8C7323B88AA30032C6BE /* GeneralUser.swift in Sources */,
@@ -2579,6 +2622,7 @@
 				F4DDFDC523D69F3F00B5802B /* TestingSection.swift in Sources */,
 				F44E8C7A23B88AA30032C6BE /* StorageManager.swift in Sources */,
 				F43AFC7E23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
+				C6B1B17526886C9A00360E1C /* SnackBarMovable.swift in Sources */,
 				F457417B23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
 				F44E8C7C23B88AA30032C6BE /* GeneralDocumentViewController.swift in Sources */,
 				F454DF1F240F901F00C05CF9 /* PloneIntroViewController.swift in Sources */,
@@ -2613,6 +2657,7 @@
 				F44E8C9423B88AA30032C6BE /* GeneralItem.swift in Sources */,
 				F4B3BCA623F2BAE4009699E5 /* NotificationNameExtension.swift in Sources */,
 				F44E8C9523B88AA30032C6BE /* GeneralList.swift in Sources */,
+				C6B1B17A26886CFD00360E1C /* SnackBarViewController.swift in Sources */,
 				C6B214762630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
 				F44E8C9623B88AA30032C6BE /* GeneralImageViewController.swift in Sources */,
 				F46180BA23F9722F00D303F8 /* PloneEmptyData.swift in Sources */,
@@ -2716,6 +2761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B1B16F26886BBF00360E1C /* SnackBarManager.swift in Sources */,
 				F457417F23D58F4E00FB5EEC /* TestingViewModel.swift in Sources */,
 				C6B1B16A2685CABB00360E1C /* NetStatusProtocal.swift in Sources */,
 				F45446F6238F6B04001B8D31 /* PloneImageObject.swift in Sources */,
@@ -2741,6 +2787,7 @@
 				F4544834239CABAB001B8D31 /* GeneralDocumentViewController.swift in Sources */,
 				F45447EC239AB6F6001B8D31 /* GeneralImageObject.swift in Sources */,
 				F43AFC5123E87D6D0050C851 /* GeneralTextObjectImageTableViewCellViewModel.swift in Sources */,
+				C6B1B17426886C9A00360E1C /* SnackBarMovable.swift in Sources */,
 				F4544700238F787A001B8D31 /* PloneLink.swift in Sources */,
 				F454489823A5E211001B8D31 /* MainViewController.swift in Sources */,
 				F454489A23A5F611001B8D31 /* SettingViewModel.swift in Sources */,
@@ -2775,6 +2822,7 @@
 				F4D068A8255D413100F7B3F8 /* LoginViewController.swift in Sources */,
 				F4B3BCAF23F30FB4009699E5 /* MemberManager.swift in Sources */,
 				F4544836239CACF2001B8D31 /* GeneralNewsViewModel.swift in Sources */,
+				C6B1B17926886CFD00360E1C /* SnackBarViewController.swift in Sources */,
 				C6B214752630109300981446 /* UserGuideDetailViewModel.swift in Sources */,
 				F4B3F3382387CE4E00657CDF /* PloneAuthToken.swift in Sources */,
 				F457417A23D55FB400FB5EEC /* TestingViewController.swift in Sources */,
