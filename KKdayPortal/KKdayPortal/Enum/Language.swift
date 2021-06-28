@@ -24,9 +24,8 @@ extension Language {
     // Get system prefered language (system + APP available)
     public static var systemPreferedLanguage: Language {
         
-        // "en", "zh-Hans", "zh-Hant-TW", "zh-Hant-HK", "ja", "ko", "vi", "th"
         let availableLanguages: [String] = ["en", "zh-Hans", "zh-Hant-TW", "zh-Hant-HK", "ja", "ko", "vi", "th"]
-        
+        // 考量第三方 Server 和 裝置設定, 所得的最佳匹配語言
         guard let bestMatchedLanguage: String = Bundle.preferredLocalizations(from: availableLanguages).first else {
             return Language.en
         }

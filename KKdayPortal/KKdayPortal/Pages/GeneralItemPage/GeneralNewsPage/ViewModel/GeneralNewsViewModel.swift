@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Alamofire
+import UIKit
 
 final class GeneralNewsViewModel {
     
@@ -72,33 +72,17 @@ final class GeneralNewsViewModel {
     
     private func dowloadImage(url: URL) {
         
-        guard let user: GeneralUser = StorageManager.shared.loadObject(for: .generalUser) else {
-            print("❌ No generalUser exist")
-            return
-        }
-        
-        let token = user.token
-        let headers: [String : String] = [
-            "Authorization" : "Bearer" + " " + token
-        ]
-        
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { dataResponse
-            in
+        let api = PloneImageAPI()
+        api.getPloneImage(url: url) { result in
             
-            DispatchQueue.global().async { [weak self] in
-                if let data = dataResponse.data {
-                    
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self?.newsImage = image
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            let image = UIImage(systemName: "xmark.rectangle") ?? #imageLiteral(resourceName: "icPicture")
-                            self?.newsImage = image
-                        }
-                    }
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.newsImage = image
+                    self.updateContent()
                 }
+            case .failure(let error):
+                print("❌ Get Plone Image Failed: \(error)")
             }
         }
     }

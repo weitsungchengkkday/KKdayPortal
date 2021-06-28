@@ -8,7 +8,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - HTMLString (~> 5.0.0)
   - SwiftSoup (~> 2.3.0)
-  - TwilioVoice (~> 6.2.0)
+  - TwilioVoice (~> 6.2.1)
 
 SPEC REPOS:
   trunk:
@@ -23,6 +23,6 @@ SPEC CHECKSUMS:
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
   TwilioVoice: f177692c452dc1d84d9ad0f039f74aa6f4ecafc0
 
-PODFILE CHECKSUM: 9c9114c60f0f2a8414ae1d846ec16f22abb03c60
+PODFILE CHECKSUM: 27e93c050921d6f751fcfd4c863e4746037615ef
 
 COCOAPODS: 1.10.0

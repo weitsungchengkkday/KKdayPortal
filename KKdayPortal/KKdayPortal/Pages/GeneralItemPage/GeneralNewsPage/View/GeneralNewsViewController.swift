@@ -105,6 +105,7 @@ final class GeneralNewsViewController: UIViewController {
         view.addSubview(topTitleLabel)
         view.addSubview(topStackView)
         topStackView.addArrangedSubview(descriptionTextView)
+        
         view.addSubview(bottomStackView)
         bottomStackView.addArrangedSubview(imageView)
         bottomStackView.addArrangedSubview(generalTextObjectTableView)
@@ -126,6 +127,10 @@ final class GeneralNewsViewController: UIViewController {
             maker.top.equalTo(logoImageView.snp.bottom)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
+        }
+        
+        imageView.snp.makeConstraints { maker in
+            maker.width.height.equalTo(100)
         }
         
         bottomStackView.snp.makeConstraints { maker in
