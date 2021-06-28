@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 
-platform :ios, '13.2'
+platform :ios, '14.5'
 use_frameworks!
 workspace 'KKdayPortal.xcworkspace'
 
@@ -12,7 +12,7 @@ def shared
 
 
   # Twilio
-  pod 'TwilioVoice', '~> 6.2.1'
+  pod 'TwilioVoice', '~> 6.3.0'
   
 end
 

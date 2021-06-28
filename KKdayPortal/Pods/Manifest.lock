@@ -1,12 +1,12 @@
 PODS:
   - HTMLString (5.0.0)
   - SwiftSoup (2.3.0)
-  - TwilioVoice (6.2.1)
+  - TwilioVoice (6.3.0)
 
 DEPENDENCIES:
   - HTMLString (~> 5.0.0)
   - SwiftSoup (~> 2.3.0)
-  - TwilioVoice (~> 6.2.1)
+  - TwilioVoice (~> 6.3.0)
 
 SPEC REPOS:
   trunk:
@@ -17,8 +17,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   HTMLString: 20374dc0195423d02569e87561f01153fca0c364
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
-  TwilioVoice: f177692c452dc1d84d9ad0f039f74aa6f4ecafc0
+  TwilioVoice: 6b1d796dcdec4ec6e6d2165bc66a266db1d2d93f
 
-PODFILE CHECKSUM: 5234f722e1ae671668db2647c2ed5dc15e1398de
+PODFILE CHECKSUM: 7e5ec2fac857d013725f4a9c7300c63482af680f
 
 COCOAPODS: 1.10.0

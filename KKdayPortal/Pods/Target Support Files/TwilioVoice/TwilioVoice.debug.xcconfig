@@ -12,4 +12,4 @@ PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
 SKIP_INSTALL = YES
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES
 VALID_ARCHS[sdk=iphoneos*] = arm64
-VALID_ARCHS[sdk=iphonesimulator*] = x86_64
+VALID_ARCHS[sdk=iphonesimulator*] = arm64 x86_64

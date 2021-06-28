@@ -18,5 +18,3 @@ struct FileName: FileNameProtocol {
         fileName = string
     }
 }
-
-

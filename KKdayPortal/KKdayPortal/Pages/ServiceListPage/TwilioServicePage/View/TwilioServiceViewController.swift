@@ -470,8 +470,8 @@ final class TwilioServiceViewController: UIViewController, Localizable {
     }
     
     private func setCallKit() {
-        // iOS 14 CXProviderConfiguration(localizedName: "Twilio Voice") ->  CXProviderConfiguration()
-        let configuration = CXProviderConfiguration(localizedName: "Twilio Voice")
+     
+        let configuration = CXProviderConfiguration()
         configuration.maximumCallGroups = 1
         configuration.maximumCallsPerCallGroup = 1
         callKitProvider = CXProvider(configuration: configuration)
