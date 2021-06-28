@@ -6,10 +6,6 @@ workspace 'KKdayPortal.xcworkspace'
 
 def shared
 
-  # Alamofire
-  pod 'Alamofire', '~> 4.9.1'
-
-
   # HTML Parsing
   pod 'SwiftSoup', '~> 2.3.0'
   pod 'HTMLString', '~> 5.0.0'

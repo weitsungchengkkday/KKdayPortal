@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-KKdayPortal-Production/Pods-KKdayPortal-Production-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/HTMLString/HTMLString.framework
 ${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/TwilioVoice/TwilioVoice.framework/TwilioVoice
