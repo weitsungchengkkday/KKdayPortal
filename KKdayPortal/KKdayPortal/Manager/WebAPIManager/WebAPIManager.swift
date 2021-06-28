@@ -14,6 +14,6 @@ final class WebAPIManager: ErrorManageable {
     private init() {}
     
     func handle(error: Error) {
-        MemberManager.shared.notifyAlertEvent(error)
+
     }
 }

@@ -422,6 +422,22 @@ final class TwilioServiceViewController: UIViewController, Localizable {
             maker.centerX.equalTo(speakerSwitch)
             maker.top.equalTo(speakerSwitch.snp.bottom).offset(10)
         }
+        
+        setupUIAdvanced()
+    }
+    
+    private func setupUIAdvanced() {
+        
+        switch UserResourceManager.shared.resourceType {
+        case .kkMember:
+            break
+        case .custom(_):
+            countryLabel.isHidden = true
+            countryCodeTextField.isHidden = true
+            companyIdentifierLabel.isHidden = true
+            companyIdentifierTextField.isHidden = true
+        }
+        
     }
     
     private func setUIElementDelegate() {

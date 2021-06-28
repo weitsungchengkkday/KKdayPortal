@@ -25,7 +25,6 @@ final class UserResourceManager {
            let type: UserResourceType = newValue
            StorageManager.shared.saveObject(for: .userResourceType, value: type)
         }
-        
     }
     
     lazy var currentLogoImage: UIImage = {

@@ -13,42 +13,7 @@ import DolphinHTTP
 final class MemberManager {
     
     static let shared = MemberManager()
-    var alertErrorInfo: AlertEventInfo?
-    
     private init() {}
-    
-    func notifyAlertEvent(_ error: Error, userInfo: [AnyHashable : Any]? = nil) {
-        
-        if let error = error as? HTTPError {
-            self.alertErrorInfo = AlertEventInfo(error: error,
-                                                 message: error.localizedDescription)
-        } else {
-            self.alertErrorInfo = AlertEventInfo(error: error, message: error.localizedDescription)
-        }
-        
-        NotificationCenter.default.post(name: Notification.Name.alertEvent, object: self, userInfo: userInfo)
-    }
-    
-    func showAlertController(_ presentedViewController: UIViewController) {
-        
-        guard let alertErrorInfo = self.alertErrorInfo else {
-            return
-        }
-        
-        self.alertErrorInfo = nil
-        
-        let alertControlloer = UIAlertController(title: "general_warning".localize("警告", defaultValue: "Warning"), message: alertErrorInfo.message, preferredStyle: .alert)
-        
-        let okAlertAction = UIAlertAction(title: "general_ok".localize("好", defaultValue: "OK"), style: .default) { [weak self] _ in
-            if let error = alertErrorInfo.error as? HTTPError {
-                print(error)
-            }
-            self?.logout()
-        }
-        
-        alertControlloer.addAction(okAlertAction)
-        presentedViewController.present(alertControlloer, animated: true, completion: nil)
-    }
     
     func logout() {
         // 👶🏻 Restart from User Guide Page

@@ -100,7 +100,7 @@ final class GeneralEventViewController: UIViewController {
     
     @objc private func alertIfNeeded(_ notification: Notification) {
         if (notification.name == Notification.Name.alertEvent) {
-            //            MemberManager.shared.showAlertController(self, with: disposeBag)
+     
         }
     }
     
