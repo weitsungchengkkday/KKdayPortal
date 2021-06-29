@@ -34,3 +34,8 @@ playground.xcworkspace
 
 ## Secret
 KKdayPortal_Secret/
+
+# Translation
+PythonTools/trans/model/translation.csv
+PythonTools/trans/model/Auth/
+PythonTools/trans/model/Localizations/

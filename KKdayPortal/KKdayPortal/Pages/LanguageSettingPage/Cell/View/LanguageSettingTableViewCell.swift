@@ -44,52 +44,46 @@ final class LanguageSettingTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    var selectedBtnAction: (() -> Void)?
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
-         self.contentView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
-         self.contentView.addSubview(containerView)
-         self.containerView.addSubview(topView)
-         self.topView.addSubview(titleLabel)
-         self.topView.addSubview(selectCellButton)
-         self.containerView.addSubview(descriptionLabel)
-         
-         containerView.snp.makeConstraints { maker in
-             maker.width.equalToSuperview()
-             maker.edges.equalToSuperview()
-         }
-         
-         topView.snp.makeConstraints { maker in
-             maker.height.equalTo(36)
-             maker.top.left.right.equalToSuperview()
-         }
-         
-         titleLabel.snp.makeConstraints { maker in
-             maker.centerY.equalToSuperview()
-             maker.left.equalToSuperview().offset(15)
-         }
-         
-         selectCellButton.snp.makeConstraints { maker in
-             maker.centerY.equalToSuperview()
-             maker.right.equalTo(self.containerView).offset(-17.5)
-         }
-         
-         descriptionLabel.snp.makeConstraints { maker in
-             maker.top.equalTo(self.topView.snp.bottom).offset(10)
-             maker.left.equalToSuperview().offset(15)
-             maker.right.equalToSuperview().offset(-15)
-             maker.bottom.equalToSuperview().offset(-20)
-         }
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectCellButton.addTarget(self, action: #selector(updateSelectedBtn), for: .touchUpInside)
-     }
+        self.contentView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+        self.contentView.addSubview(containerView)
+        self.containerView.addSubview(topView)
+        self.topView.addSubview(titleLabel)
+        self.topView.addSubview(selectCellButton)
+        self.containerView.addSubview(descriptionLabel)
+        
+        containerView.snp.makeConstraints { maker in
+            maker.width.equalToSuperview()
+            maker.edges.equalToSuperview()
+        }
+        
+        topView.snp.makeConstraints { maker in
+            maker.height.equalTo(36)
+            maker.top.left.right.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints { maker in
+            maker.centerY.equalToSuperview()
+            maker.left.equalToSuperview().offset(15)
+        }
+        
+        selectCellButton.snp.makeConstraints { maker in
+            maker.centerY.equalToSuperview()
+            maker.right.equalTo(self.containerView).offset(-17.5)
+        }
+        
+        descriptionLabel.snp.makeConstraints { maker in
+            maker.top.equalTo(self.topView.snp.bottom).offset(10)
+            maker.left.equalToSuperview().offset(15)
+            maker.right.equalToSuperview().offset(-15)
+            maker.bottom.equalToSuperview().offset(-20)
+        }
+        
+    }
     
     required init?(coder aDecoder: NSCoder) {
-           fatalError("init(coder:) has not been implemented")
-       }
-    @objc func updateSelectedBtn() {
-        selectedBtnAction?()
+        fatalError("init(coder:) has not been implemented")
     }
 }

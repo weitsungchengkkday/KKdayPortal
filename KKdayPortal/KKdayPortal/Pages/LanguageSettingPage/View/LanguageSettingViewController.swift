@@ -92,13 +92,12 @@ extension LanguageSettingViewController: UITableViewDelegate, UITableViewDataSou
             self.dismiss(animated: true, completion: nil)
         }
         
-        // Change Storage server
         let currentLanguage: Language = items[indexPath.row].selectedLanguage
         
         if currentLanguage.rawValue != StorageManager.shared.load(for: .selectedLanguageKey) {
-            
             Language.isUserSelectedLanguage = true
             LanguageManager.shared.currentLanguage = currentLanguage
+            
         } else {
             print("⚠️ Save same Language")
         }
