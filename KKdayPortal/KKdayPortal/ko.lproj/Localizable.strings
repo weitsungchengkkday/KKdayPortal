@@ -1,115 +1,121 @@
+"user_guide_label_title" = "KKPortal에 오신 것을 환영합니다!";
+"user_guide_button_login" = "로그인";
+"user_guide_button_usage_guide" = "사용 방법";
 
-"user_guide_label_title" = "Welcome to KKPortal!";
-"user_guide_button_login" = "Login";
-"user_guide_button_usage_guide" = "Usage Guide";
+"home_title" = "집";
 
-"home_title" = "Home";
+"portal_title" = "문";
 
-"portal_title" = "Portal";
+"service_list_title" = "서비스 목록";
+"service_button_phone" = "KK 전화";
 
-"service_list_title" = "Service List";
-"service_button_phone" = "KK Phone";
+"setting_title" = "설정";
+"setting_button_language" = "언어 설정";
+"setting_button_about" = "KKPlone 소개";
+"setting_button_contact" = "문의 나";
+"setting_button_logout" = "로그 아웃";
 
-"setting_title" = "Setting";
-"setting_button_language" = "Language Setting";
-"setting_button_about" = "About KKPlone";
-"setting_button_contact" = "Contact Me";
-"setting_button_logout" = "Logout";
+"general_alert_logout_message" = "모든 개인 정보를 제거합니다 로그 아웃하는 KKPortal에 저장된";
+"general_alert_email_message" = "이메일 서비스를 엽니 다";
+"general_email_subject" = "KKPortal 권장";
+"general_email_message_body" = "내 조언은";
 
-"general_alert_logout_message" = "Logout will clear all personal information in KKPortal";
-"general_alert_email_message" = "Please open your email service";
-"general_email_subject" = "KKPortal Suggestion";
-"general_email_message_body" = "My opinion is";
+"general_confrim" = "확인";
+"general_cancel" = "취소";
+"general_ok" = "그것은 좋은";
+"general_warning" = "경고";
 
-"general_confrim" = "Confirm";
-"general_cancel" = "Cancel";
-"general_ok" = "OK";
-"general_warning" = "Warning";
+"login_label_config_URL" = "포털 구성 URL을 입력하세요";
+"login_label_account" = "입력하십시오 귀하의 계정 번호 (선택 사항)";
+"login_label_password" = "비밀번호를 입력하십시오 (선택 사항)";
+"login_textview_memo" = "사이트가 지원하는 게스트로 길을 로그인하는 경우에는 계좌 번호와 비밀번호를 입력 할 필요가 없습니다";
+"login_alert_URL_invalid" = "이 확인 가능한 URL이 아닙니다";
+"login_alert_plone_URL_invalid" = "플론 (Plone) 로그인 URL입니다 무효";
+"login_alert_get_portal_config_failed" = "포털 설정을 가져올 수 없습니다";
+"login_alert_login_failed" = "실패 로그인하여 계정 번호와 암호 플론 (Plone)을 확인하시기 바랍니다";
 
-"login_label_config_URL" = "Please enter your portal config URL";
-"login_label_account" = "Please enter your account (optional)";
-"login_label_password" = "Please enter your password (optional)";
-"login_textview_memo" = "If plone website support login as visitor, you do not need to enter account and password";
-"login_alert_URL_invalid" = "Not valid URL, please check";
-"login_alert_plone_URL_invalid" = "Plone login URL is invalid";
-"login_alert_get_portal_config_failed" = "Can't get portal config";
-"login_alert_login_failed" = "Login Failed, Please Check your Plone account and password";
+"general_alert_jump_out_message" = "APP는 떠날 것이다";
+"plone_sso_alert_message" = "유효한 이메일 계정을 사용하십시오";
 
-"general_alert_jump_out_message" = "Will Jump Out APP";
-"plone_sso_alert_message" = "Please use valid email account";
+"twilio_service_label_country" = "사무실 위치를 선택하세요";
+"twilio_service_label_company_identifier" = "선택 사무실 번호";
+"twilio_service_label_outgoing" = "수신자의 번호를 입력 해주세요";
+"twilio_service_label_mute" = "음소거";
+"twilio_service_label_speaker" = "아빠";
+"twilio_service_alert_microphone_permission_title" = "KKPortal 소리";
+"twilio_service_alert_microphone_permission_message" = "마이크는 사용 할 수 없습니다";
+"twilio_service_alert_without_microphone" = "마이크를 사용하지 않고 계속";
+"twilio_service_alert_settings" = "설정";
 
-"twilio_service_label_country" = "Please select office location";
-"twilio_service_label_company_identifier" = "Please select company phone number";
-"twilio_service_label_outgoing" = "Please input callee number";
-"twilio_service_label_mute" = "Mute";
-"twilio_service_label_speaker" = "Speaker";
-"twilio_service_alert_microphone_permission_title" = "KKPortal Voice";
-"twilio_service_alert_microphone_permission_message" = "Microphone permission not granted";
-"twilio_service_alert_without_microphone" = "Continue without microphone";
-"twilio_service_alert_settings" = "Settings";
 
-"user_guide_detail_button_start_kkportal" = "Start to Use KKportal (read me first)";
-"user_guide_detail_button_plone" = "What is Plone?";
-"user_guide_detail_button_plone_spec" = "Plone Spec";
-"user_guide_detail_button_twilio" = "What is Twilio?";
-"user_guide_detail_button_twilio_spec" = "Twilio Spec";
+"user_guide_detail_button_start_kkportal" = "(저를 읽어 보시기 바랍니다) KKportal 시작";
+"user_guide_detail_button_plone" = "플론 (Plone)은 무엇인가?";
+"user_guide_detail_button_plone_spec" = "플론 (Plone) 사양";
+"user_guide_detail_button_twilio" = "Twilio은 무엇인가?";
+"user_guide_detail_button_twilio_spec" = "Twilio 사양";
 
-"start_use_textview_title" = "Start to use";
-"start_use_textview_content_one" = "KKporal is start up by config data, user must provide link in order to get config data by HTTP [GET] method. Response data must can be utf-8 decode to String as below:";
-"start_use_textview_content_two" = "# {{ .... }}  means, you need to provide your own Info";
-"start_use_textview_content_three" = "Note
-        0. KKPortal limit user must be a Plone user, if you don't have Plone website, please apply it.
+"start_use_textview_title" = "사용하기 시작";
+"start_use_textview_content_one" = "KKporal는 링크를 제공하는 HTTP [GET] 위에있어서의 구성 데이터를 획득하기 위해 구성 데이터, 사용자에 의해 개시해야하는 경우. 다음과 같이 응답 데이터는 UTF-8 문자열로 디코딩해야합니다";
+"start_use_textview_content_two" = "#은 {{...}}은 사용자가 자신의 정보를 제공해야 의미";
+"start_use_textview_content_three" = "메모
+        당신이 플론 (Plone) 사이트가없는 경우 0 KKPortal는 사용자가 플론 (Plone) 사용자이어야 제한, 해당 응용 프로그램을 유의하시기 바랍니다.
 
-        1. KKPortal use plone authorization to login, if your plone website is not public, besides providing config link you also need to fillout account and password in login page
+        당신 플론 (Plone) 사이트에 공개하지 않은 경우 인증되지 않은 액세스의 사용은 1 KKPortal 플론 (Plone),,의 구성 링크를 제공 할뿐만 아니라, 당신은 또한 로그인 페이지에서 계정과 암호 fillout해야합니다
                
-        2. KKPortal provide cti service (call) and portal service (web surfing)
+        2. KKPortal는 CTI 서비스 (전화) 및 포털 서비스 (웹 검색)을 제공
 
-        3. Except for portal service, you can remove others if you don't need it. (e.g. if you don‘t need cti service)";
-"plone_intro_textview_title" = "Plone Intro";
-"plone_intro_textview_content_one" = "Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an 'Enterprise CMS' and is commonly used for intranets and as part of the web presence of large organizations. (source : https://zh.wikipedia.org/wiki/Plone)";
-"plone_intro_textview_content_two" = "1. What is Plone?:";
-"plone_intro_textview_content_three" = "2. How to quick start Plone Website?:";
-"plone_intro_textview_content_four" = "3. How to work with Plone content?:";
+        필요하지 않은 경우 3. 포털 서비스 이외에, 당신은 다른 사람을 제거 할 수 있습니다. (예를 들어, CTI 서비스에 필요하지 않은 경우)";
 
-"plone_spec_textview_title" = "Spec";
-"plone_spec_textview_content" = "1. Support Plone Version:
-            . Plone 5.1.6
+"plone_intro_textview_title" = "플론 (Plone) 소개";
+"plone_intro_textview_content_one" = "플론 (Plone)는 조프 응용 프로그램 서버의 상단에 무료 오픈 소스 콘텐츠 관리 시스템을 구축하는 것입니다. 플론 (Plone)는 '기업 웹 사이트 관리 시스템', 대기업 및 기업 인트라넷 사이트의 존재를 일반적으로 사용되는 부분으로 정의된다. (출처 : HTTPS : //zh.wikipedia.org/wiki/Plone)";
+"plone_intro_textview_content_two" = "1. 플론 (Plone) 무엇입니까? :";
+"plone_intro_textview_content_three" = "2. 얼마나 빨리 플론 (Plone) 사이트를 시작? :";
+"plone_intro_textview_content_four" = "3. 어떻게 플론 (Plone)의 콘텐츠와 함께 작동합니다? :";
+
+"plone_spec_textview_title" = "사양";
+"plone_spec_textview_content" = "1. 플론 (Plone)의 버전을 지원합니다 :
+            . 플론 (Plone) 5.1.6
             . CMF 2.2.13
-            . Zope 2.13.29
-            . Python 2.7.12
-            . PIL 6.1.0
+            . 조프의 이십구년 2월 13일
+            . 파이썬의 2.7.12
+            . PIL의 6.1.0
         
-        2. Must install Plone Expansion Module:
-            . plone.restapi (RESTful hypermedia API for Plone. – (plone.restapi 5.1.0))
-            . Multilingual Support(Multi-language module function – (plone.app.multilingual 5.2.3)
+        2. 플론 (Plone) 확장 모듈을 설치해야합니다 :
+            . plone.restapi (플론 (Plone) 등의 REST API를 하이퍼 미디어 - (plone.restapi 5.1.0))
+            . 다중 언어 지원 (다중 언어 모듈 기능 - (plone.app.multilingual 5.2.3)
                
-        3. Current Support Plone Language:
-            . zh-tw (繁體中文)
+        3. 플론 (Plone)의 언어는 현재 지원 :
+            . ZH-TW (중국어 번체)
 
-        When you use KKPortal, you need provide your plone host URL in config data.";
-"twilio_intro_textview_title" = "Twilio Intro";
-"twilio_intro_textview_content_one" = "Twilio is a developer platform for communications. We can create our accessToken for connecting client (iOS APP) to Twilio TwiML APP.";
-"twilio_intro_textview_content_two" = "1. What is Twilio?:";
-"twilio_intro_textview_content_three" = "2. How to create twilio access token?:";
-"twilio_intro_textview_content_four " = "3. What is TwiML APP?:";
-"twilio_spec_textview_title" = "Spec";
-"twilio_spec_textview_content" = "1. iOS SDK Version:
-            . TwilioVoice 6.2.1
+        당신이 KKPortal를 사용하는 경우, 당신은 당신의 플론 (Plone) 호스트 URL에 대한 구성 데이터를 제공해야합니다.";
 
-        When you use KKPortal, you need provide your twilio accessToken URL in config data.";
+"twilio_intro_textview_title" = "Twilio 프로필";
+"twilio_intro_textview_content_one" = "통신 개발 플랫폼 Twilio. 우리는 Twilio TwiML APP에 접속 클라이언트 accessToken (아이폰 OS 응용 프로그램)을 만들 수 있습니다.";
+"twilio_intro_textview_content_two" = "1. Twilio은 무엇인가? :";
+"twilio_intro_textview_content_three" = "2. 어떻게 토큰 twilio 액세스를 만드는 방법? :";
+"twilio_intro_textview_content_four " = "3. TwiML APP 무엇입니까?";
 
-"about_textview_title" = "About";
-"about_textview_title_content_one" = "KKPortal porvide a way to show plone website content on iOS APP. That means plone subjects (including Collection, Event, File, Folder, Image, Link, News Item, Page) can be shown properly on user's cell phone.";
-"about_textview_title_content_two" = "(Not support video and audio file presenting by now)";
-"about_textview_title_content_three" = " Version: 1.0.0
+"twilio_spec_textview_title" = "사양";
+"twilio_spec_textview_content" = "iOS 용 1. SDK 버전 :
+            . 6.2.1 TwilioVoice
+
+        당신이 KKPortal를 사용하면 구성 데이터에 accessToken URL 당신의 twilio를 제공해야합니다.";
+
+
+
+"about_textview_title" = "의 위에";
+"about_textview_title_content_one" = "iOS 앱 플론 (Plone)의 사이트에 표시 내용에 KKPortal의 porvide 방법. (컬렉션, 이벤트, 파일, 폴더, 사진, 링크, 뉴스 항목, 페이지 포함) 플론 (Plone)의 주제는 사용자의 휴대 전화에 표시 할 수있는이 수단.";
+"about_textview_title_content_two" = "(합니까 지금에 제출 비디오 및 오디오 파일을 지원하지 않음)";
+"about_textview_title_content_three" = " 버전 : 1.0.0
         
-        Support Plone Version: 5.1.6
+        플론 (Plone) 버전을 지원 : 5.1.6
         
-        Privacy policy:";
+        개인 정보 정책:";
 
-"general_notice" = "Notice";
-"general_alert_no_internet_connection_message" = "The network connection cannot be detected at the moment, please check whether your network environment is normal";
-"general_ignore" = "Ignore";
+"general_notice" = "노트";
+"general_alert_no_internet_connection_message" = "현재 네트워크 연결을 감지 할 수없는, 네트워크 환경이 정상 확인하세요";
+"general_ignore" = "무시";
 
-"general_alert_no_internet_connection_label_main" = "Unable to detect network connection";
-"general_alert_no_internet_connection_label_sub" = "Please check your network environment is normal";
+"general_alert_no_internet_connection_label_main" = "네트워크 연결을 감지 할 수 없습니다";
+"general_alert_no_internet_connection_label_sub" = "네트워크 환경이 정상 확인하시기 바랍니다";
+

@@ -1,115 +1,120 @@
+"user_guide_label_title" = "ยินดีต้อนรับ KKPortal!";
+"user_guide_button_login" = "เข้าสู่ระบบ";
+"user_guide_button_usage_guide" = "คำแนะนำสำหรับการใช้งาน";
 
-"user_guide_label_title" = "Welcome to KKPortal!";
-"user_guide_button_login" = "Login";
-"user_guide_button_usage_guide" = "Usage Guide";
+"home_title" = "บ้าน";
 
-"home_title" = "Home";
+"portal_title" = "พอร์ทัล";
 
-"portal_title" = "Portal";
+"service_list_title" = "รายการของบริการ";
+"service_button_phone" = "โทรศัพท์ KK";
 
-"service_list_title" = "Service List";
-"service_button_phone" = "KK Phone";
+"setting_title" = "ติดตั้ง";
+"setting_button_language" = "ตั้งค่าภาษา";
+"setting_button_about" = "เกี่ยวกับ KKPlone";
+"setting_button_contact" = "ติดต่อฉัน";
+"setting_button_logout" = "ออกจากระบบ";
 
-"setting_title" = "Setting";
-"setting_button_language" = "Language Setting";
-"setting_button_about" = "About KKPlone";
-"setting_button_contact" = "Contact Me";
-"setting_button_logout" = "Logout";
+"general_alert_logout_message" = "การออกจากระบบจะลบข้อมูลส่วนบุคคลของคุณได้รับการจัดเก็บไว้ใน KKPortal";
+"general_alert_email_message" = "เปิดบริการอีเมลของคุณ";
+"general_email_subject" = "คำแนะนำ KKPortal";
+"general_email_message_body" = "คำแนะนำของฉัน";
 
-"general_alert_logout_message" = "Logout will clear all personal information in KKPortal";
-"general_alert_email_message" = "Please open your email service";
-"general_email_subject" = "KKPortal Suggestion";
-"general_email_message_body" = "My opinion is";
+"general_confrim" = "ยืนยัน";
+"general_cancel" = "ยกเลิก";
+"general_ok" = "มันดี";
+"general_warning" = "ข้อแม้";
 
-"general_confrim" = "Confirm";
-"general_cancel" = "Cancel";
-"general_ok" = "OK";
-"general_warning" = "Warning";
+"login_label_config_URL" = "โปรดป้อน URL config ของพอร์ทัลของคุณ";
+"login_label_account" = "กรุณากรอกหมายเลขบัญชีของคุณ (ถ้ามี)";
+"login_label_password" = "กรุณาใส่รหัสผ่านของคุณ (ถ้ามี)";
+"login_textview_memo" = "หากสนับสนุนเว็บไซต์เข้าสู่ระบบในฐานะแขกวิธีการที่คุณไม่จำเป็นต้องใส่หมายเลขบัญชีและรหัสผ่าน";
+"login_alert_URL_invalid" = "นี้ไม่ได้เป็น URL ที่ใช้ได้ให้แน่ใจว่า";
+"login_alert_plone_URL_invalid" = "Plone เข้าสู่ระบบ URL ที่ไม่ถูกต้อง";
+"login_alert_get_portal_config_failed" = "ไม่สามารถที่จะได้รับการกำหนดค่าพอร์ทัล";
+"login_alert_login_failed" = "เข้าสู่ระบบไม่ประสบความสำเร็จโปรดยืนยันหมายเลขบัญชีและรหัสผ่าน Plone";
 
-"login_label_config_URL" = "Please enter your portal config URL";
-"login_label_account" = "Please enter your account (optional)";
-"login_label_password" = "Please enter your password (optional)";
-"login_textview_memo" = "If plone website support login as visitor, you do not need to enter account and password";
-"login_alert_URL_invalid" = "Not valid URL, please check";
-"login_alert_plone_URL_invalid" = "Plone login URL is invalid";
-"login_alert_get_portal_config_failed" = "Can't get portal config";
-"login_alert_login_failed" = "Login Failed, Please Check your Plone account and password";
+"general_alert_jump_out_message" = "APP จะออกจาก";
+"plone_sso_alert_message" = "โดยใช้บัญชีอีเมลที่ถูกต้อง";
 
-"general_alert_jump_out_message" = "Will Jump Out APP";
-"plone_sso_alert_message" = "Please use valid email account";
+"twilio_service_label_country" = "กรุณาเลือกสถานที่ตั้งสำนักงาน";
+"twilio_service_label_company_identifier" = "เลือกจำนวนสำนักงาน";
+"twilio_service_label_outgoing" = "โปรดป้อนหมายเลขผู้รับ";
+"twilio_service_label_mute" = "ใบ้";
+"twilio_service_label_speaker" = "PA";
+"twilio_service_alert_microphone_permission_title" = "เสียง KKPortal";
+"twilio_service_alert_microphone_permission_message" = "ไมโครโฟนไม่ได้รับอนุญาตให้ใช้งาน";
+"twilio_service_alert_without_microphone" = "ดำเนินการต่อโดยไม่ต้องใช้ไมโครโฟน";
+"twilio_service_alert_settings" = "ติดตั้ง";
 
-"twilio_service_label_country" = "Please select office location";
-"twilio_service_label_company_identifier" = "Please select company phone number";
-"twilio_service_label_outgoing" = "Please input callee number";
-"twilio_service_label_mute" = "Mute";
-"twilio_service_label_speaker" = "Speaker";
-"twilio_service_alert_microphone_permission_title" = "KKPortal Voice";
-"twilio_service_alert_microphone_permission_message" = "Microphone permission not granted";
-"twilio_service_alert_without_microphone" = "Continue without microphone";
-"twilio_service_alert_settings" = "Settings";
 
-"user_guide_detail_button_start_kkportal" = "Start to Use KKportal (read me first)";
-"user_guide_detail_button_plone" = "What is Plone?";
-"user_guide_detail_button_plone_spec" = "Plone Spec";
-"user_guide_detail_button_twilio" = "What is Twilio?";
-"user_guide_detail_button_twilio_spec" = "Twilio Spec";
+"user_guide_detail_button_start_kkportal" = "เริ่ม KKportal (โปรดอ่านฉัน)";
+"user_guide_detail_button_plone" = "Plone คืออะไร?";
+"user_guide_detail_button_plone_spec" = "ข้อมูลจำเพาะ Plone";
+"user_guide_detail_button_twilio" = "Twilio คืออะไร?";
+"user_guide_detail_button_twilio_spec" = "Twilio ข้อมูลจำเพาะ";
 
-"start_use_textview_title" = "Start to use";
-"start_use_textview_content_one" = "KKporal is start up by config data, user must provide link in order to get config data by HTTP [GET] method. Response data must can be utf-8 decode to String as below:";
-"start_use_textview_content_two" = "# {{ .... }}  means, you need to provide your own Info";
-"start_use_textview_content_three" = "Note
-        0. KKPortal limit user must be a Plone user, if you don't have Plone website, please apply it.
+"start_use_textview_title" = "เริ่มต้นใช้งาน";
+"start_use_textview_content_one" = "เมื่อ KKporal จะเริ่มโดยข้อมูลการกำหนดค่าที่ต้องใช้ในการสั่งซื้อที่จะได้รับข้อมูลการกำหนดค่าผ่าน HTTP [GET] วิธีการในการให้การเชื่อมโยง ข้อมูลการตอบสนองจะต้องถอดรหัสเป็นสตริง UTF-8 ตัวอักษรดังนี้";
+"start_use_textview_content_two" = "# {{ ... }} หมายความว่าคุณต้องให้ข้อมูลของตัวเอง";
+"start_use_textview_content_three" = "บันทึก
+        0 KKPortal จำกัด ผู้ใช้จะต้องเป็นผู้ใช้ Plone ถ้าคุณไม่ได้มีเว็บไซต์ Plone โปรดทราบโปรแกรมที่
 
-        1. KKPortal use plone authorization to login, if your plone website is not public, besides providing config link you also need to fillout account and password in login page
+        สามารถใช้บริการไม่ได้รับอนุญาต 1. KKPortal Plone ถ้าเว็บไซต์ Plone ของคุณไม่ได้ประชาชนนอกเหนือจากการให้การเชื่อมโยงการกำหนดค่าคุณจะยังต้อง Fillout บัญชีและรหัสผ่านในหน้าเข้าสู่ระบบ
                
-        2. KKPortal provide cti service (call) and portal service (web surfing)
+        2. KKPortal ให้บริการ CTI (โทร) และบริการพอร์ทัล (การเรียกดูเว็บ)
 
-        3. Except for portal service, you can remove others if you don't need it. (e.g. if you don‘t need cti service)";
-"plone_intro_textview_title" = "Plone Intro";
-"plone_intro_textview_content_one" = "Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an 'Enterprise CMS' and is commonly used for intranets and as part of the web presence of large organizations. (source : https://zh.wikipedia.org/wiki/Plone)";
-"plone_intro_textview_content_two" = "1. What is Plone?:";
-"plone_intro_textview_content_three" = "2. How to quick start Plone Website?:";
-"plone_intro_textview_content_four" = "3. How to work with Plone content?:";
+        3. นอกจากนี้ยังมีบริการพอร์ทัลคุณสามารถนำคนอื่น ๆ ถ้าคุณไม่ต้องการมัน (ตัวอย่างเช่นถ้าคุณไม่จำเป็นต้องให้การบริการ CTI)";
 
-"plone_spec_textview_title" = "Spec";
-"plone_spec_textview_content" = "1. Support Plone Version:
+"plone_intro_textview_title" = "บทนำ Plone";
+"plone_intro_textview_content_one" = "Plone คือการสร้างแหล่งระบบการจัดการเนื้อหาฟรีและเปิดด้านบนของแอพพลิเคชันเซิร์ฟเวอร์ Zope Plone ถูกกำหนดให้เป็น 'ระบบการจัดการเว็บไซต์องค์กร' ทั่วไปส่วนที่ใช้ในการดำรงอยู่ขององค์กรขนาดใหญ่และเว็บไซต์ขององค์กรอินทราเน็ต (ที่มา: https: //zh.wikipedia.org/wiki/Plone)";
+"plone_intro_textview_content_two" = "1. Plone คืออะไร? :";
+"plone_intro_textview_content_three" = "2. วิธีการเริ่มต้นอย่างรวดเร็วเว็บไซต์ Plone? :";
+"plone_intro_textview_content_four" = "3. วิธีการทำงานกับเนื้อหา Plone? :";
+
+"plone_spec_textview_title" = "สเปค";
+"plone_spec_textview_content" = "1. สนับสนุนรุ่นของ Plone นี้:
             . Plone 5.1.6
             . CMF 2.2.13
-            . Zope 2.13.29
-            . Python 2.7.12
+            . Zope 29 ปี 13 กุมภาพันธ์
+            . ธ 2.7.12
             . PIL 6.1.0
         
-        2. Must install Plone Expansion Module:
-            . plone.restapi (RESTful hypermedia API for Plone. – (plone.restapi 5.1.0))
-            . Multilingual Support(Multi-language module function – (plone.app.multilingual 5.2.3)
+        2. โมดูลการขยาย Plone จะต้องติดตั้ง:
+            . plone.restapi (API สื่อสิ่งพิมพ์ REST เป็น Plone - (plone.restapi 5.1.0))
+            . การสนับสนุนหลายภาษา (ฟังก์ชั่นโมดูลหลายภาษา - (plone.app.multilingual 5.2.3)
                
-        3. Current Support Plone Language:
-            . zh-tw (繁體中文)
+        3. ภาษา Plone สนับสนุนในขณะนี้:
+            . zh-TW (ดั้งเดิมภาษาจีน)
 
-        When you use KKPortal, you need provide your plone host URL in config data.";
-"twilio_intro_textview_title" = "Twilio Intro";
-"twilio_intro_textview_content_one" = "Twilio is a developer platform for communications. We can create our accessToken for connecting client (iOS APP) to Twilio TwiML APP.";
-"twilio_intro_textview_content_two" = "1. What is Twilio?:";
-"twilio_intro_textview_content_three" = "2. How to create twilio access token?:";
-"twilio_intro_textview_content_four " = "3. What is TwiML APP?:";
-"twilio_spec_textview_title" = "Spec";
-"twilio_spec_textview_content" = "1. iOS SDK Version:
+        เมื่อคุณใช้ KKPortal คุณจะต้องให้ข้อมูลการกำหนดค่าสำหรับ URL ที่โฮสต์ Plone ของคุณ";
+
+"twilio_intro_textview_title" = "ข้อมูลส่วนตัว Twilio";
+"twilio_intro_textview_content_one" = "Twilio สำหรับการพัฒนาแพลตฟอร์มการสื่อสาร เราสามารถสร้างการเชื่อมต่อ accessToken ลูกค้า (โปรแกรม iOS) เพื่อ Twilio TwiML APP";
+"twilio_intro_textview_content_two" = "1. Twilio คืออะไร? :";
+"twilio_intro_textview_content_three" = "2. วิธีการสร้างการเข้าถึงโทเค็น Twilio? :";
+"twilio_intro_textview_content_four " = "3. อะไรคือ TwiML APP ?:";
+
+"twilio_spec_textview_title" = "สเปค";
+"twilio_spec_textview_content" = "1. รุ่น SDK สำหรับ iOS:
             . TwilioVoice 6.2.1
 
-        When you use KKPortal, you need provide your twilio accessToken URL in config data.";
+        เมื่อคุณใช้ KKPortal, คุณจำเป็นต้องให้ Twilio ของคุณ accessToken URL ในข้อมูลการกำหนดค่า";
 
-"about_textview_title" = "About";
-"about_textview_title_content_one" = "KKPortal porvide a way to show plone website content on iOS APP. That means plone subjects (including Collection, Event, File, Folder, Image, Link, News Item, Page) can be shown properly on user's cell phone.";
-"about_textview_title_content_two" = "(Not support video and audio file presenting by now)";
-"about_textview_title_content_three" = " Version: 1.0.0
+
+
+"about_textview_title" = "บน";
+"about_textview_title_content_one" = "KKPortal วิธี porvide เพื่อแสดงเนื้อหาบนเว็บไซต์ของแอป iOS Plone ซึ่งหมายความว่าอาสาสมัคร Plone (รวมถึงคอลเลกชัน, กิจกรรม, ไฟล์, โฟลเดอร์, รูปภาพ, การเชื่อมโยงรายการข่าวหน้า) สามารถแสดงผลบนโทรศัพท์มือถือของผู้ใช้";
+"about_textview_title_content_two" = "(ไม่สนับสนุนไฟล์วิดีโอและเสียงนำเสนอไปตอนนี้)";
+"about_textview_title_content_three" = " เวอร์ชัน: 1.0.0
         
-        Support Plone Version: 5.1.6
+        สนับสนุนรุ่น Plone: ​​5.1.6
         
-        Privacy policy:";
+        นโยบายความเป็นส่วนตัว:";
 
-"general_notice" = "Notice";
-"general_alert_no_internet_connection_message" = "The network connection cannot be detected at the moment, please check whether your network environment is normal";
-"general_ignore" = "Ignore";
+"general_notice" = "บันทึก";
+"general_alert_no_internet_connection_message" = "ขณะนี้ยังไม่สามารถตรวจสอบการเชื่อมต่อเครือข่ายโปรดตรวจสอบสภาพแวดล้อมเครือข่ายของคุณเป็นเรื่องปกติ";
+"general_ignore" = "ไม่สนใจ";
 
-"general_alert_no_internet_connection_label_main" = "Unable to detect network connection";
-"general_alert_no_internet_connection_label_sub" = "Please check your network environment is normal";
+"general_alert_no_internet_connection_label_main" = "ไม่สามารถตรวจสอบการเชื่อมต่อเครือข่าย";
+"general_alert_no_internet_connection_label_sub" = "กรุณาตรวจสอบสภาพแวดล้อมเครือข่ายของคุณเป็นเรื่องปกติ";

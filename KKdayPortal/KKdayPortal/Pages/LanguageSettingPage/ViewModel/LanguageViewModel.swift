@@ -16,7 +16,7 @@ final class LanguageViewModel {
     
     func loadLanguageItems() {
         
-        let availableLanguage: [Language] = [.en, .zhTW, .zhCN, .ja]
+        let availableLanguage: [Language] = [.en, .zhTW, .zhHK, .zhCN, .ja, .ko, .vi, .th ]
         let cellViewModels = availableLanguage.map { langauge -> CellViewModel in
             
             let isSelected = langauge == LanguageManager.shared.currentLanguage

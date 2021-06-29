@@ -1,115 +1,120 @@
+"user_guide_label_title" = "Chào mừng KKPortal!";
+"user_guide_button_login" = "Đăng nhập";
+"user_guide_button_usage_guide" = "Hướng dẫn sử dụng";
 
-"user_guide_label_title" = "Welcome to KKPortal!";
-"user_guide_button_login" = "Login";
-"user_guide_button_usage_guide" = "Usage Guide";
-
-"home_title" = "Home";
+"home_title" = "Trang Chủ";
 
 "portal_title" = "Portal";
 
-"service_list_title" = "Service List";
-"service_button_phone" = "KK Phone";
+"service_list_title" = "Danh sách dịch vụ";
+"service_button_phone" = "KK Điện thoại";
 
-"setting_title" = "Setting";
-"setting_button_language" = "Language Setting";
-"setting_button_about" = "About KKPlone";
-"setting_button_contact" = "Contact Me";
-"setting_button_logout" = "Logout";
+"setting_title" = "thiết lập";
+"setting_button_language" = "Cài đặt ngôn ngữ";
+"setting_button_about" = "về KKPlone";
+"setting_button_contact" = "Liên hệ với tôi";
+"setting_button_logout" = "Đăng xuất";
 
-"general_alert_logout_message" = "Logout will clear all personal information in KKPortal";
-"general_alert_email_message" = "Please open your email service";
-"general_email_subject" = "KKPortal Suggestion";
-"general_email_message_body" = "My opinion is";
+"general_alert_logout_message" = "Đăng xuất sẽ xóa tất cả các thông tin cá nhân của bạn đã được lưu trữ trên KKPortal";
+"general_alert_email_message" = "Mở dịch vụ email của bạn";
+"general_email_subject" = "khuyến nghị KKPortal";
+"general_email_message_body" = "Lời khuyên của tôi là";
 
-"general_confrim" = "Confirm";
-"general_cancel" = "Cancel";
-"general_ok" = "OK";
-"general_warning" = "Warning";
+"general_confrim" = "xác nhận";
+"general_cancel" = "hủy bỏ";
+"general_ok" = "nó tốt";
+"general_warning" = "caveat";
 
-"login_label_config_URL" = "Please enter your portal config URL";
-"login_label_account" = "Please enter your account (optional)";
-"login_label_password" = "Please enter your password (optional)";
-"login_textview_memo" = "If plone website support login as visitor, you do not need to enter account and password";
-"login_alert_URL_invalid" = "Not valid URL, please check";
-"login_alert_plone_URL_invalid" = "Plone login URL is invalid";
-"login_alert_get_portal_config_failed" = "Can't get portal config";
-"login_alert_login_failed" = "Login Failed, Please Check your Plone account and password";
+"login_label_config_URL" = "Vui lòng nhập URL cấu hình cổng thông tin của bạn";
+"login_label_account" = "Vui lòng nhập số tài khoản của bạn (không bắt buộc)";
+"login_label_password" = "Vui lòng nhập mật khẩu của bạn (không bắt buộc)";
+"login_textview_memo" = "Nếu sự hỗ trợ trang web đăng nhập như là khách của đường đi, bạn không cần phải nhập số tài khoản và mật khẩu";
+"login_alert_URL_invalid" = "Đây không phải là URL có sẵn, hãy chắc chắn";
+"login_alert_plone_URL_invalid" = "Plone đăng nhập URL không hợp lệ";
+"login_alert_get_portal_config_failed" = "Không thể có được cấu hình cổng thông tin";
+"login_alert_login_failed" = "Đăng nhập không thành công, vui lòng xác nhận số tài khoản và mật khẩu Plone";
 
-"general_alert_jump_out_message" = "Will Jump Out APP";
-"plone_sso_alert_message" = "Please use valid email account";
+"general_alert_jump_out_message" = "APP sẽ rời";
+"plone_sso_alert_message" = "Vui lòng sử dụng một tài khoản email hợp lệ";
 
-"twilio_service_label_country" = "Please select office location";
-"twilio_service_label_company_identifier" = "Please select company phone number";
-"twilio_service_label_outgoing" = "Please input callee number";
-"twilio_service_label_mute" = "Mute";
-"twilio_service_label_speaker" = "Speaker";
-"twilio_service_alert_microphone_permission_title" = "KKPortal Voice";
-"twilio_service_alert_microphone_permission_message" = "Microphone permission not granted";
-"twilio_service_alert_without_microphone" = "Continue without microphone";
-"twilio_service_alert_settings" = "Settings";
+"twilio_service_label_country" = "Vui lòng chọn địa điểm văn phòng";
+"twilio_service_label_company_identifier" = "Chọn số văn phòng";
+"twilio_service_label_outgoing" = "Vui lòng nhập số người nhận";
+"twilio_service_label_mute" = "Tắt tiếng";
+"twilio_service_label_speaker" = "PA";
+"twilio_service_alert_microphone_permission_title" = "âm thanh KKPortal";
+"twilio_service_alert_microphone_permission_message" = "Microphone không được phép sử dụng";
+"twilio_service_alert_without_microphone" = "Tiếp tục mà không sử dụng micro";
+"twilio_service_alert_settings" = "thiết lập";
 
-"user_guide_detail_button_start_kkportal" = "Start to Use KKportal (read me first)";
-"user_guide_detail_button_plone" = "What is Plone?";
-"user_guide_detail_button_plone_spec" = "Plone Spec";
-"user_guide_detail_button_twilio" = "What is Twilio?";
-"user_guide_detail_button_twilio_spec" = "Twilio Spec";
 
-"start_use_textview_title" = "Start to use";
-"start_use_textview_content_one" = "KKporal is start up by config data, user must provide link in order to get config data by HTTP [GET] method. Response data must can be utf-8 decode to String as below:";
-"start_use_textview_content_two" = "# {{ .... }}  means, you need to provide your own Info";
-"start_use_textview_content_three" = "Note
-        0. KKPortal limit user must be a Plone user, if you don't have Plone website, please apply it.
+"user_guide_detail_button_start_kkportal" = "Bắt đầu KKportal (xin đọc cho tôi)";
+"user_guide_detail_button_plone" = "Plone là gì?";
+"user_guide_detail_button_plone_spec" = "Plone Thông số kỹ thuật";
+"user_guide_detail_button_twilio" = "Twilio là gì?";
+"user_guide_detail_button_twilio_spec" = "Twilio Thông số kỹ thuật";
 
-        1. KKPortal use plone authorization to login, if your plone website is not public, besides providing config link you also need to fillout account and password in login page
+"start_use_textview_title" = "bắt đầu sử dụng";
+"start_use_textview_content_one" = "Khi KKporal được khởi xướng bởi các dữ liệu cấu hình, bắt buộc người sử dụng để có được các dữ liệu cấu hình qua phương thức HTTP [GET] cung cấp một liên kết. dữ liệu phản ứng phải được giải mã như chuỗi UTF-8 nhân vật như sau:";
+"start_use_textview_content_two" = "# {{...}} có nghĩa là bạn cần phải cung cấp thông tin của mình";
+"start_use_textview_content_three" = "ghi chú
+        0 KKPortal hạn chế người dùng phải sử dụng Plone, nếu bạn không có trang web Plone, xin lưu ý ứng dụng đó.
+
+        Sử dụng truy cập trái phép 1. KKPortal Plone, nếu trang web của Plone của bạn không được công khai, ngoài việc cung cấp link cấu hình, bạn cũng sẽ cần fillout tài khoản và mật khẩu vào trang đăng nhập
                
-        2. KKPortal provide cti service (call) and portal service (web surfing)
+        2. KKPortal cung cấp dịch vụ CTI (gọi), và các dịch vụ cổng thông tin (trình duyệt web)
 
-        3. Except for portal service, you can remove others if you don't need it. (e.g. if you don‘t need cti service)";
-"plone_intro_textview_title" = "Plone Intro";
-"plone_intro_textview_content_one" = "Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an 'Enterprise CMS' and is commonly used for intranets and as part of the web presence of large organizations. (source : https://zh.wikipedia.org/wiki/Plone)";
-"plone_intro_textview_content_two" = "1. What is Plone?:";
-"plone_intro_textview_content_three" = "2. How to quick start Plone Website?:";
-"plone_intro_textview_content_four" = "3. How to work with Plone content?:";
+        3. Ngoài các dịch vụ cổng thông tin, bạn có thể loại bỏ những người khác, nếu bạn không cần nó. (Ví dụ, nếu bạn không cần đến các dịch vụ CTI)";
 
-"plone_spec_textview_title" = "Spec";
-"plone_spec_textview_content" = "1. Support Plone Version:
+"plone_intro_textview_title" = "Plone Giới thiệu";
+"plone_intro_textview_content_one" = "Plone là thiết lập một hệ thống quản trị nội dung mã nguồn mở miễn phí trên máy chủ ứng dụng Zope. Plone được định nghĩa là 'hệ thống doanh nghiệp quản lý trang web', thường được sử dụng một phần của sự tồn tại của các doanh nghiệp lớn và các trang web doanh nghiệp intranet. (Nguồn: https: //zh.wikipedia.org/wiki/Plone)";
+"plone_intro_textview_content_two" = "1. Plone là gì? :";
+"plone_intro_textview_content_three" = "2. Làm thế nào nhanh chóng thiết lập một site Plone? :";
+"plone_intro_textview_content_four" = "3. làm thế nào để làm việc với các nội dung Plone? :";
+
+"plone_spec_textview_title" = "sự chỉ rõ";
+"plone_spec_textview_content" = "1. Để hỗ trợ các phiên bản của Plone:
             . Plone 5.1.6
             . CMF 2.2.13
-            . Zope 2.13.29
+            . Zope của 29 năm ngày 13 tháng 2
             . Python 2.7.12
             . PIL 6.1.0
         
-        2. Must install Plone Expansion Module:
-            . plone.restapi (RESTful hypermedia API for Plone. – (plone.restapi 5.1.0))
-            . Multilingual Support(Multi-language module function – (plone.app.multilingual 5.2.3)
+        2. mô-đun mở rộng Plone phải được cài đặt:
+            . plone.restapi (REST API hypermedia như Plone - (plone.restapi 5.1.0))
+            . Hỗ trợ đa ngôn ngữ (chức năng mô-đun đa ngôn ngữ - (plone.app.multilingual 5.2.3)
                
-        3. Current Support Plone Language:
-            . zh-tw (繁體中文)
+        3. ngôn ngữ Plone hiện hỗ trợ:
+            . ZH-TW (truyền thống Trung Quốc)
 
-        When you use KKPortal, you need provide your plone host URL in config data.";
-"twilio_intro_textview_title" = "Twilio Intro";
-"twilio_intro_textview_content_one" = "Twilio is a developer platform for communications. We can create our accessToken for connecting client (iOS APP) to Twilio TwiML APP.";
-"twilio_intro_textview_content_two" = "1. What is Twilio?:";
-"twilio_intro_textview_content_three" = "2. How to create twilio access token?:";
-"twilio_intro_textview_content_four " = "3. What is TwiML APP?:";
-"twilio_spec_textview_title" = "Spec";
-"twilio_spec_textview_content" = "1. iOS SDK Version:
+        Khi bạn sử dụng KKPortal, bạn cần phải cung cấp dữ liệu cấu hình cho máy chủ URL Plone của bạn.";
+
+"twilio_intro_textview_title" = "Twilio hồ sơ";
+"twilio_intro_textview_content_one" = "Twilio cho nền tảng phát triển thông tin liên lạc. Chúng ta có thể tạo ra một accessToken kết nối khách hàng (ứng dụng iOS) để Twilio TwiML APP.";
+"twilio_intro_textview_content_two" = "1. Twilio là gì? :";
+"twilio_intro_textview_content_three" = "2. Làm thế nào để tạo twilio access token? :";
+"twilio_intro_textview_content_four " = "3. TwiML APP là gì ?:";
+
+"twilio_spec_textview_title" = "sự chỉ rõ";
+"twilio_spec_textview_content" = "1. phiên bản SDK dành cho iOS:
             . TwilioVoice 6.2.1
 
-        When you use KKPortal, you need provide your twilio accessToken URL in config data.";
+        Khi bạn sử dụng KKPortal, bạn cần cung cấp twilio lại accessToken URL trong các dữ liệu cấu hình.";
 
-"about_textview_title" = "About";
-"about_textview_title_content_one" = "KKPortal porvide a way to show plone website content on iOS APP. That means plone subjects (including Collection, Event, File, Folder, Image, Link, News Item, Page) can be shown properly on user's cell phone.";
-"about_textview_title_content_two" = "(Not support video and audio file presenting by now)";
-"about_textview_title_content_three" = " Version: 1.0.0
+
+
+"about_textview_title" = "trên";
+"about_textview_title_content_one" = "KKPortal porvide cách để hiển thị nội dung trên trang web của iOS APP Plone. Điều này có nghĩa rằng Plone đối tượng (bao gồm cả bộ sưu tập, các sự kiện, các file, thư mục, hình ảnh, liên kết, các mục tin tức, trang) có thể được hiển thị trên điện thoại di động của người dùng.";
+"about_textview_title_content_two" = "(Không hỗ trợ video và các tập tin âm thanh được trình bày to Now)";
+"about_textview_title_content_three" = " Phiên bản: 1.0.0
         
-        Support Plone Version: 5.1.6
+        Hỗ trợ phiên bản Plone: ​​5.1.6
         
-        Privacy policy:";
+        Chính sách bảo mật:";
 
-"general_notice" = "Notice";
-"general_alert_no_internet_connection_message" = "The network connection cannot be detected at the moment, please check whether your network environment is normal";
-"general_ignore" = "Ignore";
+"general_notice" = "Ghi chú";
+"general_alert_no_internet_connection_message" = "Hiện nay không thể phát hiện các kết nối mạng, hãy kiểm tra môi trường mạng của bạn là bình thường";
+"general_ignore" = "Làm lơ";
 
-"general_alert_no_internet_connection_label_main" = "Unable to detect network connection";
-"general_alert_no_internet_connection_label_sub" = "Please check your network environment is normal";
+"general_alert_no_internet_connection_label_main" = "Không thể phát hiện kết nối mạng";
+"general_alert_no_internet_connection_label_sub" = "Vui lòng kiểm tra môi trường mạng của bạn là bình thường";
