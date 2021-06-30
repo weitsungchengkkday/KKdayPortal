@@ -31,24 +31,7 @@ final class TwilioServiceViewController: UIViewController, Localizable {
         lbl.textAlignment = .center
         return lbl
     }()
-    
-//    lazy var transferValue: UITextField = {
-//        let txf = UITextField()
-//        txf.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-//        txf.keyboardType = .default
-//        txf.borderStyle = .roundedRect
-//        txf.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//
-//        return txf
-//    }()
-//
-//    lazy var transferCallButton: UIButton = {
-//        let btn: UIButton = UIButton()
-//        btn.setBackgroundImage(UIImage(systemName: "phone.fill.arrow.up.right") ?? #imageLiteral(resourceName: "icPicture"), for: .normal)
-//        return btn
-//    }()
-//
-    
+
     lazy var iconView: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(systemName: "headphones.circle.fill") ?? #imageLiteral(resourceName: "icPicture")
@@ -195,7 +178,6 @@ final class TwilioServiceViewController: UIViewController, Localizable {
     
     private let twimlParamCompanyIdentifier = "p_company_identifier"
     private let twimlParamCountryCode = "p_country_code"
-//    private let twimlParamto = "to"
     
     private let identity: String = {
         let user: GeneralUser? = StorageManager.shared.loadObject(for: .generalUser)
@@ -301,12 +283,6 @@ final class TwilioServiceViewController: UIViewController, Localizable {
     private func setupUI() {
         localizedText()
         self.view.addSubview(qualityWarningsToaster)
-        
-        ///
-//        self.view.addSubview(transferValue)
-//        self.view.addSubview(transferCallButton)
-        ///
-        
         self.view.addSubview(iconView)
         self.view.addSubview(countryLabel)
         self.view.addSubview(countryCodeTextField)
@@ -330,20 +306,7 @@ final class TwilioServiceViewController: UIViewController, Localizable {
             maker.top.equalTo(self.view.snp.topMargin).offset(16)
             maker.width.equalTo(self.view.snp.width)
         }
-        
-        ///
-//        transferValue.snp.makeConstraints { maker in
-//            maker.centerX.equalToSuperview()
-//            maker.top.equalTo(qualityWarningsToaster.snp.bottom).offset(5)
-//            maker.width.equalTo(240)
-//        }
-//
-//        transferCallButton.snp.makeConstraints { maker in
-//            maker.centerX.equalToSuperview()
-//            maker.width.height.equalTo(40)
-//            maker.top.equalTo(transferValue.snp.bottom).offset(5)
-//        }
-        
+      
         iconView.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.centerY.equalToSuperview().offset(-240)
@@ -464,9 +427,6 @@ final class TwilioServiceViewController: UIViewController, Localizable {
     }
     
     private func setAction() {
-        ///
-//        transferCallButton.addTarget(self, action: #selector(transferButtonPressed), for: .touchUpInside)
-        ///
         
         placeCallButton.addTarget(self, action: #selector(mainButtonPressed), for: .touchUpInside)
         muteSwitch.addTarget(self, action: #selector(muteSwitchToggled), for: .valueChanged)
@@ -519,12 +479,6 @@ final class TwilioServiceViewController: UIViewController, Localizable {
             
             self?.showMicrophoneAccessRequest(uuid, handle)
         }
-    }
-    
-    @objc private func transferButtonPressed(sender: UIButton) {
-        
-        
-        // print(transferValue.text)
     }
     
     private func checkRecordPermission(completion: @escaping (_ permissionGranted: Bool) -> Void) {
@@ -1180,28 +1134,6 @@ extension TwilioServiceViewController: PushKitEventDelegate {
     
     func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) {
         // 🍕 NotificationDelegate to TwilioServiceViewController
-        
-        ///  TEST 進線的會議室
-        //        if let payload_dic = payload.dictionaryPayload as? [String: AnyHashable],
-        //            var twiParam = payload_dic["twi_params"] as? String {
-        //
-        //            print(twiParam)
-        //
-        //            let decipheredIngredients = twiParam.split(separator: "&").reduce(into: [String: String]()) {
-        //              let ingredient = $1.split(separator: "=")
-        //
-        //              if let key = ingredient.first, let value = ingredient.last {
-        //                $0[String(key)] = String(value)
-        //              }
-        //            }
-        //
-        //            self.outgoingLabel.text = decipheredIngredients["CONF"]
-        //
-        //        } else {
-        //            return
-        //        }
-        ///
-        
         TwilioVoiceSDK.handleNotification(payload.dictionaryPayload, delegate: self, delegateQueue: nil)
         
     }

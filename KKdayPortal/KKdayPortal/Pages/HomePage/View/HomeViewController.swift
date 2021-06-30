@@ -18,7 +18,7 @@ protocol PushKitEventDelegate: AnyObject {
     func incomingPushReceived(payload: PKPushPayload, completion: @escaping () -> Void) -> Void
 }
 
-class HomeViewController: UIViewController, Localizable, NetStatusProtocal {
+final class HomeViewController: UIViewController, Localizable, NetStatusProtocal {
     
     // 🏞 UI element
     private lazy var homeContainerView: UIView = {
@@ -123,7 +123,6 @@ class HomeViewController: UIViewController, Localizable, NetStatusProtocal {
     private func bindViewModel() {
         
     }
-    
 }
 
 
