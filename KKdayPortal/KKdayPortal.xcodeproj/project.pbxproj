@@ -194,6 +194,9 @@
 		C6B1B17C268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */; };
 		C6B1B17D268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */; };
 		C6B1B17E268871EF00360E1C /* SnackBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */; };
+		C6B1B180268C5CDC00360E1C /* TwilioViewController+Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17F268C5CDC00360E1C /* TwilioViewController+Voice.swift */; };
+		C6B1B181268C5CDC00360E1C /* TwilioViewController+Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17F268C5CDC00360E1C /* TwilioViewController+Voice.swift */; };
+		C6B1B182268C5CDC00360E1C /* TwilioViewController+Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1B17F268C5CDC00360E1C /* TwilioViewController+Voice.swift */; };
 		C6B213CE261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213CF261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
 		C6B213D0261C128200981446 /* PloneSSOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B213CD261C128200981446 /* PloneSSOViewModel.swift */; };
@@ -548,6 +551,7 @@
 		C6B1B17226886C9A00360E1C /* SnackBarMovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarMovable.swift; sourceTree = "<group>"; };
 		C6B1B17726886CFD00360E1C /* SnackBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewController.swift; sourceTree = "<group>"; };
 		C6B1B17B268871EF00360E1C /* SnackBarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SnackBarStoryboard.storyboard; sourceTree = "<group>"; };
+		C6B1B17F268C5CDC00360E1C /* TwilioViewController+Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwilioViewController+Voice.swift"; sourceTree = "<group>"; };
 		C6B213CD261C128200981446 /* PloneSSOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneSSOViewModel.swift; sourceTree = "<group>"; };
 		C6B213E7261EEE6600981446 /* PloneFileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneFileAPI.swift; sourceTree = "<group>"; };
 		C6B213F1261EEEDD00981446 /* PloneImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PloneImageAPI.swift; sourceTree = "<group>"; };
@@ -795,6 +799,7 @@
 			isa = PBXGroup;
 			children = (
 				C63D277C257F724E00CFF8A8 /* TwilioServiceViewController.swift */,
+				C6B1B17F268C5CDC00360E1C /* TwilioViewController+Voice.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2573,6 +2578,7 @@
 				C631068425B57ADA0067F72B /* GeneralNewsViewController.swift in Sources */,
 				C631068525B57ADA0067F72B /* HomeViewController.swift in Sources */,
 				C631068625B57ADA0067F72B /* Utilities.swift in Sources */,
+				C6B1B180268C5CDC00360E1C /* TwilioViewController+Voice.swift in Sources */,
 				C631068725B57ADA0067F72B /* PloneDocument.swift in Sources */,
 				C631068825B57ADA0067F72B /* GeneralCollectionTableViewCell.swift in Sources */,
 				C631068925B57ADA0067F72B /* GeneralLinkViewModel.swift in Sources */,
@@ -2738,6 +2744,7 @@
 				F44E8CCC23B88AA30032C6BE /* PloneDocument.swift in Sources */,
 				F426FECD23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
 				F44E8CCD23B88AA30032C6BE /* GeneralLinkViewModel.swift in Sources */,
+				C6B1B182268C5CDC00360E1C /* TwilioViewController+Voice.swift in Sources */,
 				F44E8CCF23B88AA30032C6BE /* PloneTextObject.swift in Sources */,
 				F45740D923CEF05400FB5EEC /* GeneralRootWithLanguageFoldersNormalTableViewCellViewModel.swift in Sources */,
 				F426FEDB23F67D3200BFDA3B /* GeneralRootWithLanguageFoldersViewModel.swift in Sources */,
@@ -2903,6 +2910,7 @@
 				F4544838239CAD0A001B8D31 /* GeneralNewsViewController.swift in Sources */,
 				F426FECC23F641CF00BFDA3B /* HomeViewController.swift in Sources */,
 				F45C2C4123BCD60C00A1E769 /* Utilities.swift in Sources */,
+				C6B1B181268C5CDC00360E1C /* TwilioViewController+Voice.swift in Sources */,
 				F45446F0238F5A70001B8D31 /* PloneDocument.swift in Sources */,
 				F43AFC7D23E87DD10050C851 /* GeneralCollectionTableViewCell.swift in Sources */,
 				F454483E239CAD72001B8D31 /* GeneralLinkViewModel.swift in Sources */,

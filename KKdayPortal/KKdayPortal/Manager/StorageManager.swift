@@ -47,8 +47,8 @@ final class StorageManager {
     func load<T>(for key: StorageKeys) -> T? {
 
         let value: T? = UserDefaults.standard.value(forKey: key.rawValue) as? T
-
-        print("\(#function) \(String(describing: value))")
+        
+        debugPrint("\(#function) \(String(describing: value))")
         return value
     }
 
@@ -88,7 +88,7 @@ final class StorageManager {
             return object
             }.compactMap { $0 }
 
-        print("\(#function) \(objectArray)")
+        debugPrint("\(#function) \(objectArray)")
         return objectArray
     }
 
@@ -99,7 +99,7 @@ final class StorageManager {
     ///   - value: UserDefault value
     func save(for key: StorageKeys, value: Any?) {
 
-        print("\(#function) \(value ?? "")")
+        debugPrint("\(#function) \(value ?? "")")
         UserDefaults.standard.set(value, forKey: key.rawValue)
     }
 
@@ -113,7 +113,7 @@ final class StorageManager {
         if let value = value,
             let data = value.toJSONData() {
 
-            print("\(#function) \(value)")
+            debugPrint("\(#function) \(value)")
             UserDefaults.standard.set(data, forKey: key.rawValue)
         }
     }
@@ -131,7 +131,7 @@ final class StorageManager {
                 return object.toJSONData()
                 }.compactMap { $0 }
 
-            print("\(#function) \(value)")
+            debugPrint("\(#function) \(value)")
             UserDefaults.standard.set(dataArray, forKey: key.rawValue)
         }
     }
@@ -141,7 +141,7 @@ final class StorageManager {
     /// - Parameter key: UserDefault key
     func remove(for key: StorageKeys) {
 
-        print("\(#function) \(key)")
+        debugPrint("\(#function) \(key)")
         UserDefaults.standard.removeObject(forKey: key.rawValue)
     }
 
@@ -154,7 +154,7 @@ final class StorageManager {
 
         for (key, _) in dictionary where key.contains(containsKey) {
 
-            print("\(#function) \(containsKey)")
+            debugPrint("\(#function) \(containsKey)")
             UserDefaults.standard.removeObject(forKey: key)
         }
     }
@@ -172,7 +172,7 @@ final class StorageManager {
             return
         }
 
-        print("\(#function)")
+        debugPrint("\(#function)")
         UserDefaults.standard.removePersistentDomain(forName: id)
     }
 }
@@ -187,7 +187,7 @@ extension Encodable {
             return data
 
         } catch {
-            print("Save \(self) failed")
+            debugPrint("Save \(self) failed")
         }
         return nil
     }
@@ -198,12 +198,12 @@ extension Data {
     func toObject<Ｔ: Decodable>() -> Ｔ? {
         do {
             let object = try JSONDecoder().decode(Ｔ.self, from: self)
-            print("\(#function) \(object)")
+            debugPrint("\(#function) \(object)")
 
             return object
         } catch {
 
-            print("Decode \(self) failed")
+            debugPrint("Decode \(self) failed")
             return nil
         }
     }

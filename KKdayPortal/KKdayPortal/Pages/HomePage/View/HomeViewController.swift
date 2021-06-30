@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 
 import PushKit
-import TwilioVoice
 
 protocol PushKitEventDelegate: AnyObject {
     func credentialsUpdated(credentials: PKPushCredentials) -> Void

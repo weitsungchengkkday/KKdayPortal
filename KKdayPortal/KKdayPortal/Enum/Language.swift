@@ -181,15 +181,12 @@ extension Language {
         if LanguageManager.shared.webServiceLanguageLoad ?? false {
             
             if languageBundleFromWebService != nil {
-                print("📖 Translate use WebService file")
                 bundle = languageBundleFromWebService
             }
 
         } else if languageBundle != nil {
-            print("📖 Translate use APP Bundle file")
             bundle = languageBundle
         } else {
-            print("📖 Translate use default value")
             bundle = nil
         }
         
